@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo site_url('assets/public/css/homepage.css'); ?>">
 <div class="container-fluid">
     <section class="content row">
             <div class="col-lg-4 col-lg-offset-6">
