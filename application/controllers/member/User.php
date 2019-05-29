@@ -55,6 +55,64 @@ class User extends MY_Controller {
         redirect('member/user/login', 'refresh');
     }
 
+
+    public function register(){
+        $this->load->model('temp_register_model');
+        $this->load->library('form_validation');
+
+
+        $this->form_validation->set_rules('company','Tên Công Ty','trim');
+        $this->form_validation->set_rules('company','Tên Công Ty','trim|required', array(
+                'required' => '%s không được trống.',
+            ));
+        $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[users.email]', array(
+                'required' => '%s không được trống.',
+            ));
+        $this->form_validation->set_rules('phone','Số điện thoại','trim|required|numeric', array(
+                'required' => '%s không được trống.',
+                'numeric' => '%s phải là số.',
+            ));
+        $this->form_validation->set_rules('position','Chức Danh','required', array(
+                'required' => '%s không được trống.',
+            ));
+        $this->form_validation->set_rules('address','Địa Chỉ','required', array(
+                'required' => '%s không được trống.',
+            ));
+        $this->form_validation->set_rules('connector','Người Đại Diện','required', array(
+                'required' => '%s không được trống.',
+            ));
+
+        if($this->form_validation->run()===FALSE) {
+            $this->load->helper('form');
+            $this->load->view('member/register_view');
+            // $this->render('member/login_view', 'member_master');
+        } else {
+            if ( $this->input->post() ) {
+                $params = $this->input->post();
+                $code = substr(uniqid(),0,8);
+                // $check_code = $this->temp_register->find_row_array(['code' => $code]);
+                $data = [
+                    'company' => $params['company'],
+                    'connector' => $params['connector'],
+                    'position' => $params['position'],
+                    'phone' => $params['phone'],
+                    'address' => $params['address'],
+                    'email' => $params['email'],
+                    'code' => $code,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ];
+                $insert = $this->temp_register_model->save($data);
+                if ($insert) {
+                    redirect('member/user/login','refresh');
+                }else{
+                    redirect('member/user/register');
+                }
+
+            }
+        }
+    }
+
     // change password
     public function change_password(){
         $this->load->helper('form');
