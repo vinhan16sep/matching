@@ -14,6 +14,7 @@ class Temp extends Admin_Controller
     }
 
     public function index(){
+        $this->load->helper('form');
         $this->data['page_title'] = 'Danh sách đăng ký';
 
         $this->load->library('pagination');
