@@ -3,7 +3,6 @@
 <!-- Content Wrapper -->
 <div class="container-fluid">
     <div class="col-lg-10 col-lg-offset-0" style="margin-left: 15px;">
-        <h1>Cập nhật sự kiện</h1>
         <?php
         echo form_open_multipart('', array('class' => 'form-horizontal'));
         ?>

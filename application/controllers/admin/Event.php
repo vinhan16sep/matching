@@ -14,7 +14,7 @@ class Event extends Admin_Controller
     }
 
     public function index(){
-        $this->data['page_title'] = 'Event';
+        $this->data['page_title'] = 'Danh sách sự kiện';
 
         $this->load->library('pagination');
         $total_rows  = $this->event_model->count();
@@ -36,7 +36,7 @@ class Event extends Admin_Controller
     }
 
     public function create(){
-        $this->data['page_title'] = 'Create event';
+        $this->data['page_title'] = 'Tạo mới sự kiện';
         $this->load->library('form_validation');
         $this->form_validation->set_rules('name','Name','trim|required');
 
@@ -61,7 +61,7 @@ class Event extends Admin_Controller
         $id = $this->input->post('id') ? $this->input->post('id') : $id;
         $this->data['detail'] = $this->event_model->fetch_by_id($id);
 
-        $this->data['page_title'] = 'Edit event';
+        $this->data['page_title'] = 'Cập nhật sự kiện';
         $this->load->library('form_validation');
         $this->form_validation->set_rules('name','Name','trim|required');
 
