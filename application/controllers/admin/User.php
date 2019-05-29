@@ -8,6 +8,7 @@ class User extends MY_Controller {
         parent::__construct();
         $this->load->library('ion_auth');
         $this->load->model('ion_auth_model');
+        $this->load->model('temp_register_model');
     }
 
     public function index() {
@@ -59,6 +60,9 @@ class User extends MY_Controller {
                 'active' => 1,
             );
             $result = $this->ion_auth->register($username, $password, $email, $additional_data, $group_ids);
+            if($result){
+                $this->temp_register_model->approve($email);
+            }
        }
        $this->session->set_flashdata('success', 'Tạo tài khoản thành công');
        redirect('admin/temp', 'admin_master');
