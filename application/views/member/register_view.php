@@ -1,5 +1,12 @@
 <div class="content-wrapper" style="min-height: 916px;">
     <section class="content row">
+        <?php if ($this->session->flashdata('error')): ?>
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-warning"></i> Alert!</h4>
+                <?php echo $this->session->flashdata('message_error'); ?>
+            </div>
+        <?php endif ?>
         <div>
             <div class="col-lg-4 col-lg-offset-4">
                 <h1>Login</h1>

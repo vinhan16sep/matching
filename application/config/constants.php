@@ -83,3 +83,8 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+defined('SEND_CODE_SUCCESS')      OR define('SEND_CODE_SUCCESS', 'Đăng ký thông tin doanh nghiệp thành công! Vui lòng kiểm tra email'); //Gửi mã code cho email thành công
+defined('SEND_CODE_ERROR')      OR define('SEND_CODE_ERROR', 'Đăng ký thông tin doanh nghiệp không thành thành công! Do quá trình gửi email thất bại. Vui lòng kiểm tra lại địa chỉ email và thực hiện lại thao tác'); //Gửi mã code cho email thất bại
+defined('REGISTER_COMPANY_ERROR')      OR define('REGISTER_COMPANY_ERROR', 'Có lỗi trong quá trình đăng ký thông tin doanh nghiệp');// Đăng ký thất bại

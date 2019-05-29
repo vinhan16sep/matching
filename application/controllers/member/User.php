@@ -8,6 +8,8 @@ class User extends MY_Controller {
         parent::__construct();
         $this->load->library('ion_auth');
         $this->load->model('ion_auth_model');
+        $this->load->model('temp_register_model');
+        $this->load->helper('email_helper');
     }
 
     public function index() {
@@ -63,7 +65,6 @@ class User extends MY_Controller {
 
 
     public function register(){
-        $this->load->model('temp_register_model');
         $this->load->library('form_validation');
 
 
@@ -71,7 +72,7 @@ class User extends MY_Controller {
         $this->form_validation->set_rules('company','Tên Công Ty','trim|required', array(
                 'required' => '%s không được trống.',
             ));
-        $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[users.email]', array(
+        $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[temp_register.email]', array(
                 'required' => '%s không được trống.',
             ));
         $this->form_validation->set_rules('phone','Số điện thoại','trim|required|numeric', array(
@@ -95,7 +96,7 @@ class User extends MY_Controller {
         } else {
             if ( $this->input->post() ) {
                 $params = $this->input->post();
-                $code = substr(uniqid(),0,8);
+                $code = $this->check_code( substr(uniqid(),0,8) );
                 // $check_code = $this->temp_register->find_row_array(['code' => $code]);
                 $data = [
                     'company' => $params['company'],
@@ -108,16 +109,50 @@ class User extends MY_Controller {
                     'created_at' => now(),
                     'updated_at' => now(),
                 ];
+                $this->db->trans_begin();
                 $insert = $this->temp_register_model->save($data);
                 if ($insert) {
+                    $email_data = [
+                        'company' => $params['company'],
+                        'connector' => $params['connector'],
+                        'position' => $params['position'],
+                        'phone' => $params['phone'],
+                        'address' => $params['address'],
+                        'code' => $code,
+                    ];
+                    $email = send_mail($params['email'], $email_data);
+                    if (!$email) {
+                        $this->db->trans_rollback();
+                        $this->session->set_flashdata('error', SEND_CODE_ERROR);
+                    }else{
+                        $this->db->trans_commit();
+                        $this->session->set_flashdata('success', SEND_CODE_SUCCESS);
+                    }
                     redirect('member/user/login','refresh');
                 }else{
+                    $this->session->set_flashdata('error', REGISTER_COMPANY_ERROR);
                     redirect('member/user/register');
                 }
 
             }
         }
     }
+
+    private function check_code($code){
+        $where = [
+            'code' => $code
+        ];
+        $check_code = $this->temp_register_model->find_row_array($where);
+
+        if ( $check_code > 0 ) {
+            $new_code = substr(uniqid(),0,8);
+            return $this->check_code($new_code);
+        }
+        return $code;
+    }
+
+
+
 
     // change password
     public function change_password(){
