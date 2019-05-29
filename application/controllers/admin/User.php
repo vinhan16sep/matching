@@ -49,35 +49,20 @@ class User extends MY_Controller {
         redirect('admin/user/login', 'refresh');
     }
 
-//    public function register(){
-//        $this->data['page_title'] = 'Register';
-//        $this->load->library('form_validation');
-//        $this->load->helper('form');
-//        $this->form_validation->set_rules('first_name', 'Frist Name', 'required');
-//        $this->form_validation->set_rules('last_name', 'Last Name', 'required');
-//        $this->form_validation->set_rules('companyname', 'Company Name', 'required');
-//        $this->form_validation->set_rules('username', 'Username', 'required|callback_check_user');
-//        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_check_email');
-//        $this->form_validation->set_rules('phone', 'Phone', 'required');
-//        $this->form_validation->set_rules('password', 'Password', 'required');
-//        $this->form_validation->set_rules('cf_password', 'Confirm Password', 'required|matches[password]');
-//        if($this->input->post()){
-//            if($this->form_validation->run() === TRUE){
-//                $data = array(
-//                    'username' => $this->input->post('username'),
-//                    'password' => $this->input->post('password'),
-//                    'email' => $this->input->post('email'),
-//                    'first_name' => $this->input->post('first_name'),
-//                    'last_name' => $this->input->post('last_name'),
-//                    'company' => $this->input->post('companyname'),
-//                    'phone' => $this->input->post('phone')
-//                );
-//                $this->ion_auth_model->insert($data);
-//            }
-//        }
-//
-//        $this->render('admin/register_view', 'admin_master');
-//    }
+   public function register(){
+       if($this->input->post()){
+            $username = null;
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+            $group_ids = array(2);
+            $additional_data = array(
+                'active' => 1,
+            );
+            $result = $this->ion_auth->register($username, $password, $email, $additional_data, $group_ids);
+       }
+       $this->session->set_flashdata('success', 'Tạo tài khoản thành công');
+       redirect('admin/temp', 'admin_master');
+   }
 //    public function check_email(){
 //        $email = $this->input->post('email');
 //        $where = array('email' => $email);
