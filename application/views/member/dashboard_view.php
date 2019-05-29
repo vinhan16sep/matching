@@ -1,109 +1,165 @@
-<!--main content start-->
-<div class="content-wrapper" style="min-height: 916px;">
-    <div class="box-body pad table-responsive">
-        <h3>ROLE: <span style="color:red;"><?php echo $this->ion_auth->user()->row()->member_role;  ?></span></h3>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Tổng quan</h1>
+        <!--    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
     </div>
-    <section class="content">
-        <?php if ($this->session->flashdata('main_service_message')): ?>
-            <div class="alert alert-danger alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <strong>Thông báo!</strong> <?php echo $this->session->flashdata('main_service_message'); ?>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending ...</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">0000000</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <?php endif ?>
-        <div class="row">
-            <!-- /.col -->
-            <div class="col-md-12">
-                <div class="nav-tabs-custom">
-                    <div class="tab-content">
-                        <?php foreach ($team as $key => $value): ?>
-                            <?php $team_id = $value['id'] ?>
-                            <div class="panel panel-info">
-                                <div class="panel-heading"><h4>Nhóm: <span style="color: red"><?php echo $value['name']; ?></span></h4></div>
-                                <div class="panel-body">
-                                    <!--main content start-->
-                                    <div class="row">
-                                        <!-- /.col -->
-                                        <div class="col-md-12">
-                                                <div class="tab-content">
-                                                    <?php if ( isset($value['product_list'])): ?>
-                                                    <div class="post box-body">
-                                                        <table class="table table-striped table-bordered table-condensed">
-                                                            <tr>
-                                                                <td style="font-weight:bold;color: #31708f;; width: 5%">STT</td>
-                                                                <td style="font-weight:bold;color: #31708f;">Tên sản phẩm</td>
-                                                                <td style="font-weight:bold;color: #31708f;">Doanh nghiệp</td>
-                                                                <td style="font-weight:bold;color: #31708f;">Nhóm lĩnh vực chính</td>
-                                                                <td style="font-weight:bold;color: #31708f; width: 7%">Trạng thái</td>
-                                                                <td style="font-weight:bold;color: #31708f; width: 7%">Điểm</td>
-                                                                <td style="font-weight:bold;color: #31708f; width: 7%">Điểm TB</td>
-                                                                <td style="text-align: center;font-weight:bold;color: #31708f; width: 8%">Thao Tác</td>
-                                                            </tr>
-                                                            <?php foreach ($value['product_list'] as $key => $value): ?>
-                                                                <?php
-                                                                    $main_services = array(
-                                                                        1 => 'Các sản phẩm, giải pháp phần mềm tiêu biểu, được bình xét theo 24 lĩnh vực ứng dụng chuyên ngành',
-                                                                        2 => 'Các sản phẩm, giải pháp ứng dụng công nghệ 4.0',
-                                                                        3 => 'Các sản phẩm, giải pháp phần mềm mới',
-                                                                        4 => 'Các sản phẩm, giải pháp của doanh nghiệp khởi nghiệp',
-                                                                        5 => 'Các dịch vụ CNTT'
-                                                                    );
-                                                                ?>
-                                                                <tr>
-                                                                    <td><?php echo $key + 1 ?></td>
-                                                                    <td><?php echo $value['name']; ?></td>
-                                                                    <td><?php echo $value['company_name']; ?></td>
-                                                                    <td><?php echo (!empty($value['main_service'])) ? $main_services[$value['main_service']] : '<span style="color: red;">(chưa có)</span>'; ?></td>
-                                                                    <td><?php echo $value['is_rating'] == 1 ? '<i class="fa fa-check" aria-hidden="true" style="color:#5cb85c" data-toggle="tooltip" data-placement="right" title="Đã chấm điểm"></i>' : '<i class="fa fa-times" aria-hidden="true"style="color:#ac2925" data-toggle="tooltip" data-placement="right" title="Chưa chấm điểm"></i>' ?></td>
-                                                                    <td style="font-weight: bold;"><?php echo $value['new_rating']; ?></td>
-                                                                    <?php if($value['members_rating_total'] && $value['members_rating_total'] != ''){ ?>
-                                                                        <td style="font-weight:bold;color: #31708f;"><?php echo $value['members_rating_total']; ?></td>
-                                                                    <?php }else{ ?>
-                                                                        <td class="col-sm-2" style="font-weight:bold;color: #31708f;">Dành cho trưởng nhóm</td>
-                                                                    <?php } ?>
-                                                                    <td style="text-align: center;">
-                                                                        <a href="<?php echo base_url('member/product/detail/' . $value['id']) ?>" data-toggle="tooltip" data-placement="top" title="Thông tin sản phẩm">
-                                                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                        </a>
-                                                                        <a href="<?php echo base_url('member/company/detail/' . $value['company_id']) ?>" data-toggle="tooltip" data-placement="top" title="Thông tin doanh nghiệp">
-                                                                            <i class="fa fa-building" aria-hidden="true"></i>
-                                                                        </a>
-                                                                        <a href="<?php echo base_url('member/new_rating/index/?id=' . $value['id'] . '&main_service=' . $value['main_service']); ?>" data-toggle="tooltip" data-placement="top" title="Chấm điểm">
-                                                                            <i class="fa fa-paint-brush" aria-hidden="true"></i>
-                                                                        </a>
-                                                                        <?php if ($this->ion_auth->user()->row()->member_role == 'leader'): ?>
-                                                                            <a href="<?php echo base_url('member/list_user/index/' . $team_id . '/' . $value['id']) ?>" data-toggle="tooltip" data-placement="top" title="Thông tin chấm điểm của cả nhóm hội đồng">
-                                                                                <i class="fa fa-users" aria-hidden="true"></i>
-                                                                            </a>
-                                                                        <?php endif ?>
+        </div>
 
-                                                                    </td>
-                                                                </tr>
-                                                            <?php endforeach ?>
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Pending ...</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">0000000</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                                                        </table>
-                                                    </div>
-                                                    <?php else: ?>
-                                                        <div class="post">Không có sản phẩm được chỉ định!</div>
-                                                    <?php endif ?>
-                                                </div>
-                                                <!-- /.tab-content -->
-                                            <!-- /.nav-tabs-custom -->
-                                        </div>
-                                        <!-- /.col -->
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pending ...</div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0000000</div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach ?>
-
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <!-- /.tab-content -->
                 </div>
-                <!-- /.nav-tabs-custom -->
             </div>
-            <!-- /.col -->
         </div>
-        <!-- /.row -->
 
-    </section>
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending ...</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">0000000</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+
+    <div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Đăng ký mới nhất</h6>
+                    <div class="dropdown no-arrow">
+                        <a title="Xem toàn bộ" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-arrow-alt-circle-right text-primary"></i>
+                        </a>
+                        <!--            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">-->
+                        <!--              <div class="dropdown-header">Dropdown Header:</div>-->
+                        <!--              <a class="dropdown-item" href="#">Action</a>-->
+                        <!--              <a class="dropdown-item" href="#">Another action</a>-->
+                        <!--              <div class="dropdown-divider"></div>-->
+                        <!--              <a class="dropdown-item" href="#">Something else here</a>-->
+                        <!--            </div>-->
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="myAreaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Sự kiện</h6>
+                    <div class="dropdown no-arrow">
+                        <a title="Xem toàn bộ" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-arrow-alt-circle-right text-primary"></i>
+                        </a>
+                        <!--            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">-->
+                        <!--              <div class="dropdown-header">Dropdown Header:</div>-->
+                        <!--              <a class="dropdown-item" href="#">Action</a>-->
+                        <!--              <a class="dropdown-item" href="#">Another action</a>-->
+                        <!--              <div class="dropdown-divider"></div>-->
+                        <!--              <a class="dropdown-item" href="#">Something else here</a>-->
+                        <!--            </div>-->
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-pie pt-4 pb-2">
+                        <canvas id="myPieChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center small">
+            <span class="mr-2">
+              <i class="fas fa-circle text-danger"></i> Đã kết thúc
+            </span>
+                        <span class="mr-2">
+              <i class="fas fa-circle text-success"></i> Đang diễn ra
+            </span>
+                        <span class="mr-2">
+              <i class="fas fa-circle text-warning"></i> Sắp tới
+            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- /.container-fluid -->
+
 

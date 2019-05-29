@@ -1,170 +1,183 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo $page_title; ?></title>
-  <link rel="shortcut icon" type="image/png" href="<?php echo site_url('assets/public/img/favicon.png'); ?>"/>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="<?php echo site_url('assets/admin/'); ?>bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo site_url('assets/admin/'); ?>bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo site_url('assets/admin/'); ?>dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="<?php echo site_url('assets/admin/'); ?>dist/css/AdminLTE.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?php echo site_url('assets/admin/'); ?>dist/css/skins/_all-skins.min.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="<?php echo site_url('assets/admin/'); ?>bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Color picker -->
-  <link rel="stylesheet" href="<?php echo site_url('assets/admin/'); ?>bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="<?php echo site_url('assets/admin/'); ?>bower_components/bootstrap-daterangepicker/daterangepicker.css">
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+    <?php if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('members')): ?>
+    <!-- Main Content -->
+    <div id="content">
 
-  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/admin/'); ?>js/admin/lightbox/dist/css/lightbox.min.css">
-  
-  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/admin/'); ?>js/admin/colorbox/example1/colorbox.css">
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  
-  <!-- Google Font -->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
-  <!-- jQuery 3 -->
-  <script src="<?php echo site_url('assets/admin/'); ?>bower_components/jquery/dist/jquery.min.js"></script>
-  <!-- jQuery UI 1.11.4 -->
-  <script src="<?php echo site_url('assets/admin/'); ?>bower_components/jquery-ui/jquery-ui.min.js"></script>
-  <!-- Jquery validate -->
-  <script src="<?php echo site_url('assets/admin/'); ?>bower_components/jquery/src/jquery.validate.js"></script>
-  <script src="<?php echo site_url('assets/admin/'); ?>bower_components/jquery/src/additional-methods.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
-    $.widget.bridge('uibutton', $.ui.button);
-  </script>
-  <!-- Bootstrap 3.3.7 -->
-  <script src="<?php echo site_url('assets/admin/'); ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="<?php echo site_url('assets/admin/'); ?>js/admin/index.js"></script>
-  <!-- AdminLTE App -->
-  <script src="<?php echo site_url('assets/admin/'); ?>dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="<?php echo site_url('assets/admin/'); ?>dist/js/pages/dashboard.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="<?php echo site_url('assets/admin/'); ?>dist/js/demo.js"></script>
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-  <script src="<?php echo site_url('assets/admin/'); ?>js/admin/colorbox/jquery.colorbox-min.js"></script>
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+            </button>
 
-  <script type="text/javascript" src="<?php echo site_url('tinymce/tinymce.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo site_url('tinymce/tinymce.min.js'); ?>"></script>
+            <!-- Topbar Search -->
+            <!--    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">-->
+            <!--        <div class="input-group">-->
+            <!--            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">-->
+            <!--            <div class="input-group-append">-->
+            <!--                <button class="btn btn-primary" type="button">-->
+            <!--                    <i class="fas fa-search fa-sm"></i>-->
+            <!--                </button>-->
+            <!--            </div>-->
+            <!--        </div>-->
+            <!--    </form>-->
 
-    <style>
-        @font-face{
-            font-family: webFont_N;
-            src: url("<?php echo site_url('assets/public/fonts/OpenSans-Regular.ttf'); ?>");
-        }
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
 
-        body, a{
-            font-family: webFont_N;
-        }
+                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                <li class="nav-item dropdown no-arrow d-sm-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <!-- Dropdown - Messages -->
+                    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
 
-        .skin-blue .sidebar-menu>li>.treeview-menu{
-            overflow: hidden;
-        }
-    </style>
-</head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-  <?php if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('members')): ?>
-  <header class="main-header">
-    <!-- logo -->
-    <a href="<?php echo base_url('admin/dashboard') ?>" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-<!--      <span class="logo-mini"><b>MATO</b></span>-->
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>ADMINISTRATOR</b> PAGE</span>
-    </a>
-    <!-- header navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">toggle navigation</span>
-      </a>
+                <!--        <li class="nav-item dropdown no-arrow mx-1">-->
+                <!--            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--                <i class="fas fa-bell fa-fw"></i>-->
+                <!--                <span class="badge badge-danger badge-counter">3+</span>-->
+                <!--            </a>-->
+                <!--            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">-->
+                <!--                <h6 class="dropdown-header">-->
+                <!--                    Alerts Center-->
+                <!--                </h6>-->
+                <!--                <a class="dropdown-item d-flex align-items-center" href="#">-->
+                <!--                    <div class="mr-3">-->
+                <!--                        <div class="icon-circle bg-primary">-->
+                <!--                            <i class="fas fa-file-alt text-white"></i>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <div class="small text-gray-500">December 12, 2019</div>-->
+                <!--                        <span class="font-weight-bold">A new monthly report is ready to download!</span>-->
+                <!--                    </div>-->
+                <!--                </a>-->
+                <!--                <a class="dropdown-item d-flex align-items-center" href="#">-->
+                <!--                    <div class="mr-3">-->
+                <!--                        <div class="icon-circle bg-success">-->
+                <!--                            <i class="fas fa-donate text-white"></i>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <div class="small text-gray-500">December 7, 2019</div>-->
+                <!--                        $290.29 has been deposited into your account!-->
+                <!--                    </div>-->
+                <!--                </a>-->
+                <!--                <a class="dropdown-item d-flex align-items-center" href="#">-->
+                <!--                    <div class="mr-3">-->
+                <!--                        <div class="icon-circle bg-warning">-->
+                <!--                            <i class="fas fa-exclamation-triangle text-white"></i>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <div class="small text-gray-500">December 2, 2019</div>-->
+                <!--                        Spending Alert: We've noticed unusually high spending for your account.-->
+                <!--                    </div>-->
+                <!--                </a>-->
+                <!--                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>-->
+                <!--            </div>-->
+                <!--        </li>-->
+                <!---->
+                <!--        <li class="nav-item dropdown no-arrow mx-1">-->
+                <!--            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--                <i class="fas fa-envelope fa-fw"></i>-->
+                <!--                <span class="badge badge-danger badge-counter">7</span>-->
+                <!--            </a>-->
+                <!--            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">-->
+                <!--                <h6 class="dropdown-header">-->
+                <!--                    Message Center-->
+                <!--                </h6>-->
+                <!--                <a class="dropdown-item d-flex align-items-center" href="#">-->
+                <!--                    <div class="dropdown-list-image mr-3">-->
+                <!--                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">-->
+                <!--                        <div class="status-indicator bg-success"></div>-->
+                <!--                    </div>-->
+                <!--                    <div class="font-weight-bold">-->
+                <!--                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>-->
+                <!--                        <div class="small text-gray-500">Emily Fowler · 58m</div>-->
+                <!--                    </div>-->
+                <!--                </a>-->
+                <!--                <a class="dropdown-item d-flex align-items-center" href="#">-->
+                <!--                    <div class="dropdown-list-image mr-3">-->
+                <!--                        <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">-->
+                <!--                        <div class="status-indicator"></div>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>-->
+                <!--                        <div class="small text-gray-500">Jae Chun · 1d</div>-->
+                <!--                    </div>-->
+                <!--                </a>-->
+                <!--                <a class="dropdown-item d-flex align-items-center" href="#">-->
+                <!--                    <div class="dropdown-list-image mr-3">-->
+                <!--                        <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">-->
+                <!--                        <div class="status-indicator bg-warning"></div>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>-->
+                <!--                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>-->
+                <!--                    </div>-->
+                <!--                </a>-->
+                <!--                <a class="dropdown-item d-flex align-items-center" href="#">-->
+                <!--                    <div class="dropdown-list-image mr-3">-->
+                <!--                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">-->
+                <!--                        <div class="status-indicator bg-success"></div>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>-->
+                <!--                        <div class="small text-gray-500">Chicken the Dog · 2w</div>-->
+                <!--                    </div>-->
+                <!--                </a>-->
+                <!--                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>-->
+                <!--            </div>-->
+                <!--        </li>-->
 
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
+                <div class="topbar-divider d-none d-sm-block"></div>
 
-<!--            <li class="dropdown messages-menu">-->
-<!--                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">-->
-<!--                    <i class="fa fa-envelope-o"></i>-->
-<!--                    <span class="label label-success">--><?php //echo $total ?><!--</span>-->
-<!--                </a>-->
-<!--                <ul class="dropdown-menu">-->
-<!--                    <li class="header">Bạn có --><?php //echo $total ?><!-- bình luận chưa xem</li>-->
-<!--                    <li>-->
-<!--                        <!-- inner menu: contains the actual data -->
-<!--                        <ul class="menu">-->
-<!--                            --><?php //if($news_comment): ?>
-<!--                                --><?php //foreach ($news_comment as $value):?>
-<!--                                    <li><!-- start message -->
-<!--                                        <a href="#">-->
-<!--                                            <h4>-->
-<!--                                                Support Team-->
-<!--                                                <small>-->
-<!--                                                </small>-->
-<!--                                            </h4>-->
-<!--                                            <p style="padding-right: 15px;">--><?php //echo substr($value['content'], 0, 50) ?><!--...</p>-->
-<!--                                        </a>-->
-<!--                                    </li>-->
-<!--                                --><?php //endforeach; ?>
-<!--                            --><?php //else: ?>
-<!--                                <li></li>-->
-<!--                            --><?php //endif; ?>
-<!--                        </ul>-->
-<!--                    </li>-->
-<!--                    <li class="footer"><a href="--><?php //echo base_url('admin/comment/delete_all') ?><!--" id="seen_comment">Đã xem</a>  <a href="--><?php //echo base_url('admin/comment/index/new-comment') ?><!--">Xem tất bình luận</a></li>-->
-<!--                </ul>-->
-<!--            </li>-->
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $this->ion_auth->user()->row()->email ?></span>
+                        <img style="height:4rem; width:4rem;" class="img-profile rounded-circle" src="<?php echo site_url('assets/img/logo.png') ?>">
+                    </a>
+                    <!-- Dropdown - User Information -->
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        <!--                <a class="dropdown-item" href="#">-->
+                        <!--                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>-->
+                        <!--                    Profile-->
+                        <!--                </a>-->
+                        <!--                <a class="dropdown-item" href="#">-->
+                        <!--                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>-->
+                        <!--                    Settings-->
+                        <!--                </a>-->
+                        <!--                <a class="dropdown-item" href="#">-->
+                        <!--                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>-->
+                        <!--                    Activity Log-->
+                        <!--                </a>-->
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Logout
+                        </a>
+                    </div>
+                </li>
 
-          <!-- user account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo site_url('assets/public/img/client.jpg'); ?>" class="user-image" alt="user image">
-              <span class="hidden-xs"><?php echo (isset($user_email))? $user_email : '' ?></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- user image -->
-              <li class="user-header">
-                <img src="<?php echo site_url('assets/public/img/logo.png'); ?>" class="img-circle" alt="user image">
-
-                <p>
-                  Thời Gian Hiện Tại
-                  <small><?php echo date('d/m/Y') ?></small>
-                </p>
-              </li>
-              <!-- menu body -->
-
-              <!-- menu footer-->
-              <li class="user-footer">
-              <div class="pull-left">
-                  <a href="<?php echo site_url('member/user/change_password'); ?>" class="btn btn-default btn-flat">Đổi mật khẩu</a>
-              </div>
-                <div class="pull-right">
-                  <a href="<?php echo site_url('member/user/logout'); ?>" class="btn btn-default btn-flat">Thoát</a>
-                </div>
-              </li>
             </ul>
-          </li>
-          <!-- control sidebar toggle button -->
-          <li>
-            <!--<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>-->
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+
+        </nav>
+        <!-- End of Topbar -->
 <?php endif; ?>
