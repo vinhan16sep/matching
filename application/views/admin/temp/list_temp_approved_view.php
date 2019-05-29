@@ -21,7 +21,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <?php
-            echo form_open_multipart(base_url('admin/temp/index'), array('class' => 'form-horizontal', 'method' => 'GET'));
+            echo form_open_multipart(base_url('admin/temp/approved'), array('class' => 'form-horizontal', 'method' => 'GET'));
             ?>
             <div class="row">
                 <div class="column">
@@ -37,7 +37,7 @@
                         <?php
                         echo form_submit('submit', 'OK', 'class="btn btn-primary"');
                         ?>
-                        <a class="btn btn-outline-primary" href="<?php echo base_url('admin/temp/index') ?>"><i class="fa fa-repeat" aria-hidden="true" style="color: red"></i></a>
+                        <a class="btn btn-outline-primary" href="<?php echo base_url('admin/temp/approved') ?>"><i class="fa fa-repeat" aria-hidden="true" style="color: red"></i></a>
                     </div>
                 </div>
             </div>
@@ -85,8 +85,8 @@
                                     <td><?php echo $item['phone']; ?></td>
                                     <td class="reg-client-email"><?php echo $item['email']; ?></td>
                                     <td style="text-align: center">
-                                        <a title="Tạo tài khoản cho đơn đăng ký" class="btn-reg-client" href="#" data-toggle="modal" data-target="#register-client-form">
-                                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                        <a title="Đã có tài khoản" class="btn-reg-client" href="#">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
                                         </a>
                                     </td>
                                 </tr>

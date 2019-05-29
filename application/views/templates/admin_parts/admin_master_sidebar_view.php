@@ -62,7 +62,7 @@
                     <i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;&nbsp;
                     Chưa duyệt
                 </a>
-                <a class="collapse-item" href="#">
+                <a class="collapse-item" href="<?php echo base_url('admin/temp/approved') ?>">
                     <i class="fa fa-check-square-o" aria-hidden="true"></i> &nbsp;&nbsp;
                     Đã duyệt
                 </a>
