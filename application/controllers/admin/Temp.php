@@ -18,7 +18,15 @@ class Temp extends Admin_Controller
         $this->data['page_title'] = 'Danh sách đăng ký';
 
         $this->load->library('pagination');
-        $total_rows  = $this->temp_register_model->count();
+        $this->load->helper('form');
+
+        $keywords = '';
+        if($this->input->get('submit')){
+            $keywords = trim($this->input->get('code'));
+        }
+        $this->data['keywords'] = $keywords;
+        $total_rows  = $this->temp_register_model->count($keywords);
+
         $config = array();
         $base_url = base_url('admin/temp/index');
         $per_page = 100;
@@ -31,7 +39,7 @@ class Temp extends Admin_Controller
 
         $this->data['page_links'] = $this->pagination->create_links();
         $this->data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) - 1 : 0;
-        $this->data['result'] = $this->temp_register_model->fetch_all_pagination($per_page, $per_page * $this->data['page']);
+        $this->data['result'] = $this->temp_register_model->fetch_all_pagination($per_page, $per_page * $this->data['page'], $keywords);
 
         $this->render('admin/temp/list_temp_view');
     }
