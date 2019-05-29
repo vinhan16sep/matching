@@ -12,15 +12,6 @@ class User extends MY_Controller {
         $this->load->helper('email_helper');
     }
 
-    public function index() {
-        
-    }
-
-    public function register(){
-        $this->load->helper('form');
-
-        $this->render('member/login_view', 'member_master');
-    }
 
     public function login() {
         // if ($this->ion_auth->logged_in()){
