@@ -60,7 +60,7 @@
             <div class="column">
                 <div class="form-group">
                     <?php
-                    echo form_label('Ngày', 'date');
+                    echo form_label('Thời gian', 'date');
                     echo form_error('date');
                     echo form_input('date', set_value('date'), 'class="form-control datepicker" id="date" readonly');
                     ?>
