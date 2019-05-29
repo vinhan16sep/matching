@@ -14,6 +14,12 @@ class User extends MY_Controller {
         
     }
 
+    public function register(){
+        $this->load->helper('form');
+
+        $this->render('member/login_view', 'member_master');
+    }
+
     public function login() {
         // if ($this->ion_auth->logged_in()){
         //     redirect('member/dashboard', 'refresh');
