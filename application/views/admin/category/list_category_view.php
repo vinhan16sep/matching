@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <a href="<?php echo base_url('admin/event/index'); ?>" class="btn btn-outline-dark"><i class="fa fa-arrow-alt-circle-left" aria-hidden="true"></i></a>
+    <a href="<?php echo base_url('admin/event/index'); ?>" class="btn btn-outline-dark"><i class="fa fa-backward" aria-hidden="true"></i></a>
     <a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#createRoot" style="color: white"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tạo danh mục gốc</a>
     <br>
     <br>
@@ -20,13 +20,13 @@
                     <tbody>
                         <?php if($categories){ ?>
                             <?php foreach($categories as $key => $item){ ?>
-                                <tr style="background: lightslategray; color: white">
+                                <tr style="background: #4e73df; color: white">
                                     <td style="text-align: center"><?php echo $key + 1; ?></td>
                                     <td><?php echo $item['name']; ?></td>
                                     <td style="text-align: center">
                                         <?php if($item['level'] == 0){ ?>
                                             <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $item['id']; ?>" data-name="<?php echo $item['name']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
-                                                <i class="fa fa-pen-square" aria-hidden="true"></i>
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             </a>
                                             &nbsp;
                                             <a title="Tạo danh mục con" href="javascript:void(0);" class="sub-category" data-parent="<?php echo $item['id']; ?>" data-toggle="modal" data-target="#createSub" style="color: white">
@@ -36,12 +36,12 @@
                                     </td>
                                 </tr>
                                 <?php foreach($item['sub'] as $keySub => $itemSub){ ?>
-                                    <tr>
+                                    <tr style="background: #858796; color: white">
                                         <td>&#8627; <?php echo $keySub + 1; ?></td>
                                         <td><?php echo $itemSub['name']; ?></td>
                                         <td style="text-align: center">
                                             <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $itemSub['id']; ?>" data-name="<?php echo $itemSub['name']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
-                                                <i style="background: #0A246A" class="fa fa-pen-square" aria-hidden="true"></i>
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             </a>
                                         </td>
                                     </tr>

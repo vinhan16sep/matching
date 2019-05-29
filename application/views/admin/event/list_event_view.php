@@ -4,8 +4,8 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
+                <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+                    <thead style="background: #4e73df; color: white">
                         <tr>
                             <th style="text-align: center">STT</th>
                             <th style="text-align: center">Tên event</th>
