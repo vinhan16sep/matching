@@ -30,63 +30,63 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
     /**
      * Font
      *
-     * @var PHPExcel_Style_Font
+     * @variables PHPExcel_Style_Font
      */
     protected $font;
 
     /**
      * Fill
      *
-     * @var PHPExcel_Style_Fill
+     * @variables PHPExcel_Style_Fill
      */
     protected $fill;
 
     /**
      * Borders
      *
-     * @var PHPExcel_Style_Borders
+     * @variables PHPExcel_Style_Borders
      */
     protected $borders;
 
     /**
      * Alignment
      *
-     * @var PHPExcel_Style_Alignment
+     * @variables PHPExcel_Style_Alignment
      */
     protected $alignment;
 
     /**
      * Number Format
      *
-     * @var PHPExcel_Style_NumberFormat
+     * @variables PHPExcel_Style_NumberFormat
      */
     protected $numberFormat;
 
     /**
      * Conditional styles
      *
-     * @var PHPExcel_Style_Conditional[]
+     * @variables PHPExcel_Style_Conditional[]
      */
     protected $conditionalStyles;
 
     /**
      * Protection
      *
-     * @var PHPExcel_Style_Protection
+     * @variables PHPExcel_Style_Protection
      */
     protected $protection;
 
     /**
      * Index of style in collection. Only used for real style.
      *
-     * @var int
+     * @variables int
      */
     protected $index;
 
     /**
      * Use Quote Prefix when displaying in cell editor. Only used for real style.
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $quotePrefix = false;
 

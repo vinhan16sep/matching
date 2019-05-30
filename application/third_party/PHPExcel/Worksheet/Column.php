@@ -30,14 +30,14 @@ class PHPExcel_Worksheet_Column
     /**
      * PHPExcel_Worksheet
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     private $parent;
 
     /**
      * Column index
      *
-     * @var string
+     * @variables string
      */
     private $columnIndex;
 

@@ -52,7 +52,7 @@ class CI_Cache_redis extends CI_Driver
 	 * Default config
 	 *
 	 * @static
-	 * @var	array
+	 * @variables	array
 	 */
 	protected static $_default_config = array(
 		'socket_type' => 'tcp',
@@ -65,14 +65,14 @@ class CI_Cache_redis extends CI_Driver
 	/**
 	 * Redis connection
 	 *
-	 * @var	Redis
+	 * @variables	Redis
 	 */
 	protected $_redis;
 
 	/**
 	 * An internal cache for storing keys of serialized values.
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_serialized = array();
 

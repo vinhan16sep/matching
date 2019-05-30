@@ -55,14 +55,14 @@ class CI_DB_pdo_mysql_driver extends CI_DB_pdo_driver {
 	/**
 	 * Sub-driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver = 'mysql';
 
 	/**
 	 * Compression flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $compress = FALSE;
 
@@ -71,7 +71,7 @@ class CI_DB_pdo_mysql_driver extends CI_DB_pdo_driver {
 	 *
 	 * Whether we're running in strict SQL mode.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $stricton;
 
@@ -80,7 +80,7 @@ class CI_DB_pdo_mysql_driver extends CI_DB_pdo_driver {
 	/**
 	 * Identifier escape character
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_escape_char = '`';
 

@@ -55,42 +55,42 @@ abstract class CI_DB_driver {
 	/**
 	 * Data Source Name / Connect string
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dsn;
 
 	/**
 	 * Username
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $username;
 
 	/**
 	 * Password
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $password;
 
 	/**
 	 * Hostname
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $hostname;
 
 	/**
 	 * Database name
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $database;
 
 	/**
 	 * Database driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbdriver		= 'mysqli';
 
@@ -98,70 +98,70 @@ abstract class CI_DB_driver {
 	 * Sub-driver
 	 *
 	 * @used-by	CI_DB_pdo_driver
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver;
 
 	/**
 	 * Table prefix
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbprefix		= '';
 
 	/**
 	 * Character set
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $char_set		= 'utf8';
 
 	/**
 	 * Collation
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbcollat		= 'utf8_general_ci';
 
 	/**
 	 * Encryption flag/data
 	 *
-	 * @var	mixed
+	 * @variables	mixed
 	 */
 	public $encrypt			= FALSE;
 
 	/**
 	 * Swap Prefix
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $swap_pre		= '';
 
 	/**
 	 * Database port
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $port			= '';
 
 	/**
 	 * Persistent connection flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $pconnect		= FALSE;
 
 	/**
 	 * Connection ID
 	 *
-	 * @var	object|resource
+	 * @variables	object|resource
 	 */
 	public $conn_id			= FALSE;
 
 	/**
 	 * Result ID
 	 *
-	 * @var	object|resource
+	 * @variables	object|resource
 	 */
 	public $result_id		= FALSE;
 
@@ -170,21 +170,21 @@ abstract class CI_DB_driver {
 	 *
 	 * Whether to display error messages.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $db_debug		= FALSE;
 
 	/**
 	 * Benchmark time
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $benchmark		= 0;
 
 	/**
 	 * Executed queries count
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $query_count		= 0;
 
@@ -193,7 +193,7 @@ abstract class CI_DB_driver {
 	 *
 	 * Character used to identify values in a prepared statement.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $bind_marker		= '?';
 
@@ -202,7 +202,7 @@ abstract class CI_DB_driver {
 	 *
 	 * Whether to keep an in-memory history of queries for debugging purposes.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $save_queries		= TRUE;
 
@@ -210,7 +210,7 @@ abstract class CI_DB_driver {
 	 * Queries list
 	 *
 	 * @see	CI_DB_driver::$save_queries
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	public $queries			= array();
 
@@ -219,7 +219,7 @@ abstract class CI_DB_driver {
 	 *
 	 * A list of times that queries took to execute.
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $query_times		= array();
 
@@ -228,28 +228,28 @@ abstract class CI_DB_driver {
 	 *
 	 * An internal generic value cache.
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $data_cache		= array();
 
 	/**
 	 * Transaction enabled flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $trans_enabled		= TRUE;
 
 	/**
 	 * Strict transaction mode flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $trans_strict		= TRUE;
 
 	/**
 	 * Transaction depth level
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $_trans_depth		= 0;
 
@@ -258,7 +258,7 @@ abstract class CI_DB_driver {
 	 *
 	 * Used with transactions to determine if a rollback should occur.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_trans_status	= TRUE;
 
@@ -267,28 +267,28 @@ abstract class CI_DB_driver {
 	 *
 	 * Used with transactions to determine if a transaction has failed.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_trans_failure	= FALSE;
 
 	/**
 	 * Cache On flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $cache_on		= FALSE;
 
 	/**
 	 * Cache directory path
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $cachedir		= '';
 
 	/**
 	 * Cache auto-delete flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $cache_autodel		= FALSE;
 
@@ -296,14 +296,14 @@ abstract class CI_DB_driver {
 	 * DB Cache object
 	 *
 	 * @see	CI_DB_cache
-	 * @var	object
+	 * @variables	object
 	 */
 	public $CACHE;
 
 	/**
 	 * Protect identifiers flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_protect_identifiers		= TRUE;
 
@@ -312,35 +312,35 @@ abstract class CI_DB_driver {
 	 *
 	 * Identifiers that must NOT be escaped.
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_reserved_identifiers	= array('*');
 
 	/**
 	 * Identifier escape character
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_escape_char = '"';
 
 	/**
 	 * ESCAPE statement string
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_like_escape_str = " ESCAPE '%s' ";
 
 	/**
 	 * ESCAPE character
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_like_escape_chr = '!';
 
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('RAND()', 'RAND(%d)');
 
@@ -350,7 +350,7 @@ abstract class CI_DB_driver {
 	 * @used-by	CI_DB_driver::count_all()
 	 * @used-by	CI_DB_query_builder::count_all_results()
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_count_string = 'SELECT COUNT(*) AS ';
 

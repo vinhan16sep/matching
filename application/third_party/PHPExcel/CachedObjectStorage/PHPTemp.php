@@ -30,14 +30,14 @@ class PHPExcel_CachedObjectStorage_PHPTemp extends PHPExcel_CachedObjectStorage_
     /**
      * Name of the file for this cache
      *
-     * @var string
+     * @variables string
      */
     private $fileHandle = null;
 
     /**
      * Memory limit to use before reverting to file cache
      *
-     * @var integer
+     * @variables integer
      */
     private $memoryCacheSize = null;
 

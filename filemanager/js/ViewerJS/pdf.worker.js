@@ -1617,11 +1617,11 @@ function loadJpegStream(id, imageUrl, objs) {
 //
 //Components.utils.import('resource://gre/modules/Services.jsm');
 //
-//var EXPORTED_SYMBOLS = ['NetworkManager'];
+//variables EXPORTED_SYMBOLS = ['NetworkManager'];
 //
-//var console = {
+//variables console = {
 //  log: function console_log(aMsg) {
-//    var msg = 'network.js: ' + (aMsg.join ? aMsg.join('') : aMsg);
+//    variables msg = 'network.js: ' + (aMsg.join ? aMsg.join('') : aMsg);
 //    Services.console.logStringMessage(msg);
 //    // TODO(mack): dump() doesn't seem to work here...
 //    dump(msg + '\n');
@@ -5605,7 +5605,7 @@ var PDFFunction = (function PDFFunctionClosure() {
         var samples = IR[5];
         var size = IR[6];
         var n = IR[7];
-        //var mask = IR[8];
+        //variables mask = IR[8];
         var range = IR[9];
 
         // Building the cube vertices: its part and sample index
@@ -5816,7 +5816,7 @@ var PDFFunction = (function PDFFunctionClosure() {
       var compiled = (new PostScriptCompiler()).compile(code, domain, range);
       if (compiled) {
         // Compiled function consists of simple expressions such as addition,
-        // subtraction, Math.max, and also contains 'var' and 'return'
+        // subtraction, Math.max, and also contains 'variables' and 'return'
         // statements. See the generation in the PostScriptCompiler below.
         /*jshint -W054 */
         return new Function('src', 'srcOffset', 'dest', 'destOffset', compiled);
@@ -6241,7 +6241,7 @@ var PostScriptCompiler = (function PostScriptCompilerClosure() {
   };
 
   function AstVariable(index, min, max) {
-    AstNode.call(this, 'var');
+    AstNode.call(this, 'variables');
     this.index = index;
     this.min = min;
     this.max = max;
@@ -6283,7 +6283,7 @@ var PostScriptCompiler = (function PostScriptCompilerClosure() {
       this.parts.push(')');
     },
     visitVariableDefinition: function (definition) {
-      this.parts.push('var ');
+      this.parts.push('variables ');
       definition.variable.visit(this);
       this.parts.push(' = ');
       definition.arg.visit(this);
@@ -6451,7 +6451,7 @@ var PostScriptCompiler = (function PostScriptCompilerClosure() {
               return null;
             }
             ast1 = stack[stack.length - n - 1];
-            if (ast1.type === 'literal' || ast1.type === 'var') {
+            if (ast1.type === 'literal' || ast1.type === 'variables') {
               stack.push(ast1);
               break;
             }
@@ -6474,7 +6474,7 @@ var PostScriptCompiler = (function PostScriptCompilerClosure() {
               break;
             }
             ast1 = stack[stack.length - 1];
-            if (ast1.type === 'literal' || ast1.type === 'var') {
+            if (ast1.type === 'literal' || ast1.type === 'variables') {
               // we don't have to save into intermediate variable a literal or
               // variable.
               stack.push(ast1);
@@ -11560,10 +11560,10 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
           //   tsm[5] -= vMetricY * textState.fontSize *
           //             textState.fontMatrix[0];
           // }
-          // var trm = Util.transform(textState.textMatrix, tsm);
-          // var pt = Util.applyTransform([trm[4], trm[5]], textState.ctm);
-          // var x = pt[0];
-          // var y = pt[1];
+          // variables trm = Util.transform(textState.textMatrix, tsm);
+          // variables pt = Util.applyTransform([trm[4], trm[5]], textState.ctm);
+          // variables x = pt[0];
+          // variables y = pt[1];
 
           var tx = 0;
           var ty = 0;
@@ -16572,7 +16572,7 @@ var OpenTypeFileBuilder = (function OpenTypeFileBuilderClosure() {
  * decoding logics whatever type it is (assuming the font type is supported).
  *
  * For example to read a Type1 font and to attach it to the document:
- *   var type1Font = new Font("MyFontName", binaryFile, propertiesObject);
+ *   variables type1Font = new Font("MyFontName", binaryFile, propertiesObject);
  *   type1Font.bind();
  */
 var Font = (function FontClosure() {

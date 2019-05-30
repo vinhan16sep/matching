@@ -14,7 +14,7 @@
  *	id: 	(URL Encoded: String) Id of jPlayer instance
  *	vol:	(Number) Sets the initial volume
  *	muted:	(Boolean in a String) Sets the initial muted state
- *	jQuery:	(URL Encoded: String) Sets the jQuery var name. Used with: someVar = jQuery.noConflict(true); The someVar name must contain jQuery in it.
+ *	jQuery:	(URL Encoded: String) Sets the jQuery variables name. Used with: someVar = jQuery.noConflict(true); The someVar name must contain jQuery in it.
  *
  * Compiled using: Adobe Flex Compiler (mxmlc) Version 4.5.1 build 21328
  */

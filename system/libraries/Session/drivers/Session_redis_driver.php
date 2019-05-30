@@ -51,28 +51,28 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 	/**
 	 * phpRedis instance
 	 *
-	 * @var	Redis
+	 * @variables	Redis
 	 */
 	protected $_redis;
 
 	/**
 	 * Key prefix
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_key_prefix = 'ci_session:';
 
 	/**
 	 * Lock key
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_lock_key;
 
 	/**
 	 * Key exists flag
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	protected $_key_exists = FALSE;
 

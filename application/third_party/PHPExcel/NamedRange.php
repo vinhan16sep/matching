@@ -30,35 +30,35 @@ class PHPExcel_NamedRange
     /**
      * Range name
      *
-     * @var string
+     * @variables string
      */
     private $name;
 
     /**
      * Worksheet on which the named range can be resolved
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     private $worksheet;
 
     /**
      * Range of the referenced cells
      *
-     * @var string
+     * @variables string
      */
     private $range;
 
     /**
      * Is the named range local? (i.e. can only be used on $this->worksheet)
      *
-     * @var bool
+     * @variables bool
      */
     private $localOnly;
 
     /**
      * Scope
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     private $scope;
 

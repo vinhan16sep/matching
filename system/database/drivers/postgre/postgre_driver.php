@@ -55,14 +55,14 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * Database driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbdriver = 'postgre';
 
 	/**
 	 * Database schema
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $schema = 'public';
 
@@ -71,7 +71,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('RANDOM()', 'RANDOM()');
 

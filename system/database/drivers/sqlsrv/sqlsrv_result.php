@@ -51,7 +51,7 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 	/**
 	 * Scrollable flag
 	 *
-	 * @var	mixed
+	 * @variables	mixed
 	 */
 	public $scrollable;
 

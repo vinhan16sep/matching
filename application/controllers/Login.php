@@ -14,7 +14,7 @@ class Login extends Public_Controller {
     public function index(){
         $this->load->view('login_view');
 
-        $this->render('login_view');
+        //$this->render('login_view');
     }
 
 }

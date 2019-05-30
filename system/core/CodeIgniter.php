@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * CodeIgniter Version
  *
- * @var	string
+ * @variables	string
  *
  */
 	const CI_VERSION = '3.1.6';

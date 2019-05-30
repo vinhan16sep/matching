@@ -55,7 +55,7 @@ class CI_DB_pdo_sqlsrv_driver extends CI_DB_pdo_driver {
 	/**
 	 * Sub-driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver = 'sqlsrv';
 
@@ -64,7 +64,7 @@ class CI_DB_pdo_sqlsrv_driver extends CI_DB_pdo_driver {
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('NEWID()', 'RAND(%d)');
 
@@ -74,7 +74,7 @@ class CI_DB_pdo_sqlsrv_driver extends CI_DB_pdo_driver {
 	 * Whether to use SQL-92 standard quoted identifier
 	 * (double quotes) or brackets for identifier escaping.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_quoted_identifier;
 

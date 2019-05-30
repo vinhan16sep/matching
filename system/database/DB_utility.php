@@ -49,7 +49,7 @@ abstract class CI_DB_utility {
 	/**
 	 * Database object
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	protected $db;
 
@@ -58,21 +58,21 @@ abstract class CI_DB_utility {
 	/**
 	 * List databases statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_list_databases		= FALSE;
 
 	/**
 	 * OPTIMIZE TABLE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_optimize_table	= FALSE;
 
 	/**
 	 * REPAIR TABLE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_repair_table	= FALSE;
 

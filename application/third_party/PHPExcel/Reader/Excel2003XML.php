@@ -39,14 +39,14 @@ class PHPExcel_Reader_Excel2003XML extends PHPExcel_Reader_Abstract implements P
     /**
      * Formats
      *
-     * @var array
+     * @variables array
      */
     protected $styles = array();
 
     /**
      * Character set used in the file
      *
-     * @var string
+     * @variables string
      */
     protected $charSet = 'UTF-8';
 

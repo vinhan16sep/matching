@@ -30,28 +30,28 @@ abstract class PHPExcel_Writer_PDF_Core extends PHPExcel_Writer_HTML
     /**
      * Temporary storage directory
      *
-     * @var string
+     * @variables string
      */
     protected $tempDir = '';
 
     /**
      * Font
      *
-     * @var string
+     * @variables string
      */
     protected $font = 'freesans';
 
     /**
      * Orientation (Over-ride)
      *
-     * @var string
+     * @variables string
      */
     protected $orientation;
 
     /**
      * Paper size (Over-ride)
      *
-     * @var int
+     * @variables int
      */
     protected $paperSize;
 
@@ -59,14 +59,14 @@ abstract class PHPExcel_Writer_PDF_Core extends PHPExcel_Writer_HTML
     /**
      * Temporary storage for Save Array Return type
      *
-     * @var string
+     * @variables string
      */
     private $saveArrayReturnType;
 
     /**
      * Paper Sizes xRef List
      *
-     * @var array
+     * @variables array
      */
     protected static $paperSizes = array(
         PHPExcel_Worksheet_PageSetup::PAPERSIZE_LETTER

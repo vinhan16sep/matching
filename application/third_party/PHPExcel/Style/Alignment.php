@@ -51,49 +51,49 @@ class PHPExcel_Style_Alignment extends PHPExcel_Style_Supervisor implements PHPE
     /**
      * Horizontal alignment
      *
-     * @var string
+     * @variables string
      */
     protected $horizontal = PHPExcel_Style_Alignment::HORIZONTAL_GENERAL;
 
     /**
      * Vertical alignment
      *
-     * @var string
+     * @variables string
      */
     protected $vertical = PHPExcel_Style_Alignment::VERTICAL_BOTTOM;
 
     /**
      * Text rotation
      *
-     * @var integer
+     * @variables integer
      */
     protected $textRotation = 0;
 
     /**
      * Wrap text
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $wrapText = false;
 
     /**
      * Shrink to fit
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $shrinkToFit = false;
 
     /**
      * Indent - only possible with horizontal alignment left and right
      *
-     * @var integer
+     * @variables integer
      */
     protected $indent = 0;
 
     /**
      * Read order
      *
-     * @var integer
+     * @variables integer
      */
     protected $readorder = 0;
 

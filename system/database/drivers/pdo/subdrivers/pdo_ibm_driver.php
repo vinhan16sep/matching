@@ -55,7 +55,7 @@ class CI_DB_pdo_ibm_driver extends CI_DB_pdo_driver {
 	/**
 	 * Sub-driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver = 'ibm';
 

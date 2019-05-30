@@ -30,21 +30,21 @@ class PHPExcel_CachedObjectStorage_Memcache extends PHPExcel_CachedObjectStorage
     /**
      * Prefix used to uniquely identify cache data for this worksheet
      *
-     * @var string
+     * @variables string
      */
     private $cachePrefix = null;
 
     /**
      * Cache timeout
      *
-     * @var integer
+     * @variables integer
      */
     private $cacheTime = 600;
 
     /**
      * Memcache interface
      *
-     * @var resource
+     * @variables resource
      */
     private $memcache = null;
 

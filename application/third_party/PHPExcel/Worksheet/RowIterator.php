@@ -30,21 +30,21 @@ class PHPExcel_Worksheet_RowIterator implements Iterator
     /**
      * PHPExcel_Worksheet to iterate
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     private $subject;
 
     /**
      * Current iterator position
      *
-     * @var int
+     * @variables int
      */
     private $position = 1;
 
     /**
      * Start position
      *
-     * @var int
+     * @variables int
      */
     private $startRow = 1;
 
@@ -52,7 +52,7 @@ class PHPExcel_Worksheet_RowIterator implements Iterator
     /**
      * End position
      *
-     * @var int
+     * @variables int
      */
     private $endRow = 1;
 

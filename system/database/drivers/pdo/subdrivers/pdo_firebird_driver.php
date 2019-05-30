@@ -55,7 +55,7 @@ class CI_DB_pdo_firebird_driver extends CI_DB_pdo_driver {
 	/**
 	 * Sub-driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver = 'firebird';
 
@@ -64,7 +64,7 @@ class CI_DB_pdo_firebird_driver extends CI_DB_pdo_driver {
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('RAND()', 'RAND()');
 

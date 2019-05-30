@@ -49,21 +49,21 @@ class CI_DB_mysql_utility extends CI_DB_utility {
 	/**
 	 * List databases statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_list_databases	= 'SHOW DATABASES';
 
 	/**
 	 * OPTIMIZE TABLE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_optimize_table	= 'OPTIMIZE TABLE %s';
 
 	/**
 	 * REPAIR TABLE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_repair_table	= 'REPAIR TABLE %s';
 

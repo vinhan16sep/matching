@@ -53,49 +53,49 @@ class CI_Encryption {
 	/**
 	 * Encryption cipher
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_cipher = 'aes-128';
 
 	/**
 	 * Cipher mode
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_mode = 'cbc';
 
 	/**
 	 * Cipher handle
 	 *
-	 * @var	mixed
+	 * @variables	mixed
 	 */
 	protected $_handle;
 
 	/**
 	 * Encryption key
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_key;
 
 	/**
 	 * PHP extension to be used
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_driver;
 
 	/**
 	 * List of usable drivers (PHP extensions)
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_drivers = array();
 
 	/**
 	 * List of available modes
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_modes = array(
 		'mcrypt' => array(
@@ -125,7 +125,7 @@ class CI_Encryption {
 	 *
 	 * name => digest size pairs
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_digests = array(
 		'sha224' => 28,
@@ -137,7 +137,7 @@ class CI_Encryption {
 	/**
 	 * mbstring.func_overload flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected static $func_overload;
 

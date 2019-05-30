@@ -53,63 +53,63 @@ class CI_Output {
 	/**
 	 * Final output string
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $final_output;
 
 	/**
 	 * Cache expiration time
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $cache_expiration = 0;
 
 	/**
 	 * List of server headers
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $headers = array();
 
 	/**
 	 * List of mime types
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $mimes =	array();
 
 	/**
 	 * Mime-type for the current page
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $mime_type = 'text/html';
 
 	/**
 	 * Enable Profiler flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $enable_profiler = FALSE;
 
 	/**
 	 * php.ini zlib.output_compression flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_zlib_oc = FALSE;
 
 	/**
 	 * CI output compression flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_compress_output = FALSE;
 
 	/**
 	 * List of profiler sections
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_profiler_sections =	array();
 
@@ -118,14 +118,14 @@ class CI_Output {
 	 *
 	 * Whether or not to parse variables like {elapsed_time} and {memory_usage}.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $parse_exec_vars = TRUE;
 
 	/**
 	 * mbstring.func_overload flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected static $func_overload;
 

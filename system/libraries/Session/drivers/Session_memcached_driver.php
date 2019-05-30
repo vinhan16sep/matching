@@ -51,21 +51,21 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
 	/**
 	 * Memcached instance
 	 *
-	 * @var	Memcached
+	 * @variables	Memcached
 	 */
 	protected $_memcached;
 
 	/**
 	 * Key prefix
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_key_prefix = 'ci_session:';
 
 	/**
 	 * Lock key
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_lock_key;
 

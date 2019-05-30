@@ -30,35 +30,35 @@ class PHPExcel_DocumentSecurity
     /**
      * LockRevision
      *
-     * @var boolean
+     * @variables boolean
      */
     private $lockRevision;
 
     /**
      * LockStructure
      *
-     * @var boolean
+     * @variables boolean
      */
     private $lockStructure;
 
     /**
      * LockWindows
      *
-     * @var boolean
+     * @variables boolean
      */
     private $lockWindows;
 
     /**
      * RevisionsPassword
      *
-     * @var string
+     * @variables string
      */
     private $revisionsPassword;
 
     /**
      * WorkbookPassword
      *
-     * @var string
+     * @variables string
      */
     private $workbookPassword;
 

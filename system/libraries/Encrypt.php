@@ -53,35 +53,35 @@ class CI_Encrypt {
 	/**
 	 * Reference to the user's encryption key
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $encryption_key		= '';
 
 	/**
 	 * Type of hash operation
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_hash_type		= 'sha1';
 
 	/**
 	 * Flag for the existence of mcrypt
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	protected $_mcrypt_exists	= FALSE;
 
 	/**
 	 * Current cipher to be used with mcrypt
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_mcrypt_cipher;
 
 	/**
 	 * Method for encrypting/decrypting data
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	protected $_mcrypt_mode;
 

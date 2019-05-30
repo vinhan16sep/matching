@@ -160,63 +160,63 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
     /**
      * Summary Information stream data.
      *
-     * @var string
+     * @variables string
      */
     private $summaryInformation;
 
     /**
      * Extended Summary Information stream data.
      *
-     * @var string
+     * @variables string
      */
     private $documentSummaryInformation;
 
     /**
      * User-Defined Properties stream data.
      *
-     * @var string
+     * @variables string
      */
     private $userDefinedProperties;
 
     /**
      * Workbook stream data. (Includes workbook globals substream as well as sheet substreams)
      *
-     * @var string
+     * @variables string
      */
     private $data;
 
     /**
      * Size in bytes of $this->data
      *
-     * @var int
+     * @variables int
      */
     private $dataSize;
 
     /**
      * Current position in stream
      *
-     * @var integer
+     * @variables integer
      */
     private $pos;
 
     /**
      * Workbook to be returned by the reader.
      *
-     * @var PHPExcel
+     * @variables PHPExcel
      */
     private $phpExcel;
 
     /**
      * Worksheet that is currently being built by the reader.
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     private $phpSheet;
 
     /**
      * BIFF version
      *
-     * @var int
+     * @variables int
      */
     private $version;
 
@@ -224,147 +224,147 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
      * Codepage set in the Excel file being read. Only important for BIFF5 (Excel 5.0 - Excel 95)
      * For BIFF8 (Excel 97 - Excel 2003) this will always have the value 'UTF-16LE'
      *
-     * @var string
+     * @variables string
      */
     private $codepage;
 
     /**
      * Shared formats
      *
-     * @var array
+     * @variables array
      */
     private $formats;
 
     /**
      * Shared fonts
      *
-     * @var array
+     * @variables array
      */
     private $objFonts;
 
     /**
      * Color palette
      *
-     * @var array
+     * @variables array
      */
     private $palette;
 
     /**
      * Worksheets
      *
-     * @var array
+     * @variables array
      */
     private $sheets;
 
     /**
      * External books
      *
-     * @var array
+     * @variables array
      */
     private $externalBooks;
 
     /**
      * REF structures. Only applies to BIFF8.
      *
-     * @var array
+     * @variables array
      */
     private $ref;
 
     /**
      * External names
      *
-     * @var array
+     * @variables array
      */
     private $externalNames;
 
     /**
      * Defined names
      *
-     * @var array
+     * @variables array
      */
     private $definedname;
 
     /**
      * Shared strings. Only applies to BIFF8.
      *
-     * @var array
+     * @variables array
      */
     private $sst;
 
     /**
      * Panes are frozen? (in sheet currently being read). See WINDOW2 record.
      *
-     * @var boolean
+     * @variables boolean
      */
     private $frozen;
 
     /**
      * Fit printout to number of pages? (in sheet currently being read). See SHEETPR record.
      *
-     * @var boolean
+     * @variables boolean
      */
     private $isFitToPages;
 
     /**
      * Objects. One OBJ record contributes with one entry.
      *
-     * @var array
+     * @variables array
      */
     private $objs;
 
     /**
      * Text Objects. One TXO record corresponds with one entry.
      *
-     * @var array
+     * @variables array
      */
     private $textObjects;
 
     /**
      * Cell Annotations (BIFF8)
      *
-     * @var array
+     * @variables array
      */
     private $cellNotes;
 
     /**
      * The combined MSODRAWINGGROUP data
      *
-     * @var string
+     * @variables string
      */
     private $drawingGroupData;
 
     /**
      * The combined MSODRAWING data (per sheet)
      *
-     * @var string
+     * @variables string
      */
     private $drawingData;
 
     /**
      * Keep track of XF index
      *
-     * @var int
+     * @variables int
      */
     private $xfIndex;
 
     /**
      * Mapping of XF index (that is a cell XF) to final index in cellXf collection
      *
-     * @var array
+     * @variables array
      */
     private $mapCellXfIndex;
 
     /**
      * Mapping of XF index (that is a style XF) to final index in cellStyleXf collection
      *
-     * @var array
+     * @variables array
      */
     private $mapCellStyleXfIndex;
 
     /**
      * The shared formulas in a sheet. One SHAREDFMLA record contributes with one value.
      *
-     * @var array
+     * @variables array
      */
     private $sharedFormulas;
 
@@ -372,42 +372,42 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
      * The shared formula parts in a sheet. One FORMULA record contributes with one value if it
      * refers to a shared formula.
      *
-     * @var array
+     * @variables array
      */
     private $sharedFormulaParts;
 
     /**
      * The type of encryption in use
      *
-     * @var int
+     * @variables int
      */
     private $encryption = 0;
     
     /**
      * The position in the stream after which contents are encrypted
      *
-     * @var int
+     * @variables int
      */
     private $encryptionStartPos = false;
 
     /**
      * The current RC4 decryption object
      *
-     * @var PHPExcel_Reader_Excel5_RC4
+     * @variables PHPExcel_Reader_Excel5_RC4
      */
     private $rc4Key = null;
 
     /**
      * The position in the stream that the RC4 decryption object was left at
      *
-     * @var int
+     * @variables int
      */
     private $rc4Pos = 0;
 
     /**
      * The current MD5 context state
      *
-     * @var string
+     * @variables string
      */
     private $md5Ctxt = null;
 
@@ -1330,7 +1330,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         // initialize code page (used to resolve string values)
         $codePage = 'CP1252';
 
-        // offset: ($secOffset+8); size: var
+        // offset: ($secOffset+8); size: variables
         // loop through property decarations and properties
         for ($i = 0; $i < $countProperties; ++$i) {
             // offset: ($secOffset+8) + (8 * $i); size: 4; property ID
@@ -1469,7 +1469,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         // initialize code page (used to resolve string values)
         $codePage = 'CP1252';
 
-        //    offset: ($secOffset+8);    size: var
+        //    offset: ($secOffset+8);    size: variables
         //    loop through property decarations and properties
         for ($i = 0; $i < $countProperties; ++$i) {
 //            echo 'Property ', $i,'<br />';
@@ -1767,8 +1767,8 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
     /**
      * Make an RC4 decryptor for the given block
      *
-     * @var int    $block      Block for which to create decrypto
-     * @var string $valContext MD5 context state
+     * @variables int    $block      Block for which to create decrypto
+     * @variables string $valContext MD5 context state
      *
      * @return PHPExcel_Reader_Excel5_RC4
      */
@@ -1798,11 +1798,11 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
     /**
      * Verify RC4 file password
      *
-     * @var string $password        Password to check
-     * @var string $docid           Document id
-     * @var string $salt_data       Salt data
-     * @var string $hashedsalt_data Hashed salt data
-     * @var string &$valContext     Set to the MD5 context of the value
+     * @variables string $password        Password to check
+     * @variables string $docid           Document id
+     * @variables string $salt_data       Salt data
+     * @variables string $hashedsalt_data Hashed salt data
+     * @variables string &$valContext     Set to the MD5 context of the value
      *
      * @return bool Success
      */
@@ -2009,7 +2009,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
             // offset: 11; size: 1; font family
             // offset: 12; size: 1; character set
             // offset: 13; size: 1; not used
-            // offset: 14; size: var; font name
+            // offset: 14; size: variables; font name
             if ($this->version == self::XLS_BIFF8) {
                 $string = self::readUnicodeStringShort(substr($recordData, 14));
             } else {
@@ -2629,7 +2629,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         // offset: 5; size: 1; sheet type
         $sheetType = ord($recordData{5});
 
-        // offset: 6; size: var; sheet name
+        // offset: 6; size: variables; sheet name
         if ($this->version == self::XLS_BIFF8) {
             $string = self::readUnicodeStringShort(substr($recordData, 6));
             $rec_name = $string['value'];
@@ -2668,11 +2668,11 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
             $nm = self::getInt2d($recordData, 0);
             $offset += 2;
 
-            // offset: 2; size: var; encoded URL without sheet name (Unicode string, 16-bit length)
+            // offset: 2; size: variables; encoded URL without sheet name (Unicode string, 16-bit length)
             $encodedUrlString = self::readUnicodeStringLong(substr($recordData, 2));
             $offset += $encodedUrlString['size'];
 
-            // offset: var; size: var; list of $nm sheet names (Unicode strings, 16-bit length)
+            // offset: variables; size: variables; list of $nm sheet names (Unicode strings, 16-bit length)
             $externalSheetNames = array();
             for ($i = 0; $i < $nm; ++$i) {
                 $externalSheetNameString = self::readUnicodeStringLong(substr($recordData, $offset));
@@ -2702,7 +2702,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         } elseif (substr($recordData, 0, 2) == pack('v', 0x0000)) {
             // DDE links, OLE links
             // offset: 0; size: 2; 0x0000
-            // offset: 2; size: var; encoded source document name
+            // offset: 2; size: variables; encoded source document name
             $this->externalBooks[] = array(
                 'type' => 'DDEorOLE',
             );
@@ -2730,10 +2730,10 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 
             // offset: 4; size: 2; not used
 
-            // offset: 6; size: var
+            // offset: 6; size: variables
             $nameString = self::readUnicodeStringShort(substr($recordData, 6));
 
-            // offset: var; size: var; formula data
+            // offset: variables; size: variables; formula data
             $offset = 6 + $nameString['size'];
             $formula = $this->getFormulaFromStructure(substr($recordData, $offset));
 
@@ -2814,10 +2814,10 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
             // offset: 8; size: 2; 0=Global name, otherwise index to sheet (1-based)
             $scope = self::getInt2d($recordData, 8);
 
-            // offset: 14; size: var; Name (Unicode string without length field)
+            // offset: 14; size: variables; Name (Unicode string without length field)
             $string = self::readUnicodeString(substr($recordData, 14), $nlen);
 
-            // offset: var; size: $flen; formula data
+            // offset: variables; size: $flen; formula data
             $offset = 14 + $string['size'];
             $formulaStructure = pack('v', $flen) . substr($recordData, $offset);
 
@@ -3170,7 +3170,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         $this->pos += 4 + $length;
 
         if (!$this->readDataOnly) {
-            // offset: 0; size: var
+            // offset: 0; size: variables
             // realized that $recordData can be empty even when record exists
             if ($recordData) {
                 if ($this->version == self::XLS_BIFF8) {
@@ -3198,7 +3198,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         $this->pos += 4 + $length;
 
         if (!$this->readDataOnly) {
-            // offset: 0; size: var
+            // offset: 0; size: variables
             // realized that $recordData can be empty even when record exists
             if ($recordData) {
                 if ($this->version == self::XLS_BIFF8) {
@@ -3771,7 +3771,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         // offset: 2; size: 2; index to first column
         $colFirst = self::getInt2d($recordData, 2);
 
-        // offset: var; size: 2; index to last column
+        // offset: variables; size: 2; index to last column
         $colLast = self::getInt2d($recordData, $length - 2);
         $columns = $colLast - $colFirst + 1;
 
@@ -3783,10 +3783,10 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 
             // Read cell?
             if (($this->getReadFilter() !== null) && $this->getReadFilter()->readCell($columnString, $row + 1, $this->phpSheet->getTitle())) {
-                // offset: var; size: 2; index to XF record
+                // offset: variables; size: 2; index to XF record
                 $xfIndex = self::getInt2d($recordData, $offset);
 
-                // offset: var; size: 4; RK value
+                // offset: variables; size: 4; RK value
                 $numValue = self::getIEEE754(self::getInt4d($recordData, $offset + 2));
                 $cell = $this->phpSheet->getCell($columnString . ($row + 1));
                 if (!$this->readDataOnly) {
@@ -3998,7 +3998,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         // offset: 7, size: 1; number of existing FORMULA records for this shared formula
         $no = ord($recordData{7});
 
-        // offset: 8, size: var; Binary token array of the shared formula
+        // offset: 8, size: variables; Binary token array of the shared formula
         $formula = substr($recordData, 8);
 
         // at this point we only store the shared formula for later use
@@ -4250,7 +4250,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         //    ot: 2 bytes; Object Type
         //    id: 2 bytes; Object id number
         //    grbit: 2 bytes; Option Flags
-        //    data: var; subrecord data
+        //    data: variables; subrecord data
 
         // for now, we are just interested in the second subrecord containing the object type
         $ftCmoType  = self::getInt2d($recordData, 0);
@@ -4459,7 +4459,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
             //  entry that contains the active cell
             $index = self::getInt2d($recordData, 5);
 
-            // offset: 7; size: var; cell range address list containing all selected cell ranges
+            // offset: 7; size: variables; cell range address list containing all selected cell ranges
             $data = substr($recordData, 7);
             $cellRangeAddressList = $this->readBIFF5CellRangeAddressList($data); // note: also BIFF8 uses BIFF5 syntax
 
@@ -4580,9 +4580,9 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
             $offset = 32;
 
             if ($hasDesc) {
-                // offset: 32; size: var; character count of description text
+                // offset: 32; size: variables; character count of description text
                 $dl = self::getInt4d($recordData, 32);
-                // offset: 36; size: var; character array of description text, no Unicode string header, always 16-bit characters, zero terminated
+                // offset: 36; size: variables; character array of description text, no Unicode string header, always 16-bit characters, zero terminated
                 $desc = self::encodeUTF16(substr($recordData, 36, 2 * ($dl - 1)), false);
                 $offset += 4 + 2 * $dl;
             }
@@ -4609,12 +4609,12 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                     // section 5.58.2: Hyperlink containing a URL
                     // e.g. http://example.org/index.php
 
-                    // offset: var; size: 16; GUID of URL Moniker
+                    // offset: variables; size: 16; GUID of URL Moniker
                     $offset += 16;
-                    // offset: var; size: 4; size (in bytes) of character array of the URL including trailing zero word
+                    // offset: variables; size: 4; size (in bytes) of character array of the URL including trailing zero word
                     $us = self::getInt4d($recordData, $offset);
                     $offset += 4;
-                    // offset: var; size: $us; character array of the URL, no Unicode string header, always 16-bit characters, zero-terminated
+                    // offset: variables; size: $us; character array of the URL, no Unicode string header, always 16-bit characters, zero-terminated
                     $url = self::encodeUTF16(substr($recordData, $offset, $us - 2), false);
                     $nullOffset = strpos($url, 0x00);
                     if ($nullOffset) {
@@ -4629,42 +4629,42 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                     //   mydoc.txt
                     //   ../../somedoc.xls#Sheet!A1
 
-                    // offset: var; size: 16; GUI of File Moniker
+                    // offset: variables; size: 16; GUI of File Moniker
                     $offset += 16;
 
-                    // offset: var; size: 2; directory up-level count.
+                    // offset: variables; size: 2; directory up-level count.
                     $upLevelCount = self::getInt2d($recordData, $offset);
                     $offset += 2;
 
-                    // offset: var; size: 4; character count of the shortened file path and name, including trailing zero word
+                    // offset: variables; size: 4; character count of the shortened file path and name, including trailing zero word
                     $sl = self::getInt4d($recordData, $offset);
                     $offset += 4;
 
-                    // offset: var; size: sl; character array of the shortened file path and name in 8.3-DOS-format (compressed Unicode string)
+                    // offset: variables; size: sl; character array of the shortened file path and name in 8.3-DOS-format (compressed Unicode string)
                     $shortenedFilePath = substr($recordData, $offset, $sl);
                     $shortenedFilePath = self::encodeUTF16($shortenedFilePath, true);
                     $shortenedFilePath = substr($shortenedFilePath, 0, -1); // remove trailing zero
 
                     $offset += $sl;
 
-                    // offset: var; size: 24; unknown sequence
+                    // offset: variables; size: 24; unknown sequence
                     $offset += 24;
 
                     // extended file path
-                    // offset: var; size: 4; size of the following file link field including string lenth mark
+                    // offset: variables; size: 4; size of the following file link field including string lenth mark
                     $sz = self::getInt4d($recordData, $offset);
                     $offset += 4;
 
                     // only present if $sz > 0
                     if ($sz > 0) {
-                        // offset: var; size: 4; size of the character array of the extended file path and name
+                        // offset: variables; size: 4; size of the character array of the extended file path and name
                         $xl = self::getInt4d($recordData, $offset);
                         $offset += 4;
 
-                        // offset: var; size 2; unknown
+                        // offset: variables; size 2; unknown
                         $offset += 2;
 
-                        // offset: var; size $xl; character array of the extended file path and name.
+                        // offset: variables; size $xl; character array of the extended file path and name.
                         $extendedFilePath = substr($recordData, $offset, $xl);
                         $extendedFilePath = self::encodeUTF16($extendedFilePath, false);
                         $offset += $xl;
@@ -4690,10 +4690,10 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
             }
 
             if ($hasText) {
-                // offset: var; size: 4; character count of text mark including trailing zero word
+                // offset: variables; size: 4; character count of text mark including trailing zero word
                 $tl = self::getInt4d($recordData, $offset);
                 $offset += 4;
-                // offset: var; size: var; character array of the text mark without the # sign, no Unicode header, always 16-bit characters, zero-terminated
+                // offset: variables; size: variables; character array of the text mark without the # sign, no Unicode header, always 16-bit characters, zero-terminated
                 $text = self::encodeUTF16(substr($recordData, $offset, 2 * ($tl - 1)), false);
                 $url .= $text;
             }
@@ -4825,35 +4825,35 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                 break;
         }
 
-        // offset: 4; size: var; title of the prompt box
+        // offset: 4; size: variables; title of the prompt box
         $offset = 4;
         $string = self::readUnicodeStringLong(substr($recordData, $offset));
         $promptTitle = $string['value'] !== chr(0) ? $string['value'] : '';
         $offset += $string['size'];
 
-        // offset: var; size: var; title of the error box
+        // offset: variables; size: variables; title of the error box
         $string = self::readUnicodeStringLong(substr($recordData, $offset));
         $errorTitle = $string['value'] !== chr(0) ? $string['value'] : '';
         $offset += $string['size'];
 
-        // offset: var; size: var; text of the prompt box
+        // offset: variables; size: variables; text of the prompt box
         $string = self::readUnicodeStringLong(substr($recordData, $offset));
         $prompt = $string['value'] !== chr(0) ? $string['value'] : '';
         $offset += $string['size'];
 
-        // offset: var; size: var; text of the error box
+        // offset: variables; size: variables; text of the error box
         $string = self::readUnicodeStringLong(substr($recordData, $offset));
         $error = $string['value'] !== chr(0) ? $string['value'] : '';
         $offset += $string['size'];
 
-        // offset: var; size: 2; size of the formula data for the first condition
+        // offset: variables; size: 2; size of the formula data for the first condition
         $sz1 = self::getInt2d($recordData, $offset);
         $offset += 2;
 
-        // offset: var; size: 2; not used
+        // offset: variables; size: 2; not used
         $offset += 2;
 
-        // offset: var; size: $sz1; formula data for first condition (without size field)
+        // offset: variables; size: $sz1; formula data for first condition (without size field)
         $formula1 = substr($recordData, $offset, $sz1);
         $formula1 = pack('v', $sz1) . $formula1; // prepend the length
         try {
@@ -4868,14 +4868,14 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         }
         $offset += $sz1;
 
-        // offset: var; size: 2; size of the formula data for the first condition
+        // offset: variables; size: 2; size of the formula data for the first condition
         $sz2 = self::getInt2d($recordData, $offset);
         $offset += 2;
 
-        // offset: var; size: 2; not used
+        // offset: variables; size: 2; not used
         $offset += 2;
 
-        // offset: var; size: $sz2; formula data for second condition (without size field)
+        // offset: variables; size: $sz2; formula data for second condition (without size field)
         $formula2 = substr($recordData, $offset, $sz2);
         $formula2 = pack('v', $sz2) . $formula2; // prepend the length
         try {
@@ -4885,7 +4885,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         }
         $offset += $sz2;
 
-        // offset: var; size: var; cell range address list with
+        // offset: variables; size: variables; cell range address list with
         $cellRangeAddressList = $this->readBIFF8CellRangeAddressList(substr($recordData, $offset));
         $cellRangeAddresses = $cellRangeAddressList['cellRangeAddresses'];
 
@@ -5095,11 +5095,11 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                 $offset += 8;
             }
 
-            // offset: var; size: var; variable length of feature specific data
+            // offset: variables; size: variables; variable length of feature specific data
             $rgbFeat = substr($recordData, $offset);
             $offset += 4;
 
-            // offset: var; size: 4; the encrypted password (only 16-bit although field is 32-bit)
+            // offset: variables; size: 4; the encrypted password (only 16-bit although field is 32-bit)
             $wPassword = self::getInt4d($recordData, $offset);
             $offset += 4;
 
@@ -5133,7 +5133,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         // offset: 4; size: 4; length of the image data
         $lcb = self::getInt4d($recordData, 4);
 
-        // offset: 8; size: var; image data
+        // offset: 8; size: variables; image data
         $iData = substr($recordData, 8);
 
         switch ($cf) {
@@ -5625,7 +5625,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                 break;
             case 0x17:    //    string
                 $name = 'tStr';
-                // offset: 1; size: var; Unicode string, 8-bit string length
+                // offset: 1; size: variables; Unicode string, 8-bit string length
                 $string = self::readUnicodeStringShort(substr($formulaData, 1));
                 $size = 1 + $string['size'];
                 $data = self::UTF8toExcelDoubleQuoted($string['value']);
@@ -7212,7 +7212,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         $size = 3; // initialize
         $arrayData = substr($arrayData, 3);
 
-        // offset: 3; size: var; list of ($nc + 1) * ($nr + 1) constant values
+        // offset: 3; size: variables; list of ($nc + 1) * ($nr + 1) constant values
         $matrixChunks = array();
         for ($r = 1; $r <= $nr + 1; ++$r) {
             $items = array();
@@ -7257,7 +7257,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                 $size = 9;
                 break;
             case 0x02: // string value
-                // offset: 1; size: var; Unicode string, 16-bit string length
+                // offset: 1; size: variables; Unicode string, 16-bit string length
                 $string = self::readUnicodeStringLong(substr($valueData, 1));
                 $value = '"' . $string['value'] . '"';
                 $size = 1 + $string['size'];
@@ -7321,7 +7321,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         // offset: 0; size: 1; length of the string (character count)
         $ln = ord($subData[0]);
 
-        // offset: 1: size: var; character array (8-bit characters)
+        // offset: 1: size: variables; character array (8-bit characters)
         $value = $this->decodeCodepage(substr($subData, 1, $ln));
 
         return array(
@@ -7343,7 +7343,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         // offset: 0; size: 2; length of the string (character count)
         $ln = self::getInt2d($subData, 0);
 
-        // offset: 2: size: var; character array (8-bit characters)
+        // offset: 2: size: variables; character array (8-bit characters)
         $value = $this->decodeCodepage(substr($subData, 2));
 
         //return $string;
@@ -7425,7 +7425,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
         // bit: 3; mask: 0x08; Rich-Text settings
         $hasRichText = (0x08) & ord($subData[0]) >> 3;
 
-        // offset: 1: size: var; character array
+        // offset: 1: size: variables; character array
         // this offset assumes richtext and Asian phonetic settings are off which is generally wrong
         // needs to be fixed
         $value = self::encodeUTF16(substr($subData, 1, $isCompressed ? $characterCount : 2 * $characterCount), $isCompressed);

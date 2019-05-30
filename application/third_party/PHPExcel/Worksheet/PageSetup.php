@@ -187,14 +187,14 @@ class PHPExcel_Worksheet_PageSetup
     /**
      * Paper size
      *
-     * @var int
+     * @variables int
      */
     private $paperSize = PHPExcel_Worksheet_PageSetup::PAPERSIZE_LETTER;
 
     /**
      * Orientation
      *
-     * @var string
+     * @variables string
      */
     private $orientation = PHPExcel_Worksheet_PageSetup::ORIENTATION_DEFAULT;
 
@@ -204,7 +204,7 @@ class PHPExcel_Worksheet_PageSetup
      * Print scaling. Valid values range from 10 to 400
      * This setting is overridden when fitToWidth and/or fitToHeight are in use
      *
-     * @var int?
+     * @variables int?
      */
     private $scale = 100;
 
@@ -212,7 +212,7 @@ class PHPExcel_Worksheet_PageSetup
       * Fit To Page
       * Whether scale or fitToWith / fitToHeight applies
       *
-      * @var boolean
+      * @variables boolean
       */
     private $fitToPage = false;
 
@@ -220,7 +220,7 @@ class PHPExcel_Worksheet_PageSetup
       * Fit To Height
       * Number of vertical pages to fit on
       *
-      * @var int?
+      * @variables int?
       */
     private $fitToHeight    = 1;
 
@@ -228,49 +228,49 @@ class PHPExcel_Worksheet_PageSetup
       * Fit To Width
       * Number of horizontal pages to fit on
       *
-      * @var int?
+      * @variables int?
       */
     private $fitToWidth    = 1;
 
     /**
      * Columns to repeat at left
      *
-     * @var array Containing start column and end column, empty array if option unset
+     * @variables array Containing start column and end column, empty array if option unset
      */
     private $columnsToRepeatAtLeft = array('', '');
 
     /**
      * Rows to repeat at top
      *
-     * @var array Containing start row number and end row number, empty array if option unset
+     * @variables array Containing start row number and end row number, empty array if option unset
      */
     private $rowsToRepeatAtTop = array(0, 0);
 
     /**
      * Center page horizontally
      *
-     * @var boolean
+     * @variables boolean
      */
     private $horizontalCentered = false;
 
     /**
      * Center page vertically
      *
-     * @var boolean
+     * @variables boolean
      */
     private $verticalCentered = false;
 
     /**
      * Print area
      *
-     * @var string
+     * @variables string
      */
     private $printArea = null;
 
     /**
      * First page number
      *
-     * @var int
+     * @variables int
      */
     private $firstPageNumber = null;
 

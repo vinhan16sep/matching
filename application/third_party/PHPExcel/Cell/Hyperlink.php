@@ -30,14 +30,14 @@ class PHPExcel_Cell_Hyperlink
     /**
      * URL to link the cell to
      *
-     * @var string
+     * @variables string
      */
     private $url;
 
     /**
      * Tooltip to display on the hyperlink
      *
-     * @var string
+     * @variables string
      */
     private $tooltip;
 

@@ -55,14 +55,14 @@ class CI_DB_pdo_odbc_driver extends CI_DB_pdo_driver {
 	/**
 	 * Sub-driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver = 'odbc';
 
 	/**
 	 * Database schema
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $schema = 'public';
 
@@ -73,21 +73,21 @@ class CI_DB_pdo_odbc_driver extends CI_DB_pdo_driver {
 	 *
 	 * Must be empty for ODBC.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_escape_char = '';
 
 	/**
 	 * ESCAPE statement string
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_like_escape_str = " {escape '%s'} ";
 
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('RND()', 'RND(%d)');
 

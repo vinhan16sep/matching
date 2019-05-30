@@ -30,14 +30,14 @@ class PHPExcel_WorksheetIterator implements Iterator
     /**
      * Spreadsheet to iterate
      *
-     * @var PHPExcel
+     * @variables PHPExcel
      */
     private $subject;
 
     /**
      * Current iterator position
      *
-     * @var int
+     * @variables int
      */
     private $position = 0;
 

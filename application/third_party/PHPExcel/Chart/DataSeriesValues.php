@@ -39,42 +39,42 @@ class PHPExcel_Chart_DataSeriesValues
     /**
      * Series Data Type
      *
-     * @var    string
+     * @variables    string
      */
     private $dataType;
 
     /**
      * Series Data Source
      *
-     * @var    string
+     * @variables    string
      */
     private $dataSource;
 
     /**
      * Format Code
      *
-     * @var    string
+     * @variables    string
      */
     private $formatCode;
 
     /**
      * Series Point Marker
      *
-     * @var    string
+     * @variables    string
      */
     private $pointMarker;
 
     /**
      * Point Count (The number of datapoints in the dataseries)
      *
-     * @var    integer
+     * @variables    integer
      */
     private $pointCount = 0;
 
     /**
      * Data Values
      *
-     * @var    array of mixed
+     * @variables    array of mixed
      */
     private $dataValues = array();
 

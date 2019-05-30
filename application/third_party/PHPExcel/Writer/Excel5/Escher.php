@@ -48,14 +48,14 @@ class PHPExcel_Writer_Excel5_Escher
     /**
      * Shape offsets. Positions in binary stream where a new shape record begins
      *
-     * @var array
+     * @variables array
      */
     private $spOffsets;
 
     /**
      * Shape types.
      *
-     * @var array
+     * @variables array
      */
     private $spTypes;
     

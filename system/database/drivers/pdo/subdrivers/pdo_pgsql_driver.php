@@ -55,14 +55,14 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	/**
 	 * Sub-driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver = 'pgsql';
 
 	/**
 	 * Database schema
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $schema = 'public';
 
@@ -71,7 +71,7 @@ class CI_DB_pdo_pgsql_driver extends CI_DB_pdo_driver {
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('RANDOM()', 'RANDOM()');
 

@@ -30,49 +30,49 @@ class PHPExcel_Best_Fit
     /**
      * Indicator flag for a calculation error
      *
-     * @var    boolean
+     * @variables    boolean
      **/
     protected $error = false;
 
     /**
      * Algorithm type to use for best-fit
      *
-     * @var    string
+     * @variables    string
      **/
     protected $bestFitType = 'undetermined';
 
     /**
      * Number of entries in the sets of x- and y-value arrays
      *
-     * @var    int
+     * @variables    int
      **/
     protected $valueCount = 0;
 
     /**
      * X-value dataseries of values
      *
-     * @var    float[]
+     * @variables    float[]
      **/
     protected $xValues = array();
 
     /**
      * Y-value dataseries of values
      *
-     * @var    float[]
+     * @variables    float[]
      **/
     protected $yValues = array();
 
     /**
      * Flag indicating whether values should be adjusted to Y=0
      *
-     * @var    boolean
+     * @variables    boolean
      **/
     protected $adjustToZero = false;
 
     /**
      * Y-value series of best-fit values
      *
-     * @var    float[]
+     * @variables    float[]
      **/
     protected $yBestFitValues = array();
 

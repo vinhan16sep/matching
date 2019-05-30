@@ -23,8 +23,8 @@
  * @static
  * @class tinymce.caret.CaretBookmark
  * @example
- * var bookmark = CaretBookmark.create(rootElm, CaretPosition.before(rootElm.firstChild));
- * var caretPosition = CaretBookmark.resolve(bookmark);
+ * variables bookmark = CaretBookmark.create(rootElm, CaretPosition.before(rootElm.firstChild));
+ * variables caretPosition = CaretBookmark.resolve(bookmark);
  */
 define('tinymce/caret/CaretBookmark', [
 	'tinymce/dom/NodeType',

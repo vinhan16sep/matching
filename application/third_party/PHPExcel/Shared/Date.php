@@ -36,7 +36,7 @@ class PHPExcel_Shared_Date
      * Planned usage for locale settings
      *
      * @public
-     * @var    string[]
+     * @variables    string[]
      */
     public static $monthNames = array(
         'Jan' => 'January',
@@ -58,7 +58,7 @@ class PHPExcel_Shared_Date
      * Planned usage for locale settings
      *
      * @public
-     * @var    string[]
+     * @variables    string[]
      */
     public static $numberSuffixes = array(
         'st',
@@ -71,7 +71,7 @@ class PHPExcel_Shared_Date
      * Base calendar year to use for calculations
      *
      * @private
-     * @var    int
+     * @variables    int
      */
     protected static $excelBaseDate = self::CALENDAR_WINDOWS_1900;
 

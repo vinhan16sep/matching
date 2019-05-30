@@ -53,14 +53,14 @@ class CI_Config {
 	/**
 	 * List of all loaded config values
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $config = array();
 
 	/**
 	 * List of all loaded config files
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $is_loaded =	array();
 
@@ -68,7 +68,7 @@ class CI_Config {
 	 * List of paths to search when trying to load a config file.
 	 *
 	 * @used-by	CI_Loader
-	 * @var		array
+	 * @variables		array
 	 */
 	public $_config_paths =	array(APPPATH);
 

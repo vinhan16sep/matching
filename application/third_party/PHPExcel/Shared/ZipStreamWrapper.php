@@ -30,28 +30,28 @@ class PHPExcel_Shared_ZipStreamWrapper
     /**
      * Internal ZipAcrhive
      *
-     * @var ZipArchive
+     * @variables ZipArchive
      */
     private $archive;
 
     /**
      * Filename in ZipAcrhive
      *
-     * @var string
+     * @variables string
      */
     private $fileNameInArchive = '';
 
     /**
      * Position in file
      *
-     * @var int
+     * @variables int
      */
     private $position = 0;
 
     /**
      * Data
      *
-     * @var mixed
+     * @variables mixed
      */
     private $data = '';
 

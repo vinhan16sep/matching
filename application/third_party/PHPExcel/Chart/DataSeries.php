@@ -73,63 +73,63 @@ class PHPExcel_Chart_DataSeries
     /**
      * Series Plot Type
      *
-     * @var string
+     * @variables string
      */
     private $plotType;
 
     /**
      * Plot Grouping Type
      *
-     * @var boolean
+     * @variables boolean
      */
     private $plotGrouping;
 
     /**
      * Plot Direction
      *
-     * @var boolean
+     * @variables boolean
      */
     private $plotDirection;
 
     /**
      * Plot Style
      *
-     * @var string
+     * @variables string
      */
     private $plotStyle;
 
     /**
      * Order of plots in Series
      *
-     * @var array of integer
+     * @variables array of integer
      */
     private $plotOrder = array();
 
     /**
      * Plot Label
      *
-     * @var array of PHPExcel_Chart_DataSeriesValues
+     * @variables array of PHPExcel_Chart_DataSeriesValues
      */
     private $plotLabel = array();
 
     /**
      * Plot Category
      *
-     * @var array of PHPExcel_Chart_DataSeriesValues
+     * @variables array of PHPExcel_Chart_DataSeriesValues
      */
     private $plotCategory = array();
 
     /**
      * Smooth Line
      *
-     * @var string
+     * @variables string
      */
     private $smoothLine;
 
     /**
      * Plot Values
      *
-     * @var array of PHPExcel_Chart_DataSeriesValues
+     * @variables array of PHPExcel_Chart_DataSeriesValues
      */
     private $plotValues = array();
 

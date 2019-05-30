@@ -23,7 +23,7 @@
 /**
 * Array for storing OLE instances that are accessed from
 * OLE_ChainedBlockStream::stream_open().
-* @var  array
+* @variables  array
 */
 $GLOBALS['_OLE_INSTANCES'] = array();
 
@@ -46,43 +46,43 @@ class PHPExcel_Shared_OLE
 
     /**
      * The file handle for reading an OLE container
-     * @var resource
+     * @variables resource
     */
     public $_file_handle;
 
     /**
     * Array of PPS's found on the OLE container
-    * @var array
+    * @variables array
     */
     public $_list = array();
 
     /**
      * Root directory of OLE container
-     * @var OLE_PPS_Root
+     * @variables OLE_PPS_Root
     */
     public $root;
 
     /**
      * Big Block Allocation Table
-     * @var array  (blockId => nextBlockId)
+     * @variables array  (blockId => nextBlockId)
     */
     public $bbat;
 
     /**
      * Short Block Allocation Table
-     * @var array  (blockId => nextBlockId)
+     * @variables array  (blockId => nextBlockId)
     */
     public $sbat;
 
     /**
      * Size of big blocks. This is usually 512.
-     * @var  int  number of octets per block.
+     * @variables  int  number of octets per block.
     */
     public $bigBlockSize;
 
     /**
      * Size of small blocks. This is usually 64.
-     * @var  int  number of octets per block
+     * @variables  int  number of octets per block
     */
     public $smallBlockSize;
 

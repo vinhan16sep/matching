@@ -44,7 +44,7 @@ class PHPExcel_Worksheet_SheetView
      *
      * Valid values range from 10 to 400.
      *
-     * @var int
+     * @variables int
      */
     private $zoomScale = 100;
 
@@ -53,7 +53,7 @@ class PHPExcel_Worksheet_SheetView
      *
      * Valid values range from 10 to 400.
      *
-     * @var int
+     * @variables int
      */
     private $zoomScaleNormal = 100;
 
@@ -62,7 +62,7 @@ class PHPExcel_Worksheet_SheetView
      *
      * Valid values range from 10 to 400.
      *
-     * @var string
+     * @variables string
      */
     private $sheetviewType = self::SHEETVIEW_NORMAL;
 

@@ -39,7 +39,7 @@ class PHPExcel_Worksheet_AutoFilter_Column
     /**
      * Types of autofilter rules
      *
-     * @var string[]
+     * @variables string[]
      */
     private static $filterTypes = array(
         //    Currently we're not handling
@@ -59,7 +59,7 @@ class PHPExcel_Worksheet_AutoFilter_Column
     /**
      * Join options for autofilter rules
      *
-     * @var string[]
+     * @variables string[]
      */
     private static $ruleJoins = array(
         self::AUTOFILTER_COLUMN_JOIN_AND,
@@ -69,7 +69,7 @@ class PHPExcel_Worksheet_AutoFilter_Column
     /**
      * Autofilter
      *
-     * @var PHPExcel_Worksheet_AutoFilter
+     * @variables PHPExcel_Worksheet_AutoFilter
      */
     private $parent;
 
@@ -77,7 +77,7 @@ class PHPExcel_Worksheet_AutoFilter_Column
     /**
      * Autofilter Column Index
      *
-     * @var string
+     * @variables string
      */
     private $columnIndex = '';
 
@@ -85,7 +85,7 @@ class PHPExcel_Worksheet_AutoFilter_Column
     /**
      * Autofilter Column Filter Type
      *
-     * @var string
+     * @variables string
      */
     private $filterType = self::AUTOFILTER_FILTERTYPE_FILTER;
 
@@ -93,7 +93,7 @@ class PHPExcel_Worksheet_AutoFilter_Column
     /**
      * Autofilter Multiple Rules And/Or
      *
-     * @var string
+     * @variables string
      */
     private $join = self::AUTOFILTER_COLUMN_JOIN_OR;
 
@@ -101,7 +101,7 @@ class PHPExcel_Worksheet_AutoFilter_Column
     /**
      * Autofilter Column Rules
      *
-     * @var array of PHPExcel_Worksheet_AutoFilter_Column_Rule
+     * @variables array of PHPExcel_Worksheet_AutoFilter_Column_Rule
      */
     private $ruleset = array();
 
@@ -109,7 +109,7 @@ class PHPExcel_Worksheet_AutoFilter_Column
     /**
      * Autofilter Column Dynamic Attributes
      *
-     * @var array of mixed
+     * @variables array of mixed
      */
     private $attributes = array();
 

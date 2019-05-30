@@ -40,7 +40,7 @@ class PHPExcel_Cell_DataType
     /**
      * List of error codes
      *
-     * @var array
+     * @variables array
      */
     private static $errorCodes = array(
         '#NULL!'  => 0,

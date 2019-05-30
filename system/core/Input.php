@@ -53,7 +53,7 @@ class CI_Input {
 	/**
 	 * IP address of the current user
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $ip_address = FALSE;
 
@@ -62,7 +62,7 @@ class CI_Input {
 	 *
 	 * If set to FALSE, then $_GET will be set to an empty array.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_allow_get_array = TRUE;
 
@@ -71,7 +71,7 @@ class CI_Input {
 	 *
 	 * If set to TRUE, then newlines are standardized.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_standardize_newlines;
 
@@ -82,7 +82,7 @@ class CI_Input {
 	 * GET, POST or COOKIE data is encountered.
 	 * Set automatically based on config setting.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_enable_xss = FALSE;
 
@@ -92,14 +92,14 @@ class CI_Input {
 	 * Enables a CSRF cookie token to be set.
 	 * Set automatically based on config setting.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_enable_csrf = FALSE;
 
 	/**
 	 * List of all HTTP request headers
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $headers = array();
 
@@ -108,7 +108,7 @@ class CI_Input {
 	 *
 	 * Holds a cache of php://input contents
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_raw_input_stream;
 
@@ -118,7 +118,7 @@ class CI_Input {
 	 * Parsed from php://input at runtime
 	 *
 	 * @see	CI_Input::input_stream()
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_input_stream;
 

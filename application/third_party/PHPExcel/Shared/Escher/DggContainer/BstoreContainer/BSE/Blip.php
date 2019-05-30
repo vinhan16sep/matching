@@ -30,14 +30,14 @@ class PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip
     /**
      * The parent BSE
      *
-     * @var PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE
+     * @variables PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE
      */
     private $parent;
 
     /**
      * Raw image data
      *
-     * @var string
+     * @variables string
      */
     private $data;
 

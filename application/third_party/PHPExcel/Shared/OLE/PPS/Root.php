@@ -32,7 +32,7 @@ class PHPExcel_Shared_OLE_PPS_Root extends PHPExcel_Shared_OLE_PPS
 
     /**
      * Directory for temporary files
-     * @var string
+     * @variables string
      */
     protected $tempDirectory = null;
 

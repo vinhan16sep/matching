@@ -51,49 +51,49 @@ class CI_Jquery extends CI_Javascript {
 	/**
 	 * JavaScript directory location
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_javascript_folder = 'js';
 
 	/**
 	 * JQuery code for load
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $jquery_code_for_load = array();
 
 	/**
 	 * JQuery code for compile
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $jquery_code_for_compile = array();
 
 	/**
 	 * JQuery corner active flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $jquery_corner_active = FALSE;
 
 	/**
 	 * JQuery table sorter active flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $jquery_table_sorter_active = FALSE;
 
 	/**
 	 * JQuery table sorter pager active
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $jquery_table_sorter_pager_active = FALSE;
 
 	/**
 	 * JQuery AJAX image
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $jquery_ajax_img = '';
 

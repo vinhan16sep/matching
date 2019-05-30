@@ -30,84 +30,84 @@ class PHPExcel_Shared_Escher_DgContainer_SpgrContainer_SpContainer
     /**
      * Parent Shape Group Container
      *
-     * @var PHPExcel_Shared_Escher_DgContainer_SpgrContainer
+     * @variables PHPExcel_Shared_Escher_DgContainer_SpgrContainer
      */
     private $parent;
 
     /**
      * Is this a group shape?
      *
-     * @var boolean
+     * @variables boolean
      */
     private $spgr = false;
 
     /**
      * Shape type
      *
-     * @var int
+     * @variables int
      */
     private $spType;
 
     /**
      * Shape flag
      *
-     * @var int
+     * @variables int
      */
     private $spFlag;
 
     /**
      * Shape index (usually group shape has index 0, and the rest: 1,2,3...)
      *
-     * @var boolean
+     * @variables boolean
      */
     private $spId;
 
     /**
      * Array of options
      *
-     * @var array
+     * @variables array
      */
     private $OPT;
 
     /**
      * Cell coordinates of upper-left corner of shape, e.g. 'A1'
      *
-     * @var string
+     * @variables string
      */
     private $startCoordinates;
 
     /**
      * Horizontal offset of upper-left corner of shape measured in 1/1024 of column width
      *
-     * @var int
+     * @variables int
      */
     private $startOffsetX;
 
     /**
      * Vertical offset of upper-left corner of shape measured in 1/256 of row height
      *
-     * @var int
+     * @variables int
      */
     private $startOffsetY;
 
     /**
      * Cell coordinates of bottom-right corner of shape, e.g. 'B2'
      *
-     * @var string
+     * @variables string
      */
     private $endCoordinates;
 
     /**
      * Horizontal offset of bottom-right corner of shape measured in 1/1024 of column width
      *
-     * @var int
+     * @variables int
      */
     private $endOffsetX;
 
     /**
      * Vertical offset of bottom-right corner of shape measured in 1/256 of row height
      *
-     * @var int
+     * @variables int
      */
     private $endOffsetY;
 

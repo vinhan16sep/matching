@@ -30,7 +30,7 @@ class PHPExcel_Worksheet_AutoFilter
     /**
      * Autofilter Worksheet
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     private $workSheet;
 
@@ -38,7 +38,7 @@ class PHPExcel_Worksheet_AutoFilter
     /**
      * Autofilter Range
      *
-     * @var string
+     * @variables string
      */
     private $range = '';
 
@@ -46,7 +46,7 @@ class PHPExcel_Worksheet_AutoFilter
     /**
      * Autofilter Column Ruleset
      *
-     * @var array of PHPExcel_Worksheet_AutoFilter_Column
+     * @variables array of PHPExcel_Worksheet_AutoFilter_Column
      */
     private $columns = array();
 
@@ -454,7 +454,7 @@ class PHPExcel_Worksheet_AutoFilter
     /**
      *    Search/Replace arrays to convert Excel wildcard syntax to a regexp syntax for preg_matching
      *
-     *    @var    array
+     *    @variables    array
      */
     private static $fromReplace = array('\*', '\?', '~~', '~.*', '~.?');
     private static $toReplace   = array('.*', '.',  '~',  '\*',  '\?');

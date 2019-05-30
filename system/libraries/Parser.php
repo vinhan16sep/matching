@@ -51,21 +51,21 @@ class CI_Parser {
 	/**
 	 * Left delimiter character for pseudo vars
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $l_delim = '{';
 
 	/**
 	 * Right delimiter character for pseudo vars
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $r_delim = '}';
 
 	/**
 	 * Reference to CodeIgniter instance
 	 *
-	 * @var object
+	 * @variables object
 	 */
 	protected $CI;
 

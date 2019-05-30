@@ -51,7 +51,7 @@ class CI_Security {
 	/**
 	 * List of sanitize filename strings
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $filename_bad_chars =	array(
 		'../', '<!--', '-->', '<', '>',
@@ -77,7 +77,7 @@ class CI_Security {
 	 *
 	 * Will be overridden by the constructor.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $charset = 'UTF-8';
 
@@ -86,7 +86,7 @@ class CI_Security {
 	 *
 	 * Random Hash for protecting URLs.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_xss_hash;
 
@@ -95,7 +95,7 @@ class CI_Security {
 	 *
 	 * Random hash for Cross Site Request Forgery protection cookie
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_csrf_hash;
 
@@ -105,7 +105,7 @@ class CI_Security {
 	 * Expiration time for Cross Site Request Forgery protection cookie.
 	 * Defaults to two hours (in seconds).
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $_csrf_expire =	7200;
 
@@ -114,7 +114,7 @@ class CI_Security {
 	 *
 	 * Token name for Cross Site Request Forgery protection cookie.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_csrf_token_name =	'ci_csrf_token';
 
@@ -123,14 +123,14 @@ class CI_Security {
 	 *
 	 * Cookie name for Cross Site Request Forgery protection cookie.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_csrf_cookie_name =	'ci_csrf_token';
 
 	/**
 	 * List of never allowed strings
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_never_allowed_str =	array(
 		'document.cookie' => '[removed]',
@@ -148,7 +148,7 @@ class CI_Security {
 	/**
 	 * List of never allowed regex replacements
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_never_allowed_regex = array(
 		'javascript\s*:',

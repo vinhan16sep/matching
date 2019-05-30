@@ -29,28 +29,28 @@ class Ion_auth
 	/**
 	 * account status ('not_activated', etc ...)
 	 *
-	 * @var string
+	 * @variables string
 	 **/
 	protected $status;
 
 	/**
 	 * extra where
 	 *
-	 * @var array
+	 * @variables array
 	 **/
 	public $_extra_where = array();
 
 	/**
 	 * extra set
 	 *
-	 * @var array
+	 * @variables array
 	 **/
 	public $_extra_set = array();
 
 	/**
 	 * caching of users and their groups
 	 *
-	 * @var array
+	 * @variables array
 	 **/
 	public $_cache_user_in_group;
 

@@ -49,28 +49,28 @@ class CI_DB_pdo_sqlite_forge extends CI_DB_pdo_forge {
 	/**
 	 * CREATE TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_table_if	= 'CREATE TABLE IF NOT EXISTS';
 
 	/**
 	 * DROP TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_table_if	= 'DROP TABLE IF EXISTS';
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	bool|array
+	 * @variables	bool|array
 	 */
 	protected $_unsigned		= FALSE;
 
 	/**
 	 * NULL value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_null		= 'NULL';
 

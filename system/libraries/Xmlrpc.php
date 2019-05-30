@@ -58,196 +58,196 @@ class CI_Xmlrpc {
 	/**
 	 * Debug flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $debug		= FALSE;
 
 	/**
 	 * I4 data type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcI4	= 'i4';
 
 	/**
 	 * Integer data type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcInt	= 'int';
 
 	/**
 	 * Boolean data type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcBoolean	= 'boolean';
 
 	/**
 	 * Double data type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcDouble	= 'double';
 
 	/**
 	 * String data type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcString	= 'string';
 
 	/**
 	 * DateTime format
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcDateTime	= 'dateTime.iso8601';
 
 	/**
 	 * Base64 data type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcBase64	= 'base64';
 
 	/**
 	 * Array data type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcArray	= 'array';
 
 	/**
 	 * Struct data type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcStruct	= 'struct';
 
 	/**
 	 * Data types list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $xmlrpcTypes	= array();
 
 	/**
 	 * Valid parents list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $valid_parents	= array();
 
 	/**
 	 * Response error numbers list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $xmlrpcerr		= array();
 
 	/**
 	 * Response error messages list
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	public $xmlrpcstr		= array();
 
 	/**
 	 * Encoding charset
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpc_defencoding	= 'UTF-8';
 
 	/**
 	 * XML-RPC client name
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcName		= 'XML-RPC for CodeIgniter';
 
 	/**
 	 * XML-RPC version
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpcVersion		= '1.1';
 
 	/**
 	 * Start of user errors
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $xmlrpcerruser		= 800;
 
 	/**
 	 * Start of XML parse errors
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $xmlrpcerrxml		= 100;
 
 	/**
 	 * Backslash replacement value
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $xmlrpc_backslash	= '';
 
 	/**
 	 * XML-RPC Client object
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	public $client;
 
 	/**
 	 * XML-RPC Method name
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $method;
 
 	/**
 	 * XML-RPC Data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $data;
 
 	/**
 	 * XML-RPC Message
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $message			= '';
 
 	/**
 	 * Request error message
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $error			= '';
 
 	/**
 	 * XML-RPC result object
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	public $result;
 
 	/**
 	 * XML-RPC Response
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $response		= array(); // Response from remote server
 
 	/**
 	 * XSS Filter flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $xss_clean		= TRUE;
 
@@ -566,21 +566,21 @@ class XML_RPC_Client extends CI_Xmlrpc
 	/**
 	 * Path
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $path			= '';
 
 	/**
 	 * Server hostname
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $server			= '';
 
 	/**
 	 * Server port
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $port			= 80;
 
@@ -588,56 +588,56 @@ class XML_RPC_Client extends CI_Xmlrpc
 	 *
 	 * Server username
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $username;
 
 	/**
 	 * Server password
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $password;
 
 	/**
 	 * Proxy hostname
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $proxy			= FALSE;
 
 	/**
 	 * Proxy port
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $proxy_port		= 8080;
 
 	/**
 	 * Error number
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $errno			= '';
 
 	/**
 	 * Error message
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $errstring		= '';
 
 	/**
 	 * Timeout in seconds
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $timeout		= 5;
 
 	/**
 	 * No Multicall flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $no_multicall	= FALSE;
 
@@ -788,35 +788,35 @@ class XML_RPC_Response
 	/**
 	 * Value
 	 *
-	 * @var	mixed
+	 * @variables	mixed
 	 */
 	public $val		= 0;
 
 	/**
 	 * Error number
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $errno		= 0;
 
 	/**
 	 * Error message
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $errstr		= '';
 
 	/**
 	 * Headers list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $headers		= array();
 
 	/**
 	 * XSS Filter flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $xss_clean	= TRUE;
 
@@ -1038,28 +1038,28 @@ class XML_RPC_Message extends CI_Xmlrpc
 	/**
 	 * Payload
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $payload;
 
 	/**
 	 * Method name
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $method_name;
 
 	/**
 	 * Parameter list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $params		= array();
 
 	/**
 	 * XH?
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $xh		= array();
 
@@ -1656,14 +1656,14 @@ class XML_RPC_Values extends CI_Xmlrpc
 	/**
 	 * Value data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $me	= array();
 
 	/**
 	 * Value type
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $mytype	= 0;
 

@@ -355,14 +355,14 @@ if ( ! function_exists('safe_mailto'))
 
 		$output = "<script type=\"text/javascript\">\n"
 			."\t//<![CDATA[\n"
-			."\tvar l=new Array();\n";
+			."\tvariables l=new Array();\n";
 
 		for ($i = 0, $c = count($x); $i < $c; $i++)
 		{
 			$output .= "\tl[".$i."] = '".$x[$i]."';\n";
 		}
 
-		$output .= "\n\tfor (var i = l.length-1; i >= 0; i=i-1) {\n"
+		$output .= "\n\tfor (variables i = l.length-1; i >= 0; i=i-1) {\n"
 			."\t\tif (l[i].substring(0, 1) === '|') document.write(\"&#\"+unescape(l[i].substring(1))+\";\");\n"
 			."\t\telse document.write(unescape(l[i]));\n"
 			."\t}\n"

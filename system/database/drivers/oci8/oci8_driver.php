@@ -64,28 +64,28 @@ class CI_DB_oci8_driver extends CI_DB {
 	/**
 	 * Database driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbdriver = 'oci8';
 
 	/**
 	 * Statement ID
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	public $stmt_id;
 
 	/**
 	 * Cursor ID
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	public $curs_id;
 
 	/**
 	 * Commit mode flag
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $commit_mode = OCI_COMMIT_ON_SUCCESS;
 
@@ -95,7 +95,7 @@ class CI_DB_oci8_driver extends CI_DB {
 	 * If we use LIMIT, we'll add a field that will
 	 * throw off num_fields later.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $limit_used;
 
@@ -114,14 +114,14 @@ class CI_DB_oci8_driver extends CI_DB {
 	 *
 	 * Identifiers that must NOT be escaped.
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_reserved_identifiers = array('*', 'rownum');
 
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('ASC', 'ASC'); // not currently supported
 
@@ -131,7 +131,7 @@ class CI_DB_oci8_driver extends CI_DB {
 	 * @used-by	CI_DB_driver::count_all()
 	 * @used-by	CI_DB_query_builder::count_all_results()
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_count_string = 'SELECT COUNT(1) AS ';
 

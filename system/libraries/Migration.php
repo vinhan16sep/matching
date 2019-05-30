@@ -54,56 +54,56 @@ class CI_Migration {
 	/**
 	 * Whether the library is enabled
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	protected $_migration_enabled = FALSE;
 
 	/**
 	 * Migration numbering type
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_migration_type = 'sequential';
 
 	/**
 	 * Path to migration classes
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_migration_path = NULL;
 
 	/**
 	 * Current migration version
 	 *
-	 * @var mixed
+	 * @variables mixed
 	 */
 	protected $_migration_version = 0;
 
 	/**
 	 * Database table with migration info
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_migration_table = 'migrations';
 
 	/**
 	 * Whether to automatically run migrations
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_migration_auto_latest = FALSE;
 
 	/**
 	 * Migration basename regex
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_migration_regex;
 
 	/**
 	 * Error message
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_error_string = '';
 

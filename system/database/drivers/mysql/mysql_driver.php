@@ -55,14 +55,14 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Database driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbdriver = 'mysql';
 
 	/**
 	 * Compression flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $compress = FALSE;
 
@@ -73,7 +73,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * of affected rows to be shown. Uses a preg_replace when enabled,
 	 * adding a bit more processing to all queries.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $delete_hack = TRUE;
 
@@ -82,7 +82,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 *
 	 * Whether we're running in strict SQL mode.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $stricton;
 
@@ -91,7 +91,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Identifier escape character
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_escape_char = '`';
 

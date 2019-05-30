@@ -53,28 +53,28 @@ class CI_Pagination {
 	 *
 	 * The page that we're linking to
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $base_url		= '';
 
 	/**
 	 * Prefix
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $prefix = '';
 
 	/**
 	 * Suffix
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $suffix = '';
 
 	/**
 	 * Total number of items
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $total_rows = 0;
 
@@ -84,21 +84,21 @@ class CI_Pagination {
 	 * Relates to "digit" type links shown before/after
 	 * the currently viewed page.
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $num_links = 2;
 
 	/**
 	 * Items per page
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $per_page = 10;
 
 	/**
 	 * Current page
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $cur_page = 0;
 
@@ -107,84 +107,84 @@ class CI_Pagination {
 	 *
 	 * Whether to use actual page numbers instead of an offset
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $use_page_numbers = FALSE;
 
 	/**
 	 * First link
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $first_link = '&lsaquo; First';
 
 	/**
 	 * Next link
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $next_link = '&gt;';
 
 	/**
 	 * Previous link
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $prev_link = '&lt;';
 
 	/**
 	 * Last link
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $last_link = 'Last &rsaquo;';
 
 	/**
 	 * URI Segment
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $uri_segment = 0;
 
 	/**
 	 * Full tag open
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $full_tag_open = '';
 
 	/**
 	 * Full tag close
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $full_tag_close = '';
 
 	/**
 	 * First tag open
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $first_tag_open = '';
 
 	/**
 	 * First tag close
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $first_tag_close = '';
 
 	/**
 	 * Last tag open
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $last_tag_open = '';
 
 	/**
 	 * Last tag close
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $last_tag_close = '';
 
@@ -193,91 +193,91 @@ class CI_Pagination {
 	 *
 	 * An alternative URL for the first page
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $first_url = '';
 
 	/**
 	 * Current tag open
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $cur_tag_open = '<strong>';
 
 	/**
 	 * Current tag close
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $cur_tag_close = '</strong>';
 
 	/**
 	 * Next tag open
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $next_tag_open = '';
 
 	/**
 	 * Next tag close
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $next_tag_close = '';
 
 	/**
 	 * Previous tag open
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $prev_tag_open = '';
 
 	/**
 	 * Previous tag close
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $prev_tag_close = '';
 
 	/**
 	 * Number tag open
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $num_tag_open = '';
 
 	/**
 	 * Number tag close
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $num_tag_close = '';
 
 	/**
 	 * Page query string flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $page_query_string = FALSE;
 
 	/**
 	 * Query string segment
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $query_string_segment = 'per_page';
 
 	/**
 	 * Display pages flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $display_pages = TRUE;
 
 	/**
 	 * Attributes
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_attributes = '';
 
@@ -287,35 +287,35 @@ class CI_Pagination {
 	 * "rel" attribute
 	 *
 	 * @see	CI_Pagination::_attr_rel()
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_link_types = array();
 
 	/**
 	 * Reuse query string flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $reuse_query_string = FALSE;
 
 	/**
 	 * Use global URL suffix flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $use_global_url_suffix = FALSE;
 
 	/**
 	 * Data page attribute
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $data_page_attr = 'data-ci-pagination-page';
 
 	/**
 	 * CI Singleton
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	protected $CI;
 

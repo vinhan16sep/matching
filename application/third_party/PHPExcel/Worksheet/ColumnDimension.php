@@ -30,7 +30,7 @@ class PHPExcel_Worksheet_ColumnDimension extends PHPExcel_Worksheet_Dimension
     /**
      * Column index
      *
-     * @var int
+     * @variables int
      */
     private $columnIndex;
 
@@ -39,14 +39,14 @@ class PHPExcel_Worksheet_ColumnDimension extends PHPExcel_Worksheet_Dimension
      *
      * When this is set to a negative value, the column width should be ignored by IWriter
      *
-     * @var double
+     * @variables double
      */
     private $width = -1;
 
     /**
      * Auto size?
      *
-     * @var bool
+     * @variables bool
      */
     private $autoSize = false;
 

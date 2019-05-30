@@ -38,42 +38,42 @@ class PHPExcel_Worksheet_PageMargins
     /**
      * Left
      *
-     * @var double
+     * @variables double
      */
     private $left        = 0.7;
 
     /**
      * Right
      *
-     * @var double
+     * @variables double
      */
     private $right        = 0.7;
 
     /**
      * Top
      *
-     * @var double
+     * @variables double
      */
     private $top        = 0.75;
 
     /**
      * Bottom
      *
-     * @var double
+     * @variables double
      */
     private $bottom    = 0.75;
 
     /**
      * Header
      *
-     * @var double
+     * @variables double
      */
     private $header     = 0.3;
 
     /**
      * Footer
      *
-     * @var double
+     * @variables double
      */
     private $footer     = 0.3;
 

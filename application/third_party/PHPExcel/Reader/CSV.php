@@ -40,7 +40,7 @@ class PHPExcel_Reader_CSV extends PHPExcel_Reader_Abstract implements PHPExcel_R
      * Input encoding
      *
      * @access    private
-     * @var    string
+     * @variables    string
      */
     private $inputEncoding = 'UTF-8';
 
@@ -48,7 +48,7 @@ class PHPExcel_Reader_CSV extends PHPExcel_Reader_Abstract implements PHPExcel_R
      * Delimiter
      *
      * @access    private
-     * @var string
+     * @variables string
      */
     private $delimiter = ',';
 
@@ -56,7 +56,7 @@ class PHPExcel_Reader_CSV extends PHPExcel_Reader_Abstract implements PHPExcel_R
      * Enclosure
      *
      * @access    private
-     * @var    string
+     * @variables    string
      */
     private $enclosure = '"';
 
@@ -64,7 +64,7 @@ class PHPExcel_Reader_CSV extends PHPExcel_Reader_Abstract implements PHPExcel_R
      * Sheet index to read
      *
      * @access    private
-     * @var    int
+     * @variables    int
      */
     private $sheetIndex = 0;
 
@@ -72,14 +72,14 @@ class PHPExcel_Reader_CSV extends PHPExcel_Reader_Abstract implements PHPExcel_R
      * Load rows contiguously
      *
      * @access    private
-     * @var    int
+     * @variables    int
      */
     private $contiguous = false;
 
     /**
      * Row counter for loading rows contiguously
      *
-     * @var    int
+     * @variables    int
      */
     private $contiguousRow = -1;
 

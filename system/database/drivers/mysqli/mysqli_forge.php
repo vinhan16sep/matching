@@ -51,7 +51,7 @@ class CI_DB_mysqli_forge extends CI_DB_forge {
 	/**
 	 * CREATE DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_database	= 'CREATE DATABASE %s CHARACTER SET %s COLLATE %s';
 
@@ -61,14 +61,14 @@ class CI_DB_mysqli_forge extends CI_DB_forge {
 	 * Whether table keys are created from within the
 	 * CREATE TABLE statement.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_create_table_keys	= TRUE;
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_unsigned		= array(
 		'TINYINT',
@@ -88,7 +88,7 @@ class CI_DB_mysqli_forge extends CI_DB_forge {
 	/**
 	 * NULL value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_null = 'NULL';
 

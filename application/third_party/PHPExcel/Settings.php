@@ -66,7 +66,7 @@ class PHPExcel_Settings
      *    e.g.
      *        ZipArchive
      *
-     * @var string
+     * @variables string
      */
     private static $zipClass = self::ZIPARCHIVE;
 
@@ -76,14 +76,14 @@ class PHPExcel_Settings
      *    e.g.
      *        jpgraph
      *
-     * @var string
+     * @variables string
      */
     private static $chartRendererName;
 
     /**
      * Directory Path to the external Library used for rendering charts
      *
-     * @var string
+     * @variables string
      */
     private static $chartRendererPath;
 
@@ -93,21 +93,21 @@ class PHPExcel_Settings
      *    e.g.
      *         mPDF
      *
-     * @var string
+     * @variables string
      */
     private static $pdfRendererName;
 
     /**
      * Directory Path to the external Library used for rendering PDF files
      *
-     * @var string
+     * @variables string
      */
     private static $pdfRendererPath;
 
     /**
      * Default options for libxml loader
      *
-     * @var int
+     * @variables int
      */
     private static $libXmlLoaderOptions = null;
 

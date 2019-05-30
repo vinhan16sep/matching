@@ -130,14 +130,14 @@ class PHPExcel_Shared_Font
     /**
      * AutoSize method
      *
-     * @var string
+     * @variables string
      */
     private static $autoSizeMethod = self::AUTOSIZE_METHOD_APPROX;
 
     /**
      * Path to folder containing TrueType font .ttf files
      *
-     * @var string
+     * @variables string
      */
     private static $trueTypeFontPath = null;
 
@@ -146,7 +146,7 @@ class PHPExcel_Shared_Font
      * Empirical data found by inspecting real Excel files and reading off the pixel width
      * in Microsoft Office Excel 2007.
      *
-     * @var array
+     * @variables array
      */
     public static $defaultColumnWidths = array(
         'Arial' => array(

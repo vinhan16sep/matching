@@ -40,21 +40,21 @@ class PHPExcel_Reader_HTML extends PHPExcel_Reader_Abstract implements PHPExcel_
     /**
      * Input encoding
      *
-     * @var string
+     * @variables string
      */
     protected $inputEncoding = 'ANSI';
 
     /**
      * Sheet index to read
      *
-     * @var int
+     * @variables int
      */
     protected $sheetIndex = 0;
 
     /**
      * Formats
      *
-     * @var array
+     * @variables array
      */
     protected $formats = array(
         'h1' => array(

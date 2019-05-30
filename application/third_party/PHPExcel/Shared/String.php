@@ -36,49 +36,49 @@ class PHPExcel_Shared_String
     /**
      * Control characters array
      *
-     * @var string[]
+     * @variables string[]
      */
     private static $controlCharacters = array();
 
     /**
      * SYLK Characters array
      *
-     * $var array
+     * $variables array
      */
     private static $SYLKCharacters = array();
 
     /**
      * Decimal separator
      *
-     * @var string
+     * @variables string
      */
     private static $decimalSeparator;
 
     /**
      * Thousands separator
      *
-     * @var string
+     * @variables string
      */
     private static $thousandsSeparator;
 
     /**
      * Currency code
      *
-     * @var string
+     * @variables string
      */
     private static $currencyCode;
 
     /**
      * Is mbstring extension avalable?
      *
-     * @var boolean
+     * @variables boolean
      */
     private static $isMbstringEnabled;
 
     /**
      * Is iconv extension avalable?
      *
-     * @var boolean
+     * @variables boolean
      */
     private static $isIconvEnabled;
 

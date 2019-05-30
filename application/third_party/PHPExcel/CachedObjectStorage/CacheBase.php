@@ -30,28 +30,28 @@ abstract class PHPExcel_CachedObjectStorage_CacheBase
     /**
      * Parent worksheet
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     protected $parent;
 
     /**
      * The currently active Cell
      *
-     * @var PHPExcel_Cell
+     * @variables PHPExcel_Cell
      */
     protected $currentObject = null;
 
     /**
      * Coordinate address of the currently active Cell
      *
-     * @var string
+     * @variables string
      */
     protected $currentObjectID = null;
 
     /**
      * Flag indicating whether the currently active Cell requires saving
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $currentCellIsDirty = true;
 
@@ -59,7 +59,7 @@ abstract class PHPExcel_CachedObjectStorage_CacheBase
      * An array of cells or cell pointers for the worksheet cells held in this cache,
      *        and indexed by their coordinate address within the worksheet
      *
-     * @var array of mixed
+     * @variables array of mixed
      */
     protected $cellCache = array();
 

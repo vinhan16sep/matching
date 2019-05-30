@@ -42,21 +42,21 @@ class PHPExcel_Style_Color extends PHPExcel_Style_Supervisor implements PHPExcel
     /**
      * Indexed colors array
      *
-     * @var array
+     * @variables array
      */
     protected static $indexedColors;
 
     /**
      * ARGB - Alpha RGB
      *
-     * @var string
+     * @variables string
      */
     protected $argb = null;
 
     /**
      * Parent property name
      *
-     * @var string
+     * @variables string
      */
     protected $parentPropertyName;
 

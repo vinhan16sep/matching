@@ -65,107 +65,107 @@ class PHPExcel_Writer_Excel5_Workbook extends PHPExcel_Writer_Excel5_BIFFwriter
     /**
      * Formula parser
      *
-     * @var PHPExcel_Writer_Excel5_Parser
+     * @variables PHPExcel_Writer_Excel5_Parser
      */
     private $parser;
 
     /**
      * The BIFF file size for the workbook.
-     * @var integer
+     * @variables integer
      * @see calcSheetOffsets()
      */
     private $biffSize;
 
     /**
      * XF Writers
-     * @var PHPExcel_Writer_Excel5_Xf[]
+     * @variables PHPExcel_Writer_Excel5_Xf[]
      */
     private $xfWriters = array();
 
     /**
      * Array containing the colour palette
-     * @var array
+     * @variables array
      */
     private $palette;
 
     /**
      * The codepage indicates the text encoding used for strings
-     * @var integer
+     * @variables integer
      */
     private $codepage;
 
     /**
      * The country code used for localization
-     * @var integer
+     * @variables integer
      */
     private $countryCode;
 
     /**
      * Workbook
-     * @var PHPExcel
+     * @variables PHPExcel
      */
     private $phpExcel;
 
     /**
      * Fonts writers
      *
-     * @var PHPExcel_Writer_Excel5_Font[]
+     * @variables PHPExcel_Writer_Excel5_Font[]
      */
     private $fontWriters = array();
 
     /**
      * Added fonts. Maps from font's hash => index in workbook
      *
-     * @var array
+     * @variables array
      */
     private $addedFonts = array();
 
     /**
      * Shared number formats
      *
-     * @var array
+     * @variables array
      */
     private $numberFormats = array();
 
     /**
      * Added number formats. Maps from numberFormat's hash => index in workbook
      *
-     * @var array
+     * @variables array
      */
     private $addedNumberFormats = array();
 
     /**
      * Sizes of the binary worksheet streams
      *
-     * @var array
+     * @variables array
      */
     private $worksheetSizes = array();
 
     /**
      * Offsets of the binary worksheet streams relative to the start of the global workbook stream
      *
-     * @var array
+     * @variables array
      */
     private $worksheetOffsets = array();
 
     /**
      * Total number of shared strings in workbook
      *
-     * @var int
+     * @variables int
      */
     private $stringTotal;
 
     /**
      * Number of unique shared strings in workbook
      *
-     * @var int
+     * @variables int
      */
     private $stringUnique;
 
     /**
      * Array of unique shared strings in workbook
      *
-     * @var array
+     * @variables array
      */
     private $stringTable;
 
@@ -177,7 +177,7 @@ class PHPExcel_Writer_Excel5_Workbook extends PHPExcel_Writer_Excel5_BIFFwriter
     /**
      * Escher object corresponding to MSODRAWINGGROUP
      *
-     * @var PHPExcel_Shared_Escher
+     * @variables PHPExcel_Shared_Escher
      */
     private $escher;
 

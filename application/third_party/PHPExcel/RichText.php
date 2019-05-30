@@ -30,7 +30,7 @@ class PHPExcel_RichText implements PHPExcel_IComparable
     /**
      * Rich text elements
      *
-     * @var PHPExcel_RichText_ITextElement[]
+     * @variables PHPExcel_RichText_ITextElement[]
      */
     private $richTextElements;
 

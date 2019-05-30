@@ -48,7 +48,7 @@ class trendClass
     /**
      * Names of the best-fit trend analysis methods
      *
-     * @var string[]
+     * @variables string[]
      **/
     private static $trendTypes = array(
         self::TREND_LINEAR,
@@ -60,7 +60,7 @@ class trendClass
     /**
      * Names of the best-fit trend polynomial orders
      *
-     * @var string[]
+     * @variables string[]
      **/
     private static $trendTypePolynomialOrders = array(
         self::TREND_POLYNOMIAL_2,
@@ -73,7 +73,7 @@ class trendClass
     /**
      * Cached results for each method when trying to identify which provides the best fit
      *
-     * @var PHPExcel_Best_Fit[]
+     * @variables PHPExcel_Best_Fit[]
      **/
     private static $trendCache = array();
 

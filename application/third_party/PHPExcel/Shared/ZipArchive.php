@@ -41,14 +41,14 @@ class PHPExcel_Shared_ZipArchive
     /**
      * Temporary storage directory
      *
-     * @var string
+     * @variables string
      */
     private $tempDir;
 
     /**
      * Zip Archive Stream Handle
      *
-     * @var string
+     * @variables string
      */
     private $zip;
 

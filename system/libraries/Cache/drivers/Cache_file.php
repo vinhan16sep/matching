@@ -51,7 +51,7 @@ class CI_Cache_file extends CI_Driver {
 	/**
 	 * Directory in which to save cache files
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_cache_path;
 

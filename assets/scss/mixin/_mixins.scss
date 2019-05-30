@@ -1,0 +1,50 @@
+//Primary Item Border
+
+@mixin d-flex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin item-border{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: $border-color-default;
+
+    background-color: #fff;
+}
+
+//Set Border Radius
+
+@mixin borderRadius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+//Set Background with Alpha
+
+@mixin backgroundPrimarywithAlpha($alpha){
+    background-color: rgba(59, 192, 195, $alpha);
+}
+
+//Set Box Shadow
+
+@mixin boxshadow($x, $y, $blur, $color){
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
+
+//Set Text Shadow
+
+@mixin textShadow($x, $y, $blur, $color){
+    text-shadow: $x $y $blur $color;
+}
+

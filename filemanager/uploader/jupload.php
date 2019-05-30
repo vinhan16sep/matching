@@ -149,7 +149,7 @@ class JUpload {
 			if ($obd != '')
 			$classparams['destdir'] = $obd;
 			else
-			$classparams['destdir'] = '/var/tmp/jupload_test';
+			$classparams['destdir'] = '/variables/tmp/jupload_test';
 		}else{
 			$classparams['destdir']=str_replace('~',' ',$classparams['destdir']);
 		}
@@ -333,7 +333,7 @@ class JUpload {
 		// remove accumulated file, if any.
 		@unlink($this->classparams['destdir'].'/'.$this->classparams['tmp_prefix'].session_id());
 		@unlink($this->classparams['destdir'].'/'.$this->classparams['tmp_prefix'].'tmp'.session_id());
-		// reset session var
+		// reset session variables
 		$_SESSION['RF'][$this->classparams['var_prefix'].'size'] = 0;
 		return;
 	}
@@ -681,7 +681,7 @@ if ($jupart) {
 		} else {
 			unlink($dstname);
 		}
-		// reset session var
+		// reset session variables
 		$_SESSION['RF'][$this->classparams['var_prefix'].'size'] = 0;
 	}
 } else {

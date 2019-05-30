@@ -30,14 +30,14 @@ abstract class PHPExcel_Style_Supervisor
     /**
      * Supervisor?
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $isSupervisor;
 
     /**
      * Parent. Only used for supervisor
      *
-     * @var PHPExcel_Style
+     * @variables PHPExcel_Style
      */
     protected $parent;
 

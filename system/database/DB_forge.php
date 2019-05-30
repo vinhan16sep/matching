@@ -49,35 +49,35 @@ abstract class CI_DB_forge {
 	/**
 	 * Database object
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	protected $db;
 
 	/**
 	 * Fields data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $fields		= array();
 
 	/**
 	 * Keys data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $keys		= array();
 
 	/**
 	 * Primary Keys data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $primary_keys	= array();
 
 	/**
 	 * Database character set
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $db_char_set	= '';
 
@@ -86,28 +86,28 @@ abstract class CI_DB_forge {
 	/**
 	 * CREATE DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_database	= 'CREATE DATABASE %s';
 
 	/**
 	 * DROP DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_database	= 'DROP DATABASE %s';
 
 	/**
 	 * CREATE TABLE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_table	= "%s %s (%s\n)";
 
 	/**
 	 * CREATE TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_table_if	= 'CREATE TABLE IF NOT EXISTS';
 
@@ -117,42 +117,42 @@ abstract class CI_DB_forge {
 	 * Whether table keys are created from within the
 	 * CREATE TABLE statement.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_create_table_keys	= FALSE;
 
 	/**
 	 * DROP TABLE IF EXISTS statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_table_if	= 'DROP TABLE IF EXISTS';
 
 	/**
 	 * RENAME TABLE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_rename_table	= 'ALTER TABLE %s RENAME TO %s;';
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	bool|array
+	 * @variables	bool|array
 	 */
 	protected $_unsigned		= TRUE;
 
 	/**
 	 * NULL value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_null		= '';
 
 	/**
 	 * DEFAULT value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_default		= ' DEFAULT ';
 

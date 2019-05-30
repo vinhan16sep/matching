@@ -55,7 +55,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	/**
 	 * Database driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbdriver = 'mssql';
 
@@ -64,7 +64,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('NEWID()', 'RAND(%d)');
 
@@ -74,7 +74,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	 * Whether to use SQL-92 standard quoted identifier
 	 * (double quotes) or brackets for identifier escaping.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_quoted_identifier = TRUE;
 

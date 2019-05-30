@@ -65,61 +65,61 @@ class PHPExcel_Writer_Excel5_Xf
     /**
      * Style XF or a cell XF ?
      *
-     * @var boolean
+     * @variables boolean
      */
     private $isStyleXf;
 
     /**
      * Index to the FONT record. Index 4 does not exist
-     * @var integer
+     * @variables integer
      */
     private $fontIndex;
 
     /**
      * An index (2 bytes) to a FORMAT record (number format).
-     * @var integer
+     * @variables integer
      */
     private $numberFormatIndex;
 
     /**
      * 1 bit, apparently not used.
-     * @var integer
+     * @variables integer
      */
     private $textJustLast;
 
     /**
      * The cell's foreground color.
-     * @var integer
+     * @variables integer
      */
     private $foregroundColor;
 
     /**
      * The cell's background color.
-     * @var integer
+     * @variables integer
      */
     private $backgroundColor;
 
     /**
      * Color of the bottom border of the cell.
-     * @var integer
+     * @variables integer
      */
     private $bottomBorderColor;
 
     /**
      * Color of the top border of the cell.
-     * @var integer
+     * @variables integer
      */
     private $topBorderColor;
 
     /**
     * Color of the left border of the cell.
-    * @var integer
+    * @variables integer
     */
     private $leftBorderColor;
 
     /**
      * Color of the right border of the cell.
-     * @var integer
+     * @variables integer
      */
     private $rightBorderColor;
 

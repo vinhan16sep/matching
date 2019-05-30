@@ -30,7 +30,7 @@ class PHPExcel_Worksheet_RowDimension extends PHPExcel_Worksheet_Dimension
     /**
      * Row index
      *
-     * @var int
+     * @variables int
      */
     private $rowIndex;
 
@@ -39,14 +39,14 @@ class PHPExcel_Worksheet_RowDimension extends PHPExcel_Worksheet_Dimension
      *
      * When this is set to a negative value, the row height should be ignored by IWriter
      *
-     * @var double
+     * @variables double
      */
     private $height = -1;
 
      /**
      * ZeroHeight for Row?
      *
-     * @var bool
+     * @variables bool
      */
     private $zeroHeight = false;
 

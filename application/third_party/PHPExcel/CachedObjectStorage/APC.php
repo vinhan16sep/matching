@@ -31,7 +31,7 @@ class PHPExcel_CachedObjectStorage_APC extends PHPExcel_CachedObjectStorage_Cach
      * Prefix used to uniquely identify cache data for this worksheet
      *
      * @access    private
-     * @var string
+     * @variables string
      */
     private $cachePrefix = null;
 
@@ -39,7 +39,7 @@ class PHPExcel_CachedObjectStorage_APC extends PHPExcel_CachedObjectStorage_Cach
      * Cache timeout
      *
      * @access    private
-     * @var integer
+     * @variables integer
      */
     private $cacheTime = 600;
 

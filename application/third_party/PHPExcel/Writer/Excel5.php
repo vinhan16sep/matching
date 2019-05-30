@@ -30,63 +30,63 @@ class PHPExcel_Writer_Excel5 extends PHPExcel_Writer_Abstract implements PHPExce
     /**
      * PHPExcel object
      *
-     * @var PHPExcel
+     * @variables PHPExcel
      */
     private $phpExcel;
 
     /**
      * Total number of shared strings in workbook
      *
-     * @var int
+     * @variables int
      */
     private $strTotal = 0;
 
     /**
      * Number of unique shared strings in workbook
      *
-     * @var int
+     * @variables int
      */
     private $strUnique = 0;
 
     /**
      * Array of unique shared strings in workbook
      *
-     * @var array
+     * @variables array
      */
     private $strTable = array();
 
     /**
      * Color cache. Mapping between RGB value and color index.
      *
-     * @var array
+     * @variables array
      */
     private $colors;
 
     /**
      * Formula parser
      *
-     * @var PHPExcel_Writer_Excel5_Parser
+     * @variables PHPExcel_Writer_Excel5_Parser
      */
     private $parser;
 
     /**
      * Identifier clusters for drawings. Used in MSODRAWINGGROUP record.
      *
-     * @var array
+     * @variables array
      */
     private $IDCLs;
 
     /**
      * Basic OLE object summary information
      *
-     * @var array
+     * @variables array
      */
     private $summaryInformation;
 
     /**
      * Extended OLE object document summary information
      *
-     * @var array
+     * @variables array
      */
     private $documentSummaryInformation;
 

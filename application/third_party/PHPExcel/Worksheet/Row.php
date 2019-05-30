@@ -30,14 +30,14 @@ class PHPExcel_Worksheet_Row
     /**
      * PHPExcel_Worksheet
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     private $parent;
 
     /**
      * Row index
      *
-     * @var int
+     * @variables int
      */
     private $rowIndex = 0;
 

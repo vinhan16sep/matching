@@ -49,14 +49,14 @@ class CI_DB_pdo_mysql_forge extends CI_DB_pdo_forge {
 	/**
 	 * CREATE DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_database	= 'CREATE DATABASE %s CHARACTER SET %s COLLATE %s';
 
 	/**
 	 * CREATE TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_table_if	= 'CREATE TABLE IF NOT EXISTS';
 
@@ -66,21 +66,21 @@ class CI_DB_pdo_mysql_forge extends CI_DB_pdo_forge {
 	 * Whether table keys are created from within the
 	 * CREATE TABLE statement.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_create_table_keys	= TRUE;
 
 	/**
 	 * DROP TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_table_if	= 'DROP TABLE IF EXISTS';
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_unsigned		= array(
 		'TINYINT',
@@ -100,7 +100,7 @@ class CI_DB_pdo_mysql_forge extends CI_DB_pdo_forge {
 	/**
 	 * NULL value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_null = 'NULL';
 

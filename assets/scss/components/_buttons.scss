@@ -1,0 +1,41 @@
+.btn{
+    font-family: 'Montserrat', sans-serif;
+
+    &:focus{
+        box-shadow: 0 0 0 0.2rem rgba($primary-base,.25);
+    }
+
+    &:not(:disabled):not(.disabled):active{
+        background-color: $primary-lighter;
+        border-color: $primary-base;
+    }
+
+    &.btn-primary{
+        background-color: $primary-base;
+        border-color: $primary-lighter;
+
+        color: #fff;
+
+        &:hover{
+            color: $primary-darker;
+            background-color: $primary-lighter;
+        }
+    }
+
+    &.btn-light{
+        background-color: #fff;
+        border-color: #fff;
+
+        color: $primary-base;
+
+        &:hover{
+            background-color: $primary-lightest;
+        }
+    }
+
+    &.btn-outline-light{
+        &:hover{
+            color: $primary-base;
+        }
+    }
+}

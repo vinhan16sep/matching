@@ -31,7 +31,7 @@ abstract class PHPExcel_Writer_Abstract implements PHPExcel_Writer_IWriter
      * Write charts that are defined in the workbook?
      * Identifies whether the Writer should write definitions for any charts that exist in the PHPExcel object;
      *
-     * @var    boolean
+     * @variables    boolean
      */
     protected $includeCharts = false;
 
@@ -40,21 +40,21 @@ abstract class PHPExcel_Writer_Abstract implements PHPExcel_Writer_IWriter
      * Forces PHPExcel to recalculate all formulae in a workbook when saving, so that the pre-calculated values are
      *    immediately available to MS Excel or other office spreadsheet viewer when opening the file
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $preCalculateFormulas = true;
 
     /**
      * Use disk caching where possible?
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $_useDiskCaching = false;
 
     /**
      * Disk caching directory
      *
-     * @var string
+     * @variables string
      */
     protected $_diskCachingDirectory    = './';
 

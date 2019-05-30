@@ -49,25 +49,25 @@
 class SMTP {
   /**
    *  SMTP server port
-   *  @var int
+   *  @variables int
    */
   public $SMTP_PORT = 25;
 
   /**
    *  SMTP reply line ending
-   *  @var string
+   *  @variables string
    */
   public $CRLF = "\r\n";
 
   /**
    *  Sets whether debugging is turned on
-   *  @var bool
+   *  @variables bool
    */
   public $do_debug;       // the level of debug to perform
 
   /**
    *  Sets VERP use on/off (default is off)
-   *  @var bool
+   *  @variables bool
    */
   public $do_verp = false;
 
@@ -597,7 +597,7 @@ class SMTP {
 
     $code = substr($byemsg,0,3);
     if($code != 221) {
-      // use e as a tmp var cause Close will overwrite $this->error
+      // use e as a tmp variables cause Close will overwrite $this->error
       $e = array("error" => "SMTP server rejected quit command",
                  "smtp_code" => $code,
                  "smtp_rply" => substr($byemsg,4));

@@ -52,7 +52,7 @@ class CI_Javascript {
 	/**
 	 * JavaScript location
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_javascript_location = 'js';
 

@@ -54,7 +54,7 @@ class CI_Benchmark {
 	/**
 	 * List of all benchmark markers
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $marker = array();
 

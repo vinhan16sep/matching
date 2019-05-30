@@ -42,28 +42,28 @@ class PHPExcel_Worksheet_MemoryDrawing extends PHPExcel_Worksheet_BaseDrawing im
     /**
      * Image resource
      *
-     * @var resource
+     * @variables resource
      */
     private $imageResource;
 
     /**
      * Rendering function
      *
-     * @var string
+     * @variables string
      */
     private $renderingFunction;
 
     /**
      * Mime type
      *
-     * @var string
+     * @variables string
      */
     private $mimeType;
 
     /**
      * Unique name
      *
-     * @var string
+     * @variables string
      */
     private $uniqueName;
 

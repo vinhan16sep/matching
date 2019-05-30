@@ -55,7 +55,7 @@ class CI_DB_pdo_oci_driver extends CI_DB_pdo_driver {
 	/**
 	 * Sub-driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver = 'oci';
 
@@ -66,14 +66,14 @@ class CI_DB_pdo_oci_driver extends CI_DB_pdo_driver {
 	 *
 	 * Identifiers that must NOT be escaped.
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_reserved_identifiers = array('*', 'rownum');
 
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('ASC', 'ASC'); // Currently not supported
 
@@ -83,7 +83,7 @@ class CI_DB_pdo_oci_driver extends CI_DB_pdo_driver {
 	 * @used-by	CI_DB_driver::count_all()
 	 * @used-by	CI_DB_query_builder::count_all_results()
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_count_string = 'SELECT COUNT(1) AS ';
 

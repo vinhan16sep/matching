@@ -63,28 +63,28 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 	/**
 	 * Array of methods mapped to function names and signatures
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $methods = array();
 
 	/**
 	 * Debug Message
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $debug_msg = '';
 
 	/**
 	 * XML RPC Server methods
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $system_methods	= array();
 
 	/**
 	 * Configuration object
 	 *
-	 * @var object
+	 * @variables object
 	 */
 	public $object = FALSE;
 

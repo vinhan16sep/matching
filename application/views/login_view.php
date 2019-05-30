@@ -1,92 +1,68 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/temp.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Homepage</title>
+    <link rel="shortcut icon" type="image/png" href="<?php echo site_url('assets/public/img/favicon.png'); ?>"/>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<link rel="stylesheet" href="<?php echo site_url('assets/public/css/login.css'); ?>">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<section class="main_content container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="inner">
-                    <h1>Client Login</h1>
-<!--                    --><?php //echo $this->session->flashdata('message'); ?>
-<!--                    --><?php //echo form_open('', array('class' => 'form-horizontal')); ?>
-<!--                    <div class="form-group">-->
-<!--                        --><?php //echo form_label('Username', 'identity'); ?>
-<!--                        --><?php //echo form_error('identity'); ?>
-<!--                        --><?php //echo form_input('identity', '', 'class="form-control"'); ?>
-<!--                    </div>-->
-<!--                    <div class="form-group">-->
-<!--                        --><?php //echo form_label('Password', 'password'); ?>
-<!--                        --><?php //echo form_error('password'); ?>
-<!--                        --><?php //echo form_password('password', '', 'class="form-control"'); ?>
-<!--                    </div>-->
-<!--                    <div class="form-group">-->
-<!--                        <label>-->
-<!--                            --><?php //echo form_checkbox('remember', '1', FALSE); ?><!-- Remember me-->
-<!--                        </label>-->
-<!--                    </div>-->
-<!--                    --><?php //echo form_submit('submit', 'Log in', 'class="btn btn-primary btn-lg btn-block"'); ?>
-<!--                    --><?php //echo form_close(); ?>
-                    <div class="form-group">
-                        <label for="inputEmail">Email address</label>
-                        <input type="email" class="form-control" id="inputEmail1" placeholder="Email Address">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                    </div>
+    <link rel="stylesheet" href="<?php echo site_url('assets/scss/style.css') ?>">
 
+</head>
 
-                    <button class="btn btn-primary" type="submit">Login</button>
-                    <button class="btn btn-default" type="submit">Forgot password?</button>
+<body id="homepage_landing">
+<header>
+    <div class="nav-logo">
+        <a href="<?php echo base_url('')?>">
+            <img src="<?php echo site_url('assets/img/logo.png') ?>" alt="Logo Vinasa">
+        </a>
+    </div>
 
+    <div class="nav-main">
+        <ul>
+            <li>
+                <a href="<?php echo base_url('user/login/') ?>" class="btn btn-default" role="button">
+                    Sign in
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo base_url('') ?>" class="btn btn-primary" role="button">
+                    Sign up
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
 
-                </div>
-            </div>
-
-            <div class="col-md-8 col-sm-6 col-xs-12">
-                <div class="inner">
-                    <h1>Client Register</h1>
-                    <div class="form-group">
-                        <label for="inputFirstName">First name</label>
-                        <input type="text" class="form-control" id="inputFirstName" placeholder="First name">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputLastName">Last name</label>
-                        <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputGrade">Grade</label>
-                        <input type="text" class="form-control" id="inputGrade" placeholder="Grade">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputWorkplace">Workplace</label>
-                        <input type="text" class="form-control" id="inputWorkplace" placeholder="Workplace">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputUsername">Username</label>
-                        <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmailR">Email address</label>
-                        <input type="email" class="form-control" id="inputEmail1R" placeholder="Email Address">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPhoneNo">Phone number</label>
-                        <input type="password" class="form-control" id="inputPhoneNo" placeholder="Phone number">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPasswordR">Password</label>
-                        <input type="password" class="form-control" id="inputPasswordR" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputConfirmPasswordR">Confirm Password</label>
-                        <input type="password" class="form-control" id="inputConfirmPasswordR" placeholder="Confirm Password">
-                    </div>
-
-                    <button class="btn btn-primary" type="submit">Register</button>
-                </div>
-            </div>
+<div class="cover-background" style="background-image: url('https://images.unsplash.com/photo-1528238646472-f2366160b6c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80')">
+    <div class="wrapper">
+        <div class="content">
+            <h6>Matching Platform</h6>
+            <h3>Be the Best for your business and client</h3>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url('user/login/') ?>" class="btn btn-default" role="button">
+                        Sign in
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('') ?>" class="btn btn-primary" role="button">
+                        Sign up
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
-</section>
+</div>
+
+</body>
+</html>

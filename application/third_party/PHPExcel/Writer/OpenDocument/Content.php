@@ -49,7 +49,7 @@ class PHPExcel_Writer_OpenDocument_Content extends PHPExcel_Writer_OpenDocument_
     public function write(PHPExcel $pPHPExcel = null)
     {
         if (!$pPHPExcel) {
-            $pPHPExcel = $this->getParentWriter()->getPHPExcel(); /* @var $pPHPExcel PHPExcel */
+            $pPHPExcel = $this->getParentWriter()->getPHPExcel(); /* @variables $pPHPExcel PHPExcel */
         }
 
         $objWriter = null;
@@ -121,7 +121,7 @@ class PHPExcel_Writer_OpenDocument_Content extends PHPExcel_Writer_OpenDocument_
      */
     private function writeSheets(PHPExcel_Shared_XMLWriter $objWriter)
     {
-        $pPHPExcel = $this->getParentWriter()->getPHPExcel(); /* @var $pPHPExcel PHPExcel */
+        $pPHPExcel = $this->getParentWriter()->getPHPExcel(); /* @variables $pPHPExcel PHPExcel */
 
         $sheet_count = $pPHPExcel->getSheetCount();
         for ($i = 0; $i < $sheet_count; $i++) {

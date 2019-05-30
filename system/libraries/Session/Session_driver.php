@@ -53,14 +53,14 @@ abstract class CI_Session_driver implements SessionHandlerInterface {
 	/**
 	 * Data fingerprint
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_fingerprint;
 
 	/**
 	 * Lock placeholder
 	 *
-	 * @var	mixed
+	 * @variables	mixed
 	 */
 	protected $_lock = FALSE;
 
@@ -70,7 +70,7 @@ abstract class CI_Session_driver implements SessionHandlerInterface {
 	 * Used to detect session_regenerate_id() calls because PHP only calls
 	 * write() after regenerating the ID.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_session_id;
 
@@ -82,7 +82,7 @@ abstract class CI_Session_driver implements SessionHandlerInterface {
 	 * bug, so we need to return different values depending on the version.
 	 *
 	 * @see	https://wiki.php.net/rfc/session.user.return-value
-	 * @var	mixed
+	 * @variables	mixed
 	 */
 	protected $_success, $_failure;
 

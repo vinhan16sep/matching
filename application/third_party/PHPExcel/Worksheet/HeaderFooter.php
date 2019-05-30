@@ -98,77 +98,77 @@ class PHPExcel_Worksheet_HeaderFooter
     /**
      * OddHeader
      *
-     * @var string
+     * @variables string
      */
     private $oddHeader = '';
 
     /**
      * OddFooter
      *
-     * @var string
+     * @variables string
      */
     private $oddFooter = '';
 
     /**
      * EvenHeader
      *
-     * @var string
+     * @variables string
      */
     private $evenHeader = '';
 
     /**
      * EvenFooter
      *
-     * @var string
+     * @variables string
      */
     private $evenFooter = '';
 
     /**
      * FirstHeader
      *
-     * @var string
+     * @variables string
      */
     private $firstHeader = '';
 
     /**
      * FirstFooter
      *
-     * @var string
+     * @variables string
      */
     private $firstFooter = '';
 
     /**
      * Different header for Odd/Even, defaults to false
      *
-     * @var boolean
+     * @variables boolean
      */
     private $differentOddEven = false;
 
     /**
      * Different header for first page, defaults to false
      *
-     * @var boolean
+     * @variables boolean
      */
     private $differentFirst = false;
 
     /**
      * Scale with document, defaults to true
      *
-     * @var boolean
+     * @variables boolean
      */
     private $scaleWithDocument = true;
 
     /**
      * Align with margins, defaults to true
      *
-     * @var boolean
+     * @variables boolean
      */
     private $alignWithMargins = true;
 
     /**
      * Header/footer images
      *
-     * @var PHPExcel_Worksheet_HeaderFooterDrawing[]
+     * @variables PHPExcel_Worksheet_HeaderFooterDrawing[]
      */
     private $headerFooterImages = array();
 

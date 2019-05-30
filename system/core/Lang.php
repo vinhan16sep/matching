@@ -51,14 +51,14 @@ class CI_Lang {
 	/**
 	 * List of translations
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $language =	array();
 
 	/**
 	 * List of loaded language files
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $is_loaded =	array();
 

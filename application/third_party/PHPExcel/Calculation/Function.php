@@ -43,21 +43,21 @@ class PHPExcel_Calculation_Function
     /**
      * Category (represented by CATEGORY_*)
      *
-     * @var string
+     * @variables string
      */
     private $category;
 
     /**
      * Excel name
      *
-     * @var string
+     * @variables string
      */
     private $excelName;
 
     /**
      * PHPExcel name
      *
-     * @var string
+     * @variables string
      */
     private $phpExcelName;
 

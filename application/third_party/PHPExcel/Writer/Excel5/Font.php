@@ -30,14 +30,14 @@ class PHPExcel_Writer_Excel5_Font
     /**
      * Color index
      *
-     * @var int
+     * @variables int
      */
     private $colorIndex;
 
     /**
      * Font
      *
-     * @var PHPExcel_Style_Font
+     * @variables PHPExcel_Style_Font
      */
     private $font;
 

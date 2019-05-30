@@ -42,7 +42,7 @@ class PHPExcel_Calculation_Engineering
     /**
      * Details of the Units of measure that can be used in CONVERTUOM()
      *
-     * @var mixed[]
+     * @variables mixed[]
      */
     private static $conversionUnits = array(
         'g'     => array('Group' => 'Mass',        'Unit Name' => 'Gram',                     'AllowPrefix' => true),
@@ -113,7 +113,7 @@ class PHPExcel_Calculation_Engineering
     /**
      * Details of the Multiplier prefixes that can be used with Units of Measure in CONVERTUOM()
      *
-     * @var mixed[]
+     * @variables mixed[]
      */
     private static $conversionMultipliers = array(
         'Y' => array('multiplier' => 1E24,  'name' => 'yotta'),
@@ -141,7 +141,7 @@ class PHPExcel_Calculation_Engineering
     /**
      * Details of the Units of measure conversion factors, organised by group
      *
-     * @var mixed[]
+     * @variables mixed[]
      */
     private static $unitConversions = array(
         'Mass' => array(

@@ -51,7 +51,7 @@ class CI_DB_postgre_forge extends CI_DB_forge {
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_unsigned		= array(
 		'INT2'		=> 'INTEGER',
@@ -68,7 +68,7 @@ class CI_DB_postgre_forge extends CI_DB_forge {
 	/**
 	 * NULL value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_null = 'NULL';
 

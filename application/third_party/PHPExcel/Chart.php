@@ -30,98 +30,98 @@ class PHPExcel_Chart
     /**
      * Chart Name
      *
-     * @var string
+     * @variables string
      */
     private $name = '';
 
     /**
      * Worksheet
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     private $worksheet;
 
     /**
      * Chart Title
      *
-     * @var PHPExcel_Chart_Title
+     * @variables PHPExcel_Chart_Title
      */
     private $title;
 
     /**
      * Chart Legend
      *
-     * @var PHPExcel_Chart_Legend
+     * @variables PHPExcel_Chart_Legend
      */
     private $legend;
 
     /**
      * X-Axis Label
      *
-     * @var PHPExcel_Chart_Title
+     * @variables PHPExcel_Chart_Title
      */
     private $xAxisLabel;
 
     /**
      * Y-Axis Label
      *
-     * @var PHPExcel_Chart_Title
+     * @variables PHPExcel_Chart_Title
      */
     private $yAxisLabel;
 
     /**
      * Chart Plot Area
      *
-     * @var PHPExcel_Chart_PlotArea
+     * @variables PHPExcel_Chart_PlotArea
      */
     private $plotArea;
 
     /**
      * Plot Visible Only
      *
-     * @var boolean
+     * @variables boolean
      */
     private $plotVisibleOnly = true;
 
     /**
      * Display Blanks as
      *
-     * @var string
+     * @variables string
      */
     private $displayBlanksAs = '0';
 
     /**
      * Chart Asix Y as
      *
-     * @var PHPExcel_Chart_Axis
+     * @variables PHPExcel_Chart_Axis
      */
     private $yAxis;
 
     /**
      * Chart Asix X as
      *
-     * @var PHPExcel_Chart_Axis
+     * @variables PHPExcel_Chart_Axis
      */
     private $xAxis;
 
     /**
      * Chart Major Gridlines as
      *
-     * @var PHPExcel_Chart_GridLines
+     * @variables PHPExcel_Chart_GridLines
      */
     private $majorGridlines;
 
     /**
      * Chart Minor Gridlines as
      *
-     * @var PHPExcel_Chart_GridLines
+     * @variables PHPExcel_Chart_GridLines
      */
     private $minorGridlines;
 
     /**
      * Top-Left Cell Position
      *
-     * @var string
+     * @variables string
      */
     private $topLeftCellRef = 'A1';
 
@@ -129,7 +129,7 @@ class PHPExcel_Chart
     /**
      * Top-Left X-Offset
      *
-     * @var integer
+     * @variables integer
      */
     private $topLeftXOffset = 0;
 
@@ -137,7 +137,7 @@ class PHPExcel_Chart
     /**
      * Top-Left Y-Offset
      *
-     * @var integer
+     * @variables integer
      */
     private $topLeftYOffset = 0;
 
@@ -145,7 +145,7 @@ class PHPExcel_Chart
     /**
      * Bottom-Right Cell Position
      *
-     * @var string
+     * @variables string
      */
     private $bottomRightCellRef = 'A1';
 
@@ -153,7 +153,7 @@ class PHPExcel_Chart
     /**
      * Bottom-Right X-Offset
      *
-     * @var integer
+     * @variables integer
      */
     private $bottomRightXOffset = 10;
 
@@ -161,7 +161,7 @@ class PHPExcel_Chart
     /**
      * Bottom-Right Y-Offset
      *
-     * @var integer
+     * @variables integer
      */
     private $bottomRightYOffset = 10;
 
