@@ -49,28 +49,28 @@ class PHPExcel_Reader_Excel5_Escher
     /**
      * Escher stream data (binary)
      *
-     * @var string
+     * @variables string
      */
     private $data;
 
     /**
      * Size in bytes of the Escher stream data
      *
-     * @var int
+     * @variables int
      */
     private $dataSize;
 
     /**
      * Current position of stream pointer in Escher stream data
      *
-     * @var int
+     * @variables int
      */
     private $pos;
 
     /**
      * The object to be returned by the reader. Modified during load.
      *
-     * @var mixed
+     * @variables mixed
      */
     private $object;
 
@@ -294,7 +294,7 @@ class PHPExcel_Reader_Excel5_Escher
         // offset: 36; size: $cbName; nameData
         $nameData = substr($recordData, 36, $cbName);
 
-        // offset: 36 + $cbName, size: var; the BLIP data
+        // offset: 36 + $cbName, size: variables; the BLIP data
         $blipData = substr($recordData, 36 + $cbName);
 
         // record is a container, read contents
@@ -330,11 +330,11 @@ class PHPExcel_Reader_Excel5_Escher
             $pos += 16;
         }
 
-        // offset: var; size: 1; tag
+        // offset: variables; size: 1; tag
         $tag = ord($recordData{$pos});
         $pos += 1;
 
-        // offset: var; size: var; the raw image data
+        // offset: variables; size: variables; the raw image data
         $data = substr($recordData, $pos);
 
         $blip = new PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip();
@@ -371,11 +371,11 @@ class PHPExcel_Reader_Excel5_Escher
             $pos += 16;
         }
 
-        // offset: var; size: 1; tag
+        // offset: variables; size: 1; tag
         $tag = ord($recordData{$pos});
         $pos += 1;
 
-        // offset: var; size: var; the raw image data
+        // offset: variables; size: variables; the raw image data
         $data = substr($recordData, $pos);
 
         $blip = new PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip();

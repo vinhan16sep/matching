@@ -30,7 +30,7 @@ class PHPExcel_CalcEngine_CyclicReferenceStack
     /**
      *  The call stack for calculated cells
      *
-     *  @var mixed[]
+     *  @variables mixed[]
      */
     private $stack = array();
 

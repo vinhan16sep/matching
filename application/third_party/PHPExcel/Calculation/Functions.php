@@ -65,7 +65,7 @@ class PHPExcel_Calculation_Functions
      * Compatibility mode to use for error checking and responses
      *
      * @access    private
-     * @var string
+     * @variables string
      */
     protected static $compatibilityMode = self::COMPATIBILITY_EXCEL;
 
@@ -73,7 +73,7 @@ class PHPExcel_Calculation_Functions
      * Data Type to use when returning date values
      *
      * @access    private
-     * @var string
+     * @variables string
      */
     protected static $returnDateType = self::RETURNDATE_EXCEL;
 
@@ -81,7 +81,7 @@ class PHPExcel_Calculation_Functions
      * List of error codes
      *
      * @access    private
-     * @var array
+     * @variables array
      */
     protected static $errorCodes = array(
         'null'           => '#NULL!',

@@ -73,14 +73,14 @@ class PHPExcel_Calculation_FormulaParser
     /**
      * Formula
      *
-     * @var string
+     * @variables string
      */
     private $formula;
 
     /**
      * Tokens
      *
-     * @var PHPExcel_Calculation_FormulaToken[]
+     * @variables PHPExcel_Calculation_FormulaToken[]
      */
     private $tokens = array();
 

@@ -53,112 +53,112 @@ class CI_User_agent {
 	/**
 	 * Current user-agent
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $agent = NULL;
 
 	/**
 	 * Flag for if the user-agent belongs to a browser
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $is_browser = FALSE;
 
 	/**
 	 * Flag for if the user-agent is a robot
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $is_robot = FALSE;
 
 	/**
 	 * Flag for if the user-agent is a mobile browser
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $is_mobile = FALSE;
 
 	/**
 	 * Languages accepted by the current user agent
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $languages = array();
 
 	/**
 	 * Character sets accepted by the current user agent
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $charsets = array();
 
 	/**
 	 * List of platforms to compare against current user agent
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $platforms = array();
 
 	/**
 	 * List of browsers to compare against current user agent
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $browsers = array();
 
 	/**
 	 * List of mobile browsers to compare against current user agent
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $mobiles = array();
 
 	/**
 	 * List of robots to compare against current user agent
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $robots = array();
 
 	/**
 	 * Current user-agent platform
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $platform = '';
 
 	/**
 	 * Current user-agent browser
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $browser = '';
 
 	/**
 	 * Current user-agent version
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $version = '';
 
 	/**
 	 * Current user-agent mobile name
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $mobile = '';
 
 	/**
 	 * Current user-agent robot name
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $robot = '';
 
 	/**
 	 * HTTP Referer
 	 *
-	 * @var	mixed
+	 * @variables	mixed
 	 */
 	public $referer;
 

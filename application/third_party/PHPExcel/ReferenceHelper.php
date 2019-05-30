@@ -37,7 +37,7 @@ class PHPExcel_ReferenceHelper
     /**
      * Instance of this class
      *
-     * @var PHPExcel_ReferenceHelper
+     * @variables PHPExcel_ReferenceHelper
      */
     private static $instance;
 

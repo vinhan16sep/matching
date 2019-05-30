@@ -34,7 +34,7 @@ class PHPExcel_Polynomial_Best_Fit extends PHPExcel_Best_Fit
      * Algorithm type to use for best-fit
      * (Name of this trend class)
      *
-     * @var    string
+     * @variables    string
      **/
     protected $bestFitType = 'polynomial';
 
@@ -42,7 +42,7 @@ class PHPExcel_Polynomial_Best_Fit extends PHPExcel_Best_Fit
      * Polynomial order
      *
      * @protected
-     * @var    int
+     * @variables    int
      **/
     protected $order = 0;
 

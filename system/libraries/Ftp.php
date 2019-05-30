@@ -51,35 +51,35 @@ class CI_FTP {
 	/**
 	 * FTP Server hostname
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $hostname = '';
 
 	/**
 	 * FTP Username
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $username = '';
 
 	/**
 	 * FTP Password
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $password = '';
 
 	/**
 	 * FTP Server port
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $port = 21;
 
 	/**
 	 * Passive mode flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $passive = TRUE;
 
@@ -88,7 +88,7 @@ class CI_FTP {
 	 *
 	 * Specifies whether to display error messages.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $debug = FALSE;
 
@@ -97,7 +97,7 @@ class CI_FTP {
 	/**
 	 * Connection ID
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	protected $conn_id;
 

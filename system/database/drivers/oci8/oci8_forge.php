@@ -49,35 +49,35 @@ class CI_DB_oci8_forge extends CI_DB_forge {
 	/**
 	 * CREATE DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_database	= FALSE;
 
 	/**
 	 * CREATE TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_table_if	= FALSE;
 
 	/**
 	 * DROP DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_database	= FALSE;
 
 	/**
 	 * DROP TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_table_if	= FALSE;
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	bool|array
+	 * @variables	bool|array
 	 */
 	protected $_unsigned		= FALSE;
 

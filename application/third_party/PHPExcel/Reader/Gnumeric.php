@@ -39,14 +39,14 @@ class PHPExcel_Reader_Gnumeric extends PHPExcel_Reader_Abstract implements PHPEx
     /**
      * Formats
      *
-     * @var array
+     * @variables array
      */
     private $styles = array();
 
     /**
      * Shared Expressions
      *
-     * @var array
+     * @variables array
      */
     private $expressions = array();
 

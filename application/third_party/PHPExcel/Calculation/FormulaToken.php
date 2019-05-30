@@ -81,21 +81,21 @@ class PHPExcel_Calculation_FormulaToken
     /**
      * Value
      *
-     * @var string
+     * @variables string
      */
     private $value;
 
     /**
      * Token Type (represented by TOKEN_TYPE_*)
      *
-     * @var string
+     * @variables string
      */
     private $tokenType;
 
     /**
      * Token SubType (represented by TOKEN_SUBTYPE_*)
      *
-     * @var string
+     * @variables string
      */
     private $tokenSubType;
 

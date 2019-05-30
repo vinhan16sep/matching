@@ -49,7 +49,7 @@ class CI_DB_oci8_utility extends CI_DB_utility {
 	/**
 	 * List databases statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_list_databases	= 'SELECT username FROM dba_users'; // Schemas are actual usernames
 

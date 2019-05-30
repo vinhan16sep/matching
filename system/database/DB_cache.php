@@ -49,7 +49,7 @@ class CI_DB_Cache {
 	/**
 	 * CI Singleton
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	public $CI;
 
@@ -59,7 +59,7 @@ class CI_DB_Cache {
 	 * Allows passing of DB object so that multiple database connections
 	 * and returned DB objects can be supported.
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	public $db;
 

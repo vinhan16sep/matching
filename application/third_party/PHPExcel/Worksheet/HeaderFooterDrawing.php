@@ -30,49 +30,49 @@ class PHPExcel_Worksheet_HeaderFooterDrawing extends PHPExcel_Worksheet_Drawing 
     /**
      * Path
      *
-     * @var string
+     * @variables string
      */
     private $path;
 
     /**
      * Name
      *
-     * @var string
+     * @variables string
      */
     protected $name;
 
     /**
      * Offset X
      *
-     * @var int
+     * @variables int
      */
     protected $offsetX;
 
     /**
      * Offset Y
      *
-     * @var int
+     * @variables int
      */
     protected $offsetY;
 
     /**
      * Width
      *
-     * @var int
+     * @variables int
      */
     protected $width;
 
     /**
      * Height
      *
-     * @var int
+     * @variables int
      */
     protected $height;
 
     /**
      * Proportional resize
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $resizeProportional;
 

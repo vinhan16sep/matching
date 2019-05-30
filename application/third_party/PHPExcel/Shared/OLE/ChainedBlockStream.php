@@ -29,25 +29,25 @@ class PHPExcel_Shared_OLE_ChainedBlockStream
 {
     /**
      * The OLE container of the file that is being read.
-     * @var OLE
+     * @variables OLE
      */
     public $ole;
 
     /**
      * Parameters specified by fopen().
-     * @var array
+     * @variables array
      */
     public $params;
 
     /**
      * The binary data of the file.
-     * @var  string
+     * @variables  string
      */
     public $data;
 
     /**
      * The file pointer.
-     * @var  int  byte offset
+     * @variables  int  byte offset
      */
     public $pos;
 

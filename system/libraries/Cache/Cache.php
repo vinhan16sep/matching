@@ -51,7 +51,7 @@ class CI_Cache extends CI_Driver_Library {
 	/**
 	 * Valid cache drivers
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $valid_drivers = array(
 		'apc',
@@ -65,28 +65,28 @@ class CI_Cache extends CI_Driver_Library {
 	/**
 	 * Path of cache files (if file-based cache)
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_cache_path = NULL;
 
 	/**
 	 * Reference to the driver
 	 *
-	 * @var mixed
+	 * @variables mixed
 	 */
 	protected $_adapter = 'dummy';
 
 	/**
 	 * Fallback driver
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_backup_driver = 'dummy';
 
 	/**
 	 * Cache key prefix
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $key_prefix = '';
 

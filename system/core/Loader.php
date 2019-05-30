@@ -54,70 +54,70 @@ class CI_Loader {
 	/**
 	 * Nesting level of the output buffering mechanism
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $_ci_ob_level;
 
 	/**
 	 * List of paths to load views from
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_ci_view_paths =	array(VIEWPATH	=> TRUE);
 
 	/**
 	 * List of paths to load libraries from
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_ci_library_paths =	array(APPPATH, BASEPATH);
 
 	/**
 	 * List of paths to load models from
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_ci_model_paths =	array(APPPATH);
 
 	/**
 	 * List of paths to load helpers from
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_ci_helper_paths =	array(APPPATH, BASEPATH);
 
 	/**
 	 * List of cached variables
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_ci_cached_vars =	array();
 
 	/**
 	 * List of loaded classes
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_ci_classes =	array();
 
 	/**
 	 * List of loaded models
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_ci_models =	array();
 
 	/**
 	 * List of loaded helpers
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_ci_helpers =	array();
 
 	/**
 	 * List of class name mappings
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_ci_varmap =	array(
 		'unit_test' => 'unit',

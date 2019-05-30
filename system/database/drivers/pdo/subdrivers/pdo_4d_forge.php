@@ -49,42 +49,42 @@ class CI_DB_pdo_4d_forge extends CI_DB_pdo_forge {
 	/**
 	 * CREATE DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_database	= 'CREATE SCHEMA %s';
 
 	/**
 	 * DROP DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_database	= 'DROP SCHEMA %s';
 
 	/**
 	 * CREATE TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_table_if	= 'CREATE TABLE IF NOT EXISTS';
 
 	/**
 	 * RENAME TABLE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_rename_table	= FALSE;
 
 	/**
 	 * DROP TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_table_if	= 'DROP TABLE IF EXISTS';
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_unsigned		= array(
 		'INT16'		=> 'INT',
@@ -96,7 +96,7 @@ class CI_DB_pdo_4d_forge extends CI_DB_pdo_forge {
 	/**
 	 * DEFAULT value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_default		= FALSE;
 

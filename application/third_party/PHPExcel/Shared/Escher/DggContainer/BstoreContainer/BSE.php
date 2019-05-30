@@ -41,21 +41,21 @@ class PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE
     /**
      * The parent BLIP Store Entry Container
      *
-     * @var PHPExcel_Shared_Escher_DggContainer_BstoreContainer
+     * @variables PHPExcel_Shared_Escher_DggContainer_BstoreContainer
      */
     private $parent;
 
     /**
      * The BLIP (Big Large Image or Picture)
      *
-     * @var PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip
+     * @variables PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip
      */
     private $blip;
 
     /**
      * The BLIP type
      *
-     * @var int
+     * @variables int
      */
     private $blipType;
 

@@ -40,7 +40,7 @@ class PHPExcel_Shared_TimeZone
      * Default Timezone used for date/time conversions
      *
      * @private
-     * @var    string
+     * @variables    string
      */
     protected static $timezone    = 'UTC';
 

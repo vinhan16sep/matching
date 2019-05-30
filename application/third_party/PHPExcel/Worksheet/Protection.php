@@ -38,119 +38,119 @@ class PHPExcel_Worksheet_Protection
     /**
      * Sheet
      *
-     * @var boolean
+     * @variables boolean
      */
     private $sheet                    = false;
 
     /**
      * Objects
      *
-     * @var boolean
+     * @variables boolean
      */
     private $objects                = false;
 
     /**
      * Scenarios
      *
-     * @var boolean
+     * @variables boolean
      */
     private $scenarios                = false;
 
     /**
      * Format cells
      *
-     * @var boolean
+     * @variables boolean
      */
     private $formatCells            = false;
 
     /**
      * Format columns
      *
-     * @var boolean
+     * @variables boolean
      */
     private $formatColumns            = false;
 
     /**
      * Format rows
      *
-     * @var boolean
+     * @variables boolean
      */
     private $formatRows            = false;
 
     /**
      * Insert columns
      *
-     * @var boolean
+     * @variables boolean
      */
     private $insertColumns            = false;
 
     /**
      * Insert rows
      *
-     * @var boolean
+     * @variables boolean
      */
     private $insertRows            = false;
 
     /**
      * Insert hyperlinks
      *
-     * @var boolean
+     * @variables boolean
      */
     private $insertHyperlinks        = false;
 
     /**
      * Delete columns
      *
-     * @var boolean
+     * @variables boolean
      */
     private $deleteColumns            = false;
 
     /**
      * Delete rows
      *
-     * @var boolean
+     * @variables boolean
      */
     private $deleteRows            = false;
 
     /**
      * Select locked cells
      *
-     * @var boolean
+     * @variables boolean
      */
     private $selectLockedCells        = false;
 
     /**
      * Sort
      *
-     * @var boolean
+     * @variables boolean
      */
     private $sort                    = false;
 
     /**
      * AutoFilter
      *
-     * @var boolean
+     * @variables boolean
      */
     private $autoFilter            = false;
 
     /**
      * Pivot tables
      *
-     * @var boolean
+     * @variables boolean
      */
     private $pivotTables            = false;
 
     /**
      * Select unlocked cells
      *
-     * @var boolean
+     * @variables boolean
      */
     private $selectUnlockedCells    = false;
 
     /**
      * Password
      *
-     * @var string
+     * @variables string
      */
     private $password                = '';
 

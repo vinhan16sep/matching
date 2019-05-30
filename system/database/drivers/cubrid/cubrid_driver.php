@@ -55,14 +55,14 @@ class CI_DB_cubrid_driver extends CI_DB {
 	/**
 	 * Database driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbdriver = 'cubrid';
 
 	/**
 	 * Auto-commit flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $auto_commit = TRUE;
 
@@ -71,14 +71,14 @@ class CI_DB_cubrid_driver extends CI_DB {
 	/**
 	 * Identifier escape character
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_escape_char = '`';
 
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('RANDOM()', 'RANDOM(%d)');
 

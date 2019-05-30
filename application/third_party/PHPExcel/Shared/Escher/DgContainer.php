@@ -30,14 +30,14 @@ class PHPExcel_Shared_Escher_DgContainer
     /**
      * Drawing index, 1-based.
      *
-     * @var int
+     * @variables int
      */
     private $dgId;
 
     /**
      * Last shape index in this drawing
      *
-     * @var int
+     * @variables int
      */
     private $lastSpId;
 

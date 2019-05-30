@@ -53,77 +53,77 @@ class CI_Email {
 	/**
 	 * Used as the User-Agent and X-Mailer headers' value.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $useragent	= 'CodeIgniter';
 
 	/**
 	 * Path to the Sendmail binary.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $mailpath	= '/usr/sbin/sendmail';	// Sendmail path
 
 	/**
 	 * Which method to use for sending e-mails.
 	 *
-	 * @var	string	'mail', 'sendmail' or 'smtp'
+	 * @variables	string	'mail', 'sendmail' or 'smtp'
 	 */
 	public $protocol	= 'mail';		// mail/sendmail/smtp
 
 	/**
 	 * STMP Server host
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $smtp_host	= '';
 
 	/**
 	 * SMTP Username
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $smtp_user	= '';
 
 	/**
 	 * SMTP Password
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $smtp_pass	= '';
 
 	/**
 	 * SMTP Server port
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $smtp_port	= 25;
 
 	/**
 	 * SMTP connection timeout in seconds
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $smtp_timeout	= 5;
 
 	/**
 	 * SMTP persistent connection
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $smtp_keepalive	= FALSE;
 
 	/**
 	 * SMTP Encryption
 	 *
-	 * @var	string	empty, 'tls' or 'ssl'
+	 * @variables	string	empty, 'tls' or 'ssl'
 	 */
 	public $smtp_crypto	= '';
 
 	/**
 	 * Whether to apply word-wrapping to the message body.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $wordwrap	= TRUE;
 
@@ -131,42 +131,42 @@ class CI_Email {
 	 * Number of characters to wrap at.
 	 *
 	 * @see	CI_Email::$wordwrap
-	 * @var	int
+	 * @variables	int
 	 */
 	public $wrapchars	= 76;
 
 	/**
 	 * Message format.
 	 *
-	 * @var	string	'text' or 'html'
+	 * @variables	string	'text' or 'html'
 	 */
 	public $mailtype	= 'text';
 
 	/**
 	 * Character set (default: utf-8)
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $charset		= 'UTF-8';
 
 	/**
 	 * Alternative message (for HTML messages only)
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $alt_message	= '';
 
 	/**
 	 * Whether to validate e-mail addresses.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $validate	= FALSE;
 
 	/**
 	 * X-Priority header value.
 	 *
-	 * @var	int	1-5
+	 * @variables	int	1-5
 	 */
 	public $priority	= 3;			// Default priority (1 - 5)
 
@@ -175,7 +175,7 @@ class CI_Email {
 	 * Use "\r\n" to comply with RFC 822.
 	 *
 	 * @link	http://www.ietf.org/rfc/rfc822.txt
-	 * @var	string	"\r\n" or "\n"
+	 * @variables	string	"\r\n" or "\n"
 	 */
 	public $newline		= "\n";			// Default newline. "\r\n" or "\n" (Use "\r\n" to comply with RFC 822)
 
@@ -189,14 +189,14 @@ class CI_Email {
 	 * that seems to work for all environments.
 	 *
 	 * @link	http://www.ietf.org/rfc/rfc822.txt
-	 * @var	string
+	 * @variables	string
 	 */
 	public $crlf		= "\n";
 
 	/**
 	 * Whether to use Delivery Status Notification.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $dsn		= FALSE;
 
@@ -204,14 +204,14 @@ class CI_Email {
 	 * Whether to send multipart alternatives.
 	 * Yahoo! doesn't seem to like these.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $send_multipart	= TRUE;
 
 	/**
 	 * Whether to send messages to BCC recipients in batches.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $bcc_batch_mode	= FALSE;
 
@@ -219,7 +219,7 @@ class CI_Email {
 	 * BCC Batch max number size.
 	 *
 	 * @see	CI_Email::$bcc_batch_mode
-	 * @var	int
+	 * @variables	int
 	 */
 	public $bcc_batch_size	= 200;
 
@@ -228,63 +228,63 @@ class CI_Email {
 	/**
 	 * Whether PHP is running in safe mode. Initialized by the class constructor.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_safe_mode		= FALSE;
 
 	/**
 	 * Subject header
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_subject		= '';
 
 	/**
 	 * Message body
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_body		= '';
 
 	/**
 	 * Final message body to be sent.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_finalbody		= '';
 
 	/**
 	 * Final headers to send
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_header_str		= '';
 
 	/**
 	 * SMTP Connection socket placeholder
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	protected $_smtp_connect	= '';
 
 	/**
 	 * Mail encoding
 	 *
-	 * @var	string	'8bit' or '7bit'
+	 * @variables	string	'8bit' or '7bit'
 	 */
 	protected $_encoding		= '8bit';
 
 	/**
 	 * Whether to perform SMTP authentication
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_smtp_auth		= FALSE;
 
 	/**
 	 * Whether to send a Reply-To header
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_replyto_flag	= FALSE;
 
@@ -292,42 +292,42 @@ class CI_Email {
 	 * Debug messages
 	 *
 	 * @see	CI_Email::print_debugger()
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_debug_msg		= array();
 
 	/**
 	 * Recipients
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_recipients		= array();
 
 	/**
 	 * CC Recipients
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_cc_array		= array();
 
 	/**
 	 * BCC Recipients
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_bcc_array		= array();
 
 	/**
 	 * Message headers
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_headers		= array();
 
 	/**
 	 * Attachment data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_attachments		= array();
 
@@ -335,7 +335,7 @@ class CI_Email {
 	 * Valid $protocol values
 	 *
 	 * @see	CI_Email::$protocol
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_protocols		= array('mail', 'sendmail', 'smtp');
 
@@ -345,7 +345,7 @@ class CI_Email {
 	 * Character sets valid for 7-bit encoding,
 	 * excluding language suffix.
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_base_charsets	= array('us-ascii', 'iso-2022-');
 
@@ -355,7 +355,7 @@ class CI_Email {
 	 * Valid mail encodings
 	 *
 	 * @see	CI_Email::$_encoding
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_bit_depths		= array('7bit', '8bit');
 
@@ -364,7 +364,7 @@ class CI_Email {
 	 *
 	 * Actual values to send with the X-Priority header
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_priorities = array(
 		1 => '1 (Highest)',
@@ -377,7 +377,7 @@ class CI_Email {
 	/**
 	 * mbstring.func_overload flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected static $func_overload;
 

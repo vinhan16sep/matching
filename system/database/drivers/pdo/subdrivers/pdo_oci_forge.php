@@ -49,28 +49,28 @@ class CI_DB_pdo_oci_forge extends CI_DB_pdo_forge {
 	/**
 	 * CREATE DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_database	= FALSE;
 
 	/**
 	 * CREATE TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_table_if	= FALSE;
 
 	/**
 	 * DROP DATABASE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_database	= FALSE;
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	bool|array
+	 * @variables	bool|array
 	 */
 	protected $_unsigned		= FALSE;
 

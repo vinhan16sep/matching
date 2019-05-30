@@ -53,56 +53,56 @@ class CI_DB_result {
 	/**
 	 * Connection ID
 	 *
-	 * @var	resource|object
+	 * @variables	resource|object
 	 */
 	public $conn_id;
 
 	/**
 	 * Result ID
 	 *
-	 * @var	resource|object
+	 * @variables	resource|object
 	 */
 	public $result_id;
 
 	/**
 	 * Result Array
 	 *
-	 * @var	array[]
+	 * @variables	array[]
 	 */
 	public $result_array			= array();
 
 	/**
 	 * Result Object
 	 *
-	 * @var	object[]
+	 * @variables	object[]
 	 */
 	public $result_object			= array();
 
 	/**
 	 * Custom Result Object
 	 *
-	 * @var	object[]
+	 * @variables	object[]
 	 */
 	public $custom_result_object		= array();
 
 	/**
 	 * Current Row index
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $current_row			= 0;
 
 	/**
 	 * Number of rows
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $num_rows;
 
 	/**
 	 * Row data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $row_data;
 

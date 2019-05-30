@@ -30,91 +30,91 @@ class PHPExcel_Worksheet_BaseDrawing implements PHPExcel_IComparable
     /**
      * Image counter
      *
-     * @var int
+     * @variables int
      */
     private static $imageCounter = 0;
 
     /**
      * Image index
      *
-     * @var int
+     * @variables int
      */
     private $imageIndex = 0;
 
     /**
      * Name
      *
-     * @var string
+     * @variables string
      */
     protected $name;
 
     /**
      * Description
      *
-     * @var string
+     * @variables string
      */
     protected $description;
 
     /**
      * Worksheet
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     protected $worksheet;
 
     /**
      * Coordinates
      *
-     * @var string
+     * @variables string
      */
     protected $coordinates;
 
     /**
      * Offset X
      *
-     * @var int
+     * @variables int
      */
     protected $offsetX;
 
     /**
      * Offset Y
      *
-     * @var int
+     * @variables int
      */
     protected $offsetY;
 
     /**
      * Width
      *
-     * @var int
+     * @variables int
      */
     protected $width;
 
     /**
      * Height
      *
-     * @var int
+     * @variables int
      */
     protected $height;
 
     /**
      * Proportional resize
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $resizeProportional;
 
     /**
      * Rotation
      *
-     * @var int
+     * @variables int
      */
     protected $rotation;
 
     /**
      * Shadow
      *
-     * @var PHPExcel_Worksheet_Drawing_Shadow
+     * @variables PHPExcel_Worksheet_Drawing_Shadow
      */
     protected $shadow;
 

@@ -53,14 +53,14 @@ class CI_Trackback {
 	/**
 	 * Character set
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $charset = 'UTF-8';
 
 	/**
 	 * Trackback data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $data = array(
 		'url' => '',
@@ -76,21 +76,21 @@ class CI_Trackback {
 	 * Whether to convert high-ASCII and MS Word
 	 * characters to HTML entities.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $convert_ascii = TRUE;
 
 	/**
 	 * Response
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $response = '';
 
 	/**
 	 * Error messages list
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	public $error_msg = array();
 

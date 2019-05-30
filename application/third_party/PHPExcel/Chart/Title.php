@@ -31,14 +31,14 @@ class PHPExcel_Chart_Title
     /**
      * Title Caption
      *
-     * @var string
+     * @variables string
      */
     private $caption = null;
 
     /**
      * Title Layout
      *
-     * @var PHPExcel_Chart_Layout
+     * @variables PHPExcel_Chart_Layout
      */
     private $layout = null;
 

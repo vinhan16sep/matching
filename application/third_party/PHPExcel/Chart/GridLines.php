@@ -12,11 +12,11 @@ class PHPExcel_Chart_GridLines extends PHPExcel_Chart_Properties
 
   /**
    * Properties of Class:
-   * Object State (State for Minor Tick Mark) @var bool
-   * Line Properties @var  array of mixed
-   * Shadow Properties @var  array of mixed
-   * Glow Properties @var  array of mixed
-   * Soft Properties @var  array of mixed
+   * Object State (State for Minor Tick Mark) @variables bool
+   * Line Properties @variables  array of mixed
+   * Shadow Properties @variables  array of mixed
+   * Glow Properties @variables  array of mixed
+   * Soft Properties @variables  array of mixed
    *
    */
 

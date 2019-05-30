@@ -42,7 +42,7 @@ class PHPExcel_Shared_XMLWriter extends XMLWriter
     /**
      * Temporary filename
      *
-     * @var string
+     * @variables string
      */
     private $tempFileName  = '';
 

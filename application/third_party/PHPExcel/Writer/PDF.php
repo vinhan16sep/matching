@@ -31,7 +31,7 @@ class PHPExcel_Writer_PDF implements PHPExcel_Writer_IWriter
     /**
      * The wrapper for the requested PDF rendering engine
      *
-     * @var PHPExcel_Writer_PDF_Core
+     * @variables PHPExcel_Writer_PDF_Core
      */
     private $renderer = null;
 

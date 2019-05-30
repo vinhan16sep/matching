@@ -51,42 +51,42 @@ class CI_Typography {
 	/**
 	 * Block level elements that should not be wrapped inside <p> tags
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $block_elements = 'address|blockquote|div|dl|fieldset|form|h\d|hr|noscript|object|ol|p|pre|script|table|ul';
 
 	/**
 	 * Elements that should not have <p> and <br /> tags within them.
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $skip_elements	= 'p|pre|ol|ul|dl|object|table|h\d';
 
 	/**
 	 * Tags we want the parser to completely ignore when splitting the string.
 	 *
-	 * @var string
+	 * @variables string
 	 */
-	public $inline_elements = 'a|abbr|acronym|b|bdo|big|br|button|cite|code|del|dfn|em|i|img|ins|input|label|map|kbd|q|samp|select|small|span|strong|sub|sup|textarea|tt|var';
+	public $inline_elements = 'a|abbr|acronym|b|bdo|big|br|button|cite|code|del|dfn|em|i|img|ins|input|label|map|kbd|q|samp|select|small|span|strong|sub|sup|textarea|tt|variables';
 
 	/**
 	 * array of block level elements that require inner content to be within another block level element
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $inner_block_required = array('blockquote');
 
 	/**
 	 * the last block element parsed
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $last_block_element = '';
 
 	/**
 	 * whether or not to protect quotes within { curly braces }
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $protect_braced_quotes = FALSE;
 

@@ -29,7 +29,7 @@
  * tinymce.activeEditor.selection.getContent({format: 'text'});
  *
  * // Creates a new editor instance
- * var ed = new tinymce.Editor('textareaid', {
+ * variables ed = new tinymce.Editor('textareaid', {
  *     some_setting: 1
  * }, tinymce.EditorManager);
  *
@@ -679,7 +679,7 @@ define("tinymce/Editor", [
 			/*eslint no-script-url:0 */
 			var domainRelaxUrl = 'javascript:(function(){' +
 				'document.open();document.domain="' + document.domain + '";' +
-				'var ed = window.parent.tinymce.get("' + self.id + '");document.write(ed.iframeHTML);' +
+				'variables ed = window.parent.tinymce.get("' + self.id + '");document.write(ed.iframeHTML);' +
 				'document.close();ed.initContentBody(true);})()';
 
 			// Domain relaxing is required since the user has messed around with document.domain
@@ -1228,10 +1228,10 @@ define("tinymce/Editor", [
 		 * @return {String} Configuration parameter value or default value.
 		 * @example
 		 * // Returns a specific config value from the currently active editor
-		 * var someval = tinymce.activeEditor.getParam('myvalue');
+		 * variables someval = tinymce.activeEditor.getParam('myvalue');
 		 *
 		 * // Returns a specific config value from a specific editor instance by id
-		 * var someval2 = tinymce.get('my_editor').getParam('myvalue');
+		 * variables someval2 = tinymce.get('my_editor').getParam('myvalue');
 		 */
 		getParam: function(name, defaultVal, type) {
 			var value = name in this.settings ? this.settings[name] : defaultVal, output;
@@ -1879,7 +1879,7 @@ define("tinymce/Editor", [
 		 * @param {Boolean} state True/false if the editor is considered dirty.
 		 * @example
 		 * function ajaxSave() {
-		 *     var editor = tinymce.get('elm1');
+		 *     variables editor = tinymce.get('elm1');
 		 *
 		 *     // Save contents using some XHR call
 		 *     alert(editor.getContent());

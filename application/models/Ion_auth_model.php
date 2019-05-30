@@ -31,147 +31,147 @@ class Ion_auth_model extends CI_Model
 	/**
 	 * Holds an array of tables used
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $tables = array();
 
 	/**
 	 * activation code
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $activation_code;
 
 	/**
 	 * forgotten password key
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $forgotten_password_code;
 
 	/**
 	 * new password
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $new_password;
 
 	/**
 	 * Identity
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $identity;
 
 	/**
 	 * Where
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $_ion_where = array();
 
 	/**
 	 * Select
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $_ion_select = array();
 
 	/**
 	 * Like
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $_ion_like = array();
 
 	/**
 	 * Limit
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $_ion_limit = NULL;
 
 	/**
 	 * Offset
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $_ion_offset = NULL;
 
 	/**
 	 * Order By
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $_ion_order_by = NULL;
 
 	/**
 	 * Order
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $_ion_order = NULL;
 
 	/**
 	 * Hooks
 	 *
-	 * @var object
+	 * @variables object
 	 */
 	protected $_ion_hooks;
 
 	/**
 	 * Response
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $response = NULL;
 
 	/**
 	 * message (uses lang file)
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $messages;
 
 	/**
 	 * error message (uses lang file)
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $errors;
 
 	/**
 	 * error start delimiter
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $error_start_delimiter;
 
 	/**
 	 * error end delimiter
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $error_end_delimiter;
 
 	/**
 	 * caching of users and their groups
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $_cache_user_in_group = array();
 
 	/**
 	 * caching of groups
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $_cache_groups = array();
 
 	/**
 	 * Database object
 	 *
-	 * @var object
+	 * @variables object
 	 */
 	protected $db;
 

@@ -51,14 +51,14 @@ class CI_Cache_memcached extends CI_Driver {
 	/**
 	 * Holds the memcached object
 	 *
-	 * @var object
+	 * @variables object
 	 */
 	protected $_memcached;
 
 	/**
 	 * Memcached configuration
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $_config = array(
 		'default' => array(

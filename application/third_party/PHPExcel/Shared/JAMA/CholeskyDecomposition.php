@@ -19,21 +19,21 @@ class CholeskyDecomposition
 {
     /**
      *    Decomposition storage
-     *    @var array
+     *    @variables array
      *    @access private
      */
     private $L = array();
 
     /**
      *    Matrix row and column dimension
-     *    @var int
+     *    @variables int
      *    @access private
      */
     private $m;
 
     /**
      *    Symmetric positive definite flag
-     *    @var boolean
+     *    @variables boolean
      *    @access private
      */
     private $isspd = true;

@@ -49,14 +49,14 @@ class CI_DB_pdo_ibm_forge extends CI_DB_pdo_forge {
 	/**
 	 * RENAME TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_rename_table	= 'RENAME TABLE %s TO %s';
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_unsigned		= array(
 		'SMALLINT'	=> 'INTEGER',
@@ -67,7 +67,7 @@ class CI_DB_pdo_ibm_forge extends CI_DB_pdo_forge {
 	/**
 	 * DEFAULT value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_default		= FALSE;
 

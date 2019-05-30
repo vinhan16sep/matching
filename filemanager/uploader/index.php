@@ -128,7 +128,7 @@ $classParameters = array(
 	//of uploaded files as an argument. See the above sample, and change it according to your needs.
 	//'callbackAfterUploadManagement' => 'handle_uploaded_files',
 	//
-	//I work on windows. The default configuration is /var/tmp/jupload_test
+	//I work on windows. The default configuration is /variables/tmp/jupload_test
 	'destdir'       => $path  //Where to store the files on the web
 	//'errormail' => 'me@my.domain.org',
 );

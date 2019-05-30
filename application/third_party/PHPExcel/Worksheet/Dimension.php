@@ -30,28 +30,28 @@ abstract class PHPExcel_Worksheet_Dimension
     /**
      * Visible?
      *
-     * @var bool
+     * @variables bool
      */
     private $visible = true;
 
     /**
      * Outline level
      *
-     * @var int
+     * @variables int
      */
     private $outlineLevel = 0;
 
     /**
      * Collapsed
      *
-     * @var bool
+     * @variables bool
      */
     private $collapsed = false;
 
     /**
      * Index to cellXf. Null value means row has no explicit cellXf format.
      *
-     * @var int|null
+     * @variables int|null
      */
     private $xfIndex;
 

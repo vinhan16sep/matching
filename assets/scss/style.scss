@@ -1,0 +1,33 @@
+/*
+======================================================
+======================================================
+
+MAIN STYLESHEET FOR MATCHING
+
+======================================================
+======================================================
+ */
+
+/*
+Core Stylesheet
+ */
+
+// Variables
+
+@import "variables/color";
+@import "variables/padding";
+@import "variables/z-index";
+
+//Mixin
+@import "mixin/mixins";
+@import "mixin/transform";
+@import "mixin/animations";
+
+@import "components/typography";
+@import "components/buttons";
+@import "components/form";
+
+@import "main";
+
+//Pages
+@import "homepage";

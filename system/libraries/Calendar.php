@@ -53,56 +53,56 @@ class CI_Calendar {
 	/**
 	 * Calendar layout template
 	 *
-	 * @var mixed
+	 * @variables mixed
 	 */
 	public $template = '';
 
 	/**
 	 * Replacements array for template
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $replacements = array();
 
 	/**
 	 * Day of the week to start the calendar on
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $start_day = 'sunday';
 
 	/**
 	 * How to display months
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $month_type = 'long';
 
 	/**
 	 * How to display names of days
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $day_type = 'abr';
 
 	/**
 	 * Whether to show next/prev month links
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $show_next_prev = FALSE;
 
 	/**
 	 * Url base to use for next/prev month links
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $next_prev_url = '';
 
 	/**
 	 * Show days of other months
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $show_other_days = FALSE;
 
@@ -111,7 +111,7 @@ class CI_Calendar {
 	/**
 	 * CI Singleton
 	 *
-	 * @var object
+	 * @variables object
 	 */
 	protected $CI;
 

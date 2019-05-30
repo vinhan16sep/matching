@@ -53,42 +53,42 @@ class CI_Router {
 	/**
 	 * CI_Config class object
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	public $config;
 
 	/**
 	 * List of routes
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $routes =	array();
 
 	/**
 	 * Current class name
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $class =		'';
 
 	/**
 	 * Current method name
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $method =	'index';
 
 	/**
 	 * Sub-directory that contains the requested controller class
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $directory;
 
 	/**
 	 * Default controller (and method if specific)
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $default_controller;
 
@@ -98,7 +98,7 @@ class CI_Router {
 	 * Determines whether dashes in controller & method segments
 	 * should be automatically replaced by underscores.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $translate_uri_dashes = FALSE;
 
@@ -107,7 +107,7 @@ class CI_Router {
 	 *
 	 * Determines whether to use GET parameters or segment URIs
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $enable_query_strings = FALSE;
 

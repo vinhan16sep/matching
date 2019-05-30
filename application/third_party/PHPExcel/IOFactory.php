@@ -39,7 +39,7 @@ class PHPExcel_IOFactory
     /**
      * Search locations
      *
-     * @var    array
+     * @variables    array
      * @access    private
      * @static
      */
@@ -51,7 +51,7 @@ class PHPExcel_IOFactory
     /**
      * Autoresolve classes
      *
-     * @var    array
+     * @variables    array
      * @access    private
      * @static
      */

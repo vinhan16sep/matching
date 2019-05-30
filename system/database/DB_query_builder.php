@@ -54,126 +54,126 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	/**
 	 * Return DELETE SQL flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $return_delete_sql		= FALSE;
 
 	/**
 	 * Reset DELETE data flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $reset_delete_data		= FALSE;
 
 	/**
 	 * QB SELECT data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_select			= array();
 
 	/**
 	 * QB DISTINCT flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $qb_distinct			= FALSE;
 
 	/**
 	 * QB FROM data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_from			= array();
 
 	/**
 	 * QB JOIN data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_join			= array();
 
 	/**
 	 * QB WHERE data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_where			= array();
 
 	/**
 	 * QB GROUP BY data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_groupby			= array();
 
 	/**
 	 * QB HAVING data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_having			= array();
 
 	/**
 	 * QB keys
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_keys			= array();
 
 	/**
 	 * QB LIMIT data
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $qb_limit			= FALSE;
 
 	/**
 	 * QB OFFSET data
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $qb_offset			= FALSE;
 
 	/**
 	 * QB ORDER BY data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_orderby			= array();
 
 	/**
 	 * QB data sets
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_set			= array();
 
 	/**
 	 * QB data set for update_batch()
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_set_ub			= array();
 
 	/**
 	 * QB aliased tables list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_aliased_tables		= array();
 
 	/**
 	 * QB WHERE group started flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $qb_where_group_started	= FALSE;
 
 	/**
 	 * QB WHERE group count
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $qb_where_group_count		= 0;
 
@@ -182,91 +182,91 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	/**
 	 * QB Caching flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $qb_caching				= FALSE;
 
 	/**
 	 * QB Cache exists list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_exists			= array();
 
 	/**
 	 * QB Cache SELECT data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_select			= array();
 
 	/**
 	 * QB Cache FROM data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_from			= array();
 
 	/**
 	 * QB Cache JOIN data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_join			= array();
 
 	/**
 	 * QB Cache aliased tables list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_aliased_tables			= array();
 
 	/**
 	 * QB Cache WHERE data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_where			= array();
 
 	/**
 	 * QB Cache GROUP BY data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_groupby			= array();
 
 	/**
 	 * QB Cache HAVING data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_having			= array();
 
 	/**
 	 * QB Cache ORDER BY data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_orderby			= array();
 
 	/**
 	 * QB Cache data sets
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_set				= array();
 
 	/**
 	 * QB No Escape data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_no_escape 			= array();
 
 	/**
 	 * QB Cache No Escape data
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $qb_cache_no_escape			= array();
 

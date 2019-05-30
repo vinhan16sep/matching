@@ -28,7 +28,7 @@ class PHPExcel_RichText_TextElement implements PHPExcel_RichText_ITextElement
     /**
      * Text
      *
-     * @var string
+     * @variables string
      */
     private $text;
 

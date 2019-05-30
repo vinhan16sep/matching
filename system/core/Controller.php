@@ -54,7 +54,7 @@ class CI_Controller {
 	/**
 	 * Reference to the CI singleton
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	private static $instance;
 

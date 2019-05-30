@@ -55,91 +55,91 @@ class PHPExcel_Cell_DataValidation
     /**
      * Formula 1
      *
-     * @var string
+     * @variables string
      */
     private $formula1;
 
     /**
      * Formula 2
      *
-     * @var string
+     * @variables string
      */
     private $formula2;
 
     /**
      * Type
      *
-     * @var string
+     * @variables string
      */
     private $type = PHPExcel_Cell_DataValidation::TYPE_NONE;
 
     /**
      * Error style
      *
-     * @var string
+     * @variables string
      */
     private $errorStyle = PHPExcel_Cell_DataValidation::STYLE_STOP;
 
     /**
      * Operator
      *
-     * @var string
+     * @variables string
      */
     private $operator;
 
     /**
      * Allow Blank
      *
-     * @var boolean
+     * @variables boolean
      */
     private $allowBlank;
 
     /**
      * Show DropDown
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showDropDown;
 
     /**
      * Show InputMessage
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showInputMessage;
 
     /**
      * Show ErrorMessage
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showErrorMessage;
 
     /**
      * Error title
      *
-     * @var string
+     * @variables string
      */
     private $errorTitle;
 
     /**
      * Error
      *
-     * @var string
+     * @variables string
      */
     private $error;
 
     /**
      * Prompt title
      *
-     * @var string
+     * @variables string
      */
     private $promptTitle;
 
     /**
      * Prompt
      *
-     * @var string
+     * @variables string
      */
     private $prompt;
 

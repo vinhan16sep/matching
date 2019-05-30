@@ -57,42 +57,42 @@ class CI_Zip {
 	/**
 	 * Zip data in string form
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $zipdata = '';
 
 	/**
 	 * Zip data for a directory in string form
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $directory = '';
 
 	/**
 	 * Number of files/folder in zip file
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $entries = 0;
 
 	/**
 	 * Number of files in zip
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $file_num = 0;
 
 	/**
 	 * relative offset of local header
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $offset = 0;
 
 	/**
 	 * Reference to time at init
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $now;
 
@@ -101,14 +101,14 @@ class CI_Zip {
 	 *
 	 * Ranges from 0 to 9, with 9 being the highest level.
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $compression_level = 2;
 
 	/**
 	 * mbstring.func_overload flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected static $func_overload;
 

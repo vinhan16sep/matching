@@ -38,84 +38,84 @@ class PHPExcel_DocumentProperties
     /**
      * Creator
      *
-     * @var string
+     * @variables string
      */
     private $creator = 'Unknown Creator';
 
     /**
      * LastModifiedBy
      *
-     * @var string
+     * @variables string
      */
     private $lastModifiedBy;
 
     /**
      * Created
      *
-     * @var datetime
+     * @variables datetime
      */
     private $created;
 
     /**
      * Modified
      *
-     * @var datetime
+     * @variables datetime
      */
     private $modified;
 
     /**
      * Title
      *
-     * @var string
+     * @variables string
      */
     private $title = 'Untitled Spreadsheet';
 
     /**
      * Description
      *
-     * @var string
+     * @variables string
      */
     private $description = '';
 
     /**
      * Subject
      *
-     * @var string
+     * @variables string
      */
     private $subject = '';
 
     /**
      * Keywords
      *
-     * @var string
+     * @variables string
      */
     private $keywords = '';
 
     /**
      * Category
      *
-     * @var string
+     * @variables string
      */
     private $category = '';
 
     /**
      * Manager
      *
-     * @var string
+     * @variables string
      */
     private $manager = '';
 
     /**
      * Company
      *
-     * @var string
+     * @variables string
      */
     private $company = 'Microsoft Corporation';
 
     /**
      * Custom Properties
      *
-     * @var string
+     * @variables string
      */
     private $customProperties = array();
 

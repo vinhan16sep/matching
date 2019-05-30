@@ -53,7 +53,7 @@ class CI_Cart {
 	 * These are the regular expression rules that we use to validate the product ID and product name
 	 * alpha-numeric, dashes, underscores, or periods
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $product_id_rules = '\.a-z0-9_-';
 
@@ -61,14 +61,14 @@ class CI_Cart {
 	 * These are the regular expression rules that we use to validate the product ID and product name
 	 * alpha-numeric, dashes, underscores, colons or periods
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $product_name_rules = '\w \-\.\:';
 
 	/**
 	 * only allow safe product names
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $product_name_safe = TRUE;
 
@@ -77,14 +77,14 @@ class CI_Cart {
 	/**
 	 * Reference to CodeIgniter instance
 	 *
-	 * @var object
+	 * @variables object
 	 */
 	protected $CI;
 
 	/**
 	 * Contents of the cart
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $_cart_contents = array();
 

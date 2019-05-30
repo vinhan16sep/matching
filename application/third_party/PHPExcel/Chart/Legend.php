@@ -53,21 +53,21 @@ class PHPExcel_Chart_Legend
     /**
      * Legend position
      *
-     * @var    string
+     * @variables    string
      */
     private $position = self::POSITION_RIGHT;
 
     /**
      * Allow overlay of other elements?
      *
-     * @var    boolean
+     * @variables    boolean
      */
     private $overlay = true;
 
     /**
      * Legend Layout
      *
-     * @var    PHPExcel_Chart_Layout
+     * @variables    PHPExcel_Chart_Layout
      */
     private $layout = null;
 

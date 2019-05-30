@@ -67,43 +67,43 @@ class PHPExcel_Writer_Excel5_Parser
 
     /**
      * The index of the character we are currently looking at
-     * @var integer
+     * @variables integer
      */
     public $currentCharacter;
 
     /**
      * The token we are working on.
-     * @var string
+     * @variables string
      */
     public $currentToken;
 
     /**
      * The formula to parse
-     * @var string
+     * @variables string
      */
     private $formula;
 
     /**
      * The character ahead of the current char
-     * @var string
+     * @variables string
      */
     public $lookAhead;
 
     /**
      * The parse tree to be generated
-     * @var string
+     * @variables string
      */
     private $parseTree;
 
     /**
      * Array of external sheets
-     * @var array
+     * @variables array
      */
     private $externalSheets;
 
     /**
      * Array of sheet references in the form of REF structures
-     * @var array
+     * @variables array
      */
     public $references;
 

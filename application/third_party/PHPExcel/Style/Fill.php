@@ -53,28 +53,28 @@ class PHPExcel_Style_Fill extends PHPExcel_Style_Supervisor implements PHPExcel_
     /**
      * Fill type
      *
-     * @var string
+     * @variables string
      */
     protected $fillType = PHPExcel_Style_Fill::FILL_NONE;
 
     /**
      * Rotation
      *
-     * @var double
+     * @variables double
      */
     protected $rotation = 0;
 
     /**
      * Start color
      *
-     * @var PHPExcel_Style_Color
+     * @variables PHPExcel_Style_Color
      */
     protected $startColor;
 
     /**
      * End color
      *
-     * @var PHPExcel_Style_Color
+     * @variables PHPExcel_Style_Color
      */
     protected $endColor;
 

@@ -58,35 +58,35 @@ class PHPExcel_Style_Conditional implements PHPExcel_IComparable
     /**
      * Condition type
      *
-     * @var int
+     * @variables int
      */
     private $conditionType;
 
     /**
      * Operator type
      *
-     * @var int
+     * @variables int
      */
     private $operatorType;
 
     /**
      * Text
      *
-     * @var string
+     * @variables string
      */
     private $text;
 
     /**
      * Condition
      *
-     * @var string[]
+     * @variables string[]
      */
     private $condition = array();
 
     /**
      * Style
      *
-     * @var PHPExcel_Style
+     * @variables PHPExcel_Style
      */
     private $style;
 

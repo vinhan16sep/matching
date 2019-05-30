@@ -30,14 +30,14 @@ class PHPExcel_HashTable
     /**
      * HashTable elements
      *
-     * @var array
+     * @variables array
      */
     protected $items = array();
 
     /**
      * HashTable key map
      *
-     * @var array
+     * @variables array
      */
     protected $keyMap = array();
 

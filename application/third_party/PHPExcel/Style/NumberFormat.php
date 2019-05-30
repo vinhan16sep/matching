@@ -70,28 +70,28 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
     /**
      * Excel built-in number formats
      *
-     * @var array
+     * @variables array
      */
     protected static $builtInFormats;
 
     /**
      * Excel built-in number formats (flipped, for faster lookups)
      *
-     * @var array
+     * @variables array
      */
     protected static $flippedBuiltInFormats;
 
     /**
      * Format Code
      *
-     * @var string
+     * @variables string
      */
     protected $formatCode = PHPExcel_Style_NumberFormat::FORMAT_GENERAL;
 
     /**
      * Built-in format Code
      *
-     * @var string
+     * @variables string
      */
     protected $builtInFormatCode    = 0;
 
@@ -385,7 +385,7 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
     /**
      * Search/replace values to convert Excel date/time format masks to PHP format masks
      *
-     * @var array
+     * @variables array
      */
     private static $dateFormatReplacements = array(
             // first remove escapes related to non-format characters
@@ -428,7 +428,7 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
     /**
      * Search/replace values to convert Excel date/time format masks hours to PHP format masks (24 hr clock)
      *
-     * @var array
+     * @variables array
      */
     private static $dateFormatReplacements24 = array(
             'hh' => 'H',
@@ -437,7 +437,7 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
     /**
      * Search/replace values to convert Excel date/time format masks hours to PHP format masks (12 hr clock)
      *
-     * @var array
+     * @variables array
      */
     private static $dateFormatReplacements12 = array(
             'hh' => 'h',

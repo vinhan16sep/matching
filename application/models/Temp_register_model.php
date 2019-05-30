@@ -7,7 +7,7 @@ class Temp_register_model extends MY_Model
 {
 	/**
 	 * [$table description]
-	 * @var string
+	 * @variables string
 	 */
 	public $table = 'temp_register';
 

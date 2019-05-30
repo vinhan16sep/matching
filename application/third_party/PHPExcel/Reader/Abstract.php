@@ -32,7 +32,7 @@ abstract class PHPExcel_Reader_Abstract implements PHPExcel_Reader_IReader
      * Identifies whether the Reader should only read data values for cells, and ignore any formatting information;
      *        or whether it should read both data and formatting
      *
-     * @var    boolean
+     * @variables    boolean
      */
     protected $readDataOnly = false;
 
@@ -41,7 +41,7 @@ abstract class PHPExcel_Reader_Abstract implements PHPExcel_Reader_IReader
      * Identifies whether the Reader should read data values for cells all cells, or should ignore cells containing
      *         null value or empty string
      *
-     * @var    boolean
+     * @variables    boolean
      */
     protected $readEmptyCells = true;
 
@@ -49,7 +49,7 @@ abstract class PHPExcel_Reader_Abstract implements PHPExcel_Reader_IReader
      * Read charts that are defined in the workbook?
      * Identifies whether the Reader should read the definitions for any charts that exist in the workbook;
      *
-     * @var    boolean
+     * @variables    boolean
      */
     protected $includeCharts = false;
 
@@ -57,14 +57,14 @@ abstract class PHPExcel_Reader_Abstract implements PHPExcel_Reader_IReader
      * Restrict which sheets should be loaded?
      * This property holds an array of worksheet names to be loaded. If null, then all worksheets will be loaded.
      *
-     * @var array of string
+     * @variables array of string
      */
     protected $loadSheetsOnly;
 
     /**
      * PHPExcel_Reader_IReadFilter instance
      *
-     * @var PHPExcel_Reader_IReadFilter
+     * @variables PHPExcel_Reader_IReadFilter
      */
     protected $readFilter;
 

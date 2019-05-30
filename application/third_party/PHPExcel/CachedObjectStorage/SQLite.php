@@ -30,14 +30,14 @@ class PHPExcel_CachedObjectStorage_SQLite extends PHPExcel_CachedObjectStorage_C
     /**
      * Database table name
      *
-     * @var string
+     * @variables string
      */
     private $TableName = null;
 
     /**
      * Database handle
      *
-     * @var resource
+     * @variables resource
      */
     private $DBHandle = null;
 

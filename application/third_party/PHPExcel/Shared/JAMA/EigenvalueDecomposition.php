@@ -25,44 +25,44 @@ class EigenvalueDecomposition
 {
     /**
      *    Row and column dimension (square matrix).
-     *    @var int
+     *    @variables int
      */
     private $n;
 
     /**
      *    Internal symmetry flag.
-     *    @var int
+     *    @variables int
      */
     private $issymmetric;
 
     /**
      *    Arrays for internal storage of eigenvalues.
-     *    @var array
+     *    @variables array
      */
     private $d = array();
     private $e = array();
 
     /**
      *    Array for internal storage of eigenvectors.
-     *    @var array
+     *    @variables array
      */
     private $V = array();
 
     /**
     *    Array for internal storage of nonsymmetric Hessenberg form.
-    *    @var array
+    *    @variables array
     */
     private $H = array();
 
     /**
     *    Working storage for nonsymmetric algorithm.
-    *    @var array
+    *    @variables array
     */
     private $ort;
 
     /**
     *    Used for complex scalar division.
-    *    @var float
+    *    @variables float
     */
     private $cdivr;
     private $cdivi;

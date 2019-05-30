@@ -1,0 +1,131 @@
+//Import Fonts from Google Fonts
+//url: https://fonts.google.com
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&subset=vietnamese');
+
+// Two fonts in use
+// Monstserrat      500 Medium    700 Bold
+// Open Sans        400 Regular     600 Semibold
+
+html, body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5{
+    font-weight: 600;
+}
+
+h6{
+    font-weight: 500;
+}
+
+h1{
+    font-size: 6rem;
+}
+
+h2{
+    font-size: 3.75rem;
+}
+
+h3{
+    font-size: 3rem;
+}
+
+h4{
+    font-size: 2.125rem;
+}
+
+h5{
+    font-size: 1.5rem;
+}
+
+h6{
+    font-size: 1.25rem;
+
+    &.subtitle-md{
+        font-size: 1rem;
+    }
+
+    &.subtitle-sm{
+        font-size: 0.875rem;
+    }
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    margin-bottom: 0;
+}
+
+.text-wrapper{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    //height: 3em;
+    //-webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+//For Devices
+@media (max-width: 767.98px){
+    h1{
+        font-size: 6rem;
+    }
+
+    h2{
+        font-size: 3.75rem;
+    }
+
+    h3{
+        font-size: 2rem;
+    }
+
+    h4{
+        font-size: 2.125rem;
+    }
+
+    h5{
+        font-size: 1.5rem;
+    }
+
+    h6{
+        font-size: 1.25rem;
+
+        &.subtitle-md{
+            font-size: 1rem;
+        }
+
+        &.subtitle-sm{
+            font-size: 0.875rem;
+        }
+    }
+
+    p{
+        font-size: 1rem;
+    }
+}

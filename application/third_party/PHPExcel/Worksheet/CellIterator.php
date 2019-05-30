@@ -30,21 +30,21 @@ abstract class PHPExcel_Worksheet_CellIterator
     /**
      * PHPExcel_Worksheet to iterate
      *
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     protected $subject;
 
     /**
      * Current iterator position
      *
-     * @var mixed
+     * @variables mixed
      */
     protected $position = null;
 
     /**
      * Iterate only existing cells
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $onlyExistingCells = false;
 

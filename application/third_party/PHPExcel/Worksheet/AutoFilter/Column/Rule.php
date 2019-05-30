@@ -224,7 +224,7 @@ class PHPExcel_Worksheet_AutoFilter_Column_Rule
     /**
      * Autofilter Column
      *
-     * @var PHPExcel_Worksheet_AutoFilter_Column
+     * @variables PHPExcel_Worksheet_AutoFilter_Column
      */
     private $parent = null;
 
@@ -232,7 +232,7 @@ class PHPExcel_Worksheet_AutoFilter_Column_Rule
     /**
      * Autofilter Rule Type
      *
-     * @var string
+     * @variables string
      */
     private $ruleType = self::AUTOFILTER_RULETYPE_FILTER;
 
@@ -240,21 +240,21 @@ class PHPExcel_Worksheet_AutoFilter_Column_Rule
     /**
      * Autofilter Rule Value
      *
-     * @var string
+     * @variables string
      */
     private $value = '';
 
     /**
      * Autofilter Rule Operator
      *
-     * @var string
+     * @variables string
      */
     private $operator = self::AUTOFILTER_COLUMN_RULE_EQUAL;
 
     /**
      * DateTimeGrouping Group Value
      *
-     * @var string
+     * @variables string
      */
     private $grouping = '';
 

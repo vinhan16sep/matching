@@ -1,0 +1,143 @@
+//Set Animation
+
+@mixin animationBlink($duration){
+    @keyframes animationBlink {
+        from{ opacity: 0.3; }
+        to{ opacity: 1; }
+    }
+
+    -webkit-animation-name: animationBlink;
+    -moz-animation-name: animationBlink;
+    -o-animation-name: animationBlink;
+    animation-name: animationBlink;
+
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-direction: alternate-reverse;
+    -moz-animation-direction: alternate-reverse;
+    -o-animation-direction: alternate-reverse;
+    animation-direction: alternate-reverse;
+}
+
+@mixin animationOuterGrow($duration){
+    @keyframes animationOuterGrow {
+        from
+        {
+            -webkit-box-shadow:  0 0 5px rgba(0,166,91,0.5);
+            -moz-box-shadow:  0 0 5px rgba(0,166,91,0.5);
+            box-shadow:  0 0 5px rgba(0,166,91,0.5);
+        }
+        to{
+            -webkit-box-shadow:  0 0 15px rgba(0,166,91,0.5);
+            -moz-box-shadow:  0 0 15px rgba(0,166,91,0.5);
+            box-shadow:  0 0 15px rgba(0,166,91,0.5);
+        }
+    }
+
+    -webkit-animation-name: animationOuterGrow;
+    -moz-animation-name: animationOuterGrow;
+    -o-animation-name: animationOuterGrow;
+    animation-name: animationOuterGrow;
+
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-direction: alternate-reverse;
+    -moz-animation-direction: alternate-reverse;
+    -o-animation-direction: alternate-reverse;
+    animation-direction: alternate-reverse;
+}
+
+@mixin animationSpinning($duration){
+    @keyframes animationSpinning {
+        from{
+            -webkit-transform: rotate(0);
+            -moz-transform: rotate(0);
+            -ms-transform: rotate(0);
+            -o-transform: rotate(0);
+            transform: rotate(0); }
+        to{
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg); }
+    }
+
+    -webkit-animation-name: animationSpinning;
+    -moz-animation-name: animationSpinning;
+    -o-animation-name: animationSpinning;
+    animation-name: animationSpinning;
+
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-direction: normal;
+    -moz-animation-direction: normal;
+    -o-animation-direction: normal;
+    animation-direction: normal;
+}
+
+@mixin animationRaiseHand($duration, $animation-count){
+    @keyframes animationRaiseHand {
+        0% {
+            width: 85px;
+            height: 85px;
+        }
+        50%{
+            width: 95px;
+            height: 95px;
+        }
+        100% {
+            width: 85px;
+            height: 85px;
+        }
+    }
+
+    -webkit-animation-name: animationRaiseHand;
+    -moz-animation-name: animationRaiseHand;
+    -o-animation-name: animationRaiseHand;
+    animation-name: animationRaiseHand;
+
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+
+    -webkit-animation-iteration-count: $animation-count;
+    -moz-animation-iteration-count: $animation-count;
+    -o-animation-iteration-count: $animation-count;
+    animation-iteration-count: $animation-count;
+
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    -o-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+
+    -webkit-animation-direction: alternate-reverse;
+    -moz-animation-direction: alternate-reverse;
+    -o-animation-direction: alternate-reverse;
+    animation-direction: alternate-reverse;
+}

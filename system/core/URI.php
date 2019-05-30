@@ -53,14 +53,14 @@ class CI_URI {
 	/**
 	 * List of cached URI segments
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $keyval = array();
 
 	/**
 	 * Current URI string
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $uri_string = '';
 
@@ -69,7 +69,7 @@ class CI_URI {
 	 *
 	 * Starts at 1 instead of 0.
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $segments = array();
 
@@ -78,7 +78,7 @@ class CI_URI {
 	 *
 	 * Starts at 1 instead of 0.
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $rsegments = array();
 
@@ -87,7 +87,7 @@ class CI_URI {
 	 *
 	 * PCRE character group allowed in URI segments
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_permitted_uri_chars;
 
@@ -220,7 +220,7 @@ class CI_URI {
 		}
 
 		// This section ensures that even on servers that require the URI to be in the query string (Nginx) a correct
-		// URI is found, and also fixes the QUERY_STRING server var and $_GET array.
+		// URI is found, and also fixes the QUERY_STRING server variables and $_GET array.
 		if (trim($uri, '/') === '' && strncmp($query, '/', 1) === 0)
 		{
 			$query = explode('?', $query, 2);

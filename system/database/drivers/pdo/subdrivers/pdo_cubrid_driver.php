@@ -55,21 +55,21 @@ class CI_DB_pdo_cubrid_driver extends CI_DB_pdo_driver {
 	/**
 	 * Sub-driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver = 'cubrid';
 
 	/**
 	 * Identifier escape character
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_escape_char = '`';
 
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $_random_keyword = array('RANDOM()', 'RANDOM(%d)');
 

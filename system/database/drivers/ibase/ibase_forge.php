@@ -49,28 +49,28 @@ class CI_DB_ibase_forge extends CI_DB_forge {
 	/**
 	 * CREATE TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_create_table_if	= FALSE;
 
 	/**
 	 * RENAME TABLE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_rename_table	= FALSE;
 
 	/**
 	 * DROP TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_table_if	= FALSE;
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_unsigned		= array(
 		'SMALLINT'	=> 'INTEGER',
@@ -81,7 +81,7 @@ class CI_DB_ibase_forge extends CI_DB_forge {
 	/**
 	 * NULL value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_null		= 'NULL';
 

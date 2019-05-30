@@ -49,14 +49,14 @@ class CI_DB_pdo_firebird_forge extends CI_DB_pdo_forge {
 	/**
 	 * RENAME TABLE statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_rename_table	= FALSE;
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_unsigned		= array(
 		'SMALLINT'	=> 'INTEGER',
@@ -67,7 +67,7 @@ class CI_DB_pdo_firebird_forge extends CI_DB_pdo_forge {
 	/**
 	 * NULL value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_null		= 'NULL';
 

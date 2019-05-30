@@ -51,21 +51,21 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	/**
 	 * DB object
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	protected $_db;
 
 	/**
 	 * Row exists flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_row_exists = FALSE;
 
 	/**
 	 * Lock "driver" flag
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_platform;
 

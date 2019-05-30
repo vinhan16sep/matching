@@ -30,14 +30,14 @@ class PHPExcel_Chart_PlotArea
     /**
      * PlotArea Layout
      *
-     * @var PHPExcel_Chart_Layout
+     * @variables PHPExcel_Chart_Layout
      */
     private $layout = null;
 
     /**
      * Plot Series
      *
-     * @var array of PHPExcel_Chart_DataSeries
+     * @variables array of PHPExcel_Chart_DataSeries
      */
     private $plotSeries = array();
 

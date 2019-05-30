@@ -31,7 +31,7 @@ class PHPExcel_Shared_File
      * Use Temp or File Upload Temp for temporary files
      *
      * @protected
-     * @var    boolean
+     * @variables    boolean
      */
     protected static $useUploadTempDirectory = false;
 

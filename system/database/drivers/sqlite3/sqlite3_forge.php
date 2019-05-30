@@ -49,14 +49,14 @@ class CI_DB_sqlite3_forge extends CI_DB_forge {
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	bool|array
+	 * @variables	bool|array
 	 */
 	protected $_unsigned		= FALSE;
 
 	/**
 	 * NULL value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_null		= 'NULL';
 

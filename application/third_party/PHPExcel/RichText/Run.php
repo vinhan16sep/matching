@@ -28,7 +28,7 @@ class PHPExcel_RichText_Run extends PHPExcel_RichText_TextElement implements PHP
     /**
      * Font
      *
-     * @var PHPExcel_Style_Font
+     * @variables PHPExcel_Style_Font
      */
     private $font;
 

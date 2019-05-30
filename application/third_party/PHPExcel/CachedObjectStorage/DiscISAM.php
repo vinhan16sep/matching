@@ -30,21 +30,21 @@ class PHPExcel_CachedObjectStorage_DiscISAM extends PHPExcel_CachedObjectStorage
     /**
      * Name of the file for this cache
      *
-     * @var string
+     * @variables string
      */
     private $fileName = null;
 
     /**
      * File handle for this cache file
      *
-     * @var resource
+     * @variables resource
      */
     private $fileHandle = null;
 
     /**
      * Directory/Folder where the cache file is located
      *
-     * @var string
+     * @variables string
      */
     private $cacheDirectory = null;
 

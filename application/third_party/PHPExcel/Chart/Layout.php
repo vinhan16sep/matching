@@ -38,49 +38,49 @@ class PHPExcel_Chart_Layout
     /**
      * layoutTarget
      *
-     * @var string
+     * @variables string
      */
     private $layoutTarget;
 
     /**
      * X Mode
      *
-     * @var string
+     * @variables string
      */
     private $xMode;
 
     /**
      * Y Mode
      *
-     * @var string
+     * @variables string
      */
     private $yMode;
 
     /**
      * X-Position
      *
-     * @var float
+     * @variables float
      */
     private $xPos;
 
     /**
      * Y-Position
      *
-     * @var float
+     * @variables float
      */
     private $yPos;
 
     /**
      * width
      *
-     * @var float
+     * @variables float
      */
     private $width;
 
     /**
      * height
      *
-     * @var float
+     * @variables float
      */
     private $height;
 
@@ -88,7 +88,7 @@ class PHPExcel_Chart_Layout
      * show legend key
      * Specifies that legend keys should be shown in data labels
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showLegendKey;
 
@@ -96,7 +96,7 @@ class PHPExcel_Chart_Layout
      * show value
      * Specifies that the value should be shown in a data label.
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showVal;
 
@@ -104,7 +104,7 @@ class PHPExcel_Chart_Layout
      * show category name
      * Specifies that the category name should be shown in the data label.
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showCatName;
 
@@ -112,7 +112,7 @@ class PHPExcel_Chart_Layout
      * show data series name
      * Specifies that the series name should be shown in the data label.
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showSerName;
 
@@ -120,14 +120,14 @@ class PHPExcel_Chart_Layout
      * show percentage
      * Specifies that the percentage should be shown in the data label.
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showPercent;
 
     /**
      * show bubble size
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showBubbleSize;
 
@@ -135,7 +135,7 @@ class PHPExcel_Chart_Layout
      * show leader lines
      * Specifies that leader lines should be shown for the data label.
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showLeaderLines;
 

@@ -17,17 +17,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Bcrypt
 {
 	/**
-	 * @var int
+	 * @variables int
 	 */
 	private $rounds;
 
 	/**
-	 * @var string
+	 * @variables string
 	 */
 	private $salt_prefix;
 
 	/**
-	 * @var int|string|null
+	 * @variables int|string|null
 	 */
 	private $randomState;
 

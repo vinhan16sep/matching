@@ -38,21 +38,21 @@ class PHPExcel_Reader_Excel2007_Theme
     /**
      * Theme Name
      *
-     * @var string
+     * @variables string
      */
     private $themeName;
 
     /**
      * Colour Scheme Name
      *
-     * @var string
+     * @variables string
      */
     private $colourSchemeName;
 
     /**
      * Colour Map indexed by position
      *
-     * @var array of string
+     * @variables array of string
      */
     private $colourMapValues;
 
@@ -60,7 +60,7 @@ class PHPExcel_Reader_Excel2007_Theme
     /**
      * Colour Map
      *
-     * @var array of string
+     * @variables array of string
      */
     private $colourMap;
 

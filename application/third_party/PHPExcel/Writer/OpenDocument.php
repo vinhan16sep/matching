@@ -30,14 +30,14 @@ class PHPExcel_Writer_OpenDocument extends PHPExcel_Writer_Abstract implements P
     /**
      * Private writer parts
      *
-     * @var PHPExcel_Writer_OpenDocument_WriterPart[]
+     * @variables PHPExcel_Writer_OpenDocument_WriterPart[]
      */
     private $writerParts = array();
 
     /**
      * Private PHPExcel
      *
-     * @var PHPExcel
+     * @variables PHPExcel
      */
     private $spreadSheet;
 

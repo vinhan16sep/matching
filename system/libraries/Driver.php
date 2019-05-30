@@ -54,14 +54,14 @@ class CI_Driver_Library {
 	/**
 	 * Array of drivers that are available to use with the driver class
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $valid_drivers = array();
 
 	/**
 	 * Name of the current class - usually the driver class
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $lib_name;
 
@@ -210,21 +210,21 @@ class CI_Driver {
 	/**
 	 * Instance of the parent class
 	 *
-	 * @var object
+	 * @variables object
 	 */
 	protected $_parent;
 
 	/**
 	 * List of methods in the parent class
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $_methods = array();
 
 	/**
 	 * List of properties in the parent class
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $_properties = array();
 
@@ -232,7 +232,7 @@ class CI_Driver {
 	 * Array of methods and properties for the parent class(es)
 	 *
 	 * @static
-	 * @var	array
+	 * @variables	array
 	 */
 	protected static $_reflections = array();
 

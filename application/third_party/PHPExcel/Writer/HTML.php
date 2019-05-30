@@ -30,98 +30,98 @@ class PHPExcel_Writer_HTML extends PHPExcel_Writer_Abstract implements PHPExcel_
     /**
      * PHPExcel object
      *
-     * @var PHPExcel
+     * @variables PHPExcel
      */
     protected $phpExcel;
 
     /**
      * Sheet index to write
      *
-     * @var int
+     * @variables int
      */
     private $sheetIndex = 0;
 
     /**
      * Images root
      *
-     * @var string
+     * @variables string
      */
     private $imagesRoot = '.';
 
     /**
      * embed images, or link to images
      *
-     * @var boolean
+     * @variables boolean
      */
     private $embedImages = false;
 
     /**
      * Use inline CSS?
      *
-     * @var boolean
+     * @variables boolean
      */
     private $useInlineCss = false;
 
     /**
      * Array of CSS styles
      *
-     * @var array
+     * @variables array
      */
     private $cssStyles;
 
     /**
      * Array of column widths in points
      *
-     * @var array
+     * @variables array
      */
     private $columnWidths;
 
     /**
      * Default font
      *
-     * @var PHPExcel_Style_Font
+     * @variables PHPExcel_Style_Font
      */
     private $defaultFont;
 
     /**
      * Flag whether spans have been calculated
      *
-     * @var boolean
+     * @variables boolean
      */
     private $spansAreCalculated = false;
 
     /**
      * Excel cells that should not be written as HTML cells
      *
-     * @var array
+     * @variables array
      */
     private $isSpannedCell = array();
 
     /**
      * Excel cells that are upper-left corner in a cell merge
      *
-     * @var array
+     * @variables array
      */
     private $isBaseCell = array();
 
     /**
      * Excel rows that should not be written as HTML rows
      *
-     * @var array
+     * @variables array
      */
     private $isSpannedRow = array();
 
     /**
      * Is the current writer creating PDF?
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $isPdf = false;
 
     /**
      * Generate the Navigation block
      *
-     * @var boolean
+     * @variables boolean
      */
     private $generateSheetNavigationBlock = true;
 

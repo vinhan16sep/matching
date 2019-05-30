@@ -51,63 +51,63 @@ class CI_Log {
 	/**
 	 * Path to save log files
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_log_path;
 
 	/**
 	 * File permissions
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	protected $_file_permissions = 0644;
 
 	/**
 	 * Level of logging
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	protected $_threshold = 1;
 
 	/**
 	 * Array of threshold levels to log
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $_threshold_array = array();
 
 	/**
 	 * Format of timestamp for log files
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $_date_fmt = 'Y-m-d H:i:s';
 
 	/**
 	 * Filename extension
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_file_ext;
 
 	/**
 	 * Whether or not the logger can write to the log files
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	protected $_enabled = TRUE;
 
 	/**
 	 * Predefined logging levels
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	protected $_levels = array('ERROR' => 1, 'DEBUG' => 2, 'INFO' => 3, 'ALL' => 4);
 
 	/**
 	 * mbstring.func_overload flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected static $func_overload;
 

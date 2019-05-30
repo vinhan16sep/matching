@@ -1615,7 +1615,7 @@ function loadJpegStream(id, imageUrl, objs) {
 /**
  * The maximum allowed image size in total pixels e.g. width * height. Images
  * above this value will not be drawn. Use -1 for no limit.
- * @var {number}
+ * @variables {number}
  */
 PDFJS.maxImageSize = (PDFJS.maxImageSize === undefined ?
                       -1 : PDFJS.maxImageSize);
@@ -1623,13 +1623,13 @@ PDFJS.maxImageSize = (PDFJS.maxImageSize === undefined ?
 /**
  * The url of where the predefined Adobe CMaps are located. Include trailing
  * slash.
- * @var {string}
+ * @variables {string}
  */
 PDFJS.cMapUrl = (PDFJS.cMapUrl === undefined ? null : PDFJS.cMapUrl);
 
 /**
  * Specifies if CMaps are binary packed.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.cMapPacked = PDFJS.cMapPacked === undefined ? false : PDFJS.cMapPacked;
 
@@ -1637,7 +1637,7 @@ PDFJS.cMapPacked = PDFJS.cMapPacked === undefined ? false : PDFJS.cMapPacked;
  * By default fonts are converted to OpenType fonts and loaded via font face
  * rules. If disabled, the font will be rendered using a built in font renderer
  * that constructs the glyphs with primitive path commands.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.disableFontFace = (PDFJS.disableFontFace === undefined ?
                          false : PDFJS.disableFontFace);
@@ -1645,7 +1645,7 @@ PDFJS.disableFontFace = (PDFJS.disableFontFace === undefined ?
 /**
  * Path for image resources, mainly for annotation icons. Include trailing
  * slash.
- * @var {string}
+ * @variables {string}
  */
 PDFJS.imageResourcesPath = (PDFJS.imageResourcesPath === undefined ?
                             '' : PDFJS.imageResourcesPath);
@@ -1654,7 +1654,7 @@ PDFJS.imageResourcesPath = (PDFJS.imageResourcesPath === undefined ?
  * Disable the web worker and run all code on the main thread. This will happen
  * automatically if the browser doesn't support workers or sending typed arrays
  * to workers.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.disableWorker = (PDFJS.disableWorker === undefined ?
                        false : PDFJS.disableWorker);
@@ -1663,7 +1663,7 @@ PDFJS.disableWorker = (PDFJS.disableWorker === undefined ?
  * Path and filename of the worker file. Required when the worker is enabled in
  * development mode. If unspecified in the production build, the worker will be
  * loaded based on the location of the pdf.js file.
- * @var {string}
+ * @variables {string}
  */
 PDFJS.workerSrc = (PDFJS.workerSrc === undefined ? null : PDFJS.workerSrc);
 
@@ -1671,7 +1671,7 @@ PDFJS.workerSrc = (PDFJS.workerSrc === undefined ? null : PDFJS.workerSrc);
  * Disable range request loading of PDF files. When enabled and if the server
  * supports partial content requests then the PDF will be fetched in chunks.
  * Enabled (false) by default.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.disableRange = (PDFJS.disableRange === undefined ?
                       false : PDFJS.disableRange);
@@ -1679,7 +1679,7 @@ PDFJS.disableRange = (PDFJS.disableRange === undefined ?
 /**
  * Disable streaming of PDF file data. By default PDF.js attempts to load PDF
  * in chunks. This default behavior can be disabled.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.disableStream = (PDFJS.disableStream === undefined ?
                        false : PDFJS.disableStream);
@@ -1691,34 +1691,34 @@ PDFJS.disableStream = (PDFJS.disableStream === undefined ?
  *
  * NOTE: It is also necessary to disable streaming, see above,
  *       in order for disabling of pre-fetching to work correctly.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.disableAutoFetch = (PDFJS.disableAutoFetch === undefined ?
                           false : PDFJS.disableAutoFetch);
 
 /**
  * Enables special hooks for debugging PDF.js.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.pdfBug = (PDFJS.pdfBug === undefined ? false : PDFJS.pdfBug);
 
 /**
  * Enables transfer usage in postMessage for ArrayBuffers.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.postMessageTransfers = (PDFJS.postMessageTransfers === undefined ?
                               true : PDFJS.postMessageTransfers);
 
 /**
  * Disables URL.createObjectURL usage.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.disableCreateObjectURL = (PDFJS.disableCreateObjectURL === undefined ?
                                 false : PDFJS.disableCreateObjectURL);
 
 /**
  * Disables WebGL usage.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.disableWebGL = (PDFJS.disableWebGL === undefined ?
                       true : PDFJS.disableWebGL);
@@ -1726,14 +1726,14 @@ PDFJS.disableWebGL = (PDFJS.disableWebGL === undefined ?
 /**
  * Disables fullscreen support, and by extension Presentation Mode,
  * in browsers which support the fullscreen API.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.disableFullscreen = (PDFJS.disableFullscreen === undefined ?
                            false : PDFJS.disableFullscreen);
 
 /**
  * Enables CSS only zooming.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.useOnlyCssZoom = (PDFJS.useOnlyCssZoom === undefined ?
                         false : PDFJS.useOnlyCssZoom);
@@ -1744,7 +1744,7 @@ PDFJS.useOnlyCssZoom = (PDFJS.useOnlyCssZoom === undefined ?
  * - errors
  * - warnings [default]
  * - infos
- * @var {number}
+ * @variables {number}
  */
 PDFJS.verbosity = (PDFJS.verbosity === undefined ?
                    PDFJS.VERBOSITY_LEVELS.warnings : PDFJS.verbosity);
@@ -1752,7 +1752,7 @@ PDFJS.verbosity = (PDFJS.verbosity === undefined ?
 /**
  * The maximum supported canvas size in total pixels e.g. width * height.
  * The default value is 4096 * 4096. Use -1 for no limit.
- * @var {number}
+ * @variables {number}
  */
 PDFJS.maxCanvasPixels = (PDFJS.maxCanvasPixels === undefined ?
                          16777216 : PDFJS.maxCanvasPixels);
@@ -1760,7 +1760,7 @@ PDFJS.maxCanvasPixels = (PDFJS.maxCanvasPixels === undefined ?
 /**
  * Opens external links in a new window if enabled. The default behavior opens
  * external links in the PDF.js window.
- * @var {boolean}
+ * @variables {boolean}
  */
 PDFJS.openExternalLinksInNewWindow = (
   PDFJS.openExternalLinksInNewWindow === undefined ?
@@ -6067,13 +6067,13 @@ var createMeshCanvas = (function createMeshCanvasClosure() {
 
 ShadingIRs.Mesh = {
   fromIR: function Mesh_fromIR(raw) {
-    //var type = raw[1];
+    //variables type = raw[1];
     var coords = raw[2];
     var colors = raw[3];
     var figures = raw[4];
     var bounds = raw[5];
     var matrix = raw[6];
-    //var bbox = raw[7];
+    //variables bbox = raw[7];
     var background = raw[8];
     return {
       type: 'Pattern',
@@ -6543,8 +6543,8 @@ var FontLoader = {
 //bind: function fontLoaderBind(fonts, callback) {
 //  assert(!isWorker, 'bind() shall be called from main thread');
 //
-//  for (var i = 0, ii = fonts.length; i < ii; i++) {
-//    var font = fonts[i];
+//  for (variables i = 0, ii = fonts.length; i < ii; i++) {
+//    variables font = fonts[i];
 //    if (font.attached) {
 //      continue;
 //    }

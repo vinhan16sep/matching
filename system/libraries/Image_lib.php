@@ -52,105 +52,105 @@ class CI_Image_lib {
 	 * PHP extension/library to use for image manipulation
 	 * Can be: imagemagick, netpbm, gd, gd2
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $image_library		= 'gd2';
 
 	/**
 	 * Path to the graphic library (if applicable)
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $library_path		= '';
 
 	/**
 	 * Whether to send to browser or write to disk
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $dynamic_output		= FALSE;
 
 	/**
 	 * Path to original image
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $source_image		= '';
 
 	/**
 	 * Path to the modified image
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $new_image		= '';
 
 	/**
 	 * Image width
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $width			= '';
 
 	/**
 	 * Image height
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $height			= '';
 
 	/**
 	 * Quality percentage of new image
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $quality			= 90;
 
 	/**
 	 * Whether to create a thumbnail
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $create_thumb		= FALSE;
 
 	/**
 	 * String to add to thumbnail version of image
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $thumb_marker		= '_thumb';
 
 	/**
 	 * Whether to maintain aspect ratio when resizing or use hard values
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $maintain_ratio		= TRUE;
 
 	/**
 	 * auto, height, or width.  Determines what to use as the master dimension
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $master_dim		= 'auto';
 
 	/**
 	 * Angle at to rotate image
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $rotation_angle		= '';
 
 	/**
 	 * X Coordinate for manipulation of the current image
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $x_axis			= '';
 
 	/**
 	 * Y Coordinate for manipulation of the current image
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $y_axis			= '';
 
@@ -161,112 +161,112 @@ class CI_Image_lib {
 	/**
 	 * Watermark text if graphic is not used
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $wm_text			= '';
 
 	/**
 	 * Type of watermarking.  Options:  text/overlay
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $wm_type			= 'text';
 
 	/**
 	 * Default transparency for watermark
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $wm_x_transp		= 4;
 
 	/**
 	 * Default transparency for watermark
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $wm_y_transp		= 4;
 
 	/**
 	 * Watermark image path
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $wm_overlay_path		= '';
 
 	/**
 	 * TT font
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $wm_font_path		= '';
 
 	/**
 	 * Font size (different versions of GD will either use points or pixels)
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $wm_font_size		= 17;
 
 	/**
 	 * Vertical alignment:   T M B
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $wm_vrt_alignment	= 'B';
 
 	/**
 	 * Horizontal alignment: L R C
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $wm_hor_alignment	= 'C';
 
 	/**
 	 * Padding around text
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $wm_padding			= 0;
 
 	/**
 	 * Lets you push text to the right
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $wm_hor_offset		= 0;
 
 	/**
 	 * Lets you push text down
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $wm_vrt_offset		= 0;
 
 	/**
 	 * Text color
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $wm_font_color	= '#ffffff';
 
 	/**
 	 * Dropshadow color
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	protected $wm_shadow_color	= '';
 
 	/**
 	 * Dropshadow distance
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $wm_shadow_distance	= 2;
 
 	/**
 	 * Image opacity: 1 - 100  Only works with image
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $wm_opacity		= 50;
 
@@ -277,105 +277,105 @@ class CI_Image_lib {
 	/**
 	 * Source image folder
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $source_folder		= '';
 
 	/**
 	 * Destination image folder
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $dest_folder		= '';
 
 	/**
 	 * Image mime-type
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $mime_type		= '';
 
 	/**
 	 * Original image width
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $orig_width		= '';
 
 	/**
 	 * Original image height
 	 *
-	 * @var int
+	 * @variables int
 	 */
 	public $orig_height		= '';
 
 	/**
 	 * Image format
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $image_type		= '';
 
 	/**
 	 * Size of current image
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $size_str		= '';
 
 	/**
 	 * Full path to source image
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $full_src_path		= '';
 
 	/**
 	 * Full path to destination image
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $full_dst_path		= '';
 
 	/**
 	 * File permissions
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $file_permissions = 0644;
 
 	/**
 	 * Name of function to create image
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $create_fnc		= 'imagecreatetruecolor';
 
 	/**
 	 * Name of function to copy image
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $copy_fnc		= 'imagecopyresampled';
 
 	/**
 	 * Error messages
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $error_msg		= array();
 
 	/**
 	 * Whether to have a drop shadow on watermark
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	protected $wm_use_drop_shadow	= FALSE;
 
 	/**
 	 * Whether to use truetype fonts
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $wm_use_truetype	= FALSE;
 

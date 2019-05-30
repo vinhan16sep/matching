@@ -51,42 +51,42 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 	/**
 	 * Save path
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_save_path;
 
 	/**
 	 * File handle
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	protected $_file_handle;
 
 	/**
 	 * File name
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	protected $_file_path;
 
 	/**
 	 * File new flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_file_new;
 
 	/**
 	 * Validate SID regular expression
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_sid_regexp;
 
 	/**
 	 * mbstring.func_overload flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected static $func_overload;
 

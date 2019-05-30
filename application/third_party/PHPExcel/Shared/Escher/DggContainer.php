@@ -30,42 +30,42 @@ class PHPExcel_Shared_Escher_DggContainer
     /**
      * Maximum shape index of all shapes in all drawings increased by one
      *
-     * @var int
+     * @variables int
      */
     private $spIdMax;
 
     /**
      * Total number of drawings saved
      *
-     * @var int
+     * @variables int
      */
     private $cDgSaved;
 
     /**
      * Total number of shapes saved (including group shapes)
      *
-     * @var int
+     * @variables int
      */
     private $cSpSaved;
 
     /**
      * BLIP Store Container
      *
-     * @var PHPExcel_Shared_Escher_DggContainer_BstoreContainer
+     * @variables PHPExcel_Shared_Escher_DggContainer_BstoreContainer
      */
     private $bstoreContainer;
 
     /**
      * Array of options for the drawing group
      *
-     * @var array
+     * @variables array
      */
     private $OPT = array();
 
     /**
      * Array of identifier clusters containg information about the maximum shape identifiers
      *
-     * @var array
+     * @variables array
      */
     private $IDCLs = array();
 

@@ -30,14 +30,14 @@ class PHPExcel_Calculation_Token_Stack
     /**
      *  The parser stack for formulae
      *
-     *  @var mixed[]
+     *  @variables mixed[]
      */
     private $stack = array();
 
     /**
      *  Count of entries in the parser stack
      *
-     *  @var integer
+     *  @variables integer
      */
     private $count = 0;
 

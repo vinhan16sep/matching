@@ -12,7 +12,7 @@ class PHPExcel_Chart_Axis extends PHPExcel_Chart_Properties
     /**
      * Axis Number
      *
-     * @var  array of mixed
+     * @variables  array of mixed
      */
     private $axisNumber = array(
         'format' => self::FORMAT_CODE_GENERAL,
@@ -22,7 +22,7 @@ class PHPExcel_Chart_Axis extends PHPExcel_Chart_Properties
     /**
      * Axis Options
      *
-     * @var  array of mixed
+     * @variables  array of mixed
      */
     private $axisOptions = array(
         'minimum' => null,
@@ -40,7 +40,7 @@ class PHPExcel_Chart_Axis extends PHPExcel_Chart_Properties
     /**
      * Fill Properties
      *
-     * @var  array of mixed
+     * @variables  array of mixed
      */
     private $fillProperties = array(
         'type' => self::EXCEL_COLOR_TYPE_ARGB,
@@ -51,7 +51,7 @@ class PHPExcel_Chart_Axis extends PHPExcel_Chart_Properties
     /**
      * Line Properties
      *
-     * @var  array of mixed
+     * @variables  array of mixed
      */
     private $lineProperties = array(
         'type' => self::EXCEL_COLOR_TYPE_ARGB,
@@ -62,7 +62,7 @@ class PHPExcel_Chart_Axis extends PHPExcel_Chart_Properties
     /**
      * Line Style Properties
      *
-     * @var  array of mixed
+     * @variables  array of mixed
      */
     private $lineStyleProperties = array(
         'width' => '9525',
@@ -85,7 +85,7 @@ class PHPExcel_Chart_Axis extends PHPExcel_Chart_Properties
     /**
      * Shadow Properties
      *
-     * @var  array of mixed
+     * @variables  array of mixed
      */
     private $shadowProperties = array(
         'presets' => self::SHADOW_PRESETS_NOSHADOW,
@@ -110,7 +110,7 @@ class PHPExcel_Chart_Axis extends PHPExcel_Chart_Properties
     /**
      * Glow Properties
      *
-     * @var  array of mixed
+     * @variables  array of mixed
      */
     private $glowProperties = array(
         'size' => null,
@@ -124,7 +124,7 @@ class PHPExcel_Chart_Axis extends PHPExcel_Chart_Properties
     /**
      * Soft Edge Properties
      *
-     * @var  array of mixed
+     * @variables  array of mixed
      */
     private $softEdges = array(
         'size' => null

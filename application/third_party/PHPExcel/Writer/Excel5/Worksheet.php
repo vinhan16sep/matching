@@ -65,73 +65,73 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
     /**
      * Formula parser
      *
-     * @var PHPExcel_Writer_Excel5_Parser
+     * @variables PHPExcel_Writer_Excel5_Parser
      */
     private $parser;
 
     /**
      * Maximum number of characters for a string (LABEL record in BIFF5)
-     * @var integer
+     * @variables integer
      */
     private $xlsStringMaxLength;
 
     /**
      * Array containing format information for columns
-     * @var array
+     * @variables array
      */
     private $columnInfo;
 
     /**
      * Array containing the selected area for the worksheet
-     * @var array
+     * @variables array
      */
     private $selection;
 
     /**
      * The active pane for the worksheet
-     * @var integer
+     * @variables integer
      */
     private $activePane;
 
     /**
      * Whether to use outline.
-     * @var integer
+     * @variables integer
      */
     private $outlineOn;
 
     /**
      * Auto outline styles.
-     * @var bool
+     * @variables bool
      */
     private $outlineStyle;
 
     /**
      * Whether to have outline summary below.
-     * @var bool
+     * @variables bool
      */
     private $outlineBelow;
 
     /**
      * Whether to have outline summary at the right.
-     * @var bool
+     * @variables bool
      */
     private $outlineRight;
 
     /**
      * Reference to the total number of strings in the workbook
-     * @var integer
+     * @variables integer
      */
     private $stringTotal;
 
     /**
      * Reference to the number of unique strings in the workbook
-     * @var integer
+     * @variables integer
      */
     private $stringUnique;
 
     /**
      * Reference to the array containing all the unique strings in the workbook
-     * @var array
+     * @variables array
      */
     private $stringTable;
 
@@ -142,52 +142,52 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
 
     /**
      * Index of first used row (at least 0)
-     * @var int
+     * @variables int
      */
     private $firstRowIndex;
 
     /**
      * Index of last used row. (no used rows means -1)
-     * @var int
+     * @variables int
      */
     private $lastRowIndex;
 
     /**
      * Index of first used column (at least 0)
-     * @var int
+     * @variables int
      */
     private $firstColumnIndex;
 
     /**
      * Index of last used column (no used columns means -1)
-     * @var int
+     * @variables int
      */
     private $lastColumnIndex;
 
     /**
      * Sheet object
-     * @var PHPExcel_Worksheet
+     * @variables PHPExcel_Worksheet
      */
     public $phpSheet;
 
     /**
      * Count cell style Xfs
      *
-     * @var int
+     * @variables int
      */
     private $countCellStyleXfs;
 
     /**
      * Escher object corresponding to MSODRAWING
      *
-     * @var PHPExcel_Shared_Escher
+     * @variables PHPExcel_Shared_Escher
      */
     private $escher;
 
     /**
      * Array of font hashes associated to FONT records index
      *
-     * @var array
+     * @variables array
      */
     public $fontHashIndex;
 

@@ -53,14 +53,14 @@ class CI_Unit_test {
 	/**
 	 * Active flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $active = TRUE;
 
 	/**
 	 * Test results
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $results = array();
 
@@ -69,28 +69,28 @@ class CI_Unit_test {
 	 *
 	 * Whether to use === or == when comparing
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $strict = FALSE;
 
 	/**
 	 * Template
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_template = NULL;
 
 	/**
 	 * Template rows
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_template_rows = NULL;
 
 	/**
 	 * List of visible test items
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_test_items_visible	= array(
 		'test_name',

@@ -51,28 +51,28 @@ class CI_DB_oci8_result extends CI_DB_result {
 	/**
 	 * Statement ID
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	public $stmt_id;
 
 	/**
 	 * Cursor ID
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	public $curs_id;
 
 	/**
 	 * Limit used flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $limit_used;
 
 	/**
 	 * Commit mode flag
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $commit_mode;
 

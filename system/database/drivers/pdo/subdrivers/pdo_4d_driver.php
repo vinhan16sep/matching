@@ -55,14 +55,14 @@ class CI_DB_pdo_4d_driver extends CI_DB_pdo_driver {
 	/**
 	 * Sub-driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $subdriver = '4d';
 
 	/**
 	 * Identifier escape character
 	 *
-	 * @var	string[]
+	 * @variables	string[]
 	 */
 	protected $_escape_char = array('[', ']');
 

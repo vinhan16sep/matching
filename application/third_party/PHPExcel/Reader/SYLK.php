@@ -39,28 +39,28 @@ class PHPExcel_Reader_SYLK extends PHPExcel_Reader_Abstract implements PHPExcel_
     /**
      * Input encoding
      *
-     * @var string
+     * @variables string
      */
     private $inputEncoding = 'ANSI';
 
     /**
      * Sheet index to read
      *
-     * @var int
+     * @variables int
      */
     private $sheetIndex = 0;
 
     /**
      * Formats
      *
-     * @var array
+     * @variables array
      */
     private $formats = array();
 
     /**
      * Format Count
      *
-     * @var int
+     * @variables int
      */
     private $format = 0;
 

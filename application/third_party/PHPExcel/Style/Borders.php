@@ -36,77 +36,77 @@ class PHPExcel_Style_Borders extends PHPExcel_Style_Supervisor implements PHPExc
     /**
      * Left
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $left;
 
     /**
      * Right
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $right;
 
     /**
      * Top
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $top;
 
     /**
      * Bottom
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $bottom;
 
     /**
      * Diagonal
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $diagonal;
 
     /**
      * DiagonalDirection
      *
-     * @var int
+     * @variables int
      */
     protected $diagonalDirection;
 
     /**
      * All borders psedo-border. Only applies to supervisor.
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $allBorders;
 
     /**
      * Outline psedo-border. Only applies to supervisor.
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $outline;
 
     /**
      * Inside psedo-border. Only applies to supervisor.
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $inside;
 
     /**
      * Vertical pseudo-border. Only applies to supervisor.
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $vertical;
 
     /**
      * Horizontal pseudo-border. Only applies to supervisor.
      *
-     * @var PHPExcel_Style_Border
+     * @variables PHPExcel_Style_Border
      */
     protected $horizontal;
 

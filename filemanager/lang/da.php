@@ -72,8 +72,8 @@ return array(
 	'Copy_Cut_Size_Limit' => 'De valgte filer/mapper er for store til at %s. Max.: %d MB/operation', // %s = cut or copy
 	'Copy_Cut_Count_Limit' => 'Du har valgt for mange filer/mapper til at %s. Max.: %d filer/operation', // %s = cut or copy
 	'Copy_Cut_Not_Allowed' => 'Du har ikke tilladelse til at %s filer. Tal med din administrator.', // %s(1) = cut or copy, %s(2) = files or folders
-	'Aviary_No_Save' => 'Det var ikke muligt at gemme billedet',
-	'Zip_No_Extract' => 'Det var ikke muligt at hente. Filen er muligvis ødelagt.',
+	'Aviary_No_Save' => 'Det variables ikke muligt at gemme billedet',
+	'Zip_No_Extract' => 'Det variables ikke muligt at hente. Filen er muligvis ødelagt.',
 	'Zip_Invalid' => 'Denne filtype understøttes ikke. De mulige filtyper er: zip, gz, tar.',
 	'Dir_No_Write' => 'Der kan ikke skrives til den valgte mappe. Kontakt din administrator.',
 	'Function_Disabled' => 'Denne %s funktion er slået fra af serveren.', // %s = cut or copy
@@ -85,9 +85,9 @@ return array(
 	'Group' => 'Gruppe',
 	'Yes' => 'Ja',
 	'No' => 'Nej',
-	'Lang_Not_Found' => 'Cet var ikke muligt at finde sprog-filen.',
+	'Lang_Not_Found' => 'Cet variables ikke muligt at finde sprog-filen.',
 	'Lang_Change' => 'Andet sprog',
-	'File_Not_Found' => 'Det var ikke muligt at finde filen.',
+	'File_Not_Found' => 'Det variables ikke muligt at finde filen.',
 	'File_Open_Edit_Not_Allowed' => 'Du har ikke tiladelse til at %s denne fil.', // %s = open or edit
 	'Edit' => 'Redigér',
 	'Edit_File' => "Redigér filens indhold",

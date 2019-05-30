@@ -35,7 +35,7 @@ class PHPExcel_Shared_JAMA_Matrix
     /**
      *    Matrix storage
      *
-     *    @var array
+     *    @variables array
      *    @access public
      */
     public $A = array();
@@ -43,7 +43,7 @@ class PHPExcel_Shared_JAMA_Matrix
     /**
      *    Matrix row dimension
      *
-     *    @var int
+     *    @variables int
      *    @access private
      */
     private $m;
@@ -51,7 +51,7 @@ class PHPExcel_Shared_JAMA_Matrix
     /**
      *    Matrix column dimension
      *
-     *    @var int
+     *    @variables int
      *    @access private
      */
     private $n;

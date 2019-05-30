@@ -40,287 +40,287 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
     /**
      * Invalid characters in sheet title
      *
-     * @var array
+     * @variables array
      */
     private static $invalidCharacters = array('*', ':', '/', '\\', '?', '[', ']');
 
     /**
      * Parent spreadsheet
      *
-     * @var PHPExcel
+     * @variables PHPExcel
      */
     private $parent;
 
     /**
      * Cacheable collection of cells
      *
-     * @var PHPExcel_CachedObjectStorage_xxx
+     * @variables PHPExcel_CachedObjectStorage_xxx
      */
     private $cellCollection;
 
     /**
      * Collection of row dimensions
      *
-     * @var PHPExcel_Worksheet_RowDimension[]
+     * @variables PHPExcel_Worksheet_RowDimension[]
      */
     private $rowDimensions = array();
 
     /**
      * Default row dimension
      *
-     * @var PHPExcel_Worksheet_RowDimension
+     * @variables PHPExcel_Worksheet_RowDimension
      */
     private $defaultRowDimension;
 
     /**
      * Collection of column dimensions
      *
-     * @var PHPExcel_Worksheet_ColumnDimension[]
+     * @variables PHPExcel_Worksheet_ColumnDimension[]
      */
     private $columnDimensions = array();
 
     /**
      * Default column dimension
      *
-     * @var PHPExcel_Worksheet_ColumnDimension
+     * @variables PHPExcel_Worksheet_ColumnDimension
      */
     private $defaultColumnDimension = null;
 
     /**
      * Collection of drawings
      *
-     * @var PHPExcel_Worksheet_BaseDrawing[]
+     * @variables PHPExcel_Worksheet_BaseDrawing[]
      */
     private $drawingCollection = null;
 
     /**
      * Collection of Chart objects
      *
-     * @var PHPExcel_Chart[]
+     * @variables PHPExcel_Chart[]
      */
     private $chartCollection = array();
 
     /**
      * Worksheet title
      *
-     * @var string
+     * @variables string
      */
     private $title;
 
     /**
      * Sheet state
      *
-     * @var string
+     * @variables string
      */
     private $sheetState;
 
     /**
      * Page setup
      *
-     * @var PHPExcel_Worksheet_PageSetup
+     * @variables PHPExcel_Worksheet_PageSetup
      */
     private $pageSetup;
 
     /**
      * Page margins
      *
-     * @var PHPExcel_Worksheet_PageMargins
+     * @variables PHPExcel_Worksheet_PageMargins
      */
     private $pageMargins;
 
     /**
      * Page header/footer
      *
-     * @var PHPExcel_Worksheet_HeaderFooter
+     * @variables PHPExcel_Worksheet_HeaderFooter
      */
     private $headerFooter;
 
     /**
      * Sheet view
      *
-     * @var PHPExcel_Worksheet_SheetView
+     * @variables PHPExcel_Worksheet_SheetView
      */
     private $sheetView;
 
     /**
      * Protection
      *
-     * @var PHPExcel_Worksheet_Protection
+     * @variables PHPExcel_Worksheet_Protection
      */
     private $protection;
 
     /**
      * Collection of styles
      *
-     * @var PHPExcel_Style[]
+     * @variables PHPExcel_Style[]
      */
     private $styles = array();
 
     /**
      * Conditional styles. Indexed by cell coordinate, e.g. 'A1'
      *
-     * @var array
+     * @variables array
      */
     private $conditionalStylesCollection = array();
 
     /**
      * Is the current cell collection sorted already?
      *
-     * @var boolean
+     * @variables boolean
      */
     private $cellCollectionIsSorted = false;
 
     /**
      * Collection of breaks
      *
-     * @var array
+     * @variables array
      */
     private $breaks = array();
 
     /**
      * Collection of merged cell ranges
      *
-     * @var array
+     * @variables array
      */
     private $mergeCells = array();
 
     /**
      * Collection of protected cell ranges
      *
-     * @var array
+     * @variables array
      */
     private $protectedCells = array();
 
     /**
      * Autofilter Range and selection
      *
-     * @var PHPExcel_Worksheet_AutoFilter
+     * @variables PHPExcel_Worksheet_AutoFilter
      */
     private $autoFilter;
 
     /**
      * Freeze pane
      *
-     * @var string
+     * @variables string
      */
     private $freezePane = '';
 
     /**
      * Show gridlines?
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showGridlines = true;
 
     /**
     * Print gridlines?
     *
-    * @var boolean
+    * @variables boolean
     */
     private $printGridlines = false;
 
     /**
     * Show row and column headers?
     *
-    * @var boolean
+    * @variables boolean
     */
     private $showRowColHeaders = true;
 
     /**
      * Show summary below? (Row/Column outline)
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showSummaryBelow = true;
 
     /**
      * Show summary right? (Row/Column outline)
      *
-     * @var boolean
+     * @variables boolean
      */
     private $showSummaryRight = true;
 
     /**
      * Collection of comments
      *
-     * @var PHPExcel_Comment[]
+     * @variables PHPExcel_Comment[]
      */
     private $comments = array();
 
     /**
      * Active cell. (Only one!)
      *
-     * @var string
+     * @variables string
      */
     private $activeCell = 'A1';
 
     /**
      * Selected cells
      *
-     * @var string
+     * @variables string
      */
     private $selectedCells = 'A1';
 
     /**
      * Cached highest column
      *
-     * @var string
+     * @variables string
      */
     private $cachedHighestColumn = 'A';
 
     /**
      * Cached highest row
      *
-     * @var int
+     * @variables int
      */
     private $cachedHighestRow = 1;
 
     /**
      * Right-to-left?
      *
-     * @var boolean
+     * @variables boolean
      */
     private $rightToLeft = false;
 
     /**
      * Hyperlinks. Indexed by cell coordinate, e.g. 'A1'
      *
-     * @var array
+     * @variables array
      */
     private $hyperlinkCollection = array();
 
     /**
      * Data validation objects. Indexed by cell coordinate, e.g. 'A1'
      *
-     * @var array
+     * @variables array
      */
     private $dataValidationCollection = array();
 
     /**
      * Tab color
      *
-     * @var PHPExcel_Style_Color
+     * @variables PHPExcel_Style_Color
      */
     private $tabColor;
 
     /**
      * Dirty flag
      *
-     * @var boolean
+     * @variables boolean
      */
     private $dirty = true;
 
     /**
      * Hash
      *
-     * @var string
+     * @variables string
      */
     private $hash;
 
     /**
     * CodeName
     *
-    * @var string
+    * @variables string
     */
     private $codeName = null;
 

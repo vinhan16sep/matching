@@ -49,14 +49,14 @@ class CI_DB_pdo_pgsql_forge extends CI_DB_pdo_forge {
 	/**
 	 * DROP TABLE IF statement
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_drop_table_if	= 'DROP TABLE IF EXISTS';
 
 	/**
 	 * UNSIGNED support
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_unsigned		= array(
 		'INT2'		=> 'INTEGER',
@@ -73,7 +73,7 @@ class CI_DB_pdo_pgsql_forge extends CI_DB_pdo_forge {
 	/**
 	 * NULL value representation in CREATE/ALTER TABLE statements
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_null = 'NULL';
 

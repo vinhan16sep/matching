@@ -55,7 +55,7 @@ class CI_DB_ibase_driver extends CI_DB {
 	/**
 	 * Database driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbdriver = 'ibase';
 
@@ -64,14 +64,14 @@ class CI_DB_ibase_driver extends CI_DB {
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('RAND()', 'RAND()');
 
 	/**
 	 * IBase Transaction status flag
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	protected $_ibase_trans;
 

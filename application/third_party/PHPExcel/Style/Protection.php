@@ -35,14 +35,14 @@ class PHPExcel_Style_Protection extends PHPExcel_Style_Supervisor implements PHP
     /**
      * Locked
      *
-     * @var string
+     * @variables string
      */
     protected $locked;
 
     /**
      * Hidden
      *
-     * @var string
+     * @variables string
      */
     protected $hidden;
 

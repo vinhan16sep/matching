@@ -53,56 +53,56 @@ class CI_Table {
 	/**
 	 * Data for table rows
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $rows		= array();
 
 	/**
 	 * Data for table heading
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $heading		= array();
 
 	/**
 	 * Whether or not to automatically create the table header
 	 *
-	 * @var bool
+	 * @variables bool
 	 */
 	public $auto_heading	= TRUE;
 
 	/**
 	 * Table caption
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $caption		= NULL;
 
 	/**
 	 * Table layout template
 	 *
-	 * @var array
+	 * @variables array
 	 */
 	public $template	= NULL;
 
 	/**
 	 * Newline setting
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $newline		= "\n";
 
 	/**
 	 * Contents of empty cells
 	 *
-	 * @var string
+	 * @variables string
 	 */
 	public $empty_cells	= '';
 
 	/**
 	 * Callback for custom table layout
 	 *
-	 * @var function
+	 * @variables function
 	 */
 	public $function	= NULL;
 

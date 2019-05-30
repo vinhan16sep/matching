@@ -25,31 +25,31 @@ class PHPExcel_Shared_JAMA_LUDecomposition
 
     /**
      *    Decomposition storage
-     *    @var array
+     *    @variables array
      */
     private $LU = array();
 
     /**
      *    Row dimension.
-     *    @var int
+     *    @variables int
      */
     private $m;
 
     /**
      *    Column dimension.
-     *    @var int
+     *    @variables int
      */
     private $n;
 
     /**
      *    Pivot sign.
-     *    @var int
+     *    @variables int
      */
     private $pivsign;
 
     /**
      *    Internal storage of pivot vector.
-     *    @var array
+     *    @variables array
      */
     private $piv = array();
 

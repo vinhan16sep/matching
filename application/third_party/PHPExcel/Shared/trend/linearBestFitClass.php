@@ -33,7 +33,7 @@ class PHPExcel_Linear_Best_Fit extends PHPExcel_Best_Fit
      * Algorithm type to use for best-fit
      * (Name of this trend class)
      *
-     * @var    string
+     * @variables    string
      **/
     protected $bestFitType        = 'linear';
 

@@ -36,97 +36,97 @@ class PHPExcel
     /**
      * Unique ID
      *
-     * @var string
+     * @variables string
      */
     private $uniqueID;
 
     /**
      * Document properties
      *
-     * @var PHPExcel_DocumentProperties
+     * @variables PHPExcel_DocumentProperties
      */
     private $properties;
 
     /**
      * Document security
      *
-     * @var PHPExcel_DocumentSecurity
+     * @variables PHPExcel_DocumentSecurity
      */
     private $security;
 
     /**
      * Collection of Worksheet objects
      *
-     * @var PHPExcel_Worksheet[]
+     * @variables PHPExcel_Worksheet[]
      */
     private $workSheetCollection = array();
 
     /**
      * Calculation Engine
      *
-     * @var PHPExcel_Calculation
+     * @variables PHPExcel_Calculation
      */
     private $calculationEngine;
 
     /**
      * Active sheet index
      *
-     * @var integer
+     * @variables integer
      */
     private $activeSheetIndex = 0;
 
     /**
      * Named ranges
      *
-     * @var PHPExcel_NamedRange[]
+     * @variables PHPExcel_NamedRange[]
      */
     private $namedRanges = array();
 
     /**
      * CellXf supervisor
      *
-     * @var PHPExcel_Style
+     * @variables PHPExcel_Style
      */
     private $cellXfSupervisor;
 
     /**
      * CellXf collection
      *
-     * @var PHPExcel_Style[]
+     * @variables PHPExcel_Style[]
      */
     private $cellXfCollection = array();
 
     /**
      * CellStyleXf collection
      *
-     * @var PHPExcel_Style[]
+     * @variables PHPExcel_Style[]
      */
     private $cellStyleXfCollection = array();
 
     /**
     * hasMacros : this workbook have macros ?
     *
-    * @var bool
+    * @variables bool
     */
     private $hasMacros = false;
 
     /**
     * macrosCode : all macros code (the vbaProject.bin file, this include form, code,  etc.), null if no macro
     *
-    * @var binary
+    * @variables binary
     */
     private $macrosCode;
     /**
     * macrosCertificate : if macros are signed, contains vbaProjectSignature.bin file, null if not signed
     *
-    * @var binary
+    * @variables binary
     */
     private $macrosCertificate;
 
     /**
     * ribbonXMLData : null if workbook is'nt Excel 2007 or not contain a customized UI
     *
-    * @var null|string
+    * @variables null|string
     */
     private $ribbonXMLData;
 
@@ -134,7 +134,7 @@ class PHPExcel
     * ribbonBinObjects : null if workbook is'nt Excel 2007 or not contain embedded objects (picture(s)) for Ribbon Elements
     * ignored if $ribbonXMLData is null
     *
-    * @var null|array
+    * @variables null|array
     */
     private $ribbonBinObjects;
 

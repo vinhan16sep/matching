@@ -39,14 +39,14 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
     /**
      * PHPExcel_ReferenceHelper instance
      *
-     * @var PHPExcel_ReferenceHelper
+     * @variables PHPExcel_ReferenceHelper
      */
     private $referenceHelper = null;
 
     /**
      * PHPExcel_Reader_Excel2007_Theme instance
      *
-     * @var PHPExcel_Reader_Excel2007_Theme
+     * @variables PHPExcel_Reader_Excel2007_Theme
      */
     private static $theme = null;
 

@@ -55,7 +55,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	/**
 	 * Database driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbdriver = 'sqlsrv';
 
@@ -67,7 +67,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	 * FALSE or SQLSRV_CURSOR_FORWARD would increase performance,
 	 * but would disable num_rows() (and possibly insert_id())
 	 *
-	 * @var	mixed
+	 * @variables	mixed
 	 */
 	public $scrollable;
 
@@ -76,7 +76,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('NEWID()', 'RAND(%d)');
 
@@ -86,7 +86,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	 * Whether to use SQL-92 standard quoted identifier
 	 * (double quotes) or brackets for identifier escaping.
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	protected $_quoted_identifier = TRUE;
 

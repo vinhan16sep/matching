@@ -1,0 +1,37 @@
+//Set Transition Effect
+
+@mixin transition($duration){
+    -webkit-transition: all ease-in-out $duration;
+    -moz-transition: all ease-in-out $duration;
+    -ms-transition: all ease-in-out $duration;
+    -o-transition: all ease-in-out $duration;
+    transition: all ease-in-out $duration;
+}
+
+//Set Translate Transform
+
+@mixin translate($x, $y){
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
+//Set Scale Transform
+
+@mixin scale($x, $y){
+    -webkit-transform: scale($x, $y);
+    -moz-transform: scale($x, $y);
+    -ms-transform: scale($x, $y);
+    -o-transform: scale($x, $y);
+    transform: scale($x, $y);
+}
+
+@mixin rotate($deg){
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    -o-transform: rotate($deg);
+    transform: rotate($deg);
+}

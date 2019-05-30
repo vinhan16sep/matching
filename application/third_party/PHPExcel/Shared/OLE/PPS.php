@@ -31,79 +31,79 @@ class PHPExcel_Shared_OLE_PPS
 {
     /**
     * The PPS index
-    * @var integer
+    * @variables integer
     */
     public $No;
 
     /**
     * The PPS name (in Unicode)
-    * @var string
+    * @variables string
     */
     public $Name;
 
     /**
     * The PPS type. Dir, Root or File
-    * @var integer
+    * @variables integer
     */
     public $Type;
 
     /**
     * The index of the previous PPS
-    * @var integer
+    * @variables integer
     */
     public $PrevPps;
 
     /**
     * The index of the next PPS
-    * @var integer
+    * @variables integer
     */
     public $NextPps;
 
     /**
     * The index of it's first child if this is a Dir or Root PPS
-    * @var integer
+    * @variables integer
     */
     public $DirPps;
 
     /**
     * A timestamp
-    * @var integer
+    * @variables integer
     */
     public $Time1st;
 
     /**
     * A timestamp
-    * @var integer
+    * @variables integer
     */
     public $Time2nd;
 
     /**
     * Starting block (small or big) for this PPS's data  inside the container
-    * @var integer
+    * @variables integer
     */
     public $_StartBlock;
 
     /**
     * The size of the PPS's data (in bytes)
-    * @var integer
+    * @variables integer
     */
     public $Size;
 
     /**
     * The PPS's data (only used if it's not using a temporary file)
-    * @var string
+    * @variables string
     */
     public $_data;
 
     /**
     * Array of child PPS's (only used by Root and Dir PPS's)
-    * @var array
+    * @variables array
     */
     public $children = array();
 
     /**
     * Pointer to OLE container
-    * @var OLE
+    * @variables OLE
     */
     public $ole;
 

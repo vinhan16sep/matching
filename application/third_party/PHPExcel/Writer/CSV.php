@@ -30,42 +30,42 @@ class PHPExcel_Writer_CSV extends PHPExcel_Writer_Abstract implements PHPExcel_W
     /**
      * PHPExcel object
      *
-     * @var PHPExcel
+     * @variables PHPExcel
      */
     private $phpExcel;
 
     /**
      * Delimiter
      *
-     * @var string
+     * @variables string
      */
     private $delimiter    = ',';
 
     /**
      * Enclosure
      *
-     * @var string
+     * @variables string
      */
     private $enclosure    = '"';
 
     /**
      * Line ending
      *
-     * @var string
+     * @variables string
      */
     private $lineEnding    = PHP_EOL;
 
     /**
      * Sheet index to write
      *
-     * @var int
+     * @variables int
      */
     private $sheetIndex    = 0;
 
     /**
      * Whether to write a BOM (for UTF8).
      *
-     * @var boolean
+     * @variables boolean
      */
     private $useBOM = false;
 
@@ -73,14 +73,14 @@ class PHPExcel_Writer_CSV extends PHPExcel_Writer_Abstract implements PHPExcel_W
      * Whether to write a Separator line as the first line of the file
      *     sep=x
      *
-     * @var boolean
+     * @variables boolean
      */
     private $includeSeparatorLine = false;
 
     /**
      * Whether to write a fully Excel compatible CSV file.
      *
-     * @var boolean
+     * @variables boolean
      */
     private $excelCompatibility = false;
 

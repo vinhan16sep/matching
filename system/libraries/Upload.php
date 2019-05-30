@@ -51,210 +51,210 @@ class CI_Upload {
 	/**
 	 * Maximum file size
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $max_size = 0;
 
 	/**
 	 * Maximum image width
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $max_width = 0;
 
 	/**
 	 * Maximum image height
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $max_height = 0;
 
 	/**
 	 * Minimum image width
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $min_width = 0;
 
 	/**
 	 * Minimum image height
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $min_height = 0;
 
 	/**
 	 * Maximum filename length
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $max_filename = 0;
 
 	/**
 	 * Maximum duplicate filename increment ID
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $max_filename_increment = 100;
 
 	/**
 	 * Allowed file types
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $allowed_types = '';
 
 	/**
 	 * Temporary filename
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $file_temp = '';
 
 	/**
 	 * Filename
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $file_name = '';
 
 	/**
 	 * Original filename
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $orig_name = '';
 
 	/**
 	 * File type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $file_type = '';
 
 	/**
 	 * File size
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $file_size = NULL;
 
 	/**
 	 * Filename extension
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $file_ext = '';
 
 	/**
 	 * Force filename extension to lowercase
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $file_ext_tolower = FALSE;
 
 	/**
 	 * Upload path
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $upload_path = '';
 
 	/**
 	 * Overwrite flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $overwrite = FALSE;
 
 	/**
 	 * Obfuscate filename flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $encrypt_name = FALSE;
 
 	/**
 	 * Is image flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $is_image = FALSE;
 
 	/**
 	 * Image width
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $image_width = NULL;
 
 	/**
 	 * Image height
 	 *
-	 * @var	int
+	 * @variables	int
 	 */
 	public $image_height = NULL;
 
 	/**
 	 * Image type
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $image_type = '';
 
 	/**
 	 * Image size string
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $image_size_str = '';
 
 	/**
 	 * Error messages list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	public $error_msg = array();
 
 	/**
 	 * Remove spaces flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $remove_spaces = TRUE;
 
 	/**
 	 * MIME detection flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $detect_mime = TRUE;
 
 	/**
 	 * XSS filter flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $xss_clean = FALSE;
 
 	/**
 	 * Apache mod_mime fix flag
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $mod_mime_fix = TRUE;
 
 	/**
 	 * Temporary filename prefix
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $temp_prefix = 'temp_file_';
 
 	/**
 	 * Filename sent by the client
 	 *
-	 * @var	bool
+	 * @variables	bool
 	 */
 	public $client_name = '';
 
@@ -263,21 +263,21 @@ class CI_Upload {
 	/**
 	 * Filename override
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_file_name_override = '';
 
 	/**
 	 * MIME types list
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_mimes = array();
 
 	/**
 	 * CI Singleton
 	 *
-	 * @var	object
+	 * @variables	object
 	 */
 	protected $_CI;
 

@@ -55,14 +55,14 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	/**
 	 * Database driver
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $dbdriver = 'odbc';
 
 	/**
 	 * Database schema
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	public $schema = 'public';
 
@@ -73,21 +73,21 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 *
 	 * Must be empty for ODBC.
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_escape_char = '';
 
 	/**
 	 * ESCAPE statement string
 	 *
-	 * @var	string
+	 * @variables	string
 	 */
 	protected $_like_escape_str = " {escape '%s'} ";
 
 	/**
 	 * ORDER BY random keyword
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	protected $_random_keyword = array('RND()', 'RND(%d)');
 
@@ -96,14 +96,14 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	/**
 	 * ODBC result ID resource returned from odbc_prepare()
 	 *
-	 * @var	resource
+	 * @variables	resource
 	 */
 	private $odbc_result;
 
 	/**
 	 * Values to use with odbc_execute() for prepared statements
 	 *
-	 * @var	array
+	 * @variables	array
 	 */
 	private $binds = array();
 

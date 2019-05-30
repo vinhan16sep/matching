@@ -34,84 +34,84 @@ class PHPExcel_Writer_Excel2007 extends PHPExcel_Writer_Abstract implements PHPE
      *
      * Overrides the default TRUE for this specific writer for performance reasons
      *
-     * @var boolean
+     * @variables boolean
      */
     protected $preCalculateFormulas = false;
 
     /**
      * Office2003 compatibility
      *
-     * @var boolean
+     * @variables boolean
      */
     private $office2003compatibility = false;
 
     /**
      * Private writer parts
      *
-     * @var PHPExcel_Writer_Excel2007_WriterPart[]
+     * @variables PHPExcel_Writer_Excel2007_WriterPart[]
      */
     private $writerParts    = array();
 
     /**
      * Private PHPExcel
      *
-     * @var PHPExcel
+     * @variables PHPExcel
      */
     private $spreadSheet;
 
     /**
      * Private string table
      *
-     * @var string[]
+     * @variables string[]
      */
     private $stringTable    = array();
 
     /**
      * Private unique PHPExcel_Style_Conditional HashTable
      *
-     * @var PHPExcel_HashTable
+     * @variables PHPExcel_HashTable
      */
     private $stylesConditionalHashTable;
 
     /**
      * Private unique PHPExcel_Style HashTable
      *
-     * @var PHPExcel_HashTable
+     * @variables PHPExcel_HashTable
      */
     private $styleHashTable;
 
     /**
      * Private unique PHPExcel_Style_Fill HashTable
      *
-     * @var PHPExcel_HashTable
+     * @variables PHPExcel_HashTable
      */
     private $fillHashTable;
 
     /**
      * Private unique PHPExcel_Style_Font HashTable
      *
-     * @var PHPExcel_HashTable
+     * @variables PHPExcel_HashTable
      */
     private $fontHashTable;
 
     /**
      * Private unique PHPExcel_Style_Borders HashTable
      *
-     * @var PHPExcel_HashTable
+     * @variables PHPExcel_HashTable
      */
     private $bordersHashTable ;
 
     /**
      * Private unique PHPExcel_Style_NumberFormat HashTable
      *
-     * @var PHPExcel_HashTable
+     * @variables PHPExcel_HashTable
      */
     private $numFmtHashTable;
 
     /**
      * Private unique PHPExcel_Worksheet_BaseDrawing HashTable
      *
-     * @var PHPExcel_HashTable
+     * @variables PHPExcel_HashTable
      */
     private $drawingHashTable;
 

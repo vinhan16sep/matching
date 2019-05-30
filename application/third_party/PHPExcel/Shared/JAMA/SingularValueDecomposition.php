@@ -21,31 +21,31 @@ class SingularValueDecomposition
 {
     /**
      *    Internal storage of U.
-     *    @var array
+     *    @variables array
      */
     private $U = array();
 
     /**
      *    Internal storage of V.
-     *    @var array
+     *    @variables array
      */
     private $V = array();
 
     /**
      *    Internal storage of singular values.
-     *    @var array
+     *    @variables array
      */
     private $s = array();
 
     /**
      *    Row dimension.
-     *    @var int
+     *    @variables int
      */
     private $m;
 
     /**
      *    Column dimension.
-     *    @var int
+     *    @variables int
      */
     private $n;
 

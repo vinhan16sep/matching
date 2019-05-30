@@ -48,71 +48,71 @@ class PHPMailer {
 
   /**
    * Email priority (1 = High, 3 = Normal, 5 = low).
-   * @var int
+   * @variables int
    */
   public $Priority          = 3;
 
   /**
    * Sets the CharSet of the message.
-   * @var string
+   * @variables string
    */
   public $CharSet           = 'iso-8859-1';
 
   /**
    * Sets the Content-type of the message.
-   * @var string
+   * @variables string
    */
   public $ContentType       = 'text/plain';
 
   /**
    * Sets the Encoding of the message. Options for this are
    *  "8bit", "7bit", "binary", "base64", and "quoted-printable".
-   * @var string
+   * @variables string
    */
   public $Encoding          = '8bit';
 
   /**
    * Holds the most recent mailer error message.
-   * @var string
+   * @variables string
    */
   public $ErrorInfo         = '';
 
   /**
    * Sets the From email address for the message.
-   * @var string
+   * @variables string
    */
   public $From              = 'root@localhost';
 
   /**
    * Sets the From name of the message.
-   * @var string
+   * @variables string
    */
   public $FromName          = 'Root User';
 
   /**
    * Sets the Sender email (Return-Path) of the message.  If not empty,
    * will be sent via -f to sendmail or as 'MAIL FROM' in smtp mode.
-   * @var string
+   * @variables string
    */
   public $Sender            = '';
 
   /**
    * Sets the Return-Path of the message.  If empty, it will
    * be set to either From or Sender.
-   * @var string
+   * @variables string
    */
   public $ReturnPath        = '';
 
   /**
    * Sets the Subject of the message.
-   * @var string
+   * @variables string
    */
   public $Subject           = '';
 
   /**
    * Sets the Body of the message.  This can be either an HTML or text body.
    * If HTML then run IsHTML(true).
-   * @var string
+   * @variables string
    */
   public $Body              = '';
 
@@ -121,27 +121,27 @@ class PHPMailer {
    * email to multipart/alternative.  This body can be read by mail
    * clients that do not have HTML email capability such as mutt. Clients
    * that can read HTML will view the normal Body.
-   * @var string
+   * @variables string
    */
   public $AltBody           = '';
 
   /**
    * Stores the complete compiled MIME message body.
-   * @var string
+   * @variables string
    * @access protected
    */
   protected $MIMEBody       = '';
 
   /**
    * Stores the complete compiled MIME message headers.
-   * @var string
+   * @variables string
    * @access protected
    */
   protected $MIMEHeader     = '';
 
   /**
    * Stores the extra header list which CreateHeader() doesn't fold in
-   * @var string
+   * @variables string
    * @access protected
   */
   protected $mailHeader     = '';
@@ -149,39 +149,39 @@ class PHPMailer {
   /**
    * Sets word wrapping on the body of the message to a given number of
    * characters.
-   * @var int
+   * @variables int
    */
   public $WordWrap          = 0;
 
   /**
    * Method to send mail: ("mail", "sendmail", or "smtp").
-   * @var string
+   * @variables string
    */
   public $Mailer            = 'mail';
 
   /**
    * Sets the path of the sendmail program.
-   * @var string
+   * @variables string
    */
   public $Sendmail          = '/usr/sbin/sendmail';
 
   /**
    * Determine if mail() uses a fully sendmail compatible MTA that
    * supports sendmail's "-oi -f" options
-   * @var boolean
+   * @variables boolean
    */
   public $UseSendmailOptions	= true;
   
   /**
    * Path to PHPMailer plugins.  Useful if the SMTP class
    * is in a different directory than the PHP include path.
-   * @var string
+   * @variables string
    */
   public $PluginDir         = '';
 
   /**
    * Sets the email address that a reading confirmation will be sent.
-   * @var string
+   * @variables string
    */
   public $ConfirmReadingTo  = '';
 
@@ -189,21 +189,21 @@ class PHPMailer {
    * Sets the hostname to use in Message-Id and Received headers
    * and as default HELO string. If empty, the value returned
    * by SERVER_NAME is used or 'localhost.localdomain'.
-   * @var string
+   * @variables string
    */
   public $Hostname          = '';
 
   /**
    * Sets the message ID to be used in the Message-Id header.
    * If empty, a unique id will be generated.
-   * @var string
+   * @variables string
    */
   public $MessageID         = '';
 
   /**
    * Sets the message Date to be used in the Date header.
    * If empty, the current date will be added.
-   * @var string
+   * @variables string
    */
   public $MessageDate       = '';
 
@@ -219,81 +219,81 @@ class PHPMailer {
    * for each host by using this format: [hostname:port]
    * (e.g. "smtp1.example.com:25;smtp2.example.com").
    * Hosts will be tried in order.
-   * @var string
+   * @variables string
    */
   public $Host          = 'localhost';
 
   /**
    * Sets the default SMTP server port.
-   * @var int
+   * @variables int
    */
   public $Port          = 25;
 
   /**
    * Sets the SMTP HELO of the message (Default is $Hostname).
-   * @var string
+   * @variables string
    */
   public $Helo          = '';
 
   /**
    * Sets connection prefix. Options are "", "ssl" or "tls"
-   * @var string
+   * @variables string
    */
   public $SMTPSecure    = '';
 
   /**
    * Sets SMTP authentication. Utilizes the Username and Password variables.
-   * @var bool
+   * @variables bool
    */
   public $SMTPAuth      = false;
 
   /**
    * Sets SMTP username.
-   * @var string
+   * @variables string
    */
   public $Username      = '';
 
   /**
    * Sets SMTP password.
-   * @var string
+   * @variables string
    */
   public $Password      = '';
 
   /**
    *  Sets SMTP auth type. Options are LOGIN | PLAIN | NTLM  (default LOGIN)
-   *  @var string
+   *  @variables string
    */
   public $AuthType      = '';
   
   /**
    *  Sets SMTP realm.
-   *  @var string
+   *  @variables string
    */
   public $Realm         = '';
 
   /**
    *  Sets SMTP workstation.
-   *  @var string
+   *  @variables string
    */
   public $Workstation   = '';
 
   /**
    * Sets the SMTP server timeout in seconds.
    * This function will not work with the win32 version.
-   * @var int
+   * @variables int
    */
   public $Timeout       = 10;
 
   /**
    * Sets SMTP class debugging on or off.
-   * @var bool
+   * @variables bool
    */
   public $SMTPDebug     = false;
 
   /**
    * Sets the function/method to use for debugging output.
    * Right now we only honor "echo" or "error_log"
-   * @var string
+   * @variables string
    */
   public $Debugoutput     = "echo";
 
@@ -301,20 +301,20 @@ class PHPMailer {
    * Prevents the SMTP connection from being closed after each mail
    * sending.  If this is set to true then to close the connection
    * requires an explicit call to SmtpClose().
-   * @var bool
+   * @variables bool
    */
   public $SMTPKeepAlive = false;
 
   /**
    * Provides the ability to have the TO field process individual
    * emails, instead of sending to entire TO addresses
-   * @var bool
+   * @variables bool
    */
   public $SingleTo      = false;
 
    /**
    * If SingleTo is true, this provides the array to hold the email addresses
-   * @var bool
+   * @variables bool
    */
   public $SingleToArray = array();
 
@@ -322,7 +322,7 @@ class PHPMailer {
    * Provides the ability to change the generic line ending
    * NOTE: The default remains '\n'. We force CRLF where we KNOW
    *        it must be used via self::CRLF
-   * @var string
+   * @variables string
    */
   public $LE              = "\n";
 
@@ -331,35 +331,35 @@ class PHPMailer {
    * required parameter if DKIM is enabled
    *
    * domain selector example domainkey
-   * @var string
+   * @variables string
    */
   public $DKIM_selector   = '';
 
   /**
    * Used with DKIM Signing
    * required if DKIM is enabled, in format of email address 'you@yourdomain.com' typically used as the source of the email
-   * @var string
+   * @variables string
    */
   public $DKIM_identity   = '';
 
   /**
    * Used with DKIM Signing
    * optional parameter if your private key requires a passphras
-   * @var string
+   * @variables string
    */
   public $DKIM_passphrase   = '';
 
   /**
    * Used with DKIM Singing
    * required if DKIM is enabled, in format of email address 'domain.com'
-   * @var string
+   * @variables string
    */
   public $DKIM_domain     = '';
 
   /**
    * Used with DKIM Signing
    * required if DKIM is enabled, path to private key file
-   * @var string
+   * @variables string
    */
   public $DKIM_private    = '';
 
@@ -382,19 +382,19 @@ class PHPMailer {
    *   string  $subject       the subject
    *   string  $body          the email body
    *   string  $from          email address of sender
-   * @var string
+   * @variables string
    */
   public $action_function = ''; //'callbackAction';
 
   /**
    * Sets the PHPMailer Version number
-   * @var string
+   * @variables string
    */
   public $Version         = '5.2.4';
 
   /**
    * What to use in the X-Mailer header
-   * @var string NULL for default, whitespace for None, or actual string to use
+   * @variables string NULL for default, whitespace for None, or actual string to use
    */
   public $XMailer         = '';
 
@@ -403,82 +403,82 @@ class PHPMailer {
   /////////////////////////////////////////////////
 
   /**
-   * @var SMTP An instance of the SMTP sender class
+   * @variables SMTP An instance of the SMTP sender class
    * @access protected
    */
   protected   $smtp           = null;
   /**
-   * @var array An array of 'to' addresses
+   * @variables array An array of 'to' addresses
    * @access protected
    */
   protected   $to             = array();
   /**
-   * @var array An array of 'cc' addresses
+   * @variables array An array of 'cc' addresses
    * @access protected
    */
   protected   $cc             = array();
   /**
-   * @var array An array of 'bcc' addresses
+   * @variables array An array of 'bcc' addresses
    * @access protected
    */
   protected   $bcc            = array();
   /**
-   * @var array An array of reply-to name and address
+   * @variables array An array of reply-to name and address
    * @access protected
    */
   protected   $ReplyTo        = array();
   /**
-   * @var array An array of all kinds of addresses: to, cc, bcc, replyto
+   * @variables array An array of all kinds of addresses: to, cc, bcc, replyto
    * @access protected
    */
   protected   $all_recipients = array();
   /**
-   * @var array An array of attachments
+   * @variables array An array of attachments
    * @access protected
    */
   protected   $attachment     = array();
   /**
-   * @var array An array of custom headers
+   * @variables array An array of custom headers
    * @access protected
    */
   protected   $CustomHeader   = array();
   /**
-   * @var string The message's MIME type
+   * @variables string The message's MIME type
    * @access protected
    */
   protected   $message_type   = '';
   /**
-   * @var array An array of MIME boundary strings
+   * @variables array An array of MIME boundary strings
    * @access protected
    */
   protected   $boundary       = array();
   /**
-   * @var array An array of available languages
+   * @variables array An array of available languages
    * @access protected
    */
   protected   $language       = array();
   /**
-   * @var integer The number of errors encountered
+   * @variables integer The number of errors encountered
    * @access protected
    */
   protected   $error_count    = 0;
   /**
-   * @var string The filename of a DKIM certificate file
+   * @variables string The filename of a DKIM certificate file
    * @access protected
    */
   protected   $sign_cert_file = '';
   /**
-   * @var string The filename of a DKIM key file
+   * @variables string The filename of a DKIM key file
    * @access protected
    */
   protected   $sign_key_file  = '';
   /**
-   * @var string The password of a DKIM key
+   * @variables string The password of a DKIM key
    * @access protected
    */
   protected   $sign_key_pass  = '';
   /**
-   * @var boolean Whether to throw exceptions for errors
+   * @variables boolean Whether to throw exceptions for errors
    * @access protected
    */
   protected   $exceptions     = false;
@@ -573,7 +573,7 @@ class PHPMailer {
    */
   public function IsSendmail() {
     if (!stristr(ini_get('sendmail_path'), 'sendmail')) {
-      $this->Sendmail = '/var/qmail/bin/sendmail';
+      $this->Sendmail = '/variables/qmail/bin/sendmail';
     }
     $this->Mailer = 'sendmail';
   }
@@ -584,7 +584,7 @@ class PHPMailer {
    */
   public function IsQmail() {
     if (stristr(ini_get('sendmail_path'), 'qmail')) {
-      $this->Sendmail = '/var/qmail/bin/sendmail';
+      $this->Sendmail = '/variables/qmail/bin/sendmail';
     }
     $this->Mailer = 'sendmail';
   }

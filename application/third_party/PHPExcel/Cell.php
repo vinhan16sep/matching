@@ -30,21 +30,21 @@ class PHPExcel_Cell
     /**
      *  Default range variable constant
      *
-     *  @var  string
+     *  @variables  string
      */
     const DEFAULT_RANGE = 'A1:A1';
 
     /**
      *    Value binder to use
      *
-     *    @var    PHPExcel_Cell_IValueBinder
+     *    @variables    PHPExcel_Cell_IValueBinder
      */
     private static $valueBinder;
 
     /**
      *    Value of the cell
      *
-     *    @var    mixed
+     *    @variables    mixed
      */
     private $value;
 
@@ -56,28 +56,28 @@ class PHPExcel_Cell
      *        possible that auto-calculation was disabled in the original spreadsheet, and underlying data
      *        values used by the formula have changed since it was last calculated.
      *
-     *    @var mixed
+     *    @variables mixed
      */
     private $calculatedValue;
 
     /**
      *    Type of the cell data
      *
-     *    @var    string
+     *    @variables    string
      */
     private $dataType;
 
     /**
      *    Parent worksheet
      *
-     *    @var    PHPExcel_CachedObjectStorage_CacheBase
+     *    @variables    PHPExcel_CachedObjectStorage_CacheBase
      */
     private $parent;
 
     /**
      *    Index to cellXf
      *
-     *    @var    int
+     *    @variables    int
      */
     private $xfIndex = 0;
 
