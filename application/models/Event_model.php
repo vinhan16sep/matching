@@ -58,4 +58,15 @@ class Event_model extends CI_Model {
         }
         return false;
     }
+
+    public function fetch_all_by_active() {
+        $query = $this->db->select('*')
+            ->from('event')
+            ->where('is_deleted', 0)
+            ->where('is_active', 1)
+            ->order_by("id", "desc");
+
+        return $result = $query->get()->result_array();
+    }
+
 }

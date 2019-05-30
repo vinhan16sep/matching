@@ -9,6 +9,7 @@ class User extends MY_Controller {
         $this->load->library('ion_auth');
         $this->load->model('ion_auth_model');
         $this->load->model('temp_register_model');
+        $this->load->model('event_model');
         $this->load->helper('email_helper');
     }
 
@@ -58,6 +59,7 @@ class User extends MY_Controller {
     public function register(){
         $this->load->library('form_validation');
 
+        $events = $this->get_events();
 
         $this->form_validation->set_rules('company','Tên Công Ty','trim');
         $this->form_validation->set_rules('company','Tên Công Ty','trim|required', array(
@@ -79,14 +81,18 @@ class User extends MY_Controller {
         $this->form_validation->set_rules('connector','Người Đại Diện','required', array(
                 'required' => '%s không được trống.',
             ));
+        $this->form_validation->set_rules('event_id','Sự Kiện','required', array(
+                'required' => '%s không được trống.',
+            ));
 
         if($this->form_validation->run()===FALSE) {
             $this->load->helper('form');
-            $this->load->view('member/register_view');
+            $this->load->view('member/register_view', array('events' => $events));
             // $this->render('member/login_view', 'member_master');
         } else {
             if ( $this->input->post() ) {
                 $params = $this->input->post();
+                // echo '<pre>'; print_r($params);die;
                 $code = $this->check_code( substr(uniqid(),0,8) );
                 // $check_code = $this->temp_register->find_row_array(['code' => $code]);
                 $data = [
@@ -97,6 +103,7 @@ class User extends MY_Controller {
                     'address' => $params['address'],
                     'email' => $params['email'],
                     'code' => $code,
+                    'event_id' => $params['event_id'],
                     'created_at' => now(),
                     'updated_at' => now(),
                 ];
@@ -119,7 +126,7 @@ class User extends MY_Controller {
                         $this->db->trans_commit();
                         $this->session->set_flashdata('success', SEND_CODE_SUCCESS);
                     }
-                    redirect('member/user/login','refresh');
+                    redirect('member/user/welcome','refresh');
                 }else{
                     $this->session->set_flashdata('error', REGISTER_COMPANY_ERROR);
                     redirect('member/user/register');
@@ -127,6 +134,19 @@ class User extends MY_Controller {
 
             }
         }
+    }
+
+    private function get_events(){
+        $events = $this->event_model->fetch_all_by_active();
+        $result = array(
+            '' => 'Chọn sự kiện'
+        );
+        if ($events) {
+            foreach ($events as $key => $value) {
+                $result[$value['id']] = $value['name'];
+            }
+        }
+        return $result;
     }
 
     private function check_code($code){
