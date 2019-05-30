@@ -187,7 +187,7 @@ p {
 @media (max-width: 768px) {
   #homepage_landing .cover-background .wrapper {
     max-width: 100%; } }
-#member-register header {
+#member-register header, #member-login header {
   width: 100%;
   height: 100px;
   padding: 0 30px;
@@ -199,9 +199,9 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  #member-register header .nav-logo img {
+  #member-register header .nav-logo img, #member-login header .nav-logo img {
     height: 60px; }
-#member-register .cover-background {
+#member-register .cover-background, #member-login .cover-background {
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -209,7 +209,7 @@ p {
   background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative; }
-  #member-register .cover-background .gradient {
+  #member-register .cover-background .gradient, #member-login .cover-background .gradient {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -224,7 +224,7 @@ p {
     background: -ms-linear-gradient(-45deg, rgba(36, 118, 173, 0.65) 0%, rgba(114, 187, 224, 0.65) 100%);
     background: linear-gradient(135deg, rgba(36, 118, 173, 0.65) 0%, rgba(114, 187, 224, 0.65) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2476ad', endColorstr='#72bbe0', GradientType=1 ); }
-  #member-register .cover-background .content {
+  #member-register .cover-background .content, #member-login .cover-background .content {
     width: 100%;
     height: 100%;
     padding: 0 30px;
@@ -236,13 +236,13 @@ p {
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
-    #member-register .cover-background .content .left, #member-register .cover-background .content .right {
+    #member-register .cover-background .content .left, #member-register .cover-background .content .right, #member-login .cover-background .content .left, #member-login .cover-background .content .right {
       width: 50%; }
-    #member-register .cover-background .content .left {
+    #member-register .cover-background .content .left, #member-login .cover-background .content .left {
       color: #fff; }
-      #member-register .cover-background .content .left p {
+      #member-register .cover-background .content .left p, #member-login .cover-background .content .left p {
         margin-top: 30px; }
-    #member-register .cover-background .content .right .wrapper {
+    #member-register .cover-background .content .right .wrapper, #member-login .cover-background .content .right .wrapper {
       width: 75%;
       padding: 30px;
       margin: 0 auto;
@@ -253,11 +253,11 @@ p {
       -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
       box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5); }
-      #member-register .cover-background .content .right .wrapper form .form-group {
+      #member-register .cover-background .content .right .wrapper form .form-group, #member-login .cover-background .content .right .wrapper form .form-group {
         margin-bottom: 7.5px; }
-        #member-register .cover-background .content .right .wrapper form .form-group label {
+        #member-register .cover-background .content .right .wrapper form .form-group label, #member-login .cover-background .content .right .wrapper form .form-group label {
           font-size: 0.75rem; }
-    #member-register .cover-background .content .right > p {
+    #member-register .cover-background .content .right > p, #member-login .cover-background .content .right > p {
       width: 75%;
       margin: 15px auto 0;
       color: #fff; }
