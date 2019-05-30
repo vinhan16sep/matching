@@ -7,7 +7,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-link"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Matching Admin <sup></sup></div>
+            <div class="sidebar-brand-text mx-3"> BMO Personal Page <sup></sup></div>
         </a>
 
         <!-- Divider -->
