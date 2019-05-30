@@ -142,7 +142,9 @@ class User extends MY_Controller {
         return $code;
     }
 
-
+    public function welcome(){
+        $this->load->view('member/welcome_view');
+    }
 
 
     // change password

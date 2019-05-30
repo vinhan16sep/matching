@@ -123,6 +123,8 @@ p {
       background-color: #B9E1F4; }
   .btn.btn-outline-light:hover {
     color: #3495c4; }
+  .btn.btn-link {
+    color: #3495c4; }
 
 .mask {
   overflow: hidden; }

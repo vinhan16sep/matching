@@ -1,0 +1,110 @@
+#member-register{
+    header{
+        width: 100%;
+        height: 100px;
+
+        padding: 0 $padding-double;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1030;
+
+        @include d-flex(row, space-between, center);
+
+        .nav-logo{
+            img{
+                height: 60px;
+            }
+        }
+    }
+
+    .cover-background {
+        width: 100%;
+        height: 100vh;
+
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+
+        position: relative;
+
+        .gradient{
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            background: rgba(36,118,173,0.65);
+            background: -moz-linear-gradient(-45deg, rgba(36,118,173,0.65) 0%, rgba(114,187,224,0.65) 100%);
+            background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(36,118,173,0.65)), color-stop(100%, rgba(114,187,224,0.65)));
+            background: -webkit-linear-gradient(-45deg, rgba(36,118,173,0.65) 0%, rgba(114,187,224,0.65) 100%);
+            background: -o-linear-gradient(-45deg, rgba(36,118,173,0.65) 0%, rgba(114,187,224,0.65) 100%);
+            background: -ms-linear-gradient(-45deg, rgba(36,118,173,0.65) 0%, rgba(114,187,224,0.65) 100%);
+            background: linear-gradient(135deg, rgba(36,118,173,0.65) 0%, rgba(114,187,224,0.65) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2476ad', endColorstr='#72bbe0', GradientType=1 );
+        }
+
+        .content{
+            width: 100%;
+            height: 100%;
+
+            padding: 0 $padding-double;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+
+            @include d-flex(row, space-between, center);
+
+            .left, .right{
+                width: 50%;
+            }
+
+            .left{
+                color: #fff;
+
+                p{
+                    margin-top: $padding-double;
+                }
+            }
+
+            .right{
+                .wrapper{
+                    width: 75%;
+
+                    padding: $padding-double;
+                    margin: 0 auto;
+
+                    background-color: #fff;
+
+                    @include borderRadius(3px);
+                    @include boxshadow(3px, 3px, 7px, rgba(0,0,0,0.5));
+
+                    form{
+                        .form-group{
+                            margin-bottom: $padding-half;
+
+                            label{
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                }
+
+                > p{
+                    width: 75%;
+
+                    margin: $padding-base auto 0;
+
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

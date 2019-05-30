@@ -1,0 +1,1 @@
+body:before{white-space:pre;font-family:monospace;content:"Error: Invalid CSS after \"...e/license.css %\": expected \"{\", was \"}\"\A         on line 3 of font-awesome.scss\A \A 1: ---\A 2: ---\A 3: {% include code/license.css %}\A 4: \A 5: @import \"variables\";\A 6: @import \"mixins\";\A 7: @import \"path\";\A 8: @import \"core\";"}
