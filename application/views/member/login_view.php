@@ -44,14 +44,14 @@
                     <?php echo form_open('', array('class' => 'form-horizontal')); ?>
                     <div class="row">
                         <div class="form-group col-xs-12 col-lg-12">
-                            <?php echo form_label('Email: ', 'email'); ?>
-                            <?php echo form_error('email'); ?>
-                            <?php echo form_input('email', set_value('email'), 'class="form-control"'); ?>
+                            <?php echo form_label('Email: ', 'identity'); ?>
+                            <?php echo form_error('identity'); ?>
+                            <?php echo form_input('identity', set_value('identity'), 'class="form-control"'); ?>
                         </div>
                         <div class="form-group col-xs-12 col-lg-12">
                             <?php echo form_label('Password: ', 'password'); ?>
                             <?php echo form_error('password'); ?>
-                            <?php echo form_input('password', set_value('password'), 'class="form-control"'); ?>
+                            <?php echo form_password('password', set_value('password'), 'class="form-control"'); ?>
                         </div>
                     </div>
                     <?php echo form_submit('submit', 'Đăng nhập', 'class="btn btn-primary btn-lg btn-block"'); ?>
