@@ -1,0 +1,43 @@
+/*
+Error: Invalid CSS after "...e/license.css %": expected "{", was "}"
+        on line 3 of font-awesome.scss
+
+1: ---
+2: ---
+3: {% include code/license.css %}
+4: 
+5: @import "variables";
+6: @import "mixins";
+7: @import "path";
+8: @import "core";
+
+Backtrace:
+font-awesome.scss:3
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:1207:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:1137:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:1132:in `tok!'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:665:in `block'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:685:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:674:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:666:in `block'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:658:in `ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:684:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:674:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:125:in `stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/engine.rb:409:in `_to_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/engine.rb:384:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/engine.rb:301:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/exec/sass_scss.rb:391:in `run'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:22:in `load'
+/usr/local/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...e/license.css %\": expected \"{\", was \"}\"\A         on line 3 of font-awesome.scss\A \A 1: ---\A 2: ---\A 3: {% include code/license.css %}\A 4: \A 5: @import \"variables\";\A 6: @import \"mixins\";\A 7: @import \"path\";\A 8: @import \"core\";"; }
