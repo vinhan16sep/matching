@@ -65,4 +65,17 @@ class MY_Model extends CI_Model
         $this->db->where($where);
         return $this->db->count_all_results($this->table);
     }
+
+    /**
+     * [count description]
+     * @return [type] [description]
+     */
+    public function count() {
+        $query = $this->db->select('*')
+            ->from($this->table)
+            ->where('is_deleted', 0)
+            ->get();
+
+        return $query->num_rows();
+    }
 }

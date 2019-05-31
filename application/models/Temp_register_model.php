@@ -27,12 +27,13 @@ class Temp_register_model extends MY_Model
     }
 
     public function fetch_all_pagination($limit = NULL, $start = NULL, $status, $keywords = '') {
-        $query = $this->db->select('*')
+        $query = $this->db->select('temp_register.*, event.name as event_name')
+            ->join('event', 'temp_register.event_id = event.id')
             ->from('temp_register')
-            ->where('is_deleted', 0)
+            ->where('temp_register.is_deleted', 0)
             ->where('status', $status)
             ->limit($limit, $start)
-            ->order_by("id", "desc");
+            ->order_by("temp_register.id", "desc");
 
         if($keywords != ''){
             $this->db->where('code', $keywords);
@@ -51,5 +52,13 @@ class Temp_register_model extends MY_Model
         }
 
         return false;
+    }
+
+    public function get_by_email_and_event_id($email, $event_id)
+    {
+        $this->db->from($this->table);
+        $this->db->where('email', $email);
+        $this->db->where('event_id', $event_id);
+        return $this->db->get()->row_array();
     }
 }
