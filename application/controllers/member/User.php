@@ -50,8 +50,11 @@ class User extends MY_Controller {
         $this->load->view('member/login_view');
     }
 
-    public function logout() {
+    public function logout($messages = null) {
         $this->ion_auth->logout();
+        if (!is_null($messages)) {
+            $this->session->set_flashdata('auth_message', $messages);
+        }
         redirect('member/user/login', 'refresh');
     }
 
@@ -65,8 +68,12 @@ class User extends MY_Controller {
         $this->form_validation->set_rules('company','Tên Công Ty','trim|required', array(
                 'required' => '%s không được trống.',
             ));
-        $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[temp_register.email]', array(
+        // $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[temp_register.email]', array(
+        //         'required' => '%s không được trống.',
+        //     ));
+        $this->form_validation->set_rules('email','Email','trim|required|valid_email', array(
                 'required' => '%s không được trống.',
+                'valid_email' => 'Định dạng email không đúng.',
             ));
         $this->form_validation->set_rules('phone','Số điện thoại','trim|required|numeric', array(
                 'required' => '%s không được trống.',
@@ -203,7 +210,8 @@ class User extends MY_Controller {
         );
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('member/change_password_view', $this->data);
+            $this->data['the_view_content'] = $this->load->view('member/change_password_view', $this->data, TRUE);
+            $this->load->view('templates/member_master_view.php', $this->data);
             // $this->render('member/change_password_view');
         } else {
             if ($this->input->post()) {
@@ -211,9 +219,10 @@ class User extends MY_Controller {
                 $change = $this->ion_auth->change_password($identity, $this->input->post('old_password'), $this->input->post('new_password'));
                 if ($change){
                 //if the password was successfully changed
-                    $this->logout();
-                    $this->session->set_flashdata('auth_message', 'Đổi mật khẩu thành công. Vui lòng đăng nhập lại!');
-                    redirect('member/user/login');
+                    $this->logout('Đổi mật khẩu thành công. Vui lòng đăng nhập lại!');
+                    
+                    // redirect('member/user/login');
+                    
                 }else{
                     $this->session->set_flashdata('auth_message_error', 'Mật khẩu không đúng vui lòng kiểm tra lại');
                     redirect('member/user/change_password', 'refresh');
@@ -250,6 +259,7 @@ class User extends MY_Controller {
                     return redirect('member/user/forgot_password');
                 }
                 $forgotten = $this->ion_auth->forgotten_password($email, 'member');
+
                 // $config = [
                 //     'protocol' => 'smtp',
                 //     'smtp_host' => 'ssl://smtp.googlemail.com',
