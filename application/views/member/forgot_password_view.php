@@ -1,83 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Log in</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="<?php echo site_url('assets/admin/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo site_url('assets/admin/bower_components/font-awesome/css/font-awesome.min.css') ?>">
-    <!-- Ionicons -->
-    <!-- <link rel="stylesheet" href="<?php echo site_url('assets/lib/') ?>ionicons/css/ionicons.min.css"> -->
-    <!-- Theme style -->
-    <link rel="stylesheet" href="<?php echo site_url('assets/public/css/homepage.css') ?>">
-    <!-- iCheck -->
-    <!-- <link rel="stylesheet" href="<?php echo site_url('assets/lib/') ?>iCheck/square/blue.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"  href="<?php echo site_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo site_url('assets/scss/style.css') ?>">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,700,700i" rel="stylesheet">
+    <title>Quên Mật Khẩu</title>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="<?php echo site_url('assets/vendor/jquery/jquery.min.js'); ?>" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="<?php echo site_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"></script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-  <!--main content start-->
-<section id="main-content">
-    <section class="wrapper">
-        <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-        <div class="content-wrapper">
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
-                    <div class="col-lg-6 col-lg-offset-3">
-                        <?php if ($this->session->flashdata('auth_message')): ?>
-                            <div class="alert alert-success alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('auth_message'); ?></h4>
+<body>
+<div id="member-login">
+    <header>
+        <div class="nav-logo">
+            <a href="<?php echo base_url('')?>">
+                <img src="<?php echo site_url('assets/img/logo.png') ?>" alt="Logo Vinasa">
+            </a>
+        </div>
+    </header>
+
+    <div class="cover-background" style="background-image: url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80">
+        <div class="gradient"></div>
+
+        <div class="content">
+            <div class="left">
+                <h6>Matching Platform</h6>
+                <h3>More million people using everyday</h3>
+
+                <p>Lots of benifits waiting for you when you become on of our partners.</p>
+            </div>
+
+            <div class="right">
+                <?php if ($this->session->flashdata('auth_message')): ?>
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('auth_message'); ?></h4>
+                    </div>
+                <?php endif ?>
+                <div class="wrapper">
+                    <h3 style="text-align: center;">Quên mật khẩu</h3>
+                    <?php echo form_open('', array('class' => 'form-horizontal')); ?>
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-lg-12">
+                                <?php echo form_label('Email', 'email'); ?>
+                                <?php echo form_error('email'); ?>
+                                <?php echo form_input('email', '', 'class="form-control"'); ?>
                             </div>
-                        <?php endif ?>
-                        <h1 style="text-align: center;">Quên mật khẩu</h1>
-                        <?php echo form_open('', array('class' => 'form-horizontal')); ?>
-                        <div class="form-group">
-                            <?php echo form_label('Email', 'email'); ?>
-                            <?php echo form_error('email'); ?>
-                            <?php echo form_input('email', '', 'class="form-control"'); ?>
                         </div>
                         <div class="form-group">
                             <?php echo form_submit('submit', 'Xác Nhận', 'class="btn btn-primary btn-lg btn-block"'); ?>
                             <a href="javascript:history.back()" name="back" class="btn btn-default btn-lg btn-block">Quay lại</a>
                         </div>
-
-                        <?php echo form_close(); ?>
-                    </div>
+                    <?php echo form_close(); ?>
                 </div>
-            </section>
+            </div>
         </div>
-<!-- /.login-box -->
-    </section>
-</section>
-<!-- jQuery 3 -->
-<script src="<?php echo site_url('assets/admin/bower_components/jquery/dist/jquery.min.js') ?>"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo site_url('assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
-<!-- iCheck -->
-<!-- <script src="<?php echo site_url('assets/lib/') ?>iCheck/js/icheck.min.js"></script> -->
-<!-- <script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' /* optional */
-        });
-    });
-</script> -->
-</body>
-</html>
+    </div>
+</div>
