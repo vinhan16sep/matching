@@ -9,6 +9,18 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
+            <?php if ($this->session->flashdata('success')): ?>
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('success'); ?></h4>
+                </div>
+            <?php endif ?>
+            <?php if ($this->session->flashdata('error')): ?>
+                <div class="alert alert-warning alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('error'); ?></h4>
+                </div>
+            <?php endif ?>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead style="background: #4e73df; color: white">
@@ -49,6 +61,9 @@
                                     <td style="text-align: center">
                                         <a data-toggle="collapse" href="#review-<?php echo $key ?>" role="button" aria-expanded="false">
                                             <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="<?php echo base_url('member/setting/update/' . $value['setting_id']) ?>">
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
                                 </tr>

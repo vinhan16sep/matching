@@ -25,7 +25,7 @@
                     <?php if ($events): ?>
                         <?php foreach ($events as $key => $value): ?>
                             <?php 
-                                echo form_checkbox('category_id[]', $key, false, 'class="btn-event" data-key=' . $key);
+                                echo form_checkbox('category_id[]', $key, in_array($key, $detail['category_id']), 'class="btn-event" data-key=' . $key);
                                 echo $value['name'] . '<br>';
                             ?>
                             <?php if ($value): ?>
@@ -33,7 +33,7 @@
                                     <?php if ($k != 'name'): ?>
                                         <div style="display: none; margin-left: 20px" class="slide-service-<?php echo $key ?>">
                                             <?php 
-                                                echo form_checkbox('category_id[]', $k, false, 'class="btn-service"');
+                                                echo form_checkbox('category_id[]', $k, in_array($k, $detail['category_id']), 'class="btn-service"');
                                                 echo $val . '<br>';
                                             ?>
                                         </div>
@@ -48,7 +48,7 @@
                 <div class="form-group col-sm-12 text-left" style="padding-left: 0 !important;">
                     <div class="pull-right">
                         <?php
-                            echo form_submit('submit', 'Đăng ký', 'class="btn btn-primary"');
+                            echo form_submit('submit', 'Cập nhật', 'class="btn btn-primary"');
                         ?>
                         <a class="btn btn-default cancel" href="javascript:window.history.go(-1);">Quay lại</a>
                     </div>
@@ -66,6 +66,15 @@
 
 <script type="text/javascript">
     $('.btn-event').click(function(){
+        key = $(this).data('key');
+        if($(this).prop("checked") == true){
+            $('.slide-service-' + key).slideDown();
+        }else{
+            $('.slide-service-' + key).slideUp();
+        }
+        
+    });
+    $('.btn-event').each(function(){
         key = $(this).data('key');
         if($(this).prop("checked") == true){
             $('.slide-service-' + key).slideDown();

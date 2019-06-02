@@ -67,6 +67,17 @@ class MY_Model extends CI_Model
     }
 
     /**
+     * [find_row_array description]
+     * @param  array  $where [description]
+     * @return [type]        [description]
+     */
+    public function find($where = array()){
+        $this->db->from($this->table);
+        $this->db->where($where);
+        return $this->db->get()->row_array();
+    }
+
+    /**
      * [count description]
      * @return [type] [description]
      */
