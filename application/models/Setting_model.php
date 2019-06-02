@@ -14,6 +14,7 @@ class Setting_model extends MY_Model {
         $query = $this->db->select('setting.*, event.*, setting.id as setting_id')
         	->from('setting')
             ->join('event', 'setting.event_id = event.id')
+            ->where('setting.user_id', $user_id)
             ->where('setting.is_deleted', 0)
             ->limit($limit, $start)
             ->order_by("setting.id", "desc");

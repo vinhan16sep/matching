@@ -74,11 +74,10 @@
                                                 <li class="list-group-item active"><i class="fas fa-list"></i> Tiêu chí</li>
                                                 <?php if ($value['category']): ?>
                                                     <?php foreach ($value['category'] as $k => $val): ?>
-                                                        <?php if ($val['parent_id'] == 0): ?>
-                                                            <li class="list-group-item" style="background: #85a0ef; color: white"><i class="fas fa-bullseye"></i> <?php echo $val['name'] ?></li>
-                                                        <?php else: ?>
-                                                            <li class="list-group-item">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; <?php echo $val['name'] ?></li>
-                                                        <?php endif ?>
+                                                        <li class="list-group-item" style="background: #85a0ef; color: white"><i class="fas fa-bullseye"></i> <?php echo $val['name'] ?></li>
+                                                        <?php foreach ($val['sub'] as $item): ?>
+                                                            <li class="list-group-item">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; <?php echo $item['name'] ?></li>
+                                                        <?php endforeach ?>
                                                     <?php endforeach ?>
                                                 <?php endif ?>
                                             </ul>
