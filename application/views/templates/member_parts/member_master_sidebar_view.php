@@ -15,7 +15,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('admin/dashboard/index') ?>">
+            <a class="nav-link" href="<?php echo base_url('member/dashboard/index') ?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Tổng quan</span></a>
         </li>
@@ -39,6 +39,18 @@
                     <h6 class="collapse-header">Quản lý <br>Tiêu chí</h6>
                     <a class="collapse-item" href="<?php echo base_url('member/setting/index') ?>">Danh sách</a>
                     <a class="collapse-item" href="<?php echo base_url('member/setting/create') ?>">Tạo mới</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Matching</span>
+            </a>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="<?php echo base_url('member/matching/find') ?>">Tìm đối tác</a>
                 </div>
             </div>
         </li>
@@ -96,7 +108,7 @@
         </li> -->
 
         <!-- Nav Item - Tables -->
-        <<!-- li class="nav-item">
+        <!-- li class="nav-item">
             <a class="nav-link" href="tables.html">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Tables</span></a>
