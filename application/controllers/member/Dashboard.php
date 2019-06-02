@@ -12,6 +12,7 @@ class Dashboard extends Member_Controller {
     }
 
     public function index(){
+        $this->data['page_title'] = 'Tổng quan';
         $this->render('member/dashboard_view');
     }
 
