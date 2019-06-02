@@ -21,3 +21,12 @@ if (!function_exists('handle_common_author_data')) {
     }
 }
 
+function array_helper_map($data){
+    $return = array();
+    if ($data) {
+        foreach ($data as $key => $value) {
+            $return[$value['id']] = $value['name'];
+        }
+    }
+    return $return;
+}
