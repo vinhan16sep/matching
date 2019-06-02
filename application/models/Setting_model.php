@@ -29,6 +29,18 @@ class Setting_model extends MY_Model {
     	return $this->db->get()->num_rows();
     }
 
+    public function get_matched_setting_data($event, $setting, $user_id){
+        $this->db->from('setting');
+        $this->db->where('is_deleted', 0);
+        $this->db->where('event_id', $event);
+        $this->db->where('user_id !=', $user_id);
+        foreach($setting as $value){
+            $this->db->like('category_id', ',' . $value . ',');
+        }
+
+        return $this->db->get()->result_array();
+    }
+
 }
 
 /* End of file Setting_model.php */
