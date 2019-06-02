@@ -8,6 +8,7 @@ class User extends MY_Controller {
         parent::__construct();
         $this->load->library('ion_auth');
         $this->load->model('ion_auth_model');
+        $this->load->model('users_model');
         $this->load->model('temp_register_model');
     }
 
@@ -52,17 +53,34 @@ class User extends MY_Controller {
 
    public function register(){
        if($this->input->post()){
-            $username = null;
             $email = $this->input->post('email');
             $password = $this->input->post('password');
-            $group_ids = array(2);
-            $additional_data = array(
-                'active' => 1,
-            );
-            $result = $this->ion_auth->register($username, $password, $email, $additional_data, $group_ids);
-            if($result){
-                $this->temp_register_model->approve($email);
+            $event_id = $this->input->post('event_id');
+
+            if ($this->ion_auth->email_check($email)) {
+                $user = $this->users_model->get_by_email($email);
+                $data = array(
+                    'active' => 1,
+                    'event_id' => $this->input->post('event_id')
+                );
+                $result = $this->ion_auth->update($user['id'], $data);
+                if($result){
+                    $this->temp_register_model->approve($email, $event_id);
+                }
+            }else{
+                $username = null;
+                
+                $group_ids = array(2);
+                $additional_data = array(
+                    'active' => 1,
+                    'event_id' => $this->input->post('event_id')
+                );
+                $result = $this->ion_auth->register($username, $password, $email, $additional_data, $group_ids);
+                if($result){
+                    $this->temp_register_model->approve($email, $event_id);
+                }
             }
+            
        }
        $this->session->set_flashdata('success', 'Tạo tài khoản thành công');
        redirect('admin/temp', 'admin_master');

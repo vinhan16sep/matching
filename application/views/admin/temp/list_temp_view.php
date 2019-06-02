@@ -79,6 +79,7 @@
                                 <tr id="<?= $item['id'] ?>">
                                     <td style="text-align: center"><?php echo $key + 1; ?></td>
                                     <td><?php echo $item['code']; ?></td>
+                                    <td style="display: none;" class="reg-client-event-id"><?php echo $item['event_id']; ?></td>
                                     <td><?php echo $item['event_name']; ?></td>
                                     <td class="reg-client-company"><?php echo $item['company']; ?></td>
                                     <td><?php echo $item['connector']; ?></td>
@@ -122,10 +123,10 @@
                         <label for="email" class="col-form-label">E-Mail:</label>
                         <input type="text" class="form-control" id="txt-reg-email" name="email" readonly>
                     </div>
+                    <input type="hidden" class="form-control" id="txt-reg-event-id" name="event_id" readonly>
                     <div class="form-group">
                         <label for="pass" class="col-form-label">Mật khẩu:</label>
                         <div class="input-group">
-                            
                             <input type="text" class="form-control" id="txt-reg-pass" name="password"></input> 
                             <div class="input-group-append">
                                 <a class="btn btn-info" id="btn-random-pass" style="color: #fff; cursor: pointer;" href="javascript:void(0)"><i class="fas fa-sync-alt"></i></a>
@@ -172,8 +173,10 @@
     $('.btn-reg-client').click(function(){
         company = $(this).parents('tr').find('.reg-client-company').text();
         email = $(this).parents('tr').find('.reg-client-email').text();
+        event_id = $(this).parents('tr').find('.reg-client-event-id').text();
         $('#reg-company').text(company);
         $('#txt-reg-email').val(email);
+        $('#txt-reg-event-id').val(event_id);
         random_pass = Math.random().toString(36).replace(/[^a-zA-z0-9]+/g, '').substr(0, 8);
         $('#txt-reg-pass').val(random_pass);
     });

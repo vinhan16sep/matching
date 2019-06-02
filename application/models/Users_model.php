@@ -170,4 +170,19 @@ class Users_model extends CI_Model{
 
         return $this->db->get()->result_array();
     }
+
+
+    /*================================
+    =            Matching            =
+    ================================*/
+    
+    public function get_by_email($email)
+    {
+        $this->db->from('users');
+        $this->db->where('email', $email);
+        return $this->db->get()->row_array();
+    }
+    
+    /*=====  End of Matching  ======*/
+    
 }

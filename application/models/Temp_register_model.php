@@ -42,9 +42,10 @@ class Temp_register_model extends MY_Model
         return $this->db->get()->result_array();
     }
 
-    public function approve($email){
+    public function approve($email, $event_id){
         $this->db->set(array('status' => 1))
             ->where('email', $email)
+            ->where('event_id', $event_id)
             ->update('temp_register');
 
         if($this->db->affected_rows() == 1){
