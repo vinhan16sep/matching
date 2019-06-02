@@ -63,6 +63,7 @@
                         <tr>
                             <th style="text-align: center">STT</th>
                             <th style="text-align: center">Code</th>
+                            <th style="text-align: center">Sự kiện</th>
                             <th style="text-align: center">Doanh nghiệp</th>
                             <th style="text-align: center">Người đại diện</th>
                             <th style="text-align: center">Chức danh</th>
@@ -78,6 +79,7 @@
                                 <tr id="<?= $item['id'] ?>">
                                     <td style="text-align: center"><?php echo $key + 1; ?></td>
                                     <td><?php echo $item['code']; ?></td>
+                                    <td><?php echo $item['event_name']; ?></td>
                                     <td class="reg-client-company"><?php echo $item['company']; ?></td>
                                     <td><?php echo $item['connector']; ?></td>
                                     <td><?php echo $item['position']; ?></td>

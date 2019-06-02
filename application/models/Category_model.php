@@ -49,4 +49,14 @@ class Category_model extends CI_Model {
         }
         return false;
     }
+
+    public function fetch_by_ids($ids) {
+        $query = $this->db->select('*')
+            ->from('category')
+            ->where('is_deleted', 0)
+            ->where_in('id', $ids)
+            ->order_by("id", "asc");
+
+        return $result = $query->get()->result_array();
+    }
 }
