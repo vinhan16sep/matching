@@ -30,3 +30,15 @@ function array_helper_map($data){
     }
     return $return;
 }
+
+function array_helper_get_column($column, $data){
+    $return = array();
+    if ($data && $column != '') {
+        foreach ($data as $key => $value) {
+            if ($value[$column]) {
+                $return[] = $value[$column];
+            }
+        }
+    }
+    return $return;
+}

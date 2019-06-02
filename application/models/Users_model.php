@@ -182,6 +182,13 @@ class Users_model extends CI_Model{
         $this->db->where('email', $email);
         return $this->db->get()->row_array();
     }
+
+    public function get_by_event_id($event_id)
+    {
+        $this->db->from('users');
+        $this->db->where('event_id', $event_id);
+        return $this->db->get()->result_array();
+    }
     
     /*=====  End of Matching  ======*/
     

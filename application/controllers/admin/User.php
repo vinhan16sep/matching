@@ -10,10 +10,12 @@ class User extends MY_Controller {
         $this->load->model('ion_auth_model');
         $this->load->model('users_model');
         $this->load->model('temp_register_model');
+        $this->load->model('event_model');
+        $this->load->helper('common_helper');
     }
 
     public function index() {
-        
+
     }
 
     public function login() {
@@ -51,8 +53,8 @@ class User extends MY_Controller {
         redirect('admin/user/login', 'refresh');
     }
 
-   public function register(){
-       if($this->input->post()){
+    public function register(){
+        if($this->input->post()){
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $event_id = $this->input->post('event_id');
@@ -69,7 +71,7 @@ class User extends MY_Controller {
                 }
             }else{
                 $username = null;
-                
+
                 $group_ids = array(2);
                 $additional_data = array(
                     'active' => 1,
@@ -80,11 +82,43 @@ class User extends MY_Controller {
                     $this->temp_register_model->approve($email, $event_id);
                 }
             }
-            
-       }
-       $this->session->set_flashdata('success', 'Tạo tài khoản thành công');
-       redirect('admin/temp', 'admin_master');
-   }
+
+        }
+        $this->session->set_flashdata('success', 'Tạo tài khoản thành công');
+        redirect('admin/temp', 'admin_master');
+    }
+
+    public function lock_account(){
+        $id = $this->input->get('id');
+        $status = $this->input->get('status');
+        
+        if ($status == 'false') {
+            $data = array(
+                'is_active' => 0
+            );
+            $result = $this->event_model->update($id, $data);
+            if ($result) {
+                $users = $this->users_model->get_by_event_id($id);
+                $user_ids = array_helper_get_column('id', $users);
+                if ($user_ids) {
+                    foreach ($user_ids as $key => $value) {
+                        $data = array(
+                            'active' => 0,
+                        );
+                        $this->ion_auth->update($value, $data);
+                    }
+                }
+            }
+        }else{
+            $data = array(
+                'is_active' => 1
+            );
+            $result = $this->event_model->update($id, $data);
+        }
+        return $this->output->set_status_header(200)
+            ->set_output(json_encode(array('status' => true)));
+    }
+
 //    public function check_email(){
 //        $email = $this->input->post('email');
 //        $where = array('email' => $email);

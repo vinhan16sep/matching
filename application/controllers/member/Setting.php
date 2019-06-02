@@ -38,15 +38,41 @@ class Setting extends Member_Controller {
         if ($result) {
         	foreach ($result as $key => $value) {
         		$category_id = explode(',', $value['category_id']);
-        		$category = $this->category_model->fetch_by_ids($category_id);
+        		$category = $this->get_category($category_id);
         		$result[$key]['category'] = $category;
+        		
         	}
         }
-
         $this->data['result'] = $result;
 
 
 		$this->render('member/setting/index');
+	}
+
+	private function get_category($category_id){
+		$category = $this->category_model->fetch_by_ids($category_id);
+		$category_root = array();
+		if ($category) {
+			foreach ($category as $key => $value) {
+				if ($value['parent_id'] == 0) {
+					$category_root[] = $value;
+				}
+			}
+		}
+		if ($category_root) {
+			foreach ($category_root as $key => $value) {
+				if ($category) {
+					foreach ($category as $k => $val) {
+						if ($val['parent_id'] == $value['id']) {
+							$category_root[$key]['sub'][] = $val;
+						}
+					}
+				}
+				
+			}
+		}
+		return $category_root;
+
 	}
 
 	// Add a new item
