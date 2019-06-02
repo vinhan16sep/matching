@@ -30,13 +30,13 @@
         <div class="nav-main">
             <ul>
                 <li>
-                    <a href="<?php echo base_url('user/login/') ?>" class="btn btn-default" role="button">
-                        Sign in
+                    <a href="<?php echo base_url('member/user/login/') ?>" class="btn btn-default" role="button">
+                        Đăng nhập
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('') ?>" class="btn btn-primary" role="button">
-                        Sign up
+                    <a href="<?php echo base_url('member/user/register/') ?>" class="btn btn-primary" role="button">
+                        Đăng ký
                     </a>
                 </li>
             </ul>
@@ -50,13 +50,13 @@
                 <h3>Be the Best for your business and client</h3>
                 <ul>
                     <li>
-                        <a href="<?php echo base_url('user/login/') ?>" class="btn btn-default" role="button">
-                            Sign in
+                        <a href="<?php echo base_url('member/user/login/') ?>" class="btn btn-default" role="button">
+                            Đăng nhập
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('') ?>" class="btn btn-primary" role="button">
-                            Sign up
+                        <a href="<?php echo base_url('member/user/register/') ?>" class="btn btn-primary" role="button">
+                            Đăng ký
                         </a>
                     </li>
                 </ul>
