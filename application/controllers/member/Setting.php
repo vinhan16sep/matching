@@ -144,16 +144,14 @@ class Setting extends Member_Controller {
 		$setting = $this->setting_model->find($where);
 		$setting['category_id'] = explode(',', $setting['category_id']);
 		$this->data['detail'] = $setting;
-		// echo '<pre>';
-		// print_r($setting);die;
 
 		$user = $this->ion_auth->user()->row();
 		$event_id = $user->event_id;
 		$temp_register = $this->temp_register_model->get_by_email_and_event_id($user->email, $event_id);
-		$catrgory_root = $this->category_model->fetch_all_root_by_event($event_id);
+		$category_root = $this->category_model->fetch_all_root_by_event($event_id);
 		$events = array();
-		if ($catrgory_root) {
-			foreach ($catrgory_root as $key => $value) {
+		if ($category_root) {
+			foreach ($category_root as $key => $value) {
 				$events[$value['id']]['name'] = $value['name'];
 				$category_sub = $this->category_model->fetch_all_sub_by_event_and_parent($event_id, $value['id']);
 				if ($category_sub) {

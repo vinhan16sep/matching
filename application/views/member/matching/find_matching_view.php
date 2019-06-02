@@ -1,23 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<?php
-$events = array(
-    2 => array
-    (
-        'name' => 'Danh mục gốc 1',
-        7 => 'DM1 con 13',
-        11 => 'DM1 con 2'
-    ),
-
-    3 => array
-    (
-        'name' => 'Danh mục gốc 2',
-        '5' => 'DM con 123',
-        '6' => 'DM con 2',
-        '10' => 'DM con 334'
-    )
-);
-?>
 <div class="container-fluid">
     <div class="row">
         <!-- Area Chart -->
