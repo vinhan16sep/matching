@@ -31,7 +31,7 @@
                             <?php if ($value): ?>
                                 <?php foreach ($value as $k => $val): ?>
                                     <?php if ($k != 'name'): ?>
-                                        <div style="display: none; margin-left: 20px" class="slide-service-<?php echo $key ?>">
+                                        <div style="margin-left: 20px" class="slide-service-<?php echo $key ?>">
                                             <?php 
                                                 echo form_checkbox('category_id[]', $k, false, 'class="btn-service"');
                                                 echo $val . '<br>';
@@ -68,10 +68,10 @@
     $('.btn-event').click(function(){
         key = $(this).data('key');
         if($(this).prop("checked") == true){
-            $('.slide-service-' + key).slideDown();
+            // $('.slide-service-' + key).slideDown();
             $('.slide-service-' + key).find('input').prop('checked',true);
         }else{
-            $('.slide-service-' + key).slideUp();
+            // $('.slide-service-' + key).slideUp();
             $('.slide-service-' + key).find('input').prop('checked',false);
         }
         
