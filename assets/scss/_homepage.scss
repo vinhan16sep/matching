@@ -27,6 +27,14 @@
 
                 li{
                     display: inline-block;
+
+                    a{
+                        &.btn{
+                            &.btn-default{
+                                color: #fff;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -56,12 +64,12 @@
             .content{
 
                 h6{
-                    color: $gray-lighter;
+                    color: $gray-lightest;
                     margin-bottom: $padding-base;
                 }
 
                 h3{
-                    color: $primary-base;
+                    color: #fff;
 
                     margin-bottom: $padding-double;
                 }
@@ -74,6 +82,14 @@
 
                     li{
                         display: inline-block;
+
+                        a{
+                            &.btn{
+                                &.btn-default{
+                                    color: #fff;
+                                }
+                            }
+                        }
                     }
                 }
             }
