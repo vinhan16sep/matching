@@ -69,8 +69,10 @@
         key = $(this).data('key');
         if($(this).prop("checked") == true){
             $('.slide-service-' + key).slideDown();
+            $('.slide-service-' + key).find('input').prop('checked',true);
         }else{
             $('.slide-service-' + key).slideUp();
+            $('.slide-service-' + key).find('input').prop('checked',false);
         }
         
     });
@@ -78,8 +80,10 @@
         key = $(this).data('key');
         if($(this).prop("checked") == true){
             $('.slide-service-' + key).slideDown();
+            
         }else{
             $('.slide-service-' + key).slideUp();
+            
         }
         
     });

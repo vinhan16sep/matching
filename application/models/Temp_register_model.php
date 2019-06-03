@@ -55,6 +55,24 @@ class Temp_register_model extends MY_Model
         return false;
     }
 
+    public function approve_and_set_user_id($email, $event_id, $user_id){
+        $this->db->set(
+            array(
+                'status' => 1,
+                'user_id' => $user_id
+            )
+        );
+        $this->db->where('email', $email);
+        $this->db->where('event_id', $event_id);
+        $this->db->update('temp_register');
+
+        if($this->db->affected_rows() == 1){
+            return true;
+        }
+
+        return false;
+    }
+
     public function get_by_email_and_event_id($email, $event_id)
     {
         $this->db->from($this->table);

@@ -75,9 +75,11 @@
                                                 <?php if ($value['category']): ?>
                                                     <?php foreach ($value['category'] as $k => $val): ?>
                                                         <li class="list-group-item" style="background: #85a0ef; color: white"><i class="fas fa-bullseye"></i> <?php echo $val['name'] ?></li>
-                                                        <?php foreach ($val['sub'] as $item): ?>
-                                                            <li class="list-group-item">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; <?php echo $item['name'] ?></li>
-                                                        <?php endforeach ?>
+                                                        <?php if (isset($val['sub']) && !empty($val['sub'])): ?>
+                                                            <?php foreach ($val['sub'] as $item): ?>
+                                                                <li class="list-group-item">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; <?php echo $item['name'] ?></li>
+                                                            <?php endforeach ?>
+                                                        <?php endif ?>
                                                     <?php endforeach ?>
                                                 <?php endif ?>
                                             </ul>

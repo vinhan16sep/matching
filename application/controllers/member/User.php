@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends MY_Controller {
 
+    const EMAIL_ADMIN = 'minhmc@vinasa.org.vn';
+
     function __construct() {
         parent::__construct();
         $this->load->library('ion_auth');
@@ -125,12 +127,14 @@ class User extends MY_Controller {
                         'address' => $params['address'],
                         'code' => $code,
                     ];
-                    $email = send_mail($params['email'], $email_data);
+                    $email = send_mail($params['email'], $email_data, 'user');
+
                     if (!$email) {
                         $this->db->trans_rollback();
                         $this->session->set_flashdata('error', SEND_CODE_ERROR);
                     }else{
                         $this->db->trans_commit();
+                        $email_admin = send_mail(self::EMAIL_ADMIN, $email_data, 'admin');
                         $this->session->set_flashdata('success', SEND_CODE_SUCCESS);
                     }
                     redirect('member/user/welcome','refresh');

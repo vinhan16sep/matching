@@ -18,6 +18,7 @@
 
         <div class="right col-xs-12 col-lg-6">
             <div class="content">
+
                 <h6 class="subtitle-sm">
                     Please enter your username and password below
                 </h6>
