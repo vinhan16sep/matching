@@ -186,7 +186,9 @@ class Users_model extends CI_Model{
     public function get_by_event_id($event_id)
     {
         $this->db->from('users');
-        $this->db->where('event_id', $event_id);
+        $this->db->select('users.*, event.name as event_name');
+        $this->db->join('event', 'event.id = users.event_id');
+        $this->db->where('users.event_id', $event_id);
         return $this->db->get()->result_array();
     }
     
