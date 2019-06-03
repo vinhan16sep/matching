@@ -25,20 +25,20 @@
                     <?php if ($events): ?>
                         <?php foreach ($events as $key => $value): ?>
                             <?php 
-                                echo form_checkbox('category_id[]', $key, in_array($key, $detail['category_id']), 'class="btn-event" data-key=' . $key);
+                                echo form_checkbox('category_id[]', $key, in_array($key, $detail['category_id']), 'class="btn-event event-'. $key .'" data-key=' . $key);
                                 echo $value['name'] . '<br>';
                             ?>
                             <?php if ($value): ?>
+                                <div style="margin-left: 20px" class="slide-service-<?php echo $key ?>" data-key="<?php echo $key ?>">
                                 <?php foreach ($value as $k => $val): ?>
                                     <?php if ($k != 'name'): ?>
-                                        <div style="margin-left: 20px" class="slide-service-<?php echo $key ?>">
                                             <?php 
                                                 echo form_checkbox('category_id[]', $k, in_array($k, $detail['category_id']), 'class="btn-service"');
                                                 echo $val . '<br>';
                                             ?>
-                                        </div>
                                     <?php endif ?>
                                 <?php endforeach ?>
+                                </div>
                             <?php endif ?>
                         <?php endforeach ?>
                     <?php endif ?>
@@ -76,15 +76,17 @@
         }
         
     });
-    // $('.btn-event').each(function(){
-    //     key = $(this).data('key');
-    //     if($(this).prop("checked") == true){
-    //         $('.slide-service-' + key).slideDown();
+    $('.btn-service').click(function(){
+        key = $(this).parent('div').data('key');
+        if ($(this).prop("checked") == true) {
+            // console.log($(this).parent('div').children('.btn-service:checkbox:not(:checked)').length);
+            $('.event-' + key).prop('checked',true);
             
-    //     }else{
-    //         $('.slide-service-' + key).slideUp();
-            
-    //     }
-        
-    // });
+        }else{
+            input_checked = $(this).parent('div').children('input').length;
+            if ($(this).parent('div').children('.btn-service:checkbox:not(:checked)').length == input_checked) {
+                $('.event-' + key).prop('checked',false);
+            }
+        }
+    });
 </script>
