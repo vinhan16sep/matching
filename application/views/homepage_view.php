@@ -43,7 +43,7 @@
         </div>
     </header>
 
-    <div class="cover-background" style="background-image: url('https://images.unsplash.com/photo-1528238646472-f2366160b6c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80')">
+    <div class="cover-background" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1363&q=80')">
         <div class="wrapper">
             <div class="content">
                 <h6>Matching Platform</h6>
