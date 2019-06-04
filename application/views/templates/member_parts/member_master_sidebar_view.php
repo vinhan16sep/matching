@@ -36,7 +36,7 @@
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Quản lý <br>Tiêu chí</h6>
+                    <h6 class="collapse-header">Quản lý tiêu chí</h6>
                     <a class="collapse-item" href="<?php echo base_url('member/setting/index') ?>">Danh sách</a>
                     <a class="collapse-item" href="<?php echo base_url('member/setting/create') ?>">Tạo mới</a>
                 </div>

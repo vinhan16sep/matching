@@ -1,4 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
+
 
 <div class="container-fluid">
     <div class="row">
@@ -113,8 +117,8 @@
                                     <td><?php echo $item['register_info']['address']; ?></td>
                                     <td><?php echo $item['register_info']['phone']; ?></td>
                                     <td style="text-align: center">
-                                        <a title="Gửi yêu cầu" class="btn-reg-client" href="#" data-toggle="modal" data-target="#register-client-form">
-                                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                        <a title="Gửi yêu cầu" class="btn-reg-client" href="<?php echo base_url('member/matching/create?target=' . $item['register_info']['id']) ?>">
+                                            <i class="fa fa-calendar-check" aria-hidden="true"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -143,7 +147,5 @@
         }else{
             $('.slide-service-' + key).slideUp();
         }
-
     });
 </script>
-

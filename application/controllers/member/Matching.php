@@ -64,5 +64,16 @@ class Matching extends Member_Controller {
         $this->render('member/matching/find_matching_view');
     }
 
+    public function create(){
+        $target = $this->input->get('target');
+
+        if($target){
+            $result = $this->temp_register_model->get_by_id($target);
+            $this->data['result'] = $result;
+        }
+
+        $this->render('member/matching/create_matching_view');
+    }
+
 
 }
