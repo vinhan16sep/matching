@@ -73,11 +73,16 @@ class Temp_register_model extends MY_Model
         return false;
     }
 
-    public function get_by_email_and_event_id($email, $event_id)
-    {
+    public function get_by_email_and_event_id($email, $event_id){
         $this->db->from($this->table);
         $this->db->where('email', $email);
         $this->db->where('event_id', $event_id);
+        return $this->db->get()->row_array();
+    }
+
+    public function get_by_id($id){
+        $this->db->from('temp_register');
+        $this->db->where('id', $id);
         return $this->db->get()->row_array();
     }
 }
