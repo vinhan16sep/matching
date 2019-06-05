@@ -4,15 +4,45 @@ class Dashboard extends Member_Controller {
 
     function __construct(){
         parent::__construct();
-        $this->load->model('information_model');
-        $this->load->model('team_model');
-        $this->load->model('new_rating_model');
-        $this->load->model('status_model');
         $this->load->model('users_model');
+        $this->load->model('information_model');
+        $this->load->model('matching_model');
     }
 
     public function index(){
         $this->data['page_title'] = 'Tổng quan';
+
+        /**
+         * Temp register of current user
+         */
+        $temp_register = $this->data['self_temp_register'];
+
+        /**
+         * Get all received matching from others
+         */
+        $receive = $this->matching_model->get_receive_request_by_temp_register_id_and_event($temp_register['id'], $temp_register['event_id']);
+        foreach($receive as $key => $value){
+            /**
+             * Get data of target of matching
+             */
+            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['finder_id'], $value['event_id']);
+            $receive[$key]['register_info'] = $register_info;
+        }
+
+        /**
+         * Get all matching sent by current user
+         */
+        $send = $this->matching_model->get_send_request_by_temp_register_id_and_event($temp_register['id'], $temp_register['event_id']);
+        foreach($send as $key => $value){
+            /**
+             * Get data of target of matching
+             */
+            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['target_id'], $value['event_id']);
+            $send[$key]['register_info'] = $register_info;
+        }
+
+        $this->data['receive'] = $receive;
+        $this->data['send'] = $send;
         $this->render('member/dashboard_view');
     }
 

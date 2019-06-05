@@ -65,14 +65,73 @@ class Matching extends Member_Controller {
     }
 
     public function create(){
+        /**
+         * int $target (id of table temp_register)
+         * int $event (id of event)
+         */
         $target = $this->input->get('target');
+        $event = $this->input->get('event');
 
-        if($target){
+        $this->data['target_id'] = $target;
+        $this->data['event_id'] = $event;
+
+        if($target && $event){
+            /**
+             * Temp register data of target
+             * Get by target id
+             */
             $result = $this->temp_register_model->get_by_id($target);
             $this->data['result'] = $result;
+            /**
+             * Get current event data
+             * In this case, date of current event will be used
+             */
+            $event_info = $this->event_model->fetch_by_id($event);
+            $this->data['event'] = $event_info;
+        }else{
+            redirect('member/matching/find','refresh');
         }
 
-        $this->render('member/matching/create_matching_view');
+        /**
+         * Temp register data of current user, who find matching
+         * Get by current user id and event id
+         */
+        $current = $this->temp_register_model->get_by_user_id_and_event($this->ion_auth->user()->row()->id, $event);
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('date','Date','trim|required');
+
+        if($this->form_validation->run() === FALSE) {
+            $this->load->helper('form');
+            $this->render('member/matching/create_matching_view');
+        } else {
+            $data = array(
+                'finder_id' => $current['id'],
+                'target_id' => $target,
+                'event_id' => $event,
+                'date' => strtotime($this->input->post('date')),
+                'note' => $this->input->post('note'),
+                'status' => 0, // In create new case, this matching have status = 0
+                'created_at' => $this->author_info['created_at'],
+            );
+            $result = $this->matching_model->insert($data);
+            if($result){
+                redirect('member/dashboard/index','refresh');
+            }
+            redirect('member/matching/create?target=' . $target . '&event=' . $event,'refresh');
+        }
+    }
+
+    public function workflow(){
+        $data = array('status' => $this->input->get('status'));
+        $result = $this->matching_model->update($this->input->get('id'), $data);
+
+        if($result){
+            return $this->output->set_status_header(200)
+                ->set_output(json_encode(array('message' => 1)));
+        }
+        return $this->output->set_status_header(200)
+            ->set_output(json_encode(array('message' => 0)));
     }
 
 

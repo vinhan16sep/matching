@@ -1,11 +1,4 @@
 
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-6 col-lg-6">
@@ -45,25 +38,34 @@
                 <div class="card-body">
                     <div class="row">
                         <div class='col-sm-12'>
-                            <form>
-                                <div class="form-group">
-                                    <label>Thời gian</label>
-                                    <div class='input-group date' id='datetimepicker'>
-                                        <input type='text' class="form-control" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label>Ghi chú</label>
-                                    <textarea class="form-control" rows="10"></textarea>
-                                </div>
-                                <br>
-                                <button type="button" class="btn btn-primary btn-large">
-                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Gửi
-                                </button>
-                            </form>
+                        <?php
+                        echo form_open_multipart(site_url('member/matching/create?target=' . $target_id . '&event=' . $event_id), array('class' => 'form-horizontal'));
+                        ?>
+                            <div class="form-group">
+                                <?php
+                                echo form_label('Thời gian', 'date');
+                                echo form_error('date');
+                                echo form_input('date', set_value('date'), 'class="form-control datepicker" id="datetimepicker" readonly');
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                echo form_label('Ghi chú', 'note');
+                                echo form_error('note');
+                                echo form_textarea('note', set_value('name'), 'class="form-control" id="note"');
+                                ?>
+                            </div>
+                            <br>
+                            <div class="form-group col-sm-12 text-left" style="padding-left: 0 !important;">
+                                <?php
+                                echo form_submit('submit', 'Gửi', 'class="btn btn-primary" id="btnSend"');
+                                ?>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12 text-right">
+                            <?php
+                            echo form_close();
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -75,13 +77,34 @@
 </div>
 
 
-
+<?php
+    $event_date = date('Y/m/d', $event['date']);
+    $event_date_reformat = date('d-m-Y', $event['date']);
+    $date = json_encode(array('08:00', '09:00', '12:00'));
+?>
 <script type="text/javascript">
+    $('#btnSend').click(function(){
+        if($('#datetimepicker').val() == '' || $('#note').val() == ''){
+            return false;
+        }
+    });
 
+
+    var eventDate = '<?php echo $event_date; ?>';
+    var eventDateFormat = '<?php echo $event_date_reformat; ?>';
+    var time = <?php echo json_encode(array('08:00', '09:00', '12:00')); ?>;
+
+    console.log(time);
     $(function () {
         $('#datetimepicker').datetimepicker({
-            stepping: 30,
-            enabledHours: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+            format: 'd-m-Y H:i',
+            step: 30,
+            minTime: '08:00',
+            maxTime: '18:30',
+            allowDates : eventDate,
+            allowTimes: time,
+            validateOnBlur: true,
+            defaultDate: eventDateFormat
         });
     });
 
