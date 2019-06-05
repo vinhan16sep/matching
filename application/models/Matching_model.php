@@ -6,25 +6,6 @@ class Matching_model extends CI_Model {
         parent::__construct();
     }
 
-    public function count() {
-        $query = $this->db->select('*')
-            ->from('event')
-            ->where('is_deleted', 0)
-            ->get();
-
-        return $query->num_rows();
-    }
-
-    public function fetch_all_pagination($limit = NULL, $start = NULL) {
-        $query = $this->db->select('*')
-            ->from('event')
-            ->where('is_deleted', 0)
-            ->limit($limit, $start)
-            ->order_by("id", "desc");
-
-        return $result = $query->get()->result_array();
-    }
-
     public function fetch_by_id($id){
         $query = $this->db->select('*')
             ->from('event')
@@ -40,7 +21,7 @@ class Matching_model extends CI_Model {
     }
 
     public function insert($data){
-        $this->db->set($data)->insert('event');
+        $this->db->set($data)->insert('matching');
 
         if($this->db->affected_rows() == 1){
             return $this->db->insert_id();
@@ -51,7 +32,7 @@ class Matching_model extends CI_Model {
     public function update($id, $data){
         $this->db->set($data)
             ->where('id', $id)
-            ->update('event');
+            ->update('matching');
 
         if($this->db->affected_rows() == 1){
             return true;
@@ -65,6 +46,26 @@ class Matching_model extends CI_Model {
             ->where('is_deleted', 0)
             ->where('is_active', 1)
             ->order_by("id", "desc");
+
+        return $result = $query->get()->result_array();
+    }
+
+    public function get_send_request_by_temp_register_id_and_event($temp_register_id, $event_id){
+        $query = $this->db->select('*')
+            ->from('matching')
+            ->where('finder_id', $temp_register_id)
+            ->where('event_id', $event_id)
+            ->order_by("date", "desc");
+
+        return $result = $query->get()->result_array();
+    }
+
+    public function get_receive_request_by_temp_register_id_and_event($temp_register_id, $event_id){
+        $query = $this->db->select('*')
+            ->from('matching')
+            ->where('target_id', $temp_register_id)
+            ->where('event_id', $event_id)
+            ->order_by("date", "desc");
 
         return $result = $query->get()->result_array();
     }

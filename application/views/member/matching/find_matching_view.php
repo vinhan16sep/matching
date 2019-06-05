@@ -117,7 +117,9 @@
                                     <td><?php echo $item['register_info']['address']; ?></td>
                                     <td><?php echo $item['register_info']['phone']; ?></td>
                                     <td style="text-align: center">
-                                        <a title="Gửi yêu cầu" class="btn-reg-client" href="<?php echo base_url('member/matching/create?target=' . $item['register_info']['id']) ?>">
+                                        <a title="Gửi yêu cầu" class="btn-reg-client"
+                                           href="<?php echo base_url('member/matching/create?target=' . $item['register_info']['id'] . '&event=' . $item['register_info']['event_id']) ?>"
+                                        >
                                             <i class="fa fa-calendar-check" aria-hidden="true"></i>
                                         </a>
                                     </td>
