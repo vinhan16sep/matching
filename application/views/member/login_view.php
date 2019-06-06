@@ -68,6 +68,8 @@
                     </div>
                     <?php echo form_submit('submit', 'Đăng nhập', 'class="btn btn-primary btn-lg btn-block"'); ?>
                     <?php echo form_close(); ?>
+                    <br>
+                    Quên mật khẩu? Bấm vào <a href="<?php echo base_url('member/user/forgot_password'); ?>">đây</a>
                 </div>
             </div>
         </div>

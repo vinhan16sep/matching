@@ -80,7 +80,7 @@
 <?php
     $event_date = date('Y/m/d', $event['date']);
     $event_date_reformat = date('d-m-Y', $event['date']);
-    $date = json_encode(array('08:00', '09:00', '12:00'));
+    $date = json_encode($time_range);
 ?>
 <script type="text/javascript">
     $('#btnSend').click(function(){
@@ -92,15 +92,12 @@
 
     var eventDate = '<?php echo $event_date; ?>';
     var eventDateFormat = '<?php echo $event_date_reformat; ?>';
-    var time = <?php echo json_encode(array('08:00', '09:00', '12:00')); ?>;
+    var time = <?php echo json_encode($time_range); ?>;
 
     console.log(time);
     $(function () {
         $('#datetimepicker').datetimepicker({
             format: 'd-m-Y H:i',
-            step: 30,
-            minTime: '08:00',
-            maxTime: '18:30',
             allowDates : eventDate,
             allowTimes: time,
             validateOnBlur: true,
