@@ -13,14 +13,16 @@ class Matching extends Member_Controller {
         }
 
         $this->load->helper('url');
+        $this->load->helper('datetime_helper');
+        $this->load->library('session');
+        $this->load->helper('form');
+
         $this->load->model('matching_model');
         $this->load->model('event_model');
         $this->load->model('setting_model');
         $this->load->model('temp_register_model');
         $this->load->model('users_model');
         $this->load->model('category_model');
-        $this->load->library('session');
-        $this->load->helper('form');
 
         $this->data['user'] = $this->ion_auth->user()->row();
     }
@@ -88,6 +90,8 @@ class Matching extends Member_Controller {
              */
             $event_info = $this->event_model->fetch_by_id($event);
             $this->data['event'] = $event_info;
+
+            $this->data['time_range'] = build_time_range($event_info['start'], $event_info['duration'], $event_info['step']);
         }else{
             redirect('member/matching/find','refresh');
         }

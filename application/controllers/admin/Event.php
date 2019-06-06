@@ -37,6 +37,8 @@ class Event extends Admin_Controller
 
     public function create(){
         $this->data['page_title'] = 'Tạo mới sự kiện';
+        $this->data['time_range'] = $this->buildTimeRange();
+
         $this->load->library('form_validation');
         $this->form_validation->set_rules('name','Name','trim|required');
 
@@ -48,6 +50,9 @@ class Event extends Admin_Controller
                 'name' => $this->input->post('name'),
                 'date' => strtotime(str_replace('/', '-', $this->input->post('date'))),
                 'table' => $this->input->post('table'),
+                'start' => $this->input->post('start'),
+                'duration' => $this->input->post('duration'),
+                'step' => $this->input->post('step'),
             );
             $result = $this->event_model->insert($data);
             if($result){
@@ -72,6 +77,9 @@ class Event extends Admin_Controller
                 'name' => $this->input->post('name'),
                 'date' => strtotime(str_replace('/', '-', $this->input->post('date'))),
                 'table' => $this->input->post('table'),
+                'start' => $this->input->post('start'),
+                'duration' => $this->input->post('duration'),
+                'step' => $this->input->post('step'),
             );
             $result = $this->event_model->update($id, $data);
             redirect('admin/event','refresh');
@@ -110,4 +118,22 @@ class Event extends Admin_Controller
         }
     }
 
+    public function buildTimeRange(){
+        $start = '09:00';
+        $duration = 10;
+        $step = 30;
+        $expression = (string) 'PT' . $step . 'M';
+
+        if($duration <= 0){
+            return false;
+        }
+
+        $pre_setup = new \DateTime($start);
+        $outputStart = $pre_setup->sub(new DateInterval($expression));
+        $times = ($duration * (60 / $step)); // 24 hours * 30 mins in an hour
+        for ($i = 0; $i < $times; $i++) {
+            $result[] = $outputStart->add(new \DateInterval($expression))->format('H:i');
+        }
+        return $result;
+    }
 }

@@ -9,7 +9,7 @@
     <div class="row">
 
         <!-- Area Chart -->
-        <div class="col-xl-6 col-lg-6">
+        <div class="col-xl-12 col-lg-12">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -37,10 +37,10 @@
                                         ?>
                                         <tr id="<?= $item['id'] ?>">
                                             <td style="text-align: center"><?php echo $key + 1; ?></td>
-                                            <td class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
-                                            <td><?php echo $item['register_info']['connector']; ?></td>
-                                            <td><?php echo $item['register_info']['position']; ?></td>
-                                            <td><?php echo $item['register_info']['phone']; ?></td>
+                                            <td style="text-align: center" class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
+                                            <td style="text-align: center"><?php echo $item['register_info']['connector']; ?></td>
+                                            <td style="text-align: center"><?php echo $item['register_info']['position']; ?></td>
+                                            <td style="text-align: center"><?php echo $item['register_info']['phone']; ?></td>
                                             <td style="text-align: center">
                                                 <?php if($item['status'] == 0){ ?>
                                                     <button title="Đang chờ được xử lý" class="btnApprove"
@@ -68,7 +68,7 @@
         </div>
 
         <!-- Pie Chart -->
-        <div class="col-xl-6 col-lg-6">
+        <div class="col-xl-12 col-lg-12">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -96,10 +96,10 @@
                                         ?>
                                         <tr id="<?= $item['id'] ?>">
                                             <td style="text-align: center"><?php echo $key + 1; ?></td>
-                                            <td class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
-                                            <td><?php echo $item['register_info']['connector']; ?></td>
-                                            <td><?php echo $item['register_info']['position']; ?></td>
-                                            <td><?php echo $item['register_info']['phone']; ?></td>
+                                            <td style="text-align: center" class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
+                                            <td style="text-align: center"><?php echo $item['register_info']['connector']; ?></td>
+                                            <td style="text-align: center"><?php echo $item['register_info']['position']; ?></td>
+                                            <td style="text-align: center"><?php echo $item['register_info']['phone']; ?></td>
                                             <td style="text-align: center">
                                                 <?php if($item['status'] == 0){ ?>
                                                     <i class="fa fa-clock" aria-hidden="true"></i>
