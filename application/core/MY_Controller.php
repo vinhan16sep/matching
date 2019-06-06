@@ -7,6 +7,8 @@ class MY_Controller extends CI_Controller {
     protected $author_info = array();
     protected $langAbbreviation = 'vi';
 
+    const EMAIL_ADMIN = 'http.mt.html@gmail.com';
+
     function __construct() {
         parent::__construct();
 
@@ -149,6 +151,44 @@ class MY_Controller extends CI_Controller {
         $config['upload_path'] = $upload_path;
         $config['allowed_types'] = 'docx|doc|xlsx|xlsm|xlsb|xltx|xltm|xls|pdf';
         return $config;
+    }
+
+    protected function upload_file_pdf($file_input ,$upload_path = '', $file_name = '', $extension = '' ) {
+        $file = '';
+        if (!empty($file_name)) {
+            $config = $this->config_file_pdf($upload_path);
+            $config['file_name'] = $this->to_slug($file_name) . '-' . $extension;
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload($file_input)) {
+                $upload_data = $this->upload->data();
+                $file = $upload_data['file_name'];
+            }
+        }
+
+        return $file;
+    }
+
+    function config_file_pdf($upload_path = '') {
+        $config = array();
+        $config['upload_path'] = $upload_path;
+        $config['allowed_types'] = 'pdf';
+        return $config;
+    }
+
+    function to_slug($str) {
+        $str = trim(mb_strtolower($str));
+        $str = preg_replace('/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/', 'a', $str);
+        $str = preg_replace('/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/', 'e', $str);
+        $str = preg_replace('/(ì|í|ị|ỉ|ĩ)/', 'i', $str);
+        $str = preg_replace('/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/', 'o', $str);
+        $str = preg_replace('/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/', 'u', $str);
+        $str = preg_replace('/(ỳ|ý|ỵ|ỷ|ỹ)/', 'y', $str);
+        $str = preg_replace('/(đ)/', 'd', $str);
+        $str = preg_replace('/[^a-z0-9-\s]/', '', $str);
+        $str = preg_replace('/([\s]+)/', '-', $str);
+        return $str;
     }
 
 }

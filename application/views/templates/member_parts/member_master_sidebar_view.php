@@ -30,6 +30,12 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('member/overview') ?>">
+                <i class="fas fa-id-badge"></i>
+                <span>Tổng quan doanh nghiệp</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Tiêu chí</span>
@@ -42,7 +48,7 @@
                 </div>
             </div>
         </li>
-
+        
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                 <i class="fas fa-fw fa-cog"></i>

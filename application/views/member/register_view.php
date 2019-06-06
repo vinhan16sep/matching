@@ -40,7 +40,8 @@
 
                 <div class="right">
                     <div class="wrapper">
-                        <?php echo $this->session->flashdata('message'); ?>
+                        <?php echo $this->session->flashdata('success'); ?>
+                        <?php echo $this->session->flashdata('error'); ?>
                         <?php echo form_open('', array('class' => 'form-horizontal')); ?>
                         <div class="row">
                             <div class="form-group col-xs-12 col-lg-12">

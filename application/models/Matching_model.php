@@ -70,4 +70,18 @@ class Matching_model extends CI_Model {
         return $result = $query->get()->result_array();
     }
 
+    public function get_by_id($id)
+    {
+        $query = $this->db->select('*')
+            ->from('matching')
+            ->where('id', $id)
+            ->limit(1)
+            ->get();
+
+        if($query->num_rows() == 1){
+            return $query->row_array();
+        }
+        return false;
+    }
+
 }

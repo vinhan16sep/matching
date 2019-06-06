@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Matching extends Member_Controller {
 
+    // const EMAIL_ADMIN = 'http.mt.html@gmail.com';
+
     function __construct() {
         parent::__construct();
 
@@ -21,6 +23,7 @@ class Matching extends Member_Controller {
         $this->load->model('category_model');
         $this->load->library('session');
         $this->load->helper('form');
+        $this->load->helper('email_helper');
 
         $this->data['user'] = $this->ion_auth->user()->row();
     }
@@ -114,8 +117,13 @@ class Matching extends Member_Controller {
                 'status' => 0, // In create new case, this matching have status = 0
                 'created_at' => $this->author_info['created_at'],
             );
-            $result = $this->matching_model->insert($data);
-            if($result){
+            $insert = $this->matching_model->insert($data);
+            if($insert){
+                $user = $this->ion_auth->user()->row();
+
+                send_mail_matching(self::EMAIL_ADMIN, $data, 'create', 'admin');
+                send_mail_matching($result['email'], $data, 'create', 'member');
+
                 redirect('member/dashboard/index','refresh');
             }
             redirect('member/matching/create?target=' . $target . '&event=' . $event,'refresh');
@@ -124,9 +132,20 @@ class Matching extends Member_Controller {
 
     public function workflow(){
         $data = array('status' => $this->input->get('status'));
+        $matching = $this->matching_model->get_by_id($this->input->get('id'));
         $result = $this->matching_model->update($this->input->get('id'), $data);
-
         if($result){
+            $temp_register = $this->temp_register_model->get_by_id($matching['finder_id']);
+
+            if ($temp_register) {
+                if ($this->input->get('status') == 1) {
+                    send_mail_matching(self::EMAIL_ADMIN, $data, 'approve', 'admin');
+                    send_mail_matching($temp_register['email'], $data, 'approve', 'member');
+                }else{
+                    send_mail_matching($temp_register['email'], $data, 'reject', 'member');
+                }
+            }
+
             return $this->output->set_status_header(200)
                 ->set_output(json_encode(array('message' => 1)));
         }
