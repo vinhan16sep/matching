@@ -101,9 +101,12 @@ class User extends MY_Controller {
         } else {
             if ( $this->input->post() ) {
                 $params = $this->input->post();
-                // echo '<pre>'; print_r($params);die;
+                $check_account = $this->temp_register_model->get_by_email_and_event_id($params['email'], $params['event_id']);
+                if ($check_account) {
+                    $this->session->set_flashdata('error', 'E-Mail sử dụng đã đăng ký với một sự kiện đang diễn ra. Vui lòng sử dụng E-Mail khác!');
+                    redirect('member/user/register');
+                }
                 $code = $this->check_code( substr(uniqid(),0,8) );
-                // $check_code = $this->temp_register->find_row_array(['code' => $code]);
                 $data = [
                     'company' => $params['company'],
                     'connector' => $params['connector'],

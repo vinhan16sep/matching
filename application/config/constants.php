@@ -88,3 +88,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 defined('SEND_CODE_SUCCESS')      OR define('SEND_CODE_SUCCESS', 'Đăng ký thông tin doanh nghiệp thành công! Vui lòng kiểm tra email'); //Gửi mã code cho email thành công
 defined('SEND_CODE_ERROR')      OR define('SEND_CODE_ERROR', 'Đăng ký thông tin doanh nghiệp không thành thành công! Do quá trình gửi email thất bại. Vui lòng kiểm tra lại địa chỉ email và thực hiện lại thao tác'); //Gửi mã code cho email thất bại
 defined('REGISTER_COMPANY_ERROR')      OR define('REGISTER_COMPANY_ERROR', 'Có lỗi trong quá trình đăng ký thông tin doanh nghiệp');// Đăng ký thất bại
+defined('MESSAGE_PHOTOS_ERROR') OR define('MESSAGE_PHOTOS_ERROR', 'File PDF vượt quá %u Mb hoặc file tải lên không phải định dạng PDF. Vui lòng kiểm tra lại và thực hiện lại thao tác!');
