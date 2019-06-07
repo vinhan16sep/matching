@@ -64,7 +64,6 @@ class Matching extends Member_Controller {
                 }
             }
         }
-
         $this->data['events'] = $events;
         $this->render('member/matching/find_matching_view');
     }
@@ -155,6 +154,18 @@ class Matching extends Member_Controller {
         }
         return $this->output->set_status_header(200)
             ->set_output(json_encode(array('message' => 0)));
+    }
+
+    public function get_info(){
+        $id = $this->input->get('id');
+        $select = 'address, company, connector, file, overview, position, profile';
+        $temp_register = $this->temp_register_model->get_by_id_with_select($id, $select);
+        if ($temp_register) {
+            return $this->output->set_status_header(200)
+                ->set_output(json_encode(array('status' => true, 'info' => $temp_register)));
+        }
+        return $this->output->set_status_header(200)
+                ->set_output(json_encode(array('status' => false)));
     }
 
 
