@@ -2,10 +2,16 @@
 
 <div class="container-fluid" id="dashboard-member">
     <?php
-        $log = array(
+        $send_log = array(
             1 => 'Đối tác đồng ý',
             2 => 'Đối tác từ chối',
-            3 => 'Từ chối do cuộc hẹn khác'
+            3 => 'Hủy do cuộc hẹn khác'
+        );
+
+        $receive_log = array(
+            1 => 'Đã đồng ý',
+            2 => 'Đã từ chối',
+            3 => 'Hủy do cuộc hẹn khác'
         );
     ?>
 
@@ -33,6 +39,7 @@
                                     <th style="text-align: center">STT</th>
                                     <th style="text-align: center">Thời gian</th>
                                     <th style="text-align: center">DN</th>
+                                    <th style="text-align: center"></th>
                                     <th style="text-align: center">Đại diện</th>
                                     <th style="text-align: center">Chức danh</th>
                                     <th style="text-align: center">Trạng thái</th>
@@ -48,6 +55,15 @@
                                             <td style="text-align: center"><?php echo $key + 1; ?></td>
                                             <td style="text-align: center"><?php echo date('H:i d/m/Y', $item['date']); ?></td>
                                             <td style="text-align: center" class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
+                                            <td style="text-align: center" class="reg-client-company">
+                                                <a href="javascript:void(0)"
+                                                   class="btn-reg-info"
+                                                   data-id="<?php echo $item['register_info']['id'] ?>"
+                                                   title="Xem thông tin"
+                                                >
+                                                    <i class="fas fa-info-circle"></i>
+                                                </a>
+                                            </td>
                                             <td style="text-align: center"><?php echo $item['register_info']['connector']; ?></td>
                                             <td style="text-align: center"><?php echo $item['register_info']['position']; ?></td>
                                             <td style="text-align: center">
@@ -63,7 +79,7 @@
                                                     <i class="fa fa-ban" aria-hidden="true" style="color: red"></i>
                                                 <?php } ?>
                                             </td>
-                                            <td style=""><?php echo isset($log[$item['log']]) ? $log[$item['log']] : ''; ?></td>
+                                            <td style=""><?php echo isset($receive_log[$item['log']]) ? $receive_log[$item['log']] : ''; ?></td>
                                         </tr>
                                         <?php
                                     }
@@ -94,6 +110,7 @@
                                     <th style="text-align: center">STT</th>
                                     <th style="text-align: center">Thời gian</th>
                                     <th style="text-align: center">DN</th>
+                                    <th style="text-align: center"></th>
                                     <th style="text-align: center">Đại diện</th>
                                     <th style="text-align: center">Chức danh</th>
                                     <th style="text-align: center">Trạng thái</th>
@@ -109,6 +126,15 @@
                                             <td style="text-align: center"><?php echo $key + 1; ?></td>
                                             <td style="text-align: center"><?php echo date('H:i d/m/Y', $item['date']); ?></td>
                                             <td style="text-align: center" class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
+                                            <td style="text-align: center" class="reg-client-company">
+                                                <a href="javascript:void(0)"
+                                                   class="btn-reg-info"
+                                                   data-id="<?php echo $item['register_info']['id'] ?>"
+                                                   title="Xem thông tin"
+                                                >
+                                                    <i class="fas fa-info-circle"></i>
+                                                </a>
+                                            </td>
                                             <td style="text-align: center"><?php echo $item['register_info']['connector']; ?></td>
                                             <td style="text-align: center"><?php echo $item['register_info']['position']; ?></td>
                                             <td style="text-align: center">
@@ -120,7 +146,7 @@
                                                     <i class="fa fa-ban" aria-hidden="true" style="color: red"></i>
                                                 <?php } ?>
                                             </td>
-                                            <td style=""><?php echo isset($log[$item['log']]) ? $log[$item['log']] : ''; ?></td>
+                                            <td style=""><?php echo isset($send_log[$item['log']]) ? $send_log[$item['log']] : ''; ?></td>
                                         </tr>
                                         <?php
                                     }
@@ -158,6 +184,84 @@
             </div>
         </div>
     </div>
+
+    <!-- End of Main Content -->
+
+    <div class="popup" id="companyInfo">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h6>
+                    Thông Tin Doanh Nghiệp: <strong id="title-info"></strong>
+                </h6>
+
+                <button type="button" class="popup-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <ul class="nav nav-tabs" id="companyInfomation" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="info-tab" data-toggle="tab" href="#infoTab" role="tab" aria-controls="info" aria-selected="true">Thông Tin Doanh Nghiệp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="overview-tab" data-toggle="tab" href="#overviewTab" role="tab" aria-controls="overview" aria-selected="false">Tổng Quát</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false">Hồ sơ doanh nghiệp</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="companyInfomationContent">
+                    <div class="tab-pane fade show active" id="infoTab" role="tabpanel" aria-labelledby="info-tab">
+                        <div class="row no-gutters">
+                            <div class="left col-xs-12 col-lg-6">
+                                <div class="background">
+                                    <img src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
+
+                                    <div class="mask-wrapper">
+                                        <div class="mask mask-circle">
+                                            <img src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="right col-xs-12 col-lg-6">
+                                <div class="wrapper">
+                                    <label>Công Ty</label>
+                                    <h6 id="company">No data</h6>
+                                </div>
+
+                                <div class="wrapper">
+                                    <label>Người Đại Diện</label>
+                                    <h6 id="connector">No data</h6>
+                                </div>
+
+                                <div class="wrapper">
+                                    <label>Chức Danh</label>
+                                    <h6 id="position">No data</h6>
+                                </div>
+
+                                <div class="wrapper">
+                                    <label>Địa Chỉ</label>
+                                    <h6 id="address">No data</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane tab-text fade" id="overviewTab" role="tabpanel" aria-labelledby="overview-tab">
+                        <p id="overview">No data</p>
+                    </div>
+                    <div class="tab-pane tab-text fade" id="profileTab" role="tabpanel" aria-labelledby="profile-tab">
+                        <p id="profile">No data</p>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải File PDF</a>
+                <button type="button" class="btn btn-sm btn-secondary popup-close" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
     $(document).on("click", ".btnApprove", function () {
@@ -191,6 +295,46 @@
             }
         });
     });
+
+    $('.btn-reg-info').click(function(){
+        id = $(this).data('id');
+        $.ajax({
+            method: 'GET',
+            url: '<?php echo base_url('member/matching/get_info') ?>',
+            data: {
+                id: id,
+            },
+            success: function(res){
+                result = JSON.parse(res);
+
+                if (result.status == true) {
+                    console.log(result.info);
+                    $('.popup').addClass('show');
+                    //$('#btn-reg-info-modal').modal('show');
+                    $('#title-info').html(result.info.company);
+                    $('#company').html(result.info.company);
+                    $('#connector').html(result.info.connector);
+                    $('#position').html(result.info.position);
+                    $('#address').html(result.info.address);
+                    $('#overview').html(result.info.overview);
+                    $('#profile').html(result.info.profile);
+                    $('#file-pdf').attr('href', '<?php echo base_url('assets/upload/profile/') ?>' + result.info.file);
+                }else{
+                    alert('Doanh nghiệp không tồn tại hoặc đã hủy tham gia sự kiện');
+                }
+
+                closePopup(); //Close Popup
+            }
+        });
+    });
+
+    function closePopup(){
+        const $btnClose = $('.popup').find('.popup-close');
+
+        $btnClose.on('click', function(){
+            $(this).closest('.popup').removeClass('show');
+        })
+    }
 </script>
 <!-- /.container-fluid -->
 
