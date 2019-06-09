@@ -202,23 +202,23 @@
             <div class="item left">
                 <div class="item-header">
                     <h6>
-                        Company
+                        Bên đề nghị
                     </h6>
                 </div>
 
                 <div class="item-content">
                     <div class="tab-control">
                         <a href="#" class="tab active" data-tab="tab-info">
-                            Thong tin
+                            Thông tin cơ bản
                         </a>
                         <a href="#" class="tab" data-tab="tab-category">
-                            Tieu chi
+                            Tiêu chí đăng ký
                         </a>
                         <a href="#" class="tab" data-tab="tab-overview">
-                            Tong quat
+                            Tổng quan
                         </a>
                         <a href="#" class="tab" data-tab="tab-profile">
-                            Ho so
+                            Hồ sơ
                         </a>
                     </div>
 
@@ -288,23 +288,23 @@
             <div class="item right">
                 <div class="item-header">
                     <h6>
-                        Target
+                        Bên chấp nhận
                     </h6>
                 </div>
 
                 <div class="item-content">
                     <div class="tab-control">
                         <a href="#" class="tab active" data-tab="tab-info">
-                            Thong tin
+                            Thông tin cơ bản
                         </a>
                         <a href="#" class="tab" data-tab="tab-category">
-                            Tieu chi
+                            Tiêu chí đăng ký
                         </a>
                         <a href="#" class="tab" data-tab="tab-overview">
-                            Tong quat
+                            Tổng quan
                         </a>
                         <a href="#" class="tab" data-tab="tab-profile">
-                            Ho so
+                            Hồ sơ
                         </a>
                     </div>
 
