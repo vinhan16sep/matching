@@ -23,6 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Custom styles for this template-->
     <link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>css/sb-admin-2.min.css" />
 
+    <!-- my Style -->
+    <link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>scss/admin/style.css" />
+
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo site_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo site_url('assets/'); ?>vendor/jquery.datetimepicker.full.min.js"></script>

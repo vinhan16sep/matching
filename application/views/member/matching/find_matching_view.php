@@ -4,7 +4,7 @@
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
 
 
-<div class="container-fluid">
+<div class="container-fluid" id="matching">
     <div class="row">
         <!-- Area Chart -->
         <div class="col-xl-3 col-lg-3">
@@ -38,7 +38,7 @@
                                 <?php if ($events): ?>
                                     <?php foreach ($events as $key => $value): ?>
                                         <?php
-                                        echo form_checkbox('category_id[]', $key, in_array($key, $_GET['category_id']), 'class="btn-event" data-key=' . $key);
+                                        echo form_checkbox('category_id[]', $key, false, 'class="btn-event" data-key=' . $key);
                                         echo $value['name'] . '<br>';
                                         ?>
                                         <?php if ($value): ?>
@@ -46,7 +46,7 @@
                                                 <?php if ($k != 'name'): ?>
                                                     <div style="display: none; margin-left: 20px" class="slide-service-<?php echo $key ?>">
                                                         <?php
-                                                        echo form_checkbox('category_id[]', $k, in_array($key, $_GET['category_id']), 'class="btn-service"');
+                                                        echo form_checkbox('category_id[]', $k, false, 'class="btn-service"');
                                                         echo $val . '<br>';
                                                         ?>
                                                     </div>
@@ -148,47 +148,126 @@
     </div>
 
     <!-- End of Main Content -->
-</div>
 
-<div class="modal fade" id="btn-reg-info-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Thông Tin Doanh Nghiệp: <strong id="title-info" style="color: #4e73df"></strong></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+    <div class="popup" id="companyInfo">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h6>
+                    Thông Tin Doanh Nghiệp: <strong id="title-info"></strong>
+                </h6>
+
+                <button type="button" class="popup-close">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="company">Công Ty: </label>
-                    <input type="text" class="form-control" name="company" id="company" disabled >
-                </div>
-                <div class="form-group">
-                    <label for="connector">Người Đại Diện: </label>
-                    <input type="text" class="form-control" name="connector" id="connector" disabled >
-                </div>
-                <div class="form-group">
-                    <label for="position">Chức Danh: </label>
-                    <input type="text" class="form-control" name="position" id="position" disabled >
-                </div>
-                <div class="form-group">
-                    <label for="address">Địa Chỉ: </label>
-                    <input type="text" class="form-control" name="address" id="address" disabled >
-                </div>
-                <div class="form-group">
-                    <label for="overview">Tổng Quát Công Nghệ: </label>
-                    <textarea class="form-control" name="overview" id="overview" rows="3" disabled></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="profile">Hồ sơ doanh nghiệp: </label>
-                    <textarea class="form-control" name="profile" id="profile" rows="10" disabled></textarea>
-                </div>
+            <div class="popup-body">
+                <ul class="nav nav-tabs" id="companyInfomation" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="info-tab" data-toggle="tab" href="#infoTab" role="tab" aria-controls="info" aria-selected="true">Thông Tin Doanh Nghiệp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="overview-tab" data-toggle="tab" href="#overviewTab" role="tab" aria-controls="overview" aria-selected="false">Tổng Quát</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false">Hồ sơ doanh nghiệp</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="companyInfomationContent">
+                    <div class="tab-pane fade show active" id="infoTab" role="tabpanel" aria-labelledby="info-tab">
+                        <div class="row no-gutters">
+                            <div class="left col-xs-12 col-lg-6">
+                                <div class="background">
+                                    <img src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
 
+                                    <div class="mask-wrapper">
+                                        <div class="mask mask-circle">
+                                            <img src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="right col-xs-12 col-lg-6">
+                                <div class="wrapper">
+                                    <label>Công Ty</label>
+                                    <h6 id="company">No data</h6>
+                                </div>
+
+                                <div class="wrapper">
+                                    <label>Người Đại Diện</label>
+                                    <h6 id="connector">No data</h6>
+                                </div>
+
+                                <div class="wrapper">
+                                    <label>Chức Danh</label>
+                                    <h6 id="position">No data</h6>
+                                </div>
+
+                                <div class="wrapper">
+                                    <label>Địa Chỉ</label>
+                                    <h6 id="address">No data</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane tab-text fade" id="overviewTab" role="tabpanel" aria-labelledby="overview-tab">
+                        <p id="overview">No data</p>
+                    </div>
+                    <div class="tab-pane tab-text fade" id="profileTab" role="tabpanel" aria-labelledby="profile-tab">
+                        <p id="profile">No data</p>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <a type="" class="btn btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải File PDF</a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            <div class="popup-footer">
+                <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải File PDF</a>
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="btn-reg-info-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thông Tin Doanh Nghiệp: <strong id="title-info" style="color: #4e73df"></strong></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="item item-overview col-xs-12 col-"
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Công Ty: </label>
+                        <input type="text" class="form-control" name="company" id="company" disabled >
+                    </div>
+                    <div class="form-group">
+                        <label for="connector">Người Đại Diện: </label>
+                        <input type="text" class="form-control" name="connector" id="connector" disabled >
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Chức Danh: </label>
+                        <input type="text" class="form-control" name="position" id="position" disabled >
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa Chỉ: </label>
+                        <input type="text" class="form-control" name="address" id="address" disabled >
+                    </div>
+                    <div class="form-group">
+                        <label for="overview">Tổng Quát Công Nghệ: </label>
+                        <textarea class="form-control" name="overview" id="overview" rows="3" disabled></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile">Hồ sơ doanh nghiệp: </label>
+                        <textarea class="form-control" name="profile" id="profile" rows="10" disabled></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a type="" class="btn btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải File PDF</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
             </div>
         </div>
     </div>
@@ -222,15 +301,18 @@
             },
             success: function(res){
                 result = JSON.parse(res);
+
                 if (result.status == true) {
-                    $('#btn-reg-info-modal').modal('show');
-                    $('#title-info').text(result.info.company);
-                    $('#company').val(result.info.company);
-                    $('#connector').val(result.info.connector);
-                    $('#position').val(result.info.position);
-                    $('#address').val(result.info.address);
-                    $('#overview').val(result.info.overview);
-                    $('#profile').val(result.info.profile);
+                    console.log(result.info);
+                    $('.popup').addClass('show');
+                    //$('#btn-reg-info-modal').modal('show');
+                    $('#title-info').html(result.info.company);
+                    $('#company').html(result.info.company);
+                    $('#connector').html(result.info.connector);
+                    $('#position').html(result.info.position);
+                    $('#address').html(result.info.address);
+                    $('#overview').html(result.info.overview);
+                    $('#profile').html(result.info.profile);
                     $('#file-pdf').attr('href', '<?php echo base_url('assets/upload/profile/') ?>' + result.info.file);
                 }else{
                     alert('Doanh nghiệp không tồn tại hoặc đã hủy tham gia sự kiện');
