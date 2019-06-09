@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" id="category">
     <a href="<?php echo base_url('admin/event/index'); ?>" class="btn btn-outline-dark"><i class="fa fa-backward" aria-hidden="true"></i></a>
     <a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#createRoot" style="color: white"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tạo danh mục gốc</a>
     <br>
@@ -9,10 +9,10 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th style="width: 5%">STT</th>
+                            <th style="width: 5%">STTnn</th>
                             <th style="text-align: center">Tên danh mục</th>
                             <th style="text-align: center">Thao tác</th>
                         </tr>
@@ -20,7 +20,7 @@
                     <tbody>
                         <?php if($categories){ ?>
                             <?php foreach($categories as $key => $item){ ?>
-                                <tr style="background: #4e73df; color: white">
+                                <tr>
                                     <td style="text-align: center"><?php echo $key + 1; ?></td>
                                     <td><?php echo $item['name']; ?></td>
                                     <td style="text-align: center">
@@ -36,7 +36,7 @@
                                     </td>
                                 </tr>
                                 <?php foreach($item['sub'] as $keySub => $itemSub){ ?>
-                                    <tr style="background: #858796; color: white">
+                                    <tr class="sub-item">
                                         <td>&#8627; <?php echo $keySub + 1; ?></td>
                                         <td><?php echo $itemSub['name']; ?></td>
                                         <td style="text-align: center">

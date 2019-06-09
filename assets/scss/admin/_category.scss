@@ -1,0 +1,29 @@
+#category{
+    .card{
+        .table-responsive{
+            tbody{
+                tr{
+                    background-color: $primary-lighter;
+                    color: #fff;
+
+                    a{
+                        i{
+                            color: #fff !important;
+                        }
+                    }
+
+                    &.sub-item{
+                        background-color: $gray-lightest;
+                        color: $gray-base;
+
+                        a{
+                            i{
+                                color: $gray-base !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
