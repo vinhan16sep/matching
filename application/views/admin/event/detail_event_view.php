@@ -86,7 +86,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Đăng ký mới nhất</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Đăng ký mới nhất: <strong style="color: red"><?php echo date('d-m-Y', $event_date) ?></strong></h6>
                     <div class="dropdown no-arrow">
                         <a title="Xem toàn bộ" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-arrow-alt-circle-right text-primary"></i>
@@ -144,9 +144,9 @@
                                                 <td style="text-align: center"><?php echo $key + 1; ?></td>
                                                 <td style="text-align: center"><?php echo $value['company_finder'] ?></td>
                                                 <td style="text-align: center"><?php echo $value['company_target'] ?></td>
-                                                <td style="text-align: center"><?php echo date('d-m-Y, H:i:s', $value['date']) ?></td>
+                                                <td style="text-align: center"><?php echo date('H:i', $value['date']) ?></td>
                                                 <td style="text-align: center" title="Thông tin cuộc hẹn">
-                                                    <a href="#" class="call-popup"><i class="fas fa-info-circle"></i></a>
+                                                    <a href="#" class="call-popup" data-finder_id="<?php echo $value['finder_id'] ?>" data-target_id="<?php echo $value['target_id'] ?>"><i class="fas fa-info-circle"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach ?>
@@ -235,32 +235,46 @@
                             <div class="row">
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Công Ty</label>
-                                    <h6 id="company">No data</h6>
+                                    <h6 id="company-finder">No data</h6>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Địa Chỉ</label>
-                                    <h6 id="address">No data</h6>
+                                    <h6 id="address-finder">No data</h6>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Người Đại Diện</label>
-                                    <h6 id="connector">No data</h6>
+                                    <h6 id="connector-finder">No data</h6>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Chức Danh</label>
-                                    <h6 id="position">No data</h6>
+                                    <h6 id="position-finder">No data</h6>
+                                </div>
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>E-Mail</label>
+                                    <h6 id="email-finder">No data</h6>
+                                </div>
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Số Điện Thoại</label>
+                                    <h6 id="phone-finder">No data</h6>
+                                </div>
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>File PDF</label>
+                                    <h6 id="file-finder">No data</h6>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-inner tab-content-category" data-tab-content="tab-category-content">
-                            2
+                        <div class="tab-inner tab-content-category" data-tab-content="tab-category-content" id="category-finder">
+                            <div class="out collapse show" style="">
+
+                            </div>
                         </div>
-                        <div class="tab-inner tab-content-overview" data-tab-content="tab-overview-content">
+                        <div class="tab-inner tab-content-overview" data-tab-content="tab-overview-content" id="overview-finder">
                             <p>Aenean nec posuere tellus. In dictum, nisl vel pharetra laoreet, ligula urna feugiat arcu, rutrum aliquam ante erat quis mi. Quisque in pellentesque ipsum. Ut pretium orci tellus, a molestie diam venenatis a. Morbi vitae lorem dignissim, ornare orci at, euismod lorem. Morbi at eros enim. Phasellus efficitur faucibus arcu a mollis. Aenean elit dui, rutrum eget venenatis id, scelerisque id sapien. Nam vitae pellentesque sapien. Vestibulum vel mi tempor, sodales mi id, hendrerit diam. Morbi auctor vel quam et ullamcorper. Aliquam aliquet in dolor quis tempus. Quisque dolor nisi, tristique non suscipit nec, iaculis in purus. Nulla pulvinar erat turpis, non bibendum nibh semper ac. Sed elementum efficitur magna, nec cursus mi porta in.</p>
                         </div>
-                        <div class="tab-inner tab-content-profile" data-tab-content="tab-profile-content">
+                        <div class="tab-inner tab-content-profile" data-tab-content="tab-profile-content" id="profile-finder">
                             <p>Aenean nec posuere tellus. In dictum, nisl vel pharetra laoreet, ligula urna feugiat arcu, rutrum aliquam ante erat quis mi. Quisque in pellentesque ipsum. Ut pretium orci tellus, a molestie diam venenatis a. Morbi vitae lorem dignissim, ornare orci at, euismod lorem. Morbi at eros enim. Phasellus efficitur faucibus arcu a mollis. Aenean elit dui, rutrum eget venenatis id, scelerisque id sapien. Nam vitae pellentesque sapien. Vestibulum vel mi tempor, sodales mi id, hendrerit diam. Morbi auctor vel quam et ullamcorper. Aliquam aliquet in dolor quis tempus. Quisque dolor nisi, tristique non suscipit nec, iaculis in purus. Nulla pulvinar erat turpis, non bibendum nibh semper ac. Sed elementum efficitur magna, nec cursus mi porta in.</p>
                         </div>
                     </div>
@@ -307,32 +321,46 @@
                             <div class="row">
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Công Ty</label>
-                                    <h6 id="company">No data</h6>
+                                    <h6 id="company-target">No data</h6>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Địa Chỉ</label>
-                                    <h6 id="address">No data</h6>
+                                    <h6 id="address-target">No data</h6>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Người Đại Diện</label>
-                                    <h6 id="connector">No data</h6>
+                                    <h6 id="connector-target">No data</h6>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Chức Danh</label>
-                                    <h6 id="position">No data</h6>
+                                    <h6 id="position-target">No data</h6>
+                                </div>
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>E-Mail</label>
+                                    <h6 id="email-target">No data</h6>
+                                </div>
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Số Điện Thoại</label>
+                                    <h6 id="phone-target">No data</h6>
+                                </div>
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>File PDF</label>
+                                    <h6 id="file-target"></h6>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-inner tab-content-category" data-tab-content="tab-category-content">
-                            2
+                        <div class="tab-inner tab-content-category" data-tab-content="tab-category-content" id="category-target">
+                            <div class="out collapse show" style="">
+                                
+                            </div>
                         </div>
-                        <div class="tab-inner tab-content-overview" data-tab-content="tab-overview-content">
+                        <div class="tab-inner tab-content-overview" data-tab-content="tab-overview-content" id="overview-target">
                             <p>Pellentesque at magna volutpat, tincidunt arcu sit amet, lobortis nulla. Sed aliquet urna a enim semper, sed ultrices velit venenatis. Sed in interdum nisi. Ut vel quam nec massa tempor commodo id non leo. In molestie elit ut eros tempus lacinia. Duis mollis imperdiet sem sit amet mattis. In gravida velit vitae nibh vestibulum facilisis. Vestibulum sollicitudin, diam sit amet dictum ornare, lorem mauris maximus magna, quis finibus urna justo id odio. Aliquam sollicitudin rhoncus sapien, et interdum augue rutrum quis. Suspendisse tellus nulla, blandit nec orci in, sagittis fringilla nisl. Quisque convallis id arcu quis sagittis. Ut dictum, elit quis pharetra tempus, est erat sodales eros, eget tincidunt nibh dolor nec arcu. Etiam eu ex a justo commodo pulvinar in sed felis. Praesent suscipit pellentesque fermentum.</p>
                         </div>
-                        <div class="tab-inner tab-content-profile" data-tab-content="tab-profile-content">
+                        <div class="tab-inner tab-content-profile" data-tab-content="tab-profile-content" id="profile-target">
                             <p>Pellentesque at magna volutpat, tincidunt arcu sit amet, lobortis nulla. Sed aliquet urna a enim semper, sed ultrices velit venenatis. Sed in interdum nisi. Ut vel quam nec massa tempor commodo id non leo. In molestie elit ut eros tempus lacinia. Duis mollis imperdiet sem sit amet mattis. In gravida velit vitae nibh vestibulum facilisis. Vestibulum sollicitudin, diam sit amet dictum ornare, lorem mauris maximus magna, quis finibus urna justo id odio. Aliquam sollicitudin rhoncus sapien, et interdum augue rutrum quis. Suspendisse tellus nulla, blandit nec orci in, sagittis fringilla nisl. Quisque convallis id arcu quis sagittis. Ut dictum, elit quis pharetra tempus, est erat sodales eros, eget tincidunt nibh dolor nec arcu. Etiam eu ex a justo commodo pulvinar in sed felis. Praesent suscipit pellentesque fermentum.</p>
                         </div>
                     </div>
@@ -390,20 +418,85 @@
     const $tabContent = $('.popup').find('.tab-wrapper');
 
     $('.call-popup').click(function(){
-        let id = $(this).data('id');
+        let finder_id = $(this).data('finder_id');
+        let target_id = $(this).data('target_id');
         $.ajax({
             method: 'GET',
-            url: '',
+            url: '<?php echo base_url("admin/event/get_matching_info") ?>',
             data: {
-                id: id,
+                finder_id: finder_id, target_id: target_id
             },
-            success: function(){
-                $popup.addClass('show');
+            success: function(res){
+                result = JSON.parse(res);
+                if (result.status == 200) {
+                    $('#company-finder').text(result.data.finder.company);
+                    $('#address-finder').text(result.data.finder.address);
+                    $('#connector-finder').text(result.data.finder.connector);
+                    $('#position-finder').text(result.data.finder.position);
+                    $('#email-finder').text(result.data.finder.email);
+                    $('#phone-finder').text(result.data.finder.phone);
+                    if (result.data.finder.file != null && result.data.finder.file != '') {
+                        link_finder = '<a href="<?php echo base_url('assets/upload/profile/') ?>'+ result.data.finder.file +'" download>Download</a>';
+                        $('#file-finder').html(link_finder);
+                    }
+                    
 
-                statePopupDefault();//Reset to Default Popup State
+                    $('#overview-finder').html(result.data.finder.overview);
+                    $('#profile-finder').html(result.data.finder.profile);
 
-                selectTab();
-                closePopup(); //Close Popup
+                    html_finder = '';
+                    if (result.data.finder.category.length > 0) {
+                        html_finder += '<ul class="list-group">';
+                        result.data.finder.category.forEach(function(value, key){
+                            html_finder += '<li class="list-group-item" style="background: #85a0ef; color: white"><i class="fas fa-bullseye"></i> '+ value.name +'</li>'
+                            value.sub.forEach(function(item, index){
+                                html_finder += '<li class="list-group-item">&nbsp;&nbsp;&nbsp;&nbsp;↳ '+ item.name +'</li>';
+                            });
+                        });
+                        html_finder += '</ul';
+                    }else{
+                        html_finder = 'Doanh nghiệp chưa chọn tiêu chí';
+                    }
+                    $('#category-finder .show').html(html_finder);
+
+                    $('#company-target').text(result.data.target.company);
+                    $('#address-target').text(result.data.target.address);
+                    $('#connector-target').text(result.data.target.connector);
+                    $('#position-target').text(result.data.target.position);
+
+                    $('#email-target').text(result.data.target.email);
+                    $('#phone-target').text(result.data.target.phone);
+                    if (result.data.target.file != null && result.data.target.file != '') {
+                        link_target = '<a href="<?php echo base_url('assets/upload/profile/') ?>'+ result.data.target.file +'" download>Download</a>';
+                        $('#file-target').html(link_target);
+                    }
+
+                    $('#overview-target').html(result.data.target.overview);
+                    $('#profile-target').html(result.data.target.profile);
+
+                    html_target = '';
+                    if (result.data.target.category.length > 0) {
+                        html_target += '<ul class="list-group">';
+                        result.data.target.category.forEach(function(value, key){
+                            html_target += '<li class="list-group-item" style="background: #85a0ef; color: white"><i class="fas fa-bullseye"></i> '+ value.name +'</li>'
+                            value.sub.forEach(function(item, index){
+                                html_target += '<li class="list-group-item">&nbsp;&nbsp;&nbsp;&nbsp;↳ '+ item.name +'</li>';
+                            });
+                        });
+                        html_target += '</ul';
+                    }else{
+                        html_target = 'Doanh nghiệp chưa chọn tiêu chí';
+                    }
+                    $('#category-target .show').html(html_target);
+                    $popup.addClass('show');
+
+                    statePopupDefault();//Reset to Default Popup State
+
+                    selectTab();
+                    closePopup(); //Close Popup
+                }else{
+                    alert('Không tồn tại finder hoặc target');
+                }
             }
         });
     });

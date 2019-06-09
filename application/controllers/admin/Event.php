@@ -13,6 +13,8 @@ class Event extends Admin_Controller
         $this->load->model('event_model');
         $this->load->model('temp_register_model');
         $this->load->model('matching_model');
+        $this->load->model('setting_model');
+        $this->load->model('category_model');
     }
 
     public function index(){
@@ -76,6 +78,8 @@ class Event extends Admin_Controller
         $this->pagination->initialize($config);
         $this->data['page_links'] = $this->pagination->create_links();
         $matching = $this->matching_model->get_all_by_event_id_with_pagination_search($event_id, $per_page, $this->data['page'], $keywords);
+        // echo '<pre>';
+        // print_r($matching);die;
 
         /**
          * Count data for render view
@@ -87,6 +91,7 @@ class Event extends Admin_Controller
         $this->data['rejected_matching'] = count($rejected_matching);
         $this->data['matching'] = $matching;
         $this->data['event_id'] = $event_id;
+        $this->data['event_date'] = $event['date'];
 
         $this->render('admin/event/detail_event_view');
     }
@@ -191,5 +196,62 @@ class Event extends Admin_Controller
             $result[] = $outputStart->add(new \DateInterval($expression))->format('H:i');
         }
         return $result;
+    }
+
+    public function get_matching_info(){
+        $finder_id = $this->input->get('finder_id');
+        $target_id = $this->input->get('target_id');
+        $select = 'company, address, connector, position, overview, profile, email, phone, file';
+        $finder = $this->temp_register_model->get_by_id_with_select($finder_id, $select);
+        $setting_finder = $this->setting_model->find(array('temp_register_id' => $finder_id));
+        if ($setting_finder) {
+            $category_id_finder = explode(',', $setting_finder['category_id']);
+            $category_finder = $this->get_category($category_id_finder);
+            $finder['category'] = $category_finder;
+        }else{
+            $finder['category'] = [];
+        }
+
+        $target = $this->temp_register_model->get_by_id_with_select($target_id, $select);
+        $setting_target = $this->setting_model->find(array('temp_register_id' => $target_id));
+        if ($setting_target) {
+            $category_id_target = explode(',', $setting_target['category_id']);
+            $category_target = $this->get_category($category_id_target);
+            $target['category'] = $category_target;
+        }else{
+            $target['category'] = [];
+        }
+        if ($finder && $target) {
+            return $this->output->set_status_header(200)
+                    ->set_output(json_encode(array('status' => 200, 'message' => 'Success', 'data' => ['finder' => $finder, 'target' => $target])));
+        }
+        return $this->output->set_status_header(200)
+                    ->set_output(json_encode(array('status' => 404, 'message' => 'Fail', 'data' => [$finder_id, $target_id])));
+    }
+
+    private function get_category($category_id){
+        $category = $this->category_model->fetch_by_ids($category_id);
+        $category_root = array();
+        if ($category) {
+            foreach ($category as $key => $value) {
+                if ($value['parent_id'] == 0) {
+                    $category_root[] = $value;
+                }
+            }
+        }
+        if ($category_root) {
+            foreach ($category_root as $key => $value) {
+                if ($category) {
+                    foreach ($category as $k => $val) {
+                        if ($val['parent_id'] == $value['id']) {
+                            $category_root[$key]['sub'][] = $val;
+                        }
+                    }
+                }
+                
+            }
+        }
+        return $category_root;
+
     }
 }
