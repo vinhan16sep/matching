@@ -98,4 +98,20 @@ class Matching_model extends CI_Model {
         return $result = $query->get()->result_array();
     }
 
+    public function reject_same_time_matching($matching, $log){
+        $this->db->set(array('status' => 2, 'log' => $log))
+            ->group_start()
+                ->where_in('finder_id', array($matching['finder_id'], $matching['target_id']))
+                ->or_where_in('target_id', array($matching['finder_id'], $matching['target_id']))
+            ->group_end()
+            ->where('event_id', $matching['event_id'])
+            ->where('date', $matching['date'])
+            ->where('status', 0)
+            ->update('matching');
+
+        if($this->db->affected_rows() == 1){
+            return true;
+        }
+        return false;
+    }
 }

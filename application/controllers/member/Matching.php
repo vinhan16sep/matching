@@ -4,7 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Matching extends Member_Controller {
 
-    // const EMAIL_ADMIN = 'http.mt.html@gmail.com';
+    const PARTNER_APPROVE = 1;
+    const PARTNER_REJECT = 2;
+    const REJECT_BY_ANOTHER_APPROVE = 3;
 
     function __construct() {
         parent::__construct();
@@ -159,11 +161,14 @@ class Matching extends Member_Controller {
 
     public function workflow(){
         $status = $this->input->get('status');
-        $data = array('status' => $status);
+        $data = array(
+            'status' => $status,
+            'log' => ($status == 1) ? self::PARTNER_APPROVE : self::PARTNER_REJECT
+        );
         $matching = $this->matching_model->get_by_id($this->input->get('id'));
         $result = $this->matching_model->update($this->input->get('id'), $data);
         if($status == 1 && $result){
-            $reject_rest_of_same_time = $this->matching_model->reject_rest_of_same_time();
+            $reject_rest_of_same_time = $this->matching_model->reject_same_time_matching($matching, self::REJECT_BY_ANOTHER_APPROVE);
         }
         if($result){
             $temp_register = $this->temp_register_model->get_by_id($matching['finder_id']);

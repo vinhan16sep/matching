@@ -14,7 +14,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h2>Tổng quan về doanh nghiệp</h2>
+                            <h6>Tổng quan về doanh nghiệp</h6>
                         </div>
                         <?php if ($temp_register['is_overview'] == 0): ?>
                             <ul class="list-group list-group-flush">
@@ -34,7 +34,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <strong>File PDF: </strong>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="<?php echo base_url('assets/upload/profile/') . $temp_register['file'] ?>" download> Tải về</a> 
+                                        <?php if(!empty($temp_register['file'])){ ?>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="<?php echo base_url('assets/upload/profile/') . $temp_register['file'] ?>" download> Tải về</a>
+                                        <?php } else { ?>
+                                        &nbsp; Chưa có file
+                                        <?php } ?>
                                 </li>
                             </ul>
                         <br>
