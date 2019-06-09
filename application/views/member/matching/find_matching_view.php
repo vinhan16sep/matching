@@ -44,7 +44,7 @@
                                         <?php if ($value): ?>
                                             <?php foreach ($value as $k => $val): ?>
                                                 <?php if ($k != 'name'): ?>
-                                                    <div style="display: none; margin-left: 20px" class="slide-service-<?php echo $key ?>">
+                                                    <div style="margin-left: 20px" class="slide-service-<?php echo $key ?>">
                                                         <?php
                                                         echo form_checkbox('category_id[]', $k, false, 'class="btn-service"');
                                                         echo $val . '<br>';
@@ -229,19 +229,11 @@
 <script type="text/javascript">
     $('.btn-event').click(function(){
         key = $(this).data('key');
-        if($(this).prop("checked") == true){
-            $('.slide-service-' + key).slideDown();
-        }else{
-            $('.slide-service-' + key).slideUp();
-        }
-    });
-    $('.btn-event').each(function(){
-        key = $(this).data('key');
-        if($(this).prop("checked") == true){
-            $('.slide-service-' + key).slideDown();
-        }else{
-            $('.slide-service-' + key).slideUp();
-        }
+        // if($(this).prop("checked") == true){
+        //     $('.slide-service-' + key).slideDown();
+        // }else{
+        //     $('.slide-service-' + key).slideUp();
+        // }
     });
 
     $('.btn-reg-info').click(function(){
