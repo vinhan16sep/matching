@@ -328,7 +328,7 @@ class Member_Controller extends MY_Controller {
             redirect('member/user/login');
         }
         $this->data['user_email'] = $this->ion_auth->user()->row()->email;
-        $this->data['page_title'] = 'Member area';
+        $this->data['page_title'] = 'Trang dành cho doanh nghiệp';
 
         // Get current class
         //$class = $this->router->fetch_class();

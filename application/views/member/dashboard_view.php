@@ -23,10 +23,10 @@
                                 <thead>
                                 <tr>
                                     <th style="text-align: center">STT</th>
+                                    <th style="text-align: center">Thời gian</th>
                                     <th style="text-align: center">DN</th>
                                     <th style="text-align: center">Đại diện</th>
                                     <th style="text-align: center">Chức danh</th>
-                                    <th style="text-align: center">Điện thoại</th>
                                     <th style="text-align: center">Trạng thái</th>
                                 </tr>
                                 </thead>
@@ -37,10 +37,10 @@
                                         ?>
                                         <tr id="<?= $item['id'] ?>">
                                             <td style="text-align: center"><?php echo $key + 1; ?></td>
+                                            <td style="text-align: center"><?php echo date('H:i d/m/Y', $item['date']); ?></td>
                                             <td style="text-align: center" class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
                                             <td style="text-align: center"><?php echo $item['register_info']['connector']; ?></td>
                                             <td style="text-align: center"><?php echo $item['register_info']['position']; ?></td>
-                                            <td style="text-align: center"><?php echo $item['register_info']['phone']; ?></td>
                                             <td style="text-align: center">
                                                 <?php if($item['status'] == 0){ ?>
                                                     <button title="Đang chờ được xử lý" class="btnApprove"
@@ -82,10 +82,10 @@
                                 <thead>
                                 <tr>
                                     <th style="text-align: center">STT</th>
+                                    <th style="text-align: center">Thời gian</th>
                                     <th style="text-align: center">DN</th>
                                     <th style="text-align: center">Đại diện</th>
                                     <th style="text-align: center">Chức danh</th>
-                                    <th style="text-align: center">Điện thoại</th>
                                     <th style="text-align: center">Trạng thái</th>
                                 </tr>
                                 </thead>
@@ -96,10 +96,10 @@
                                         ?>
                                         <tr id="<?= $item['id'] ?>">
                                             <td style="text-align: center"><?php echo $key + 1; ?></td>
+                                            <td style="text-align: center"><?php echo date('H:i d/m/Y', $item['date']); ?></td>
                                             <td style="text-align: center" class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
                                             <td style="text-align: center"><?php echo $item['register_info']['connector']; ?></td>
                                             <td style="text-align: center"><?php echo $item['register_info']['position']; ?></td>
-                                            <td style="text-align: center"><?php echo $item['register_info']['phone']; ?></td>
                                             <td style="text-align: center">
                                                 <?php if($item['status'] == 0){ ?>
                                                     <i class="fa fa-clock" aria-hidden="true"></i>

@@ -22,7 +22,7 @@
             <div class="form-group">
                 <?php echo form_label('Tổng quát công nghệ sử dụng: ', 'overview'); ?>
                 <?php echo form_error('overview', '<div class="error">', '</div>'); ?>
-                <?php echo form_input('overview', $temp_register['overview'], 'class="form-control"'); ?>
+                <?php echo form_textarea('overview', $temp_register['overview'], 'class="form-control"'); ?>
             </div>
             <div class="form-group">
                 <?php echo form_label('Hồ sơ doanh nghiệp (Tóm tắt lĩnh vự hoạt động): ', 'profile'); ?>

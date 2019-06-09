@@ -14,7 +14,7 @@ function send_mail($email, $data, $layout = 'user') {
     $mail->Password = "kcirpkmdlgbcobcv"; // your SMTP password or your gmail password
     $from = "support@vinasa.org.vn"; // Reply to this email
     $to = $email; // Recipients email ID
-    $name = 'http://bmo.vinasa.org.vn/'; // Recipient's name
+    $name = 'bmo.vinasa.org.vn'; // Recipient's name
     $mail->From = $from;
     $mail->FromName = $name; // Name to indicate where the email came from when the recepient received
     $mail->AddAddress($to, $name);
@@ -91,7 +91,7 @@ function send_mail_matching($email, $data, $matching = 'create', $role = 'admin'
     $mail->Password = "kcirpkmdlgbcobcv"; // your SMTP password or your gmail password
     $from = "support@vinasa.org.vn"; // Reply to this email
     $to = $email; // Recipients email ID
-    $name = 'http://bmo.vinasa.org.vn/'; // Recipient's name
+    $name = 'bmo.vinasa.org.vn'; // Recipient's name
     $mail->From = $from;
     $mail->FromName = $name; // Name to indicate where the email came from when the recepient received
     $mail->AddAddress($to, $name);
