@@ -22,7 +22,7 @@
         <header>
             <div class="nav-logo">
                 <a href="<?php echo base_url('')?>">
-                    <img src="<?php echo site_url('assets/img/logo.png') ?>" alt="Logo Vinasa">
+                    <img src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Vinasa">
                 </a>
             </div>
         </header>

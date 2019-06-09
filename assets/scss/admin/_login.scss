@@ -86,6 +86,14 @@
                         &.submit{
                             margin-top: $padding-double;
                         }
+
+                        small{
+                            padding-top: $padding-base;
+
+                            p{
+                                font-size: 0.75rem;
+                            }
+                        }
                     }
                 }
             }

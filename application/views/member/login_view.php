@@ -22,7 +22,7 @@
     <header>
         <div class="nav-logo">
             <a href="<?php echo base_url('')?>">
-                <img src="<?php echo site_url('assets/img/logo.png') ?>" alt="Logo Vinasa">
+                <img src="<?php echo site_url('assets/img/logo-w.svg') ?>" alt="Logo Vinasa">
             </a>
         </div>
     </header>
@@ -39,19 +39,20 @@
             </div>
 
             <div class="right">
-                <?php if ($this->session->flashdata('auth_message')): ?>
-                    <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('auth_message'); ?></h4>
-                    </div>
-                <?php endif ?>
-                <?php if ($this->session->flashdata('login_message_error')): ?>
-                    <div class="alert alert-warning alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('login_message_error'); ?></h4>
-                    </div>
-                <?php endif ?>
                 <div class="wrapper">
+                    <?php if ($this->session->flashdata('auth_message')): ?>
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('auth_message'); ?></h4>
+                        </div>
+                    <?php endif ?>
+                    <?php if ($this->session->flashdata('login_message_error')): ?>
+                        <div class="alert alert-warning alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('login_message_error'); ?></h4>
+                        </div>
+                    <?php endif ?>
+
                     <?php echo $this->session->flashdata('message'); ?>
                     <?php echo form_open('', array('class' => 'form-horizontal')); ?>
                     <div class="row">
