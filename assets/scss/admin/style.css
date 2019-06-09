@@ -180,5 +180,9 @@ p {
           margin-bottom: 30px; }
         #login .row .right .content form .form-group.submit {
           margin-top: 30px; }
+        #login .row .right .content form .form-group small {
+          padding-top: 15px; }
+          #login .row .right .content form .form-group small p {
+            font-size: 0.75rem; }
 
 /*# sourceMappingURL=style.css.map */

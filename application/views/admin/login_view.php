@@ -5,7 +5,7 @@
 
             <div class="logo">
                 <a href="<?php echo base_url('admin/user/login/')?>">
-                    <img src="<?php echo site_url('assets/img/logo.png') ?>" alt="Logo Vinasa">
+                    <img src="<?php echo site_url('assets/img/logo-w.svg') ?>" alt="Logo Vinasa">
                 </a>
             </div>
 
@@ -23,7 +23,7 @@
                     Please enter your username and password below
                 </h6>
 
-                <?php echo $this->session->flashdata('message'); ?>
+
                 <?php echo form_open('', array('class' => 'form-horizontal')); ?>
                     <div class="form-group">
                         <?php echo form_label('Tài khoản', 'identity'); ?>
@@ -34,6 +34,7 @@
                         <?php echo form_label('Mật khẩu', 'password'); ?>
                         <?php echo form_error('password'); ?>
                         <?php echo form_password('password', '', 'class="form-control"'); ?>
+                        <?php echo '<small class="form-text text-muted">' . $this->session->flashdata('message') . '</small>' ?>
                     </div>
                     <div class="form-group submit">
                         <?php echo form_submit('submit', 'Đăng nhập', 'class="btn btn-primary btn-lg btn-block"'); ?>
