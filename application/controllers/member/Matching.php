@@ -158,9 +158,13 @@ class Matching extends Member_Controller {
     }
 
     public function workflow(){
-        $data = array('status' => $this->input->get('status'));
+        $status = $this->input->get('status');
+        $data = array('status' => $status);
         $matching = $this->matching_model->get_by_id($this->input->get('id'));
         $result = $this->matching_model->update($this->input->get('id'), $data);
+        if($status == 1 && $result){
+            $reject_rest_of_same_time = $this->matching_model->reject_rest_of_same_time();
+        }
         if($result){
             $temp_register = $this->temp_register_model->get_by_id($matching['finder_id']);
 
