@@ -31,7 +31,7 @@
     }
 </style>
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid" id="event_detail">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -39,7 +39,6 @@
 
   <!-- Content Row -->
     <div class="row">
-        
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-6 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
@@ -76,47 +75,6 @@
                 </div>
             </div>
         </div>
-
-<!--    <div class="col-xl-3 col-md-6 mb-4">-->
-<!--      <div class="card border-left-info shadow h-100 py-2">-->
-<!--        <div class="card-body">-->
-<!--          <div class="row no-gutters align-items-center">-->
-<!--            <div class="col mr-2">-->
-<!--              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pending ...</div>-->
-<!--              <div class="row no-gutters align-items-center">-->
-<!--                <div class="col-auto">-->
-<!--                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0000000</div>-->
-<!--                </div>-->
-<!--                <div class="col">-->
-<!--                  <div class="progress progress-sm mr-2">-->
-<!--                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="col-auto">-->
-<!--              <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!---->
-<!--    <div class="col-xl-3 col-md-6 mb-4">-->
-<!--      <div class="card border-left-warning shadow h-100 py-2">-->
-<!--        <div class="card-body">-->
-<!--          <div class="row no-gutters align-items-center">-->
-<!--            <div class="col mr-2">-->
-<!--              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending ...</div>-->
-<!--              <div class="h5 mb-0 font-weight-bold text-gray-800">0000000</div>-->
-<!--            </div>-->
-<!--            <div class="col-auto">-->
-<!--              <i class="fas fa-comments fa-2x text-gray-300"></i>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
     </div>
 
   <!-- Content Row -->
@@ -133,13 +91,6 @@
                         <a title="Xem toàn bộ" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-arrow-alt-circle-right text-primary"></i>
                         </a>
-                        <!--            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">-->
-                            <!--              <div class="dropdown-header">Dropdown Header:</div>-->
-                            <!--              <a class="dropdown-item" href="#">Action</a>-->
-                            <!--              <a class="dropdown-item" href="#">Another action</a>-->
-                            <!--              <div class="dropdown-divider"></div>-->
-                            <!--              <a class="dropdown-item" href="#">Something else here</a>-->
-                            <!--            </div>-->
                     </div>
                 </div>
                 <!-- Card Body -->
@@ -195,7 +146,7 @@
                                                 <td style="text-align: center"><?php echo $value['company_target'] ?></td>
                                                 <td style="text-align: center"><?php echo date('d-m-Y, H:i:s', $value['date']) ?></td>
                                                 <td style="text-align: center" title="Thông tin cuộc hẹn">
-                                                    <a href=""><i class="fas fa-info-circle"></i></a>
+                                                    <a href="#" class="call-popup"><i class="fas fa-info-circle"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach ?>
@@ -236,6 +187,154 @@
                         <span class="mr-2">
                             <i class="fas fa-circle" style="color: #dc3545"></i> Đã từ chối
                         </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="matchingInfo">
+        <button type="button" class="popup-close">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="popup-content">
+            <div class="item left">
+                <div class="item-header">
+                    <h6>
+                        Company
+                    </h6>
+                </div>
+
+                <div class="item-content">
+                    <div class="tab-control">
+                        <a href="#" class="tab active" data-tab="tab-info">
+                            Thong tin
+                        </a>
+                        <a href="#" class="tab" data-tab="tab-category">
+                            Tieu chi
+                        </a>
+                        <a href="#" class="tab" data-tab="tab-overview">
+                            Tong quat
+                        </a>
+                        <a href="#" class="tab" data-tab="tab-profile">
+                            Ho so
+                        </a>
+                    </div>
+
+                    <div class="tab-wrapper">
+                        <div class="tab-inner tab-content-info show" data-tab-content="tab-info-content">
+                            <div class="cover">
+                                <img id="cover_1" src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company 1">
+
+                                <div class="mask mask-circle">
+                                    <img id="logo_1" src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company 1">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Công Ty</label>
+                                    <h6 id="company">No data</h6>
+                                </div>
+
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Địa Chỉ</label>
+                                    <h6 id="address">No data</h6>
+                                </div>
+
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Người Đại Diện</label>
+                                    <h6 id="connector">No data</h6>
+                                </div>
+
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Chức Danh</label>
+                                    <h6 id="position">No data</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-inner tab-content-category" data-tab-content="tab-category-content">
+                            2
+                        </div>
+                        <div class="tab-inner tab-content-overview" data-tab-content="tab-overview-content">
+                            <p>Aenean nec posuere tellus. In dictum, nisl vel pharetra laoreet, ligula urna feugiat arcu, rutrum aliquam ante erat quis mi. Quisque in pellentesque ipsum. Ut pretium orci tellus, a molestie diam venenatis a. Morbi vitae lorem dignissim, ornare orci at, euismod lorem. Morbi at eros enim. Phasellus efficitur faucibus arcu a mollis. Aenean elit dui, rutrum eget venenatis id, scelerisque id sapien. Nam vitae pellentesque sapien. Vestibulum vel mi tempor, sodales mi id, hendrerit diam. Morbi auctor vel quam et ullamcorper. Aliquam aliquet in dolor quis tempus. Quisque dolor nisi, tristique non suscipit nec, iaculis in purus. Nulla pulvinar erat turpis, non bibendum nibh semper ac. Sed elementum efficitur magna, nec cursus mi porta in.</p>
+                        </div>
+                        <div class="tab-inner tab-content-profile" data-tab-content="tab-profile-content">
+                            <p>Aenean nec posuere tellus. In dictum, nisl vel pharetra laoreet, ligula urna feugiat arcu, rutrum aliquam ante erat quis mi. Quisque in pellentesque ipsum. Ut pretium orci tellus, a molestie diam venenatis a. Morbi vitae lorem dignissim, ornare orci at, euismod lorem. Morbi at eros enim. Phasellus efficitur faucibus arcu a mollis. Aenean elit dui, rutrum eget venenatis id, scelerisque id sapien. Nam vitae pellentesque sapien. Vestibulum vel mi tempor, sodales mi id, hendrerit diam. Morbi auctor vel quam et ullamcorper. Aliquam aliquet in dolor quis tempus. Quisque dolor nisi, tristique non suscipit nec, iaculis in purus. Nulla pulvinar erat turpis, non bibendum nibh semper ac. Sed elementum efficitur magna, nec cursus mi porta in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="icon-connect">
+                <i class="fas fa-link"></i>
+            </div>
+
+            <div class="item right">
+                <div class="item-header">
+                    <h6>
+                        Target
+                    </h6>
+                </div>
+
+                <div class="item-content">
+                    <div class="tab-control">
+                        <a href="#" class="tab active" data-tab="tab-info">
+                            Thong tin
+                        </a>
+                        <a href="#" class="tab" data-tab="tab-category">
+                            Tieu chi
+                        </a>
+                        <a href="#" class="tab" data-tab="tab-overview">
+                            Tong quat
+                        </a>
+                        <a href="#" class="tab" data-tab="tab-profile">
+                            Ho so
+                        </a>
+                    </div>
+
+                    <div class="tab-wrapper">
+                        <div class="tab-inner tab-content-info show" data-tab-content="tab-info-content">
+                            <div class="cover">
+                                <img id="cover_2" src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company 2">
+
+                                <div class="mask mask-circle">
+                                    <img id="logo_2" src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company 2">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Công Ty</label>
+                                    <h6 id="company">No data</h6>
+                                </div>
+
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Địa Chỉ</label>
+                                    <h6 id="address">No data</h6>
+                                </div>
+
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Người Đại Diện</label>
+                                    <h6 id="connector">No data</h6>
+                                </div>
+
+                                <div class="item col-xs-12 col-lg-6">
+                                    <label>Chức Danh</label>
+                                    <h6 id="position">No data</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-inner tab-content-category" data-tab-content="tab-category-content">
+                            2
+                        </div>
+                        <div class="tab-inner tab-content-overview" data-tab-content="tab-overview-content">
+                            <p>Pellentesque at magna volutpat, tincidunt arcu sit amet, lobortis nulla. Sed aliquet urna a enim semper, sed ultrices velit venenatis. Sed in interdum nisi. Ut vel quam nec massa tempor commodo id non leo. In molestie elit ut eros tempus lacinia. Duis mollis imperdiet sem sit amet mattis. In gravida velit vitae nibh vestibulum facilisis. Vestibulum sollicitudin, diam sit amet dictum ornare, lorem mauris maximus magna, quis finibus urna justo id odio. Aliquam sollicitudin rhoncus sapien, et interdum augue rutrum quis. Suspendisse tellus nulla, blandit nec orci in, sagittis fringilla nisl. Quisque convallis id arcu quis sagittis. Ut dictum, elit quis pharetra tempus, est erat sodales eros, eget tincidunt nibh dolor nec arcu. Etiam eu ex a justo commodo pulvinar in sed felis. Praesent suscipit pellentesque fermentum.</p>
+                        </div>
+                        <div class="tab-inner tab-content-profile" data-tab-content="tab-profile-content">
+                            <p>Pellentesque at magna volutpat, tincidunt arcu sit amet, lobortis nulla. Sed aliquet urna a enim semper, sed ultrices velit venenatis. Sed in interdum nisi. Ut vel quam nec massa tempor commodo id non leo. In molestie elit ut eros tempus lacinia. Duis mollis imperdiet sem sit amet mattis. In gravida velit vitae nibh vestibulum facilisis. Vestibulum sollicitudin, diam sit amet dictum ornare, lorem mauris maximus magna, quis finibus urna justo id odio. Aliquam sollicitudin rhoncus sapien, et interdum augue rutrum quis. Suspendisse tellus nulla, blandit nec orci in, sagittis fringilla nisl. Quisque convallis id arcu quis sagittis. Ut dictum, elit quis pharetra tempus, est erat sodales eros, eget tincidunt nibh dolor nec arcu. Etiam eu ex a justo commodo pulvinar in sed felis. Praesent suscipit pellentesque fermentum.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -284,6 +383,70 @@
             cutoutPercentage: 80,
         },
     });
+
+    //Call Popup Event Info
+    const $popup = $('.popup');
+    const $tabControl = $('.popup').find('.tab-control');
+    const $tabContent = $('.popup').find('.tab-wrapper');
+
+    $('.call-popup').click(function(){
+        let id = $(this).data('id');
+        $.ajax({
+            method: 'GET',
+            url: '',
+            data: {
+                id: id,
+            },
+            success: function(){
+                $popup.addClass('show');
+
+                statePopupDefault();//Reset to Default Popup State
+
+                selectTab();
+                closePopup(); //Close Popup
+            }
+        });
+    });
+
+    function selectTab(){
+        const $btn = $tabControl.find('a.tab');
+
+        $btn.each(function(){
+            $(this).on('click', function(e){
+                e.preventDefault();
+
+                //Indentify Tab
+                let tabTarget = $(this).data('tab');
+
+                $btn.removeClass('active'); //Reset Tab Actived
+                $tabControl.find('a[data-tab="' + tabTarget + '"]').addClass('active'); //Indetify Clicked Tab
+
+                //Show Selected Tab Content
+                $tabContent.find('.tab-inner').removeClass('show');
+                $tabContent.find('.tab-inner[data-tab-content="' + tabTarget + '-content"]').addClass('show');
+            })
+        })
+    }
+
+    function closePopup(){
+        const $btnClose = $('.popup').find('.popup-close');
+
+        $btnClose.on('click', function(){
+            $(this).closest('.popup').removeClass('show');
+        })
+    }
+
+    function statePopupDefault(){
+        const $btn = $tabControl.find('a.tab');
+
+        $btn.removeClass('active'); //Reset Tab Actived
+        $tabControl.find('a:first-child').addClass('active'); //Indetify Clicked Tab
+
+        //Show Selected Tab Content
+        $tabContent.find('.tab-inner').removeClass('show');
+        $tabContent.find('.tab-inner:first-child').addClass('show');
+    }
+
 </script>
 <!-- /.container-fluid -->
 
