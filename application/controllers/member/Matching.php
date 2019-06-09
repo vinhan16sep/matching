@@ -71,10 +71,12 @@ class Matching extends Member_Controller {
     public function create(){
         /**
          * int $target (id of table temp_register)
-         * int $event (id of event)
+         * int $event (id of table event)
+         * int $current_user_id (id of table users)
          */
         $target = $this->input->get('target');
         $event = $this->input->get('event');
+        $current_user_id = $this->ion_auth->user()->row()->id;
 
         $this->data['target_id'] = $target;
         $this->data['event_id'] = $event;
@@ -82,10 +84,16 @@ class Matching extends Member_Controller {
         if($target && $event){
             /**
              * Temp register data of target
-             * Get by target id
+             * Get by target id and event id
              */
-            $result = $this->temp_register_model->get_by_id($target);
+            $result = $this->temp_register_model->get_by_id_and_event($target, $event);
             $this->data['result'] = $result;
+            /**
+             * Temp register data of current user
+             * Get by current user id and event id
+             */
+            $logged_in_result = $this->temp_register_model->get_by_user_id_and_event($current_user_id, $event);
+
             /**
              * Get current event data
              * In this case, date of current event will be used
@@ -93,7 +101,23 @@ class Matching extends Member_Controller {
             $event_info = $this->event_model->fetch_by_id($event);
             $this->data['event'] = $event_info;
 
-            $this->data['time_range'] = build_time_range($event_info['start'], $event_info['duration'], $event_info['step']);
+            /**
+             * Get all allowed time, which set by admin, by default
+             */
+            $time_range = build_time_range($event_info['start'], $event_info['duration'], $event_info['step']);
+
+            /**
+             * Get matched date time of current user, target user and current event, with Approved | status = 1
+             * This result will be remove from above array $time_range to get available time of current user, target user and current event
+             */
+            $raw_booked_time = $this->matching_model->get_booked_time($current_user_id, $target, $event);
+            foreach($raw_booked_time as $key => $datetime){
+                $temp_datetime = date('H:i', $datetime['date']);
+                if (($key = array_search($temp_datetime, $time_range)) !== false) {
+                    unset($time_range[$key]);
+                }
+            }
+            $this->data['time_range'] = array_values($time_range);
         }else{
             redirect('member/matching/find','refresh');
         }

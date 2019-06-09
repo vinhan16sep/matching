@@ -84,4 +84,18 @@ class Matching_model extends CI_Model {
         return false;
     }
 
+    public function get_booked_time($current_user_id, $target, $event){
+        $query = $this->db->select('date')
+            ->from('matching')
+            ->group_start()
+                ->where_in('finder_id', array($current_user_id, $target))
+                ->or_where_in('target_id', array($current_user_id, $target))
+            ->group_end()
+            ->where('event_id', $event)
+            ->where('status', 1)
+            ->order_by("date", "desc");
+
+        return $result = $query->get()->result_array();
+    }
+
 }

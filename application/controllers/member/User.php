@@ -107,7 +107,7 @@ class User extends MY_Controller {
                     redirect('member/user/register');
                 }
                 $code = $this->check_code( substr(uniqid(),0,8) );
-                $data = [
+                $data = array(
                     'company' => $params['company'],
                     'connector' => $params['connector'],
                     'position' => $params['position'],
@@ -118,18 +118,18 @@ class User extends MY_Controller {
                     'event_id' => $params['event_id'],
                     'created_at' => now(),
                     'updated_at' => now(),
-                ];
+                );
                 $this->db->trans_begin();
                 $insert = $this->temp_register_model->save($data);
                 if ($insert) {
-                    $email_data = [
+                    $email_data = array(
                         'company' => $params['company'],
                         'connector' => $params['connector'],
                         'position' => $params['position'],
                         'phone' => $params['phone'],
                         'address' => $params['address'],
                         'code' => $code,
-                    ];
+                    );
                     $email = send_mail($params['email'], $email_data, 'user');
 
                     if (!$email) {
@@ -164,9 +164,9 @@ class User extends MY_Controller {
     }
 
     private function check_code($code){
-        $where = [
+        $where = array(
             'code' => $code
-        ];
+        );
         $check_code = $this->temp_register_model->find_row_array($where);
 
         if ( $check_code > 0 ) {
