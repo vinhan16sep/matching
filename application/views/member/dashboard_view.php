@@ -1,5 +1,13 @@
 <!-- Begin Page Content -->
+
 <div class="container-fluid" id="dashboard-member">
+    <?php
+        $log = array(
+            1 => 'Đối tác đồng ý',
+            2 => 'Đối tác từ chối',
+            3 => 'Từ chối do cuộc hẹn khác'
+        );
+    ?>
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -28,6 +36,7 @@
                                     <th style="text-align: center">Đại diện</th>
                                     <th style="text-align: center">Chức danh</th>
                                     <th style="text-align: center">Trạng thái</th>
+                                    <th style="text-align: center">Ghi chú</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -54,6 +63,7 @@
                                                     <i class="fa fa-ban" aria-hidden="true" style="color: red"></i>
                                                 <?php } ?>
                                             </td>
+                                            <td style=""><?php echo isset($log[$item['log']]) ? $log[$item['log']] : ''; ?></td>
                                         </tr>
                                         <?php
                                     }
@@ -87,6 +97,7 @@
                                     <th style="text-align: center">Đại diện</th>
                                     <th style="text-align: center">Chức danh</th>
                                     <th style="text-align: center">Trạng thái</th>
+                                    <th style="text-align: center">Ghi chú</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -109,6 +120,7 @@
                                                     <i class="fa fa-ban" aria-hidden="true" style="color: red"></i>
                                                 <?php } ?>
                                             </td>
+                                            <td style=""><?php echo isset($log[$item['log']]) ? $log[$item['log']] : ''; ?></td>
                                         </tr>
                                         <?php
                                     }
@@ -129,7 +141,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối gặp!</p>
+                    <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối.</p>
                     <input type="hidden" id="hiddenId" name="hiddenId">
 
                     <div class="buttons">

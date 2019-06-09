@@ -38,7 +38,7 @@ class Overview extends Member_Controller {
 		$this->form_validation->set_rules('overview', 'Tổng quát công nghệ ', 'required');
 		$this->form_validation->set_rules('profile', 'Hồ sơ doanh nghiệp', 'required');
 		if ($temp_register['is_overview'] == 0) {
-			$this->form_validation->set_rules('file', 'File PDF', 'callback_validate_file');
+//			$this->form_validation->set_rules('file', 'File PDF', 'callback_validate_file');
 		}
 		
 
