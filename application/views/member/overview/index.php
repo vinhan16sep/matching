@@ -29,11 +29,11 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['overview'] ?>
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>Hồ sơ doanh nghiệp (Tóm tắt lĩnh vự hoạt động): </strong><br>
+                                    <strong>Hồ sơ doanh nghiệp (Tóm tắt lĩnh vực hoạt động): </strong><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['profile'] ?>
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>File PDF: </strong><br>
+                                    <strong>File PDF: </strong>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="<?php echo base_url('assets/upload/profile/') . $temp_register['file'] ?>" download> Tải về</a> 
                                 </li>
                             </ul>
