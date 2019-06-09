@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Matching extends Member_Controller {
 
-    const PARTNER_APPROVE = 1;
-    const PARTNER_REJECT = 2;
+    const APPROVE = 1;
+    const REJECT = 2;
     const REJECT_BY_ANOTHER_APPROVE = 3;
 
     function __construct() {
@@ -163,7 +163,7 @@ class Matching extends Member_Controller {
         $status = $this->input->get('status');
         $data = array(
             'status' => $status,
-            'log' => ($status == 1) ? self::PARTNER_APPROVE : self::PARTNER_REJECT
+            'log' => ($status == 1) ? self::APPROVE : self::REJECT
         );
         $matching = $this->matching_model->get_by_id($this->input->get('id'));
         $result = $this->matching_model->update($this->input->get('id'), $data);
