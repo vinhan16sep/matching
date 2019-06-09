@@ -38,6 +38,7 @@ class Event extends Admin_Controller
     }
 
     public function detail($event_id){
+        $this->load->helper('form');
         $event = $this->event_model->fetch_by_id($event_id);
         /**
          * List all of temp register of 1 event
@@ -57,6 +58,25 @@ class Event extends Admin_Controller
         $this->data['page_title'] = 'Tổng quan sự kiện ' . '<span style="color:red;">' . $event['name'] . '</span>';
 
 
+        $keywords = '';
+        if($this->input->get('keywords')){
+            $keywords = $this->input->get('keywords');
+        }
+        $this->data['keywords'] = $keywords;
+        $total_rows  = $this->matching_model->count_search('', $keywords);
+        $this->load->library('pagination');
+        $config = array();
+        $base_url = base_url('admin/event/detail/' . $event_id);
+        $per_page = 10;
+        $uri_segment = 5;
+        foreach ($this->pagination_config($base_url, $total_rows, $per_page, $uri_segment) as $key => $value) {
+            $config[$key] = $value;
+        }
+        $this->data['page'] = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
+        $this->pagination->initialize($config);
+        $this->data['page_links'] = $this->pagination->create_links();
+        $matching = $this->matching_model->get_all_by_event_id_with_pagination_search($event_id, $per_page, $this->data['page'], $keywords);
+
         /**
          * Count data for render view
          */
@@ -65,6 +85,8 @@ class Event extends Admin_Controller
         $this->data['pending_matching'] = count($pending_matching);
         $this->data['approved_matching'] = count($approved_matching);
         $this->data['rejected_matching'] = count($rejected_matching);
+        $this->data['matching'] = $matching;
+        $this->data['event_id'] = $event_id;
 
         $this->render('admin/event/detail_event_view');
     }

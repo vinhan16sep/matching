@@ -58,49 +58,51 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th style="text-align: center">STT</th>
-                            <th style="text-align: center">Code</th>
-                            <th style="text-align: center">Sự kiện</th>
-                            <th style="text-align: center">Doanh nghiệp</th>
-                            <th style="text-align: center">Người đại diện</th>
-                            <th style="text-align: center">Chức danh</th>
-                            <th style="text-align: center">Địa chỉ</th>
-                            <th style="text-align: center">Số điện thoại</th>
-                            <th style="text-align: center">Email</th>
-                            <th style="text-align: center">Thao tác</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if($result){ ?>
-                            <?php foreach($result as $key => $item){ ?>
-                                <tr id="<?= $item['id'] ?>">
-                                    <td style="text-align: center"><?php echo $key + 1; ?></td>
-                                    <td><?php echo $item['code']; ?></td>
-                                    <td style="display: none;" class="reg-client-event-id"><?php echo $item['event_id']; ?></td>
-                                    <td><?php echo $item['event_name']; ?></td>
-                                    <td class="reg-client-company"><?php echo $item['company']; ?></td>
-                                    <td><?php echo $item['connector']; ?></td>
-                                    <td><?php echo $item['position']; ?></td>
-                                    <td><?php echo $item['address']; ?></td>
-                                    <td><?php echo $item['phone']; ?></td>
-                                    <td class="reg-client-email"><?php echo $item['email']; ?></td>
-                                    <td style="text-align: center">
-                                        <a title="Tạo tài khoản cho đơn đăng ký" class="btn-reg-client" href="#" data-toggle="modal" data-target="#register-client-form">
-                                            <i class="fa fa-user-plus" aria-hidden="true"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4>
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center">STT</th>
+                                <th style="text-align: center">Code</th>
+                                <th style="text-align: center">Sự kiện</th>
+                                <th style="text-align: center">Doanh nghiệp</th>
+                                <th style="text-align: center">Người đại diện</th>
+                                <th style="text-align: center">Chức danh</th>
+                                <th style="text-align: center">Địa chỉ</th>
+                                <th style="text-align: center">Số điện thoại</th>
+                                <th style="text-align: center">Email</th>
+                                <th style="text-align: center">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if($result){ ?>
+                                <?php foreach($result as $key => $item){ ?>
+                                    <tr id="<?= $item['id'] ?>">
+                                        <td style="text-align: center"><?php echo $key + 1; ?></td>
+                                        <td><?php echo $item['code']; ?></td>
+                                        <td style="display: none;" class="reg-client-event-id"><?php echo $item['event_id']; ?></td>
+                                        <td><?php echo $item['event_name']; ?></td>
+                                        <td class="reg-client-company"><?php echo $item['company']; ?></td>
+                                        <td><?php echo $item['connector']; ?></td>
+                                        <td><?php echo $item['position']; ?></td>
+                                        <td><?php echo $item['address']; ?></td>
+                                        <td><?php echo $item['phone']; ?></td>
+                                        <td class="reg-client-email"><?php echo $item['email']; ?></td>
+                                        <td style="text-align: center">
+                                            <a title="Tạo tài khoản cho đơn đăng ký" class="btn-reg-client" href="#" data-toggle="modal" data-target="#register-client-form">
+                                                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            <?php }else{ ?>
+                                <div class="post">Chưa có sự kiện!</div>
                             <?php } ?>
-                        <?php }else{ ?>
-                            <div class="post">Chưa có sự kiện!</div>
-                        <?php } ?>
-                    </tbody>
-                </table>
-                <div class="dataTables_paginate paging_simple_numbers">
-                    <?php echo $page_links ?>
+                        </tbody>
+                    </table>
+                    <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                        <?php echo $page_links ?>
+                    </div>
                 </div>
             </div>
         </div>

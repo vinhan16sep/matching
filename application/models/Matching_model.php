@@ -115,4 +115,32 @@ class Matching_model extends CI_Model {
         }
         return false;
     }
+
+    public function get_all_by_event_id_with_pagination_search($event_id, $limit = NULL, $start = NULL, $keyword='') {
+        $this->db->select('matching.*, temp_register_finder.company as company_finder, temp_register_target.company as company_target');
+        $this->db->from('matching');
+        $this->db->join('temp_register as temp_register_finder', 'matching.finder_id = temp_register_finder.id', 'left');
+        $this->db->join('temp_register as temp_register_target', 'matching.target_id = temp_register_target.id', 'left');
+        $this->db->where('matching.event_id', $event_id);
+        $this->db->where('matching.status', 1);
+        $this->db->like('temp_register_finder.company', $keyword);
+        $this->db->or_like('temp_register_target.company', $keyword);
+        $this->db->limit($limit, $start);
+        $this->db->order_by("matching.id", "desc");
+
+        return $result = $this->db->get()->result_array();
+    }
+
+    public function count_search($event_id = '', $keyword = ''){
+        $this->db->select('matching.*, temp_register_finder.company as company_finder, temp_register_target.company as company_target');
+        $this->db->from('matching');
+        $this->db->join('temp_register as temp_register_finder', 'matching.finder_id = temp_register_finder.id', 'left');
+        $this->db->join('temp_register as temp_register_target', 'matching.target_id = temp_register_target.id', 'left');
+        $this->db->like('temp_register_finder.company', $keyword);
+        $this->db->or_like('temp_register_target.company', $keyword);
+        $this->db->where('matching.event_id', $event_id);
+        $this->db->where('matching.status', 1);
+
+        return $result = $this->db->get()->num_rows();
+    }
 }
