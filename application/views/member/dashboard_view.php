@@ -132,6 +132,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
+                <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối gặp!</p>
                 <input type="hidden" id="hiddenId" name="hiddenId">
                 <a title="Đồng ý" class="btn btn-primary workflow" href="#" style="width: 45%" data-status="1">
                     <i class="fa fa-handshake" aria-hidden="true"></i>
@@ -153,27 +154,29 @@
     });
 
     $('.workflow').click(function(){
-
-        if(confirm('Bạn chắc chắn muốn thực hiện hành động này?')){
-            $.ajax({
-                method: 'GET',
-                url: '<?php echo base_url('member/matching/workflow') ?>',
-                data: {
-                    id: $('#hiddenId').val(),
-                    status: $(this).data('status')
-                },
-                success: function(res){
-                    var result = JSON.parse(res);
-                    if(result.message == 1){
-                        alert('Đã hoàn thành');
-                        window.location.reload();
-                    }else{
-                        alert('Không đổi được trạng thái');
-                        window.location.reload();
-                    }
+        $('.workflow').addClass('disabled');
+        $.ajax({
+            method: 'GET',
+            url: '<?php echo base_url('member/matching/workflow') ?>',
+            data: {
+                id: $('#hiddenId').val(),
+                status: $(this).data('status')
+            },
+            beforeSend: function() {
+                $('.workflow').hide();
+                $('.modal-body').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Loading...</button');
+            },
+            success: function(res){
+                var result = JSON.parse(res);
+                if(result.message == 1){
+                    alert('Đã hoàn thành');
+                    window.location.reload();
+                }else{
+                    alert('Không đổi được trạng thái');
+                    window.location.reload();
                 }
-            });
-        }
+            }
+        });
     });
 </script>
 <!-- /.container-fluid -->

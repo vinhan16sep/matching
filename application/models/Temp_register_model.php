@@ -86,6 +86,13 @@ class Temp_register_model extends MY_Model
         return $this->db->get()->row_array();
     }
 
+    public function get_by_id_and_event($id, $event){
+        $this->db->from('temp_register');
+        $this->db->where('id', $id);
+        $this->db->where('event_id', $event);
+        return $this->db->get()->row_array();
+    }
+
     public function get_by_id_with_select($id, $select){
         $this->db->from('temp_register');
         $this->db->select($select);
