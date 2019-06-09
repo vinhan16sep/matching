@@ -6,6 +6,17 @@ class Matching_model extends CI_Model {
         parent::__construct();
     }
 
+    public function get_list_matching_by_event_and_status($event_id, $status){
+        $query = $this->db->select('*')
+            ->from('matching')
+            ->where('event_id', $event_id)
+            ->where('status', $status)
+            ->order_by("id", "desc");
+
+        return $this->db->get()->result_array();
+    }
+    //////////////////
+
     public function fetch_by_id($id){
         $query = $this->db->select('*')
             ->from('event')
@@ -38,16 +49,6 @@ class Matching_model extends CI_Model {
             return true;
         }
         return false;
-    }
-
-    public function fetch_all_by_active() {
-        $query = $this->db->select('*')
-            ->from('event')
-            ->where('is_deleted', 0)
-            ->where('is_active', 1)
-            ->order_by("id", "desc");
-
-        return $result = $query->get()->result_array();
     }
 
     public function get_send_request_by_temp_register_id_and_event($temp_register_id, $event_id){

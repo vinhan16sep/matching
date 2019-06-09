@@ -205,6 +205,8 @@ class Admin_Controller extends MY_Controller {
         $this->data['user_company'] = $this->ion_auth->user()->row()->company;
         $this->data['page_title'] = 'Administrator area';
 
+        $this->load->model('event_model');
+
         // Get current class
         //$class = $this->router->fetch_class();
         // Set timezone
@@ -218,15 +220,8 @@ class Admin_Controller extends MY_Controller {
             'modified_by' => $this->ion_auth->user()->row()->email
         );
 
-        $this->data['eventYear'] = (date('m') == 12) ? (date('Y') + 1) : date('Y');
-        $this->data['rule3Year'] = array(
-            $this->data['eventYear'] - 3,
-            $this->data['eventYear'] - 2,
-            $this->data['eventYear'] - 1
-        );
+        $this->data['active_event'] = $this->event_model->fetch_all_by_active();
     }
-
-
 
     protected function render($the_view = NULL, $template = 'admin_master') {
         parent::render($the_view, $template);

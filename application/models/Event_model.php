@@ -15,6 +15,16 @@ class Event_model extends CI_Model {
         return $query->num_rows();
     }
 
+    public function count_active() {
+        $query = $this->db->select('*')
+            ->from('event')
+            ->where('is_deleted', 0)
+            ->where('is_active', 1)
+            ->get();
+
+        return $query->num_rows();
+    }
+
     public function fetch_all_pagination($limit = NULL, $start = NULL) {
         $query = $this->db->select('*')
             ->from('event')

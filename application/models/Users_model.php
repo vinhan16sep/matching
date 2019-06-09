@@ -8,6 +8,17 @@ class Users_model extends CI_Model{
 		parent::__construct();
 	}
 
+    public function get_all_user_except_admin(){
+        $query = $this->db->select('users_groups.*, users.*')
+            ->from('users_groups')
+            ->join('users', 'users.id = users_groups.user_id')
+            ->where(array('users_groups.group_id' => 2))
+            ->get();
+
+        return $query->num_rows();
+    }
+
+	/////////////////
 	public function fetch_all_users_groups(){
         $query = $this->db->select('*')
             ->from('users_groups')

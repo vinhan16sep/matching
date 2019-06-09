@@ -16,6 +16,29 @@ class Temp_register_model extends MY_Model
 		parent::__construct();
 	}
 
+	public function get_list_temp_register_by_event_id($event_id){
+        $query = $this->db->select('*')
+            ->from('temp_register')
+            ->where('is_deleted', 0)
+            ->where('event_id', $event_id)
+            ->order_by("id", "desc");
+
+        return $this->db->get()->result_array();
+    }
+
+    public function get_list_active_temp_register_by_event_id($event_id){
+        $query = $this->db->select('*')
+            ->from('temp_register')
+            ->where('is_deleted', 0)
+            ->where('event_id', $event_id)
+            ->where('user_id is NOT NULL', NULL, FALSE)
+            ->where('user_id !=', '')
+            ->order_by("id", "desc");
+
+        return $this->db->get()->result_array();
+    }
+	//////////////////
+
     public function count($keywords = '') {
         $query = $this->db->select('*')
             ->from('temp_register')
