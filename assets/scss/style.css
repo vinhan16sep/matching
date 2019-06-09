@@ -414,6 +414,8 @@ p {
     background-image: none; }
     #page-top #wrapper ul.navbar-nav.ml-auto li a img {
       border: 1px solid #E0E0E0; }
+  #page-top #wrapper ul.navbar-nav li.nav-item .collapse a.collapse-item {
+    white-space: normal; }
 
 a {
   color: #3495c4; }
