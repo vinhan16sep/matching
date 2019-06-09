@@ -12,7 +12,7 @@
                 <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th style="width: 5%">STTnn</th>
+                            <th style="width: 5%">STT</th>
                             <th style="text-align: center">Tên danh mục</th>
                             <th style="text-align: center">Thao tác</th>
                         </tr>
