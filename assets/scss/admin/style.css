@@ -414,6 +414,8 @@ p {
     background-image: none; }
     #page-top #wrapper ul.navbar-nav.ml-auto li a img {
       border: 1px solid #E0E0E0; }
+  #page-top #wrapper ul.navbar-nav li.nav-item .collapse a.collapse-item {
+    white-space: normal; }
 
 a {
   color: #3495c4; }
@@ -522,6 +524,9 @@ a {
 #matching_create .row .left .card .card-body ul li h6.subtitle-sm {
   margin-bottom: 5px; }
 #matching_create .row .left .card .card-body .chart-area {
+  height: auto; }
+
+#matching .row .card .card-body .chart-area {
   height: auto; }
 
 #category .card .table-responsive tbody tr {
