@@ -1,5 +1,6 @@
 <!-- Begin Page Content -->
-<div class="container-fluid">
+
+<div class="container-fluid" id="dashboard-member">
     <?php
         $log = array(
             1 => 'Đối tác đồng ý',
@@ -52,7 +53,7 @@
                                             <td style="text-align: center">
                                                 <?php if($item['status'] == 0){ ?>
                                                     <button title="Đang chờ được xử lý" class="btnApprove"
-                                                       href="javascript:void(0);" data-toggle="modal" data-target="#myModal" data-id="<?php echo $item['id']; ?>"
+                                                       href="javascript:void(0);" data-toggle="modal" data-target="#workflowModal" data-backdrop="static" data-keyboard="false" data-id="<?php echo $item['id']; ?>"
                                                     >
                                                         <i class="fa fa-clock" aria-hidden="true"></i>
                                                     </button>
@@ -133,29 +134,29 @@
             </div>
         </div>
     </div>
-</div>
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối.</p>
-                <input type="hidden" id="hiddenId" name="hiddenId">
-                <a title="Đồng ý" class="btn btn-primary workflow" href="#" style="width: 45%" data-status="1">
-                    <i class="fa fa-handshake" aria-hidden="true"></i>
-                    &nbsp;&nbsp;Đồng ý
-                </a>
-                <a title="Từ chối" class="btn btn-danger workflow" href="#" style="width: 45%" data-status="2">
-                    <i class="fa fa-ban" aria-hidden="true"></i>
-                    &nbsp;&nbsp;Từ chối
-                </a>
+    <div id="workflowModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối.</p>
+                    <input type="hidden" id="hiddenId" name="hiddenId">
+
+                    <div class="buttons">
+                        <a title="Đồng ý" class="btn btn-primary workflow" href="#" data-status="1">
+                            <i class="fa fa-handshake" aria-hidden="true"></i>
+                            &nbsp;&nbsp;Đồng ý
+                        </a>
+                        <a title="Từ chối" class="btn btn-danger workflow" href="#" data-status="2">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                            &nbsp;&nbsp;Từ chối
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 </div>
 <script>
@@ -175,7 +176,8 @@
             },
             beforeSend: function() {
                 $('.workflow').hide();
-                $('.modal-body').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Đang xử lý ...</button');
+                $('.modal-body .buttons').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Đang xử lý ...</button>');
+                $('.modal-body').find('button.close').hide(); //Hide button close Modal when sending data
             },
             success: function(res){
                 var result = JSON.parse(res);

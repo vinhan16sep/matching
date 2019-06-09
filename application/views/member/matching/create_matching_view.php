@@ -1,7 +1,7 @@
 
-<div class="container-fluid">
+<div class="container-fluid" id="matching_create">
     <div class="row">
-        <div class="col-xl-6 col-lg-6">
+        <div class="left col-xl-6 col-lg-6">
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Thông tin đối tác</h6>
@@ -10,25 +10,30 @@
 
                     <ul class="list-group list-group-unbordered">
                         <li class="list-group-item">
-                            <a><i class="fa fa-money margin-r-5"></i> Doanh nghiệp </a> <p class="pull-right"><?php echo $result['company'] ?></p>
+                            <h6 class="subtitle-sm"><i class="fas fa-building"></i> Doanh nghiệp </h6>
+                            <h6><?php echo $result['company'] ?></h6>
                         </li>
                         <li class="list-group-item">
-                            <a><i class="fa fa-money margin-r-5"></i> Người đại diện </a> <p class="pull-right"><?php echo $result['connector'] ?></p>
+                            <h6 class="subtitle-sm"><i class="fas fa-user-tie"></i> Người đại diện </h6>
+                            <h6><?php echo $result['connector'] ?></h6>
                         </li>
                         <li class="list-group-item">
-                            <a><i class="fa fa-money margin-r-5"></i> Chức danh	</a> <p class="pull-right"><?php echo $result['position'] ?></p>
+                            <h6 class="subtitle-sm"><i class="fas fa-id-card"></i> Chức danh	</h6>
+                            <h6><?php echo $result['position'] ?></h6>
                         </li>
                         <li class="list-group-item">
-                            <a><i class="fa fa-money margin-r-5"></i> Địa chỉ </a> <p class="pull-right"><?php echo $result['address'] ?></p>
+                            <h6 class="subtitle-sm"><i class="fas fa-map-marked-alt"></i> Địa chỉ </h6>
+                            <h6><?php echo $result['address'] ?></h6>
                         </li>
                         <li class="list-group-item">
-                            <a><i class="fa fa-money margin-r-5"></i> Số điện thoại </a> <p class="pull-right"><?php echo $result['phone'] ?></p>
+                            <h6 class="subtitle-sm"><i class="fas fa-phone"></i> Số điện thoại </h6>
+                            <h6><?php echo $result['phone'] ?></h6>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-lg-6">
+        <div class="right col-xl-6 col-lg-6">
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Yêu cầu gặp</h6>

@@ -1,0 +1,57 @@
+#dashboard-member{
+    .modal{
+        &#workflowModal{
+            .modal-dialog{
+                .modal-content{
+                    .modal-body{
+                        position: relative;
+
+                        button{
+                            &.close{
+                                width: 30px;
+                                height: 30px;
+
+                                background-color: $gray-darker;
+                                color: #fff;
+
+                                border: 2px solid $gray-lighter;
+                                @include borderRadius(50%);
+
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 1;
+
+                                opacity: 1;
+
+                                @include translate(50%, -50%);
+                            }
+                        }
+
+                        p{
+                            margin-bottom: $padding-base;
+                        }
+
+                        .buttons{
+                            width: 100%;
+
+                            @include d-flex(row, normal, center);
+
+                            .btn{
+                                width: 100%;
+
+                                flex-grow: 1;
+
+                                margin-right: $padding-base;
+
+                                &:last-of-type{
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

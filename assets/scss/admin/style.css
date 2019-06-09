@@ -268,6 +268,32 @@ p {
         .popup .popup-content .popup-footer .btn:last-child {
           margin-right: 0; }
 
+#page-top #wrapper ul.navbar-nav {
+  background-color: #3495c4;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #72BCE0), to(#3495c4));
+  background-image: linear-gradient(180deg, #72BCE0 10%, #3495c4 100%); }
+  #page-top #wrapper ul.navbar-nav.ml-auto {
+    background-color: transparent;
+    background-image: none; }
+    #page-top #wrapper ul.navbar-nav.ml-auto li a img {
+      border: 1px solid #E0E0E0; }
+
+a {
+  color: #3495c4; }
+  a:hover {
+    color: #2477AD; }
+
+.table-responsive .table thead {
+  background-color: #3495c4 !important;
+  color: #fff; }
+.table-responsive .table tbody tr td i {
+  color: #3495c4 !important; }
+  .table-responsive .table tbody tr td i.fa-ban {
+    color: #C82333 !important; }
+
+.text-primary {
+  color: #3495c4 !important; }
+
 #login {
   width: 100%;
   height: 100vh;
@@ -319,5 +345,44 @@ p {
           padding-top: 15px; }
           #login .row .right .content form .form-group small p {
             font-size: 0.75rem; }
+
+#dashboard-member .modal#workflowModal .modal-dialog .modal-content .modal-body {
+  position: relative; }
+  #dashboard-member .modal#workflowModal .modal-dialog .modal-content .modal-body button.close {
+    width: 30px;
+    height: 30px;
+    background-color: #4D4D4D;
+    color: #fff;
+    border: 2px solid #A3A3A3;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 1;
+    -webkit-transform: translate(50%, -50%);
+    -moz-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    -o-transform: translate(50%, -50%);
+    transform: translate(50%, -50%); }
+  #dashboard-member .modal#workflowModal .modal-dialog .modal-content .modal-body p {
+    margin-bottom: 15px; }
+  #dashboard-member .modal#workflowModal .modal-dialog .modal-content .modal-body .buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    align-items: center; }
+    #dashboard-member .modal#workflowModal .modal-dialog .modal-content .modal-body .buttons .btn {
+      width: 100%;
+      flex-grow: 1;
+      margin-right: 15px; }
+      #dashboard-member .modal#workflowModal .modal-dialog .modal-content .modal-body .buttons .btn:last-of-type {
+        margin-right: 0; }
+
+#matching_create .row .left .card .card-body ul li h6.subtitle-sm {
+  margin-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -268,6 +268,32 @@ p {
         .popup .popup-content .popup-footer .btn:last-child {
           margin-right: 0; }
 
+#page-top #wrapper ul.navbar-nav {
+  background-color: #3495c4;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #72BCE0), to(#3495c4));
+  background-image: linear-gradient(180deg, #72BCE0 10%, #3495c4 100%); }
+  #page-top #wrapper ul.navbar-nav.ml-auto {
+    background-color: transparent;
+    background-image: none; }
+    #page-top #wrapper ul.navbar-nav.ml-auto li a img {
+      border: 1px solid #E0E0E0; }
+
+a {
+  color: #3495c4; }
+  a:hover {
+    color: #2477AD; }
+
+.table-responsive .table thead {
+  background-color: #3495c4 !important;
+  color: #fff; }
+.table-responsive .table tbody tr td i {
+  color: #3495c4 !important; }
+  .table-responsive .table tbody tr td i.fa-ban {
+    color: #C82333 !important; }
+
+.text-primary {
+  color: #3495c4 !important; }
+
 #homepage_landing header {
   width: 100%;
   height: 70px;
@@ -393,7 +419,7 @@ p {
       -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
       box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5); }
       #member-register .cover-background .content .right .wrapper form .form-group, #member-login .cover-background .content .right .wrapper form .form-group {
-        margin-bottom: 7.5px; }
+        margin-bottom: 7px; }
         #member-register .cover-background .content .right .wrapper form .form-group label, #member-login .cover-background .content .right .wrapper form .form-group label {
           font-size: 0.75rem; }
     #member-register .cover-background .content .right > p, #member-login .cover-background .content .right > p {

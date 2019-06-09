@@ -1,14 +1,16 @@
-#matching{
-    .modal{
-        &#btn-reg-info-modal{
-            .modal-dialog{
-                .modal-content{
-                    .modal-header{
-
-                    }
-
-                    .modal-body{
-
+#matching_create{
+    .row{
+        .left{
+            .card{
+                .card-body{
+                    ul{
+                        li{
+                            h6{
+                                &.subtitle-sm{
+                                    margin-bottom: $padding-small;
+                                }
+                            }
+                        }
                     }
                 }
             }

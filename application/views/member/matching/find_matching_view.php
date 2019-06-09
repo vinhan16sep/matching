@@ -220,54 +220,7 @@
             </div>
             <div class="popup-footer">
                 <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải File PDF</a>
-                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Đóng</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="btn-reg-info-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Thông Tin Doanh Nghiệp: <strong id="title-info" style="color: #4e73df"></strong></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="item item-overview col-xs-12 col-"
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Công Ty: </label>
-                        <input type="text" class="form-control" name="company" id="company" disabled >
-                    </div>
-                    <div class="form-group">
-                        <label for="connector">Người Đại Diện: </label>
-                        <input type="text" class="form-control" name="connector" id="connector" disabled >
-                    </div>
-                    <div class="form-group">
-                        <label for="position">Chức Danh: </label>
-                        <input type="text" class="form-control" name="position" id="position" disabled >
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Địa Chỉ: </label>
-                        <input type="text" class="form-control" name="address" id="address" disabled >
-                    </div>
-                    <div class="form-group">
-                        <label for="overview">Tổng Quát Công Nghệ: </label>
-                        <textarea class="form-control" name="overview" id="overview" rows="3" disabled></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="profile">Hồ sơ doanh nghiệp: </label>
-                        <textarea class="form-control" name="profile" id="profile" rows="10" disabled></textarea>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <a type="" class="btn btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải File PDF</a>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                </div>
+                <button type="button" class="btn btn-sm btn-secondary popup-close" data-dismiss="modal">Đóng</button>
             </div>
         </div>
     </div>

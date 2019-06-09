@@ -32,7 +32,7 @@
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('member/overview') ?>">
                 <i class="fas fa-id-badge"></i>
-                <span>Tổng quan doanh nghiệp</span>
+                <span>Thông tin chi tiết</span>
             </a>
         </li>
         <li class="nav-item">

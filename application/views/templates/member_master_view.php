@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Matching Sytem</title>
+    <title>Matching System</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo site_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
