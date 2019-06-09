@@ -164,7 +164,7 @@
             },
             beforeSend: function() {
                 $('.workflow').hide();
-                $('.modal-body').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Loading...</button');
+                $('.modal-body').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Đang xử lý ...</button');
             },
             success: function(res){
                 var result = JSON.parse(res);
