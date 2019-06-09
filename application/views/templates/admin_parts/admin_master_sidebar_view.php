@@ -12,12 +12,34 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
-
+    <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url('admin/dashboard/index') ?>" aria-expanded="true">
+            <i class="fas fa-fw fa-tachometer-alt" aria-hidden="true"></i>
+            <span>Tổng quan</span>
+        </a>
+    </li>
+    <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('admin/dashboard/index') ?>">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Tổng quan</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <span>Danh sách sự kiện</span>
+        </a>
+        <div id="collapseZero" class="collapse" aria-labelledby="headingZero" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <?php if($active_event) {
+                    foreach ($active_event as $key => $event) {
+                        ?>
+                        <a class="collapse-item" href="<?php echo base_url('admin/event/detail/' . $event['id']) ?>">
+                            <?php echo $event['name'] ?>
+                        </a>
+                        <?php
+                    }
+                }
+                ?>
+
+            </div>
+        </div>
     </li>
 
     <!-- Divider -->
@@ -32,7 +54,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fa fa-calendar" aria-hidden="true"></i>
-            <span>Sự kiện</span>
+            <span>Cấu hình</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">

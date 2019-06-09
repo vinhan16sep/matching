@@ -11,6 +11,8 @@ class Event extends Admin_Controller
             redirect('admin','refresh');
         }
         $this->load->model('event_model');
+        $this->load->model('temp_register_model');
+        $this->load->model('matching_model');
     }
 
     public function index(){
@@ -33,6 +35,38 @@ class Event extends Admin_Controller
         $this->data['result'] = $this->event_model->fetch_all_pagination($per_page, $per_page * $this->data['page']);
 
         $this->render('admin/event/list_event_view');
+    }
+
+    public function detail($event_id){
+        $event = $this->event_model->fetch_by_id($event_id);
+        /**
+         * List all of temp register of 1 event
+         */
+        $temp_register = $this->temp_register_model->get_list_temp_register_by_event_id($event_id);
+        /**
+         * List of temp register have user id of 1 event
+         */
+        $active_temp_register = $this->temp_register_model->get_list_active_temp_register_by_event_id($event_id);
+        /**
+         * List of matching in 1 event
+         */
+        $pending_matching = $this->matching_model->get_list_matching_by_event_and_status($event_id, 0);
+        $approved_matching = $this->matching_model->get_list_matching_by_event_and_status($event_id, 1);
+        $rejected_matching = $this->matching_model->get_list_matching_by_event_and_status($event_id, 2);
+
+        $this->data['page_title'] = 'Tổng quan sự kiện ' . '<span style="color:red;">' . $event['name'] . '</span>';
+
+
+        /**
+         * Count data for render view
+         */
+        $this->data['count_temp_register'] = count($temp_register);
+        $this->data['count_active_temp_register'] = count($active_temp_register);
+        $this->data['pending_matching'] = count($pending_matching);
+        $this->data['approved_matching'] = count($approved_matching);
+        $this->data['rejected_matching'] = count($rejected_matching);
+
+        $this->render('admin/event/detail_event_view');
     }
 
     public function create(){
