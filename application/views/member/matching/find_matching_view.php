@@ -317,7 +317,17 @@
                 }else{
                     alert('Doanh nghiệp không tồn tại hoặc đã hủy tham gia sự kiện');
                 }
+
+                closePopup(); //Close Popup
             }
         });
     });
+
+    function closePopup(){
+        const $btnClose = $('.popup').find('.popup-close');
+
+        $btnClose.on('click', function(){
+            $(this).closest('.popup').removeClass('show');
+        })
+    }
 </script>
