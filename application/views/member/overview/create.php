@@ -17,7 +17,7 @@
                     <?php echo $this->session->flashdata('message_error'); ?>
                 </div>
             <?php endif ?>
-            <h1 style="text-align: center;">Tổng quan về doanh nghiệp</h1>
+            <h6 style="text-align: center;">Tổng quan về doanh nghiệp</h6>
             <?php echo form_open_multipart('', array('class' => 'form-horizontal')); ?>
             <div class="form-group">
                 <?php echo form_label('Tổng quát công nghệ sử dụng: ', 'overview'); ?>

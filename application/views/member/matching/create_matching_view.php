@@ -32,10 +32,12 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Yêu cầu gặp</h6>
-                    <div class="dropdown no-arrow">
-                    </div>
                 </div>
                 <div class="card-body">
+                    <p><span style="color: red">Chú ý: </span>nếu bạn đặt nhiều hơn một cuộc hẹn với cùng một khung giờ,
+                        và một cuộc hẹn được đối tác chấp nhận, các cuộc hẹn cùng giờ khác của bạn sẽ được chuyển về trạng thái Từ chối. </p>
+                    <p>Các đơn mời hẹn bạn nhận được từ đối tác khác, khi trùng khung giờ này cũng sẽ được chuyển sang trạng thái Từ chối.</p>
+                    <hr>
                     <div class="row">
                         <div class='col-sm-12'>
                         <?php
