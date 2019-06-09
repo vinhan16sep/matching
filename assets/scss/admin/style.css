@@ -524,6 +524,9 @@ a {
 #matching_create .row .left .card .card-body .chart-area {
   height: auto; }
 
+#matching .row .card .card-body .chart-area {
+  height: auto; }
+
 #category .card .table-responsive tbody tr {
   background-color: #72BCE0;
   color: #fff; }
