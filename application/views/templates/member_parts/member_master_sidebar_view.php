@@ -60,6 +60,12 @@
                 </div>
             </div>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0);" data-toggle="modal" data-target="#workflow-guide">
+                <i class="fa fa-file-text-o"></i>
+                <span>Tổng quan hệ thống</span>
+            </a>
+        </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <!-- <li class="nav-item">
@@ -129,4 +135,15 @@
 
     </ul>
     <!-- End of Sidebar -->
+
+    <div id="workflow-guide" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" style="max-width:60%;">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img style="width: 100%; height: 100%;" src="<?php echo site_url('assets/img/processing.png') ?>" alt="Logo Company">
+                </div>
+            </div>
+        </div>
+    </div>
 <?php endif; ?>
