@@ -32,7 +32,7 @@
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('member/overview') ?>">
                 <i class="fas fa-id-badge"></i>
-                <span>Thông tin chi tiết</span>
+                <span>Thông tin Doanh nghiệp</span>
             </a>
         </li>
         <li class="nav-item">
@@ -63,7 +63,7 @@
         <li class="nav-item">
             <a class="nav-link" href="javascript:void(0);" data-toggle="modal" data-target="#workflow-guide">
                 <i class="fa fa-file-text-o"></i>
-                <span>Tổng quan hệ thống</span>
+                <span>Hướng dẫn đặt lịch đối tác</span>
             </a>
         </li>
 

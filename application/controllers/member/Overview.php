@@ -35,8 +35,14 @@ class Overview extends Member_Controller {
 		}
 		$extension = $temp_register['id'] . '-' . $event_id;
 
-		$this->form_validation->set_rules('overview', 'Tổng quát công nghệ ', 'required');
-		$this->form_validation->set_rules('profile', 'Hồ sơ doanh nghiệp', 'required');
+		$this->form_validation->set_rules('overview', 'Giới thiệu ngắn về Doanh nghiệp ', 'required');
+		$this->form_validation->set_rules('profile', 'Lĩnh vực hoạt động', 'required');
+		$this->form_validation->set_rules('product', 'Sản phẩm/Giải pháp', 'required');
+		$this->form_validation->set_rules('market', 'Thị trường chính hiện nay', 'required');
+		$this->form_validation->set_rules('partner', 'Đối tác chiến lược', 'required');
+		$this->form_validation->set_rules('customer', 'Khách hàng tiêu biểu', 'required');
+		$this->form_validation->set_rules('certificate', 'Các chứng chỉ, bằng cấp đạt được (ISO, CMMI...)', 'required');
+		$this->form_validation->set_rules('desire', 'Mong muốn hợp tác', 'required');
 		if ($temp_register['is_overview'] == 0) {
 //			$this->form_validation->set_rules('file', 'File PDF', 'callback_validate_file');
 		}
@@ -66,6 +72,13 @@ class Overview extends Member_Controller {
                 $data = array(
                     'overview' => $this->input->post('overview'),
                     'profile' => $this->input->post('profile'),
+                    'product' => $this->input->post('product'),
+                    'market' => $this->input->post('market'),
+                    'partner' => $this->input->post('partner'),
+                    'customer' => $this->input->post('customer'),
+                    'certificate' => $this->input->post('certificate'),
+                    'desire' => $this->input->post('desire'),
+                    'website' => $this->input->post('website'),
                     'is_overview' => 1,
                 );
                 if ( !empty($_FILES['file']['name']) ) {

@@ -25,12 +25,40 @@
                         <?php else: ?>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <strong>Tổng quát công nghệ sử dụng: </strong><br>
+                                    <strong>Giới thiệu ngắn về Doanh nghiệp: </strong><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['overview'] ?>
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>Hồ sơ doanh nghiệp (Tóm tắt lĩnh vực hoạt động): </strong><br>
+                                    <strong>Lĩnh vực hoạt động: </strong><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['profile'] ?>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Sản phẩm/Giải pháp: </strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['product'] ?>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Thị trường chính hiện nay: </strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['market'] ?>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Đối tác chiến lược: </strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['partner'] ?>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Khách hàng tiêu biểu: </strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['customer'] ?>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Các chứng chỉ, bằng cấp đạt được (ISO, CMMI...): </strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['certificate'] ?>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Mong muốn hợp tác: </strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['desire'] ?>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Website: </strong><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['website'] ?>
                                 </li>
                                 <li class="list-group-item">
                                     <strong>File PDF: </strong>
