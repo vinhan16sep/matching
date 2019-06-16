@@ -9,16 +9,21 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
+            <?php if($count_setting_by_user_and_event == 0){ ?>
+                <a class="btn btn-primary text-white" href="<?php echo base_url('member/setting/create?event_id=' . $event_id) ?>">Tạo mới</a>
+            <?php } ?>
+            <br>
+            <br>
             <?php if ($this->session->flashdata('success')): ?>
                 <div class="alert alert-success alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('success'); ?></h4>
+                    <h5><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('success'); ?></h5>
                 </div>
             <?php endif ?>
             <?php if ($this->session->flashdata('error')): ?>
                 <div class="alert alert-warning alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('error'); ?></h4>
+                    <h5><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('error'); ?></h5>
                 </div>
             <?php endif ?>
             <div class="table-responsive">
@@ -62,7 +67,7 @@
                                         <a data-toggle="collapse" href="#review-<?php echo $key ?>" role="button" aria-expanded="false">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <a href="<?php echo base_url('member/setting/update/' . $value['setting_id']) ?>">
+                                        <a href="<?php echo base_url('member/setting/update/' . $value['setting_id']) . '?event_id=' . $event_id ?>">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </td>

@@ -19,13 +19,14 @@
                 <div class="card-body">
                     <div class="chart-area">
                         <?php
-                        echo form_open_multipart('', array('class' => 'form-horizontal', 'method' => 'GET'));
+                        echo form_open_multipart(base_url('member/matching/find?event_id=' . $event_id), array('class' => 'form-horizontal', 'method' => 'GET'));
+                        echo form_hidden('event_id', $event_id);
                         ?>
                         <div class="row">
                             <?php if ($this->session->flashdata('error')): ?>
                                 <div class="alert alert-success alert-dismissible">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                    <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('error'); ?></h4>
+                                    <h4><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('error'); ?></h4>
                                 </div>
                             <?php endif ?>
 

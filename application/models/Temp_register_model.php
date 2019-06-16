@@ -82,7 +82,9 @@ class Temp_register_model extends MY_Model
         $this->db->set(
             array(
                 'status' => 1,
-                'user_id' => $user_id
+                'user_id' => $user_id,
+                /** Maybe column is_charge will not be used */
+                'is_charge' => 1
             )
         );
         $this->db->where('email', $email);
@@ -103,10 +105,27 @@ class Temp_register_model extends MY_Model
         return $this->db->get()->row_array();
     }
 
+    public function check_user_exist_in_event($email, $event_id, $user_id){
+	    $this->db->from('temp_register')
+            ->where('email', $email)
+            ->where('event_id', $event_id)
+            ->where('user_id', $user_id);
+        return $this->db->get()->row_array();
+    }
+
     public function get_by_id($id){
         $this->db->from('temp_register');
         $this->db->where('id', $id);
         return $this->db->get()->row_array();
+    }
+
+    public function get_by_user_id_with_active_event($user_id){
+	    $this->db->select('temp_register.*, event.name AS eventName, event.id AS eventId')
+            ->from('temp_register')
+            ->join('event', 'event.id = temp_register.event_id')
+            ->where('temp_register.user_id', $user_id)
+            ->where('event.is_active', 1);
+        return $this->db->get()->result_array();
     }
 
     public function get_by_id_and_event($id, $event){

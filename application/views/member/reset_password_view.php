@@ -42,7 +42,7 @@
                 <?php if ($this->session->flashdata('auth_message')): ?>
                     <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('auth_message'); ?></h4>
+                        <h4><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('auth_message'); ?></h4>
                     </div>
                 <?php endif ?>
                 <div class="wrapper">

@@ -6,13 +6,13 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <?php
-            echo form_open_multipart('', array('class' => 'form-horizontal'));
+            echo form_open_multipart(base_url('member/setting/update/' . $setting_id . '?event_id=' . $event_id), array('class' => 'form-horizontal'));
             ?>
             <div class="row">
                 <?php if ($this->session->flashdata('error')): ?>
                     <div class="alert alert-warning alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <h4><i class="icon fa fa-warning"></i> Alert! <?php echo $this->session->flashdata('error'); ?></h4>
+                        <h4><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('error'); ?></h4>
                     </div>
                 <?php endif ?>
 

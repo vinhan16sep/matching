@@ -69,11 +69,24 @@ class User extends MY_Controller {
                 $user = $this->users_model->get_by_email($email);
                 $data = array(
                     'active' => 1,
-                    'event_id' => $this->input->post('event_id')
+                    /** AnNV change business, no need to have event_id in user table anymore
+                     * Because 1 user can join many events
+                     */
+//                    'event_id' => $this->input->post('event_id')
                 );
                 $result = $this->ion_auth->update($user['id'], $data);
                 if($result){
-                    $this->temp_register_model->approve($email, $event_id);
+                    /** AnNV change business, no need to have event_id in user table anymore
+                     * Because 1 user can join many events
+                     */
+//                    $this->temp_register_model->approve($email, $event_id);
+                    $exist = $this->temp_register_model->check_user_exist_in_event($email, $event_id, $user['id']);
+                    if(!$exist){
+                        $this->temp_register_model->approve_and_set_user_id($email, $event_id, $user['id']);
+                    }else{
+                        $this->session->set_flashdata('fail', 'User này đã tồn tại trong sự kiện');
+                    }
+
                 }
             }else{
                 $username = null;
@@ -81,7 +94,10 @@ class User extends MY_Controller {
                 $group_ids = array(2);
                 $additional_data = array(
                     'active' => 1,
-                    'event_id' => $this->input->post('event_id')
+                    /** AnNV change business, no need to have event_id in user table anymore
+                     * Because 1 user can join many events
+                     */
+//                    'event_id' => $this->input->post('event_id')
                 );
                 $result = $this->ion_auth->register($username, $password, $email, $additional_data, $group_ids);
                 if($result){

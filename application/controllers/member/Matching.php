@@ -33,31 +33,76 @@ class Matching extends Member_Controller {
     }
 
     public function index() {
-        $this->render('member/matching/');
+        $this->data['page_title'] = 'Tổng quan';
+
+        $params = $this->input->get();
+        if(!$params['event_id']){
+            redirect('member/dashboard/index', 'refresh');
+        }
+        $this->data['event_id'] = $event_id = $params['event_id'];
+
+        /**
+         * Temp register of current user
+         */
+        $user = $this->ion_auth->user()->row();
+        $temp_register = $this->temp_register_model->get_by_user_id_and_event($user->id, $event_id);
+
+        /**
+         * Get all received matching from others
+         */
+        $receive = $this->matching_model->get_receive_request_by_temp_register_id_and_event($temp_register['id'], $temp_register['event_id']);
+        foreach($receive as $key => $value){
+            /**
+             * Get data of target of matching
+             */
+            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['finder_id'], $value['event_id']);
+            $receive[$key]['register_info'] = $register_info;
+        }
+
+        /**
+         * Get all matching sent by current user
+         */
+        $send = $this->matching_model->get_send_request_by_temp_register_id_and_event($temp_register['id'], $temp_register['event_id']);
+        foreach($send as $key => $value){
+            /**
+             * Get data of target of matching
+             */
+            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['target_id'], $value['event_id']);
+            $send[$key]['register_info'] = $register_info;
+        }
+
+        $this->data['receive'] = $receive;
+        $this->data['send'] = $send;
+        $this->render('member/matching/list_matching_view');
     }
 
     public function find() {
-        $event = $this->ion_auth->user()->row()->event_id;
+        $params = $this->input->get();
+        if(!$params['event_id']){
+            redirect('member/dashboard/index', 'refresh');
+        }
+        $this->data['event_id'] = $event_id = $params['event_id'];
+
         if($this->input->get() && $this->input->get('submit') === 'OK'){
             $get = $this->input->get();
             if(!isset($get['category_id'])){
-                redirect('member/matching/find', 'refresh');
+                redirect('member/matching/find?event_id' . $event_id, 'refresh');
             }
-            $match_categories = $this->setting_model->get_matched_setting_data($event, $get['category_id'], $this->data['user']->id);
+            $match_categories = $this->setting_model->get_matched_setting_data($event_id, $get['category_id'], $this->data['user']->id);
             foreach($match_categories as $key => $value){
                 $target_user = $this->users_model->fetch_by_id($value['user_id']);
-                $register_info = $this->temp_register_model->get_by_email_and_event_id($target_user['email'], $event);
+                $register_info = $this->temp_register_model->get_by_email_and_event_id($target_user['email'], $event_id);
                 $match_categories[$key]['register_info'] = $register_info;
             }
             $this->data['matched_setting'] = $match_categories;
         }
         $this->data['page_title'] = 'Tìm kiếm';
-        $category_root = $this->category_model->fetch_all_root_by_event($event);
+        $category_root = $this->category_model->fetch_all_root_by_event($event_id);
         $events = array();
         if ($category_root) {
             foreach ($category_root as $key => $value) {
                 $events[$value['id']]['name'] = $value['name'];
-                $category_sub = $this->category_model->fetch_all_sub_by_event_and_parent($event, $value['id']);
+                $category_sub = $this->category_model->fetch_all_sub_by_event_and_parent($event_id, $value['id']);
                 if ($category_sub) {
                     foreach ($category_sub as $k => $val) {
                         $events[$value['id']][$val['id']] = $val['name'];
