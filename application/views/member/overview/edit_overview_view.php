@@ -87,8 +87,6 @@
                         <?php echo form_submit('submit', 'Lưu Thông Tin', 'class="btn btn-primary"'); ?>
                         <?php if(!empty($temp_register['file'])){ ?>
                             <a class="btn btn-success" href="<?php echo base_url('assets/upload/profile/') . $temp_register['file'] ?>" download><i class="fa fa-download" aria-hidden="true"></i> Tải về file hiện tại</a>
-                        <?php } else { ?>
-                            Chưa có file
                         <?php } ?>
                         <!-- <a href="javascript:history.back()" name="back" class="btn btn-default btn-lg btn-block">Quay lại</a> -->
                     </div>
