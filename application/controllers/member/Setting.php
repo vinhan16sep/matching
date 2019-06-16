@@ -17,7 +17,15 @@ class Setting extends Member_Controller {
 	// List all your items
 	public function index()
 	{
+        $params = $this->input->get();
+        if(!$params['event_id']){
+            redirect('member/dashboard/index', 'refresh');
+        }
+        $this->data['event_id'] = $event_id = $params['event_id'];
 		$user = $this->ion_auth->user()->row();
+
+        $count_setting_by_user_and_event = $this->setting_model->count_by_user_id_and_event_id($user->id, $params['event_id']);
+        $this->data['count_setting_by_user_and_event'] = $count_setting_by_user_and_event;
 
 		$this->load->library('pagination');
         $total_rows  = $this->setting_model->count();
@@ -33,7 +41,7 @@ class Setting extends Member_Controller {
 
         $this->data['page_links'] = $this->pagination->create_links();
         $this->data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) - 1 : 0;
-        $result = $this->setting_model->fetch_all_pagination_by_user_id($user->id, $per_page, $per_page * $this->data['page']);
+        $result = $this->setting_model->fetch_all_pagination_by_user_id($user->id, $per_page, $per_page * $this->data['page'], $event_id);
 
         if ($result) {
         	foreach ($result as $key => $value) {
@@ -76,18 +84,22 @@ class Setting extends Member_Controller {
 	}
 
 	// Add a new item
-	public function create()
-	{
+	public function create(){
+	    $params = $this->input->get();
+	    if(!$params['event_id']){
+            redirect('member/dashboard/index', 'refresh');
+        }
+        $this->data['event_id'] = $event_id = $params['event_id'];
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
 		$user = $this->ion_auth->user()->row();
-		$event_id = $user->event_id;
 
 		$count_setting_by_user_and_event = $this->setting_model->count_by_user_id_and_event_id($user->id, $event_id);
+		$this->data['count_setting_by_user_and_event'] = $count_setting_by_user_and_event;
 		if ($count_setting_by_user_and_event > 0) {
 			$this->session->set_flashdata('error', 'Bạn đã đăng ký tiêu chí cho sự kiện lần này. Không thể đăng ký thêm');
-            redirect('member/setting/index', 'refresh');
+            redirect('member/setting/index?event_id=' . $event_id, 'refresh');
 		}
 		$temp_register = $this->temp_register_model->get_by_email_and_event_id($user->email, $event_id);
 		$catrgory_root = $this->category_model->fetch_all_root_by_event($event_id);
@@ -104,7 +116,6 @@ class Setting extends Member_Controller {
 				
 			}
 		}
-		
 		$this->data['events'] = $events;
 
 		$this->form_validation->set_rules('category_id[]','Tiêu chí','trim|required');
@@ -123,10 +134,10 @@ class Setting extends Member_Controller {
 				$insert = $this->setting_model->save($data);
 				if ($insert) {
 					$this->session->set_flashdata('success', 'Đăng ký thành công');
-                    redirect('member/setting/index', 'refresh');
+                    redirect('member/setting/index?event_id=' . $event_id, 'refresh');
 				}else{
 					$this->session->set_flashdata('error', 'Đăng ký không thành công');
-                    redirect('member/setting/create', 'refresh');
+                    redirect('member/setting/create?event_id=' . $event_id, 'refresh');
 				}
 			}
 		}
@@ -138,6 +149,12 @@ class Setting extends Member_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
+        $params = $this->input->get();
+        if(!$params['event_id']){
+            redirect('member/dashboard/index', 'refresh');
+        }
+        $this->data['event_id'] = $event_id = $params['event_id'];
+
 		$where = array(
 			'id' => $id,
 		);
@@ -146,7 +163,6 @@ class Setting extends Member_Controller {
 		$this->data['detail'] = $setting;
 
 		$user = $this->ion_auth->user()->row();
-		$event_id = $user->event_id;
 		$temp_register = $this->temp_register_model->get_by_email_and_event_id($user->email, $event_id);
 		$category_root = $this->category_model->fetch_all_root_by_event($event_id);
 		$events = array();
@@ -164,13 +180,14 @@ class Setting extends Member_Controller {
 		}
 		
 		$this->data['events'] = $events;
+		$this->data['setting_id'] = $id;
 
 		$this->form_validation->set_rules('category_id[]','Tiêu chí','trim|required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->render('member/setting/update');
 		}else{
 			if ($this->input->post()) {
-				$category_id = ',' . implode(',', $this->input->post('category_id')) . ',';
+                $category_id = ',' . implode(',', $this->input->post('category_id')) . ',';
 				$data = array(
 					'user_id' => $user->id,
 					'event_id' => $event_id,
@@ -180,10 +197,10 @@ class Setting extends Member_Controller {
 				$update = $this->setting_model->update($id, $data);
 				if ($update) {
 					$this->session->set_flashdata('success', 'Cập nhật thành công');
-                    redirect('member/setting/index', 'refresh');
+                    redirect('member/setting/index?event_id=' . $event_id, 'refresh');
 				}else{
 					$this->session->set_flashdata('error', 'Cập nhật không thành công');
-                    redirect('member/setting/update/' . $id, 'refresh');
+                    redirect('member/setting/update/' . $id . '?event_id=' . $event_id, 'refresh');
 				}
 			}
 		}

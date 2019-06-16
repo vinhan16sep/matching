@@ -42,23 +42,44 @@
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Quản lý tiêu chí</h6>
-                    <a class="collapse-item" href="<?php echo base_url('member/setting/index') ?>">Danh sách</a>
-                    <a class="collapse-item" href="<?php echo base_url('member/setting/create') ?>">Tạo mới</a>
+                    <h6 class="collapse-header">Danh sách sự kiện</h6>
+                    <?php if($list_event_of_current_user){ ?>
+                        <?php foreach($list_event_of_current_user as $key => $event){ ?>
+                            <a class="collapse-item" href="<?php echo base_url('member/setting/index?event_id=' . $event['eventId']) ?>">
+                                <?php echo $event['eventName']; ?>
+                            </a>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
         </li>
-        
+
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Matching</span>
             </a>
+
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?php echo base_url('member/matching/find') ?>">Tìm đối tác</a>
+                    <h6 class="collapse-header">Danh sách sự kiện</h6>
+                    <?php if($list_event_of_current_user){ ?>
+                        <?php foreach($list_event_of_current_user as $key => $event){ ?>
+                            <a class="collapse-item" href="<?php echo base_url('member/matching/index?event_id=' . $event['eventId']) ?>">
+                                <?php echo $event['eventName']; ?>
+                            </a>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
+
+
+
+<!--            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">-->
+<!--                <div class="bg-white py-2 collapse-inner rounded">-->
+<!--                    <a class="collapse-item" href="--><?php //echo base_url('member/matching/find') ?><!--">Tìm đối tác</a>-->
+<!--                </div>-->
+<!--            </div>-->
         </li>
         <li class="nav-item">
             <a class="nav-link" href="javascript:void(0);" data-toggle="modal" data-target="#workflow-guide">

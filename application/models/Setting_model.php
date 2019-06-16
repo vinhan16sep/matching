@@ -10,12 +10,13 @@ class Setting_model extends MY_Model {
 		//Do your magic here
 	}
 
-	public function fetch_all_pagination_by_user_id($user_id, $limit = NULL, $start = NULL, $keywords = '') {
+	public function fetch_all_pagination_by_user_id($user_id, $limit = NULL, $start = NULL, $event_id) {
         $query = $this->db->select('setting.*, event.*, setting.id as setting_id')
         	->from('setting')
             ->join('event', 'setting.event_id = event.id')
             ->where('setting.user_id', $user_id)
             ->where('setting.is_deleted', 0)
+            ->where('event.id', $event_id)
             ->limit($limit, $start)
             ->order_by("setting.id", "desc");
 
