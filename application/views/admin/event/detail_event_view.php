@@ -235,34 +235,34 @@
                             <div class="row">
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Công Ty</label>
-                                    <h6 id="company-finder">No data</h6>
+                                    <p id="company-finder">No data</p>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Địa Chỉ</label>
-                                    <h6 id="address-finder">No data</h6>
+                                    <p id="address-finder">No data</p>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Người Đại Diện</label>
-                                    <h6 id="connector-finder">No data</h6>
+                                    <p id="connector-finder">No data</p>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Chức Danh</label>
-                                    <h6 id="position-finder">No data</h6>
+                                    <p id="position-finder">No data</p>
                                 </div>
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>E-Mail</label>
-                                    <h6 id="email-finder">No data</h6>
+                                    <p id="email-finder">No data</p>
                                 </div>
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Số Điện Thoại</label>
-                                    <h6 id="phone-finder">No data</h6>
+                                    <p id="phone-finder">No data</p>
                                 </div>
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>File PDF</label>
-                                    <h6 id="file-finder">No data</h6>
+                                    <p id="file-finder">No data</p>
                                 </div>
                             </div>
                         </div>
@@ -321,34 +321,34 @@
                             <div class="row">
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Công Ty</label>
-                                    <h6 id="company-target">No data</h6>
+                                    <p id="company-target">No data</p>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Địa Chỉ</label>
-                                    <h6 id="address-target">No data</h6>
+                                    <p id="address-target">No data</p>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Người Đại Diện</label>
-                                    <h6 id="connector-target">No data</h6>
+                                    <p id="connector-target">No data</p>
                                 </div>
 
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Chức Danh</label>
-                                    <h6 id="position-target">No data</h6>
+                                    <p id="position-target">No data</p>
                                 </div>
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>E-Mail</label>
-                                    <h6 id="email-target">No data</h6>
+                                    <p id="email-target">No data</p>
                                 </div>
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>Số Điện Thoại</label>
-                                    <h6 id="phone-target">No data</h6>
+                                    <p id="phone-target">No data</p>
                                 </div>
                                 <div class="item col-xs-12 col-lg-6">
                                     <label>File PDF</label>
-                                    <h6 id="file-target"></h6>
+                                    <p id="file-target"></p>
                                 </div>
                             </div>
                         </div>

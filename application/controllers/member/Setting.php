@@ -15,8 +15,8 @@ class Setting extends Member_Controller {
 	}
 
 	// List all your items
-	public function index()
-	{
+	public function index(){
+        $this->data['page_title'] = 'Quản lý tiêu chí cho sự kiện';
         $params = $this->input->get();
         if(!$params['event_id']){
             redirect('member/dashboard/index', 'refresh');
@@ -85,6 +85,7 @@ class Setting extends Member_Controller {
 
 	// Add a new item
 	public function create(){
+        $this->data['page_title'] = 'Quản lý tiêu chí cho sự kiện';
 	    $params = $this->input->get();
 	    if(!$params['event_id']){
             redirect('member/dashboard/index', 'refresh');
@@ -144,8 +145,8 @@ class Setting extends Member_Controller {
 	}
 
 	//Update one item
-	public function update( $id = NULL )
-	{
+	public function update( $id = NULL ){
+        $this->data['page_title'] = 'Quản lý tiêu chí cho sự kiện';
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
