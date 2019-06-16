@@ -5,13 +5,13 @@
     $send_log = array(
         1 => 'Đối tác đồng ý',
         2 => 'Đối tác từ chối',
-        3 => 'Hủy do cuộc hẹn khác'
+        3 => 'Hủy do trùng giờ cuộc hẹn khác'
     );
 
     $receive_log = array(
         1 => 'Đã đồng ý',
         2 => 'Đã từ chối',
-        3 => 'Hủy do cuộc hẹn khác'
+        3 => 'Hủy do trùng giờ cuộc hẹn khác'
     );
     ?>
 
@@ -233,22 +233,22 @@
                             <div class="right col-xs-12 col-lg-6">
                                 <div class="wrapper">
                                     <label>Công Ty</label>
-                                    <h6 id="company">No data</h6>
+                                    <p id="company">No data</p>
                                 </div>
 
                                 <div class="wrapper">
                                     <label>Người Đại Diện</label>
-                                    <h6 id="connector">No data</h6>
+                                    <p id="connector">No data</p>
                                 </div>
 
                                 <div class="wrapper">
                                     <label>Chức Danh</label>
-                                    <h6 id="position">No data</h6>
+                                    <p id="position">No data</p>
                                 </div>
 
                                 <div class="wrapper">
                                     <label>Địa Chỉ</label>
-                                    <h6 id="address">No data</h6>
+                                    <p id="address">No data</p>
                                 </div>
                             </div>
                         </div>
@@ -311,6 +311,7 @@
             },
             success: function(res){
                 result = JSON.parse(res);
+                console.log(result);
 
                 if (result.status == true) {
                     console.log(result.info);

@@ -33,7 +33,7 @@ class Matching extends Member_Controller {
     }
 
     public function index() {
-        $this->data['page_title'] = 'Tổng quan';
+        $this->data['page_title'] = 'Quản lý thông tin Matching';
 
         $params = $this->input->get();
         if(!$params['event_id']){
@@ -96,7 +96,7 @@ class Matching extends Member_Controller {
             }
             $this->data['matched_setting'] = $match_categories;
         }
-        $this->data['page_title'] = 'Tìm kiếm';
+        $this->data['page_title'] = 'Tìm kiếm đối tác';
         $category_root = $this->category_model->fetch_all_root_by_event($event_id);
         $events = array();
         if ($category_root) {

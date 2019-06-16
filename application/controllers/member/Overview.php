@@ -11,28 +11,31 @@ class Overview extends Member_Controller {
 	}
 
 	// List all your items
-	public function index()
-	{
+	public function index(){
+	    $this->data['page_title'] = 'Danh sách thông tin đã đăng ký cho từng sự kiện';
 		$user = $this->ion_auth->user()->row();
-		$event_id = $user->event_id;
-		$email = $user->email;
-		$temp_register = $this->temp_register_model->get_by_email_and_event_id($email, $event_id);
-		$this->data['temp_register'] = $temp_register;
-		$this->render('member/overview/index');
+        $this->data['temp_register'] = $temp_register = $this->temp_register_model->get_by_user_id($user->id);
+		$this->render('member/overview/list_overview_view');
 	}
 
 	// Add a new item
-	public function create()
+	public function manage()
 	{
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$user = $this->ion_auth->user()->row();
-		$event_id = $user->event_id;
-		$email = $user->email;
-		$temp_register = $this->temp_register_model->get_by_email_and_event_id($email, $event_id);
+
+        $params = $this->input->get();
+        if(!$params['event_id']){
+            redirect('member/dashboard/index', 'refresh');
+        }
+        $this->data['event_id'] = $event_id = $params['event_id'];
+
+		$temp_register = $this->temp_register_model->get_by_user_id_and_event($user->id, $event_id);
 		if (!$temp_register) {
 			redirect('member/overview');
 		}
+        $this->data['page_title'] = 'Thông tin doanh nghiệp cho sự kiện ' . $temp_register['eventName'];
 		$extension = $temp_register['id'] . '-' . $event_id;
 
 		$this->form_validation->set_rules('overview', 'Giới thiệu ngắn về Doanh nghiệp ', 'required');
@@ -50,10 +53,10 @@ class Overview extends Member_Controller {
 
 		if ($this->form_validation->run() == FALSE) {
 			if ($temp_register['is_overview'] == 0) {
-				$this->render('member/overview/create');
+				$this->render('member/overview/create_overview_view');
 			}else{
 				$this->data['temp_register'] = $temp_register;
-				$this->render('member/overview/edit');
+				$this->render('member/overview/edit_overview_view');
 			}
 			
 		} else {
@@ -90,7 +93,7 @@ class Overview extends Member_Controller {
                     redirect('member/overview', 'refresh');
                 }else{
                     $this->session->set_flashdata('message_error', 'Có lỗi trong quá trình lưu thông tin');
-                    redirect('member/overview/create');
+                    redirect('member/overview/manage?event_id=' . $event_id);
                 }
 			}
 		}

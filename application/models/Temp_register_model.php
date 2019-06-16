@@ -105,6 +105,19 @@ class Temp_register_model extends MY_Model
         return $this->db->get()->row_array();
     }
 
+    /**
+     * Get temp register information for all of events they have joined
+     * Use event for listing
+     */
+    public function get_by_user_id($user_id){
+        $this->db->select('temp_register.*, event.id AS eventId, event.name AS eventName')
+            ->from('temp_register')
+            ->join('event', 'event.id = temp_register.event_id')
+            ->where('user_id', $user_id)
+            ->where('is_charge', 1);
+        return $this->db->get()->result_array();
+    }
+
     public function check_user_exist_in_event($email, $event_id, $user_id){
 	    $this->db->from('temp_register')
             ->where('email', $email)
@@ -120,7 +133,12 @@ class Temp_register_model extends MY_Model
     }
 
     public function get_by_user_id_with_active_event($user_id){
-	    $this->db->select('temp_register.*, event.name AS eventName, event.id AS eventId')
+	    $this->db->select(
+	        'temp_register.*, 
+	        event.name AS eventName, event.id AS eventId,
+	        event.date AS eventDate, event.start AS eventStart,'
+
+        )
             ->from('temp_register')
             ->join('event', 'event.id = temp_register.event_id')
             ->where('temp_register.user_id', $user_id)
@@ -143,9 +161,11 @@ class Temp_register_model extends MY_Model
     }
 
     public function get_by_user_id_and_event($id, $event){
-        $this->db->from('temp_register');
-        $this->db->where('user_id', $id);
-        $this->db->where('event_id', $event);
+        $this->db->select('temp_register.*, event.name AS eventName')
+            ->from('temp_register')
+            ->join('event', 'event.id = temp_register.event_id')
+            ->where('user_id', $id)
+            ->where('event_id', $event);
         return $this->db->get()->row_array();
     }
 
