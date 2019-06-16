@@ -2,16 +2,103 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>css/sb-admin-2.min.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
 	<style>
-        div{
-        	color: red;
+        .email-wrapper{
+            max-width: 700px;
+            overflow: auto;
+
+            margin: 0 auto;
+
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+
+        .email-wrapper table{
+            width: 100%;
+            border-spacing: 0
+        }
+
+        .email-wrapper table tr.tr-header{
+            width: 100%;
+            height: 70px;
+            background-image: linear-gradient(to bottom right, #2477AD, #72BCE0);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .email-wrapper table tr.tr-header td{
+            text-align: center;
+            color: #fff;
+        }
+
+        .email-wrapper table tr.tr-body{
+            background-color: #fff;
+        }
+
+        .email-wrapper table tr.tr-body td{
+            padding: 7px 15px;
+        }
+
+        .email-wrapper table tr.tr-body td h4{
+            font-size: 1.125rem;
+            margin: 0 0 7px;
+        }
+
+        .email-wrapper table tr.tr-body td p{
+            font-size: 1rem;
+            color: #A3A3A3;
+        }
+
+        .email-wrapper table tr.tr-body td a{
+            color: #007DFF;
+        }
+
+        .email-wrapper table tr.tr-footer{
+            width: 100%;
+            height: 100px;
+            background-color: #E0E0E0;
+        }
+
+        .email-wrapper table tr.tr-footer td{
+            text-align: center;
+        }
+
+        .email-wrapper table tr.tr-footer td ul{
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .email-wrapper table tr.tr-footer td ul li{
+            display: inline-block;
+            margin: 0 7px;
+        }
+
+        .email-wrapper table tr.tr-footer td ul li a{
+            font-size: 10px;
+            color: #666;
+        }
+
+        .email-wrapper table tr.tr-footer h6{
+            font-size: 1rem;
+
+            margin: 0 0 7px;
+        }
+
+        .email-wrapper table tr.tr-footer p{
+            font-size: 0.75rem;
+            color: #A3A3A3;
         }
     </style>
 </head>
 <body>
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out! <?php print_r($message); ?>
+<!--<div class="alert alert-primary" role="alert">-->
+<!--  A simple primary alert—check it out! --><?php //print_r($message); ?>
+<!--</div>-->
+<div class="email-wrapper">
+	<?php print_r($message); ?>
 </div>
 </body>
 </html>
