@@ -103,8 +103,8 @@ function email_template($data){
 //    $message .= '<p>'. $data['address'] .'</p>';
 //    $message .= '<p> Mã code: <strong>'. $data['code'] .'</strong></p>';
 //    $message .= "</body></html>";
-    $data_send_mail['message'] = $data;
-    return $CI->load->view('auth/email_member/matching/email_template.tpl.php',$data_send_mail,true);
+//    $data_send_mail['message'] = $data;
+//    return $CI->load->view('auth/email_member/matching/email_template.tpl.php',$data_send_mail,true);
     return $message;
 }
 
@@ -149,8 +149,8 @@ function email_template_admin($data){
 //    $message .= '<p> Mã code: <strong>'. $data['code'] .'</strong></p>';
 //    $message .= "</body></html>";
 
-	$data_send_mail['message'] = $data;
-	return $CI->load->view('auth/email_member/matching/email_template.tpl.php',$data_send_mail,true);
+//	$data_send_mail['message'] = $data;
+//	return $CI->load->view('auth/email_member/matching/email_template.tpl.php',$data_send_mail,true);
 	return $message;
 }
 
