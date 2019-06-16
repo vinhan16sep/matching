@@ -127,10 +127,11 @@ class User extends MY_Controller {
                         'connector' => $params['connector'],
                         'position' => $params['position'],
                         'phone' => $params['phone'],
+                        'email' => $params['email'],
                         'address' => $params['address'],
                         'code' => $code,
                     );
-                    $email = send_mail($params['email'], $email_data, 'user');
+                    $email = send_mail($params['email'], $email_data, 'user_temp_register');
 
                     if (!$email) {
                         $this->db->trans_rollback();
