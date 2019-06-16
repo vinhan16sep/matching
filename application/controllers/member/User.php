@@ -184,6 +184,7 @@ class User extends MY_Controller {
 
     // change password
     public function change_password(){
+        $this->data['page_title'] = 'Đổi mật khẩu';
         $this->load->helper('form');
         $this->load->library('form_validation');
         if (!$this->ion_auth->logged_in()){

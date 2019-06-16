@@ -4,11 +4,10 @@
             <?php if ($this->session->flashdata('auth_message_error')): ?>
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-warning"></i> Thông báo!</h4>
+                    <h6><i class="icon fa fa-warning"></i></h6>
                     <?php echo $this->session->flashdata('auth_message_error'); ?>
                 </div>
             <?php endif ?>
-            <h1 style="text-align: center;">Đổi Mật Khẩu</h1>
             <?php echo form_open('', array('class' => 'form-horizontal')); ?>
             <div class="form-group">
                 <?php echo form_label('Mật khẩu cũ: ', 'old_password'); ?>

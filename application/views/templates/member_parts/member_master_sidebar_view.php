@@ -81,10 +81,11 @@
 <!--                </div>-->
 <!--            </div>-->
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0);" data-toggle="modal" data-target="#workflow-guide">
-                <i class="fa fa-file-text-o"></i>
-                <span>Hướng dẫn đặt lịch đối tác</span>
+        <hr>
+        <li class="nav-item" style="padding-left: 5px; padding-right: 5px;">
+            <a class="btn btn-warning" href="javascript:void(0);" data-toggle="modal" data-target="#workflow-guide">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                Hướng dẫn hệ thống
             </a>
         </li>
 

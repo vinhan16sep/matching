@@ -14,7 +14,7 @@ class MY_Controller extends CI_Controller {
 
         $this->load->library('ion_auth');
 
-        $this->data['page_title'] = 'Sao Khuê';
+        $this->data['page_title'] = 'Business Matching Online';
         $this->data['before_head'] = '';
         $this->data['before_body'] = '';
 

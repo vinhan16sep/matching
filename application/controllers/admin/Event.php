@@ -110,7 +110,7 @@ class Event extends Admin_Controller
             $data = array(
                 'name' => $this->input->post('name'),
                 'date' => strtotime(str_replace('/', '-', $this->input->post('date'))),
-                'table' => $this->input->post('table'),
+//                'table' => $this->input->post('table'),
                 'start' => $this->input->post('start'),
                 'duration' => $this->input->post('duration'),
                 'step' => $this->input->post('step'),
@@ -137,7 +137,7 @@ class Event extends Admin_Controller
             $data = array(
                 'name' => $this->input->post('name'),
                 'date' => strtotime(str_replace('/', '-', $this->input->post('date'))),
-                'table' => $this->input->post('table'),
+//                'table' => $this->input->post('table'),
                 'start' => $this->input->post('start'),
                 'duration' => $this->input->post('duration'),
                 'step' => $this->input->post('step'),

@@ -39,21 +39,21 @@
                                 echo form_input('name', set_value('name', $detail['name']), 'class="form-control" id="name"');
                                 ?>
                             </div>
-                            <div class="form-group">
-                                <?php
-                                echo form_label('Số bàn', 'table');
-                                echo form_error('table');
-                                $data = array(
-                                    'name' => 'table',
-                                    'id'   => 'table',
-                                    'class'=> 'form-control',
-                                    'type' => 'number',
-                                    'min' => 0,
-                                    'value' => $detail['table']
-                                );
-                                echo form_input($data);
-                                ?>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                --><?php
+//                                echo form_label('Số bàn', 'table');
+//                                echo form_error('table');
+//                                $data = array(
+//                                    'name' => 'table',
+//                                    'id'   => 'table',
+//                                    'class'=> 'form-control',
+//                                    'type' => 'number',
+//                                    'min' => 0,
+//                                    'value' => $detail['table']
+//                                );
+//                                echo form_input($data);
+//                                ?>
+<!--                            </div>-->
                             <br>
                             <div class="form-group col-sm-12 text-left" style="padding-left: 0 !important;">
                                 <?php

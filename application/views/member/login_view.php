@@ -43,13 +43,13 @@
                     <?php if ($this->session->flashdata('auth_message')): ?>
                         <div class="alert alert-success alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('auth_message'); ?></h4>
+                            <h6><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('auth_message'); ?></h6>
                         </div>
                     <?php endif ?>
                     <?php if ($this->session->flashdata('login_message_error')): ?>
                         <div class="alert alert-warning alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('login_message_error'); ?></h4>
+                            <h6><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('login_message_error'); ?></h6>
                         </div>
                     <?php endif ?>
 
