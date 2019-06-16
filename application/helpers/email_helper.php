@@ -52,57 +52,14 @@ function email_template($data){
 
 function email_template_admin($data){
 	$CI =& get_instance();
-
-	$message = '<table>';
-	$message .= '<tr class="tr-header"><td colspan="2">Email cung cấp mật khẩu</td></tr>';
-	$message .= '<tr class="tr-body">';
-	$message .= '<td colspan="2">';
-	$message .= '<h4>Tài khoản đăng nhập:</h4>';
-	$message .= '</td>';
-	$message .= '</tr>';
-	$message .= '<tr class="tr-body">';
-	$message .= '<td>Email:</td>';
-	$message .= '<td>support3@vinasa.org.vn</td>';
-	$message .= '</tr>';
-	$message .= '<tr class="tr-body">';
-	$message .= '<td>Mật Khẩu:</td>';
-	$message .= '<td>0m5ndzl0</td>';
-	$message .= '</tr>';
-	$message .= '<tr class="tr-footer">';
-	$message .= '<td colspan="2">';
-	$message .= '<ul>';
-	$message .= '<li><a href="#" target="_blank">Facebook</a></li>';
-	$message .= '<li><a href="#" target="_blank">Twitter</a></li>';
-	$message .= '<li><a href="#" target="_blank">Instagram</a></li>';
-	$message .= '</ul>';
-	$message .= '<h6>Cong ty VINASA</h6>';
-	$message .= '<p>Trường hợp không đăng nhập được vui lòng liên hệ: Anh Mạc Công Minh, mobile: 0936 136 696, email: minhmc@vinasa.org.vn để được hỗ trợ</p>';
-	$message .= '</td>';
-	$message .= '</tr>';
-	$message .= '</table>';
-
-//    $message = '<html><body>';
-//    $message .= '<p> Nhận tài khoản </p>';
-//    $message .= '<p>'. $data['company'] .'</p>';
-//    $message .= '<p>'. $data['connector'] .'</p>';
-//    $message .= '<p>'. $data['position'] .'</p>';
-//    $message .= '<p>'. $data['phone'] .'</p>';
-//    $message .= '<p>'. $data['address'] .'</p>';
-//    $message .= '<p> Mã code: <strong>'. $data['code'] .'</strong></p>';
-//    $message .= "</body></html>";
-
-//	$data_send_mail['message'] = $data;
-//	return $CI->load->view('auth/email_member/matching/email_template.tpl.php',$data_send_mail,true);
-	return $message;
+	$data_send_mail['message'] = $data;
+	return $CI->load->view('auth/email_admin/matching/email_template_admin.tpl.php',$data_send_mail,true);
 }
 
 function email_template_look_account($data){
-    $message = '<html><body>';
-    $message .= '<p> Sự kiện: <strong>'. $data['event_name'] .'</strong> đã kết thúc</p>';
-    $message .= '<p> Tk này sẽ khóa</p>';
-    $message .= "</body></html>";
-
-    return $message;
+	$CI =& get_instance();
+	$data_send_mail['message'] = $data;
+	return $CI->load->view('auth/email_admin/look_account/email_template_look_account.tpl.php',$data_send_mail,true);
 }
 
 function send_mail_matching($email, $data, $matching = 'create', $role = 'admin'){
