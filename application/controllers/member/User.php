@@ -60,8 +60,48 @@ class User extends MY_Controller {
         redirect('member/user/login', 'refresh');
     }
 
-
     public function register(){
+        $this->data['page_title'] = 'Register';
+        $this->load->library('form_validation');
+        $this->load->helper('form');
+        $this->form_validation->set_rules('company', 'Company Name', 'required');
+        $this->form_validation->set_rules('username','Username','trim|required|is_unique[users.username]', array(
+            'required' => '%s không được trống.',
+        ));
+        $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[users.email]', array(
+            'required' => '%s không được trống.',
+        ));
+        $this->form_validation->set_rules('phone', 'Phone', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('cf_password', 'Confirm Password', 'required|matches[password]');
+
+        if($this->form_validation->run()===FALSE) {
+            $this->load->helper('form');
+            $this->load->view('member/register_view');
+        } else {
+            if ( $this->input->post() ) {
+                $username = $this->input->post('username');
+                $email = $this->input->post('email');
+                $password = $this->input->post('password');
+                $group_ids = array(2);
+
+                $additional_data = array(
+                    'company' => $this->input->post('company'),
+                    'phone' => $this->input->post('phone')
+                );
+                $result = $this->ion_auth->register($username, $password, $email, $additional_data, $group_ids);
+                if($result){
+                    redirect('member/user/welcome','refresh');
+                }else{
+                    $this->session->set_flashdata('error', REGISTER_COMPANY_ERROR);
+                    redirect('member/user/register');
+                }
+            }
+        }
+    }
+
+
+    public function register1(){
         $this->load->library('form_validation');
 
         $events = $this->get_events();
@@ -356,54 +396,24 @@ class User extends MY_Controller {
         }
     }
 
-//    public function register(){
-//        $this->data['page_title'] = 'Register';
-//        $this->load->library('form_validation');
-//        $this->load->helper('form');
-//        $this->form_validation->set_rules('first_name', 'Frist Name', 'required');
-//        $this->form_validation->set_rules('last_name', 'Last Name', 'required');
-//        $this->form_validation->set_rules('companyname', 'Company Name', 'required');
-//        $this->form_validation->set_rules('username', 'Username', 'required|callback_check_user');
-//        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_check_email');
-//        $this->form_validation->set_rules('phone', 'Phone', 'required');
-//        $this->form_validation->set_rules('password', 'Password', 'required');
-//        $this->form_validation->set_rules('cf_password', 'Confirm Password', 'required|matches[password]');
-//        if($this->input->post()){
-//            if($this->form_validation->run() === TRUE){
-//                $data = array(
-//                    'username' => $this->input->post('username'),
-//                    'password' => $this->input->post('password'),
-//                    'email' => $this->input->post('email'),
-//                    'first_name' => $this->input->post('first_name'),
-//                    'last_name' => $this->input->post('last_name'),
-//                    'company' => $this->input->post('companyname'),
-//                    'phone' => $this->input->post('phone')
-//                );
-//                $this->ion_auth_model->insert($data);
-//            }
-//        }
-//
-//        $this->render('admin/register_view', 'admin_master');
-//    }
-//    public function check_email(){
-//        $email = $this->input->post('email');
-//        $where = array('email' => $email);
-//        $result = $this->ion_auth_model->check_where($where);
-//        if($result >=1){
-//            $this->form_validation->set_message(__FUNCTION__, 'Email đã tồn tại');
-//            return FALSE;
-//        }
-//        return true;
-//    }
-//
-//    public function check_user(){
-//        $username = $this->input->post('username');
-//        $where = array('username' => $username);
-//        $result = $this->ion_auth_model->check_where($where);
-//        if($result >=1 ){
-//            $this->form_validation->set_message(__FUNCTION__, 'Username đã tồn tại');
-//            return FALSE;
-//        }
-//        return true;
-//    }
+    public function check_email(){
+        $email = $this->input->post('email');
+        $result = $this->ion_auth_model->email_check($email);
+        if($result >=1){
+            $this->form_validation->set_message(__FUNCTION__, 'Email đã tồn tại');
+            return FALSE;
+        }
+        return true;
+    }
+
+    public function check_user(){
+        $username = $this->input->post('username');
+        $where = array('username' => $username);
+        $result = $this->ion_auth_model->check_where($where);
+        if($result >=1 ){
+            $this->form_validation->set_message(__FUNCTION__, 'Username đã tồn tại');
+            return FALSE;
+        }
+        return true;
+    }
 }

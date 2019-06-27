@@ -341,11 +341,13 @@ class Ion_auth
 				return FALSE;
 			}
 			// deactivate so the user much follow the activation flow
-			if ( in_array(2, $group_ids) ) {
-				$deactivate = $this->ion_auth_model->deactivate($id, true);
-			}else{
-				$deactivate = $this->ion_auth_model->deactivate($id, false);
-			}
+            /** AnNV comment this block */
+            $deactivate = true;
+//			if ( in_array(2, $group_ids) ) {
+//				$deactivate = $this->ion_auth_model->deactivate($id, true);
+//			}else{
+//				$deactivate = $this->ion_auth_model->deactivate($id, false);
+//			}
 			
 
 			// the deactivate method call adds a message, here we need to clear that
