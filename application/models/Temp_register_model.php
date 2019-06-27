@@ -118,6 +118,20 @@ class Temp_register_model extends MY_Model
         return $this->db->get()->result_array();
     }
 
+    public function get_by_user_id_not_join($user_id){
+        $this->db->select('*')
+            ->from('temp_register')
+            ->where('user_id', $user_id);
+        return $this->db->get()->row_array();
+    }
+    public function get_by_user_id_not_join_saved($user_id){
+        $this->db->select('*')
+            ->from('temp_register')
+            ->where('user_id', $user_id)
+            ->where('is_saved', 1);
+        return $this->db->get()->row_array();
+    }
+
     public function check_user_exist_in_event($email, $event_id, $user_id){
 	    $this->db->from('temp_register')
             ->where('email', $email)

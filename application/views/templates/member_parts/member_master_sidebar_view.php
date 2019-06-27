@@ -29,12 +29,12 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('member/overview') ?>">
                 <i class="fas fa-id-badge"></i>
                 <span>Thông tin Doanh nghiệp</span>
             </a>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
