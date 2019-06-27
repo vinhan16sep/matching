@@ -9,9 +9,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
-            <?php if($count_setting_by_user_and_event == 0){ ?>
-                <a class="btn btn-primary text-white" href="<?php echo base_url('member/setting/create?event_id=' . $event_id) ?>">Tạo mới</a>
-            <?php } ?>
+            <a class="btn btn-primary text-white" href="<?php echo base_url('member/setting/event') ?>">Tạo mới</a>
             <br>
             <br>
             <?php if ($this->session->flashdata('success')): ?>
@@ -67,7 +65,7 @@
                                         <a data-toggle="collapse" href="#review-<?php echo $key ?>" role="button" aria-expanded="false">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <a href="<?php echo base_url('member/setting/update/' . $value['setting_id']) . '?event_id=' . $event_id ?>">
+                                        <a href="<?php echo base_url('member/setting/update/' . $value['setting_id']) . '?event_id=' . $value['event_id'] ?>">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </td>

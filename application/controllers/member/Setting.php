@@ -9,6 +9,7 @@ class Setting extends Member_Controller {
 		parent::__construct();
 		//Load Dependencies
 		$this->load->model('setting_model');
+		$this->load->model('event_model');
 		$this->load->model('category_model');
 		$this->load->model('temp_register_model');
 		$this->load->helper('common_helper');
@@ -17,18 +18,10 @@ class Setting extends Member_Controller {
 	// List all your items
 	public function index(){
         $this->data['page_title'] = 'Quản lý tiêu chí cho sự kiện';
-        $params = $this->input->get();
-        if(!$params['event_id']){
-            redirect('member/dashboard/index', 'refresh');
-        }
-        $this->data['event_id'] = $event_id = $params['event_id'];
 		$user = $this->ion_auth->user()->row();
 
-        $count_setting_by_user_and_event = $this->setting_model->count_by_user_id_and_event_id($user->id, $params['event_id']);
-        $this->data['count_setting_by_user_and_event'] = $count_setting_by_user_and_event;
-
 		$this->load->library('pagination');
-        $total_rows  = $this->setting_model->count();
+        $total_rows  = $this->setting_model->count_by_user_id($user->id);
         $config = array();
         $base_url = base_url('member/setting/index');
         $per_page = 20;
@@ -41,7 +34,7 @@ class Setting extends Member_Controller {
 
         $this->data['page_links'] = $this->pagination->create_links();
         $this->data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) - 1 : 0;
-        $result = $this->setting_model->fetch_all_pagination_by_user_id($user->id, $per_page, $per_page * $this->data['page'], $event_id);
+        $result = $this->setting_model->fetch_all_pagination_by_user_id_not_event_id($user->id, $per_page, $per_page * $this->data['page']);
 
         if ($result) {
         	foreach ($result as $key => $value) {
@@ -55,6 +48,47 @@ class Setting extends Member_Controller {
 
 
 		$this->render('member/setting/index');
+	}
+
+	public function event(){
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('name', 'Sự Kiện', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+
+		$user = $this->ion_auth->user()->row();
+		$events = $this->event_model->fetch_all_by_active();
+		
+		$setting = $this->setting_model->get_by_user_id($user->id);
+		$event_ids = array_helper_get_column('event_id', $setting);
+		$event_ids_remove = array();
+		if ($events) {
+			foreach ($events as $key => $value) {
+				if (in_array($value['id'], $event_ids)) {
+					unset($events[$key]);
+				}
+			}
+		}
+		$this->data['events'] = $events;
+		$this->data['page_title'] = 'Quản lý sự kiện';
+		if ($this->form_validation->run() == FALSE) {
+			$this->render('member/setting/create_event');
+		} else {
+			$event_ids = $this->input->post('event_id');
+			$ids = explode(',', $event_ids);
+			if ($ids) {
+				foreach ($ids as $key => $value) {
+					$data['user_id'] = $user->id;
+					$data['event_id'] = $value;
+					$save = $this->setting_model->save($data);
+				}
+			}
+			$this->session->set_flashdata('success', 'Thêm sự kiện thành công');
+            redirect('member/setting', 'refresh');
+		}
+		
 	}
 
 	private function get_category($category_id){
@@ -146,7 +180,7 @@ class Setting extends Member_Controller {
 
 	//Update one item
 	public function update( $id = NULL ){
-        $this->data['page_title'] = 'Quản lý tiêu chí cho sự kiện';
+        
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
@@ -155,6 +189,8 @@ class Setting extends Member_Controller {
             redirect('member/dashboard/index', 'refresh');
         }
         $this->data['event_id'] = $event_id = $params['event_id'];
+        $event = $this->event_model->fetch_by_id($event_id);
+        $this->data['page_title'] = 'Quản lý tiêu chí cho sự kiện <strong>' . $event['name'] . '</strong>';
 
 		$where = array(
 			'id' => $id,

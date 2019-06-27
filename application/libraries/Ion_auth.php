@@ -342,9 +342,9 @@ class Ion_auth
 			}
 			// deactivate so the user much follow the activation flow
             /** AnNV comment this block */
-            $deactivate = true;
+            // $deactivate = true;
 //			if ( in_array(2, $group_ids) ) {
-//				$deactivate = $this->ion_auth_model->deactivate($id, true);
+				$deactivate = $this->ion_auth_model->deactivate($id, true);
 //			}else{
 //				$deactivate = $this->ion_auth_model->deactivate($id, false);
 //			}

@@ -21,7 +21,7 @@ if (!function_exists('handle_common_author_data')) {
     }
 }
 
-function array_helper_map($data){
+function array_helper_map($data, $key = 'id', $value = 'name'){
     $return = array();
     if ($data) {
         foreach ($data as $key => $value) {
