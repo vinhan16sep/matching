@@ -49,25 +49,15 @@
                                 <?php echo form_error('company'); ?>
                                 <?php echo form_input('company', set_value('company'), 'class="form-control"'); ?>
                             </div>
-                            <div class="form-group col-xs-12 col-lg-12">
-                                <?php echo form_label('Người Đại Diện: ', 'connector'); ?>
-                                <?php echo form_error('connector'); ?>
-                                <?php echo form_input('connector', set_value('connector'), 'class="form-control"'); ?>
-                            </div>
-                            <div class="form-group col-xs-12 col-lg-6">
-                                <?php echo form_label('Chức Danh: ', 'position'); ?>
-                                <?php echo form_error('position'); ?>
-                                <?php echo form_input('position', set_value('position'), 'class="form-control"'); ?>
-                            </div>
                             <div class="form-group col-xs-12 col-lg-6">
                                 <?php echo form_label('Điện Thoại: ', 'phone'); ?>
                                 <?php echo form_error('phone'); ?>
                                 <?php echo form_input('phone', set_value('phone'), 'class="form-control"'); ?>
                             </div>
                             <div class="form-group col-xs-12 col-lg-12">
-                                <?php echo form_label('Địa Chỉ: ', 'address'); ?>
-                                <?php echo form_error('address'); ?>
-                                <?php echo form_input('address', set_value('address'), 'class="form-control"'); ?>
+                                <?php echo form_label('Username: ', 'username'); ?>
+                                <?php echo form_error('username'); ?>
+                                <?php echo form_input('username', set_value('username'), 'class="form-control"'); ?>
                             </div>
                             <div class="form-group col-xs-12 col-lg-12">
                                 <?php echo form_label('Email: ', 'email'); ?>
@@ -75,12 +65,22 @@
                                 <?php echo form_input('email', set_value('email'), 'class="form-control"'); ?>
                             </div>
                             <div class="form-group col-xs-12 col-lg-12">
-                                <?php
-                                echo form_label('Sự Kiện', 'event_id');
-                                echo form_error('event_id', '<div class="error">', '</div>');
-                                echo form_dropdown('event_id', $events, '', 'class="form-control" id="event_id"');
-                                ?>
+                                <?php echo form_label('Mật khẩu mới (ít nhất 8 ký tự): ', 'password'); ?>
+                                <?php echo form_error('password'); ?>
+                                <?php echo form_password('password', '', 'class="form-control"'); ?>
                             </div>
+                            <div class="form-group col-xs-12 col-lg-12">
+                                <?php echo form_label('Xác Nhận Mật Khẩu:', 'confirm_password').'<br />'; ?>
+                                <?php echo form_error('confirm_password'); ?>
+                                <?php echo form_password('cf_password', '','class="form-control"').'<br /><br />'; ?>
+                            </div>
+<!--                            <div class="form-group col-xs-12 col-lg-12">-->
+<!--                                --><?php
+//                                echo form_label('Sự Kiện', 'event_id');
+//                                echo form_error('event_id', '<div class="error">', '</div>');
+//                                echo form_dropdown('event_id', $events, '', 'class="form-control" id="event_id"');
+//                                ?>
+<!--                            </div>-->
                         </div>
                         <?php echo form_submit('submit', 'Đăng Ký', 'class="btn btn-primary btn-lg btn-block"'); ?>
                         <?php echo form_close(); ?>
