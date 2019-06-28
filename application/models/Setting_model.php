@@ -69,6 +69,20 @@ class Setting_model extends MY_Model {
         return $this->db->get()->result_array();
     }
 
+    public function get_by_user_id_with_active_event($user_id){
+        $this->db->select(
+            'setting.*, 
+	        event.name AS eventName, event.id AS eventId,
+	        event.date AS eventDate, event.start AS eventStart,'
+
+        )
+            ->from('setting')
+            ->join('event', 'event.id = setting.event_id')
+            ->where('setting.user_id', $user_id)
+            ->where('event.is_active', 1);
+        return $this->db->get()->result_array();
+    }
+
 }
 
 /* End of file Setting_model.php */

@@ -98,10 +98,10 @@ class Temp_register_model extends MY_Model
         return false;
     }
 
-    public function get_by_email_and_event_id($email, $event_id){
+    public function get_by_email_and_event_id($email, $user_id){
         $this->db->from($this->table);
         $this->db->where('email', $email);
-        $this->db->where('event_id', $event_id);
+        $this->db->where('user_id', $user_id);
         return $this->db->get()->row_array();
     }
 
@@ -154,16 +154,16 @@ class Temp_register_model extends MY_Model
 
         )
             ->from('temp_register')
-            ->join('event', 'event.id = temp_register.event_id')
+            ->join('setting', 'setting.user_id = temp_register.user_id')
+            ->join('event', 'event.id = setting.event_id')
             ->where('temp_register.user_id', $user_id)
             ->where('event.is_active', 1);
-        return $this->db->get()->result_array();
+        return $this->db->get()->row_array();
     }
 
     public function get_by_id_and_event($id, $event){
         $this->db->from('temp_register');
         $this->db->where('id', $id);
-        $this->db->where('event_id', $event);
         return $this->db->get()->row_array();
     }
 
@@ -183,10 +183,18 @@ class Temp_register_model extends MY_Model
         return $this->db->get()->row_array();
     }
 
-    public function get_by_temp_register_id_and_event_id($temp_register_id, $vent){
-        $this->db->from('temp_register');
-        $this->db->where('id', $temp_register_id);
-        $this->db->where('event_id', $vent);
+    public function get_by_temp_register_id_and_event_id($temp_register_id){
+        $this->db->select(
+            'temp_register.*, 
+	        event.name AS eventName, event.id AS eventId,
+	        event.date AS eventDate, event.start AS eventStart,'
+
+        )
+            ->from('temp_register')
+            ->join('setting', 'setting.user_id = temp_register.user_id')
+            ->join('event', 'event.id = setting.event_id')
+            ->where('temp_register.id', $temp_register_id)
+            ->where('event.is_active', 1);
         return $this->db->get()->row_array();
     }
 }

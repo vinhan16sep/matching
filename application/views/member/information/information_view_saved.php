@@ -96,7 +96,7 @@
                 </div>
             </div>
             <br>
-            <a href="<?php echo base_url('member/event') ?>" class="btn btn-primary" style="float: right;">
+            <a href="<?php echo base_url('member/setting') ?>" class="btn btn-primary" style="float: right;">
                 Danh sách sự kiện
                 <i class="fas fa-chevron-right"></i>
             </a>

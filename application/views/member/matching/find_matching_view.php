@@ -99,10 +99,8 @@
                             <tr>
                                 <th style="text-align: center">STT</th>
                                 <th style="text-align: center">Doanh nghiệp</th>
-                                <th style="text-align: center">Người đại diện</th>
-                                <th style="text-align: center">Chức danh</th>
-                                <th style="text-align: center">Địa chỉ</th>
-                                <!-- <th style="text-align: center">Số điện thoại</th> -->
+                                <th style="text-align: center">Email</th>
+                                <th style="text-align: center">Điện thoại</th>
                                 <th style="text-align: center">Thao tác</th>
                             </tr>
                             </thead>
@@ -114,13 +112,11 @@
                                 <tr id="<?= $item['id'] ?>">
                                     <td style="text-align: center"><?php echo $key + 1; ?></td>
                                     <td class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
-                                    <td><?php echo $item['register_info']['connector']; ?></td>
-                                    <td><?php echo $item['register_info']['position']; ?></td>
-                                    <td><?php echo $item['register_info']['address']; ?></td>
-                                    <!-- <td><?php //echo $item['register_info']['phone']; ?></td> -->
+                                    <td><?php echo $item['register_info']['email']; ?></td>
+                                    <td><?php echo $item['register_info']['phone']; ?></td>
                                     <td style="text-align: center">
                                         <a title="Gửi yêu cầu" class="btn-reg-client"
-                                           href="<?php echo base_url('member/matching/create?target=' . $item['register_info']['id'] . '&event=' . $item['register_info']['event_id']) ?>"
+                                           href="<?php echo base_url('member/matching/create?target=' . $item['register_info']['id'] . '&event=' . $event_id) ?>"
                                         >
                                             <i class="fa fa-calendar-check" aria-hidden="true"></i>
                                         </a>

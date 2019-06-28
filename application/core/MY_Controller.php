@@ -338,10 +338,10 @@ class Member_Controller extends MY_Controller {
             'modified_by' => $this->ion_auth->user()->row()->email
         );
 
-        $this->load->model('temp_register_model');
+        $this->load->model('setting_model');
         /** Because multiple event, this way will not be used anymore */
 //        $this->data['self_temp_register'] = $this->temp_register_model->get_by_user_id_and_event($this->ion_auth->user()->row()->id, $this->ion_auth->user()->row()->event_id);
-        $this->data['list_event_of_current_user'] = $this->temp_register_model->get_by_user_id_with_active_event($this->ion_auth->user()->row()->id);
+        $this->data['list_event_of_current_user'] = $this->setting_model->get_by_user_id_with_active_event($this->ion_auth->user()->row()->id);
     }
 
 
