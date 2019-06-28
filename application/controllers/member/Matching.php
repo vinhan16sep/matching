@@ -45,29 +45,29 @@ class Matching extends Member_Controller {
          * Temp register of current user
          */
         $user = $this->ion_auth->user()->row();
-        $temp_register = $this->temp_register_model->get_by_user_id_and_event($user->id, $event_id);
+        $temp_register = $this->temp_register_model->get_by_user_id_with_active_event($user->id);
 
         /**
          * Get all received matching from others
          */
-        $receive = $this->matching_model->get_receive_request_by_temp_register_id_and_event($temp_register['id'], $temp_register['event_id']);
+        $receive = $this->matching_model->get_receive_request_by_temp_register_id_and_event($temp_register['id'], $event_id);
         foreach($receive as $key => $value){
             /**
              * Get data of target of matching
              */
-            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['finder_id'], $value['event_id']);
+            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['finder_id']);
             $receive[$key]['register_info'] = $register_info;
         }
 
         /**
          * Get all matching sent by current user
          */
-        $send = $this->matching_model->get_send_request_by_temp_register_id_and_event($temp_register['id'], $temp_register['event_id']);
+        $send = $this->matching_model->get_send_request_by_temp_register_id_and_event($temp_register['id'], $event_id);
         foreach($send as $key => $value){
             /**
              * Get data of target of matching
              */
-            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['target_id'], $value['event_id']);
+            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['target_id']);
             $send[$key]['register_info'] = $register_info;
         }
 
@@ -86,12 +86,13 @@ class Matching extends Member_Controller {
         if($this->input->get() && $this->input->get('submit') === 'OK'){
             $get = $this->input->get();
             if(!isset($get['category_id'])){
-                redirect('member/matching/find?event_id' . $event_id, 'refresh');
+                redirect('member/matching/find?event_id=' . $event_id, 'refresh');
             }
             $match_categories = $this->setting_model->get_matched_setting_data($event_id, $get['category_id'], $this->data['user']->id);
             foreach($match_categories as $key => $value){
                 $target_user = $this->users_model->fetch_by_id($value['user_id']);
-                $register_info = $this->temp_register_model->get_by_email_and_event_id($target_user['email'], $event_id);
+                $target_user_id = $value['user_id'];
+                $register_info = $this->temp_register_model->get_by_email_and_event_id($target_user['email'], $target_user_id);
                 $match_categories[$key]['register_info'] = $register_info;
             }
             $this->data['matched_setting'] = $match_categories;
@@ -173,7 +174,8 @@ class Matching extends Member_Controller {
          * Temp register data of current user, who find matching
          * Get by current user id and event id
          */
-        $current = $this->temp_register_model->get_by_user_id_and_event($this->ion_auth->user()->row()->id, $event);
+        $user = $this->ion_auth->user()->row();
+        $current = $this->temp_register_model->get_by_user_id_with_active_event($user->id);
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('date','Date','trim|required');

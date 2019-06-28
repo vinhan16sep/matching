@@ -45,8 +45,6 @@
                                     <th style="text-align: center">Thời gian</th>
                                     <th style="text-align: center">DN</th>
                                     <th style="text-align: center"></th>
-                                    <th style="text-align: center">Đại diện</th>
-                                    <th style="text-align: center">Chức danh</th>
                                     <th style="text-align: center">Trạng thái</th>
                                     <th style="text-align: center">Ghi chú</th>
                                 </tr>
@@ -69,8 +67,6 @@
                                                     <i class="fas fa-info-circle"></i>
                                                 </a>
                                             </td>
-                                            <td style="text-align: center"><?php echo $item['register_info']['connector']; ?></td>
-                                            <td style="text-align: center"><?php echo $item['register_info']['position']; ?></td>
                                             <td style="text-align: center">
                                                 <?php if($item['status'] == 0){ ?>
                                                     <button title="Đang chờ được xử lý" class="btnApprove"
@@ -116,8 +112,6 @@
                                     <th style="text-align: center">Thời gian</th>
                                     <th style="text-align: center">DN</th>
                                     <th style="text-align: center"></th>
-                                    <th style="text-align: center">Đại diện</th>
-                                    <th style="text-align: center">Chức danh</th>
                                     <th style="text-align: center">Trạng thái</th>
                                     <th style="text-align: center">Ghi chú</th>
                                 </tr>
@@ -140,8 +134,6 @@
                                                     <i class="fas fa-info-circle"></i>
                                                 </a>
                                             </td>
-                                            <td style="text-align: center"><?php echo $item['register_info']['connector']; ?></td>
-                                            <td style="text-align: center"><?php echo $item['register_info']['position']; ?></td>
                                             <td style="text-align: center">
                                                 <?php if($item['status'] == 0){ ?>
                                                     <i class="fa fa-clock" aria-hidden="true"></i>
@@ -237,16 +229,6 @@
                                 </div>
 
                                 <div class="wrapper">
-                                    <label>Người Đại Diện</label>
-                                    <p id="connector">No data</p>
-                                </div>
-
-                                <div class="wrapper">
-                                    <label>Chức Danh</label>
-                                    <p id="position">No data</p>
-                                </div>
-
-                                <div class="wrapper">
                                     <label>Địa Chỉ</label>
                                     <p id="address">No data</p>
                                 </div>
@@ -319,8 +301,6 @@
                     //$('#btn-reg-info-modal').modal('show');
                     $('#title-info').html(result.info.company);
                     $('#company').html(result.info.company);
-                    $('#connector').html(result.info.connector);
-                    $('#position').html(result.info.position);
                     $('#address').html(result.info.address);
                     $('#overview').html(result.info.overview);
                     $('#profile').html(result.info.profile);

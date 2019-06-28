@@ -10,24 +10,24 @@
 
                     <ul class="list-group list-group-unbordered">
                         <li class="list-group-item">
-                            <h6 class="subtitle-sm"><i class="fas fa-building"></i> Doanh nghiệp </h6>
+                            <h6 class="subtitle-sm"><i class="fas fa-building"></i> Doanh nghiệp</h6>
                             <h6><?php echo $result['company'] ?></h6>
                         </li>
                         <li class="list-group-item">
-                            <h6 class="subtitle-sm"><i class="fas fa-user-tie"></i> Người đại diện </h6>
+                            <h6 class="subtitle-sm"><i class="fas fa-user-tie"></i> Người đại diện</h6>
                             <h6><?php echo $result['connector'] ?></h6>
                         </li>
                         <li class="list-group-item">
-                            <h6 class="subtitle-sm"><i class="fas fa-id-card"></i> Chức danh	</h6>
-                            <h6><?php echo $result['position'] ?></h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="subtitle-sm"><i class="fas fa-map-marked-alt"></i> Địa chỉ </h6>
+                            <h6 class="subtitle-sm"><i class="fas fa-map-marked-alt"></i> Địa chỉ</h6>
                             <h6><?php echo $result['address'] ?></h6>
                         </li>
                         <li class="list-group-item">
-                            <h6 class="subtitle-sm"><i class="fas fa-phone"></i> Số điện thoại </h6>
+                            <h6 class="subtitle-sm"><i class="fas fa-phone"></i> Số điện thoại</h6>
                             <h6><?php echo $result['phone'] ?></h6>
+                        </li>
+                        <li class="list-group-item">
+                            <h6 class="subtitle-sm"><i class="fas fa-globe"></i> Website</h6>
+                            <h6><?php echo $result['website'] ?></h6>
                         </li>
                     </ul>
                 </div>
