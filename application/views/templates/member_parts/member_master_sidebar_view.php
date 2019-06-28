@@ -29,27 +29,25 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('member/overview') ?>">
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('member/information') ?>">
                 <i class="fas fa-id-badge"></i>
                 <span>Thông tin Doanh nghiệp</span>
             </a>
-        </li> -->
+        </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Tiêu chí</span>
+                <span>Sự kiện</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Danh sách sự kiện</h6>
-                    <?php if($list_event_of_current_user){ ?>
-                        <?php foreach($list_event_of_current_user as $key => $event){ ?>
-                            <a class="collapse-item" href="<?php echo base_url('member/setting/index?event_id=' . $event['eventId']) ?>">
-                                <?php echo $event['eventName']; ?>
-                            </a>
-                        <?php } ?>
-                    <?php } ?>
+                    <a class="collapse-item" href="<?php echo base_url('member/setting/event'); ?>">
+                        <span>Sự kiện chưa đăng ký</span>
+                    </a>
+                    <a class="collapse-item" href="<?php echo base_url('member/setting'); ?>">
+                        <span>Sự kiện đã đăng ký</span>
+                    </a>
                 </div>
             </div>
         </li>
