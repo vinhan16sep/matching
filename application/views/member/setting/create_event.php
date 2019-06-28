@@ -39,14 +39,14 @@
 
                     <div class="row">
                         <div class="form-group" style="width: 100%">
-                            <?php echo form_label('Sự Kiện: ', 'name'); ?>
+                            <?php echo form_label('Sự kiện đã chọn', 'name'); ?>
                             <?php echo form_error('name', '<div class="error">', '</div>'); ?><br>
                             <?php echo form_input('name', '', 'class="form-control" id="event-name" readonly'); ?>
                         </div>
                     </div>
                     <input type="hidden" name="event_id" id="event-id">
                     <div class="form-group">
-                        <?php echo form_submit('submit', 'Lưu Thông Tin', 'class="btn btn-success" style="float: right"'); ?>
+                        <?php echo form_submit('submit', 'Lưu Thông Tin', 'class="btn btn-success" style="float: right" id="btnSave"'); ?>
                         
                     </div>
                     <div class="form-group col-sm-12 text-right">
@@ -72,7 +72,6 @@
     <div class="card shadow mb-4">
 
         <div class="card-body">
-            <h4>Chọn Sự Kiện</h4>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead style="background: #4e73df; color: white">
@@ -154,7 +153,6 @@
         }else{
             $('#event-id').val($('#event-id').val() + ',' + id);
         }
-        console.log($('#event-id').val());
     });
     $('#event-add').on('click', '.remove-event', function(){
         id = $(this).data('id');

@@ -79,4 +79,16 @@ class Event_model extends CI_Model {
         return $result = $query->get()->result_array();
     }
 
+    public function register($event, $user){
+        $this->db->set(array(
+            'user_id' => $user,
+            'event_id' => $event
+        ))->insert('users_events');
+
+        if($this->db->affected_rows() == 1){
+            return $this->db->insert_id();
+        }
+        return false;
+    }
+
 }

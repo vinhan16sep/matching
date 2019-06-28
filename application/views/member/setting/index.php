@@ -2,6 +2,12 @@
     .zeroPadding {
         padding: 0 !important;
     }
+    .list-group-item.active{
+        background-color: grey;
+    }
+    .list-group > i{
+        color:white !important;
+    }
 </style>
 
 <div class="container-fluid">
@@ -9,7 +15,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
-            <a class="btn btn-primary text-white" href="<?php echo base_url('member/setting/event') ?>">Tạo mới</a>
+            <a class="btn btn-primary text-white" href="<?php echo base_url('member/setting/event') ?>">Đăng ký thêm sự kiện</a>
             <br>
             <br>
             <?php if ($this->session->flashdata('success')): ?>
