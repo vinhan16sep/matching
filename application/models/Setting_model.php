@@ -22,6 +22,7 @@ class Setting_model extends MY_Model {
 
         return $this->db->get()->result_array();
     }
+
     public function fetch_all_pagination_by_user_id_not_event_id($user_id, $limit = NULL, $start = NULL) {
         $query = $this->db->select('setting.*, event.*, setting.id as setting_id')
             ->from('setting')
@@ -33,6 +34,42 @@ class Setting_model extends MY_Model {
 
         return $this->db->get()->result_array();
     }
+
+    /**
+     * For pending request list
+     * @param string $keywords
+     * @return mixed
+     */
+    public function count_request($status, $keywords = '') {
+        $this->db->select('*')
+            ->from('setting')
+            ->where('is_deleted', 0)
+            ->where('status', $status);
+        if($keywords != ''){
+            $this->db->where('code', $keywords);
+        }
+        return $this->db->get()->num_rows();
+    }
+
+    public function fetch_all_request_pagination($limit = NULL, $start = NULL, $status, $keywords) {
+        $this->db->select('setting.*, event.name as eventName, temp_register.*, setting.id as settingId')
+            ->join('event', 'setting.event_id = event.id')
+            ->join('temp_register', 'temp_register.user_id = setting.user_id')
+            ->from('setting')
+            ->where('setting.is_deleted', 0)
+            ->where('setting.status', $status)
+            ->limit($limit, $start)
+            ->order_by("setting.id", "desc");
+
+        if($keywords != ''){
+            $this->db->where('setting.code', $keywords);
+        }
+
+        return $this->db->get()->result_array();
+    }
+
+
+
 
     public function count_by_user_id_and_event_id($user_id, $event_id)
     {
@@ -84,6 +121,16 @@ class Setting_model extends MY_Model {
         return $this->db->get()->result_array();
     }
 
+    public function update($id, $data){
+        $this->db->set($data)
+            ->where('id', $id)
+            ->update('setting');
+
+        if($this->db->affected_rows() == 1){
+            return true;
+        }
+        return false;
+    }
 }
 
 /* End of file Setting_model.php */
