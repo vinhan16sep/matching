@@ -110,12 +110,10 @@ class Temp_register_model extends MY_Model
      * Use event for listing
      */
     public function get_by_user_id($user_id){
-        $this->db->select('temp_register.*, event.id AS eventId, event.name AS eventName')
+        $this->db->select('*')
             ->from('temp_register')
-            ->join('event', 'event.id = temp_register.event_id')
-            ->where('user_id', $user_id)
-            ->where('is_charge', 1);
-        return $this->db->get()->result_array();
+            ->where('user_id', $user_id);
+        return $this->db->get()->row_array();
     }
 
     public function get_by_user_id_not_join($user_id){
