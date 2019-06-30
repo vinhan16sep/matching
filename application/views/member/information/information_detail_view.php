@@ -104,14 +104,14 @@
                         <?php echo form_textarea('market', (isset($temp) && !empty($temp['market']))? $temp['market'] : set_value('market'), 'class="form-control"'); ?>
                     </div>
                     
-<!--                    <div class="form-group">-->
-<!--                        --><?php //echo form_label('File PDF: ', 'file'); ?><!--<br>-->
-<!--                        --><?php //if (isset($temp) && !empty($temp['file'])): ?>
-<!--                            <embed src="--><?//= base_url('assets/upload/profile/' . $temp['file']) ?><!--" width="30%" />-->
-<!--                        --><?php //endif ?>
-<!--                        --><?php //echo form_error('file', '<div class="error">', '</div>'); ?><!--<br>-->
-<!--                        --><?php //echo form_upload('file', '', 'class=""'); ?>
-<!--                    </div>-->
+                    <div class="form-group">
+                        <?php echo form_label('File PDF: ', 'file'); ?><br>
+                        <?php if (isset($temp) && !empty($temp['file'])): ?>
+                            <embed src="<?= base_url('assets/upload/profile/' . $temp['file']) ?>" width="30%" />
+                        <?php endif ?>
+                        <?php echo form_error('file', '<div class="error">', '</div>'); ?><br>
+                        <?php echo form_upload('file', '', 'class=""'); ?>
+                    </div>
                     <div class="form-group">
                         <?php echo form_submit('submit', 'Lưu Thông Tin', 'class="btn btn-success" style="float: right"'); ?>
                         <?php echo form_submit('submit', 'Lưu Tạm', 'class="btn btn-primary"'); ?>

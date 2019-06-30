@@ -10,7 +10,7 @@
                             <?php echo $this->session->flashdata('message_error'); ?>
                         </div>
                     <?php endif ?>
-                    <a href="<?php echo base_url('member/information/index?edit=1') ?>" class="btn btn-primary">Chỉnh sửa</a>
+                    <!-- <a href="<?php echo base_url('member/information/index?edit=1') ?>" class="btn btn-primary">Chỉnh sửa</a> -->
                     <br>
                     <br>
                     <div class="row">
