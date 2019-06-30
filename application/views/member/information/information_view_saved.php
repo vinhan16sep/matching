@@ -10,7 +10,10 @@
                             <?php echo $this->session->flashdata('message_error'); ?>
                         </div>
                     <?php endif ?>
-                    <!-- <a href="<?php echo base_url('member/information/index?edit=1') ?>" class="btn btn-primary">Chỉnh sửa</a> -->
+                    <?php if ($temp_register['is_saved'] == 1): ?>
+                        <a href="<?php echo base_url('member/information/edit/' . $temp_register['id']) ?>" class="btn btn-primary">Chỉnh sửa</a>
+                    <?php endif ?>
+                    
                     <br>
                     <br>
                     <div class="row">
@@ -22,7 +25,7 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <strong>Logo: </strong><br>
-                                                <img src="<?php echo base_url('assets/upload/profile/' . $temp_register['logo']);  ?>" width="100%">
+                                            <img src="<?php echo base_url('assets/upload/profile/' . $temp_register['logo']);  ?>" width="100%">
                                         </div>
                                         <div class="col-lg-8">
                                             <strong>File PDF: </strong>

@@ -44,6 +44,7 @@
                         <?php echo form_label('Logo: ', 'logo'); ?><br>
                         <?php if (isset($temp) && !empty($temp['logo'])): ?>
                             <img src="<?= base_url('assets/upload/profile/' . $temp['logo']) ?>" width="30%">
+                            <br>
                         <?php endif ?>
                         <?php echo form_error('logo', '<div class="error">', '</div>'); ?><br>
                         <?php echo form_upload('logo', '', 'class=""'); ?>
@@ -108,14 +109,16 @@
                         <?php echo form_label('File PDF: ', 'file'); ?><br>
                         <?php if (isset($temp) && !empty($temp['file'])): ?>
                             <embed src="<?= base_url('assets/upload/profile/' . $temp['file']) ?>" width="30%" />
+                            <br>
                         <?php endif ?>
                         <?php echo form_error('file', '<div class="error">', '</div>'); ?><br>
                         <?php echo form_upload('file', '', 'class=""'); ?>
                     </div>
                     <div class="form-group">
                         <?php echo form_submit('submit', 'Lưu Thông Tin', 'class="btn btn-success" style="float: right"'); ?>
-                        <?php echo form_submit('submit', 'Lưu Tạm', 'class="btn btn-primary"'); ?>
-                        
+                        <?php if ($this->uri->segment(3) != 'edit'): ?>
+                            <?php echo form_submit('submit', 'Lưu Tạm', 'class="btn btn-primary"'); ?>
+                        <?php endif ?>
                         <!-- <a href="javascript:history.back()" name="back" class="btn btn-default btn-lg btn-block">Quay lại</a> -->
                     </div>
 

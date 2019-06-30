@@ -12,7 +12,7 @@ class Information extends Member_Controller {
     public function index(){
         $this->load->helper('form');
         $this->load->library('form_validation');
-        $this->data['page_title'] = 'Tổng quan';
+        $this->data['page_title'] = 'Thôn tin doanh nghiệp';
         $user = $this->ion_auth->user()->row();
         $this->data['company'] = $user->company;
         $temp_register_save = $this->temp_register_model->get_by_user_id_not_join_saved($user->id);
@@ -166,6 +166,120 @@ class Information extends Member_Controller {
             $this->render('member/information/information_view_saved');
         }
         
+    }
+
+    public function edit($id=''){
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->data['page_title'] = 'Cập nhật thông tin doanh nghiệp';
+        $user = $this->ion_auth->user()->row();
+        $this->data['company'] = $user->company;
+        $this->data['temp'] = $check_temp_register = $this->temp_register_model->get_by_user_id_not_join($user->id);
+
+        /*================================
+        =            Validate            =
+        ================================*/
+        
+        
+        $this->form_validation->set_rules('company', 'Tên Doanh Nghiệp', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('address', 'Địa Chỉ', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('website', 'Website', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('manpower', 'Số Nhân lực', 'required|numeric', array(
+            'required' => '%s không được trống!',
+            'numeric' => '%s phải là số'
+        ));
+        $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required|numeric', array(
+            'required' => '%s không được trống!',
+            'numeric' => '%s phải là số'
+        ));
+        $this->form_validation->set_rules('product', 'Sản Phẩm/Giải Pháp', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('profile', 'Lĩnh Vực/Dịch Vụ Hoạt Động', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('market', 'Thị Trường Chính Hiện Nay', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('connector', 'Tên Người Đại Diện Pháp Luật', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('email', 'E-Mail', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('phone', 'Điện Thoại', 'required|numeric', array(
+            'required' => '%s không được trống!',
+            'numeric' => '%s phải là số'
+        ));
+        
+        /*=====  End of Validate  ======*/
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->render('member/information/information_detail_view');
+        } else {
+            if ($this->input->post()) {
+                if(!empty($_FILES['logo']['name'])){
+                    $this->check_image($_FILES['logo']['name'], $_FILES['logo']['size']);
+                }
+                if(!empty($_FILES['file']['name'])){
+                    $this->check_file($_FILES['file']['name'], $_FILES['file']['size']);
+                }
+                if(!file_exists('assets/upload/profile')){
+                    mkdir('assets/upload/profile', 0777);
+                }
+                if ( !empty($_FILES['logo']['name']) ) {
+                    chmod('assets/upload/profile', 0777);
+                    $logo = $this->upload_avatar('logo', 'assets/upload/profile', $_FILES['logo']['name']);
+                }
+                if ( !empty($_FILES['file']['name']) ) {
+                    chmod('assets/upload/profile', 0777);
+                    $file = $this->upload_file_pdf('file', 'assets/upload/profile', $_FILES['file']['name']);
+                }
+                if ( isset($logo) && !empty($logo) ) {
+                    $data['logo'] = $logo;
+                }
+                if ( !empty($_FILES['file']['name']) ) {
+                    $data['file'] = $file;
+                }
+
+                $data = array(
+                    'company' => $user->company,
+                    'address' => $this->input->post('address'),
+                    'website' => $this->input->post('website'),
+                    'manpower' => $this->input->post('manpower'),
+                    'revenue' => $this->input->post('revenue'),
+                    'product' => $this->input->post('product'),
+                    'profile' => $this->input->post('profile'),
+                    'market' => $this->input->post('market'),
+                    'connector' => $this->input->post('connector'),
+                    'email' => $this->input->post('email'),
+                    'phone' => $this->input->post('phone'),
+                    'user_id' => $user->id,
+                    'is_saved' => 1
+                );
+                if ( isset($logo) && !empty($logo) ) {
+                    $data['logo'] = $logo;
+                }
+                if ( !empty($_FILES['file']['name']) ) {
+                    $data['file'] = $file;
+                }
+                $save = $this->temp_register_model->update($id, $data);
+                if ($save) {
+                    $this->session->set_flashdata('message_success', 'Cập nhật thông tin thành công');
+                    redirect('member/information', 'refresh');
+                }else{
+                    $this->session->set_flashdata('message_success', 'Có lỗi trong quá trình cập nhật thông tin');
+                    redirect('member/information', 'refresh');
+                }
+            }
+            
+        }
     }
 
     protected function check_file($filename, $filesize){
