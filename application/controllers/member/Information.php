@@ -85,7 +85,7 @@ class Information extends Member_Controller {
                 );
                 if ($this->input->post('submit') == 'Lưu Thông Tin') {
                     if ($this->form_validation->run() == FALSE) {
-                        $this->render('member/dashboard_view');
+                        $this->render('member/information/information_detail_view');
                     }else{
                         if(!empty($_FILES['logo']['name'])){
                             $this->check_image($_FILES['logo']['name'], $_FILES['logo']['size']);
@@ -119,7 +119,7 @@ class Information extends Member_Controller {
                         }
                         if ($save) {
                             $this->session->set_flashdata('message_success', 'Lưu thông tin thành công');
-                            redirect('member', 'refresh');
+                            redirect('member/information', 'refresh');
                         }
                     }
                 }else{
@@ -155,7 +155,7 @@ class Information extends Member_Controller {
                     }
                     if ($save) {
                         $this->session->set_flashdata('message_success', 'Thông tin tạm thời được lưu');
-                        redirect('member', 'refresh');
+                        redirect('member/information', 'refresh');
                     }
                 }
             }else{
@@ -193,7 +193,7 @@ class Information extends Member_Controller {
 
     public function validate_file(){
         $this->form_validation->set_message(__FUNCTION__, 'Vui lòng chọn Logo.');
-        if (!empty($_FILES['file']['name'][0])) {
+        if (!empty($_FILES['logo']['name'][0])) {
             return true;
         }
         return false;
