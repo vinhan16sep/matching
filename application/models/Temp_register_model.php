@@ -165,9 +165,9 @@ class Temp_register_model extends MY_Model
         return $this->db->get()->row_array();
     }
 
-    public function get_by_id_with_select($id, $select){
+    public function get_by_id_with_select($id){
+        $this->db->select('*');
         $this->db->from('temp_register');
-        $this->db->select($select);
         $this->db->where('id', $id);
         return $this->db->get()->row_array();
     }

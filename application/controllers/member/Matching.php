@@ -248,8 +248,7 @@ class Matching extends Member_Controller {
 
     public function get_info(){
         $id = $this->input->get('id');
-        $select = 'address, company, connector, file, overview, position, profile';
-        $temp_register = $this->temp_register_model->get_by_id_with_select($id, $select);
+        $temp_register = $this->temp_register_model->get_by_id_with_select($id);
         if ($temp_register) {
             return $this->output->set_status_header(200)
                 ->set_output(json_encode(array('status' => true, 'info' => $temp_register)));
