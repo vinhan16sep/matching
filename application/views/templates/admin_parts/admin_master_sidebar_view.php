@@ -80,11 +80,11 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Các trạng thái</h6>
-                <a class="collapse-item" href="<?php echo base_url('admin/temp/index') ?>">
+                <a class="collapse-item" href="<?php echo base_url('admin/request/index') ?>">
                     <i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;&nbsp;
                     Chưa duyệt
                 </a>
-                <a class="collapse-item" href="<?php echo base_url('admin/temp/approved') ?>">
+                <a class="collapse-item" href="<?php echo base_url('admin/request/approved') ?>">
                     <i class="fa fa-check-square-o" aria-hidden="true"></i> &nbsp;&nbsp;
                     Đã duyệt
                 </a>
