@@ -33,47 +33,54 @@ class Matching extends Member_Controller {
     }
 
     public function index() {
-        $this->data['page_title'] = 'Quản lý thông tin Matching';
-
         $params = $this->input->get();
         if(!$params['event_id']){
             redirect('member/dashboard/index', 'refresh');
         }
         $this->data['event_id'] = $event_id = $params['event_id'];
-
-        /**
-         * Temp register of current user
-         */
         $user = $this->ion_auth->user()->row();
-        $temp_register = $this->temp_register_model->get_by_user_id_with_active_event($user->id);
 
-        /**
-         * Get all received matching from others
-         */
-        $receive = $this->matching_model->get_receive_request_by_temp_register_id_and_event($temp_register['id'], $event_id);
-        foreach($receive as $key => $value){
+        $this->data['setting'] = $setting = $this->event_model->verify_charge_status($event_id, $user->id);
+        if(!isset($setting) || $setting['status'] == 0){
+            $this->render('member/matching/verify_matching_view');
+        }else if($setting['status'] == 2){
+            $this->render('member/matching/verify_matching_view');
+        }else{
+            $this->data['page_title'] = 'Quản lý thông tin Matching';
+
             /**
-             * Get data of target of matching
+             * Temp register of current user
              */
-            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['finder_id']);
-            $receive[$key]['register_info'] = $register_info;
-        }
+            $temp_register = $this->temp_register_model->get_by_user_id_with_active_event($user->id);
 
-        /**
-         * Get all matching sent by current user
-         */
-        $send = $this->matching_model->get_send_request_by_temp_register_id_and_event($temp_register['id'], $event_id);
-        foreach($send as $key => $value){
             /**
-             * Get data of target of matching
+             * Get all received matching from others
              */
-            $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['target_id']);
-            $send[$key]['register_info'] = $register_info;
-        }
+            $receive = $this->matching_model->get_receive_request_by_temp_register_id_and_event($temp_register['id'], $event_id);
+            foreach($receive as $key => $value){
+                /**
+                 * Get data of target of matching
+                 */
+                $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['finder_id']);
+                $receive[$key]['register_info'] = $register_info;
+            }
 
-        $this->data['receive'] = $receive;
-        $this->data['send'] = $send;
-        $this->render('member/matching/list_matching_view');
+            /**
+             * Get all matching sent by current user
+             */
+            $send = $this->matching_model->get_send_request_by_temp_register_id_and_event($temp_register['id'], $event_id);
+            foreach($send as $key => $value){
+                /**
+                 * Get data of target of matching
+                 */
+                $register_info = $this->temp_register_model->get_by_temp_register_id_and_event_id($value['target_id']);
+                $send[$key]['register_info'] = $register_info;
+            }
+
+            $this->data['receive'] = $receive;
+            $this->data['send'] = $send;
+            $this->render('member/matching/list_matching_view');
+        }
     }
 
     public function find() {
@@ -248,5 +255,42 @@ class Matching extends Member_Controller {
                 ->set_output(json_encode(array('status' => false)));
     }
 
+    public function active(){
+        $params = $this->input->get();
+        if(!$params['event_id']){
+            redirect('member/dashboard/index', 'refresh');
+        }
+        $code = $this->uniqidReal();
+        $this->data['event_id'] = $event_id = $params['event_id'];
+        $user = $this->ion_auth->user()->row();
 
+        $request = $this->event_model->request_active($event_id, $user->id, $code);
+        if($request){
+            return $this->output->set_status_header(200)
+                ->set_output(json_encode(array(
+                    'message' => 1,
+                    'code' => $code,
+                    'email' => $user->email
+                )));
+        }else{
+            return $this->output->set_status_header(200)
+                ->set_output(json_encode(array(
+                    'message' => 0,
+                    'code' => '',
+                    'email' => ''
+                )));
+        }
+    }
+
+    public function uniqidReal($length = 5) {
+        // uniqid gives 13 chars, but you could adjust it to your needs.
+        if (function_exists("random_bytes")) {
+            $bytes = random_bytes(ceil($length / 2));
+        } elseif (function_exists("openssl_random_pseudo_bytes")) {
+            $bytes = openssl_random_pseudo_bytes(ceil($length / 2));
+        } else {
+            throw new Exception("no cryptographically secure random function available");
+        }
+        return substr(bin2hex($bytes), 0, $length);
+    }
 }

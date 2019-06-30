@@ -54,6 +54,7 @@ class Setting_model extends MY_Model {
         $this->db->where('is_deleted', 0);
         $this->db->where('event_id', $event);
         $this->db->where('user_id !=', $user_id);
+        $this->db->where('status', 1);
         foreach($setting as $value){
             $this->db->like('category_id', ',' . $value . ',');
         }
