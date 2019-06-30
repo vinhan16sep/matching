@@ -62,7 +62,7 @@ class Information extends Member_Controller {
         /*=====  End of Validate  ======*/
 
 
-        if (empty($temp_register_save)) {
+        if (empty($temp_register_save) || $this->input->get('edit') == 1) {
             $this->data['temp'] = $check_temp_register = $this->temp_register_model->get_by_user_id_not_join($user->id);
             if (!isset($check_temp_register) || empty($check_temp_register['logo'])) {
                 $this->form_validation->set_rules('logo', 'Logo', 'callback_validate_file');

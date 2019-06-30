@@ -91,4 +91,26 @@ class Event_model extends CI_Model {
         return false;
     }
 
+    public function verify_charge_status($event_id, $user_id){
+        $query = $this->db->select('*')
+            ->from('setting')
+            ->where('event_id', $event_id)
+            ->where('user_id', $user_id)
+            ->get();
+
+        return $query->row_array();
+    }
+
+    public function request_active($event_id, $user_id, $code){
+        $this->db->set(array('status' => 2, 'code' => $code))
+            ->where('event_id', $event_id)
+            ->where('user_id', $user_id)
+            ->update('setting');
+
+        if($this->db->affected_rows() == 1){
+            return true;
+        }
+        return false;
+    }
+
 }
