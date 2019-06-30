@@ -212,11 +212,11 @@
                         <div class="row no-gutters">
                             <div class="left col-xs-12 col-lg-6">
                                 <div class="background">
-                                    <img src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
+                                    <img id="logo-back"  src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
 
                                     <div class="mask-wrapper">
                                         <div class="mask mask-circle">
-                                            <img src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
+                                            <img id="logo" src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
                                         </div>
                                     </div>
                                 </div>
@@ -305,6 +305,8 @@
                     $('#overview').html(result.info.overview);
                     $('#profile').html(result.info.profile);
                     $('#file-pdf').attr('href', '<?php echo base_url('assets/upload/profile/') ?>' + result.info.file);
+                    $('#logo').attr('src', '<?php echo base_url('assets/upload/profile/') ?>' + result.info.logo);
+                    $('#logo-back').attr('src', '<?php echo base_url('assets/upload/profile/') ?>' + result.info.logo);
                 }else{
                     alert('Doanh nghiệp không tồn tại hoặc đã hủy tham gia sự kiện');
                 }
