@@ -322,7 +322,11 @@ class Member_Controller extends MY_Controller {
             $this->session->set_flashdata('login_message_error', 'Tài khoản không có quyền truy cập');
             redirect('member/user/login');
         }
-        $this->data['user_email'] = $this->ion_auth->user()->row()->email;
+
+        $this->load->model('temp_register_model');
+        $user = $this->ion_auth->user()->row();
+        $this->data['user_email'] = $user->email;
+        $this->data['current_user_temp_register'] = $this->temp_register_model->get_by_user_id($user->id);
         $this->data['page_title'] = 'Trang dành cho doanh nghiệp';
 
         // Get current class

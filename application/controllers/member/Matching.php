@@ -41,7 +41,10 @@ class Matching extends Member_Controller {
         $user = $this->ion_auth->user()->row();
 
         $this->data['setting'] = $setting = $this->event_model->verify_charge_status($event_id, $user->id);
-        if(!isset($setting) || $setting['status'] == 0){
+        if(!isset($setting)){
+            redirect('member/dashboard/index', 'refresh');
+        }
+        if($setting['status'] == 0){
             $this->render('member/matching/verify_matching_view');
         }else if($setting['status'] == 2){
             $this->render('member/matching/verify_matching_view');
