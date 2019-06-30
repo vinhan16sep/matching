@@ -30,9 +30,9 @@
                 <?php if($active_event) {
                     foreach ($active_event as $key => $event) {
                         ?>
-                        <a class="collapse-item" href="<?php echo base_url('admin/event/detail/' . $event['id']) ?>">
-                            <?php echo $event['name'] ?>
-                        </a>
+<!--                        <a class="collapse-item" href="--><?php //echo base_url('admin/event/detail/' . $event['id']) ?><!--">-->
+<!--                            --><?php //echo $event['name'] ?>
+<!--                        </a>-->
                         <?php
                     }
                 }
