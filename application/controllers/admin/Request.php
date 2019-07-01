@@ -16,6 +16,7 @@ class Request extends Admin_Controller
             redirect('admin','refresh');
         }
         $this->load->model('setting_model');
+        $this->load->helper('email_helper');
     }
 
     public function index(){
@@ -86,11 +87,17 @@ class Request extends Admin_Controller
         if(!$params['setting_id']){
             redirect('admin/dashboard/index', 'refresh');
         }
+        $email = $params['email'];
         $data = array(
             'status' => 1
         );
         $result = $this->setting_model->update($params['setting_id'], $data);
         if($result){
+            $sent_email_member = send_mail($email, array('email' => $email), 'active');
+            if (!$sent_email_member) {
+                return $this->output->set_status_header(200)
+                ->set_output(json_encode(array('message' => 'Có lỗi trong quá trình gửi E-Mail. Vui lòng thử lại!!!')));
+            }
             return $this->output->set_status_header(200)
                 ->set_output(json_encode(array('message' => 1)));
         }
