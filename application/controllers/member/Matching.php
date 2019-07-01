@@ -104,7 +104,7 @@ class Matching extends Member_Controller {
             foreach($match_categories as $key => $value){
                 $target_user = $this->users_model->fetch_by_id($value['user_id']);
                 $target_user_id = $value['user_id'];
-                $register_info = $this->temp_register_model->get_by_email_and_event_id($target_user['email'], $target_user_id);
+                $register_info = $this->temp_register_model->get_by_user_id($target_user_id);
                 $match_categories[$key]['register_info'] = $register_info;
             }
             $this->data['matched_setting'] = $match_categories;

@@ -92,10 +92,11 @@ class Setting_model extends MY_Model {
         $this->db->where('event_id', $event);
         $this->db->where('user_id !=', $user_id);
         $this->db->where('status', 1);
+        $this->db->group_start();
         foreach($setting as $value){
-            $this->db->like('category_id', ',' . $value . ',');
+            $this->db->or_like('category_id', ',' . $value . ',');
         }
-
+        $this->db->group_end();
         return $this->db->get()->result_array();
     }
 
