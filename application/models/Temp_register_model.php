@@ -105,6 +105,13 @@ class Temp_register_model extends MY_Model
         return $this->db->get()->row_array();
     }
 
+    public function fetch_by_email_and_event_id($email, $event_id){
+        $this->db->from($this->table);
+        $this->db->where('email', $email);
+        $this->db->where('event_id', $event_id);
+        return $this->db->get()->row_array();
+    }
+
     /**
      * Get temp register information for all of events they have joined
      * Use event for listing
