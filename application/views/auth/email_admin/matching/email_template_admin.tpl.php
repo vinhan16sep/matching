@@ -97,20 +97,20 @@
 <div class="email-wrapper">
 	<table>
 		<tr class="tr-header">
-			<td colspan="2">Email cung cấp mật khẩu</td>
+			<td colspan="2">Email kích hoạt sự kiện</td>
 		</tr>
 		<tr class="tr-body">
 			<td colspan="2">
-				<h4>Tài khoản đăng nhập:</h4>
+				<h4>Tài khoản đăng ký:</h4>
 			</td>
 		</tr>
 		<tr class="tr-body">
 			<td>Email:</td>
-			<td>support3@vinasa.org.vn</td>
+			<td><?php echo $message['email'] ?></td>
 		</tr>
 		<tr class="tr-body">
-			<td>Mật Khẩu:</td>
-			<td>0m5ndzl0</td>
+			<td>Mã Code:</td>
+			<td><?php echo $message['code'] ?></td>
 		</tr>
 		<tr class="tr-footer">
 			<td colspan="2">

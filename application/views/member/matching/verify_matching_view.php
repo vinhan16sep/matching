@@ -37,7 +37,7 @@
                 },
                 success: function(res){
                     var data = JSON.parse(res);
-                    console.log(data);
+                    // console.log(data);
                     if(data.message == 1){
                         var code = data.code;
                         var email = data.email;
@@ -46,8 +46,11 @@
                         message += 'Hãy làm theo hướng dẫn trong email để tiếp tục tham gia sự kiện';
 
                         $(".modal-body").html(message);
-
-                        window.location.reload();
+                        $('#myModal').on('hidden.bs.modal', function () {
+                            window.location.reload();
+                        });
+                    }else if(data.message != 1 && data.message != 0){
+                        $(".modal-body").html(data.message);
                     }else{
                         window.location.reload();
                     }

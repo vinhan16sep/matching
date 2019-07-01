@@ -87,7 +87,7 @@
                                         <td><?php echo $item['phone']; ?></td>
                                         <td class="reg-client-email"><?php echo $item['email']; ?></td>
                                         <td style="text-align: center">
-                                            <a onclick="active('<?= $item['settingId'] ?>');" title="Kích hoạt sự kiện cho yêu cầu này?" class="btn-reg-client" href="javascript:void(0);">
+                                            <a onclick="active('<?= $item['settingId'] ?>', '<?= $item['email'] ?>');" title="Kích hoạt sự kiện cho yêu cầu này?" class="btn-reg-client" href="javascript:void(0);">
                                                 <i class="fa fa-check" aria-hidden="true"></i>
                                             </a>
                                         </td>
@@ -108,13 +108,13 @@
 </div>
 <!-- /.container-fluid -->
 <script>
-    function active(setting_id){
+    function active(setting_id, email){
         if(confirm("Bạn chắc chắn muốn kích hoạt sự kiện cho yêu cầu này?")){
             $.ajax({
                 method: 'GET',
                 url: '<?php echo base_url('admin/request/activate') ?>',
                 data: {
-                    setting_id: setting_id,
+                    setting_id: setting_id, email: email
                 },
                 success: function(res){
                     var result = JSON.parse(res);

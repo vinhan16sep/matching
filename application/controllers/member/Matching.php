@@ -7,6 +7,8 @@ class Matching extends Member_Controller {
     const APPROVE = 1;
     const REJECT = 2;
     const REJECT_BY_ANOTHER_APPROVE = 3;
+    const EMAIL_ADMIN = 'minhmc@vinasa.org.vn';
+    const EMAIL_ADMIN_LOCAL = 'minhtruong93gtvt@gmail.com';
 
     function __construct() {
         parent::__construct();
@@ -268,6 +270,21 @@ class Matching extends Member_Controller {
 
         $request = $this->event_model->request_active($event_id, $user->id, $code);
         if($request){
+            $data = array(
+                'code' => $code,
+                'email' => $user->email
+            );
+            $email_admin = base_url() == 'http://localhost/matching/' ? self::EMAIL_ADMIN_LOCAL : self::EMAIL_ADMIN ;
+            $sent_email_member = send_mail($user->email, $data, 'user_temp_register');
+            $sent_email_admin = send_mail($email_admin, $data, 'admin');
+            if (!$sent_email_member) {
+                return $this->output->set_status_header(200)
+                ->set_output(json_encode(array(
+                    'message' => 'Có lỗi trong quá trình gửi email xác nhận',
+                    'code' => '',
+                    'email' => ''
+                )));
+            }
             return $this->output->set_status_header(200)
                 ->set_output(json_encode(array(
                     'message' => 1,

@@ -33,6 +33,9 @@ function send_mail($email, $data, $layout = 'user') {
     if ($layout == 'look') {
         $mail->Body = email_template_look_account($data); //HTML Body
     }
+    if ($layout == 'active') {
+        $mail->Body = email_template_active_account($data); //HTML Body
+    }
     
 
     // $mail->SMTPDebug = 2;
@@ -60,6 +63,11 @@ function email_template_look_account($data){
 	$CI =& get_instance();
 	$data_send_mail['message'] = $data;
 	return $CI->load->view('auth/email_admin/look_account/email_template_look_account.tpl.php',$data_send_mail,true);
+}
+function email_template_active_account($data){
+    $CI =& get_instance();
+    $data_send_mail['message'] = $data;
+    return $CI->load->view('auth/email_member/matching/email_template_active_account.tpl.php',$data_send_mail,true);
 }
 
 function send_mail_matching($email, $data, $matching = 'create', $role = 'admin'){

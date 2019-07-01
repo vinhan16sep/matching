@@ -104,13 +104,8 @@
             </td>
         </tr>
         <tr class="tr-body">
-            <td>Mã code</td>
-            <td><?php echo $message['code']; ?></td>
-        </tr>
-        <tr class="tr-body">
             <td colspan="2">
-                <p>Xin vui lòng thanh toán phí tham gia matching là 1500USD với nội dung như sau: <b>Mã code + matching ictsummit</b></p>
-                <p>Sau khi nhận được phí chuyển khoản, hệ thống sẽ kích hoạt chức năng tìm kiếm đối tác.</p>
+                <p>Chức năng tìm kiếm đối tác được kích hoạt. <a href="http://bmo.vinasa.org.vn">Truy Cập</a> để tìm kiếm đối tác</p>
                 <p>Trường hợp không đăng ký được vui lòng liên hệ: Anh Mạc Công Minh, mobile: 0936 136 696, email: minhmc@vinasa.org.vn để được hỗ trợ.</p>
             </td>
         </tr>
