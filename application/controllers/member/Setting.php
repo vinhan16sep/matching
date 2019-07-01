@@ -163,7 +163,6 @@ class Setting extends Member_Controller {
 					'user_id' => $user->id,
 					'event_id' => $event_id,
 					'category_id' => $category_id,
-					'temp_register_id' => $temp_register['id'],
 				);
 
 				$insert = $this->setting_model->save($data);
@@ -229,7 +228,6 @@ class Setting extends Member_Controller {
 					'user_id' => $user->id,
 					'event_id' => $event_id,
 					'category_id' => $category_id,
-					'temp_register_id' => $temp_register['id'],
 				);
 				$update = $this->setting_model->update($id, $data);
 				if ($update) {
