@@ -118,9 +118,16 @@ class Matching extends Member_Controller {
                 $category_sub = $this->category_model->fetch_all_sub_by_event_and_parent($event_id, $value['id']);
                 if ($category_sub) {
                     foreach ($category_sub as $k => $val) {
-                        $events[$value['id']][$val['id']] = $val['name'];
+                        $childs = $this->category_model->fetch_all_sub_by_event_and_parent($event_id, $val['id']);
+                        if ($childs) {
+                            foreach ($childs as $item => $child) {
+                                $events[$value['id']][$val['id']]['name'] = $val['name'];
+                                $events[$value['id']][$val['id']][$child['id']] = $child['name'];
+                            }
+                        }else{
+                            $events[$value['id']][$val['id']] = $val['name'];
+                        }
                     }
-
                 }
             }
         }
