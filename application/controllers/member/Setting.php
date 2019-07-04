@@ -35,7 +35,7 @@ class Setting extends Member_Controller {
         $this->data['page_links'] = $this->pagination->create_links();
         $this->data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) - 1 : 0;
         $result = $this->setting_model->fetch_all_pagination_by_user_id_not_event_id($user->id, $per_page, $per_page * $this->data['page']);
-
+        
         if ($result) {
         	foreach ($result as $key => $value) {
         		$category_id = explode(',', $value['category_id']);
@@ -110,7 +110,21 @@ class Setting extends Member_Controller {
 						}
 					}
 				}
-				
+			}
+		}
+		if ($category_root) {
+			foreach ($category_root as $key => $value) {
+				if ($value['sub']) {
+					foreach ($value['sub'] as $item => $child) {
+						if ($category) {
+							foreach ($category as $i => $v) {
+								if ($v['parent_id'] == $child['id']) {
+									$category_root[$key]['sub'][$item]['sub'][] = $v;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 		return $category_root;
@@ -208,13 +222,20 @@ class Setting extends Member_Controller {
 				$category_sub = $this->category_model->fetch_all_sub_by_event_and_parent($event_id, $value['id']);
 				if ($category_sub) {
 					foreach ($category_sub as $k => $val) {
-						$events[$value['id']][$val['id']] = $val['name'];
+						$childs = $this->category_model->fetch_all_sub_by_event_and_parent($event_id, $val['id']);
+						
+						if ($childs) {
+							foreach ($childs as $item => $child) {
+								$events[$value['id']][$val['id']]['name'] = $val['name'];
+								$events[$value['id']][$val['id']][$child['id']] = $child['name'];
+							}
+						}else{
+							$events[$value['id']][$val['id']] = $val['name'];
+						}
 					}
-				
 				}
 			}
 		}
-		
 		$this->data['events'] = $events;
 		$this->data['setting_id'] = $id;
 

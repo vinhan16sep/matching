@@ -27,6 +27,10 @@ class Category extends Admin_Controller
             foreach($root as $key => $item){
                 $categories[$key] = $item;
                 $sub = $this->category_model->fetch_all_sub_by_event_and_parent($event_id, $item['id']);
+                foreach ($sub as $k => $val) {
+                    $child = $this->category_model->fetch_all_sub_by_event_and_parent($event_id, $val['id']);
+                    $sub[$k]['sub'] = $child;
+                }
                 $categories[$key]['sub'] = $sub;
             }
         }

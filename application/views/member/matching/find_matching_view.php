@@ -36,23 +36,45 @@
                                 echo form_error('category_id[]');
                                 ?>
                                 <br>
+
                                 <?php if ($events): ?>
                                     <?php foreach ($events as $key => $value): ?>
-                                        <?php
-                                        echo form_checkbox('category_id[]', $key, isset($_GET['category_id']) ? in_array($key, $_GET['category_id']) : false, 'class="btn-event event-'. $key .'" data-key=' . $key);
-                                        echo $value['name'] . '<br>';
+                                        <?php 
+                                            echo form_checkbox('category_id[]', $key, isset($_GET['category_id']) ? in_array($key, $_GET['category_id']) : false, 'class="btn-event event-'. $key .'" data-key=' . $key);
+                                            echo $value['name'] . '<br>';
                                         ?>
                                         <?php if ($value): ?>
                                             <div style="margin-left: 20px" class="slide-service-<?php echo $key ?>" data-key="<?php echo $key ?>">
-                                                <?php foreach ($value as $k => $val): ?>
-                                                    <?php if ($k != 'name'): ?>
-                                                        
-                                                            <?php
-                                                            echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service"');
-                                                            echo $val . '<br>';
-                                                            ?>
+                                            <?php foreach ($value as $k => $val): ?>
+                                                <?php if ($val): ?>
+                                                    
+                                                    <?php 
+                                                        if (is_array($val)):
+                                                            if (isset($val['name'])) {
+                                                                echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service sub-event-' . $k .'"');
+                                                                echo $val['name'] . '<br>';
+                                                            }
+                                                    ?>
+                                                        <div style="margin-left: 40px" class="slide-service-sub-<?php echo $k ?>" data-key="<?php echo $k ?>">
+                                                            <?php foreach ($val as $item => $child): ?>
+                                                                <?php if ($item != 'name'): ?>
+                                                                    <?php 
+                                                                        echo form_checkbox('category_id[]', $item, isset($_GET['category_id']) ? in_array($item, $_GET['category_id']) : false, 'class="btn-service btn-service-sub"');
+                                                                        echo $child . '<br>';
+                                                                    ?>
+                                                                <?php endif ?>
+                                                            <?php endforeach ?>
+                                                        </div>
+                                                    <?php else: ?>
+                                                        <?php
+                                                            if ($k != 'name') {
+                                                                echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service"');
+                                                                echo $val . '<br>';
+                                                            }
+                                                        ?>
                                                     <?php endif ?>
-                                                <?php endforeach ?>
+                                                <?php endif ?>
+                                            <?php endforeach; ?>
                                             </div>
                                         <?php endif ?>
                                     <?php endforeach ?>
@@ -246,6 +268,29 @@
             input_checked = $(this).parent('div').children('input').length;
             if ($(this).parent('div').children('.btn-service:checkbox:not(:checked)').length == input_checked) {
                 $('.event-' + key).prop('checked',false);
+            }
+        }
+    });
+
+    $('.btn-service').click(function(){
+        key = $(this).val();
+        if($(this).prop("checked") == true){
+            $('.slide-service-sub-' + key).find('input').prop('checked',true);
+        }else{
+            $('.slide-service-sub-' + key).find('input').prop('checked',false);
+        }
+    });
+
+    $('.btn-service-sub').click(function(){
+        key = $(this).parent('div').data('key');
+        if ($(this).prop("checked") == true) {
+            $('.sub-event-' + key).prop('checked',true);
+            
+        }else{
+            input_checked = $(this).parent('div').children('input').length;
+            console.log(input_checked + '---' + $(this).parent('div').children('.btn-service-sub:checkbox:not(:checked)').length);
+            if ($(this).parent('div').children('.btn-service-sub:checkbox:not(:checked)').length == input_checked) {
+                $('.sub-event-' + key).prop('checked',false);
             }
         }
     });

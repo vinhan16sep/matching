@@ -1,3 +1,6 @@
+<style>
+    
+</style>
 <div class="container-fluid" id="category">
     <a href="<?php echo base_url('admin/event/index'); ?>" class="btn btn-outline-dark"><i class="fa fa-backward" aria-hidden="true"></i></a>
     <a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#createRoot" style="color: white"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tạo danh mục gốc</a>
@@ -43,8 +46,23 @@
                                             <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $itemSub['id']; ?>" data-name="<?php echo $itemSub['name']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             </a>
+                                            &nbsp;
+                                            <a title="Tạo danh mục con" href="javascript:void(0);" class="sub-category" data-parent="<?php echo $itemSub['id']; ?>" data-toggle="modal" data-target="#createSub" style="color: white">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            </a>
                                         </td>
                                     </tr>
+                                    <?php foreach ($itemSub['sub'] as $k => $child): ?>
+                                        <tr class="child-item" style="background: #ffffff; color: #66667a">
+                                            <td>&#8627; <?php echo $k + 1; ?></td>
+                                            <td><?php echo $child['name']; ?></td>
+                                            <td style="text-align: center">
+                                                <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $child['id']; ?>" data-name="<?php echo $child['name']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #66667a !important"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
                                 <?php } ?>
                             <?php } ?>
                         <?php }else{ ?>

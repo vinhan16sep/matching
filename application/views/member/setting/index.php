@@ -80,13 +80,18 @@
                                     <td colspan="5" class="zeroPadding">
                                         <div class="collapse out" id="review-<?php echo $key ?>">
                                             <ul class="list-group">
-                                                <li class="list-group-item active"><i class="fas fa-list"></i> Tiêu chí</li>
+                                                <li class="list-group-item active" style="background: #605ca8 !important; color: white; border-color: white !important"><i class="fas fa-list" style="color: white !important"></i> Tiêu chí</li>
                                                 <?php if ($value['category']): ?>
                                                     <?php foreach ($value['category'] as $k => $val): ?>
-                                                        <li class="list-group-item" style="background: #3495c4 !important; color: white"><i class="fas fa-bullseye"></i> <?php echo $val['name'] ?></li>
+                                                        <li class="list-group-item" style="background: #0073b7 !important; color: white; border-color: white !important"><i class="fas fa-bullseye" style="color: white !important"></i> <?php echo $val['name'] ?></li>
                                                         <?php if (isset($val['sub']) && !empty($val['sub'])): ?>
                                                             <?php foreach ($val['sub'] as $item): ?>
-                                                                <li class="list-group-item">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; <?php echo $item['name'] ?></li>
+                                                                <li class="list-group-item" style="background: #39cccc !important; color: white; border-color: white !important">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; <?php echo $item['name'] ?></li>
+                                                                <?php if (isset($item['sub']) && !empty($item['sub'])): ?>
+                                                                    <?php foreach ($item['sub'] as $child): ?>
+                                                                        <li class="list-group-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8627; <?php echo $child['name'] ?></li>
+                                                                    <?php endforeach ?>
+                                                                <?php endif ?>
                                                             <?php endforeach ?>
                                                         <?php endif ?>
                                                     <?php endforeach ?>
