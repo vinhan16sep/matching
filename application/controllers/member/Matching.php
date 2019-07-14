@@ -152,7 +152,7 @@ class Matching extends Member_Controller {
              * Temp register data of current user
              * Get by current user id and event id
              */
-            $logged_in_result = $this->temp_register_model->get_by_user_id_and_event($current_user_id, $event);
+            $logged_in_result = $this->temp_register_model->get_by_user_id($current_user_id);
 
             /**
              * Get current event data
