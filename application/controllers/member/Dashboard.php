@@ -7,11 +7,17 @@ class Dashboard extends Member_Controller {
         $this->load->model('users_model');
         $this->load->model('temp_register_model');
         $this->load->model('matching_model');
+        $this->load->model('setting_model');
+        $this->load->model('event_model');
     }
 
     public function index(){
         $this->data['page_title'] = 'Tổng quan';
         $user = $this->ion_auth->user()->row();
+        $this->data['total_registered']  = $this->setting_model->count_by_user_id($user->id);
+
+        $events = $this->event_model->fetch_all_by_active();
+        $this->data['total_unregistered'] = count($events) - $this->data['total_registered'];
         $this->render('member/dashboard_view');
     }
 

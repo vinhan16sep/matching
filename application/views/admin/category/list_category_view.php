@@ -35,6 +35,8 @@
                                             <a title="Tạo danh mục con" href="javascript:void(0);" class="sub-category" data-parent="<?php echo $item['id']; ?>" data-toggle="modal" data-target="#createSub" style="color: white">
                                                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                             </a>
+                                            &nbsp;
+                                            <a href="javascript:void(0);" title="Xóa danh mục" class="btn-delete-category" data-id="<?= $item['id']; ?>"><i class="fas fa-trash-alt"></i></a>
                                         <?php } ?>
                                     </td>
                                 </tr>
@@ -50,6 +52,8 @@
                                             <a title="Tạo danh mục con" href="javascript:void(0);" class="sub-category" data-parent="<?php echo $itemSub['id']; ?>" data-toggle="modal" data-target="#createSub" style="color: white">
                                                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                             </a>
+                                            &nbsp;
+                                            <a href="javascript:void(0);" title="Xóa danh mục" class="btn-delete-category" data-id="<?= $itemSub['id']; ?>"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <?php foreach ($itemSub['sub'] as $k => $child): ?>
@@ -60,6 +64,8 @@
                                                 <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $child['id']; ?>" data-name="<?php echo $child['name']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
                                                     <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #66667a !important"></i>
                                                 </a>
+                                                &nbsp;
+                                                <a href="javascript:void(0);" title="Xóa danh mục" class="btn-delete-category" data-id="<?= $child['id']; ?>"><i class="fas fa-trash-alt" style="color: #66667a !important"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -238,5 +244,27 @@
         var name = $(event.relatedTarget).data('name');
         $(this).find('input[name="idUpdate"]').val(id);
         $(this).find('input[name="nameUpdate"]').val(name);
+    });
+
+    $('.btn-delete-category').click(function(){
+        id = $(this).data('id');
+        if (confirm('Chăc chắn xóa danh mục này? Lưu ý: Khi thực hiện xóa danh mục nếu có danh mục con sẽ xóa cả danh mục con!')) {
+            $.ajax({
+                method: 'GET',
+                url: '<?php echo base_url('admin/category/delete_category') ?>',
+                data: {
+                    id: id,
+                },
+                success: function(res){
+                    var result = JSON.parse(res);
+                    if (result.status == true) {
+                        window.location.reload();
+                    }else{
+                        alert('Xảy ra lỗi trong quá trình xóa danh mục');
+                        window.location.reload();
+                    }
+                }
+            });
+        }
     });
 </script>
