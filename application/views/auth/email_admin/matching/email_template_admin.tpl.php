@@ -109,8 +109,13 @@
 			<td><?php echo $message['email'] ?></td>
 		</tr>
 		<tr class="tr-body">
-			<td>Mã Code:</td>
-			<td><?php echo $message['code'] ?></td>
+			<?php if ($message['code'] == 'free'): ?>
+				<td colspan="2">Tài khoản miễn phí</td>
+			<?php else: ?>
+				<td>Mã Code:</td>
+				<td><?php echo $message['code'] ?></td>
+			<?php endif ?>
+			
 		</tr>
 		<tr class="tr-footer">
 			<td colspan="2">

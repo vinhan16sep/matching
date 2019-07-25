@@ -18,7 +18,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-
+                <div class="text-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -42,8 +46,10 @@
                         var code = data.code;
                         var email = data.email;
                         var message = 'Email chi tiết đã được gửi về địa chỉ <a href="mailto:' + email + '">' + email + '</a>';
-                        message += '<p>Mã kích hoạt là: <span style="color: red;">' + code + '</span></p>';
-                        message += 'Hãy làm theo hướng dẫn trong email để tiếp tục tham gia sự kiện';
+                        if (code != 'free') {
+                            message += '<p>Mã kích hoạt là: <span style="color: red;">' + code + '</span></p>';
+                            message += 'Hãy làm theo hướng dẫn trong email để tiếp tục tham gia sự kiện';
+                        }
 
                         $(".modal-body").html(message);
                         $('#myModal').on('hidden.bs.modal', function () {

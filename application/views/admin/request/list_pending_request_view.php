@@ -70,6 +70,7 @@
                                 <th style="text-align: center">Địa chỉ</th>
                                 <th style="text-align: center">Số điện thoại</th>
                                 <th style="text-align: center">Email</th>
+                                <th style="text-align: center">Cơ quan nhà nước</th>
                                 <th style="text-align: center">Thao tác</th>
                             </tr>
                         </thead>
@@ -86,7 +87,12 @@
                                         <td><?php echo $item['address']; ?></td>
                                         <td><?php echo $item['phone']; ?></td>
                                         <td class="reg-client-email"><?php echo $item['email']; ?></td>
+                                        <td style="text-align: center"><?php echo $item['is_state'] == 1 ? '<i class="fa fa-check" aria-hidden="true"  style="color: #28a745!important"></i>' : '<i class="fas fa-times"  style="color: #dc3545!important"></i>'; ?></td>
                                         <td style="text-align: center">
+                                            <a href="<?= base_url('admin/request/show_company/' . $item['user_id']) ?>" target="_blank" title="Thông tin doanh nghiệp">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            &nbsp;&nbsp;
                                             <a onclick="active('<?= $item['settingId'] ?>', '<?= $item['email'] ?>');" title="Kích hoạt sự kiện cho yêu cầu này?" class="btn-reg-client" href="javascript:void(0);">
                                                 <i class="fa fa-check" aria-hidden="true"></i>
                                             </a>
@@ -110,6 +116,7 @@
 <script>
     function active(setting_id, email){
         if(confirm("Bạn chắc chắn muốn kích hoạt sự kiện cho yêu cầu này?")){
+            $('.btn-reg-client').html('<div class="spinner-border" role="status" style="width: 1rem; height: 1rem;"><span class="sr-only">Loading...</span></div>');
             $.ajax({
                 method: 'GET',
                 url: '<?php echo base_url('admin/request/activate') ?>',
