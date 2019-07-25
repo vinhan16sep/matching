@@ -16,6 +16,7 @@ class Request extends Admin_Controller
             redirect('admin','refresh');
         }
         $this->load->model('setting_model');
+        $this->load->model('temp_register_model');
         $this->load->helper('email_helper');
     }
 
@@ -103,5 +104,11 @@ class Request extends Admin_Controller
         }
         return $this->output->set_status_header(200)
             ->set_output(json_encode(array('message' => 0)));
+    }
+
+    public function show_company($id){
+        $temp_register_save = $this->temp_register_model->get_by_user_id_not_join_saved($id);
+        $this->data['temp_register'] = $temp_register_save;
+        $this->render('member/information/information_view_saved');
     }
 }

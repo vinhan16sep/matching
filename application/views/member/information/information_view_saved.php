@@ -3,16 +3,19 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <?php if ($this->session->flashdata('message_error')): ?>
-                        <div class="alert alert-danger alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-warning"></i> Thông báo!</h4>
-                            <?php echo $this->session->flashdata('message_error'); ?>
-                        </div>
+                    <?php if ($this->uri->segment(1) != 'admin'): ?>
+                        <?php if ($this->session->flashdata('message_error')): ?>
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4><i class="icon fa fa-warning"></i> Thông báo!</h4>
+                                <?php echo $this->session->flashdata('message_error'); ?>
+                            </div>
+                        <?php endif ?>
+                        <?php if ($temp_register['is_saved'] == 1): ?>
+                            <a href="<?php echo base_url('member/information/edit/' . $temp_register['id']) ?>" class="btn btn-primary">Chỉnh sửa</a>
+                        <?php endif ?>
                     <?php endif ?>
-                    <?php if ($temp_register['is_saved'] == 1): ?>
-                        <a href="<?php echo base_url('member/information/edit/' . $temp_register['id']) ?>" class="btn btn-primary">Chỉnh sửa</a>
-                    <?php endif ?>
+                    
                     
                     <br>
                     <br>
@@ -99,10 +102,12 @@
                 </div>
             </div>
             <br>
-            <a href="<?php echo base_url('member/setting') ?>" class="btn btn-primary" style="float: right;">
-                Danh sách sự kiện
-                <i class="fas fa-chevron-right"></i>
-            </a>
+            <?php if ($this->uri->segment(1) != 'admin'): ?>
+                <a href="<?php echo base_url('member/setting') ?>" class="btn btn-primary" style="float: right;">
+                    Danh sách sự kiện
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            <?php endif ?>
         </div>
     </div>
 </div>
