@@ -12,6 +12,7 @@ class Category extends Admin_Controller
         }
         $this->load->model('category_model');
         $this->load->model('event_model');
+        $this->load->helper('common_helper');
     }
 
     public function index(){
@@ -107,6 +108,40 @@ class Category extends Admin_Controller
                     ->set_output(json_encode(array('message' => 'Success', 'data' => $id)));
             }
         }
+    }
+
+    public function delete_category(){
+        $id = $this->input->get('id');
+        $ids = array();
+        $child_ids = array();
+        $grand_children_ids = array();
+        $ids[] = $id;
+        $where = array(
+            'id' => $id,
+            'is_deleted' => 0
+        );
+        $category = $this->category_model->where_row_array($where);
+        if ($category) {
+
+            $where_parent = array(
+                'parent_id' => $id,
+                'is_deleted' => 0
+            );
+            $category_by_parent = $this->category_model->where_result_array($where_parent);
+            if ($category_by_parent) {
+                $child_ids = array_helper_get_column('id', $category_by_parent);
+                $grand_children = $this->category_model->fetch_by_parent_ids($child_ids);
+                if ($grand_children) {
+                    $grand_children_ids = array_helper_get_column('id', $grand_children);
+                }
+            }
+            $ids = array_merge($ids, $child_ids, $grand_children_ids);
+            $update = $this->category_model->update_multiple($ids, ['is_deleted' => 1]);
+            return $this->output->set_status_header(200)
+                ->set_output(json_encode(array('status' => true)));
+        }
+        return $this->output->set_status_header(200)
+            ->set_output(json_encode(array('status' => false)));
     }
 
 }
