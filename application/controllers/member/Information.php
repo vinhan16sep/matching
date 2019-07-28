@@ -12,7 +12,7 @@ class Information extends Member_Controller {
     public function index(){
         $this->load->helper('form');
         $this->load->library('form_validation');
-        $this->data['page_title'] = 'Thôn tin doanh nghiệp';
+        $this->data['page_title'] = 'Thông tin doanh nghiệp';
         $user = $this->ion_auth->user()->row();
         $this->data['company'] = $user->company;
         $temp_register_save = $this->temp_register_model->get_by_user_id_not_join_saved($user->id);
@@ -221,7 +221,7 @@ class Information extends Member_Controller {
         /*=====  End of Validate  ======*/
 
         if ($this->form_validation->run() == FALSE) {
-            $this->render('member/information/information_detail_view');
+            $this->render('member/information/information_edit_view');
         } else {
             if ($this->input->post()) {
                 if(!empty($_FILES['logo']['name'])){
@@ -261,6 +261,7 @@ class Information extends Member_Controller {
                     'email' => $this->input->post('email'),
                     'phone' => $this->input->post('phone'),
                     'user_id' => $user->id,
+                    'is_state' => $this->input->post('is_state'),
                     'is_saved' => 1
                 );
                 if ( isset($logo) && !empty($logo) ) {
