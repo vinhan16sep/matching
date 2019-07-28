@@ -195,34 +195,35 @@
                 <div class="tab-content" id="companyInfomationContent">
                     <div class="tab-pane fade show active" id="infoTab" role="tabpanel" aria-labelledby="info-tab">
                         <div class="row no-gutters">
-                            <div class="left col-xs-12 col-lg-6">
-                                <div class="background">
-                                    <img src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
-
-                                    <div class="mask-wrapper">
-                                        <div class="mask mask-circle">
-                                            <img src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<!--                            <div class="left col-xs-12 col-lg-6">-->
+<!--                                <div class="background">-->
+<!--                                    <img src="--><?php //echo site_url('assets/img/logo.svg') ?><!--" alt="Logo Company">-->
+<!---->
+<!--                                    <div class="mask-wrapper">-->
+<!--                                        <div class="mask mask-circle">-->
+<!--                                            <img src="--><?php //echo site_url('assets/img/logo.svg') ?><!--" alt="Logo Company">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
                             <div class="right col-xs-12 col-lg-6">
                                 <div class="wrapper">
                                     <label>Công Ty</label>
-                                    <h6 id="company">No data</h6>
+                                    <p id="company">No data</p>
                                 </div>
-
                                 <div class="wrapper">
                                     <label>Người Đại Diện</label>
                                     <h6 id="connector">No data</h6>
                                 </div>
-
                                 <div class="wrapper">
-                                    <label>Chức Danh</label>
-                                    <h6 id="position">No data</h6>
+                                    <label>Email</label>
+                                    <h6 id="email">No data</h6>
                                 </div>
-
+                                <div class="wrapper">
+                                    <label>Số điện thoại</label>
+                                    <h6 id="phone">No data</h6>
+                                </div>
                                 <div class="wrapper">
                                     <label>Địa Chỉ</label>
                                     <h6 id="address">No data</h6>
@@ -318,6 +319,9 @@
                     $('#overview').html(result.info.overview);
                     $('#profile').html(result.info.profile);
                     $('#file-pdf').attr('href', '<?php echo base_url('assets/upload/profile/') ?>' + result.info.file);
+
+                    $('#email').html(result.info.email);
+                    $('#phone').html(result.info.phone);
                 }else{
                     alert('Doanh nghiệp không tồn tại hoặc đã hủy tham gia sự kiện');
                 }

@@ -55,6 +55,9 @@
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['company'] ?>
                                     </li>
                                     <li class="list-group-item">
+                                        <strong>Là doanh nghiệp nhà nước? </strong><?php echo ($temp_register['is_state'] == 1) ? '<i style="color: green" class="fa fa-check" aria-hidden="true"></i>' : '<i style="color: red" class="fa fa-times" aria-hidden="true"></i>'; ?><br>
+                                    </li>
+                                    <li class="list-group-item">
                                         <strong>Địa Chỉ: </strong><br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['address'] ?>
                                     </li>
