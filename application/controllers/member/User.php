@@ -416,4 +416,29 @@ class User extends MY_Controller {
         }
         return true;
     }
+
+    public function activate($id, $code = FALSE)
+    {
+        if ($code !== FALSE)
+        {
+            $activation = $this->ion_auth->activate($id, $code);
+        }
+        else if ($this->ion_auth->is_admin())
+        {
+            $activation = $this->ion_auth->activate($id);
+        }
+
+        if ($activation)
+        {
+            // redirect them to the auth page
+            $this->session->set_flashdata('register_success', $this->ion_auth->messages());
+            redirect("member/user/login", 'refresh');
+        }
+        else
+        {
+            // redirect them to the forgot password page
+            $this->session->set_flashdata('auth_message', $this->ion_auth->errors());
+            redirect("member/user/forgot_password", 'refresh');
+        }
+    }
 }
