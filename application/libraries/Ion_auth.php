@@ -344,7 +344,7 @@ class Ion_auth
             /** AnNV comment this block */
             // $deactivate = true;
 //			if ( in_array(2, $group_ids) ) {
-				$deactivate = $this->ion_auth_model->deactivate($id, true);
+				$deactivate = $this->ion_auth_model->deactivate($id, false);
 //			}else{
 //				$deactivate = $this->ion_auth_model->deactivate($id, false);
 //			}
@@ -376,6 +376,9 @@ class Ion_auth
 			$data_account = array(
 				'email' => $email,
 				'password' => $password,
+				'identity'   => $user->{$identity},
+				'id'         => $user->id,
+				'activation' => $activation_code,
 			);
 			if(!$this->config->item('use_ci_email', 'ion_auth'))
 			{

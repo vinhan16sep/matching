@@ -977,14 +977,14 @@ class Ion_auth_model extends CI_Model
 			'email' => $email,
 			'ip_address' => $ip_address,
 			'created_on' => time(),
-			// 'active' => ($manual_activation === FALSE ? 1 : 0)
+			'active' => ($manual_activation === FALSE ? 1 : 0)
 		);
-		$active_send_mail = 0;
-		if (in_array(2, $groups)) {
-			$active_send_mail = 1;
-		}
+		// $active_send_mail = 0;
+		// if (in_array(2, $groups)) {
+		// 	$active_send_mail = 1;
+		// }
 
-		$data['active'] = $active_send_mail;
+		// $data['active'] = $active_send_mail;
 
 		if ($this->store_salt)
 		{
