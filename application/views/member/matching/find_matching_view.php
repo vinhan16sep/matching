@@ -146,6 +146,7 @@
                                         <a href="javascript:void(0)"
                                             class="btn-reg-info" 
                                             data-id="<?php echo $item['register_info']['id'] ?>" 
+                                            data-event="<?php echo $event_id ?>"
                                             title="Xem thông tin"
                                         >
                                             <i class="fas fa-info-circle"></i>
@@ -241,6 +242,11 @@
             </div>
             <div class="popup-footer">
                 <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải File PDF</a>
+                <a title="Gửi yêu cầu" class="btn btn-sm btn-success" id="btnMatching"
+                   href="#"
+                >
+                    Gửi yêu cầu
+                </a>
                 <button type="button" class="btn btn-sm btn-secondary popup-close" data-dismiss="modal">Đóng</button>
             </div>
         </div>
@@ -297,7 +303,10 @@
     });
 
     $('.btn-reg-info').click(function(){
-        id = $(this).data('id');
+        var id = $(this).data('id');
+        var event = $(this).data('event');
+        var url = "<?php echo base_url('member/matching/create') ?>";
+        var btnMatching = url + "?target=" + id + "&event=" + event;
         $.ajax({
             method: 'GET',
             url: '<?php echo base_url('member/matching/get_info') ?>',
@@ -322,6 +331,8 @@
 
                     $('#email').html(result.info.email);
                     $('#phone').html(result.info.phone);
+
+                    $("#btnMatching").attr("href", btnMatching);
                 }else{
                     alert('Doanh nghiệp không tồn tại hoặc đã hủy tham gia sự kiện');
                 }

@@ -109,27 +109,11 @@
                 <p>Trường hợp không đăng ký được vui lòng liên hệ: Anh Mạc Công Minh, mobile: 0936 136 696, email: minhmc@vinasa.org.vn để được hỗ trợ.</p>
             </td>
         </tr>
-        <tr class="tr-body">
-            <td colspan="2">
-                <h4>Thông tin tài khoản:</h4>
-            </td>
-        </tr>
-        <tr class="tr-body">
-            <td>Tên Tài khoản:</td>
-            <td>Hiệp hội Phần mềm và Dịch vụ CNTT Việt Nam</td>
-        </tr>
-        <tr class="tr-body">
-            <td>Ngân hàng:</td>
-            <td>TMCP Ngoại Thương</td>
-        </tr>
-        <tr class="tr-body">
-            <td>Số Tài khoản:</td>
-            <td>049.100.004.8212<br>Tại Ngân hàng TMCP Ngoại Thương chi nhánh Thăng Long</td>
-        </tr>
         <tr class="tr-footer">
             <td colspan="2">
-                <h6>Công ty VINASA</h6>
-                <p>Trường hợp không đăng nhập được vui lòng liên hệ: Anh Mạc Công Minh, mobile: 0936 136 696, email: minhmc@vinasa.org.vn để được hỗ trợ</p>
+                <h6>Hiệp hội Phần mềm và dịch vụ CNTT Việt Nam (VINASA)</h6>
+                <p>Địa chỉ: Tầng 11, tòa nhà Cung Trí thức, 01 Tôn Thất Thuyết, Cầu Giấy, Hà Nội</p>
+                <p>Điện thoại: 024 35772336 - 024 35772338; Email: contact@vinasa.org.vn</p>
             </td>
         </tr>
     </table>

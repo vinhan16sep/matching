@@ -68,10 +68,10 @@
                                         ?>
                                     </td>
                                     <td style="text-align: center">
-                                        <a data-toggle="collapse" href="#review-<?php echo $key ?>" role="button" aria-expanded="false">
+                                        <a title="Xem các tiêu chí đã chọn" data-toggle="collapse" href="#review-<?php echo $key ?>" role="button" aria-expanded="false">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <a href="<?php echo base_url('member/setting/update/' . $value['setting_id']) . '?event_id=' . $value['event_id'] ?>">
+                                        <a title="Thêm mới/chỉnh sửa tiêu chí" href="<?php echo base_url('member/setting/update/' . $value['setting_id']) . '?event_id=' . $value['event_id'] ?>">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
