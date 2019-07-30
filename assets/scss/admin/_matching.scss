@@ -33,7 +33,23 @@
         }
 
         .left{
+            .card{
+                .card-body{
+                    .chart-area{
+                        form{
+                            .row{
+                                .form-group{
+                                    > p{
+                                        display: inline-block;
 
+                                        color: $primary-base;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

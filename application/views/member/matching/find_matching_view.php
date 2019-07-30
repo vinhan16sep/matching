@@ -41,7 +41,7 @@
                                     <?php foreach ($events as $key => $value): ?>
                                         <?php 
                                             echo form_checkbox('category_id[]', $key, isset($_GET['category_id']) ? in_array($key, $_GET['category_id']) : false, 'class="btn-event event-'. $key .'" data-key=' . $key);
-                                            echo $value['name'] . '<br>';
+                                            echo '<p>' . $value['name'] . '</p><br>';
                                         ?>
                                         <?php if ($value): ?>
                                             <div style="margin-left: 20px" class="slide-service-<?php echo $key ?>" data-key="<?php echo $key ?>">
