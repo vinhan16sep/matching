@@ -164,18 +164,63 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối.</p>
-                    <input type="hidden" id="hiddenId" name="hiddenId">
+                    <div id="waitingApprove">
+                        <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối.</p>
+                        <input type="hidden" id="hiddenId" name="hiddenId">
 
-                    <div class="buttons">
-                        <a title="Đồng ý" class="btn btn-primary workflow" href="#" data-status="1">
-                            <i class="fa fa-handshake" aria-hidden="true"></i>
-                            &nbsp;&nbsp;Đồng ý
-                        </a>
-                        <a title="Từ chối" class="btn btn-danger workflow" href="#" data-status="2">
-                            <i class="fa fa-ban" aria-hidden="true"></i>
-                            &nbsp;&nbsp;Từ chối
-                        </a>
+                        <div class="buttons">
+                            <a title="Đồng ý" class="btn btn-primary workflow" href="#" data-status="1">
+                                <i class="fa fa-handshake" aria-hidden="true"></i>
+                                &nbsp;&nbsp;Đồng ý
+                            </a>
+                            <a title="Từ chối" class="btn btn-danger" id="cancelMatching" href="#">
+                                <i class="fa fa-ban" aria-hidden="true"></i>
+                                &nbsp;&nbsp;Từ chối
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="cancelReason">
+                            <p>Xin vui lòng cho chúng tôi biết lý do mà bạn cảm thấy doanh nghiệp không phù hợp?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="Lĩnh vực ngành nghề không phù hợp" name="reason">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Lĩnh vực ngành nghề không phù hợp
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="Chưa sắp xếp được thời gian" name="reason">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Chưa sắp xếp được thời gian
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="Chưa có nhu cầu tìm đối tác tương tự" name="reason">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Chưa có nhu cầu tìm đối tác tương tự
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input show-date" type="radio" value="Cần đề xuất thời gian khác" name="reason">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Cần đề xuất thời gian khác
+                                </label>
+                            </div>
+                            <div class="form-group another-time" style="display: none;">
+                                <?php
+                                echo form_label('Thời gian', 'date');
+                                echo form_error('date');
+                                echo form_input('date', set_value('date'), 'class="form-control datepicker" id="datetimepicker" readonly');
+                                ?>
+                            </div>
+                            <div class="buttons">
+                                <button class="btn btn-primary workflow" id="sendCancelRequest" type="submit" data-status="2" data-node="" disabled>
+                                    Gửi
+                                </button>
+                                <button class="btn btn-danger" id="cancelCancelRequest" type="button">
+                                    Huỷ bỏ
+                                </button>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -256,31 +301,64 @@
         $("#hiddenId").val( id );
     });
 
+
+    reason = '';
+    $('.form-check-input').change(function(){
+        if ($('.show-date').prop('checked')) {
+            $('.another-time').slideDown();
+            $('#sendCancelRequest').prop('disabled', true);
+        }else{
+            $('.another-time').slideUp();
+            $('#sendCancelRequest').prop('disabled', false);
+        }
+        reason = $(this).val();
+        
+    });
+    $('#datetimepicker').change(function(){
+        reason = $('.show-date').val() + ': ' + $(this).val();
+        if ($(this).val().length > 0) {
+            $('#sendCancelRequest').prop('disabled', false);
+        }
+    });
+
+
     $('.workflow').click(function(){
-        $('.workflow').addClass('disabled');
-        $.ajax({
-            method: 'GET',
-            url: '<?php echo base_url('member/matching/workflow') ?>',
-            data: {
-                id: $('#hiddenId').val(),
-                status: $(this).data('status')
-            },
-            beforeSend: function() {
-                $('.workflow').hide();
-                $('.modal-body .buttons').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Đang xử lý ...</button>');
-                $('.modal-body').find('button.close').hide(); //Hide button close Modal when sending data
-            },
-            success: function(res){
-                var result = JSON.parse(res);
-                if(result.message == 1){
-                    alert('Đã hoàn thành');
-                    window.location.reload();
-                }else{
-                    alert('Không đổi được trạng thái');
-                    window.location.reload();
-                }
-            }
-        });
+       $('.workflow').addClass('disabled');
+       $.ajax({
+           method: 'GET',
+           url: '<?php echo base_url('member/matching/workflow') ?>//',
+           data: {
+               id: $('#hiddenId').val(),
+               status: $(this).data('status'),
+               reason: reason
+           },
+           beforeSend: function() {
+               $('.workflow').hide();
+               $('#cancelCancelRequest').hide();
+               $('.modal-body .buttons').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Đang xử lý ...</button>');
+               $('.modal-body').find('button.close').hide(); //Hide button close Modal when sending data
+           },
+           success: function(res){
+               var result = JSON.parse(res);
+               if(result.message == 1){
+                   alert('Đã hoàn thành');
+                   window.location.reload();
+               }else{
+                   alert('Không đổi được trạng thái');
+                   window.location.reload();
+               }
+           }
+       });
+    });
+
+    $('body').on('click', '#cancelMatching', function(){
+        $('#waitingApprove').hide();
+        $('#cancelReason').fadeIn();
+    });
+
+    $('body').on('click', '#cancelCancelRequest', function(){
+        $('#cancelReason').hide();
+        $('#waitingApprove').fadeIn();
     });
 
     $('.btn-reg-info').click(function(){
@@ -323,6 +401,20 @@
             $(this).closest('.popup').removeClass('show');
         })
     }
+
+    var eventDate = '<?php echo date('Y/m/d', $event['date']); ?>';
+    var eventDateFormat = '<?php echo date('d-m-Y', $event['date']); ?>';
+    var time = <?php echo json_encode($time_range); ?>;
+
+    $(function () {
+        $('#datetimepicker').datetimepicker({
+            format: 'd-m-Y H:i',
+            allowDates : eventDate,
+            allowTimes: time,
+            validateOnBlur: true,
+            defaultDate: eventDateFormat
+        });
+    });
 </script>
 <!-- /.container-fluid -->
 

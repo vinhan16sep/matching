@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
-	<style>
+    <style>
         .email-wrapper{
             max-width: 700px;
             overflow: auto;
@@ -96,24 +96,33 @@
 <body>
 <div class="email-wrapper">
     <table>
-        <tr class="tr-header"><td colspan="2">Email kích hoạt tài khoản</td></tr>
+        <tr class="tr-header"><td colspan="2">Email xác nhận cuộc hẹn thành công</td></tr>
         <tr class="tr-body">
             <td colspan="2">
-                <h4>Kính gửi Quý công ty!</h4>
-                <p>Cảm ơn Quý Công ty đã đăng ký tham gia Business Matching Online trong khuôn khổ Diễn đàn cấp cao CNTT-TT Việt Nam 2019 (Vietnam ICT Summit). Quý Công ty đã sử dụng email: <a href="mailto: <?= $identity ?>"><?= $identity ?></a> để đăng ký tài khoản tham gia chương trình.</p>
+                <h4>Kính gửi<?= $message['finder_name'] ?>!</h4>
+                <p>Thư xác nhận lịch business matching 1:1 tại:</p>
+                <p>Sự kiện: Diễn đàn Cấp cao CNTT-TT Việt Nam 2019</p>
             </td>
         </tr>
         <tr class="tr-body">
-            <td colspan="2">Vui lòng bấm vào đường link <a href="<?php echo base_url('member/user/activate/'. $id .'/'. $activation) ;?>">đây</a> để kích hoạt tài khoản và khai hồ sơ.</td>
+            <td colspan="2">
+                <p>Business Matching: <?= $message['target_name'] . ' - ' . $message['finder_name'] ?></p>
+                <p>Thời gian:<?= $message['date'] ?>.</p>
+                <p>Địa điểm: Phòng Business Matching Area, Khách sạn Melia Hà Nội, 44 Lý Thường Kiệt</p>
+            </td>
         </tr>
         <tr class="tr-body">
             <td colspan="2">
-                <p>Nếu cần hỗ trợ, vui lòng liên hệ: <b>Ms. Hoàng Minh Thư</b></p>
-                <p>Hiệp hội Phần mềm và Dịch vụ CNTT Việt Nam</p>
-                <p>Tầng 11, tòa nhà Cung Trí thức thành phố, Số 1 Tôn Thất Thuyết, Cầu Giấy, Hà Nội</p>
-                <p>Email: <a href="mailto: thuhm@vinasa.org.vn">thuhm@vinasa.org.vn</a></p>
-                <p>Mobile: <b>0385 796 096 / 02435772336
-</b></p>
+                <p>Để buổi làm việc đạt hiệu quả cao, Kính đề nghị Quý Đơn vị đến làm việc đúng giờ và tuân thủ theo thời gian meeting đã hẹn.</p>
+                <p>Mọi thông tin thay đổi xin vui lòng báo lại cho Ban tổ chức</p>
+                <p>Trân trọng cảm ơn Anh/Chị và mong được đón tiếp tại Vietnam ICT Summit 2019.</p>
+                <p>Đầu mối hỗ trợ: Ms. Hoàng Minh Thư   (HP: 0385 796 096)
+</p>
+            </td>
+        </tr>
+        <tr class="tr-body">
+            <td colspan="2">
+                <p style="color: red; font-style: italic">Xin Vui Lòng Mang Theo Name Card/Profile Doanh nghiệp khi tham dự Giao Thương</p>
             </td>
         </tr>
         <tr class="tr-footer">

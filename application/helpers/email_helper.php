@@ -125,22 +125,32 @@ function send_mail_matching($email, $data, $matching = 'create', $role = 'admin'
     }
 }
 
-function email_template_matching_create(){
-    return 'email hẹn gặp của member';
+function email_template_matching_create($data){
+    $CI =& get_instance();
+    $data_send_mail['message'] = $data;
+    return $CI->load->view('auth/email_member/matching/appointment_template.tpl.php',$data_send_mail,true);
 }
 
-function email_template_matching_create_role_admin(){
-    return 'email hẹn gặp của member gửi cho admin';
+function email_template_matching_create_role_admin($data){
+    $CI =& get_instance();
+    $data_send_mail['message'] = $data;
+    return $CI->load->view('auth/email_admin/matching/appointment_template.tpl.php',$data_send_mail,true);
 }
 
-function email_template_matching_approve(){
-    return 'email đồng ý hẹn gặp của member';
+function email_template_matching_approve($data){
+    $CI =& get_instance();
+    $data_send_mail['message'] = $data;
+    return $CI->load->view('auth/email_member/matching/approve_template.tpl.php',$data_send_mail,true);
 }
 
-function email_template_matching_approve_role_admin(){
-    return 'email đồng ý hẹn gặp của member gửi cho admin';
+function email_template_matching_approve_role_admin($data){
+    $CI =& get_instance();
+    $data_send_mail['message'] = $data;
+    return $CI->load->view('auth/email_admin/matching/approve_template.tpl.php',$data_send_mail,true);
 }
 
-function email_template_matching_reject(){
-    return 'email từ chối hẹn gặp của member';
+function email_template_matching_reject($data){
+    $CI =& get_instance();
+    $data_send_mail['message'] = $data;
+    return $CI->load->view('auth/email_member/matching/reject_template.tpl.php',$data_send_mail,true);
 }

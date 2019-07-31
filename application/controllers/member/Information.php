@@ -80,7 +80,7 @@ class Information extends Member_Controller {
                     'connector' => $this->input->post('connector'),
                     'email' => $this->input->post('email'),
                     'phone' => $this->input->post('phone'),
-                    'is_state' => isset($this->input->post('is_state')) ? $this->input->post('is_state') : 0,
+                    'is_state' => $this->input->post('is_state') ? $this->input->post('is_state') : 0,
                     'user_id' => $user->id,
                 );
                 if ($this->input->post('submit') == 'Lưu Thông Tin') {
@@ -261,7 +261,7 @@ class Information extends Member_Controller {
                     'email' => $this->input->post('email'),
                     'phone' => $this->input->post('phone'),
                     'user_id' => $user->id,
-                    'is_state' => isset($this->input->post('is_state')) ? $this->input->post('is_state') : 0,
+                    'is_state' => $this->input->post('is_state') ? $this->input->post('is_state') : 0,
                     'is_saved' => 1
                 );
                 if ( isset($logo) && !empty($logo) ) {
