@@ -1,5 +1,5 @@
 <div class="container-fluid">
-
+	
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -55,4 +55,13 @@
 			</div>
         </div>
     </div>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+        	<div class="row">
+        		<h4>Hướng Dẫn</h4>
+        		<img src="<?= base_url('assets/img/banner_huong_dan.png') ?>" width="100%">
+        	</div>
+        </div>
+    </div>
+    
 </div>

@@ -96,26 +96,14 @@
 <body>
 <div class="email-wrapper">
     <table>
-        <tr class="tr-header"><td colspan="2">Email kích hoạt tài khoản</td></tr>
+        <tr class="tr-header"><td colspan="2">Email lịch hẹn matching</td></tr>
         <tr class="tr-body">
             <td colspan="2">
-                <h4>Kính gửi Quý công ty!</h4>
-                <p>Cảm ơn Quý Công ty đã đăng ký tham gia Business Matching Online trong khuôn khổ Diễn đàn cấp cao CNTT-TT Việt Nam 2019 (Vietnam ICT Summit). Quý Công ty đã sử dụng email: <a href="mailto: <?= $identity ?>"><?= $identity ?></a> để đăng ký tài khoản tham gia chương trình.</p>
+                <h4>Kính gửi Admin!</h4>
+                <p>Có 01 lịch hẹn matching được gửi từ doanh nghiệp <?= $message['finder_name'] ?> tới <?= $message['target_name'] ?> vào khung giờ <?= $message['date'] ?>.</p>
             </td>
         </tr>
-        <tr class="tr-body">
-            <td colspan="2">Vui lòng bấm vào đường link <a href="<?php echo base_url('member/user/activate/'. $id .'/'. $activation) ;?>">đây</a> để kích hoạt tài khoản và khai hồ sơ.</td>
-        </tr>
-        <tr class="tr-body">
-            <td colspan="2">
-                <p>Nếu cần hỗ trợ, vui lòng liên hệ: <b>Ms. Hoàng Minh Thư</b></p>
-                <p>Hiệp hội Phần mềm và Dịch vụ CNTT Việt Nam</p>
-                <p>Tầng 11, tòa nhà Cung Trí thức thành phố, Số 1 Tôn Thất Thuyết, Cầu Giấy, Hà Nội</p>
-                <p>Email: <a href="mailto: thuhm@vinasa.org.vn">thuhm@vinasa.org.vn</a></p>
-                <p>Mobile: <b>0385 796 096 / 02435772336
-</b></p>
-            </td>
-        </tr>
+        
         <tr class="tr-footer">
             <td colspan="2">
                 <h6>Hiệp hội Phần mềm và dịch vụ CNTT Việt Nam (VINASA)</h6>

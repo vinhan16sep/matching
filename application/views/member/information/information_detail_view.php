@@ -55,7 +55,7 @@
                         <?php echo form_input('company', $company, 'class="form-control" readonly'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Cơ Quan Nhà Nước ? ', 'is_state'); ?>
+                        <?php echo form_label('Cơ quan/ tổ chức/ doanh nghiệp ứng dụng CNTT ? ', 'is_state'); ?>
                         <?php echo form_error('is_state', '<div class="error">', '</div>'); ?>
                         <br>
                         <?php echo form_checkbox('is_state', 1, (isset($temp) && !empty($temp['is_state']))? ($temp['is_state'] == 1) ? true : false : set_checkbox('is_state', 1), ''); ?>

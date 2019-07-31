@@ -198,7 +198,7 @@ class Matching extends Member_Controller {
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('date','Date','trim|required');
-
+        // echo $result['email'];die;
         if($this->form_validation->run() === FALSE) {
             $this->load->helper('form');
             $this->render('member/matching/create_matching_view');
@@ -215,9 +215,16 @@ class Matching extends Member_Controller {
             $insert = $this->matching_model->insert($data);
             if($insert){
                 $user = $this->ion_auth->user()->row();
+                $user_target = $this->temp_register_model->get_by_id($target);
+                $data_send_mail = array(
+                    'finder_name' => $user->company,
+                    'target_name' => $user_target['company'],
+                    'date' => $this->input->post('date'),
+                    'event_id' => $event,
+                );
 
-                send_mail_matching(self::EMAIL_ADMIN, $data, 'create', 'admin');
-                send_mail_matching($result['email'], $data, 'create', 'member');
+                send_mail_matching(self::EMAIL_ADMIN, $data_send_mail, 'create', 'admin');
+                send_mail_matching($result['email'], $data_send_mail, 'create', 'member');
 
                 redirect('member/dashboard/index','refresh');
             }
@@ -241,8 +248,15 @@ class Matching extends Member_Controller {
 
             if ($temp_register) {
                 if ($this->input->get('status') == 1) {
-                    send_mail_matching(self::EMAIL_ADMIN, $data, 'approve', 'admin');
-                    send_mail_matching($temp_register['email'], $data, 'approve', 'member');
+                    $user = $this->ion_auth->user()->row();
+                    $user_finder = $this->temp_register_model->get_by_id($matching['finder_id']);
+                    $data_send_mail = array(
+                        'finder_name' => $user_finder['company'],
+                        'target_name' => $user->company,
+                        'date' => date('H:i d/m/Y', $matching['date']),
+                    );
+                    send_mail_matching(self::EMAIL_ADMIN, $data_send_mail, 'approve', 'admin');
+                    send_mail_matching($temp_register['email'], $data_send_mail, 'approve', 'member');
                 }else{
                     send_mail_matching($temp_register['email'], $data, 'reject', 'member');
                 }
