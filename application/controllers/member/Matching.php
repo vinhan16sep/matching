@@ -52,6 +52,10 @@ class Matching extends Member_Controller {
             $this->render('member/matching/verify_matching_view');
         }else{
             $this->data['page_title'] = 'Quản lý thông tin Matching';
+            $event_info = $this->event_model->fetch_by_id($event_id);
+            $this->data['event'] = $event_info;
+            $time_range = build_time_range($event_info['start'], $event_info['duration'], $event_info['step']);
+            $this->data['time_range'] = array_values($time_range);
 
             /**
              * Temp register of current user
@@ -234,10 +238,14 @@ class Matching extends Member_Controller {
 
     public function workflow(){
         $status = $this->input->get('status');
+        $reason = $this->input->get('reason');
         $data = array(
             'status' => $status,
             'log' => ($status == 1) ? self::APPROVE : self::REJECT
         );
+        if ($status) {
+            $data['note'] = $reason;
+        }
         $matching = $this->matching_model->get_by_id($this->input->get('id'));
         $result = $this->matching_model->update($this->input->get('id'), $data);
         if($status == 1 && $result){
@@ -247,18 +255,21 @@ class Matching extends Member_Controller {
             $temp_register = $this->temp_register_model->get_by_id($matching['finder_id']);
 
             if ($temp_register) {
+                $user = $this->ion_auth->user()->row();
+                $user_finder = $this->temp_register_model->get_by_id($matching['finder_id']);
+                $data_send_mail = array(
+                    'finder_name' => $user_finder['company'],
+                    'target_name' => $user->company,
+                    'date' => date('H:i d/m/Y', $matching['date']),
+                    'reason' => $reason,
+                    'website' => $user_finder['website'],
+                );
+                
                 if ($this->input->get('status') == 1) {
-                    $user = $this->ion_auth->user()->row();
-                    $user_finder = $this->temp_register_model->get_by_id($matching['finder_id']);
-                    $data_send_mail = array(
-                        'finder_name' => $user_finder['company'],
-                        'target_name' => $user->company,
-                        'date' => date('H:i d/m/Y', $matching['date']),
-                    );
                     send_mail_matching(self::EMAIL_ADMIN, $data_send_mail, 'approve', 'admin');
                     send_mail_matching($temp_register['email'], $data_send_mail, 'approve', 'member');
                 }else{
-                    send_mail_matching($temp_register['email'], $data, 'reject', 'member');
+                    send_mail_matching($temp_register['email'], $data_send_mail, 'reject', 'member');
                 }
             }
 
