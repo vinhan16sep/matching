@@ -639,6 +639,12 @@ a:hover {
 #dashboard-member .modal#workflowModal .modal-dialog .modal-content .modal-body .buttons .btn:last-of-type {
   margin-right: 0;
 }
+#dashboard-member .modal#workflowModal .modal-dialog .modal-content .modal-body #cancelReason {
+  display: none;
+}
+#dashboard-member .modal#workflowModal .modal-dialog .modal-content .modal-body #cancelReason button {
+  margin-top: 15px;
+}
 
 #matching_create .row .left .card .card-body ul li h6.subtitle-sm {
   margin-bottom: 5px;

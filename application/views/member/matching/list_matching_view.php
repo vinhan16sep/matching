@@ -164,18 +164,42 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối.</p>
-                    <input type="hidden" id="hiddenId" name="hiddenId">
+                    <div id="waitingApprove">
+                        <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối.</p>
+                        <input type="hidden" id="hiddenId" name="hiddenId">
 
-                    <div class="buttons">
-                        <a title="Đồng ý" class="btn btn-primary workflow" href="#" data-status="1">
-                            <i class="fa fa-handshake" aria-hidden="true"></i>
-                            &nbsp;&nbsp;Đồng ý
-                        </a>
-                        <a title="Từ chối" class="btn btn-danger workflow" href="#" data-status="2">
-                            <i class="fa fa-ban" aria-hidden="true"></i>
-                            &nbsp;&nbsp;Từ chối
-                        </a>
+                        <div class="buttons">
+                            <a title="Đồng ý" class="btn btn-primary workflow" href="#" data-status="1">
+                                <i class="fa fa-handshake" aria-hidden="true"></i>
+                                &nbsp;&nbsp;Đồng ý
+                            </a>
+                            <a title="Từ chối" class="btn btn-danger workflow" id="cancelMatching" href="#" data-status="2">
+                                <i class="fa fa-ban" aria-hidden="true"></i>
+                                &nbsp;&nbsp;Từ chối
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="cancelReason">
+                        <form>
+                            <p>Xin vui lòng cho chúng tôi biết lý do mà bạn cảm thấy doanh nghiệp không phù hợp?</p>
+                            <?php for ($i=0;$i<6;$i++){ ?>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Reason <?php echo $i+1 ?>
+                                    </label>
+                                </div>
+                            <?php } ?>
+                            <div class="buttons">
+                                <button class="btn btn-primary" id="sendCancelRequest" type="submit">
+                                    Gửi
+                                </button>
+                                <button class="btn btn-danger" id="cancelCancelRequest" type="button">
+                                    Huỷ bỏ
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -256,31 +280,41 @@
         $("#hiddenId").val( id );
     });
 
-    $('.workflow').click(function(){
-        $('.workflow').addClass('disabled');
-        $.ajax({
-            method: 'GET',
-            url: '<?php echo base_url('member/matching/workflow') ?>',
-            data: {
-                id: $('#hiddenId').val(),
-                status: $(this).data('status')
-            },
-            beforeSend: function() {
-                $('.workflow').hide();
-                $('.modal-body .buttons').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Đang xử lý ...</button>');
-                $('.modal-body').find('button.close').hide(); //Hide button close Modal when sending data
-            },
-            success: function(res){
-                var result = JSON.parse(res);
-                if(result.message == 1){
-                    alert('Đã hoàn thành');
-                    window.location.reload();
-                }else{
-                    alert('Không đổi được trạng thái');
-                    window.location.reload();
-                }
-            }
-        });
+    //$('.workflow').click(function(){
+    //    $('.workflow').addClass('disabled');
+    //    $.ajax({
+    //        method: 'GET',
+    //        url: '<?php //echo base_url('member/matching/workflow') ?>//',
+    //        data: {
+    //            id: $('#hiddenId').val(),
+    //            status: $(this).data('status')
+    //        },
+    //        beforeSend: function() {
+    //            $('.workflow').hide();
+    //            $('.modal-body .buttons').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Đang xử lý ...</button>');
+    //            $('.modal-body').find('button.close').hide(); //Hide button close Modal when sending data
+    //        },
+    //        success: function(res){
+    //            var result = JSON.parse(res);
+    //            if(result.message == 1){
+    //                alert('Đã hoàn thành');
+    //                window.location.reload();
+    //            }else{
+    //                alert('Không đổi được trạng thái');
+    //                window.location.reload();
+    //            }
+    //        }
+    //    });
+    //});
+
+    $('body').on('click', '#cancelMatching', function(){
+        $('#waitingApprove').hide();
+        $('#cancelReason').fadeIn();
+    });
+
+    $('body').on('click', '#cancelCancelRequest', function(){
+        $('#cancelReason').hide();
+        $('#waitingApprove').fadeIn();
     });
 
     $('.btn-reg-info').click(function(){
