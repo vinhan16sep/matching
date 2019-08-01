@@ -161,7 +161,7 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
-                    <img style="width: 100%; height: 100%;" src="<?php echo site_url('assets/img/processing.png') ?>" alt="Logo Company">
+                    <img style="width: 100%; height: 100%;" src="<?php echo site_url('assets/img/banner_huong_dan.png') ?>" alt="Logo Company">
                 </div>
             </div>
         </div>

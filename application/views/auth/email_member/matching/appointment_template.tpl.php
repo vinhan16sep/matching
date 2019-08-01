@@ -99,7 +99,7 @@
         <tr class="tr-header"><td colspan="2">Email lịch hẹn matching</td></tr>
         <tr class="tr-body">
             <td colspan="2">
-                <h4>Kính gửi Admin <?= $message['target_name'] ?>!</h4>
+                <h4>Kính gửi <?= $message['target_name'] ?>!</h4>
                 <p>Bạn nhận được 01 lời mời đặt lịch hẹn matching của <?= $message['finder_name'] ?> vào khung giờ <?= $message['date'] ?>.</p>
             </td>
         </tr>
