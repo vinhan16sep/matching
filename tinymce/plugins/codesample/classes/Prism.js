@@ -425,7 +425,7 @@ if (!_self.document) {
 }
 /*
 // Get current script and highlight
-variables script = document.getElementsByTagName('script');
+var script = document.getElementsByTagName('script');
 
 script = script[script.length - 1];
 

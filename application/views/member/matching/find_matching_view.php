@@ -187,10 +187,13 @@
                         <a class="nav-link active" id="info-tab" data-toggle="tab" href="#infoTab" role="tab" aria-controls="info" aria-selected="true">Thông Tin Doanh Nghiệp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="overview-tab" data-toggle="tab" href="#overviewTab" role="tab" aria-controls="overview" aria-selected="false">Tổng Quát</a>
+                        <a class="nav-link" id="product-tab" data-toggle="tab" href="#productTab" role="tab" aria-controls="product" aria-selected="false">Sản Phẩm/Giải Pháp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false">Hồ sơ doanh nghiệp</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false">Lĩnh Vực/Dịch Vụ Hoạt Động</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="market-tab" data-toggle="tab" href="#marketTab" role="tab" aria-controls="market" aria-selected="false">Thị trường chính hiện nay</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="companyInfomationContent">
@@ -214,6 +217,14 @@
                                     <p id="company">No data</p>
                                 </div>
                                 <div class="wrapper">
+                                    <label>Địa Chỉ</label>
+                                    <h6 id="address">No data</h6>
+                                </div>
+                                <div class="wrapper">
+                                    <label>Website</label>
+                                    <h6 id="website">No data</h6>
+                                </div>
+                                <div class="wrapper">
                                     <label>Người Đại Diện</label>
                                     <h6 id="connector">No data</h6>
                                 </div>
@@ -226,17 +237,24 @@
                                     <h6 id="phone">No data</h6>
                                 </div>
                                 <div class="wrapper">
-                                    <label>Địa Chỉ</label>
-                                    <h6 id="address">No data</h6>
+                                    <label>Số Nhân lực</label>
+                                    <h6 id="manpower">No data</h6>
+                                </div>
+                                <div class="wrapper">
+                                    <label>Doanh Thu Năm 2018</label>
+                                    <h6 id="revenue">No data</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane tab-text fade" id="overviewTab" role="tabpanel" aria-labelledby="overview-tab">
-                        <p id="overview">No data</p>
+                    <div class="tab-pane tab-text fade" id="productTab" role="tabpanel" aria-labelledby="product-tab">
+                        <p id="product">No data</p>
                     </div>
                     <div class="tab-pane tab-text fade" id="profileTab" role="tabpanel" aria-labelledby="profile-tab">
                         <p id="profile">No data</p>
+                    </div>
+                    <div class="tab-pane tab-text fade" id="marketTab" role="tabpanel" aria-labelledby="market-tab">
+                        <p id="market">No data</p>
                     </div>
                 </div>
             </div>
@@ -322,15 +340,21 @@
                     //$('#btn-reg-info-modal').modal('show');
                     $('#title-info').html(result.info.company);
                     $('#company').html(result.info.company);
+                    $('#website').html(result.info.website);
                     $('#connector').html(result.info.connector);
                     $('#position').html(result.info.position);
                     $('#address').html(result.info.address);
-                    $('#overview').html(result.info.overview);
-                    $('#profile').html(result.info.profile);
                     $('#file-pdf').attr('href', '<?php echo base_url('assets/upload/profile/') ?>' + result.info.file);
 
                     $('#email').html(result.info.email);
                     $('#phone').html(result.info.phone);
+
+                    $('#manpower').html(result.info.manpower);
+                    $('#revenue').html(result.info.revenue);
+
+                    $('#product').html(result.info.product);
+                    $('#profile').html(result.info.profile);
+                    $('#market').html(result.info.market);
 
                     $("#btnMatching").attr("href", btnMatching);
                 }else{

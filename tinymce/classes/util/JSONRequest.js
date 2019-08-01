@@ -13,7 +13,7 @@
  *
  * @class tinymce.util.JSONRequest
  * @example
- * variables json = new tinymce.util.JSONRequest({
+ * var json = new tinymce.util.JSONRequest({
  *     url: 'somebackend.php'
  * });
  *

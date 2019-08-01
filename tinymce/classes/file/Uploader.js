@@ -14,7 +14,7 @@
  * @private
  * @class tinymce.file.Uploader
  * @example
- * variables uploader = new Uploader({
+ * var uploader = new Uploader({
  *     url: '/upload.php',
  *     basePath: '/base/path',
  *     credentials: true,

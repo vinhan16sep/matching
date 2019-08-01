@@ -365,7 +365,7 @@ package happyworm.jPlayer
 				//  Allow multiple onResult Handlers to affect size. As per PR #131 and #98.
 				//  myStatus.metaDataReady = true;
 
-				/*variables info:Object = new Object();
+				/*var info:Object = new Object();
 				info.duration=myStatus.duration
 				info.width=undefined;
 				info.height=undefined;
@@ -664,7 +664,7 @@ package happyworm.jPlayer
 		
 
 			//streamName="";
-			//variables connectString:Object = parseRTMPsrcConnect(myStatus.src);
+			//var connectString:Object = parseRTMPsrcConnect(myStatus.src);
 			//streamName=connectString.streamFileName;
 
 			responder = new Responder(onResult);

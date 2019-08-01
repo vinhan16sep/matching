@@ -79,7 +79,7 @@ class Response {
 	 *
 	 * Unless otherwise noted, the status code is defined in RFC2616.
 	 *
-	 * @variables array
+	 * @var array
 	 */
 	public static $statusTexts = array(
 		100 => 'Continue',
@@ -145,27 +145,27 @@ class Response {
 	);
 
 	/**
-	 * @variables  string
+	 * @var  string
 	 */
 	protected $content;
 
 	/**
-	 * @variables  int
+	 * @var  int
 	 */
 	protected $statusCode;
 
 	/**
-	 * @variables  string
+	 * @var  string
 	 */
 	protected $statusText;
 
 	/**
-	 * @variables  array
+	 * @var  array
 	 */
 	public $headers;
 
 	/**
-	 * @variables string
+	 * @var string
 	 */
 	protected $version;
 

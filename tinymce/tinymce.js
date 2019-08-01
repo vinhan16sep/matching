@@ -3989,7 +3989,7 @@ define("tinymce/util/Tools", [
 	 * tinymce.createNS('tinymce.somepackage.subpackage');
 	 *
 	 * // Add a singleton
-	 * variables tinymce.somepackage.subpackage.SomeSingleton = {
+	 * var tinymce.somepackage.subpackage.SomeSingleton = {
 	 *     method: function() {
 	 *         // Some method
 	 *     }
@@ -4023,7 +4023,7 @@ define("tinymce/util/Tools", [
 	 * @return {Object} Last object in path or null if it couldn't be resolved.
 	 * @example
 	 * // Resolve a path into an object reference
-	 * variables obj = tinymce.resolve('a.b.c.d');
+	 * var obj = tinymce.resolve('a.b.c.d');
 	 */
 	function resolve(n, o) {
 		var i, l;
@@ -4050,7 +4050,7 @@ define("tinymce/util/Tools", [
 	 * @param {string} d Delimiter to split by.
 	 * @example
 	 * // Split a string into an array with a,b,c
-	 * variables arr = tinymce.explode('a, b,   c');
+	 * var arr = tinymce.explode('a, b,   c');
 	 */
 	function explode(s, d) {
 		if (!s || is(s, 'array')) {
@@ -4137,7 +4137,7 @@ define("tinymce/util/Tools", [
 		 * @return {Array} New array with values imported and filtered based in input.
 		 * @example
 		 * // Filter out some items, this will return an array with 4 and 5
-		 * variables items = tinymce.grep([1,2,3,4,5], function(v) {return v > 3;});
+		 * var items = tinymce.grep([1,2,3,4,5], function(v) {return v > 3;});
 		 */
 		grep: Arr.filter,
 
@@ -4188,7 +4188,7 @@ define("tinymce/util/Tools", [
  * - Advanced chaining
  *
  * @example
- * variables $ = tinymce.dom.DomQuery;
+ * var $ = tinymce.dom.DomQuery;
  * $('p').attr('attr', 'value').addClass('class');
  *
  * @class tinymce.dom.DomQuery
@@ -5350,7 +5350,7 @@ define("tinymce/dom/DomQuery", [
 		 * @return {Array} New array with values imported and filtered based in input.
 		 * @example
 		 * // Filter out some items, this will return an array with 4 and 5
-		 * variables items = DomQuery.grep([1, 2, 3, 4, 5], function(v) {return v > 3;});
+		 * var items = DomQuery.grep([1, 2, 3, 4, 5], function(v) {return v > 3;});
 		 */
 		grep: grep,
 
@@ -5757,7 +5757,7 @@ define("tinymce/dom/DomQuery", [
  * This class is used to parse CSS styles it also compresses styles to reduce the output size.
  *
  * @example
- * variables Styles = new tinymce.html.Styles({
+ * var Styles = new tinymce.html.Styles({
  *    url_converter: function(url) {
  *       return url;
  *    }
@@ -6124,7 +6124,7 @@ define("tinymce/html/Styles", [], function() {
  *
  * @class tinymce.dom.TreeWalker
  * @example
- * variables walker = new tinymce.dom.TreeWalker(startNode);
+ * var walker = new tinymce.dom.TreeWalker(startNode);
  *
  * do {
  *     console.log(walker.current());
@@ -8048,7 +8048,7 @@ define("tinymce/dom/DOMUtils", [
 		 * @return {Element} HTML DOM node element that got created.
 		 * @example
 		 * // Adds an element where the caret/selection is in the active editor
-		 * variables el = tinymce.activeEditor.dom.create('div', {id: 'test', 'class': 'myclass'}, 'some content');
+		 * var el = tinymce.activeEditor.dom.create('div', {id: 'test', 'class': 'myclass'}, 'some content');
 		 * tinymce.activeEditor.selection.setNode(el);
 		 */
 		create: function(name, attrs, html) {
@@ -9013,7 +9013,7 @@ define("tinymce/dom/DOMUtils", [
 		 * @method createRng
 		 * @return {DOMRange} DOM Range object.
 		 * @example
-		 * variables rng = tinymce.DOM.createRng();
+		 * var rng = tinymce.DOM.createRng();
 		 * alert(rng.startContainer + "," + rng.startOffset);
 		 */
 		createRng: function() {
@@ -9369,12 +9369,12 @@ define("tinymce/dom/DOMUtils", [
  * tinymce.ScriptLoader.load('somescript.js');
  *
  * // Load a script using a unique instance of the script loader
- * variables scriptLoader = new tinymce.dom.ScriptLoader();
+ * var scriptLoader = new tinymce.dom.ScriptLoader();
  *
  * scriptLoader.load('somescript.js');
  *
  * // Load multiple scripts
- * variables scriptLoader = new tinymce.dom.ScriptLoader();
+ * var scriptLoader = new tinymce.dom.ScriptLoader();
  *
  * scriptLoader.add('somescript1.js');
  * scriptLoader.add('somescript2.js');
@@ -10012,8 +10012,8 @@ define("tinymce/dom/NodeType", [], function() {
  * @private
  * @class tinymce.text.Zwsp
  * @example
- * variables isZwsp = Zwsp.isZwsp('\uFEFF');
- * variables abc = Zwsp.trim('a\uFEFFc');
+ * var isZwsp = Zwsp.isZwsp('\uFEFF');
+ * var abc = Zwsp.trim('a\uFEFFc');
  */
 define("tinymce/text/Zwsp", [], function() {
 	var ZWSP = '\uFEFF';
@@ -11014,7 +11014,7 @@ define("tinymce/NodeChange", [
  * This class is a minimalistic implementation of a DOM like node used by the DomParser class.
  *
  * @example
- * variables node = new tinymce.html.Node('strong', 1);
+ * var node = new tinymce.html.Node('strong', 1);
  * someRoot.append(node);
  *
  * @class tinymce.html.Node
@@ -11171,7 +11171,7 @@ define("tinymce/html/Node", [], function() {
 		 * there should only be one id per document.
 		 *
 		 * @example
-		 * variables clonedNode = node.clone();
+		 * var clonedNode = node.clone();
 		 *
 		 * @method clone
 		 * @return {tinymce.html.Node} New copy of the original node.
@@ -11626,7 +11626,7 @@ define("tinymce/html/Schema", [
 		phrasingContent = split(
 			"a abbr b bdo br button cite code del dfn em embed i iframe img input ins kbd " +
 			"label map noscript object q s samp script select small span strong sub sup " +
-			"textarea u variables #text #comment"
+			"textarea u var #text #comment"
 		);
 
 		// Add HTML5 items to globalAttributes, blockContent, phrasingContent
@@ -11677,7 +11677,7 @@ define("tinymce/html/Schema", [
 				"onhashchange onload onmessage onoffline ononline onpagehide onpageshow " +
 				"onpopstate onresize onscroll onstorage onunload", flowContent);
 		add("address dt dd div caption", "", flowContent);
-		add("h1 h2 h3 h4 h5 h6 pre p abbr code variables samp kbd sub sup i b u bdo span legend em strong small s cite dfn", "", phrasingContent);
+		add("h1 h2 h3 h4 h5 h6 pre p abbr code var samp kbd sub sup i b u bdo span legend em strong small s cite dfn", "", phrasingContent);
 		add("blockquote", "cite", flowContent);
 		add("ol", "reversed start type", "li");
 		add("ul", "", "li");
@@ -11901,7 +11901,7 @@ define("tinymce/html/Schema", [
 		blockElementsMap = createLookupTable('block_elements', 'hr table tbody thead tfoot ' +
 						'th tr td li ol ul caption dl dt dd noscript menu isindex option ' +
 						'datalist select optgroup figcaption', textBlockElementsMap);
-		textInlineElementsMap = createLookupTable('text_inline_elements', 'span strong b em i font strike u variables cite ' +
+		textInlineElementsMap = createLookupTable('text_inline_elements', 'span strong b em i font strike u var cite ' +
 										'dfn code mark q sup sub samp');
 
 		each((settings.special || 'script noscript style textarea').split(' '), function(name) {
@@ -12524,7 +12524,7 @@ define("tinymce/html/Schema", [
  * and attributes that doesn't fit the schema if the validate setting is enabled.
  *
  * @example
- * variables parser = new tinymce.html.SaxParser({
+ * var parser = new tinymce.html.SaxParser({
  *     validate: true,
  *
  *     comment: function(text) {
@@ -12999,8 +12999,8 @@ define("tinymce/html/SaxParser", [
  * So for example: <p>a<p>b</p>c</p> will become <p>a</p><p>b</p><p>c</p>
  *
  * @example
- * variables parser = new tinymce.html.DomParser({validate: true}, schema);
- * variables rootNode = parser.parse('<h1>content</h1>');
+ * var parser = new tinymce.html.DomParser({validate: true}, schema);
+ * var rootNode = parser.parse('<h1>content</h1>');
  *
  * @class tinymce.html.DomParser
  * @version 3.4
@@ -13193,7 +13193,7 @@ define("tinymce/html/DomParser", [
 		 *
 		 * @example
 		 * parser.addNodeFilter('p,h1', function(nodes, name) {
-		 *		for (variables i = 0; i < nodes.length; i++) {
+		 *		for (var i = 0; i < nodes.length; i++) {
 		 *			console.log(nodes[i].name);
 		 *		}
 		 * });
@@ -13219,7 +13219,7 @@ define("tinymce/html/DomParser", [
 		 *
 		 * @example
 		 * parser.addAttributeFilter('src,href', function(nodes, name) {
-		 *		for (variables i = 0; i < nodes.length; i++) {
+		 *		for (var i = 0; i < nodes.length; i++) {
 		 *			console.log(nodes[i].name);
 		 *		}
 		 * });
@@ -13246,7 +13246,7 @@ define("tinymce/html/DomParser", [
 		 * Parses the specified HTML string into a DOM like node tree and returns the result.
 		 *
 		 * @example
-		 * variables rootNode = new DomParser({...}).parse('<b>text</b>');
+		 * var rootNode = new DomParser({...}).parse('<b>text</b>');
 		 * @method parse
 		 * @param {String} html Html string to sax parse.
 		 * @param {Object} args Optional args object that gets passed to all filter functions.
@@ -13823,8 +13823,8 @@ define("tinymce/html/DomParser", [
  *
  * @class tinymce.html.Writer
  * @example
- * variables writer = new tinymce.html.Writer({indent: true});
- * variables parser = new tinymce.html.SaxParser(writer).parse('<p><br></p>');
+ * var writer = new tinymce.html.Writer({indent: true});
+ * var parser = new tinymce.html.SaxParser(writer).parse('<p><br></p>');
  * console.log(writer.getContent());
  *
  * @class tinymce.html.Writer
@@ -14512,7 +14512,7 @@ define("tinymce/dom/Serializer", [
 			 *
 			 * @example
 			 * parser.addNodeFilter('p,h1', function(nodes, name) {
-			 *		for (variables i = 0; i < nodes.length; i++) {
+			 *		for (var i = 0; i < nodes.length; i++) {
 			 *			console.log(nodes[i].name);
 			 *		}
 			 * });
@@ -14529,7 +14529,7 @@ define("tinymce/dom/Serializer", [
 			 *
 			 * @example
 			 * parser.addAttributeFilter('src,href', function(nodes, name) {
-			 *		for (variables i = 0; i < nodes.length; i++) {
+			 *		for (var i = 0; i < nodes.length; i++) {
 			 *			console.log(nodes[i].name);
 			 *		}
 			 * });
@@ -16220,7 +16220,7 @@ define("tinymce/geom/ClientRect", [], function() {
  * @private
  * @class tinymce.text.ExtendingChar
  * @example
- * variables isExtending = ExtendingChar.isExtendingChar('a');
+ * var isExtending = ExtendingChar.isExtendingChar('a');
  */
 define("tinymce/text/ExtendingChar", [], function() {
 	// Generated from: http://www.unicode.org/Public/UNIDATA/DerivedCoreProperties.txt
@@ -16278,8 +16278,8 @@ define("tinymce/text/ExtendingChar", [], function() {
  * @private
  * @class tinymce.caret.CaretPosition
  * @example
- * variables caretPos1 = new CaretPosition(container, offset);
- * variables caretPos2 = CaretPosition.fromRangeStart(someRange);
+ * var caretPos1 = new CaretPosition(container, offset);
+ * var caretPos2 = CaretPosition.fromRangeStart(someRange);
  */
 define("tinymce/caret/CaretPosition", [
 	"tinymce/util/Fun",
@@ -16675,8 +16675,8 @@ define("tinymce/caret/CaretPosition", [
  * @static
  * @class tinymce.caret.CaretBookmark
  * @example
- * variables bookmark = CaretBookmark.create(rootElm, CaretPosition.before(rootElm.firstChild));
- * variables caretPosition = CaretBookmark.resolve(bookmark);
+ * var bookmark = CaretBookmark.create(rootElm, CaretPosition.before(rootElm.firstChild));
+ * var caretPosition = CaretBookmark.resolve(bookmark);
  */
 define('tinymce/caret/CaretBookmark', [
 	'tinymce/dom/NodeType',
@@ -16961,7 +16961,7 @@ define("tinymce/dom/BookmarkManager", [
 		 * @return {Object} Bookmark object, use moveToBookmark with this object to restore the selection.
 		 * @example
 		 * // Stores a bookmark of the current selection
-		 * variables bm = tinymce.activeEditor.selection.getBookmark();
+		 * var bm = tinymce.activeEditor.selection.getBookmark();
 		 *
 		 * tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
 		 *
@@ -17188,7 +17188,7 @@ define("tinymce/dom/BookmarkManager", [
 		 * @return {Boolean} true/false if it was successful or not.
 		 * @example
 		 * // Stores a bookmark of the current selection
-		 * variables bm = tinymce.activeEditor.selection.getBookmark();
+		 * var bm = tinymce.activeEditor.selection.getBookmark();
 		 *
 		 * tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
 		 *
@@ -17723,7 +17723,7 @@ define("tinymce/dom/Selection", [
 		 * @return {Object} Bookmark object, use moveToBookmark with this object to restore the selection.
 		 * @example
 		 * // Stores a bookmark of the current selection
-		 * variables bm = tinymce.activeEditor.selection.getBookmark();
+		 * var bm = tinymce.activeEditor.selection.getBookmark();
 		 *
 		 * tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
 		 *
@@ -17742,7 +17742,7 @@ define("tinymce/dom/Selection", [
 		 * @return {Boolean} true/false if it was successful or not.
 		 * @example
 		 * // Stores a bookmark of the current selection
-		 * variables bm = tinymce.activeEditor.selection.getBookmark();
+		 * var bm = tinymce.activeEditor.selection.getBookmark();
 		 *
 		 * tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
 		 *
@@ -18939,7 +18939,7 @@ define("tinymce/Formatter", [
 
 				removeformat: [
 					{
-						selector: 'b,strong,em,i,font,u,strike,sub,sup,dfn,code,samp,kbd,variables,cite,mark,q,del,ins',
+						selector: 'b,strong,em,i,font,u,strike,sub,sup,dfn,code,samp,kbd,var,cite,mark,q,del,ins',
 						remove: 'all',
 						split: true,
 						expand: false,
@@ -20009,8 +20009,8 @@ define("tinymce/Formatter", [
 		 * @param {String/Object} format Format to generate preview css text for.
 		 * @return {String} Css text for the specified format.
 		 * @example
-		 * variables cssText1 = editor.formatter.getCssText('bold');
-		 * variables cssText2 = editor.formatter.getCssText({inline: 'b'});
+		 * var cssText1 = editor.formatter.getCssText('bold');
+		 * var cssText2 = editor.formatter.getCssText({inline: 'b'});
 		 */
 		function getCssText(format) {
 			return Preview.getCssText(ed, format);
@@ -20133,7 +20133,7 @@ define("tinymce/Formatter", [
 		}
 
 		/**
-		 * Replaces variables in the value. The variable format is %variables.
+		 * Replaces variables in the value. The variable format is %var.
 		 *
 		 * @private
 		 * @param {String} value Value to replace variables in.
@@ -22696,10 +22696,10 @@ define("tinymce/caret/CaretUtils", [
  * @private
  * @class tinymce.caret.CaretWalker
  * @example
- * variables caretWalker = new CaretWalker(rootElm);
+ * var caretWalker = new CaretWalker(rootElm);
  *
- * variables prevLogicalCaretPosition = caretWalker.prev(CaretPosition.fromRangeStart(range));
- * variables nextLogicalCaretPosition = caretWalker.next(CaretPosition.fromRangeEnd(range));
+ * var prevLogicalCaretPosition = caretWalker.prev(CaretPosition.fromRangeStart(range));
+ * var nextLogicalCaretPosition = caretWalker.next(CaretPosition.fromRangeEnd(range));
  */
 define("tinymce/caret/CaretWalker", [
 	"tinymce/dom/NodeType",
@@ -24384,7 +24384,7 @@ define("tinymce/util/URI", [
 		 * @return {String} Relative URI from the point specified in the current URI instance.
 		 * @example
 		 * // Converts an absolute URL to an relative URL url will be somedir/somefile.htm
-		 * variables url = new tinymce.util.URI('http://www.site.com/dir/').toRelative('http://www.site.com/dir/somedir/somefile.htm');
+		 * var url = new tinymce.util.URI('http://www.site.com/dir/').toRelative('http://www.site.com/dir/somedir/somefile.htm');
 		 */
 		toRelative: function(uri) {
 			var self = this, output;
@@ -24432,7 +24432,7 @@ define("tinymce/util/URI", [
 		 * @return {String} Absolute URI from the point specified in the current URI instance.
 		 * @example
 		 * // Converts an relative URL to an absolute URL url will be http://www.site.com/dir/somedir/somefile.htm
-		 * variables url = new tinymce.util.URI('http://www.site.com/dir/').toAbsolute('somedir/somefile.htm');
+		 * var url = new tinymce.util.URI('http://www.site.com/dir/').toAbsolute('somedir/somefile.htm');
 		 */
 		toAbsolute: function(uri, noHost) {
 			uri = new URI(uri, {base_uri: this});
@@ -24695,7 +24695,7 @@ define("tinymce/util/URI", [
  * * Exposed super functions: this._super();
  * * Mixins
  * * Dummy functions
- * * Property functions: variables value = object.value(); and object.value(newValue);
+ * * Property functions: var value = object.value(); and object.value(newValue);
  * * Static functions
  * * Defaults settings
  */
@@ -24864,7 +24864,7 @@ define("tinymce/util/Class", [
  *
  * @class tinymce.util.EventDispatcher
  * @example
- *  variables eventDispatcher = new EventDispatcher();
+ *  var eventDispatcher = new EventDispatcher();
  *
  *  eventDispatcher.on('click', function() {console.log('data');});
  *  eventDispatcher.fire('click', {data: 123});
@@ -29187,7 +29187,7 @@ define("tinymce/ui/Container", [
  * Drag/drop helper class.
  *
  * @example
- * variables dragHelper = new tinymce.ui.DragHelper('mydiv', {
+ * var dragHelper = new tinymce.ui.DragHelper('mydiv', {
  *     start: function(evt) {
  *     },
  *
@@ -31153,7 +31153,7 @@ define("tinymce/WindowManager", [
 		 * dialog to get params passed from the tinymce plugin.
 		 *
 		 * @example
-		 * variables dialogArguments = top.tinymce.activeEditor.windowManager.getParams();
+		 * var dialogArguments = top.tinymce.activeEditor.windowManager.getParams();
 		 *
 		 * @method getParams
 		 * @return {Object} Name/value object with parameters passed from windowManager.open call.
@@ -33402,7 +33402,7 @@ define("tinymce/util/Quirks", [
 		/*
 		function touchClickEvent() {
 			editor.on('touchstart', function(e) {
-				variables elm, time, startTouch, changedTouches;
+				var elm, time, startTouch, changedTouches;
 
 				elm = e.target;
 				time = new Date().getTime();
@@ -33415,7 +33415,7 @@ define("tinymce/util/Quirks", [
 				startTouch = changedTouches[0];
 
 				editor.once('touchend', function(e) {
-					variables endTouch = e.changedTouches[0], args;
+					var endTouch = e.changedTouches[0], args;
 
 					if (new Date().getTime() - time > 500) {
 						return;
@@ -34187,7 +34187,7 @@ define("tinymce/Shortcuts", [
  * @private
  * @class tinymce.file.Uploader
  * @example
- * variables uploader = new Uploader({
+ * var uploader = new Uploader({
  *     url: '/upload.php',
  *     basePath: '/base/path',
  *     credentials: true,
@@ -37031,7 +37031,7 @@ define("tinymce/util/Uuid", [
  * tinymce.activeEditor.selection.getContent({format: 'text'});
  *
  * // Creates a new editor instance
- * variables ed = new tinymce.Editor('textareaid', {
+ * var ed = new tinymce.Editor('textareaid', {
  *     some_setting: 1
  * }, tinymce.EditorManager);
  *
@@ -37681,7 +37681,7 @@ define("tinymce/Editor", [
 			/*eslint no-script-url:0 */
 			var domainRelaxUrl = 'javascript:(function(){' +
 				'document.open();document.domain="' + document.domain + '";' +
-				'variables ed = window.parent.tinymce.get("' + self.id + '");document.write(ed.iframeHTML);' +
+				'var ed = window.parent.tinymce.get("' + self.id + '");document.write(ed.iframeHTML);' +
 				'document.close();ed.initContentBody(true);})()';
 
 			// Domain relaxing is required since the user has messed around with document.domain
@@ -38230,10 +38230,10 @@ define("tinymce/Editor", [
 		 * @return {String} Configuration parameter value or default value.
 		 * @example
 		 * // Returns a specific config value from the currently active editor
-		 * variables someval = tinymce.activeEditor.getParam('myvalue');
+		 * var someval = tinymce.activeEditor.getParam('myvalue');
 		 *
 		 * // Returns a specific config value from a specific editor instance by id
-		 * variables someval2 = tinymce.get('my_editor').getParam('myvalue');
+		 * var someval2 = tinymce.get('my_editor').getParam('myvalue');
 		 */
 		getParam: function(name, defaultVal, type) {
 			var value = name in this.settings ? this.settings[name] : defaultVal, output;
@@ -38881,7 +38881,7 @@ define("tinymce/Editor", [
 		 * @param {Boolean} state True/false if the editor is considered dirty.
 		 * @example
 		 * function ajaxSave() {
-		 *     variables editor = tinymce.get('elm1');
+		 *     var editor = tinymce.get('elm1');
 		 *
 		 *     // Save contents using some XHR call
 		 *     alert(editor.getContent());
@@ -40564,10 +40564,10 @@ define("tinymce/util/XHR", [
  * @static
  * @example
  * // JSON parse a string into an object
- * variables obj = tinymce.util.JSON.parse(somestring);
+ * var obj = tinymce.util.JSON.parse(somestring);
  *
  * // JSON serialize a object into an string
- * variables str = tinymce.util.JSON.serialize(obj);
+ * var str = tinymce.util.JSON.serialize(obj);
  */
 define("tinymce/util/JSON", [], function() {
 	function serialize(o, quote) {
@@ -40675,7 +40675,7 @@ define("tinymce/util/JSON", [], function() {
  *
  * @class tinymce.util.JSONRequest
  * @example
- * variables json = new tinymce.util.JSONRequest({
+ * var json = new tinymce.util.JSONRequest({
  *     url: 'somebackend.php'
  * });
  *
@@ -40841,7 +40841,7 @@ define("tinymce/util/JSONP", [
  * @version 4.0
  * @example
  * tinymce.util.LocalStorage.setItem('key', 'value');
- * variables value = tinymce.util.LocalStorage.getItem('key');
+ * var value = tinymce.util.LocalStorage.getItem('key');
  */
 define("tinymce/util/LocalStorage", [], function() {
 	var LocalStorage, storageElm, items, keys, userDataKey, hasOldIEDataSupport;
@@ -42387,8 +42387,8 @@ define("tinymce/ui/ColorButton", [
  *
  * @class tinymce.util.Color
  * @example
- * variables white = new tinymce.util.Color({r: 255, g: 255, b: 255});
- * variables red = new tinymce.util.Color('#FF0000');
+ * var white = new tinymce.util.Color({r: 255, g: 255, b: 255});
+ * var red = new tinymce.util.Color('#FF0000');
  *
  * console.log(white.toHex(), red.toHsv());
  */

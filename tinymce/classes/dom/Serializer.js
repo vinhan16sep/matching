@@ -339,7 +339,7 @@ define("tinymce/dom/Serializer", [
 			 *
 			 * @example
 			 * parser.addNodeFilter('p,h1', function(nodes, name) {
-			 *		for (variables i = 0; i < nodes.length; i++) {
+			 *		for (var i = 0; i < nodes.length; i++) {
 			 *			console.log(nodes[i].name);
 			 *		}
 			 * });
@@ -356,7 +356,7 @@ define("tinymce/dom/Serializer", [
 			 *
 			 * @example
 			 * parser.addAttributeFilter('src,href', function(nodes, name) {
-			 *		for (variables i = 0; i < nodes.length; i++) {
+			 *		for (var i = 0; i < nodes.length; i++) {
 			 *			console.log(nodes[i].name);
 			 *		}
 			 * });

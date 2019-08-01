@@ -15,8 +15,8 @@
  * @private
  * @class tinymce.text.Zwsp
  * @example
- * variables isZwsp = Zwsp.isZwsp('\uFEFF');
- * variables abc = Zwsp.trim('a\uFEFFc');
+ * var isZwsp = Zwsp.isZwsp('\uFEFF');
+ * var abc = Zwsp.trim('a\uFEFFc');
  */
 define("tinymce/text/Zwsp", [], function() {
 	var ZWSP = '\uFEFF';

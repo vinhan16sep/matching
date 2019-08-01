@@ -14,8 +14,8 @@
  * So for example: <p>a<p>b</p>c</p> will become <p>a</p><p>b</p><p>c</p>
  *
  * @example
- * variables parser = new tinymce.html.DomParser({validate: true}, schema);
- * variables rootNode = parser.parse('<h1>content</h1>');
+ * var parser = new tinymce.html.DomParser({validate: true}, schema);
+ * var rootNode = parser.parse('<h1>content</h1>');
  *
  * @class tinymce.html.DomParser
  * @version 3.4
@@ -208,7 +208,7 @@ define("tinymce/html/DomParser", [
 		 *
 		 * @example
 		 * parser.addNodeFilter('p,h1', function(nodes, name) {
-		 *		for (variables i = 0; i < nodes.length; i++) {
+		 *		for (var i = 0; i < nodes.length; i++) {
 		 *			console.log(nodes[i].name);
 		 *		}
 		 * });
@@ -234,7 +234,7 @@ define("tinymce/html/DomParser", [
 		 *
 		 * @example
 		 * parser.addAttributeFilter('src,href', function(nodes, name) {
-		 *		for (variables i = 0; i < nodes.length; i++) {
+		 *		for (var i = 0; i < nodes.length; i++) {
 		 *			console.log(nodes[i].name);
 		 *		}
 		 * });
@@ -261,7 +261,7 @@ define("tinymce/html/DomParser", [
 		 * Parses the specified HTML string into a DOM like node tree and returns the result.
 		 *
 		 * @example
-		 * variables rootNode = new DomParser({...}).parse('<b>text</b>');
+		 * var rootNode = new DomParser({...}).parse('<b>text</b>');
 		 * @method parse
 		 * @param {String} html Html string to sax parse.
 		 * @param {Object} args Optional args object that gets passed to all filter functions.

@@ -24,7 +24,7 @@
  * - Advanced chaining
  *
  * @example
- * variables $ = tinymce.dom.DomQuery;
+ * var $ = tinymce.dom.DomQuery;
  * $('p').attr('attr', 'value').addClass('class');
  *
  * @class tinymce.dom.DomQuery
@@ -1186,7 +1186,7 @@ define("tinymce/dom/DomQuery", [
 		 * @return {Array} New array with values imported and filtered based in input.
 		 * @example
 		 * // Filter out some items, this will return an array with 4 and 5
-		 * variables items = DomQuery.grep([1, 2, 3, 4, 5], function(v) {return v > 3;});
+		 * var items = DomQuery.grep([1, 2, 3, 4, 5], function(v) {return v > 3;});
 		 */
 		grep: grep,
 
