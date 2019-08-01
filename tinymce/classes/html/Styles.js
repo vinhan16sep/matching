@@ -12,7 +12,7 @@
  * This class is used to parse CSS styles it also compresses styles to reduce the output size.
  *
  * @example
- * variables Styles = new tinymce.html.Styles({
+ * var Styles = new tinymce.html.Styles({
  *    url_converter: function(url) {
  *       return url;
  *    }

@@ -36,6 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!-- Custom scripts for all pages-->
     <script src="<?php echo site_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+    <script type="text/javascript" src="<?php echo site_url('tinymce/tinymce.min.js'); ?>"></script>
 
 </head>
 

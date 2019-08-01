@@ -56,50 +56,50 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <strong>Tên Doanh Nghiệp: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['company'] ?>
+                                        <?php echo $temp_register['company'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Cơ quan/ tổ chức/ doanh nghiệp ứng dụng CNTT? </strong><?php echo ($temp_register['is_state'] == 1) ? '<i style="color: green" class="fa fa-check" aria-hidden="true"></i>' : '<i style="color: red" class="fa fa-times" aria-hidden="true"></i>'; ?><br>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Địa Chỉ: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['address'] ?>
+                                        <?php echo $temp_register['address'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Website: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo $temp_register['website'] ?>" target="_blank"><?php echo $temp_register['website'] ?></a>
+                                        <a href="<?php echo $temp_register['website'] ?>" target="_blank"><?php echo $temp_register['website'] ?></a>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Số Nhân lực: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['manpower'] ?>
+                                        <?php echo $temp_register['manpower'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Doanh Thu Năm 2018: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['revenue'] ?>
+                                        <?php echo $temp_register['revenue'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Sản Phẩm/Giải Pháp: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['product'] ?>
+                                        <?php echo $temp_register['product'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Lĩnh Vực/Dịch Vụ Hoạt Động: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['profile'] ?>
+                                        <?php echo $temp_register['profile'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Thị trường chính hiện nay: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['market'] ?>
+                                        <?php echo $temp_register['market'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Tên Người Đại Diện Pháp Luật: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['connector'] ?>
+                                        <?php echo $temp_register['connector'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>E-Mail: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['email'] ?>
+                                        <?php echo $temp_register['email'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Điện Thoại: </strong><br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['phone'] ?>
+                                        <?php echo $temp_register['phone'] ?>
                                     </li>
                                 </ul>
                             </div>

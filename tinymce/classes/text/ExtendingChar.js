@@ -14,7 +14,7 @@
  * @private
  * @class tinymce.text.ExtendingChar
  * @example
- * variables isExtending = ExtendingChar.isExtendingChar('a');
+ * var isExtending = ExtendingChar.isExtendingChar('a');
  */
 define("tinymce/text/ExtendingChar", [], function() {
 	// Generated from: http://www.unicode.org/Public/UNIDATA/DerivedCoreProperties.txt

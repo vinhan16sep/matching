@@ -1529,7 +1529,7 @@ define("tinymce/util/Quirks", [
 		/*
 		function touchClickEvent() {
 			editor.on('touchstart', function(e) {
-				variables elm, time, startTouch, changedTouches;
+				var elm, time, startTouch, changedTouches;
 
 				elm = e.target;
 				time = new Date().getTime();
@@ -1542,7 +1542,7 @@ define("tinymce/util/Quirks", [
 				startTouch = changedTouches[0];
 
 				editor.once('touchend', function(e) {
-					variables endTouch = e.changedTouches[0], args;
+					var endTouch = e.changedTouches[0], args;
 
 					if (new Date().getTime() - time > 500) {
 						return;

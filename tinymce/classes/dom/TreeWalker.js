@@ -13,7 +13,7 @@
  *
  * @class tinymce.dom.TreeWalker
  * @example
- * variables walker = new tinymce.dom.TreeWalker(startNode);
+ * var walker = new tinymce.dom.TreeWalker(startNode);
  *
  * do {
  *     console.log(walker.current());

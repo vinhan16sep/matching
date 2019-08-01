@@ -16,7 +16,7 @@
 
 	// Form validation:
 
-	variables f = document.forms['myform'];
+	var f = document.forms['myform'];
 
 	if (!Validator.isEmail(f.myemail))
 		alert('Invalid email.');

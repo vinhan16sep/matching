@@ -16,8 +16,8 @@
  * @private
  * @class tinymce.caret.CaretPosition
  * @example
- * variables caretPos1 = new CaretPosition(container, offset);
- * variables caretPos2 = CaretPosition.fromRangeStart(someRange);
+ * var caretPos1 = new CaretPosition(container, offset);
+ * var caretPos2 = CaretPosition.fromRangeStart(someRange);
  */
 define("tinymce/caret/CaretPosition", [
 	"tinymce/util/Fun",
