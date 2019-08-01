@@ -99,7 +99,7 @@
         <tr class="tr-header"><td colspan="2">Email xác nhận cuộc hẹn thành công</td></tr>
         <tr class="tr-body">
             <td colspan="2">
-                <h4>Kính gửi<?= $message['finder_name'] ?>!</h4>
+                <h4>Kính gửi <?= $message['finder_name'] ?>!</h4>
                 <p>Thư xác nhận lịch business matching 1:1 tại:</p>
                 <p>Sự kiện: Diễn đàn Cấp cao CNTT-TT Việt Nam 2019</p>
             </td>
