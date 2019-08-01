@@ -33,3 +33,12 @@ Core Stylesheet
 @import "homepage";
 @import "member_register";
 @import "welcome";
+
+//Admin
+@import "admin/login";
+@import "admin/dashboard";
+
+@import "admin/matching";
+
+@import "admin/category";
+@import "admin/event_detail";

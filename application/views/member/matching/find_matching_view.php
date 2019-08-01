@@ -7,7 +7,7 @@
 <div class="container-fluid" id="matching">
     <div class="row">
         <!-- Area Chart -->
-        <div class="left col-xl-3 col-lg-3">
+        <div class="left col-xl-4 col-lg-3">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -37,48 +37,102 @@
                                 ?>
                                 <br>
 
-                                <?php if ($events): ?>
-                                    <?php foreach ($events as $key => $value): ?>
-                                        <?php 
-                                            echo form_checkbox('category_id[]', $key, isset($_GET['category_id']) ? in_array($key, $_GET['category_id']) : false, 'class="btn-event event-'. $key .'" data-key=' . $key);
-                                            echo '<p>' . $value['name'] . '</p><br>';
-                                        ?>
-                                        <?php if ($value): ?>
-                                            <div style="margin-left: 20px" class="slide-service-<?php echo $key ?>" data-key="<?php echo $key ?>">
-                                            <?php foreach ($value as $k => $val): ?>
-                                                <?php if ($val): ?>
-                                                    
-                                                    <?php 
-                                                        if (is_array($val)):
-                                                            if (isset($val['name'])) {
-                                                                echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service sub-event-' . $k .'"');
-                                                                echo $val['name'] . '<br>';
-                                                            }
+                                <div class="tree-root">
+                                    <ul>
+                                        <?php if ($events): ?>
+                                            <?php foreach ($events as $key => $value): ?>
+                                                <li>
+                                                    <?php
+                                                    echo '<a href="#" class="expand"><i class="far fa-plus-square"></i></a>';
+                                                    echo form_checkbox('category_id[]', $key, isset($_GET['category_id']) ? in_array($key, $_GET['category_id']) : false, 'class="btn-event event-'. $key .'" data-key=' . $key);
+                                                    echo $value['name'];
                                                     ?>
-                                                        <div style="margin-left: 40px" class="slide-service-sub-<?php echo $k ?>" data-key="<?php echo $k ?>">
-                                                            <?php foreach ($val as $item => $child): ?>
-                                                                <?php if ($item != 'name'): ?>
-                                                                    <?php 
-                                                                        echo form_checkbox('category_id[]', $item, isset($_GET['category_id']) ? in_array($item, $_GET['category_id']) : false, 'class="btn-service btn-service-sub"');
-                                                                        echo $child . '<br>';
-                                                                    ?>
-                                                                <?php endif ?>
-                                                            <?php endforeach ?>
-                                                        </div>
-                                                    <?php else: ?>
-                                                        <?php
-                                                            if ($k != 'name') {
-                                                                echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service"');
-                                                                echo $val . '<br>';
-                                                            }
-                                                        ?>
+                                                    <?php if ($value): ?>
+                                                        <ul class="slide-service-<?php echo $key ?>"  data-key="<?php echo $key ?>">
+                                                            <?php foreach ($value as $k => $val): ?>
+                                                                <li>
+                                                                    <?php if ($val): ?>
+                                                                        <?php
+                                                                        if (is_array($val)):
+                                                                            if (isset($val['name'])) {
+                                                                                echo '<a href="#" class="expand"><i class="far fa-plus-square"></i></a>';
+                                                                                echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service sub-event-' . $k .'"');
+                                                                                echo $val['name'] . '<br>';
+                                                                            }
+                                                                            ?>
+                                                                            <ul class="slide-service-sub-<?php echo $k ?>" data-key="<?php echo $k ?>">
+                                                                                <?php foreach ($val as $item => $child): ?>
+                                                                                    <li>
+                                                                                        <?php if ($item != 'name'): ?>
+                                                                                            <?php
+                                                                                            //echo '<a href="#" class="expand"><i class="far fa-plus-square"></i></a>';
+                                                                                            echo form_checkbox('category_id[]', $item, isset($_GET['category_id']) ? in_array($item, $_GET['category_id']) : false, 'class="btn-service btn-service-sub"');
+                                                                                            echo $child . '<br>';
+                                                                                            ?>
+                                                                                        <?php endif ?>
+                                                                                    </li>
+                                                                                <?php endforeach ?>
+                                                                            </ul>
+                                                                        <?php else: ?>
+                                                                            <?php
+                                                                            if ($k != 'name') {
+                                                                                echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service"');
+                                                                                echo $val . '<br>';
+                                                                            }
+                                                                            ?>
+                                                                        <?php endif ?>
+                                                                    <?php endif ?>
+                                                                </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
                                                     <?php endif ?>
-                                                <?php endif ?>
+                                                </li>
                                             <?php endforeach; ?>
-                                            </div>
                                         <?php endif ?>
-                                    <?php endforeach ?>
-                                <?php endif ?>
+                                    </ul>
+                                </div>
+
+<!--                                --><?php //if ($events): ?>
+<!--                                    --><?php //foreach ($events as $key => $value): ?>
+<!--                                        --><?php //
+//                                            echo form_checkbox('category_id[]', $key, isset($_GET['category_id']) ? in_array($key, $_GET['category_id']) : false, 'class="btn-event event-'. $key .'" data-key=' . $key);
+//                                            echo '<p>' . $value['name'] . '</p><br>';
+//                                        ?>
+<!--                                        --><?php //if ($value): ?>
+<!--                                            <div style="margin-left: 20px" class="slide-service---><?php //echo $key ?><!--" data-key="--><?php //echo $key ?><!--">-->
+<!--                                            --><?php //foreach ($value as $k => $val): ?>
+<!--                                                --><?php //if ($val): ?>
+<!--                                                    --><?php //
+//                                                        if (is_array($val)):
+//                                                            if (isset($val['name'])) {
+//                                                                echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service sub-event-' . $k .'"');
+//                                                                echo $val['name'] . '<br>';
+//                                                            }
+//                                                    ?>
+<!--                                                        <div style="margin-left: 40px" class="slide-service-sub---><?php //echo $k ?><!--" data-key="--><?php //echo $k ?><!--">-->
+<!--                                                            --><?php //foreach ($val as $item => $child): ?>
+<!--                                                                --><?php //if ($item != 'name'): ?>
+<!--                                                                    --><?php //
+//                                                                        echo form_checkbox('category_id[]', $item, isset($_GET['category_id']) ? in_array($item, $_GET['category_id']) : false, 'class="btn-service btn-service-sub"');
+//                                                                        echo $child . '<br>';
+//                                                                    ?>
+<!--                                                                --><?php //endif ?>
+<!--                                                            --><?php //endforeach ?>
+<!--                                                        </div>-->
+<!--                                                    --><?php //else: ?>
+<!--                                                        --><?php
+//                                                            if ($k != 'name') {
+//                                                                echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service"');
+//                                                                echo $val . '<br>';
+//                                                            }
+//                                                        ?>
+<!--                                                    --><?php //endif ?>
+<!--                                                --><?php //endif ?>
+<!--                                            --><?php //endforeach; ?>
+<!--                                            </div>-->
+<!--                                        --><?php //endif ?>
+<!--                                    --><?php //endforeach ?>
+<!--                                --><?php //endif ?>
                             </div>
 
                             <br>
@@ -102,7 +156,7 @@
         </div>
 
         <!-- Pie Chart -->
-        <div class=" right col-xl-9 col-lg-9">
+        <div class=" right col-xl-8 col-lg-9">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -199,19 +253,7 @@
                 <div class="tab-content" id="companyInfomationContent">
                     <div class="tab-pane fade show active" id="infoTab" role="tabpanel" aria-labelledby="info-tab">
                         <div class="row no-gutters">
-<!--                            <div class="left col-xs-12 col-lg-6">-->
-<!--                                <div class="background">-->
-<!--                                    <img src="--><?php //echo site_url('assets/img/logo.svg') ?><!--" alt="Logo Company">-->
-<!---->
-<!--                                    <div class="mask-wrapper">-->
-<!--                                        <div class="mask mask-circle">-->
-<!--                                            <img src="--><?php //echo site_url('assets/img/logo.svg') ?><!--" alt="Logo Company">-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-                            <div class="right col-xs-12 col-lg-6">
+                            <div class="left col-xs-12 col-lg-4">
                                 <div class="wrapper">
                                     <label>Công Ty</label>
                                     <p id="company">No data</p>
@@ -221,12 +263,15 @@
                                     <h6 id="address">No data</h6>
                                 </div>
                                 <div class="wrapper">
-                                    <label>Website</label>
-                                    <h6 id="website">No data</h6>
-                                </div>
-                                <div class="wrapper">
                                     <label>Người Đại Diện</label>
                                     <h6 id="connector">No data</h6>
+                                </div>
+                            </div>
+
+                            <div class="right col-xs-12 col-lg-4">
+                                <div class="wrapper">
+                                    <label>Website</label>
+                                    <h6 id="website">No data</h6>
                                 </div>
                                 <div class="wrapper">
                                     <label>Email</label>
@@ -236,6 +281,8 @@
                                     <label>Số điện thoại</label>
                                     <h6 id="phone">No data</h6>
                                 </div>
+                            </div>
+                            <div class="right col-xs-12 col-lg-4">
                                 <div class="wrapper">
                                     <label>Số Nhân lực</label>
                                     <h6 id="manpower">No data</h6>
@@ -372,5 +419,35 @@
         $btnClose.on('click', function(){
             $(this).closest('.popup').removeClass('show');
         })
+    }
+
+    $(document).ready(function (){
+        treeView();
+    });
+
+    function treeView(){
+        const $ul = $('.tree-root ul');
+
+        if ( $ul.children('li').length > 0 ){
+            $(this).each(function(){
+                $ul.children('li').children('a.expand').unbind().on('click', function(e){
+                    e.preventDefault();
+                    $(this).siblings('ul').slideToggle();
+                    $(this).children('i').toggleClass('fa-minus-square fa-plus-square');
+                })
+            })
+        }
+
+        $ul.find('li').find('a.epxand').unbind().on('click', function(e){
+            e.preventDefault();
+            $(this).addClass('target');
+            $('.tree-root ul li a').not($(this)).removeClass('target');
+        });
+
+        $ul.find('li').find('a.head').on('click', function(e){
+            e.preventDefault();
+            $(this).addClass('selected');
+            $('.tree-root ul li a').not($(this)).removeClass('selected');
+        });
     }
 </script>

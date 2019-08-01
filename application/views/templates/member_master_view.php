@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>css/sb-admin-2.min.css" />
 
     <!-- my Style -->
-    <link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>scss/admin/style.css" />
+    <link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>scss/style.css" />
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo site_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>

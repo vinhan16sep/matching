@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>css/sb-admin-2.min.css" />
     <link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
 
-    <link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>scss/admin/style.css" />
+    <link rel="stylesheet"  href="<?php echo site_url('assets/'); ?>scss/style.css" />
     <script src="<?php echo site_url('assets/'); ?>vendor/jquery/jquery-3.4.1.js"></script>
 
     <!-- Bootstrap core JavaScript-->
