@@ -28,7 +28,11 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <strong>Logo: </strong><br>
-                                            <img src="<?php echo base_url('assets/upload/profile/' . $temp_register['logo']);  ?>" width="100%">
+                                            <?php  if(!empty($temp_register['logo'])){ ?>
+                                                <img src="<?php echo base_url('assets/upload/profile/' . $temp_register['logo']);  ?>" width="100%">
+                                            <?php } else { ?>
+                                                <img src="<?php echo base_url('assets/img/logo.png');  ?>" width="100%">
+                                            <?php } ?>
                                         </div>
                                         <div class="col-lg-8">
                                             <strong>File PDF: </strong>
