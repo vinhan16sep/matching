@@ -136,19 +136,15 @@
                             </div>
 
                             <br>
-                            <div class="form-group col-sm-12 text-left" style="padding-left: 0 !important;">
+                            <div class="col-sm-12 text-right" style="padding-left: 0 !important;">
                                 <div class="pull-right">
                                     <?php
-                                    echo form_submit('submit', 'OK', 'class="btn btn-primary"');
+                                    echo form_submit('submit', 'Tìm kiếm', 'class="btn btn-primary"');
+                                    echo form_close();
                                     ?>
                                 </div>
 
                             </div>
-                        </div>
-                        <div class="form-group col-sm-12 text-right">
-                            <?php
-                            echo form_close();
-                            ?>
                         </div>
                     </div>
                 </div>
@@ -404,6 +400,10 @@
                     $('#market').html(result.info.market);
 
                     $("#btnMatching").attr("href", btnMatching);
+
+                    if(result.info.file === null){
+                        $('#file-pdf').hide();
+                    }
                 }else{
                     alert('Doanh nghiệp không tồn tại hoặc đã hủy tham gia sự kiện');
                 }

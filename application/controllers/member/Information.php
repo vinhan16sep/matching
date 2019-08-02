@@ -35,9 +35,8 @@ class Information extends Member_Controller {
             'required' => '%s không được trống!',
             'numeric' => '%s phải là số'
         ));
-        $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required|numeric', array(
+        $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required', array(
             'required' => '%s không được trống!',
-            'numeric' => '%s phải là số'
         ));
         $this->form_validation->set_rules('product', 'Sản Phẩm/Giải Pháp', 'required', array(
             'required' => '%s không được trống!'
@@ -194,9 +193,8 @@ class Information extends Member_Controller {
             'required' => '%s không được trống!',
             'numeric' => '%s phải là số'
         ));
-        $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required|numeric', array(
+        $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required', array(
             'required' => '%s không được trống!',
-            'numeric' => '%s phải là số'
         ));
         $this->form_validation->set_rules('product', 'Sản Phẩm/Giải Pháp', 'required', array(
             'required' => '%s không được trống!'
