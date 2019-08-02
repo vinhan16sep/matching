@@ -37,8 +37,8 @@
 
     &#companyInfo{
         .popup-content{
-            width: 90%;
-            height: 90%;
+            width: 60%;
+            height: 70%;
 
             background-color: #fff;
             border: 1px solid $gray-lightest;
@@ -94,6 +94,9 @@
                             text-align: center;
 
                             .nav-link{
+                                font-size: 0.75rem;
+                                font-weight: 600;
+
                                 border: none;
 
                                 color: $gray-base;
@@ -130,61 +133,20 @@
                             .row{
                                 height: 100%;
 
-                                .left{
+                                margin-left: 0;
+                                margin-right: 0;
+
+                                .left, .right{
                                     height: 100%;
 
-                                    .background{
-                                        width: 100%;
-                                        height: 100%;
+                                    padding: $padding-double;
 
-                                        overflow: hidden;
-
-                                        position: relative;
-
-                                        >img{
-                                            width: 100%;
-                                            height: 100%;
-
-                                            object-fit: cover;
-
-                                            filter: blur(5px);
-                                            opacity: 0.5;
-                                        }
-
-                                        .mask-wrapper{
-                                            width: 150px;
-                                            height: 150px;
-
-                                            position: absolute;
-                                            top: 50%;
-                                            left: 50%;
-                                            z-index: 1;
-
-                                            @include translate(-50%, -50%);
-                                        }
-
-                                        .mask{
-                                            width: 100%;
-                                            height: 100%;
-
-                                            padding: $padding-base;
-
-                                            background-color: #fff;
-
-                                            border: 3px solid $success-base;
-                                        }
-                                    }
-                                }
-
-                                .right{
-                                    height: 100%;
-
-                                    @include d-flex(column, center, center);
+                                    //@include d-flex(column, center, center);
 
                                     .wrapper {
-                                        width: 60%;
+                                        //width: 60%;
 
-                                        text-align: center;
+                                        text-align: left;
 
                                         margin-bottom: $padding-base;
 
@@ -214,6 +176,10 @@
 
                 .btn{
                     margin-right: $padding-base;
+
+                    &.btn-primary{
+                        color: #fff;
+                    }
 
                     &:last-child{
                         margin-right: 0;

@@ -1,0 +1,120 @@
+.tree-root {
+	margin-top: $padding-half;
+	margin-bottom: $padding-half;
+
+	> ul {
+		border-bottom: 1px solid $gray-lightest;
+	}
+
+	ul {
+		list-style: none;
+
+		margin-bottom: $padding-small;
+
+		display: none;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 30px;
+			left: 0px;
+			bottom: 17px;
+
+			width: 15px;
+
+			border-left: 1px dashed $gray-lighter;
+		}
+
+		li {
+			position: relative;
+
+			padding-top: $padding-half;
+			padding-bottom: $padding-half;
+			padding-left: $padding-base;
+
+			&:before {
+				content: "";
+
+				position: absolute;
+				top: 18px;
+				left: -55px;
+
+				width: 40px;
+
+				border-top: 1px dashed $gray-lighter;
+			}
+
+			&:last-of-type {
+				&:after {
+					content: "";
+
+					position: absolute;
+					top: 20px;
+					left: -55px;
+
+					width: 45px;
+					height: 100%;
+
+					border-left: 2px solid #fff;
+				}
+			}
+
+			a {
+				color: $gray-base;
+
+				display: inline-block;
+
+				padding-left: 5px;
+
+				i {
+					font-size: 10px;
+
+					position: absolute;
+					top: 13px;
+					left: -5px;
+				}
+
+				&:hover {
+					text-decoration: none;
+				}
+
+				&.target {
+					color: $primary-base;
+				}
+
+				&.selected {
+					color: $primary-base;
+
+					position: relative;
+
+					&:after {
+						font-family: "FontAwesome";
+						content: '\f00c';
+
+						position: absolute;
+						top: 50%;
+						left: 100%;
+
+						@include translate(15px, -50%);
+					}
+				}
+			}
+		}
+	}
+
+	> ul {
+		padding-left: 0;
+
+		display: block; //Show first ul child of tree root
+
+		&:before {
+			display: none;
+		}
+
+		> li {
+			&:before, &:after {
+				display: none;
+			}
+		}
+	}
+}

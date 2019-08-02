@@ -33,6 +33,24 @@
         }
 
         .left{
+            @import "../components/tree_view";
+
+            .tree-root{
+                > ul{
+                    > li{
+                        color: $primary-base;
+                        font-weight: 600;
+
+                        ul{
+                            li{
+                                color: $gray-base;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+
             .card{
                 .card-body{
                     .chart-area{

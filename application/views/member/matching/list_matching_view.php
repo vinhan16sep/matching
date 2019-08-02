@@ -59,7 +59,7 @@
                                             <td style="text-align: center"><?php echo date('H:i d/m/Y', $item['date']); ?></td>
                                             <td style="text-align: center" class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
                                             <td style="text-align: center" class="reg-client-company">
-                                                <a href="javascript:void(0)"
+                                                <a href="javascript:;"
                                                    class="btn-reg-info"
                                                    data-id="<?php echo $item['register_info']['id'] ?>"
                                                    title="Xem thông tin"
@@ -126,7 +126,7 @@
                                             <td style="text-align: center"><?php echo date('H:i d/m/Y', $item['date']); ?></td>
                                             <td style="text-align: center" class="reg-client-company"><?php echo $item['register_info']['company']; ?></td>
                                             <td style="text-align: center" class="reg-client-company">
-                                                <a href="javascript:void(0)"
+                                                <a href="#"
                                                    class="btn-reg-info"
                                                    data-id="<?php echo $item['register_info']['id'] ?>"
                                                    title="Xem thông tin"
@@ -254,28 +254,44 @@
                 </ul>
                 <div class="tab-content" id="companyInfomationContent">
                     <div class="tab-pane fade show active" id="infoTab" role="tabpanel" aria-labelledby="info-tab">
-                        <div class="row no-gutters">
-                            <div class="left col-xs-12 col-lg-6">
-                                <div class="background">
-                                    <img id="logo-back"  src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
-
-                                    <div class="mask-wrapper">
-                                        <div class="mask mask-circle">
-                                            <img id="logo" src="<?php echo site_url('assets/img/logo.svg') ?>" alt="Logo Company">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="right col-xs-12 col-lg-6">
+                        <div class="row">
+                            <div class="left col-xs-12 col-lg-4">
                                 <div class="wrapper">
                                     <label>Công Ty</label>
                                     <p id="company">No data</p>
                                 </div>
-
                                 <div class="wrapper">
                                     <label>Địa Chỉ</label>
-                                    <p id="address">No data</p>
+                                    <h6 id="address">No data</h6>
+                                </div>
+                                <div class="wrapper">
+                                    <label>Người Đại Diện</label>
+                                    <h6 id="connector">No data</h6>
+                                </div>
+                            </div>
+
+                            <div class="right col-xs-12 col-lg-4">
+                                <div class="wrapper">
+                                    <label>Website</label>
+                                    <h6 id="website">No data</h6>
+                                </div>
+                                <div class="wrapper">
+                                    <label>Email</label>
+                                    <h6 id="email">No data</h6>
+                                </div>
+                                <div class="wrapper">
+                                    <label>Số điện thoại</label>
+                                    <h6 id="phone">No data</h6>
+                                </div>
+                            </div>
+                            <div class="right col-xs-12 col-lg-4">
+                                <div class="wrapper">
+                                    <label>Số Nhân lực</label>
+                                    <h6 id="manpower">No data</h6>
+                                </div>
+                                <div class="wrapper">
+                                    <label>Doanh Thu Năm 2018</label>
+                                    <h6 id="revenue">No data</h6>
                                 </div>
                             </div>
                         </div>
@@ -361,7 +377,8 @@
         $('#waitingApprove').fadeIn();
     });
 
-    $('.btn-reg-info').click(function(){
+    $('.btn-reg-info').click(function(e){
+        e.preventDefault();
         id = $(this).data('id');
         $.ajax({
             method: 'GET',
