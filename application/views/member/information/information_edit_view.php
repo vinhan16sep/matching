@@ -91,7 +91,7 @@
                         <?php echo form_input('manpower', (isset($temp) && !empty($temp['manpower']))? $temp['manpower'] : set_value('manpower'), 'class="form-control"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Doanh Thu Năm ' . (date("Y") - 1) . ':' , 'revenue'); ?>
+                        <?php echo form_label('Doanh Thu Năm ' . (date("Y") - 1) . ' (ghi rõ đơn vị tiền tệ):' , 'revenue'); ?>
                         <?php echo form_error('revenue', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('revenue', (isset($temp) && !empty($temp['revenue']))? $temp['revenue'] : set_value('revenue'), 'class="form-control"'); ?>
                     </div>

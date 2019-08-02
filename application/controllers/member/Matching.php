@@ -99,7 +99,7 @@ class Matching extends Member_Controller {
         }
         $this->data['event_id'] = $event_id = $params['event_id'];
 
-        if($this->input->get() && $this->input->get('submit') === 'OK'){
+        if($this->input->get() && $this->input->get('submit') === 'Tìm kiếm'){
             $get = $this->input->get();
             if(!isset($get['category_id'])){
                 redirect('member/matching/find?event_id=' . $event_id, 'refresh');
