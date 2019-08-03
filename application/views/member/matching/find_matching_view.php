@@ -50,10 +50,10 @@
                                                     <?php if ($value): ?>
                                                         <ul class="slide-service-<?php echo $key ?>"  data-key="<?php echo $key ?>">
                                                             <?php foreach ($value as $k => $val): ?>
-                                                                <li>
                                                                     <?php if ($val): ?>
                                                                         <?php
                                                                         if (is_array($val)):
+                                                                            echo '<li>';
                                                                             if (isset($val['name'])) {
                                                                                 echo '<a href="#" class="expand"><i class="far fa-plus-square"></i></a>';
                                                                                 echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service sub-event-' . $k .'"');
@@ -62,27 +62,29 @@
                                                                             ?>
                                                                             <ul class="slide-service-sub-<?php echo $k ?>" data-key="<?php echo $k ?>">
                                                                                 <?php foreach ($val as $item => $child): ?>
-                                                                                    <li>
-                                                                                        <?php if ($item != 'name'): ?>
+                                                                                    <?php if ($item != 'name'): ?>
+                                                                                        <li>
                                                                                             <?php
                                                                                             //echo '<a href="#" class="expand"><i class="far fa-plus-square"></i></a>';
                                                                                             echo form_checkbox('category_id[]', $item, isset($_GET['category_id']) ? in_array($item, $_GET['category_id']) : false, 'class="btn-service btn-service-sub"');
                                                                                             echo $child . '<br>';
                                                                                             ?>
-                                                                                        <?php endif ?>
-                                                                                    </li>
+                                                                                        </li>
+                                                                                    <?php endif ?>
                                                                                 <?php endforeach ?>
                                                                             </ul>
+                                                                            </li>
                                                                         <?php else: ?>
                                                                             <?php
-                                                                            if ($k != 'name') {
+                                                                            if ($k != 'name' && $val != $value['name']) {
+                                                                                echo '<li>';
                                                                                 echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service"');
-                                                                                echo $val . '<br>';
+                                                                                echo $val . '1111111111<br>';
+                                                                                echo '</li>';
                                                                             }
                                                                             ?>
                                                                         <?php endif ?>
                                                                     <?php endif ?>
-                                                                </li>
                                                             <?php endforeach; ?>
                                                         </ul>
                                                     <?php endif ?>
