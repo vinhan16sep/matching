@@ -79,7 +79,7 @@
                                                                             if ($k != 'name' && $val != $value['name']) {
                                                                                 echo '<li>';
                                                                                 echo form_checkbox('category_id[]', $k, isset($_GET['category_id']) ? in_array($k, $_GET['category_id']) : false, 'class="btn-service"');
-                                                                                echo $val . '1111111111<br>';
+                                                                                echo $val . '<br>';
                                                                                 echo '</li>';
                                                                             }
                                                                             ?>

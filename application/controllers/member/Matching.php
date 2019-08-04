@@ -202,7 +202,6 @@ class Matching extends Member_Controller {
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('date','Date','trim|required');
-        // echo $result['email'];die;
         if($this->form_validation->run() === FALSE) {
             $this->load->helper('form');
             $this->render('member/matching/create_matching_view');
@@ -230,7 +229,7 @@ class Matching extends Member_Controller {
                 send_mail_matching(self::EMAIL_ADMIN, $data_send_mail, 'create', 'admin');
                 send_mail_matching($result['email'], $data_send_mail, 'create', 'member');
 
-                redirect('member/dashboard/index','refresh');
+                redirect('member/matching/index?event_id=' . $event,'refresh');
             }
             redirect('member/matching/create?target=' . $target . '&event=' . $event,'refresh');
         }
