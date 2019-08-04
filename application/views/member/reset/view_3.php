@@ -78,10 +78,10 @@ $form_action = 'member/new_rating/update_reset_rating/' . $rating['id'];
                             <thead>
                             <tr>
                                 <th class="col-sm-1">STT</th>
-                                <th class="col-sm-2">Tiêu chí</th>
+                                <th class="col-sm-2">Năng lực</th>
                                 <th class="col-sm-1">Trọng số (%)</th>
                                 <th class="col-sm-1">Điểm chính</th>
-                                <th class="col-sm-2">Tiêu chí chi tiết</th>
+                                <th class="col-sm-2">Năng lực chi tiết</th>
                                 <th class="col-sm-1">Trọng số (%)</th>
                                 <th class="col-sm-1">Điểm phụ</th>
                             </tr>

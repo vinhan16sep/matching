@@ -18,7 +18,7 @@
 
                 <div class="form-group col-lg-12">
                     <?php 
-                        echo form_label('Tiêu chí', 'category_id');
+                        echo form_label('Năng lực', 'category_id');
                         echo form_error('category_id[]');
                     ?>
                     <br>

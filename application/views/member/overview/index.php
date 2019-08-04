@@ -14,7 +14,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h6>Tổng quan về doanh nghiệp</h6>
+                            <h6>Thông tin chung về doanh nghiệp</h6>
                         </div>
                         <?php if ($temp_register['is_overview'] == 0): ?>
                             <ul class="list-group list-group-flush">

@@ -24,7 +24,7 @@
                 <li class="<?php echo ($active == 'dashboard')? 'active' : '' ?>">
                     <a href="<?php echo base_url('client/dashboard'); ?>">
                         <i class="fa fa-tachometer" aria-hidden="true"></i>
-                        <span>Tổng quan</span>
+                        <span>Thông tin chung</span>
                         <span class="pull-right-container"></span>
                     </a>
                 </li>

@@ -12,7 +12,7 @@ class Dashboard extends Member_Controller {
     }
 
     public function index(){
-        $this->data['page_title'] = 'Tổng quan';
+        $this->data['page_title'] = 'Thông tin chung';
         $user = $this->ion_auth->user()->row();
         $this->data['total_registered']  = $this->setting_model->count_by_user_id($user->id);
 
