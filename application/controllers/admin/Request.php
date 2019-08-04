@@ -46,8 +46,6 @@ class Request extends Admin_Controller
         $this->data['page_links'] = $this->pagination->create_links();
         $this->data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) - 1 : 0;
         $this->data['result'] = $this->setting_model->fetch_all_request_pagination($per_page, $per_page * $this->data['page'], 2, $keywords);
-//        echo '<pre>';
-//        print_r($this->data['result']);die;
 
         $this->render('admin/request/list_pending_request_view');
     }
