@@ -45,10 +45,9 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tài khoản / Số đơn đăng ký</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Thống kê đơn đăng ký</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <span style="color: #3495c4"><?php echo $count_active_temp_register; ?> tài khoản</span> / <span><?php echo $count_temp_register; ?></span>
-                                &nbsp;đơn đăng ký
+                                <span style="color: #f6c23e"><?php echo $count_pending_setting; ?> đơn chờ kích hoạt</span> - <span style="color: #3495c4"><?php echo $count_active_setting; ?> đơn đã kích hoạt</span>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -86,7 +85,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Đăng ký mới nhất: <strong style="color: red"><?php echo date('d-m-Y', $event_date) ?></strong></h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Thống kê cuộc hẹn ngày <strong style="color: red"><?php echo date('d-m-Y', $event_date) ?></strong></h6>
                     <div class="dropdown no-arrow">
                         <a title="Xem toàn bộ" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-arrow-alt-circle-right text-primary"></i>
@@ -103,11 +102,18 @@
                             echo form_open_multipart(base_url('admin/event/detail/' . $event_id), array('class' => 'form-horizontal', 'method' => 'GET'));
                             ?>
                             <div class="row">
-                                <div class="column">
+                                <div class="column" style="width:150px; margin-right: 20px;">
                                     <div class="form-group">
                                         <?php
-                                        echo form_error('keywords');
-                                        echo form_input('keywords', set_value('keywords', $keywords), 'class="form-control" id="code"');
+//                                        echo form_error('keywords');
+//                                        echo form_input('keywords', set_value('keywords', $keywords), 'class="form-control" id="code"');
+                                        $options = array(
+                                            '' => 'Tất cả',
+                                            3 => 'Chờ duyệt',
+                                            1 => 'Đã đồng ý',
+                                            2 => 'Đã từ chối'
+                                        );
+                                        echo form_dropdown('status', $options, $status, 'class="form-control"');
                                         ?>
                                     </div>
                                 </div>
@@ -131,20 +137,31 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align: center">STT</th>
-                                        <th style="text-align: center">Finder</th>
-                                        <th style="text-align: center">Target</th>
+                                        <th style="text-align: center">Bên gửi</th>
+                                        <th style="text-align: center">Bên nhận</th>
                                         <th style="text-align: center">Thời gian</th>
+                                        <th style="text-align: center">Trạng thái</th>
                                         <th style="text-align: center">Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php if ($matching): ?>
                                         <?php foreach ($matching as $key => $value): ?>
+                                            <?php
+                                                if($value['status'] == 0){
+                                                    $status = '<i class="fa fa-clock" aria-hidden="true"></i>';
+                                                }else if($value['status'] == 1){
+                                                    $status = '<i class="fa fa-handshake" aria-hidden="true"></i> ';
+                                                }else{
+                                                    $status = '<i class="fa fa-ban" aria-hidden="true"></i>';
+                                                }
+                                            ?>
                                             <tr id="<?= $value['id'] ?>">
                                                 <td style="text-align: center"><?php echo $key + 1; ?></td>
                                                 <td style="text-align: center"><?php echo $value['company_finder'] ?></td>
                                                 <td style="text-align: center"><?php echo $value['company_target'] ?></td>
                                                 <td style="text-align: center"><?php echo date('H:i', $value['date']) ?></td>
+                                                <td style="text-align: center"><?php echo $status; ?></td>
                                                 <td style="text-align: center" title="Thông tin cuộc hẹn">
                                                     <a href="#" class="call-popup" data-finder_id="<?php echo $value['finder_id'] ?>" data-target_id="<?php echo $value['target_id'] ?>"><i class="fas fa-info-circle"></i></a>
                                                 </td>
@@ -170,7 +187,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Thống kê cuộc hẹn</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Biểu đồ thống kê cuộc hẹn</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -179,7 +196,7 @@
                     </div>
                     <div class="mt-4 text-center small">
                         <span class="mr-2">
-                            <i class="fas fa-circle" style="color: #36b9cc"></i> Đã đặt
+                            <i class="fas fa-circle" style="color: #36b9cc"></i> Đã đồng ý
                         </span>
                         <span class="mr-2">
                             <i class="fas fa-circle" style="color: #ffc107"></i> Chờ xử lý

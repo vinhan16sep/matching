@@ -132,6 +132,20 @@ class Setting_model extends MY_Model {
         }
         return false;
     }
+
+    public function get_list_pending_setting_by_event_id($event_id){
+        $this->db->from($this->table);
+        $this->db->where('event_id', $event_id);
+        $this->db->where('status', 2);
+        return $this->db->get()->result_array();
+    }
+
+    public function get_list_active_setting_by_event_id($event_id){
+        $this->db->from($this->table);
+        $this->db->where('event_id', $event_id);
+        $this->db->where('status', 1);
+        return $this->db->get()->result_array();
+    }
 }
 
 /* End of file Setting_model.php */

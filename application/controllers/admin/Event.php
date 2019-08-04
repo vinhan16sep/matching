@@ -43,13 +43,13 @@ class Event extends Admin_Controller
         $this->load->helper('form');
         $event = $this->event_model->fetch_by_id($event_id);
         /**
-         * List all of temp register of 1 event
+         * List all of setting of 1 event
          */
-        $temp_register = $this->temp_register_model->get_list_temp_register_by_event_id($event_id);
+        $pending_setting = $this->setting_model->get_list_pending_setting_by_event_id($event_id);
         /**
          * List of temp register have user id of 1 event
          */
-        $active_temp_register = $this->temp_register_model->get_list_active_temp_register_by_event_id($event_id);
+        $active_setting = $this->setting_model->get_list_active_setting_by_event_id($event_id);
         /**
          * List of matching in 1 event
          */
@@ -65,7 +65,14 @@ class Event extends Admin_Controller
             $keywords = $this->input->get('keywords');
         }
         $this->data['keywords'] = $keywords;
-        $total_rows  = $this->matching_model->count_search('', $keywords);
+
+        $status = '';
+        if($this->input->get('status')){
+            $status = $this->input->get('status');
+        }
+        $this->data['status'] = $status;
+
+        $total_rows  = $this->matching_model->count_search('', $keywords, $status);
         $this->load->library('pagination');
         $config = array();
         $base_url = base_url('admin/event/detail/' . $event_id);
@@ -77,15 +84,13 @@ class Event extends Admin_Controller
         $this->data['page'] = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
         $this->pagination->initialize($config);
         $this->data['page_links'] = $this->pagination->create_links();
-        $matching = $this->matching_model->get_all_by_event_id_with_pagination_search($event_id, $per_page, $this->data['page'], $keywords);
-        // echo '<pre>';
-        // print_r($matching);die;
+        $matching = $this->matching_model->get_all_by_event_id_with_pagination_search($event_id, $per_page, $this->data['page'], $keywords, $status);
 
         /**
          * Count data for render view
          */
-        $this->data['count_temp_register'] = count($temp_register);
-        $this->data['count_active_temp_register'] = count($active_temp_register);
+        $this->data['count_pending_setting'] = count($pending_setting);
+        $this->data['count_active_setting'] = count($active_setting);
         $this->data['pending_matching'] = count($pending_matching);
         $this->data['approved_matching'] = count($approved_matching);
         $this->data['rejected_matching'] = count($rejected_matching);
