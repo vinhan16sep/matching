@@ -15,7 +15,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('admin/dashboard/index') ?>" aria-expanded="true">
             <i class="fas fa-fw fa-tachometer-alt" aria-hidden="true"></i>
-            <span>Tổng quan</span>
+            <span>Thông tin chung</span>
         </a>
     </li>
     <hr class="sidebar-divider my-0">

@@ -57,7 +57,7 @@ class Event extends Admin_Controller
         $approved_matching = $this->matching_model->get_list_matching_by_event_and_status($event_id, 1);
         $rejected_matching = $this->matching_model->get_list_matching_by_event_and_status($event_id, 2);
 
-        $this->data['page_title'] = 'Tổng quan sự kiện ' . '<span style="color:red;">' . $event['name'] . '</span>';
+        $this->data['page_title'] = 'Thông tin chung sự kiện ' . '<span style="color:red;">' . $event['name'] . '</span>';
 
 
         $keywords = '';

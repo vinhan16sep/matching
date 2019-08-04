@@ -17,7 +17,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="<?php echo base_url('member/dashboard/index') ?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Tổng quan</span></a>
+                <span>Thông tin chung</span></a>
         </li>
 
         <!-- Divider -->

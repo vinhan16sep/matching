@@ -229,10 +229,10 @@
                             Thông tin cơ bản
                         </a>
                         <a href="#" class="tab" data-tab="tab-category">
-                            Tiêu chí đăng ký
+                            Năng lực đăng ký
                         </a>
                         <a href="#" class="tab" data-tab="tab-overview">
-                            Tổng quan
+                            Thông tin chung
                         </a>
                         <a href="#" class="tab" data-tab="tab-profile">
                             Hồ sơ
@@ -315,10 +315,10 @@
                             Thông tin cơ bản
                         </a>
                         <a href="#" class="tab" data-tab="tab-category">
-                            Tiêu chí đăng ký
+                            Năng lực đăng ký
                         </a>
                         <a href="#" class="tab" data-tab="tab-overview">
-                            Tổng quan
+                            Thông tin chung
                         </a>
                         <a href="#" class="tab" data-tab="tab-profile">
                             Hồ sơ

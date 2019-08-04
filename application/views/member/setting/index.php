@@ -80,7 +80,7 @@
                                     <td colspan="5" class="zeroPadding">
                                         <div class="collapse out" id="review-<?php echo $key ?>">
                                             <ul class="list-group">
-                                                <li class="list-group-item active" style="background: #605ca8 !important; color: white; border-color: white !important"><i class="fas fa-list" style="color: white !important"></i> Tiêu chí</li>
+                                                <li class="list-group-item active" style="background: #605ca8 !important; color: white; border-color: white !important"><i class="fas fa-list" style="color: white !important"></i> Năng lực</li>
                                                 <?php if ($value['category']): ?>
                                                     <?php foreach ($value['category'] as $k => $val): ?>
                                                         <li class="list-group-item" style="background: #0073b7 !important; color: white; border-color: white !important"><i class="fas fa-bullseye" style="color: white !important"></i> <?php echo $val['name'] ?></li>

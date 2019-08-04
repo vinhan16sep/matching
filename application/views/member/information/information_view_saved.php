@@ -50,7 +50,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h6>Tổng quan về doanh nghiệp</h6>
+                                    <h6>Thông tin chung về doanh nghiệp</h6>
                                 </div>
                                 
                                 <ul class="list-group list-group-flush">

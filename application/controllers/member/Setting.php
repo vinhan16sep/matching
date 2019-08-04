@@ -167,7 +167,7 @@ class Setting extends Member_Controller {
 		}
 		$this->data['events'] = $events;
 
-		$this->form_validation->set_rules('category_id[]','Tiêu chí','trim|required');
+		$this->form_validation->set_rules('category_id[]','Năng lực','trim|required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->render('member/setting/create');
 		} else {
@@ -239,7 +239,7 @@ class Setting extends Member_Controller {
 		$this->data['events'] = $events;
 		$this->data['setting_id'] = $id;
 
-		$this->form_validation->set_rules('category_id[]','Tiêu chí','trim|required');
+		$this->form_validation->set_rules('category_id[]','Năng lực','trim|required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->render('member/setting/update');
 		}else{
