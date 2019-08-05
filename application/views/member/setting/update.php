@@ -12,15 +12,15 @@
                 <?php if ($this->session->flashdata('error')): ?>
                     <div class="alert alert-warning alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <h4><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('error'); ?></h4>
+                        <h5><i class="icon fa fa-warning"></i><?php echo $this->session->flashdata('error'); ?></h5>
                     </div>
                 <?php endif ?>
 
                 <div class="form-group col-lg-12">
-                    <?php 
-                        echo form_label('Năng lực', 'category_id');
-                        echo form_error('category_id[]');
-                    ?>
+                    <span style="font-weight: bold; font-size: 20px;">
+                        <?php echo form_label('Năng lực Doanh nghiệp / tổ chức', 'category_id'); ?>
+                    </span>
+                    <?php echo form_error('category_id[]'); ?>
                     <br>
                     <?php if ($events): ?>
                         <?php foreach ($events as $key => $value): ?>

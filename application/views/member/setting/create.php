@@ -17,10 +17,10 @@
                 <?php endif ?>
 
                 <div class="form-group col-lg-12">
-                    <?php 
-                        echo form_label('Năng lực', 'category_id');
-                        echo form_error('category_id[]');
-                    ?>
+                    <span style="font-weight: bold; font-size: 20px;">
+                        <?php echo form_label('Năng lực Doanh nghiệp / tổ chức', 'category_id'); ?>
+                    </span>
+                    <?php echo form_error('category_id[]'); ?>
                     <br>
                     <?php if ($events): ?>
                         <?php foreach ($events as $key => $value): ?>

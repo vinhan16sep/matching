@@ -311,7 +311,7 @@
                 </div>
             </div>
             <div class="popup-footer">
-                <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải File PDF</a>
+                <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải profile DN / tổ chức</a>
                 <button type="button" class="btn btn-sm btn-secondary popup-close" data-dismiss="modal">Đóng</button>
             </div>
         </div>
