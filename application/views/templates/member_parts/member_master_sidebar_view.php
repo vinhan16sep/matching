@@ -32,7 +32,7 @@
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('member/information') ?>">
                 <i class="fas fa-id-badge"></i>
-                <span>Thông tin Doanh nghiệp</span>
+                <span>Thông tin Doanh nghiệp / tổ chức</span>
             </a>
         </li>
         <li class="nav-item">
@@ -161,7 +161,7 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
-                    <img style="width: 100%; height: 100%;" src="<?php echo site_url('assets/img/banner_huong_dan.png') ?>" alt="Logo Company">
+                    <img style="width: 100%; height: 100%;" src="<?php echo site_url('assets/img/banner_huong_dan.jpg') ?>" alt="Logo Company">
                 </div>
             </div>
         </div>

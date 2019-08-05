@@ -12,7 +12,7 @@ class Information extends Member_Controller {
     public function index(){
         $this->load->helper('form');
         $this->load->library('form_validation');
-        $this->data['page_title'] = 'Thông tin doanh nghiệp';
+        $this->data['page_title'] = 'Thông tin Doanh nghiệp / tổ chức';
         $user = $this->ion_auth->user()->row();
         $this->data['company'] = $user->company;
         $temp_register_save = $this->temp_register_model->get_by_user_id_not_join_saved($user->id);
@@ -170,7 +170,7 @@ class Information extends Member_Controller {
     public function edit($id=''){
         $this->load->helper('form');
         $this->load->library('form_validation');
-        $this->data['page_title'] = 'Cập nhật thông tin doanh nghiệp';
+        $this->data['page_title'] = 'Cập nhật thông tin Doanh nghiệp / tổ chức';
         $user = $this->ion_auth->user()->row();
         $this->data['company'] = $user->company;
         $this->data['temp'] = $check_temp_register = $this->temp_register_model->get_by_user_id_not_join($user->id);

@@ -17,7 +17,7 @@ class Setting extends Member_Controller {
 
 	// List all your items
 	public function index(){
-        $this->data['page_title'] = 'Quản lý tiêu chí cho sự kiện';
+        $this->data['page_title'] = 'Thông tin năng lực';
 		$user = $this->ion_auth->user()->row();
 
 		$this->load->library('pagination');
@@ -133,7 +133,7 @@ class Setting extends Member_Controller {
 
 	// Add a new item
 	public function create(){
-        $this->data['page_title'] = 'Quản lý tiêu chí cho sự kiện';
+        $this->data['page_title'] = 'Thông tin năng lực';
 	    $params = $this->input->get();
 	    if(!$params['event_id']){
             redirect('member/dashboard/index', 'refresh');
@@ -203,7 +203,7 @@ class Setting extends Member_Controller {
         }
         $this->data['event_id'] = $event_id = $params['event_id'];
         $event = $this->event_model->fetch_by_id($event_id);
-        $this->data['page_title'] = 'Quản lý tiêu chí cho sự kiện <strong>' . $event['name'] . '</strong>';
+        $this->data['page_title'] = 'Thông tin năng lực <strong>' . $event['name'] . '</strong>';
 
 		$where = array(
 			'id' => $id,
@@ -255,7 +255,7 @@ class Setting extends Member_Controller {
 					$this->session->set_flashdata('success', 'Cập nhật thành công');
                     redirect('member/setting/index?event_id=' . $event_id, 'refresh');
 				}else{
-					$this->session->set_flashdata('error', 'Cập nhật không thành công');
+					$this->session->set_flashdata('error', 'Cập nhật không thành công hoặc không có thay đổi');
                     redirect('member/setting/update/' . $id . '?event_id=' . $event_id, 'refresh');
 				}
 			}

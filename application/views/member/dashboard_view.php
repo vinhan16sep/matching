@@ -59,7 +59,7 @@
         <div class="card-body">
         	<div class="row">
         		<h4>Hướng Dẫn</h4>
-        		<img src="<?= base_url('assets/img/banner_huong_dan.png') ?>" width="100%">
+        		<img src="<?= base_url('assets/img/banner_huong_dan.jpg') ?>" width="100%">
         	</div>
         </div>
     </div>

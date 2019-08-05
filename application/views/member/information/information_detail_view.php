@@ -112,10 +112,9 @@
                     </div>
                     
                     <div class="form-group">
-                        <?php echo form_label('File PDF: ', 'file'); ?><br>
+                        <?php echo form_label('Profile DN / tổ chức (định dạng PDF): ', 'file'); ?>
                         <?php if (isset($temp) && !empty($temp['file'])): ?>
                             <embed src="<?= base_url('assets/upload/profile/' . $temp['file']) ?>" width="30%" />
-                            <br>
                         <?php endif ?>
                         <?php echo form_error('file', '<div class="error">', '</div>'); ?><br>
                         <?php echo form_upload('file', '', 'class=""'); ?>
