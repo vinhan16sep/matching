@@ -223,7 +223,11 @@ class User extends MY_Controller {
 
 
     // change password
-    public function change_password(){
+    public function change_password(){$this->load->model('temp_register_model');
+        $user = $this->ion_auth->user()->row();
+        $this->data['user_email'] = $user->email;
+        $this->data['current_user_temp_register'] = $this->temp_register_model->get_by_user_id($user->id);
+
         $this->data['page_title'] = 'Đổi mật khẩu';
         $this->load->helper('form');
         $this->load->library('form_validation');

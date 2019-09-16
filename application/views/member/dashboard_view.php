@@ -10,7 +10,7 @@
 			            <div class="card-body">
 			                <div class="row no-gutters align-items-center">
 			                    <div class="col mr-2">
-			                        <a href="<?= base_url('member/setting') ?>"><div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Sự kiện đã đăng ký</div></a>
+			                        <a href="<?= base_url('member/setting') ?>"><div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><?= $this->lang->line('Registered Events'); ?></div></a>
 			                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_registered ?></div>
 			                    </div>
 			                    <div class="col-auto">
@@ -26,7 +26,7 @@
 			            <div class="card-body">
 			                <div class="row no-gutters align-items-center">
 			                    <div class="col mr-2">
-			                        <a href="<?= base_url('member/setting/event') ?>"><div class="text-xs font-weight-bold text-success text-uppercase mb-1">Sự kiện chưa đăng ký</div></a>
+			                        <a href="<?= base_url('member/setting/event') ?>"><div class="text-xs font-weight-bold text-success text-uppercase mb-1"><?= $this->lang->line('Unregistered Events'); ?></div></a>
 			                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_unregistered ?></div>
 			                    </div>
 			                    <div class="col-auto">

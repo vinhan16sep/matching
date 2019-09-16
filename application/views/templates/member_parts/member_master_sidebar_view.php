@@ -17,7 +17,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="<?php echo base_url('member/dashboard/index') ?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Thông tin chung</span></a>
+                <span><?= $this->lang->line('General Information'); ?></span></a>
         </li>
 
         <!-- Divider -->
@@ -25,28 +25,28 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Chức năng
+            <?= $this->lang->line('Operator'); ?>
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('member/information') ?>">
                 <i class="fas fa-id-badge"></i>
-                <span>Thông tin Doanh nghiệp / tổ chức</span>
+                <span><?= $this->lang->line('Company | Organization Information'); ?></span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Sự kiện</span>
+                <span><?= $this->lang->line('Event'); ?></span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="<?php echo base_url('member/setting/event'); ?>">
-                        <span>Sự kiện chưa đăng ký</span>
+                        <span><?= $this->lang->line('Unregistered'); ?></span>
                     </a>
                     <a class="collapse-item" href="<?php echo base_url('member/setting'); ?>">
-                        <span>Sự kiện đã đăng ký</span>
+                        <span><?= $this->lang->line('Registered'); ?></span>
                     </a>
                 </div>
             </div>
@@ -60,7 +60,7 @@
 
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Danh sách sự kiện</h6>
+                    <h6 class="collapse-header"><?= $this->lang->line('Event'); ?></h6>
                     <?php if($list_event_of_current_user){ ?>
                         <?php foreach($list_event_of_current_user as $key => $event){ ?>
                             <a class="collapse-item" href="<?php echo base_url('member/matching/index?event_id=' . $event['eventId']) ?>">
@@ -83,7 +83,7 @@
         <li class="nav-item" style="padding-left: 5px; padding-right: 5px;">
             <a class="btn btn-warning" href="javascript:void(0);" data-toggle="modal" data-target="#workflow-guide">
                 <i class="fa fa-book" aria-hidden="true"></i>
-                Hướng dẫn hệ thống
+                <?= $this->lang->line('System Support'); ?>
             </a>
         </li>
 
@@ -146,7 +146,6 @@
                 <span>Tables</span></a>
         </li> -->
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
         <!--    <div class="text-center d-none d-md-inline">-->

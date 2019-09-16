@@ -12,7 +12,8 @@ class Dashboard extends Member_Controller {
     }
 
     public function index(){
-        $this->data['page_title'] = 'Thông tin chung';
+//        $this->data['page_title'] = 'Thông tin chung';
+        $this->data['page_title'] = $this->lang->line('General Information');
         $user = $this->ion_auth->user()->row();
         $this->data['total_registered']  = $this->setting_model->count_by_user_id($user->id);
 
