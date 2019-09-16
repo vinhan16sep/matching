@@ -89,3 +89,7 @@ defined('SEND_CODE_SUCCESS')      OR define('SEND_CODE_SUCCESS', 'Đăng ký th�
 defined('SEND_CODE_ERROR')      OR define('SEND_CODE_ERROR', 'Đăng ký thông tin doanh nghiệp không thành thành công! Do quá trình gửi email thất bại. Vui lòng kiểm tra lại địa chỉ email và thực hiện lại thao tác'); //Gửi mã code cho email thất bại
 defined('REGISTER_COMPANY_ERROR')      OR define('REGISTER_COMPANY_ERROR', 'Có lỗi trong quá trình đăng ký thông tin doanh nghiệp');// Đăng ký thất bại
 defined('MESSAGE_PHOTOS_ERROR') OR define('MESSAGE_PHOTOS_ERROR', 'File PDF vượt quá %u Mb hoặc file tải lên không phải định dạng PDF. Vui lòng kiểm tra lại và thực hiện lại thao tác!');
+
+defined('MESSAGE_CHANGE_LANGUAGE_SUCCESS') OR define('MESSAGE_CHANGE_LANGUAGE_SUCCESS', 'changed');
+defined('MESSAGE_CHANGE_LANGUAGE_FAIL') OR define('MESSAGE_CHANGE_LANGUAGE_FAIL', 'keep');
+defined('HTTP_SUCCESS') OR define('HTTP_SUCCESS', 200);

@@ -16,5 +16,17 @@ class Homepage extends Public_Controller {
 
         //$this->render('homepage_view');
     }
+    
+    public function change_language(){
+        if($this->session->userdata('langAbbreviation') == $this->input->get('lang')){
+            return $this->return_api(HTTP_SUCCESS, MESSAGE_CHANGE_LANGUAGE_FAIL, $this->session->userdata('langAbbreviation'), null);
+        }else{
+            $this->session->set_userdata('langAbbreviation', $this->input->get('lang'));
+            if($this->session->userdata('langAbbreviation') == $this->input->get('lang')){
+                return $this->return_api(HTTP_SUCCESS, MESSAGE_CHANGE_LANGUAGE_SUCCESS, $this->session->userdata('langAbbreviation'), null);
+            }
+            return $this->return_api(HTTP_SUCCESS, MESSAGE_CHANGE_LANGUAGE_FAIL, $this->session->userdata('langAbbreviation'), null);
+        }
+    }
 
 }
