@@ -935,5 +935,12 @@ a:hover {
 #event_detail .card .card-body .chart-area {
   height: auto;
 }
-
+.topbar.navbar-light .navbar-nav .nav-item .nav-link{
+  color:#5a5c69!important;
+  font-weight: 600;
+  padding: 0px 5px;
+}
+.topbar.navbar-light .navbar-nav .nav-item.active .nav-link{
+  color:#3495c4!important;
+}
 /*# sourceMappingURL=style.css.map */

@@ -40,7 +40,28 @@
         </div>
     </div>
 </div>
+<script>
+    var url = window.location.protocol + '//' + window.location.hostname;
 
+    $(".change-language").click(function(){
+        $.ajax({
+            method: "GET",
+            url: "<?php echo base_url(); ?>homepage/change_language",
+            data: {
+                lang: $(this).data('language')
+            },
+            async:false,
+            success: function(res){
+                if(res.message == 'changed'){
+                    window.location.reload();
+                }
+            },
+            error: function(){
+
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

@@ -148,6 +148,17 @@
                 <!--            </div>-->
                 <!--        </li>-->
 
+
+                <li class="nav-item dropdown no-arrow li-lang <?php echo ($this->session->userdata('langAbbreviation') == 'vi') ? 'active' : '' ?>">
+                    <a class="nav-link dropdown-toggle change-language" data-language="vi" href="javascript:void(0)" href="<?php echo base_url('') ?>">
+                        Vi
+                    </a>
+                </li>
+                <li class="nav-item dropdown no-arrow li-lang <?php echo ($this->session->userdata('langAbbreviation') == 'en') ? 'active' : '' ?>">
+                    <a class="nav-link dropdown-toggle change-language" data-language="en" href="javascript:void(0)" href="<?php echo base_url('') ?>">
+                        En
+                    </a>
+                </li>
                 <div class="topbar-divider d-none d-sm-block"></div>
 
                 <!-- Nav Item - User Information -->
