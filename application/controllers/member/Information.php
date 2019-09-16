@@ -25,7 +25,10 @@ class Information extends Member_Controller {
         $this->form_validation->set_rules('company', 'Tên Doanh Nghiệp', 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('address', 'Địa Chỉ', 'required', array(
+        $this->form_validation->set_rules('address', 'Địa Chỉ (Tiếng Việt)', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('address_en', 'Địa Chỉ (Tiếng Anh)', 'required', array(
             'required' => '%s không được trống!'
         ));
         $this->form_validation->set_rules('website', 'Website', 'required', array(
@@ -38,13 +41,22 @@ class Information extends Member_Controller {
         $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required', array(
             'required' => '%s không được trống!',
         ));
-        $this->form_validation->set_rules('product', 'Sản Phẩm/Giải Pháp', 'required', array(
+        $this->form_validation->set_rules('product', 'Sản Phẩm/Giải Pháp (Tiếng Việt)', 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('profile', 'Lĩnh Vực/Dịch Vụ Hoạt Động', 'required', array(
+        $this->form_validation->set_rules('product_en', 'Sản Phẩm/Giải Pháp (Tiếng Anh)', 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('market', 'Thị Trường Chính Hiện Nay', 'required', array(
+        $this->form_validation->set_rules('profile', 'Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Việt)', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('profile_en', 'Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Anh)', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('market', 'Thị Trường Chính Hiện Nay (Tiếng Việt)', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('market_en', 'Thị Trường Chính Hiện Nay (Tiếng Anh)', 'required', array(
             'required' => '%s không được trống!'
         ));
         $this->form_validation->set_rules('connector', 'Tên Người Đại Diện Pháp Luật', 'required', array(
@@ -70,12 +82,16 @@ class Information extends Member_Controller {
                 $data = array(
                     'company' => $user->company,
                     'address' => $this->input->post('address'),
+                    'address_en' => $this->input->post('address_en'),
                     'website' => $this->input->post('website'),
                     'manpower' => $this->input->post('manpower'),
                     'revenue' => $this->input->post('revenue'),
                     'product' => $this->input->post('product'),
+                    'product_en' => $this->input->post('product_en'),
                     'profile' => $this->input->post('profile'),
+                    'profile_en' => $this->input->post('profile_en'),
                     'market' => $this->input->post('market'),
+                    'market_en' => $this->input->post('market_en'),
                     'connector' => $this->input->post('connector'),
                     'email' => $this->input->post('email'),
                     'phone' => $this->input->post('phone'),
@@ -183,7 +199,10 @@ class Information extends Member_Controller {
         $this->form_validation->set_rules('company', 'Tên Doanh Nghiệp', 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('address', 'Địa Chỉ', 'required', array(
+        $this->form_validation->set_rules('address', 'Địa Chỉ (Tiếng Việt)', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('address_en', 'Địa Chỉ (Tiếng Anh)', 'required', array(
             'required' => '%s không được trống!'
         ));
         $this->form_validation->set_rules('website', 'Website', 'required', array(
@@ -196,13 +215,22 @@ class Information extends Member_Controller {
         $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required', array(
             'required' => '%s không được trống!',
         ));
-        $this->form_validation->set_rules('product', 'Sản Phẩm/Giải Pháp', 'required', array(
+        $this->form_validation->set_rules('product', 'Sản Phẩm/Giải Pháp (Tiếng Việt)', 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('profile', 'Lĩnh Vực/Dịch Vụ Hoạt Động', 'required', array(
+        $this->form_validation->set_rules('product_en', 'Sản Phẩm/Giải Pháp (Tiếng Anh)', 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('market', 'Thị Trường Chính Hiện Nay', 'required', array(
+        $this->form_validation->set_rules('profile', 'Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Việt)', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('profile_en', 'Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Anh)', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('market', 'Thị Trường Chính Hiện Nay (Tiếng Việt)', 'required', array(
+            'required' => '%s không được trống!'
+        ));
+        $this->form_validation->set_rules('market_en', 'Thị Trường Chính Hiện Nay (Tiếng Anh)', 'required', array(
             'required' => '%s không được trống!'
         ));
         $this->form_validation->set_rules('connector', 'Tên Người Đại Diện Pháp Luật', 'required', array(
@@ -249,12 +277,16 @@ class Information extends Member_Controller {
                 $data = array(
                     'company' => $user->company,
                     'address' => $this->input->post('address'),
+                    'address_en' => $this->input->post('address_en'),
                     'website' => $this->input->post('website'),
                     'manpower' => $this->input->post('manpower'),
                     'revenue' => $this->input->post('revenue'),
                     'product' => $this->input->post('product'),
+                    'product_en' => $this->input->post('product_en'),
                     'profile' => $this->input->post('profile'),
+                    'profile_en' => $this->input->post('profile_en'),
                     'market' => $this->input->post('market'),
+                    'market_en' => $this->input->post('market_en'),
                     'connector' => $this->input->post('connector'),
                     'email' => $this->input->post('email'),
                     'phone' => $this->input->post('phone'),

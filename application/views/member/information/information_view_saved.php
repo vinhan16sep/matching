@@ -60,8 +60,12 @@
                                         <strong>Cơ quan/ tổ chức/ doanh nghiệp ứng dụng CNTT? </strong><?php echo ($temp_register['is_state'] == 1) ? '<i style="color: green" class="fa fa-check" aria-hidden="true"></i>' : '<i style="color: red" class="fa fa-times" aria-hidden="true"></i>'; ?><br>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Địa Chỉ: </strong><br>
+                                        <strong>Địa Chỉ (Tiếng Việt): </strong><br>
                                         <?php echo $temp_register['address'] ?>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Địa Chỉ (Tiếng Anh): </strong><br>
+                                        <?php echo $temp_register['address_en'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Website: </strong><br>
@@ -76,16 +80,28 @@
                                         <?php echo $temp_register['revenue'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Sản Phẩm/Giải Pháp: </strong><br>
+                                        <strong>Sản Phẩm/Giải Pháp (Tiếng Việt): </strong><br>
                                         <?php echo $temp_register['product'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Lĩnh Vực/Dịch Vụ Hoạt Động: </strong><br>
+                                        <strong>Sản Phẩm/Giải Pháp (Tiếng Anh): </strong><br>
+                                        <?php echo $temp_register['product_en'] ?>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Việt): </strong><br>
                                         <?php echo $temp_register['profile'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Thị trường chính hiện nay: </strong><br>
+                                        <strong>Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Anh): </strong><br>
+                                        <?php echo $temp_register['profile_en'] ?>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Thị trường chính hiện nay (Tiếng Việt): </strong><br>
                                         <?php echo $temp_register['market'] ?>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Thị trường chính hiện nay (Tiếng Anh): </strong><br>
+                                        <?php echo $temp_register['market_en'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Tên Người Đại Diện Pháp Luật: </strong><br>
