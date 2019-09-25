@@ -17,7 +17,7 @@ class Setting extends Member_Controller {
 
 	// List all your items
 	public function index(){
-        $this->data['page_title'] = 'Thông tin năng lực';
+        $this->data['page_title'] = $this->lang->line("Competencies");
 		$user = $this->ion_auth->user()->row();
 
 		$this->load->library('pagination');
@@ -54,8 +54,8 @@ class Setting extends Member_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('name', 'Sự Kiện', 'required', array(
-            'required' => '%s không được trống!'
+		$this->form_validation->set_rules('name', $this->lang->line("Event"), 'required', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
 
 		$user = $this->ion_auth->user()->row();
@@ -72,7 +72,7 @@ class Setting extends Member_Controller {
 			}
 		}
 		$this->data['events'] = $events;
-		$this->data['page_title'] = 'Quản lý sự kiện';
+		$this->data['page_title'] = $this->lang->line("quanlysukien");
 		if ($this->form_validation->run() == FALSE) {
 			$this->render('member/setting/create_event');
 		} else {
@@ -85,7 +85,7 @@ class Setting extends Member_Controller {
 					$save = $this->setting_model->save($data);
 				}
 			}
-			$this->session->set_flashdata('success', 'Thêm sự kiện thành công');
+			$this->session->set_flashdata('success', $this->lang->line("themsukienthanhcong"));
             redirect('member/setting', 'refresh');
 		}
 		
@@ -133,7 +133,7 @@ class Setting extends Member_Controller {
 
 	// Add a new item
 	public function create(){
-        $this->data['page_title'] = 'Thông tin năng lực';
+        $this->data['page_title'] = $this->lang->line("Competencies");
 	    $params = $this->input->get();
 	    if(!$params['event_id']){
             redirect('member/dashboard/index', 'refresh');
@@ -147,7 +147,7 @@ class Setting extends Member_Controller {
 		$count_setting_by_user_and_event = $this->setting_model->count_by_user_id_and_event_id($user->id, $event_id);
 		$this->data['count_setting_by_user_and_event'] = $count_setting_by_user_and_event;
 		if ($count_setting_by_user_and_event > 0) {
-			$this->session->set_flashdata('error', 'Bạn đã đăng ký tiêu chí cho sự kiện lần này. Không thể đăng ký thêm');
+			$this->session->set_flashdata('error', $this->lang->line("bandadangkytieuchi"));
             redirect('member/setting/index?event_id=' . $event_id, 'refresh');
 		}
 		$temp_register = $this->temp_register_model->get_by_email_and_event_id($user->email, $event_id);
@@ -167,7 +167,7 @@ class Setting extends Member_Controller {
 		}
 		$this->data['events'] = $events;
 
-		$this->form_validation->set_rules('category_id[]','Năng lực','trim|required');
+		$this->form_validation->set_rules('category_id[]',$this->lang->line("nangluc"),'trim|required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->render('member/setting/create');
 		} else {
@@ -181,10 +181,10 @@ class Setting extends Member_Controller {
 
 				$insert = $this->setting_model->save($data);
 				if ($insert) {
-					$this->session->set_flashdata('success', 'Đăng ký thành công');
+					$this->session->set_flashdata('success', $this->lang->line("dangkythanhcong"));
                     redirect('member/setting/index?event_id=' . $event_id, 'refresh');
 				}else{
-					$this->session->set_flashdata('error', 'Đăng ký không thành công');
+					$this->session->set_flashdata('error', $this->lang->line("dangkykhongthanhcong"));
                     redirect('member/setting/create?event_id=' . $event_id, 'refresh');
 				}
 			}
@@ -203,7 +203,7 @@ class Setting extends Member_Controller {
         }
         $this->data['event_id'] = $event_id = $params['event_id'];
         $event = $this->event_model->fetch_by_id($event_id);
-        $this->data['page_title'] = 'Thông tin năng lực <strong>' . $event['name'] . '</strong>';
+        $this->data['page_title'] = $this->lang->line("Competencies").' <strong>' . $event['name'] . '</strong>';
 
 		$where = array(
 			'id' => $id,
@@ -239,7 +239,7 @@ class Setting extends Member_Controller {
 		$this->data['events'] = $events;
 		$this->data['setting_id'] = $id;
 
-		$this->form_validation->set_rules('category_id[]','Năng lực','trim|required');
+		$this->form_validation->set_rules('category_id[]',$this->lang->line("nangluc"),'trim|required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->render('member/setting/update');
 		}else{
@@ -252,10 +252,10 @@ class Setting extends Member_Controller {
 				);
 				$update = $this->setting_model->update($id, $data);
 				if ($update) {
-					$this->session->set_flashdata('success', 'Cập nhật thành công');
+					$this->session->set_flashdata('success', $this->lang->line("capnhatthanhcong"));
                     redirect('member/setting/index?event_id=' . $event_id, 'refresh');
 				}else{
-					$this->session->set_flashdata('error', 'Cập nhật không thành công hoặc không có thay đổi');
+					$this->session->set_flashdata('error', $this->lang->line("capnhatkhongthanhcong"));
                     redirect('member/setting/update/' . $id . '?event_id=' . $event_id, 'refresh');
 				}
 			}

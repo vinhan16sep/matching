@@ -22,52 +22,52 @@ class Information extends Member_Controller {
         ================================*/
         
         
-        $this->form_validation->set_rules('company', 'Tên Doanh Nghiệp', 'required', array(
-            'required' => '%s không được trống!'
+        $this->form_validation->set_rules('company', $this->lang->line("Company name"), 'required', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
-        $this->form_validation->set_rules('address', 'Địa Chỉ (Tiếng Việt)', 'required', array(
-            'required' => '%s không được trống!'
+        $this->form_validation->set_rules('address', $this->lang->line("Address (Vietnamese)"), 'required', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
-        $this->form_validation->set_rules('address_en', 'Địa Chỉ (Tiếng Anh)', 'required', array(
-            'required' => '%s không được trống!'
+        $this->form_validation->set_rules('address_en', $this->lang->line("Address (English)"), 'required', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('website', 'Website', 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
-        $this->form_validation->set_rules('manpower', 'Số Nhân lực', 'required|numeric', array(
-            'required' => '%s không được trống!',
-            'numeric' => '%s phải là số'
+        $this->form_validation->set_rules('manpower', $this->lang->line("sonhanluc"), 'required|numeric', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!',
+            'numeric' => '%s '.$this->lang->line("phailaso")
         ));
-        $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required', array(
-            'required' => '%s không được trống!',
+        $this->form_validation->set_rules('revenue', $this->lang->line("doanhthunam").' ' . (date("Y") - 1) , 'required', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!',
         ));
         $this->form_validation->set_rules('product', $this->lang->line('Product/Solution (Vietnamese name)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('product_en', $this->lang->line('Product/Solution (English name)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('profile', $this->lang->line('Field of operation (Vietnamese)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('profile_en', $this->lang->line('Field of operation (English)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('market', $this->lang->line('Targeted markets (Vietnamese)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('market_en', $this->lang->line('Targeted markets (English)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('connector', $this->lang->line('Legal Representative'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('email', 'E-Mail', 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('phone', $this->lang->line('Mobile'), 'required|numeric', array(
-            'required' => '%s không được trống!',
-            'numeric' => '%s phải là số'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!',
+            'numeric' => '%s '.$this->lang->line("phailaso")
         ));
         
         /*=====  End of Validate  ======*/
@@ -98,7 +98,7 @@ class Information extends Member_Controller {
                     'is_state' => $this->input->post('is_state') ? $this->input->post('is_state') : 0,
                     'user_id' => $user->id,
                 );
-                if ($this->input->post('submit') == 'Lưu Thông Tin') {
+                if ($this->input->post('submit') == $this->lang->line('luuthongtin')) {
                     if ($this->form_validation->run() == FALSE) {
                         $this->render('member/information/information_detail_view');
                     }else{
@@ -133,7 +133,7 @@ class Information extends Member_Controller {
                             $save = $this->temp_register_model->update($check_temp_register['id'], $data);
                         }
                         if ($save) {
-                            $this->session->set_flashdata('message_success', 'Lưu thông tin thành công');
+                            $this->session->set_flashdata('message_success', $this->lang->line('luuthongtinthanhcong'));
                             redirect('member/information', 'refresh');
                         }
                     }
@@ -169,7 +169,7 @@ class Information extends Member_Controller {
                         $save = $this->temp_register_model->update($check_temp_register['id'], $data);
                     }
                     if ($save) {
-                        $this->session->set_flashdata('message_success', 'Thông tin tạm thời được lưu');
+                        $this->session->set_flashdata('message_success', $this->lang->line("thongtintamthoiduocluu"));
                         redirect('member/information', 'refresh');
                     }
                 }
@@ -196,52 +196,52 @@ class Information extends Member_Controller {
         ================================*/
         
         
-        $this->form_validation->set_rules('company', 'Tên Doanh Nghiệp', 'required', array(
-            'required' => '%s không được trống!'
+        $this->form_validation->set_rules('company', $this->lang->line("Company name"), 'required', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
-        $this->form_validation->set_rules('address', 'Địa Chỉ (Tiếng Việt)', 'required', array(
-            'required' => '%s không được trống!'
+        $this->form_validation->set_rules('address', $this->lang->line("Address (Vietnamese)"), 'required', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
-        $this->form_validation->set_rules('address_en', 'Địa Chỉ (Tiếng Anh)', 'required', array(
-            'required' => '%s không được trống!'
+        $this->form_validation->set_rules('address_en', $this->lang->line("Address (English)"), 'required', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('website', 'Website', 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
-        $this->form_validation->set_rules('manpower', 'Số Nhân lực', 'required|numeric', array(
-            'required' => '%s không được trống!',
-            'numeric' => '%s phải là số'
+        $this->form_validation->set_rules('manpower', $this->lang->line("sonhanluc"), 'required|numeric', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!',
+            'numeric' => '%s '.$this->lang->line("phailaso")
         ));
-        $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required', array(
-            'required' => '%s không được trống!',
+        $this->form_validation->set_rules('revenue', $this->lang->line("doanhthunam").' ' . (date("Y") - 1) , 'required', array(
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!',
         ));
         $this->form_validation->set_rules('product', $this->lang->line('Product/Solution (Vietnamese name)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('product_en', $this->lang->line('Product/Solution (English name)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('profile', $this->lang->line('Field of operation (Vietnamese)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('profile_en', $this->lang->line('Field of operation (English)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('market', $this->lang->line('Targeted markets (Vietnamese)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('market_en', $this->lang->line('Targeted markets (English)'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('connector', $this->lang->line('Legal Representative'), 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('email', 'E-Mail', 'required', array(
-            'required' => '%s không được trống!'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!'
         ));
         $this->form_validation->set_rules('phone', $this->lang->line('Mobile'), 'required|numeric', array(
-            'required' => '%s không được trống!',
-            'numeric' => '%s phải là số'
+            'required' => '%s '.$this->lang->line("khongduoctrong").'!',
+            'numeric' => '%s '.$this->lang->line("phailaso")
         ));
         
         /*=====  End of Validate  ======*/
@@ -302,10 +302,10 @@ class Information extends Member_Controller {
                 }
                 $save = $this->temp_register_model->update($id, $data);
                 if ($save) {
-                    $this->session->set_flashdata('message_success', 'Cập nhật thông tin thành công');
+                    $this->session->set_flashdata('message_success', $this->lang->line("capnhatthongtinthanhcong"));
                     redirect('member/information', 'refresh');
                 }else{
-                    $this->session->set_flashdata('message_success', 'Có lỗi trong quá trình cập nhật thông tin');
+                    $this->session->set_flashdata('message_success', $this->lang->line("coloitrongquatrinh"));
                     redirect('member/information', 'refresh');
                 }
             }
@@ -320,7 +320,7 @@ class Information extends Member_Controller {
         $map = strripos($filename, '.')+1;
         $fileextension = strtolower(substr($filename, $map,(strlen($filename)-$map)));
         if($fileextension != 'pdf' || $filesize > 20971520){
-            $this->session->set_flashdata('message_error', 'Định dạng không phải là "PDF" hoặc dung lượng vựt quá 20Mb');
+            $this->session->set_flashdata('message_error', $this->lang->line("dinhdangsai"));
             redirect('member');
         }
     }
@@ -331,13 +331,13 @@ class Information extends Member_Controller {
         $map = strripos($filename, '.')+1;
         $fileextension = strtolower(substr($filename, $map,(strlen($filename)-$map)));
         if(!($fileextension == 'png' || $fileextension == 'jpg' || $fileextension == 'jpeg' || $fileextension == 'gif') || $filesize > 20971520){
-            $this->session->set_flashdata('message_error', 'Không phải định dạng ảnh hoặc dung lượng vựt quá 20Mb');
+            $this->session->set_flashdata('message_error', $this->lang->line("khongphaidinhdanganh"));
             redirect('member');
         }
     }
 
     public function validate_file(){
-        $this->form_validation->set_message(__FUNCTION__, 'Vui lòng chọn Logo.');
+        $this->form_validation->set_message(__FUNCTION__, $this->lang->line("vuilongchonlogo"));
         if (!empty($_FILES['logo']['name'][0])) {
             return true;
         }

@@ -7,12 +7,12 @@
                         <?php if ($this->session->flashdata('message_error')): ?>
                             <div class="alert alert-danger alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                <h4><i class="icon fa fa-warning"></i> Thông báo!</h4>
+                                <h4><i class="icon fa fa-warning"></i> <?= $this->lang->line('thongbao'); ?>!</h4>
                                 <?php echo $this->session->flashdata('message_error'); ?>
                             </div>
                         <?php endif ?>
                         <?php if ($temp_register['is_saved'] == 1): ?>
-                            <a href="<?php echo base_url('member/information/edit/' . $temp_register['id']) ?>" class="btn btn-primary">Chỉnh sửa</a>
+                            <a href="<?php echo base_url('member/information/edit/' . $temp_register['id']) ?>" class="btn btn-primary"><?= $this->lang->line('chinhsua') ?></a>
                         <?php endif ?>
                     <?php endif ?>
                     
@@ -33,12 +33,12 @@
                                             <?php } ?>
                                         </div>
                                         <div class="col-lg-8">
-                                            <strong>Profile DN / tổ chức (định dạng PDF): </strong>
+                                            <strong><?= $this->lang->line('profiledn') ?>: </strong>
                                             <?php if (!empty($temp_register['file'])): ?>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="<?php echo base_url('assets/upload/profile/') . $temp_register['file'] ?>" download> Tải về</a>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="<?php echo base_url('assets/upload/profile/') . $temp_register['file'] ?>" download> <?= $this->lang->line('taive') ?></a>
                                                 <embed src="<?= base_url('assets/upload/profile/' . $temp_register['file']) ?>" style="width:100%; height: 200%" />
                                             <?php else: ?>
-                                                &nbsp; Chưa có file
+                                                &nbsp; <?= $this->lang->line('chuacofile') ?>
                                             <?php endif ?>
                                         </div>
                                     </div>
@@ -48,23 +48,23 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h6>Tổng quan Doanh nghiệp / tổ chức</h6>
+                                    <h6><?= $this->lang->line("Overview of Company/ Organization") ?></h6>
                                 </div>
                                 
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
-                                        <strong>Tên Doanh Nghiệp: </strong><br>
+                                        <strong><?= $this->lang->line("Company name"); ?>: </strong><br>
                                         <?php echo $temp_register['company'] ?>
                                     </li>
                                     <li class="list-group-item">
                                         <strong><?= $this->lang->line('Is your company/ organization providing or applying IT?'); ?> </strong><?php echo ($temp_register['is_state'] == 1) ? '<i style="color: green" class="fa fa-check" aria-hidden="true"></i>' : '<i style="color: red" class="fa fa-times" aria-hidden="true"></i>'; ?><br>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Địa Chỉ (Tiếng Việt): </strong><br>
+                                        <strong><?= $this->lang->line("Address (Vietnamese)") ?>: </strong><br>
                                         <?php echo $temp_register['address'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Địa Chỉ (Tiếng Anh): </strong><br>
+                                        <strong><?= $this->lang->line("Address (English)") ?>: </strong><br>
                                         <?php echo $temp_register['address_en'] ?>
                                     </li>
                                     <li class="list-group-item">
@@ -72,11 +72,11 @@
                                         <a href="<?php echo $temp_register['website'] ?>" target="_blank"><?php echo $temp_register['website'] ?></a>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Số Nhân lực: </strong><br>
+                                        <strong><?= $this->lang->line("sonhanluc") ?>: </strong><br>
                                         <?php echo $temp_register['manpower'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Doanh Thu Năm 2018: </strong><br>
+                                        <strong><?= $this->lang->line('doanhthunam') ?> 2018: </strong><br>
                                         <?php echo $temp_register['revenue'] ?>
                                     </li>
                                     <li class="list-group-item">

@@ -18,7 +18,7 @@
 
                 <div class="form-group col-lg-12">
                     <span style="font-weight: bold; font-size: 20px;">
-                        <?php echo form_label('Năng lực Doanh nghiệp / tổ chức', 'category_id'); ?>
+                        <?php echo form_label($this->lang->line("Competencies of Company/ Organization"), 'category_id'); ?>
                     </span>
                     <?php echo form_error('category_id[]'); ?>
                     <br>
@@ -70,9 +70,9 @@
                 <div class="form-group col-sm-12 text-left" style="padding-left: 0 !important;">
                     <div class="pull-right">
                         <?php
-                            echo form_submit('submit', 'Cập nhật', 'class="btn btn-primary"');
+                            echo form_submit('submit', $this->lang->line("capnhat"), 'class="btn btn-primary"');
                         ?>
-                        <a class="btn btn-default cancel" href="javascript:window.history.go(-1);">Quay lại</a>
+                        <a class="btn btn-default cancel" href="javascript:window.history.go(-1);"><?= $this->lang->line("quaylai") ?></a>
                     </div>
                     
                 </div>

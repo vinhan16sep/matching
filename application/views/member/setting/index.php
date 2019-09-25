@@ -15,7 +15,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
-            <a class="btn btn-primary text-white" href="<?php echo base_url('member/setting/event') ?>">Đăng ký thêm sự kiện</a>
+            <a class="btn btn-primary text-white" href="<?php echo base_url('member/setting/event') ?>"><?= $this->lang->line("Register more events") ?></a>
             <br>
             <br>
             <?php if ($this->session->flashdata('success')): ?>
@@ -35,10 +35,10 @@
                     <thead style="background: #4e73df; color: white">
                         <tr>
                             <th style="text-align: center">STT</th>
-                            <th style="text-align: center">Tên event</th>
-                            <th style="text-align: center">Ngày tổ chức</th>
-                            <th style="text-align: center">Trạng thái</th>
-                            <th style="text-align: center">Thao tác</th>
+                            <th style="text-align: center"><?= $this->lang->line("Event name") ?></th>
+                            <th style="text-align: center"><?= $this->lang->line("Time") ?></th>
+                            <th style="text-align: center"><?= $this->lang->line("Status") ?></th>
+                            <th style="text-align: center"><?= $this->lang->line("thaotac") ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,13 +57,13 @@
                                     <td>
                                         <?php 
                                             if ($value['date'] < now() && $value['is_active'] == 1) {
-                                                echo '<span class="label label-default">Chưa diễn ra</span>';
+                                                echo '<span class="label label-default">'.$this->lang->line("chuadienra").'</span>';
                                             }
                                             if ($value['date'] >= now() && $value['is_active'] == 1) {
-                                                echo '<span class="label label-success">Đang diễn ra</span>';
+                                                echo '<span class="label label-success">'.$this->lang->line("dangdienra").'</span>';
                                             }
                                             if ($value['is_active'] != 1) {
-                                                echo '<span class="label label-danger">Hết sự kiện</span>';
+                                                echo '<span class="label label-danger">'.$this->lang->line("hetsukien").'</span>';
                                             }
                                         ?>
                                     </td>
@@ -80,7 +80,7 @@
                                     <td colspan="5" class="zeroPadding">
                                         <div class="collapse out" id="review-<?php echo $key ?>">
                                             <ul class="list-group">
-                                                <li class="list-group-item active" style="background: #605ca8 !important; color: white; border-color: white !important"><i class="fas fa-list" style="color: white !important"></i> Năng lực</li>
+                                                <li class="list-group-item active" style="background: #605ca8 !important; color: white; border-color: white !important"><i class="fas fa-list" style="color: white !important"></i> <?= $this->lang->line("nangluc") ?></li>
                                                 <?php if ($value['category']): ?>
                                                     <?php foreach ($value['category'] as $k => $val): ?>
                                                         <li class="list-group-item" style="background: #0073b7 !important; color: white; border-color: white !important"><i class="fas fa-bullseye" style="color: white !important"></i> <?php echo $val['name'] ?></li>

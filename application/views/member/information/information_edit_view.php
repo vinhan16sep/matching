@@ -15,14 +15,14 @@
                     <?php if ($this->session->flashdata('message_error')): ?>
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-warning"></i> Thông báo!</h4>
+                            <h4><i class="icon fa fa-warning"></i> <?= $this->lang->line('thongbao'); ?>!</h4>
                             <?php echo $this->session->flashdata('message_error'); ?>
                         </div>
                     <?php endif ?>
                     <?php if ($this->session->flashdata('message_success')): ?>
                         <div class="alert alert-success alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-success"></i> Thông báo!</h4>
+                            <h4><i class="icon fa fa-success"></i> <?= $this->lang->line('thongbao'); ?>!</h4>
                             <?php echo $this->session->flashdata('message_success'); ?>
                         </div>
                     <?php endif ?>
@@ -50,7 +50,7 @@
                         <?php echo form_upload('logo', '', 'class=""'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Tên Doanh Nghiệp: ', 'company'); ?>
+                        <?php echo form_label($this->lang->line("Company name").': ', 'company'); ?>
                         <?php echo form_error('company', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('company', $company, 'class="form-control" readonly'); ?>
                     </div>
@@ -61,12 +61,12 @@
                         <?php echo form_checkbox('is_state', 1, (isset($temp) && !empty($temp['is_state']))? ($temp['is_state'] == 1) ? true : false : set_checkbox('is_state', 1), ''); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Địa Chỉ (Tiếng Việt): ', 'address'); ?>
+                        <?php echo form_label($this->lang->line("Address (Vietnamese)").': ', 'address'); ?>
                         <?php echo form_error('address', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('address', (isset($temp) && !empty($temp['address']))? $temp['address'] : set_value('address'), 'class="form-control"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Địa Chỉ (Tiếng Anh): ', 'address_en'); ?>
+                        <?php echo form_label($this->lang->line("Address (English)").'): ', 'address_en'); ?>
                         <?php echo form_error('address_en', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('address_en', (isset($temp) && !empty($temp['address_en']))? $temp['address_en'] : set_value('address_en'), 'class="form-control"'); ?>
                     </div>
@@ -92,12 +92,12 @@
                         <?php echo form_input('website', (isset($temp) && !empty($temp['website']))? $temp['website'] : set_value('website'), 'class="form-control"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Số Nhân lực: ', 'manpower'); ?>
+                        <?php echo form_label($this->lang->line("sonhanluc").': ', 'manpower'); ?>
                         <?php echo form_error('manpower', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('manpower', (isset($temp) && !empty($temp['manpower']))? $temp['manpower'] : set_value('manpower'), 'class="form-control"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Doanh Thu Năm ' . (date("Y") - 1) . ' (ghi rõ đơn vị tiền tệ):' , 'revenue'); ?>
+                        <?php echo form_label($this->lang->line('doanhthunam').' ' . (date("Y") - 1) . ' ('.$this->lang->line('ghirodonvitiente').'):' , 'revenue'); ?>
                         <?php echo form_error('revenue', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('revenue', (isset($temp) && !empty($temp['revenue']))? $temp['revenue'] : set_value('revenue'), 'class="form-control"'); ?>
                     </div>
@@ -135,7 +135,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <?php echo form_label('Profile DN / tổ chức (định dạng PDF): ', 'file'); ?>
+                        <?php echo form_label($this->lang->line('profiledn').': ', 'file'); ?>
                         <?php if (isset($temp) && !empty($temp['file'])): ?>
                             <embed src="<?= base_url('assets/upload/profile/' . $temp['file']) ?>" width="30%" />
                         <?php endif ?>
@@ -143,9 +143,9 @@
                         <?php echo form_upload('file', '', 'class=""'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_submit('submit', 'Lưu Thông Tin', 'class="btn btn-success" style="float: right"'); ?>
+                        <?php echo form_submit('submit', $this->lang->line('luuthongtin'), 'class="btn btn-success" style="float: right"'); ?>
                         <?php if ($this->uri->segment(3) != 'edit'): ?>
-                            <?php echo form_submit('submit', 'Lưu Tạm', 'class="btn btn-primary"'); ?>
+                            <?php echo form_submit('submit', $this->lang->line('luutam'), 'class="btn btn-primary"'); ?>
                         <?php endif ?>
                         <!-- <a href="javascript:history.back()" name="back" class="btn btn-default btn-lg btn-block">Quay lại</a> -->
                     </div>
