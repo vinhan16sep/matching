@@ -51,7 +51,7 @@ class Matching extends Member_Controller {
         }else if($setting['status'] == 2){
             $this->render('member/matching/verify_matching_view');
         }else{
-            $this->data['page_title'] = 'Quản lý thông tin Matching';
+            $this->data['page_title'] = $this->lang->line('Matching Management');
             $event_info = $this->event_model->fetch_by_id($event_id);
             $this->data['event'] = $event_info;
             $time_range = build_time_range($event_info['start'], $event_info['duration'], $event_info['step']);
