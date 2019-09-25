@@ -3,15 +3,15 @@
 <div class="container-fluid" id="dashboard-member">
     <?php
     $send_log = array(
-        1 => 'Đối tác đồng ý',
-        2 => 'Đối tác từ chối',
-        3 => 'Hủy do trùng giờ cuộc hẹn khác'
+        1 => $this->lang->line('Partner accepted'),
+        2 => $this->lang->line('Partner rejected'),
+        3 => $this->lang->line('Cancel because other event(s) take this time')
     );
 
     $receive_log = array(
-        1 => 'Đã đồng ý',
-        2 => 'Đã từ chối',
-        3 => 'Hủy do trùng giờ cuộc hẹn khác'
+        1 => $this->lang->line('Accepted'),
+        2 => $this->lang->line('Rejected'),
+        3 => $this->lang->line('Cancel because other event(s) take this time')
     );
     ?>
 
@@ -25,14 +25,14 @@
         <!-- Area Chart -->
         <div class="col-xl-12 col-lg-12">
             <a class="btn btn-primary" href="<?php echo base_url('member/matching/find?event_id=' . $event_id) ?>">
-                Tìm đối tác
+                <?= $this->lang->line('Find partner') ?>
             </a>
             <br>
             <br>
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Thư mời đã nhận</h6>
+                    <h6 class="m-0 font-weight-bold text-primary"><?= $this->lang->line('Received Matching') ?></h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body" style="padding: 0 !important;">
@@ -41,12 +41,12 @@
                             <table class="table" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: center">STT</th>
-                                    <th style="text-align: center">Thời gian</th>
-                                    <th style="text-align: center">DN</th>
+                                    <th style="text-align: center"><?= $this->lang->line('No.') ?></th>
+                                    <th style="text-align: center"><?= $this->lang->line('Time') ?></th>
+                                    <th style="text-align: center"><?= $this->lang->line('Company') ?></th>
                                     <th style="text-align: center"></th>
-                                    <th style="text-align: center">Trạng thái</th>
-                                    <th style="text-align: center">Ghi chú</th>
+                                    <th style="text-align: center"><?= $this->lang->line('Status') ?></th>
+                                    <th style="text-align: center"><?= $this->lang->line('Note') ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -99,7 +99,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Thư mời đã gửi</h6>
+                    <h6 class="m-0 font-weight-bold text-primary"><?= $this->lang->line('Sent Matching') ?></h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body" style="padding: 0 !important;">
@@ -108,12 +108,12 @@
                             <table class="table" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: center">STT</th>
-                                    <th style="text-align: center">Thời gian</th>
-                                    <th style="text-align: center">DN</th>
+                                    <th style="text-align: center"><?= $this->lang->line('No.') ?></th>
+                                    <th style="text-align: center"><?= $this->lang->line('Time') ?></th>
+                                    <th style="text-align: center"><?= $this->lang->line('Company') ?></th>
                                     <th style="text-align: center"></th>
-                                    <th style="text-align: center">Trạng thái</th>
-                                    <th style="text-align: center">Ghi chú</th>
+                                    <th style="text-align: center"><?= $this->lang->line('Status') ?></th>
+                                    <th style="text-align: center"><?= $this->lang->line('Note') ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>

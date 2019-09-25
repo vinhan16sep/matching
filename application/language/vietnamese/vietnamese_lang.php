@@ -146,3 +146,19 @@ $lang['capnhatkhongthanhcong'] = 'Cập nhật không thành công hoặc không
 $lang['khongduoctrong'] = 'không được trống';
 $lang['phailaso'] = 'phải là số';
 $lang['quanlysukien'] = 'Quản lý sự kiện';
+
+$lang['Matching Management'] = 'Quản lý thông tin Matching';
+$lang['Find partner'] = 'Tìm đối tác';
+$lang['Received Matching'] = 'Thư mời đã nhận';
+$lang['Sent Matching'] = 'Thư mời đã gửi';
+$lang['No.'] = 'STT';
+$lang['Time'] = 'Thời gian';
+$lang['Company'] = 'Doanh nghiệp';
+$lang['Status'] = 'Trạng thái';
+$lang['Note'] = 'Ghi chú';
+$lang['Partner accepted'] = 'Đối tác đồng ý';
+$lang['Partner rejected'] = 'Đối tác từ chối';
+$lang['Cancel because other event(s) take this time'] = 'Hủy do trùng giờ cuộc hẹn khác';
+$lang['Accepted'] = 'Đã đồng ý';
+$lang['Rejected'] = 'Đã từ chối';
+
