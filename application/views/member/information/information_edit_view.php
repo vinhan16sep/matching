@@ -55,7 +55,7 @@
                         <?php echo form_input('company', $company, 'class="form-control" readonly'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Cơ quan/ tổ chức/ doanh nghiệp ứng dụng CNTT ? ', 'is_state'); ?>
+                        <?php echo form_label($this->lang->line('Is your company/ organization providing or applying IT?'), 'is_state'); ?>
                         <?php echo form_error('is_state', '<div class="error">', '</div>'); ?>
                         <br>
                         <?php echo form_checkbox('is_state', 1, (isset($temp) && !empty($temp['is_state']))? ($temp['is_state'] == 1) ? true : false : set_checkbox('is_state', 1), ''); ?>
@@ -72,7 +72,7 @@
                     </div>
                     <hr style="margin-top:1.2rem;">
                     <div class="form-group">
-                        <?php echo form_label('Tên Người Đại Diện Pháp Luật: ', 'connector'); ?>
+                        <?php echo form_label($this->lang->line('Legal Representative'), 'connector'); ?>
                         <?php echo form_error('connector', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('connector', (isset($temp) && !empty($temp['connector']))? $temp['connector'] : set_value('connector'), 'class="form-control"'); ?>
                     </div>
@@ -82,7 +82,7 @@
                         <?php echo form_input('email', (isset($temp) && !empty($temp['email']))? $temp['email'] : set_value('email'), 'class="form-control"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Điện Thoại: ', 'phone'); ?>
+                        <?php echo form_label($this->lang->line('Mobile'), 'phone'); ?>
                         <?php echo form_error('phone', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('phone', (isset($temp) && !empty($temp['phone']))? $temp['phone'] : set_value('phone'), 'class="form-control"'); ?>
                     </div>
@@ -102,34 +102,34 @@
                         <?php echo form_input('revenue', (isset($temp) && !empty($temp['revenue']))? $temp['revenue'] : set_value('revenue'), 'class="form-control"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Sản Phẩm/Giải Pháp (Tiếng Việt): ', 'product'); ?>
+                        <?php echo form_label($this->lang->line('Product/Solution (Vietnamese name)'), 'product'); ?>
                         <?php echo form_error('product', '<div class="error">', '</div>'); ?>
                         <?php echo form_textarea('product', (isset($temp) && !empty($temp['product']))? $temp['product'] : set_value('product'), 'class="form-control tinymce-area"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Sản Phẩm/Giải Pháp (Tiếng Anh): ', 'product_en'); ?>
+                        <?php echo form_label($this->lang->line('Product/Solution (English name)'), 'product_en'); ?>
                         <?php echo form_error('product_en', '<div class="error">', '</div>'); ?>
                         <?php echo form_textarea('product_en', (isset($temp) && !empty($temp['product_en']))? $temp['product_en'] : set_value('product_en'), 'class="form-control tinymce-area"'); ?>
                     </div>
                     <hr style="margin-top:1.2rem;">
                     <div class="form-group">
-                        <?php echo form_label('Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Việt): ', 'profile'); ?>
+                        <?php echo form_label($this->lang->line('Field of operation (Vietnamese)'), 'profile'); ?>
                         <?php echo form_error('profile', '<div class="error">', '</div>'); ?>
                         <?php echo form_textarea('profile', (isset($temp) && !empty($temp['profile']))? $temp['profile'] : set_value('profile'), 'class="form-control tinymce-area"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Anh): ', 'profile_en'); ?>
+                        <?php echo form_label($this->lang->line('Field of operation (English)'), 'profile_en'); ?>
                         <?php echo form_error('profile_en', '<div class="error">', '</div>'); ?>
                         <?php echo form_textarea('profile_en', (isset($temp) && !empty($temp['profile_en']))? $temp['profile_en'] : set_value('profile_en'), 'class="form-control tinymce-area"'); ?>
                     </div>
                     <hr style="margin-top:1.2rem;">
                     <div class="form-group">
-                        <?php echo form_label('Thị trường chính hiện nay (Tiếng Việt): ', 'market'); ?>
+                        <?php echo form_label($this->lang->line('Targeted markets (Vietnamese)'), 'market'); ?>
                         <?php echo form_error('market', '<div class="error">', '</div>'); ?>
                         <?php echo form_textarea('market', (isset($temp) && !empty($temp['market']))? $temp['market'] : set_value('market'), 'class="form-control tinymce-area"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Thị trường chính hiện nay (Tiếng Anh): ', 'market_en'); ?>
+                        <?php echo form_label($this->lang->line('Targeted markets (English)'), 'market_en'); ?>
                         <?php echo form_error('market_en', '<div class="error">', '</div>'); ?>
                         <?php echo form_textarea('market_en', (isset($temp) && !empty($temp['market_en']))? $temp['market_en'] : set_value('market_en'), 'class="form-control tinymce-area"'); ?>
                     </div>

@@ -47,7 +47,7 @@
                         <?php echo form_textarea(build_textarea('product', $temp_register['product'])); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label('Thị trường chính hiện nay: ', 'market'); ?>
+                        <?php echo form_label($this->lang->line('Targeted markets'), 'market'); ?>
                         <?php echo form_error('market', '<div class="error">', '</div>'); ?>
                         <?php echo form_textarea(build_textarea('market', $temp_register['market'])); ?>
                     </div>

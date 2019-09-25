@@ -41,7 +41,7 @@ class Overview extends Member_Controller {
 		$this->form_validation->set_rules('overview', 'Giới thiệu ngắn về Doanh nghiệp ', 'required');
 		$this->form_validation->set_rules('profile', 'Lĩnh vực hoạt động', 'required');
 		$this->form_validation->set_rules('product', 'Sản phẩm/Giải pháp', 'required');
-		$this->form_validation->set_rules('market', 'Thị trường chính hiện nay', 'required');
+		$this->form_validation->set_rules('market', $this->lang->line('Targeted markets'), 'required');
 		$this->form_validation->set_rules('partner', 'Đối tác chiến lược', 'required');
 		$this->form_validation->set_rules('customer', 'Khách hàng tiêu biểu', 'required');
 		$this->form_validation->set_rules('certificate', 'Các chứng chỉ, bằng cấp đạt được (ISO, CMMI...)', 'required');

@@ -117,7 +117,7 @@ class User extends MY_Controller {
                 'required' => '%s không được trống.',
                 'valid_email' => 'Định dạng email không đúng.',
             ));
-        $this->form_validation->set_rules('phone','Số điện thoại','trim|required|numeric', array(
+        $this->form_validation->set_rules('phone', $this->lang->line('Mobile'),'trim|required|numeric', array(
                 'required' => '%s không được trống.',
                 'numeric' => '%s phải là số.',
             ));

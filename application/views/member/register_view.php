@@ -50,7 +50,7 @@
                                 <?php echo form_input('company', set_value('company'), 'class="form-control"'); ?>
                             </div>
                             <div class="form-group col-xs-12 col-lg-6">
-                                <?php echo form_label('Điện Thoại: ', 'phone'); ?>
+                                <?php echo form_label($this->lang->line('Mobile'), 'phone'); ?>
                                 <?php echo form_error('phone'); ?>
                                 <?php echo form_input('phone', set_value('phone'), 'class="form-control"'); ?>
                             </div>

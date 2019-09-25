@@ -40,7 +40,7 @@ class Information extends Client_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('legal_representative', 'Tên người đại diện pháp luật', 'trim|required', array(
+        $this->form_validation->set_rules('legal_representative', $this->lang->line('Legal Representative'), 'trim|required', array(
             'required' => '%s không được trống.',
         ));
         $this->form_validation->set_rules('lp_position', 'Chức danh', 'trim|required', array(
@@ -140,7 +140,7 @@ class Information extends Client_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('legal_representative', 'Tên người đại diện pháp luật', 'trim|required', array(
+        $this->form_validation->set_rules('legal_representative', $this->lang->line('Legal Representative'), 'trim|required', array(
             'required' => '%s không được trống.',
         ));
         $this->form_validation->set_rules('lp_position', 'Chức danh', 'trim|required', array(

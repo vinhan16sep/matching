@@ -22,7 +22,7 @@
                             <h6><?php echo $result['address'] ?></h6>
                         </li>
                         <li class="list-group-item">
-                            <h6 class="subtitle-sm"><i class="fas fa-phone"></i> Số điện thoại</h6>
+                            <h6 class="subtitle-sm"><i class="fas fa-phone"></i> <?= $this->lang->line('Mobile') ?></h6>
                             <h6><?php echo $result['phone'] ?></h6>
                         </li>
                         <li class="list-group-item">
