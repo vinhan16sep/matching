@@ -57,7 +57,7 @@
                                         <?php echo $temp_register['company'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Cơ quan/ tổ chức/ doanh nghiệp ứng dụng CNTT? </strong><?php echo ($temp_register['is_state'] == 1) ? '<i style="color: green" class="fa fa-check" aria-hidden="true"></i>' : '<i style="color: red" class="fa fa-times" aria-hidden="true"></i>'; ?><br>
+                                        <strong><?= $this->lang->line('Is your company/ organization providing or applying IT?'); ?> </strong><?php echo ($temp_register['is_state'] == 1) ? '<i style="color: green" class="fa fa-check" aria-hidden="true"></i>' : '<i style="color: red" class="fa fa-times" aria-hidden="true"></i>'; ?><br>
                                     </li>
                                     <li class="list-group-item">
                                         <strong>Địa Chỉ (Tiếng Việt): </strong><br>
@@ -80,31 +80,31 @@
                                         <?php echo $temp_register['revenue'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Sản Phẩm/Giải Pháp (Tiếng Việt): </strong><br>
+                                        <strong><?= $this->lang->line('Product/Solution (Vietnamese name)'); ?>: </strong><br>
                                         <?php echo $temp_register['product'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Sản Phẩm/Giải Pháp (Tiếng Anh): </strong><br>
+                                        <strong><?= $this->lang->line('Product/Solution (English name)') ?> </strong><br>
                                         <?php echo $temp_register['product_en'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Việt): </strong><br>
+                                        <strong><?= $this->lang->line('Field of operation (Vietnamese)') ?> </strong><br>
                                         <?php echo $temp_register['profile'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Anh): </strong><br>
+                                        <strong><?= $this->lang->line('Field of operation (English)') ?> </strong><br>
                                         <?php echo $temp_register['profile_en'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Thị trường chính hiện nay (Tiếng Việt): </strong><br>
+                                        <strong><?= $this->lang->line('Targeted markets (Vietnamese)') ?> </strong><br>
                                         <?php echo $temp_register['market'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Thị trường chính hiện nay (Tiếng Anh): </strong><br>
+                                        <strong><?= $this->lang->line('Targeted markets (English)') ?> </strong><br>
                                         <?php echo $temp_register['market_en'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Tên Người Đại Diện Pháp Luật: </strong><br>
+                                        <strong><?= $this->lang->line('Legal Representative') ?> </strong><br>
                                         <?php echo $temp_register['connector'] ?>
                                     </li>
                                     <li class="list-group-item">
@@ -112,7 +112,7 @@
                                         <?php echo $temp_register['email'] ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <strong>Điện Thoại: </strong><br>
+                                        <strong><?= $this->lang->line('Mobile') ?> </strong><br>
                                         <?php echo $temp_register['phone'] ?>
                                     </li>
                                 </ul>
@@ -125,7 +125,7 @@
             <br>
             <?php if ($this->uri->segment(1) != 'admin'): ?>
                 <a href="<?php echo base_url('member/setting') ?>" class="btn btn-primary" style="float: right;">
-                    Danh sách sự kiện
+                    <?= $this->lang->line('Event list') ?>
                     <i class="fas fa-chevron-right"></i>
                 </a>
             <?php endif ?>

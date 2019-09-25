@@ -174,7 +174,7 @@
                                 <th style="text-align: center">STT</th>
                                 <th style="text-align: center">Doanh nghiệp</th>
                                 <th style="text-align: center">Email</th>
-                                <th style="text-align: center">Điện thoại</th>
+                                <th style="text-align: center"><?= $this->lang->line('Mobile') ?></th>
                                 <th style="text-align: center">Thao tác</th>
                             </tr>
                             </thead>
@@ -242,10 +242,10 @@
                         <a class="nav-link" id="product-tab" data-toggle="tab" href="#productTab" role="tab" aria-controls="product" aria-selected="false">Sản Phẩm/Giải Pháp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false">Lĩnh Vực/Dịch Vụ Hoạt Động</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false"><?= $this->lang->line('Field of operation') ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="market-tab" data-toggle="tab" href="#marketTab" role="tab" aria-controls="market" aria-selected="false">Thị trường chính hiện nay</a>
+                        <a class="nav-link" id="market-tab" data-toggle="tab" href="#marketTab" role="tab" aria-controls="market" aria-selected="false"><?= $this->lang->line('Targeted markets') ?></a>
                     </li>
                 </ul>
                 <div class="tab-content" id="companyInfomationContent">
@@ -276,7 +276,7 @@
                                     <h6 id="email">No data</h6>
                                 </div>
                                 <div class="wrapper">
-                                    <label>Số điện thoại</label>
+                                    <label><?= $this->lang->line('Mobile') ?></label>
                                     <h6 id="phone">No data</h6>
                                 </div>
                             </div>

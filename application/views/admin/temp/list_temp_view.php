@@ -69,7 +69,7 @@
                                 <th style="text-align: center">Người đại diện</th>
                                 <th style="text-align: center">Chức danh</th>
                                 <th style="text-align: center">Địa chỉ</th>
-                                <th style="text-align: center">Số điện thoại</th>
+                                <th style="text-align: center"><?= $this->lang->line('Mobile') ?></th>
                                 <th style="text-align: center">Email</th>
                                 <th style="text-align: center">Thao tác</th>
                             </tr>

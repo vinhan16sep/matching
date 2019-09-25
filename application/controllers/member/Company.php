@@ -130,10 +130,10 @@ class Company extends Member_Controller{
         $data_export = array(
             '0' => array(
                 'company' => 'Doanh nghiệp',
-                'phone' => 'Điện thoại',
+                'phone' => $this->lang->line('Mobile'),
                 'address' => 'Địa chỉ',
                 'website' => 'Website',
-                'legal_representative' => 'Tên người đại diện pháp luật',
+                'legal_representative' => $this->lang->line('Legal Representative'),
                 'lp_position' => 'Chức danh',
                 'lp_email' => 'Email',
                 'lp_phone' => 'Di động',

@@ -24,3 +24,23 @@ $lang['System Support'] = 'Hướng dẫn hệ thống';
 // Dashboard
 $lang['Registered Events'] = 'Sự kiện đã đăng ký';
 $lang['Unregistered Events'] = 'Sự kiện chưa đăng ký';
+
+// Information
+$lang['Update Company | Organization Information'] = 'Cập nhật thông tin Doanh nghiệp / tổ chức';
+$lang['Company name'] = 'Tên Doanh nghiệp';
+$lang['Is your company/ organization providing or applying IT?'] = 'Cơ quan/ tổ chức/ doanh nghiệp ứng dụng CNTT?';
+$lang['Product/Solution (Vietnamese name)'] = 'Sản Phẩm/Giải Pháp (Tiếng Việt)';
+$lang['Product/Solution (English name)'] = 'Sản Phẩm/Giải Pháp (Tiếng Anh)';
+$lang['Field of operation'] = 'Lĩnh Vực/Dịch Vụ Hoạt Động';
+$lang['Field of operation (Vietnamese)'] = 'Lĩnh Vực/Dịch Vụ Hoạt Động (tiếng Việt)';
+$lang['Field of operation (English)'] = 'Lĩnh Vực/Dịch Vụ Hoạt Động (tiếng Anh)';
+
+$lang['Targeted markets'] = 'Thị trường chính hiện nay';
+$lang['Targeted markets (Vietnamese)'] = 'Thị trường chính hiện nay (tiếng Việt)';
+$lang['Targeted markets (English)'] = 'Thị trường chính hiện nay (tiếng Anh)';
+
+$lang['Legal Representative'] = 'Tên Người Đại Diện Pháp Luật';
+
+$lang['Mobile'] = 'Điện Thoại';
+
+$lang['Event list'] = 'Danh sách sự kiện';

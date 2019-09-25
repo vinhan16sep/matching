@@ -32,7 +32,7 @@ class Information extends Client_Controller {
         $id = isset($product_id) ? (int) $product_id : (int) $this->input->post('id');
 
         $this->form_validation->set_rules('website', 'Website', 'trim|required');
-        $this->form_validation->set_rules('legal_representative', 'Tên người đại diện pháp luật', 'trim|required');
+        $this->form_validation->set_rules('legal_representative', $this->lang->line('Legal Representative'), 'trim|required');
         $this->form_validation->set_rules('lp_position', 'Chức danh', 'trim|required');
         $this->form_validation->set_rules('lp_email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('lp_phone', 'Di động', 'trim|required|numeric');

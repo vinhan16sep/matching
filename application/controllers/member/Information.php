@@ -12,7 +12,7 @@ class Information extends Member_Controller {
     public function index(){
         $this->load->helper('form');
         $this->load->library('form_validation');
-        $this->data['page_title'] = 'Thông tin Doanh nghiệp / tổ chức';
+        $this->data['page_title'] = $this->lang->line('Company | Organization Information');
         $user = $this->ion_auth->user()->row();
         $this->data['company'] = $user->company;
         $temp_register_save = $this->temp_register_model->get_by_user_id_not_join_saved($user->id);
@@ -41,31 +41,31 @@ class Information extends Member_Controller {
         $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required', array(
             'required' => '%s không được trống!',
         ));
-        $this->form_validation->set_rules('product', 'Sản Phẩm/Giải Pháp (Tiếng Việt)', 'required', array(
+        $this->form_validation->set_rules('product', $this->lang->line('Product/Solution (Vietnamese name)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('product_en', 'Sản Phẩm/Giải Pháp (Tiếng Anh)', 'required', array(
+        $this->form_validation->set_rules('product_en', $this->lang->line('Product/Solution (English name)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('profile', 'Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Việt)', 'required', array(
+        $this->form_validation->set_rules('profile', $this->lang->line('Field of operation (Vietnamese)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('profile_en', 'Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Anh)', 'required', array(
+        $this->form_validation->set_rules('profile_en', $this->lang->line('Field of operation (English)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('market', 'Thị Trường Chính Hiện Nay (Tiếng Việt)', 'required', array(
+        $this->form_validation->set_rules('market', $this->lang->line('Targeted markets (Vietnamese)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('market_en', 'Thị Trường Chính Hiện Nay (Tiếng Anh)', 'required', array(
+        $this->form_validation->set_rules('market_en', $this->lang->line('Targeted markets (English)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('connector', 'Tên Người Đại Diện Pháp Luật', 'required', array(
+        $this->form_validation->set_rules('connector', $this->lang->line('Legal Representative'), 'required', array(
             'required' => '%s không được trống!'
         ));
         $this->form_validation->set_rules('email', 'E-Mail', 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('phone', 'Điện Thoại', 'required|numeric', array(
+        $this->form_validation->set_rules('phone', $this->lang->line('Mobile'), 'required|numeric', array(
             'required' => '%s không được trống!',
             'numeric' => '%s phải là số'
         ));
@@ -186,7 +186,7 @@ class Information extends Member_Controller {
     public function edit($id=''){
         $this->load->helper('form');
         $this->load->library('form_validation');
-        $this->data['page_title'] = 'Cập nhật thông tin Doanh nghiệp / tổ chức';
+        $this->data['page_title'] = $this->lang->line('Update Company | Organization Information');
         $user = $this->ion_auth->user()->row();
         $this->data['company'] = $user->company;
         $this->data['temp'] = $check_temp_register = $this->temp_register_model->get_by_user_id_not_join($user->id);
@@ -215,31 +215,31 @@ class Information extends Member_Controller {
         $this->form_validation->set_rules('revenue', 'Doanh Thu Năm ' . (date("Y") - 1) , 'required', array(
             'required' => '%s không được trống!',
         ));
-        $this->form_validation->set_rules('product', 'Sản Phẩm/Giải Pháp (Tiếng Việt)', 'required', array(
+        $this->form_validation->set_rules('product', $this->lang->line('Product/Solution (Vietnamese name)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('product_en', 'Sản Phẩm/Giải Pháp (Tiếng Anh)', 'required', array(
+        $this->form_validation->set_rules('product_en', $this->lang->line('Product/Solution (English name)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('profile', 'Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Việt)', 'required', array(
+        $this->form_validation->set_rules('profile', $this->lang->line('Field of operation (Vietnamese)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('profile_en', 'Lĩnh Vực/Dịch Vụ Hoạt Động (Tiếng Anh)', 'required', array(
+        $this->form_validation->set_rules('profile_en', $this->lang->line('Field of operation (English)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('market', 'Thị Trường Chính Hiện Nay (Tiếng Việt)', 'required', array(
+        $this->form_validation->set_rules('market', $this->lang->line('Targeted markets (Vietnamese)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('market_en', 'Thị Trường Chính Hiện Nay (Tiếng Anh)', 'required', array(
+        $this->form_validation->set_rules('market_en', $this->lang->line('Targeted markets (English)'), 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('connector', 'Tên Người Đại Diện Pháp Luật', 'required', array(
+        $this->form_validation->set_rules('connector', $this->lang->line('Legal Representative'), 'required', array(
             'required' => '%s không được trống!'
         ));
         $this->form_validation->set_rules('email', 'E-Mail', 'required', array(
             'required' => '%s không được trống!'
         ));
-        $this->form_validation->set_rules('phone', 'Điện Thoại', 'required|numeric', array(
+        $this->form_validation->set_rules('phone', $this->lang->line('Mobile'), 'required|numeric', array(
             'required' => '%s không được trống!',
             'numeric' => '%s phải là số'
         ));

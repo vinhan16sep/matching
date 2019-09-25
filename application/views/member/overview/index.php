@@ -37,7 +37,7 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['product'] ?>
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>Thị trường chính hiện nay: </strong><br>
+                                    <strong><?= $this->lang->line('Targeted markets') ?> </strong><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temp_register['market'] ?>
                                 </li>
                                 <li class="list-group-item">
