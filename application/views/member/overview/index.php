@@ -6,7 +6,7 @@
                     <?php if ($this->session->flashdata('message_error')): ?>
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-warning"></i> Thông báo!</h4>
+                            <h4><i class="icon fa fa-warning"></i> <?= $this->lang->line('thongbao'); ?>!</h4>
                             <?php echo $this->session->flashdata('message_error'); ?>
                         </div>
                     <?php endif ?>

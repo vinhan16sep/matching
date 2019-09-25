@@ -136,7 +136,7 @@ class Dashboard extends Member_Controller {
         $map = strripos($filename, '.')+1;
         $fileextension = strtolower(substr($filename, $map,(strlen($filename)-$map)));
         if($fileextension != 'pdf' || $filesize > 20971520){
-            $this->session->set_flashdata('message_error', 'Định dạng không phải là "PDF" hoặc dung lượng vựt quá 20Mb');
+            $this->session->set_flashdata('message_error', $this->lang->line("dinhdangsai"));
             redirect('member');
         }
     }
@@ -147,13 +147,13 @@ class Dashboard extends Member_Controller {
         $map = strripos($filename, '.')+1;
         $fileextension = strtolower(substr($filename, $map,(strlen($filename)-$map)));
         if(!($fileextension == 'png' || $fileextension == 'jpg' || $fileextension == 'jpeg' || $fileextension == 'gif') || $filesize > 20971520){
-            $this->session->set_flashdata('message_error', 'Không phải định dạng ảnh hoặc dung lượng vựt quá 20Mb');
+            $this->session->set_flashdata('message_error', $this->lang->line("khongphaidinhdanganh"));
             redirect('member');
         }
     }
 
     public function validate_file(){
-        $this->form_validation->set_message(__FUNCTION__, 'Vui lòng chọn Logo.');
+        $this->form_validation->set_message(__FUNCTION__, $this->lang->line("vuilongchonlogo"));
         if (!empty($_FILES['file']['name'][0])) {
             return true;
         }

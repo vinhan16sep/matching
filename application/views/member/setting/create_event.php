@@ -39,14 +39,14 @@
 
                     <div class="row">
                         <div class="form-group" style="width: 100%">
-                            <?php echo form_label('Sự kiện đã chọn', 'name'); ?>
+                            <?php echo form_label($this->lang->line("sukiendachon"), 'name'); ?>
                             <?php echo form_error('name', '<div class="error">', '</div>'); ?><br>
                             <?php echo form_input('name', '', 'class="form-control" id="event-name" readonly'); ?>
                         </div>
                     </div>
                     <input type="hidden" name="event_id" id="event-id">
                     <div class="form-group">
-                        <?php echo form_submit('submit', 'Lưu Thông Tin', 'class="btn btn-success" style="float: right" id="btnSave"'); ?>
+                        <?php echo form_submit('submit', $this->lang->line('luuthongtin'), 'class="btn btn-success" style="float: right" id="btnSave"'); ?>
                         
                     </div>
                     <div class="form-group col-sm-12 text-right">
@@ -77,10 +77,10 @@
                     <thead style="background: #4e73df; color: white">
                         <tr>
                             <th style="text-align: center">STT</th>
-                            <th style="text-align: center">Tên event</th>
-                            <th style="txt-aelign: center">Ngày tổ chức</th>
-                            <th style="text-align: center">Trạng thái</th>
-                            <th style="text-align: center">Thao tác</th>
+                            <th style="text-align: center"><?= $this->lang->line("Event name") ?></th>
+                            <th style="txt-aelign: center"><?= $this->lang->line("Time") ?></th>
+                            <th style="text-align: center"><?= $this->lang->line("Status") ?></th>
+                            <th style="text-align: center"><?= $this->lang->line("thaotac") ?></th>
                         </tr>
                     </thead>
                     <tbody id="event-add">
@@ -99,13 +99,13 @@
                                     <td>
                                         <?php 
                                             if ($value['date'] < now() && $value['is_active'] == 1) {
-                                                echo '<span class="label label-default">Chưa diễn ra</span>';
+                                                echo '<span class="label label-default">'.$this->lang->line("chuadienra").'</span>';
                                             }
                                             if ($value['date'] >= now() && $value['is_active'] == 1) {
-                                                echo '<span class="label label-success">Đang diễn ra</span>';
+                                                echo '<span class="label label-success">'.$this->lang->line("dangdienra").'</span>';
                                             }
                                             if ($value['is_active'] != 1) {
-                                                echo '<span class="label label-danger">Hết sự kiện</span>';
+                                                echo '<span class="label label-danger">'.$this->lang->line("hetsukien").'</span>';
                                             }
                                         ?>
                                     </td>
@@ -116,7 +116,7 @@
                             <?php endforeach ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="5">Không có sự kiện</td>
+                                <td colspan="5"><?= $this->lang->line("khongcosukien") ?></td>
                             </tr>
                         <?php endif ?>
                     </tbody>

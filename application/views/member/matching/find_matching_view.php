@@ -282,11 +282,11 @@
                             </div>
                             <div class="right col-xs-12 col-lg-4">
                                 <div class="wrapper">
-                                    <label>Số Nhân lực</label>
+                                    <label><?= $this->lang->line("sonhanluc") ?></label>
                                     <h6 id="manpower">No data</h6>
                                 </div>
                                 <div class="wrapper">
-                                    <label>Doanh Thu Năm 2018</label>
+                                    <label><?= $this->lang->line('doanhthunam') ?> 2018</label>
                                     <h6 id="revenue">No data</h6>
                                 </div>
                             </div>

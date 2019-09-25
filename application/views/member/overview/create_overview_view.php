@@ -15,7 +15,7 @@
                     <?php if ($this->session->flashdata('message_error')): ?>
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-warning"></i> Thông báo!</h4>
+                            <h4><i class="icon fa fa-warning"></i> <?= $this->lang->line('thongbao'); ?>!</h4>
                             <?php echo $this->session->flashdata('message_error'); ?>
                         </div>
                     <?php endif ?>
@@ -82,7 +82,7 @@
                         <?php echo form_upload('file', '', 'class=""'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_submit('submit', 'Lưu Thông Tin', 'class="btn btn-primary"'); ?>
+                        <?php echo form_submit('submit', $this->lang->line('luuthongtin'), 'class="btn btn-primary"'); ?>
                         <!-- <a href="javascript:history.back()" name="back" class="btn btn-default btn-lg btn-block">Quay lại</a> -->
                     </div>
 

@@ -5,10 +5,10 @@
         <div class="card-body" >
             <div>
                 <?php if($setting['status'] == 0){ ?>
-                    <p>Bạn chưa kích hoạt chức năng tìm kiếm cho sự kiện này. Vui lòng gửi yêu cầu đến cho Vinasa để kích hoạt sự kiện</p>
-                    <a class="btn btn-primary" href="javascript:void(0);" onclick="activeEvent('<?php echo $event_id; ?>')" data-remote="false" data-toggle="modal" data-target="#myModal">Kích hoạt sự kiện</a>
+                    <p><?= $this->lang->line('You have not active the finding mode for this event. Please send a request to Vinasa to active') ?></p>
+                    <a class="btn btn-primary" href="javascript:void(0);" onclick="activeEvent('<?php echo $event_id; ?>')" data-remote="false" data-toggle="modal" data-target="#myModal"><?= $this->lang->line('Active the event') ?></a>
                 <?php } else { ?>
-                    <p>Bạn đã gửi yêu cầu kích hoạt cho sự kiện này, vui lòng làm theo hướng dẫn (đã gửi trong email) và đợi phản hồi từ Vinasa.</p>
+                    <p><?= $this->lang->line('bandakichhoat') ?></p>
                 <?php } ?>
             </div>
         </div>
@@ -32,7 +32,7 @@
 </div>
 <script>
     function activeEvent(event_id){
-        if(confirm("Bạn có chắc chắn kích hoạt cho sự kiện này?")){
+        if(confirm("<?= $this->lang->line('bancochacchan') ?>")){
             $.ajax({
                 method: 'GET',
                 url: '<?php echo base_url('member/matching/active') ?>',
@@ -45,10 +45,10 @@
                     if(data.message == 1){
                         var code = data.code;
                         var email = data.email;
-                        var message = 'Email chi tiết đã được gửi về địa chỉ <a href="mailto:' + email + '">' + email + '</a>';
+                        var message = '<?= $this->lang->line('emailchitiet') ?> <a href="mailto:' + email + '">' + email + '</a>';
                         if (code != 'free') {
-                            message += '<p>Mã kích hoạt là: <span style="color: red;">' + code + '</span></p>';
-                            message += 'Hãy làm theo hướng dẫn trong email để tiếp tục tham gia sự kiện';
+                            message += '<p><?= $this->lang->line('makichhoat') ?>: <span style="color: red;">' + code + '</span></p>';
+                            message += '<?= $this->lang->line('haylamtheohuongdan') ?>';
                         }
 
                         $(".modal-body").html(message);
