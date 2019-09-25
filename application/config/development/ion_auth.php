@@ -141,6 +141,7 @@ $config['email_templates_admin'] = 'auth/email_admin/';
  | Default: activate.tpl.php
  */
 $config['email_activate'] = 'activate.tpl.php';
+$config['email_activate_en'] = 'activate_en.tpl.php';
 
 /*
  | -------------------------------------------------------------------------

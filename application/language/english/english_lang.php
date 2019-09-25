@@ -8,8 +8,23 @@
 $lang['detector'] = 'en';
 // Common use
 
+
+// Register
+$lang['Password (at least 8 characters)'] = 'Password (at least 8 characters)';
+$lang['Confirm Password'] = 'Confirm Password';
+$lang['Register'] = 'Register';
+
+// Login
+$lang['Login'] = 'Login';
+$lang['Forgot Password?'] = 'Forgot Password?';
+$lang['Click'] = 'Click';
+$lang['here'] = 'here';
+
 // Top menu
 $lang['Change Password'] = 'Change Password';
+$lang['Logout'] = 'Logout';
+$lang['Do you want to logout?'] = 'Do you want to logout?';
+$lang['Back'] = 'Back';
 $lang['Logout'] = 'Logout';
 
 // Left Menu

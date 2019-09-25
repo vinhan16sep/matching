@@ -19,12 +19,26 @@
 </head>
 <body>
     <div id="member-register">
-        <header>
+        <header style="width: 100%;padding-right:120px !important;">
             <div class="nav-logo">
                 <a href="<?php echo base_url('')?>">
                     <img src="<?php echo site_url('assets/img/logo-w.svg') ?>" alt="Logo Vinasa">
                 </a>
             </div>
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown no-arrow li-lang <?php echo ($this->session->userdata('langAbbreviation') == 'vi') ? 'active' : '' ?>">
+                        <a class="nav-link change-language" data-language="vi" href="javascript:void(0)" href="<?php echo base_url('member/user/register') ?>">
+                            Vi
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown no-arrow li-lang <?php echo ($this->session->userdata('langAbbreviation') == 'en') ? 'active' : '' ?>">
+                        <a class="nav-link change-language" data-language="en" href="javascript:void(0)" href="<?php echo base_url('member/user/register') ?>">
+                            En
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
 
         <div class="cover-background" style="background-image: url('https://images.unsplash.com/photo-1517502884422-41eaead166d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80">
@@ -45,7 +59,7 @@
                         <?php echo form_open('', array('class' => 'form-horizontal')); ?>
                         <div class="row">
                             <div class="form-group col-xs-12 col-lg-12">
-                                <?php echo form_label('Tên Công Ty: ', 'company'); ?>
+                                <?php echo form_label($this->lang->line('Company name'), 'company'); ?>
                                 <?php echo form_error('company'); ?>
                                 <?php echo form_input('company', set_value('company'), 'class="form-control"'); ?>
                             </div>
@@ -65,12 +79,12 @@
                                 <?php echo form_input('email', set_value('email'), 'class="form-control"'); ?>
                             </div>
                             <div class="form-group col-xs-12 col-lg-12">
-                                <?php echo form_label('Mật khẩu mới (ít nhất 8 ký tự): ', 'password'); ?>
+                                <?php echo form_label($this->lang->line('Password (at least 8 characters)'), 'password'); ?>
                                 <?php echo form_error('password'); ?>
                                 <?php echo form_password('password', '', 'class="form-control"'); ?>
                             </div>
                             <div class="form-group col-xs-12 col-lg-12">
-                                <?php echo form_label('Xác Nhận Mật Khẩu:', 'confirm_password').'<br />'; ?>
+                                <?php echo form_label($this->lang->line('Confirm Password'), 'confirm_password').'<br />'; ?>
                                 <?php echo form_error('confirm_password'); ?>
                                 <?php echo form_password('cf_password', '','class="form-control"').'<br /><br />'; ?>
                             </div>
@@ -82,7 +96,7 @@
 //                                ?>
 <!--                            </div>-->
                         </div>
-                        <?php echo form_submit('submit', 'Đăng Ký', 'class="btn btn-primary btn-lg btn-block"'); ?>
+                        <?php echo form_submit('submit', $this->lang->line('Register'), 'class="btn btn-primary btn-lg btn-block"'); ?>
                         <?php echo form_close(); ?>
                     </div>
 
@@ -93,4 +107,26 @@
     </div>
 
 </body>
+<script>
+    var url = window.location.protocol + '//' + window.location.hostname;
+
+    $(".change-language").click(function(){
+        $.ajax({
+            method: "GET",
+            url: "<?php echo base_url(); ?>homepage/change_language",
+            data: {
+                lang: $(this).data('language')
+            },
+            async:false,
+            success: function(res){
+                if(res.message == 'changed'){
+                    window.location.reload();
+                }
+            },
+            error: function(){
+
+            }
+        });
+    });
+</script>
 </html>

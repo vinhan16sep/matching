@@ -96,39 +96,39 @@
 <body>
 <div class="email-wrapper">
     <table>
-        <tr class="tr-header"><td colspan="2">Email xác nhận cuộc hẹn thành công</td></tr>
+        <tr class="tr-header"><td colspan="2">Successful Matching</td></tr>
         <tr class="tr-body">
             <td colspan="2">
-                <h4>Kính gửi <?= $message['finder_name'] ?>!</h4>
-                <p>Thư xác nhận lịch business matching 1:1 tại:</p>
-                <p>Sự kiện: Diễn đàn Cấp cao CNTT-TT Việt Nam 2019</p>
+                <h4>Dear <?= $message['finder_name'] ?>!</h4>
+                <p>Confirmation email of the 1:1 business matching appoinment at:</p>
+                <p>Event: Vietnam ICT Summit 2019</p>
             </td>
         </tr>
         <tr class="tr-body">
             <td colspan="2">
                 <p>Business Matching: <?= $message['target_name'] . ' - ' . $message['finder_name'] ?></p>
-                <p>Thời gian:<?= $message['date'] ?>.</p>
-                <p>Địa điểm: Phòng Business Matching Area, Khách sạn Melia Hà Nội, 44 Lý Thường Kiệt</p>
+                <p>Time:<?= $message['date'] ?>.</p>
+                <p>Venue: Business Matching Area, Melia Hanoi hotel, 44 Ly Thuong Kiet</p>
             </td>
         </tr>
         <tr class="tr-body">
             <td colspan="2">
-                <p>Để buổi làm việc đạt hiệu quả cao, Kính đề nghị Quý Đơn vị đến làm việc đúng giờ và tuân thủ theo thời gian meeting đã hẹn.</p>
-                <p>Mọi thông tin thay đổi xin vui lòng báo lại cho Ban tổ chức</p>
-                <p>Trân trọng cảm ơn Anh/Chị và mong được đón tiếp tại Vietnam ICT Summit 2019.</p>
-                <p>Đầu mối hỗ trợ: Ms. Hoàng Minh Thư   (HP: 0385 796 096)</p>
+                <p>Please be punctual for the appointed meeting to reach the highest results </p>
+                <p>Should any changes arise, please inform the Board of Organizers in advance</p>
+                <p>Sincerely thanks and welcome to Vietnam ICT Summit 2019.</p>
+                <p>Contact person: Ms. Hoang Minh Thu   (HP: 0385 796 096)</p>
             </td>
         </tr>
         <tr class="tr-body">
             <td colspan="2">
-                <p style="color: red; font-style: italic">Xin Vui Lòng Mang Theo Name Card/Profile Doanh nghiệp khi tham dự Giao Thương</p>
+                <p style="color: red; font-style: italic">Don't forget to bring your namecard to the Business matching</p>
             </td>
         </tr>
         <tr class="tr-footer">
             <td colspan="2">
-                <h6>Hiệp hội Phần mềm và dịch vụ CNTT Việt Nam (VINASA)</h6>
-                <p>Địa chỉ: Tầng 11, tòa nhà Cung Trí thức, 01 Tôn Thất Thuyết, Cầu Giấy, Hà Nội</p>
-                <p>Điện thoại: 024 35772336 - 024 35772338; Email: contact@vinasa.org.vn</p>
+                <h6>Vietnam Association of Software and IT services (VINASA)</h6>
+                <p>Address: Flr 11, Cung tri thuc Bld, No 01 Ton That Thuyet Str, Hanoi, Vietnam</p>
+                <p>Phone: 024 35772336 - 024 35772338; Email: contact@vinasa.org.vn</p>
             </td>
         </tr>
     </table>

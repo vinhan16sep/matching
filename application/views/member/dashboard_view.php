@@ -59,7 +59,17 @@
         <div class="card-body">
         	<div class="row">
         		<h4>Hướng Dẫn</h4>
-        		<img src="<?= base_url('assets/img/banner_huong_dan.jpg') ?>" width="100%">
+                <?php
+                if($this->session->userdata('langAbbreviation') == 'vi') {
+                ?>
+                    <img src="<?= base_url('assets/img/banner_huong_dan.jpg') ?>" width="100%">
+                <?php
+                }else{
+                ?>
+                    <img src="<?= base_url('assets/img/banner_huong_dan_en.png') ?>" width="100%">
+                <?php
+                }
+                ?>
         	</div>
         </div>
     </div>

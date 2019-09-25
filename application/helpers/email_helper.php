@@ -128,7 +128,12 @@ function send_mail_matching($email, $data, $matching = 'create', $role = 'admin'
 function email_template_matching_create($data){
     $CI =& get_instance();
     $data_send_mail['message'] = $data;
-    return $CI->load->view('auth/email_member/matching/appointment_template.tpl.php',$data_send_mail,true);
+
+    if($this->session->userdata('langAbbreviation') == 'vi'){
+        return $CI->load->view('auth/email_member/matching/appointment_template.tpl.php',$data_send_mail,true);
+    }else{
+        return $CI->load->view('auth/email_member/matching/appointment_template_en.tpl.php',$data_send_mail,true);
+    }
 }
 
 function email_template_matching_create_role_admin($data){
@@ -140,7 +145,12 @@ function email_template_matching_create_role_admin($data){
 function email_template_matching_approve($data){
     $CI =& get_instance();
     $data_send_mail['message'] = $data;
-    return $CI->load->view('auth/email_member/matching/approve_template.tpl.php',$data_send_mail,true);
+
+    if($this->session->userdata('langAbbreviation') == 'vi'){
+        return $CI->load->view('auth/email_member/matching/approve_template.tpl.php',$data_send_mail,true);
+    }else{
+        return $CI->load->view('auth/email_member/matching/approve_template_en.tpl.php',$data_send_mail,true);
+    }
 }
 
 function email_template_matching_approve_role_admin($data){
@@ -152,5 +162,10 @@ function email_template_matching_approve_role_admin($data){
 function email_template_matching_reject($data){
     $CI =& get_instance();
     $data_send_mail['message'] = $data;
-    return $CI->load->view('auth/email_member/matching/reject_template.tpl.php',$data_send_mail,true);
+
+    if($this->session->userdata('langAbbreviation') == 'vi'){
+        return $CI->load->view('auth/email_member/matching/reject_template.tpl.php',$data_send_mail,true);
+    }else{
+        return $CI->load->view('auth/email_member/matching/reject_template_en.tpl.php',$data_send_mail,true);
+    }
 }
