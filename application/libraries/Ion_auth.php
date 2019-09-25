@@ -389,7 +389,11 @@ class Ion_auth
 			else
 			{
 				if (in_array(2, $group_ids)) {
-					$message = $this->load->view($this->config->item('email_templates_member', 'ion_auth').$this->config->item('email_activate', 'ion_auth'), $data_account, true);
+				    if($this->session->userdata('langAbbreviation') == 'vi'){
+                        $message = $this->load->view($this->config->item('email_templates_member', 'ion_auth').$this->config->item('email_activate', 'ion_auth'), $data_account, true);
+                    }else{
+                        $message = $this->load->view($this->config->item('email_templates_member', 'ion_auth').$this->config->item('email_activate_en', 'ion_auth'), $data_account, true);
+                    }
 				}else{
 					$message = $this->load->view($this->config->item('email_templates', 'ion_auth').$this->config->item('email_activate', 'ion_auth'), $data, true);
 				}

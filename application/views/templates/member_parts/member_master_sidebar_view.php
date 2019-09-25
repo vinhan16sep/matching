@@ -156,11 +156,21 @@
     <!-- End of Sidebar -->
 
     <div id="workflow-guide" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" style="max-width:60%;">
+        <div class="modal-dialog modal-dialog-centered" style="max-width:80%;">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
-                    <img style="width: 100%; height: 100%;" src="<?php echo site_url('assets/img/banner_huong_dan.jpg') ?>" alt="Logo Company">
+                    <?php
+                    if($this->session->userdata('langAbbreviation') == 'vi') {
+                        ?>
+                        <img src="<?= base_url('assets/img/banner_huong_dan.jpg') ?>" width="100%">
+                        <?php
+                    }else{
+                        ?>
+                        <img src="<?= base_url('assets/img/banner_huong_dan_en.png') ?>" width="100%">
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

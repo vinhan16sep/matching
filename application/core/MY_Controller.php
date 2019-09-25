@@ -21,6 +21,27 @@ class MY_Controller extends CI_Controller {
         $this->data['active'] = $this->uri->segment(2);
         $this->data['sub_active'] = $this->uri->segment(3);
         $this->data['icon_active'] = $this->uri->segment(4);
+
+        $this->load->library('session');
+
+        $this->langAbbreviation = $this->uri->segment(1) ? $this->uri->segment(1) : 'vi';
+        if($this->langAbbreviation == 'en' || $this->langAbbreviation == 'vi' || $this->langAbbreviation == ''){
+            $this->session->set_userdata('langAbbreviation', $this->langAbbreviation);
+        }
+
+        if($this->session->userdata('langAbbreviation') == 'en'){
+            $langName = 'english';
+            $this->config->set_item('language', $langName);
+            $this->session->set_userdata("langAbbreviation",'en');
+            $this->lang->load('english_lang', 'english');
+        }
+
+        if($this->session->userdata('langAbbreviation') == 'vi' || $this->session->userdata('langAbbreviation') == ''){
+            $langName = 'vietnamese';
+            $this->config->set_item('language', $langName);
+            $this->session->set_userdata("langAbbreviation",'vi');
+            $this->lang->load('vietnamese_lang', 'vietnamese');
+        }
     }
 
     protected function render($the_view = NULL, $template = 'master') {

@@ -28,14 +28,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Bạn muốn đăng xuất?</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><?= $this->lang->line('Do you want to logout?') ?></h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Quay lại</button>
-                <a class="btn btn-primary" href="<?php echo base_url('member/user/logout') ?>">Đăng xuất</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal"><?= $this->lang->line('Back') ?></button>
+                <a class="btn btn-primary" href="<?php echo base_url('member/user/logout') ?>"><?= $this->lang->line('Logout') ?></a>
             </div>
         </div>
     </div>

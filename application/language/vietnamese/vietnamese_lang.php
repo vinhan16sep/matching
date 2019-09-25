@@ -8,8 +8,23 @@
 $lang['detector'] = 'vi';
 // Common use
 
+
+// Register
+$lang['Password (at least 8 characters)'] = 'Mật khẩu (ít nhất 8 ký tự)';
+$lang['Confirm Password'] = 'Xác Nhận Mật Khẩu';
+$lang['Register'] = 'Đăng ký';
+
+// Login
+$lang['Login'] = 'Đăng nhập';
+$lang['Forgot Password?'] = 'Quên mật khẩu?';
+$lang['Click'] = 'Bấm vào';
+$lang['here'] = 'đây';
+
 // Top menu
 $lang['Change Password'] = 'Đổi mật khẩu';
+$lang['Logout'] = 'Đăng xuất';
+$lang['Do you want to logout?'] = 'Bạn muốn đăng xuất?';
+$lang['Back'] = 'Quay lại';
 $lang['Logout'] = 'Đăng xuất';
 
 // Left Menu
