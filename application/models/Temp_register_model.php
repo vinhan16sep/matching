@@ -173,7 +173,12 @@ class Temp_register_model extends MY_Model
     }
 
     public function get_by_id_with_select($id){
-        $this->db->select('*');
+        $address = ($this->session->userdata('langAbbreviation') == 'en') ? 'address_en' : 'address';
+        $profile = ($this->session->userdata('langAbbreviation') == 'en') ? 'profile_en' : 'profile';
+        $product = ($this->session->userdata('langAbbreviation') == 'en') ? 'product_en' : 'product';
+        $market = ($this->session->userdata('langAbbreviation') == 'en') ? 'market_en' : 'market';
+
+        $this->db->select("*, $address AS address, $profile AS profile, $product AS product, $market AS market");
         $this->db->from('temp_register');
         $this->db->where('id', $id);
         return $this->db->get()->row_array();

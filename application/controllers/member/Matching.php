@@ -99,7 +99,7 @@ class Matching extends Member_Controller {
         }
         $this->data['event_id'] = $event_id = $params['event_id'];
 
-        if($this->input->get() && $this->input->get('submit') === 'Tìm kiếm'){
+        if($this->input->get() && $this->input->get('submit')){
             $get = $this->input->get();
             if(!isset($get['category_id'])){
                 redirect('member/matching/find?event_id=' . $event_id, 'refresh');
@@ -113,7 +113,7 @@ class Matching extends Member_Controller {
             }
             $this->data['matched_setting'] = $match_categories;
         }
-        $this->data['page_title'] = 'Tìm kiếm đối tác';
+        $this->data['page_title'] = $this->lang->line('Find partner');
         $category_root = $this->category_model->fetch_all_root_by_event($event_id);
         $events = array();
         if ($category_root) {
@@ -140,6 +140,7 @@ class Matching extends Member_Controller {
     }
 
     public function create(){
+        $this->data['page_title'] = $this->lang->line('Matching page');
         /**
          * int $target (id of table temp_register)
          * int $event (id of table event)

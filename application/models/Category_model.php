@@ -7,7 +7,8 @@ class Category_model extends CI_Model {
     }
 
     public function fetch_all_root_by_event($event_id) {
-        $query = $this->db->select('*')
+        $getByLang = ($this->session->userdata('langAbbreviation') == 'vi') ? 'name' : 'name_en';
+        $query = $this->db->select("*, $getByLang AS name")
             ->from('category')
             ->where('is_deleted', 0)
             ->where('event_id', $event_id)
@@ -19,7 +20,8 @@ class Category_model extends CI_Model {
     }
 
     public function fetch_all_sub_by_event_and_parent($event_id, $parent) {
-        $query = $this->db->select('*')
+        $getByLang = ($this->session->userdata('langAbbreviation') == 'vi') ? 'name' : 'name_en';
+        $query = $this->db->select("*, $getByLang AS name")
             ->from('category')
             ->where('is_deleted', 0)
             ->where('event_id', $event_id)
