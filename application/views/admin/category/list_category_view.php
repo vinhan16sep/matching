@@ -17,6 +17,7 @@
                         <tr>
                             <th style="width: 5%">STT</th>
                             <th style="text-align: center">Tên danh mục</th>
+                            <th style="text-align: center">Tên danh mục tiếng Anh</th>
                             <th style="text-align: center">Thao tác</th>
                         </tr>
                     </thead>
@@ -26,9 +27,10 @@
                                 <tr>
                                     <td style="text-align: center"><?php echo $key + 1; ?></td>
                                     <td><?php echo $item['name']; ?></td>
+                                    <td><?php echo $item['name_en']; ?></td>
                                     <td style="text-align: center">
                                         <?php if($item['level'] == 0){ ?>
-                                            <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $item['id']; ?>" data-name="<?php echo $item['name']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
+                                            <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $item['id']; ?>" data-name="<?php echo $item['name']; ?>" data-name_en="<?php echo $item['name_en']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             </a>
                                             &nbsp;
@@ -44,8 +46,9 @@
                                     <tr class="sub-item">
                                         <td>&#8627; <?php echo $keySub + 1; ?></td>
                                         <td><?php echo $itemSub['name']; ?></td>
+                                        <td><?php echo $itemSub['name_en']; ?></td>
                                         <td style="text-align: center">
-                                            <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $itemSub['id']; ?>" data-name="<?php echo $itemSub['name']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
+                                            <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $itemSub['id']; ?>" data-name="<?php echo $itemSub['name']; ?>" data-name_en="<?php echo $itemSub['name_en']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             </a>
                                             &nbsp;
@@ -60,8 +63,9 @@
                                         <tr class="child-item" style="background: #ffffff; color: #66667a">
                                             <td>&#8627; <?php echo $k + 1; ?></td>
                                             <td><?php echo $child['name']; ?></td>
+                                            <td><?php echo $child['name_en']; ?></td>
                                             <td style="text-align: center">
-                                                <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $child['id']; ?>" data-name="<?php echo $child['name']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
+                                                <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $child['id']; ?>" data-name="<?php echo $child['name']; ?>" data-name_en="<?php echo $child['name_en']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
                                                     <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #66667a !important"></i>
                                                 </a>
                                                 &nbsp;
@@ -96,6 +100,7 @@
                 <input type="hidden" name="level" id="rootLevel" value="0" />
                 <input type="hidden" name="event_id" id="rootEvent" value="<?php echo $event_id; ?>" />
                 Tên danh mục: <input type="text" name="name" id="rootName" class="form-control" />
+                Tên danh mục (tiếng Anh): <input type="text" name="name_en" id="rootNameEn" class="form-control" />
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary create-root-category" data-dismiss="modal">OK</button>
@@ -120,6 +125,7 @@
                 <input type="hidden" name="level" id="subLevel" value="1" />
                 <input type="hidden" name="event_id" id="subEvent" value="<?php echo $event_id; ?>" />
                 Tên danh mục: <input type="text" name="name" id="subName" class="form-control" />
+                Tên danh mục (tiếng Anh): <input type="text" name="name_en" id="subNameEn" class="form-control" />
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary create-sub-category" data-dismiss="modal">OK</button>
@@ -142,6 +148,7 @@
             <div class="modal-body">
                 <input type="hidden" name="idUpdate" id="idUpdate" value="0" />
                 Tên danh mục: <input type="text" name="nameUpdate" id="nameUpdate" class="form-control" />
+                Tên danh mục (tiếng Anh): <input type="text" name="nameUpdateEn" id="nameUpdateEn" class="form-control" />
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary update-category" data-dismiss="modal">OK</button>
@@ -156,6 +163,7 @@
 <script>
     $('.create-root-category').click(function(){
         var name = $('#rootName').val();
+        var name_en = $('#rootNameEn').val();
         var parent = $('#rootParent').val();
         var level = $('#rootLevel').val();
         var event = $('#rootEvent').val();
@@ -165,6 +173,7 @@
             url: '<?php echo base_url('admin/category/create') ?>',
             data: {
                 name: name,
+                name_en: name_en,
                 parent: parent,
                 level: level,
                 event: event,
@@ -175,7 +184,7 @@
                     alert('OK');
                     window.location.reload();
                 }else{
-                    alert('Không đổi được trạng thái');
+                    alert('Không tạo được danh mục mới');
                     window.location.reload();
                 }
             }
@@ -184,6 +193,7 @@
 
     $('.create-sub-category').click(function(){
         var name = $('#subName').val();
+        var name_en = $('#subNameEn').val();
         var parent = $('#subParent').val();
         var level = $('#subLevel').val();
         var event = $('#subEvent').val();
@@ -193,6 +203,7 @@
            url: '<?php echo base_url('admin/category/create') ?>',
            data: {
                name: name,
+               name_en: name_en,
                parent: parent,
                level: level,
                event: event,
@@ -203,7 +214,7 @@
                    alert('OK');
                    window.location.reload();
                }else{
-                   alert('Không đổi được trạng thái');
+                   alert('Không tạo được danh mục mới');
                    window.location.reload();
                }
            }
@@ -213,6 +224,7 @@
     $('.update-category').click(function(){
         var id = $('#idUpdate').val();
         var name = $('#nameUpdate').val();
+        var name_en = $('#nameUpdateEn').val();
 
         $.ajax({
             method: 'GET',
@@ -220,6 +232,7 @@
             data: {
                 id: id,
                 name: name,
+                name_en: name_en,
             },
             success: function(res){
                 var result = JSON.parse(res);
@@ -227,7 +240,7 @@
                     alert('OK');
                     window.location.reload();
                 }else{
-                    alert('Không đổi được trạng thái');
+                    alert('Không cập nhật được danh mục');
                     window.location.reload();
                 }
             }
@@ -242,8 +255,10 @@
     $('#editCategory').on('shown.bs.modal', function(event) {
         var id = $(event.relatedTarget).data('id');
         var name = $(event.relatedTarget).data('name');
+        var name_en = $(event.relatedTarget).data('name_en');
         $(this).find('input[name="idUpdate"]').val(id);
         $(this).find('input[name="nameUpdate"]').val(name);
+        $(this).find('input[name="nameUpdateEn"]').val(name_en);
     });
 
     $('.btn-delete-category').click(function(){

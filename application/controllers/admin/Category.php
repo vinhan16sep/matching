@@ -43,10 +43,11 @@ class Category extends Admin_Controller
 
     public function create(){
         $params = $this->input->get();
-        $this->data['page_title'] = 'Create event';
+        $this->data['page_title'] = 'Create category';
 
         $data = array(
             'name' => $params['name'],
+            'name_en' => $params['name_en'],
             'parent_id' => $params['parent'],
             'event_id' => $params['event'],
             'level' => $params['level'],
@@ -63,10 +64,11 @@ class Category extends Admin_Controller
 
     public function edit($id = NULL){
         $params = $this->input->get();
-        $this->data['page_title'] = 'Update event';
+        $this->data['page_title'] = 'Update category';
 
         $data = array(
             'name' => $params['name'],
+            'name_en' => $params['name_en'],
         );
 
         $result = $this->category_model->update($params['id'], $data);
