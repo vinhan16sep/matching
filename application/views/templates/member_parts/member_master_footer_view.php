@@ -5,7 +5,11 @@
     <footer class="sticky-footer bg-white">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
+                <?php if($this->session->userdata('langAbbreviation') == 'vi'){ ?>
                 <span>Bản quyền thuộc về &copy; <a href="http://www.vinasa.org.vn/" target="_blank">Vinasa</a> <?php echo date('Y') ?></span>
+                <?php }else{ ?>
+                    <span>&copy; <?php echo date('Y') ?> Copyright <a href="http://www.vinasa.org.vn/" target="_blank">Vinasa</a></span>
+                <?php } ?>
             </div>
         </div>
     </footer>

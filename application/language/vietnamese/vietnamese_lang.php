@@ -44,11 +44,11 @@ $lang['Unregistered Events'] = 'Sự kiện chưa đăng ký';
 $lang['Update Company | Organization Information'] = 'Cập nhật thông tin Doanh nghiệp / tổ chức';
 $lang['Company name'] = 'Tên Doanh nghiệp';
 $lang['Is your company/ organization providing or applying IT?'] = 'Cơ quan/ tổ chức/ doanh nghiệp ứng dụng CNTT?';
-$lang['Product/Solution (Vietnamese name)'] = 'Sản Phẩm/Giải Pháp (Tiếng Việt)';
-$lang['Product/Solution (English name)'] = 'Sản Phẩm/Giải Pháp (Tiếng Anh)';
-$lang['Field of operation'] = 'Lĩnh Vực/Dịch Vụ Hoạt Động';
-$lang['Field of operation (Vietnamese)'] = 'Lĩnh Vực/Dịch Vụ Hoạt Động (tiếng Việt)';
-$lang['Field of operation (English)'] = 'Lĩnh Vực/Dịch Vụ Hoạt Động (tiếng Anh)';
+$lang['Product/Solution (Vietnamese name)'] = 'Sản Phẩm / Giải Pháp (Tiếng Việt)';
+$lang['Product/Solution (English name)'] = 'Sản Phẩm / Giải Pháp (Tiếng Anh)';
+$lang['Field of operation'] = 'Lĩnh Vực / Dịch Vụ Hoạt Động';
+$lang['Field of operation (Vietnamese)'] = 'Lĩnh Vực / Dịch Vụ Hoạt Động (tiếng Việt)';
+$lang['Field of operation (English)'] = 'Lĩnh Vực / Dịch Vụ Hoạt Động (tiếng Anh)';
 
 $lang['Targeted markets'] = 'Thị trường chính hiện nay';
 $lang['Targeted markets (Vietnamese)'] = 'Thị trường chính hiện nay (tiếng Việt)';
@@ -61,7 +61,7 @@ $lang['Mobile'] = 'Điện Thoại';
 $lang['Event list'] = 'Danh sách sự kiện';
 
 
-$lang['Guidlines'] = 'Hướng dẫn hệ thống';
+$lang['Guideline'] = 'Hướng dẫn hệ thống';
 $lang['Fill in Company/ Organization information'] = 'Điền thông tin Doanh nghiệp / tổ chức';
 $lang['Register and fill in core competencies for potential partners to easily find and book a meeting'] = 'Đăng ký tham gia sự kiện và điền thông tin năng lực (để đối tác có thể tìm kiếm và đặt lịch hẹn với mình) ';
 $lang['Find partners (go to Matching)'] = 'Tìm đối tác (vào mục Matching)';
@@ -161,4 +161,25 @@ $lang['Partner rejected'] = 'Đối tác từ chối';
 $lang['Cancel because other event(s) take this time'] = 'Hủy do trùng giờ cuộc hẹn khác';
 $lang['Accepted'] = 'Đã đồng ý';
 $lang['Rejected'] = 'Đã từ chối';
+
+$lang['Accept'] = 'Đồng ý';
+$lang['Reject'] = 'Từ chối';
+
+$lang['Cancel'] = 'Huỷ bỏ';
+
+$lang['Choose criteria'] = 'Chọn  chí';
+$lang['Competencies'] = 'Năng lực';
+$lang['List'] = 'Danh sách';
+$lang['Search'] = 'Tìm kiếm';
+$lang['Action'] = 'Thao tác';
+
+$lang['Matching page'] = 'Trang Matching';
+$lang['Address'] = 'Địa chỉ';
+$lang['Meeting Request'] = 'Yêu cầu gặp';
+$lang['Send'] = 'Gửi';
+$lang['Product/Solution'] = 'Sản Phẩm / Giải Pháp';
+
+$lang['Close'] = 'Đóng';
+$lang['Send Request'] = 'Gửi yêu cầu';
+$lang['Download file PDF of company/organization'] = 'Tải profile DN / tổ chức';
 

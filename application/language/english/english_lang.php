@@ -44,13 +44,13 @@ $lang['Unregistered Events'] = 'Unregistered Events';
 $lang['Update Company | Organization Information'] = 'Update Company | Organization Information';
 $lang['Company name'] = 'Company name';
 $lang['Is your company/ organization providing or applying IT?'] = 'Is your company/ organization providing or applying IT?';
-$lang['Product/Solution (Vietnamese name)'] = 'Product/Solution (Vietnamese name)';
-$lang['Product/Solution (English name)'] = 'Product/Solution (English name)';
+$lang['Product/Solution (Vietnamese name)'] = 'Product / Solution (Vietnamese name)';
+$lang['Product/Solution (English name)'] = 'Product / Solution (English name)';
 $lang['Field of operation'] = 'Field of operation';
 $lang['Field of operation (Vietnamese)'] = 'Field of operation (Vietnamese)';
 $lang['Field of operation (English)'] = 'Field of operation (English)';
 
-$lang['Targeted markets'] = 'Field of operation';
+$lang['Targeted markets'] = 'Targeted markets';
 $lang['Targeted markets (Vietnamese)'] = 'Field of operation (Vietnamese)';
 $lang['Targeted markets (English)'] = 'Field of operation (English)';
 
@@ -62,7 +62,7 @@ $lang['Event list'] = 'Event list';
 
 
 
-$lang['Guidlines'] = 'Guidlines';
+$lang['Guideline'] = 'Guideline';
 $lang['Fill in Company/ Organization information'] = 'Fill in Company/ Organization information';
 $lang['Register and fill in core competencies for potential partners to easily find and book a meeting'] = 'Register and fill in core competencies for potential partners to easily find and book a meeting';
 $lang['Find partners (go to Matching)'] = 'Find partners (go to Matching)';
@@ -75,7 +75,7 @@ $lang['Register more events'] = 'Register more events';
 $lang['Event name'] = 'Event name';
 $lang['Time'] = 'Time';
 $lang['Status'] = 'Status';
-$lang['Active the event'] = 'Active the even';
+$lang['Active the event'] = 'Active the event';
 $lang['You have not active the finding mode for this event. Please send a request to Vinasa to active'] = 'You have not active the finding mode for this event. Please send a request to Vinasa to active';
 $lang['Competencies'] = 'Competencies';
 $lang['Competencies of Company/ Organization'] = 'Competencies of Company/ Organization';
@@ -147,3 +147,24 @@ $lang['Partner rejected'] = 'Partner rejected';
 $lang['Cancel because other event(s) take this time'] = 'Cancel because other event(s) take this time';
 $lang['Accepted'] = 'Accepted';
 $lang['Rejected'] = 'Rejected';
+
+$lang['Accept'] = 'Accept';
+$lang['Reject'] = 'Reject';
+
+$lang['Cancel'] = 'Cancel';
+
+$lang['Choose criteria'] = 'Choose criteria';
+$lang['Competencies'] = 'Competencies';
+$lang['List'] = 'List';
+$lang['Search'] = 'Search';
+$lang['Action'] = 'Action';
+
+$lang['Matching page'] = 'Matching page';
+$lang['Address'] = 'Address';
+$lang['Meeting Request'] = 'Meeting Request';
+$lang['Send'] = 'Send';
+$lang['Product/Solution'] = 'Product / Solution';
+
+$lang['Close'] = 'Close';
+$lang['Send Request'] = 'Send Request';
+$lang['Download file PDF of company/organization'] = 'Download file PDF of company/organization';

@@ -11,7 +11,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Chọn tiêu chí</h6>
+                    <h6 class="m-0 font-weight-bold text-primary"><?= $this->lang->line('Choose criteria') ?></h6>
                     <div class="dropdown no-arrow">
                     </div>
                 </div>
@@ -32,7 +32,7 @@
 
                             <div class="form-group col-lg-12">
                                 <?php
-                                echo form_label('Năng lực', 'category_id');
+                                echo form_label($this->lang->line('Competencies'), 'category_id');
                                 echo form_error('category_id[]');
                                 ?>
                                 <br>
@@ -141,7 +141,7 @@
                             <div class="col-sm-12 text-right" style="padding-left: 0 !important;">
                                 <div class="pull-right">
                                     <?php
-                                    echo form_submit('submit', 'Tìm kiếm', 'class="btn btn-primary"');
+                                    echo form_submit('submit', $this->lang->line('Search'), 'class="btn btn-primary"');
                                     echo form_close();
                                     ?>
                                 </div>
@@ -158,7 +158,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Danh sách</h6>
+                    <h6 class="m-0 font-weight-bold text-primary"><?= $this->lang->line('List') ?></h6>
                     <div class="dropdown no-arrow">
                         <a title="Xem toàn bộ" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-arrow-alt-circle-right text-primary"></i>
@@ -171,11 +171,11 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th style="text-align: center">STT</th>
-                                <th style="text-align: center">Doanh nghiệp</th>
+                                <th style="text-align: center"><?= $this->lang->line('No.') ?></th>
+                                <th style="text-align: center"><?= $this->lang->line('Company') ?></th>
                                 <th style="text-align: center">Email</th>
                                 <th style="text-align: center"><?= $this->lang->line('Mobile') ?></th>
-                                <th style="text-align: center">Thao tác</th>
+                                <th style="text-align: center"><?= $this->lang->line('Action') ?></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -236,10 +236,10 @@
             <div class="popup-body">
                 <ul class="nav nav-tabs" id="companyInfomation" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="info-tab" data-toggle="tab" href="#infoTab" role="tab" aria-controls="info" aria-selected="true">Thông Tin Doanh Nghiệp</a>
+                        <a class="nav-link active" id="info-tab" data-toggle="tab" href="#infoTab" role="tab" aria-controls="info" aria-selected="true"><?= $this->lang->line('Company | Organization Information') ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="product-tab" data-toggle="tab" href="#productTab" role="tab" aria-controls="product" aria-selected="false">Sản Phẩm/Giải Pháp</a>
+                        <a class="nav-link" id="product-tab" data-toggle="tab" href="#productTab" role="tab" aria-controls="product" aria-selected="false"><?= $this->lang->line('Product/Solution') ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false"><?= $this->lang->line('Field of operation') ?></a>
@@ -253,15 +253,15 @@
                         <div class="row no-gutters">
                             <div class="left col-xs-12 col-lg-4">
                                 <div class="wrapper">
-                                    <label>Công Ty</label>
+                                    <label><?= $this->lang->line('Company') ?></label>
                                     <p id="company">No data</p>
                                 </div>
                                 <div class="wrapper">
-                                    <label>Địa Chỉ</label>
+                                    <label><?= $this->lang->line('Address') ?></label>
                                     <h6 id="address">No data</h6>
                                 </div>
                                 <div class="wrapper">
-                                    <label>Người Đại Diện</label>
+                                    <label><?= $this->lang->line('Legal Representative') ?></label>
                                     <h6 id="connector">No data</h6>
                                 </div>
                             </div>
@@ -304,13 +304,13 @@
                 </div>
             </div>
             <div class="popup-footer">
-                <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải File PDF</a>
+                <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> <?= $this->lang->line('Download file PDF of company/organization') ?></a>
                 <a title="Gửi yêu cầu" class="btn btn-sm btn-success" id="btnMatching"
                    href="#"
                 >
-                    Gửi yêu cầu
+                    <?= $this->lang->line('Send Request') ?>
                 </a>
-                <button type="button" class="btn btn-sm btn-secondary popup-close" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-sm btn-secondary popup-close" data-dismiss="modal"><?= $this->lang->line('Close') ?></button>
             </div>
         </div>
     </div>

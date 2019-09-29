@@ -171,11 +171,11 @@
                         <div class="buttons">
                             <a title="Đồng ý" class="btn btn-primary workflow" href="#" data-status="1">
                                 <i class="fa fa-handshake" aria-hidden="true"></i>
-                                &nbsp;&nbsp;Đồng ý
+                                &nbsp;&nbsp;<?= $this->lang->line('Accept') ?>
                             </a>
                             <a title="Từ chối" class="btn btn-danger" id="cancelMatching" href="#">
                                 <i class="fa fa-ban" aria-hidden="true"></i>
-                                &nbsp;&nbsp;Từ chối
+                                &nbsp;&nbsp;<?= $this->lang->line('Reject') ?>
                             </a>
                         </div>
                     </div>
@@ -208,17 +208,17 @@
                             </div>
                             <div class="form-group another-time" style="display: none;">
                                 <?php
-                                echo form_label('Thời gian', 'date');
+                                echo form_label($this->lang->line('Time'), 'date');
                                 echo form_error('date');
                                 echo form_input('date', set_value('date'), 'class="form-control datepicker" id="datetimepicker" readonly');
                                 ?>
                             </div>
                             <div class="buttons">
                                 <button class="btn btn-primary workflow" id="sendCancelRequest" type="submit" data-status="2" data-node="" disabled>
-                                    Gửi
+                                    <?= $this->lang->line('Send') ?>
                                 </button>
                                 <button class="btn btn-danger" id="cancelCancelRequest" type="button">
-                                    Huỷ bỏ
+                                    <?= $this->lang->line('Cancel') ?>
                                 </button>
                             </div>
                     </div>
@@ -233,7 +233,7 @@
         <div class="popup-content">
             <div class="popup-header">
                 <h6>
-                    Thông Tin Doanh Nghiệp: <strong id="title-info"></strong>
+                    <?= $this->lang->line('Company') ?>: <strong id="title-info"></strong>
                 </h6>
 
                 <button type="button" class="popup-close">
@@ -243,10 +243,10 @@
             <div class="popup-body">
                 <ul class="nav nav-tabs" id="companyInfomation" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="info-tab" data-toggle="tab" href="#infoTab" role="tab" aria-controls="info" aria-selected="true">Thông Tin Doanh Nghiệp</a>
+                        <a class="nav-link active" id="info-tab" data-toggle="tab" href="#infoTab" role="tab" aria-controls="info" aria-selected="true"><?= $this->lang->line('Company | Organization Information') ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="product-tab" data-toggle="tab" href="#productTab" role="tab" aria-controls="product" aria-selected="false">Sản Phẩm/Giải Pháp</a>
+                        <a class="nav-link" id="product-tab" data-toggle="tab" href="#productTab" role="tab" aria-controls="product" aria-selected="false"><?= $this->lang->line('Product/Solution') ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false"><?= $this->lang->line('Field of operation') ?></a>
@@ -260,15 +260,15 @@
                         <div class="row no-gutters">
                             <div class="left col-xs-12 col-lg-4">
                                 <div class="wrapper">
-                                    <label>Công Ty</label>
+                                    <label><?= $this->lang->line('Company') ?></label>
                                     <p id="company">No data</p>
                                 </div>
                                 <div class="wrapper">
-                                    <label>Địa Chỉ</label>
+                                    <label><?= $this->lang->line('Address') ?></label>
                                     <h6 id="address">No data</h6>
                                 </div>
                                 <div class="wrapper">
-                                    <label>Người Đại Diện</label>
+                                    <label><?= $this->lang->line('Legal Representative') ?></label>
                                     <h6 id="connector">No data</h6>
                                 </div>
                             </div>
@@ -311,8 +311,8 @@
                 </div>
             </div>
             <div class="popup-footer">
-                <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> Tải profile DN / tổ chức</a>
-                <button type="button" class="btn btn-sm btn-secondary popup-close" data-dismiss="modal">Đóng</button>
+                <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> <?= $this->lang->line('Download file PDF of company/organization') ?></a>
+                <button type="button" class="btn btn-sm btn-secondary popup-close" data-dismiss="modal"><?= $this->lang->line('Close') ?></button>
             </div>
         </div>
     </div>

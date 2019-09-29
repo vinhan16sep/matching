@@ -58,7 +58,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
         	<div class="row">
-        		<h4>Hướng Dẫn</h4>
+        		<h4><?= $this->lang->line('Guideline'); ?></h4>
                 <?php
                 if($this->session->userdata('langAbbreviation') == 'vi') {
                 ?>
