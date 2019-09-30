@@ -165,7 +165,7 @@
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <div id="waitingApprove">
-                        <p>Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối.</p>
+                        <p><?= $this->lang->line('Please be sure with your choice. If you agree, any requirements at the same time as this requirement will be turned to DENY status') ?></p>
                         <input type="hidden" id="hiddenId" name="hiddenId">
 
                         <div class="buttons">
@@ -181,29 +181,29 @@
                     </div>
 
                     <div id="cancelReason">
-                            <p>Xin vui lòng cho chúng tôi biết lý do mà bạn cảm thấy doanh nghiệp không phù hợp?</p>
+                            <p><?= $this->lang->line('Please give us the reason why you find the Enterprise inappropriate?') ?></p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="Lĩnh vực ngành nghề không phù hợp" name="reason">
+                                <input class="form-check-input" type="radio" value="<?= $this->lang->line('Irrelevant field') ?>" name="reason">
                                 <label class="form-check-label" for="defaultCheck1">
-                                    Lĩnh vực ngành nghề không phù hợp
+                                    <?= $this->lang->line('Irrelevant field') ?>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="Chưa sắp xếp được thời gian" name="reason">
+                                <input class="form-check-input" type="radio" value="<?= $this->lang->line('Unagreed time schedule') ?>" name="reason">
                                 <label class="form-check-label" for="defaultCheck1">
-                                    Chưa sắp xếp được thời gian
+                                    <?= $this->lang->line('Unagreed time schedule') ?>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="Chưa có nhu cầu tìm đối tác tương tự" name="reason">
+                                <input class="form-check-input" type="radio" value="<?= $this->lang->line('No demand for finding any similar partners') ?>" name="reason">
                                 <label class="form-check-label" for="defaultCheck1">
-                                    Chưa có nhu cầu tìm đối tác tương tự
+                                    <?= $this->lang->line('No demand for finding any similar partners') ?>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input show-date" type="radio" value="Cần đề xuất thời gian khác" name="reason">
+                                <input class="form-check-input show-date" type="radio" value="<?= $this->lang->line('Offer a different time') ?>" name="reason">
                                 <label class="form-check-label" for="defaultCheck1">
-                                    Cần đề xuất thời gian khác
+                                    <?= $this->lang->line('Offer a different time') ?>
                                 </label>
                             </div>
                             <div class="form-group another-time" style="display: none;">
@@ -357,13 +357,13 @@
            beforeSend: function() {
                $('.workflow').hide();
                $('#cancelCancelRequest').hide();
-               $('.modal-body .buttons').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> Đang xử lý ...</button>');
+               $('.modal-body .buttons').append('<button class="btn btn-secondary"><i class="fas fa-spinner fa-spin"></i> <?= $this->lang->line('Processing') ?> ...</button>');
                $('.modal-body').find('button.close').hide(); //Hide button close Modal when sending data
            },
            success: function(res){
                var result = JSON.parse(res);
                if(result.message == 1){
-                   alert('Đã hoàn thành');
+                   alert("<?= $this->lang->line('Complete') ?>");
                    window.location.reload();
                }else{
                    alert('Không đổi được trạng thái');

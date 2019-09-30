@@ -4,6 +4,7 @@ include "class.smtp.php";
 
 
 function send_mail($email, $data, $layout = 'user') {
+    $CI =& get_instance();
     $mail = new PHPMailer();
     $mail->IsSMTP(); // set mailer to use SMTP
     $mail->Host = "smtp.gmail.com"; // specify main and backup server
@@ -21,8 +22,7 @@ function send_mail($email, $data, $layout = 'user') {
     $mail->CharSet = 'UTF-8';
     $mail->WordWrap = 50; // set word wrap
     $mail->IsHTML(true); // send as HTML
-    $mail->Subject = "Mail từ Matching Platform";
-    $CI =& get_instance();
+    $mail->Subject = $CI->lang->line('Mail from Matching Platform');
     if ($layout == 'user_temp_register') {
         $data_send_mail['message'] = $data;
         $mail->Body = $CI->load->view('auth/email_member/matching/email_template.tpl.php',$data_send_mail,true);
@@ -79,6 +79,7 @@ function email_template_account_free($data){
 }
 
 function send_mail_matching($email, $data, $matching = 'create', $role = 'admin'){
+    $CI =& get_instance();
     $mail = new PHPMailer();
     $mail->IsSMTP(); // set mailer to use SMTP
     $mail->Host = "smtp.gmail.com"; // specify main and backup server
@@ -96,7 +97,7 @@ function send_mail_matching($email, $data, $matching = 'create', $role = 'admin'
     $mail->CharSet = 'UTF-8';
     $mail->WordWrap = 50; // set word wrap
     $mail->IsHTML(true); // send as HTML
-    $mail->Subject = "Mail từ Matching Platform";
+    $mail->Subject = $CI->lang->line('Mail from Matching Platform');
 
     if ($matching == 'create') {
         if ($role == 'admin') {
@@ -129,7 +130,7 @@ function email_template_matching_create($data){
     $CI =& get_instance();
     $data_send_mail['message'] = $data;
 
-    if($this->session->userdata('langAbbreviation') == 'vi'){
+    if($CI->session->userdata('langAbbreviation') == 'vi'){
         return $CI->load->view('auth/email_member/matching/appointment_template.tpl.php',$data_send_mail,true);
     }else{
         return $CI->load->view('auth/email_member/matching/appointment_template_en.tpl.php',$data_send_mail,true);
@@ -146,7 +147,7 @@ function email_template_matching_approve($data){
     $CI =& get_instance();
     $data_send_mail['message'] = $data;
 
-    if($this->session->userdata('langAbbreviation') == 'vi'){
+    if($CI->session->userdata('langAbbreviation') == 'vi'){
         return $CI->load->view('auth/email_member/matching/approve_template.tpl.php',$data_send_mail,true);
     }else{
         return $CI->load->view('auth/email_member/matching/approve_template_en.tpl.php',$data_send_mail,true);
@@ -163,7 +164,7 @@ function email_template_matching_reject($data){
     $CI =& get_instance();
     $data_send_mail['message'] = $data;
 
-    if($this->session->userdata('langAbbreviation') == 'vi'){
+    if($CI->session->userdata('langAbbreviation') == 'vi'){
         return $CI->load->view('auth/email_member/matching/reject_template.tpl.php',$data_send_mail,true);
     }else{
         return $CI->load->view('auth/email_member/matching/reject_template_en.tpl.php',$data_send_mail,true);

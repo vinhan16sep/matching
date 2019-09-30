@@ -168,3 +168,19 @@ $lang['Product/Solution'] = 'Product / Solution';
 $lang['Close'] = 'Close';
 $lang['Send Request'] = 'Send Request';
 $lang['Download file PDF of company/organization'] = 'Download file PDF of company/organization';
+
+$lang['Please be sure with your choice. If you agree, any requirements at the same time as this requirement will be turned to DENY status'] = 'Please be sure with your choice. If you agree, any requirements at the same time as this requirement will be turned to DENY status';
+$lang['Please give us the reason why you find the Enterprise inappropriate?'] = 'Please give us the reason why you find the Enterprise inappropriate?';
+$lang['Irrelevant field'] = 'Irrelevant field';
+$lang['Unagreed time schedule'] = 'Unagreed time schedule';
+$lang['No demand for finding any similar partners'] = 'No demand for finding any similar partners';
+$lang['Offer a different time'] = 'Offer a different time';
+
+$lang['notice'] = 'Notice: ';
+$lang['matching_notice'] = 'If you appoint more than one meeting at a time and one meeting is approved, other ones will be turned to DENY status.';
+$lang['matching_notice2'] = 'Any appointments at that time will also be turned to DENY status.';
+
+$lang['Processing'] = 'Processing';
+$lang['Complete'] = 'Complete';
+
+$lang['Mail from Matching Platform'] = 'Mail from Matching Platform';
