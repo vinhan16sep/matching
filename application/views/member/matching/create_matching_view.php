@@ -39,9 +39,8 @@
                     <h6 class="m-0 font-weight-bold text-primary"><?= $this->lang->line('Meeting Request') ?></h6>
                 </div>
                 <div class="card-body">
-                    <p><span style="color: red">Chú ý: </span>nếu bạn đặt nhiều hơn một cuộc hẹn với cùng một khung giờ,
-                        và một cuộc hẹn được đối tác chấp nhận, các cuộc hẹn cùng giờ khác của bạn sẽ được chuyển về trạng thái Từ chối. </p>
-                    <p>Các đơn mời hẹn bạn nhận được từ đối tác khác, khi trùng khung giờ này cũng sẽ được chuyển sang trạng thái Từ chối.</p>
+                    <p><span style="color: red"><?= $this->lang->line('notice') ?></span><?= $this->lang->line('matching_notice') ?></p>
+                    <p><?= $this->lang->line('matching_notice2') ?></p>
                     <hr>
                     <div class="row">
                         <div class='col-sm-12'>
@@ -90,6 +89,10 @@
     $date = json_encode($time_range);
 ?>
 <script type="text/javascript">
+    $('form').submit(function(){
+        $('#btnSend').prop('disabled', true);
+    });
+
     $('#btnSend').click(function(){
         if($('#datetimepicker').val() == '' || $('#note').val() == ''){
             return false;
@@ -101,7 +104,6 @@
     var eventDateFormat = '<?php echo $event_date_reformat; ?>';
     var time = <?php echo json_encode($time_range); ?>;
 
-    console.log(time);
     $(function () {
         $('#datetimepicker').datetimepicker({
             format: 'd-m-Y H:i',

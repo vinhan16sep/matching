@@ -185,3 +185,18 @@ $lang['Close'] = 'Đóng';
 $lang['Send Request'] = 'Gửi yêu cầu';
 $lang['Download file PDF of company/organization'] = 'Tải profile DN / tổ chức';
 
+$lang['Please be sure with your choice. If you agree, any requirements at the same time as this requirement will be turned to DENY status'] = 'Bạn hãy chắc chắn, nếu bạn đồng ý, tất cả những yêu cầu khác trùng lịch với yêu cầu này sẽ chuyển về trạng thái Từ chối';
+$lang['Please give us the reason why you find the Enterprise inappropriate?'] = 'Xin vui lòng cho chúng tôi biết lý do mà bạn cảm thấy doanh nghiệp không phù hợp?';
+$lang['Irrelevant field'] = 'Lĩnh vực ngành nghề không phù hợp';
+$lang['Unagreed time schedule'] = 'Chưa sắp xếp được thời gian';
+$lang['No demand for finding any similar partners'] = 'Chưa có nhu cầu tìm đối tác tương tự';
+$lang['Offer a different time'] = 'Cần đề xuất thời gian khác';
+
+$lang['notice'] = 'Chú ý: ';
+$lang['matching_notice'] = 'Nếu bạn đặt nhiều hơn một cuộc hẹn với cùng một khung giờ, và một cuộc hẹn được đối tác chấp nhận, các cuộc hẹn cùng giờ khác của bạn sẽ được chuyển về trạng thái Từ chối.';
+$lang['matching_notice2'] = 'Các đơn mời hẹn bạn nhận được từ đối tác khác, khi trùng khung giờ này cũng sẽ được chuyển sang trạng thái Từ chối.';
+
+$lang['Processing'] = 'Đang xử lý';
+$lang['Complete'] = 'Đã hoàn thành';
+
+$lang['Mail from Matching Platform'] = 'Mail từ Matching Platform';
