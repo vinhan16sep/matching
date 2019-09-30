@@ -57,6 +57,7 @@ $lang['Targeted markets (English)'] = 'Field of operation (English)';
 $lang['Legal Representative'] = 'Legal Representative';
 
 $lang['Mobile'] = 'Mobile';
+$lang['Username'] = 'Username';
 
 $lang['Event list'] = 'Event list';
 
@@ -109,6 +110,7 @@ $lang['dangdienra'] = 'In running';
 $lang['hetsukien'] = 'Finished';
 $lang['nangluc'] = 'Ability';
 $lang['matkhaucu'] = 'Old Password';
+$lang['password'] = 'Password';
 $lang['matkhaumoi'] = 'New Password (at least 8 characters)';
 $lang['xacnhanmatkhau'] = 'Confirm Password';
 $lang['huongdan'] = 'Guide';
