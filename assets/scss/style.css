@@ -944,3 +944,9 @@ a:hover {
   color:#3495c4!important;
 }
 /*# sourceMappingURL=style.css.map */
+.nav-item.dropdown.no-arrow.li-lang a{
+  color: #5a5c69!important;
+}
+.nav-item.dropdown.no-arrow.li-lang.active a{
+  color:#3495c4!important;
+}

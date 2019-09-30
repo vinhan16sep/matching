@@ -27,17 +27,19 @@
             </a>
         </div>
         <div class="nav-main">
-            <ul>
-<!--                <li style="background-color: white;" class="nav-item dropdown no-arrow li-lang --><?php //echo ($this->session->userdata('langAbbreviation') == 'vi') ? 'active' : '' ?><!--">-->
-<!--                    <a class="nav-link change-language" data-language="vi" href="javascript:void(0)" href="--><?php //echo base_url('member/user/login') ?><!--">-->
-<!--                        Vi-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li style="background-color: white;" class="nav-item dropdown no-arrow li-lang --><?php //echo ($this->session->userdata('langAbbreviation') == 'en') ? 'active' : '' ?><!--">-->
-<!--                    <a class="nav-link change-language" data-language="en" href="javascript:void(0)" href="--><?php //echo base_url('member/user/login') ?><!--">-->
-<!--                        En-->
-<!--                    </a>-->
-<!--                </li>-->
+            <ul style="float: left;background-color: white;">
+                <li style="background-color: white;" class="nav-item dropdown no-arrow li-lang <?php echo ($this->session->userdata('langAbbreviation') == 'vi') ? 'active' : '' ?>">
+                    <a style="padding:8px 8px;font-weight: bold;padding-left: 10px;" class="nav-link change-language" data-language="vi" href="javascript:void(0)" href="<?php echo base_url('member/user/login') ?>">
+                        Vi
+                    </a>
+                </li>
+                <li style="background-color: white;" class="nav-item dropdown no-arrow li-lang <?php echo ($this->session->userdata('langAbbreviation') == 'en') ? 'active' : '' ?>">
+                    <a style="padding:8px 8px;font-weight: bold;padding-right: 10px;" class="nav-link change-language" data-language="en" href="javascript:void(0)" href="<?php echo base_url('member/user/login') ?>">
+                        En
+                    </a>
+                </li>
+            </ul>
+            <ul style="float: left;">
                 <li>
                     <a href="<?php echo base_url('member/user/login/') ?>" class="btn btn-default" role="button">
                         <?= $this->lang->line('Login') ?>
@@ -45,7 +47,7 @@
                 </li>
                 <li>
                     <a href="<?php echo base_url('member/user/register/') ?>" class="btn btn-primary" role="button">
-                        Đăng ký
+                        <?= $this->lang->line('Register') ?>
                     </a>
                 </li>
             </ul>
@@ -65,7 +67,7 @@
                     </li>
                     <li>
                         <a href="<?php echo base_url('member/user/register/') ?>" class="btn btn-primary" role="button">
-                            Đăng ký
+                            <?= $this->lang->line('Register') ?>
                         </a>
                     </li>
                 </ul>
@@ -87,7 +89,7 @@
             async:false,
             success: function(res){
                 if(res.message == 'changed'){
-                    // window.location.reload();
+                    window.location.reload();
                 }
             },
             error: function(){

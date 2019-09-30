@@ -23,9 +23,8 @@ class MY_Controller extends CI_Controller {
         $this->data['icon_active'] = $this->uri->segment(4);
 
         $this->load->library('session');
-
-        $this->langAbbreviation = $this->uri->segment(1) ? $this->uri->segment(1) : 'vi';
-        if($this->langAbbreviation == 'en' || $this->langAbbreviation == 'vi' || $this->langAbbreviation == ''){
+        // $this->langAbbreviation == 'en' || $this->langAbbreviation == 'vi' || 
+        if($this->langAbbreviation == ''){
             $this->session->set_userdata('langAbbreviation', $this->langAbbreviation);
         }
 
@@ -354,7 +353,7 @@ class Member_Controller extends MY_Controller {
         $this->load->library('session');
 
         $this->langAbbreviation = $this->uri->segment(1) ? $this->uri->segment(1) : 'vi';
-        if($this->langAbbreviation == 'en' || $this->langAbbreviation == 'vi' || $this->langAbbreviation == ''){
+        if($this->langAbbreviation == ''){
             $this->session->set_userdata('langAbbreviation', $this->langAbbreviation);
         }
 
@@ -488,12 +487,14 @@ class Public_Controller extends MY_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('session');
-
-        $this->langAbbreviation = $this->uri->segment(1) ? $this->uri->segment(1) : 'vi';
-        if($this->langAbbreviation == 'en' || $this->langAbbreviation == 'vi' || $this->langAbbreviation == ''){
+        
+        if (empty($this->session->userdata('langAbbreviation'))) {
+            $this->langAbbreviation = $this->uri->segment(1) ? $this->uri->segment(1) : 'vi';
+        }
+        if($this->langAbbreviation == ''){
             $this->session->set_userdata('langAbbreviation', $this->langAbbreviation);
         }
-
+        
         if($this->session->userdata('langAbbreviation') == 'en'){
             $langName = 'english';
             $this->config->set_item('language', $langName);

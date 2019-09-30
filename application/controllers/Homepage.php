@@ -12,9 +12,6 @@ class Homepage extends Public_Controller {
     }
 
     public function index(){
-//        echo '<pre>';
-//        print_r($this->session->userdata('langAbbreviation'));
-//        echo '</pre>';
         $this->load->view('homepage_view');
 
         //$this->render('homepage_view');
@@ -24,6 +21,7 @@ class Homepage extends Public_Controller {
         if($this->session->userdata('langAbbreviation') == $this->input->get('lang')){
             return $this->return_api(HTTP_SUCCESS, MESSAGE_CHANGE_LANGUAGE_FAIL, $this->session->userdata('langAbbreviation'), null);
         }else{
+
             $this->session->set_userdata('langAbbreviation', $this->input->get('lang'));
             if($this->session->userdata('langAbbreviation') == $this->input->get('lang')){
                 return $this->return_api(HTTP_SUCCESS, MESSAGE_CHANGE_LANGUAGE_SUCCESS, $this->session->userdata('langAbbreviation'), null);

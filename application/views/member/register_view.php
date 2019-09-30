@@ -16,6 +16,13 @@
     <script src="<?php echo site_url('assets/vendor/jquery/jquery.min.js'); ?>" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="<?php echo site_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"></script>
+    <style>
+        @media (max-height: 750px){
+          #member-register .cover-background, #member-login .cover-background{
+            min-height: 800px;
+          }
+        }
+    </style>
 </head>
 <body>
     <div id="member-register">
@@ -63,13 +70,13 @@
                                 <?php echo form_error('company'); ?>
                                 <?php echo form_input('company', set_value('company'), 'class="form-control"'); ?>
                             </div>
-                            <div class="form-group col-xs-12 col-lg-6">
+                            <div class="form-group col-xs-12 col-lg-12">
                                 <?php echo form_label($this->lang->line('Mobile'), 'phone'); ?>
                                 <?php echo form_error('phone'); ?>
                                 <?php echo form_input('phone', set_value('phone'), 'class="form-control"'); ?>
                             </div>
                             <div class="form-group col-xs-12 col-lg-12">
-                                <?php echo form_label('Username: ', 'username'); ?>
+                                <?php echo form_label($this->lang->line('Username'), 'username'); ?>
                                 <?php echo form_error('username'); ?>
                                 <?php echo form_input('username', set_value('username'), 'class="form-control"'); ?>
                             </div>

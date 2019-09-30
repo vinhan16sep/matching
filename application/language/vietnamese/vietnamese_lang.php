@@ -57,6 +57,7 @@ $lang['Targeted markets (English)'] = 'Thị trường chính hiện nay (tiến
 $lang['Legal Representative'] = 'Tên Người Đại Diện Pháp Luật';
 
 $lang['Mobile'] = 'Điện Thoại';
+$lang['Username'] = 'Tên tài khoản';
 
 $lang['Event list'] = 'Danh sách sự kiện';
 
@@ -123,6 +124,7 @@ $lang['dangdienra'] = 'Đang diễn ra';
 $lang['hetsukien'] = 'Hết sự kiện';
 $lang['nangluc'] = 'Năng lực';
 $lang['matkhaucu'] = 'Mật khẩu cũ';
+$lang['password'] = 'Mật khẩu';
 $lang['matkhaumoi'] = 'Mật khẩu mới (ít nhất 8 ký tự)';
 $lang['xacnhanmatkhau'] = 'Xác nhận mật khẩu mới';
 $lang['huongdan'] = 'Hướng Dẫn';
