@@ -186,3 +186,9 @@ $lang['Processing'] = 'Processing';
 $lang['Complete'] = 'Complete';
 
 $lang['Mail from Matching Platform'] = 'Mail from Matching Platform';
+
+$lang['Show selected criteria'] = 'Show selected criteria';
+$lang['Add new / update criteria'] = 'Add new / update criteria';
+
+$lang['Show information'] = 'Show information';
+$lang['Wait for response'] = 'Wait for response';

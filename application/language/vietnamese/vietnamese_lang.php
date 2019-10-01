@@ -200,3 +200,9 @@ $lang['Processing'] = 'Đang xử lý';
 $lang['Complete'] = 'Đã hoàn thành';
 
 $lang['Mail from Matching Platform'] = 'Mail từ Matching Platform';
+
+$lang['Show selected criteria'] = 'Xem các tiêu chí đã chọn';
+$lang['Add new / update criteria'] = 'Thêm mới / chỉnh sửa tiêu chí';
+
+$lang['Show information'] = 'Xem thông tin';
+$lang['Wait for response'] = 'Đang chờ được xử lý';

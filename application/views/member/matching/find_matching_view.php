@@ -189,7 +189,7 @@
                                     <td><?php echo $item['register_info']['email']; ?></td>
                                     <td><?php echo $item['register_info']['phone']; ?></td>
                                     <td style="text-align: center">
-                                        <a title="Gửi yêu cầu" class="btn-reg-client"
+                                        <a title="<?= $this->lang->line('Send Request') ?>" class="btn-reg-client"
                                            href="<?php echo base_url('member/matching/create?target=' . $item['register_info']['id'] . '&event=' . $event_id) ?>"
                                         >
                                             <i class="fa fa-calendar-check" aria-hidden="true"></i>
@@ -199,7 +199,7 @@
                                             class="btn-reg-info" 
                                             data-id="<?php echo $item['register_info']['id'] ?>" 
                                             data-event="<?php echo $event_id ?>"
-                                            title="Xem thông tin"
+                                            title="<?= $this->lang->line('Show information') ?>"
                                         >
                                             <i class="fas fa-info-circle"></i>
                                         </a>
@@ -226,7 +226,7 @@
         <div class="popup-content">
             <div class="popup-header">
                 <h6>
-                    Thông Tin Doanh Nghiệp: <strong id="title-info"></strong>
+                    <?= $this->lang->line('Company | Organization Information') ?>: <strong id="title-info"></strong>
                 </h6>
 
                 <button type="button" class="popup-close">
@@ -305,7 +305,7 @@
             </div>
             <div class="popup-footer">
                 <a type="" class="btn btn-sm btn-primary" id="file-pdf" download><i class="fas fa-file-download"></i> <?= $this->lang->line('Download file PDF of company/organization') ?></a>
-                <a title="Gửi yêu cầu" class="btn btn-sm btn-success" id="btnMatching"
+                <a title="<?= $this->lang->line('Send Request') ?>" class="btn btn-sm btn-success" id="btnMatching"
                    href="#"
                 >
                     <?= $this->lang->line('Send Request') ?>

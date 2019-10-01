@@ -29,7 +29,7 @@
                                             <?php  if(!empty($temp_register['logo'])){ ?>
                                                 <img src="<?php echo base_url('assets/upload/profile/' . $temp_register['logo']);  ?>" width="100%">
                                             <?php } else { ?>
-                                                <img src="<?php echo base_url('assets/img/logo.png');  ?>" width="100%">
+                                                <img src="<?php echo base_url('assets/img/no-image.jpg');  ?>" width="100%">
                                             <?php } ?>
                                         </div>
                                         <div class="col-lg-8">

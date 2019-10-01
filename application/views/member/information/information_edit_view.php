@@ -158,11 +158,11 @@
 </div>
 <script>
     switch(window.location.origin){
-        case 'http://bmo.vinasa.org.vn/':
-            var HOSTNAME = 'http://bmo.vinasa.org.vn/';
+        case 'http://localhost':
+            var HOSTNAME = 'http://localhost/matching/';
             break;
         default:
-            var HOSTNAME = 'http://localhost/matching/';
+            var HOSTNAME = 'http://bmo.vinasa.org.vn/';
     }
     $(document).ready(function(){
         "use strict";
