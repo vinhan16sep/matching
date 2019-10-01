@@ -62,14 +62,14 @@
                                                 <a href="javascript:;"
                                                    class="btn-reg-info"
                                                    data-id="<?php echo $item['register_info']['id'] ?>"
-                                                   title="Xem thông tin"
+                                                   title="<?= $this->lang->line('Show information') ?>"
                                                 >
                                                     <i class="fas fa-info-circle"></i>
                                                 </a>
                                             </td>
                                             <td style="text-align: center">
                                                 <?php if($item['status'] == 0){ ?>
-                                                    <button title="Đang chờ được xử lý" class="btnApprove"
+                                                    <button title="<?= $this->lang->line('Wait for response') ?>" class="btnApprove"
                                                             href="javascript:void(0);" data-toggle="modal" data-target="#workflowModal" data-backdrop="static" data-keyboard="false" data-id="<?php echo $item['id']; ?>"
                                                     >
                                                         <i class="fa fa-clock" aria-hidden="true"></i>
@@ -129,7 +129,7 @@
                                                 <a href="#"
                                                    class="btn-reg-info"
                                                    data-id="<?php echo $item['register_info']['id'] ?>"
-                                                   title="Xem thông tin"
+                                                   title="<?= $this->lang->line('Show information') ?>"
                                                 >
                                                     <i class="fas fa-info-circle"></i>
                                                 </a>

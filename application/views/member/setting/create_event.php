@@ -110,7 +110,7 @@
                                         ?>
                                     </td>
                                     <td style="text-align: center" class="event-column-<?= $value['id'] ?>">
-                                        <a href="javascript:void(0)" class="add-event" title="Thêm mới sự kiện" data-id="<?= $value['id'] ?>" data-name_event="<?= $value['name'] ?>"><i class="fas fa-plus-square" style="color: #5cb85c !important"></i></a>
+                                        <a href="javascript:void(0)" class="add-event" title="<?= $this->lang->line("Active the event") ?>" data-id="<?= $value['id'] ?>" data-name_event="<?= $value['name'] ?>"><i class="fas fa-plus-square" style="color: #5cb85c !important"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach ?>
