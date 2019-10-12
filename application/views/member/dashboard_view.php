@@ -17,6 +17,19 @@
 			                        <i class="far fa-calendar-check fa-2x text-gray-300"></i>
 			                    </div>
 			                </div>
+                            <hr>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <?php
+                                    foreach($list_event_of_current_user as $key => $val){
+                                    ?>
+                                        <a href="<?= base_url('member/matching/index?event_id=' . $val['eventId']) ?>"><div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><?= $val['eventName'] ?></div></a>
+                                    <?php
+                                    }
+                                    ?>
+
+                                </div>
+                            </div>
 			            </div>
 			        </div>
 			    </div>
