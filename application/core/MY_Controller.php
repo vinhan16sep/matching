@@ -381,7 +381,7 @@ class Member_Controller extends MY_Controller {
         }else{
             $this->data['is_temp_register'] = false;
         }
-        $this->data['page_title'] = 'Trang dành cho doanh nghiệp';
+        $this->data['page_title'] = $this->lang->line('Pages for businesses');
 
         // Get current class
         //$class = $this->router->fetch_class();
