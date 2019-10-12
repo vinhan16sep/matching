@@ -196,3 +196,5 @@ $lang['Wait for response'] = 'Wait for response';
 $lang['Information of company is required to show this function'] = 'Information of company is required to register event and start to matching';
 
 $lang['All'] = 'All';
+
+$lang['Pages for businesses'] = 'Pages for businesses';

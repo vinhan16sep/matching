@@ -210,3 +210,6 @@ $lang['Wait for response'] = 'Đang chờ được xử lý';
 $lang['Information of company is required to show this function'] = 'Cần hoàn thành phần thông tin doanh nghiệp để có thể đăng ký sự kiện và tìm đối tác';
 
 $lang['All'] = 'Tất cả';
+
+
+$lang['Pages for businesses'] = 'Trang dành cho doanh nghiệp';

@@ -225,7 +225,7 @@
     <div class="popup" id="companyInfo">
         <div class="popup-content">
             <div class="popup-header">
-                <h6>
+                <h6 style="font-size: 1.1rem;">
                     <?= $this->lang->line('Company | Organization Information') ?>: <strong id="title-info"></strong>
                 </h6>
 
@@ -233,7 +233,7 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="popup-body">
+            <div class="popup-body check-height">
                 <ul class="nav nav-tabs" id="companyInfomation" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="info-tab" data-toggle="tab" href="#infoTab" role="tab" aria-controls="info" aria-selected="true"><?= $this->lang->line('Company | Organization Information') ?></a>
@@ -315,7 +315,8 @@
         </div>
     </div>
 </div>
-
+<script>
+</script>
 <script type="text/javascript">
     $('.btn-event').click(function(){
         key = $(this).data('key');
@@ -406,6 +407,19 @@
                     if(result.info.file === null){
                         $('#file-pdf').hide();
                     }
+
+
+    var popup_content = $('#companyInfo > .popup-content').height();
+    var popup_header = $('#companyInfo .popup-header').height();
+    var popup_body = $('#companyInfo .popup-body').height();
+    var popup_footer = $('#companyInfo .popup-footer').height();
+    console.log(popup_header);
+    console.log(popup_body);
+    console.log(popup_content-(popup_header+popup_footer));
+    $('.popup-body.check-height').height(popup_content-(popup_header+popup_footer+10));
+
+
+
                 }else{
                     alert('Doanh nghiệp không tồn tại hoặc đã hủy tham gia sự kiện');
                 }
