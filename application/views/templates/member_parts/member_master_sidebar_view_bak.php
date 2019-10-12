@@ -35,36 +35,29 @@
                 <span><?= $this->lang->line('Company | Organization Information'); ?></span>
             </a>
         </li>
-
-        <?php if($is_temp_register){ ?>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('member/setting/event') ?>">
-                <i class="fas fa-cog"></i>
-                <span><?= $this->lang->line('Register more events'); ?></span>
-            </a>
-        </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span><?= $this->lang->line('Registered Events'); ?></span>
+                <span><?= $this->lang->line('Event'); ?></span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?php echo base_url('member/setting'); ?>">
-                        <span><?= $this->lang->line('All'); ?></span>
-                    </a>
-                    <?php
-                    foreach($list_event_of_current_user as $key => $val){
-                    ?>
-                        <a class="collapse-item" href="<?php echo base_url('member/setting/update/' . $val['id'] . '?event_id=' . $val['eventId']) ?>">
-                            <span><?= $val['eventName'] ?></span>
+                    <?php if($is_temp_register){ ?>
+                        <a class="collapse-item" href="<?php echo base_url('member/setting/event'); ?>">
+                            <span><?= $this->lang->line('Unregistered'); ?></span>
                         </a>
-                    <?php
-                    }
-                    ?>
+                        <a class="collapse-item" href="<?php echo base_url('member/setting'); ?>">
+                            <span><?= $this->lang->line('Registered'); ?></span>
+                        </a>
+                    <?php }else{ ?>
+                        <a class="collapse-item" href="<?php echo base_url('member/information'); ?>">
+                            <span><?= $this->lang->line('Information of company is required to show this function'); ?></span>
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
         </li>
+
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                 <i class="fas fa-fw fa-cog"></i>
@@ -73,25 +66,31 @@
 
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header"><?= $this->lang->line('Event'); ?></h6>
-                    <?php if($list_event_of_current_user){ ?>
-                        <?php foreach($list_event_of_current_user as $key => $event){ ?>
-                            <a class="collapse-item" href="<?php echo base_url('member/matching/index?event_id=' . $event['eventId']) ?>">
-                                <?php echo $event['eventName']; ?>
-                            </a>
+                    <?php if($is_temp_register){ ?>
+                        <h6 class="collapse-header"><?= $this->lang->line('Event'); ?></h6>
+                        <?php if($list_event_of_current_user){ ?>
+                            <?php foreach($list_event_of_current_user as $key => $event){ ?>
+                                <a class="collapse-item" href="<?php echo base_url('member/matching/index?event_id=' . $event['eventId']) ?>">
+                                    <?php echo $event['eventName']; ?>
+                                </a>
+                            <?php } ?>
                         <?php } ?>
+                    <?php }else{ ?>
+                        <a class="collapse-item" href="<?php echo base_url('member/information'); ?>">
+                            <span><?= $this->lang->line('Information of company is required to show this function'); ?></span>
+                        </a>
                     <?php } ?>
                 </div>
             </div>
+
+
+
+<!--            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">-->
+<!--                <div class="bg-white py-2 collapse-inner rounded">-->
+<!--                    <a class="collapse-item" href="--><?php //echo base_url('member/matching/find') ?><!--">Tìm đối tác</a>-->
+<!--                </div>-->
+<!--            </div>-->
         </li>
-        <?php }else{ ?>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('member/information') ?>">
-                    <i style="color: red;" class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                    <span><?= $this->lang->line('Information of company is required to show this function'); ?></span>
-                </a>
-            </li>
-        <?php } ?>
         <hr>
         <li class="nav-item" style="padding-left: 5px; padding-right: 5px;">
             <a class="btn btn-warning" href="javascript:void(0);" data-toggle="modal" data-target="#workflow-guide">

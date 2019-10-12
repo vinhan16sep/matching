@@ -32,7 +32,7 @@ $lang['General Information'] = 'General Information';
 $lang['Operator'] = 'Operator';
 $lang['Company | Organization Information'] = 'Company | Organization Information';
 $lang['Event'] = 'Event';
-$lang['Unregistered'] = 'Unregistered';
+$lang['Unregistered'] = 'Unregistered Events';
 $lang['Registered'] = 'Registered';
 $lang['System Support'] = 'System Support';
 
@@ -192,3 +192,7 @@ $lang['Add new / update criteria'] = 'Add new / update criteria';
 
 $lang['Show information'] = 'Show information';
 $lang['Wait for response'] = 'Wait for response';
+
+$lang['Information of company is required to show this function'] = 'Information of company is required to register event and start to matching';
+
+$lang['All'] = 'All';

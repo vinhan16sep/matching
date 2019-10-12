@@ -61,47 +61,47 @@
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <tr>
-                                <th style="text-align: center">STT</th>
-                                <th style="text-align: center">Code</th>
-                                <th style="text-align: center">Sự kiện</th>
-                                <th style="text-align: center">Doanh nghiệp</th>
-                                <th style="text-align: center">Người đại diện</th>
-                                <th style="text-align: center">Địa chỉ</th>
-                                <th style="text-align: center">Số điện thoại</th>
-                                <th style="text-align: center">Email</th>
-                                <th style="text-align: center">Cơ quan nhà nước</th>
-                                <th style="text-align: center">Thao tác</th>
-                            </tr>
+                        <tr>
+                            <th style="text-align: center">STT</th>
+                            <th style="text-align: center">Code</th>
+                            <th style="text-align: center">Sự kiện</th>
+                            <th style="text-align: center">Doanh nghiệp</th>
+                            <th style="text-align: center">Người đại diện</th>
+                            <th style="text-align: center">Địa chỉ</th>
+                            <th style="text-align: center">Số điện thoại</th>
+                            <th style="text-align: center">Email</th>
+                            <th style="text-align: center">Cơ quan nhà nước</th>
+                            <th style="text-align: center">Thao tác</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <?php if($result){ ?>
-                                <?php foreach($result as $key => $item){ ?>
-                                    <tr id="<?= $item['settingId'] ?>">
-                                        <td style="text-align: center"><?php echo $key + 1; ?></td>
-                                        <td><?php echo $item['code']; ?></td>
-                                        <td style="display: none;" class="reg-client-event-id"><?php echo $item['event_id']; ?></td>
-                                        <td><?php echo $item['eventName']; ?></td>
-                                        <td class="reg-client-company"><?php echo $item['company']; ?></td>
-                                        <td><?php echo $item['connector']; ?></td>
-                                        <td><?php echo $item['address']; ?></td>
-                                        <td><?php echo $item['phone']; ?></td>
-                                        <td class="reg-client-email"><?php echo $item['email']; ?></td>
-                                        <td style="text-align: center"><?php echo $item['is_state'] == 1 ? '<i class="fa fa-check" aria-hidden="true"  style="color: #28a745!important"></i>' : '<i class="fas fa-times"  style="color: #dc3545!important"></i>'; ?></td>
-                                        <td style="text-align: center">
-                                            <a href="<?= base_url('admin/request/show_company/' . $item['user_id']) ?>" target="_blank" title="Thông tin doanh nghiệp">
-                                                <i class="fas fa-eye"></i>
-                                            </a>
-                                            &nbsp;&nbsp;
-                                            <a onclick="active('<?= $item['settingId'] ?>', '<?= $item['email'] ?>');" title="Kích hoạt sự kiện cho yêu cầu này?" class="btn-reg-client" href="javascript:void(0);">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            <?php }else{ ?>
-                                <div class="post">Chưa có sự kiện!</div>
+                        <?php if($result){ ?>
+                            <?php foreach($result as $key => $item){ ?>
+                                <tr id="<?= $item['settingId'] ?>">
+                                    <td style="text-align: center"><?php echo $key + 1; ?></td>
+                                    <td><?php echo $item['code']; ?></td>
+                                    <td style="display: none;" class="reg-client-event-id"><?php echo $item['event_id']; ?></td>
+                                    <td><?php echo $item['eventName']; ?></td>
+                                    <td class="reg-client-company"><?php echo $item['company']; ?></td>
+                                    <td><?php echo $item['connector']; ?></td>
+                                    <td><?php echo $item['address']; ?></td>
+                                    <td><?php echo $item['phone']; ?></td>
+                                    <td class="reg-client-email"><?php echo $item['userEmail']; ?></td>
+                                    <td style="text-align: center"><?php echo $item['is_state'] == 1 ? '<i class="fa fa-check" aria-hidden="true"  style="color: #28a745!important"></i>' : '<i class="fas fa-times"  style="color: #dc3545!important"></i>'; ?></td>
+                                    <td style="text-align: center">
+                                        <a href="<?= base_url('admin/request/show_company/' . $item['user_id']) ?>" target="_blank" title="Thông tin doanh nghiệp">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        &nbsp;&nbsp;
+                                        <a onclick="active('<?= $item['settingId'] ?>', '<?= $item['email'] ?>');" title="Kích hoạt sự kiện cho yêu cầu này?" class="btn-reg-client" href="javascript:void(0);">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
                             <?php } ?>
+                        <?php }else{ ?>
+                            <div class="post">Chưa có sự kiện!</div>
+                        <?php } ?>
                         </tbody>
                     </table>
                     <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">

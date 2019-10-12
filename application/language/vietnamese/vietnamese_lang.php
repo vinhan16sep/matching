@@ -32,7 +32,7 @@ $lang['General Information'] = 'Thông tin chung';
 $lang['Operator'] = 'Chức năng';
 $lang['Company | Organization Information'] = 'Thông tin Doanh nghiệp / tổ chức';
 $lang['Event'] = 'Sự kiện';
-$lang['Unregistered'] = 'Chưa đăng ký';
+$lang['Unregistered'] = 'Sự kiện chưa đăng ký';
 $lang['Registered'] = 'Đã đăng ký';
 $lang['System Support'] = 'Hướng dẫn hệ thống';
 
@@ -169,7 +169,7 @@ $lang['Reject'] = 'Từ chối';
 
 $lang['Cancel'] = 'Huỷ bỏ';
 
-$lang['Choose criteria'] = 'Chọn  chí';
+$lang['Choose criteria'] = 'Chọn tiêu chí';
 $lang['Competencies'] = 'Năng lực';
 $lang['List'] = 'Danh sách';
 $lang['Search'] = 'Tìm kiếm';
@@ -206,3 +206,7 @@ $lang['Add new / update criteria'] = 'Thêm mới / chỉnh sửa tiêu chí';
 
 $lang['Show information'] = 'Xem thông tin';
 $lang['Wait for response'] = 'Đang chờ được xử lý';
+
+$lang['Information of company is required to show this function'] = 'Cần hoàn thành phần thông tin doanh nghiệp để có thể đăng ký sự kiện và tìm đối tác';
+
+$lang['All'] = 'Tất cả';

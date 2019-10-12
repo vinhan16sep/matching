@@ -3,16 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Setting_model extends MY_Model {
 
-	public $table = 'setting';
-	public function __construct()
-	{
-		parent::__construct();
-		//Do your magic here
-	}
+    public $table = 'setting';
+    public function __construct()
+    {
+        parent::__construct();
+        //Do your magic here
+    }
 
-	public function fetch_all_pagination_by_user_id($user_id, $limit = NULL, $start = NULL, $event_id) {
+    public function fetch_all_pagination_by_user_id($user_id, $limit = NULL, $start = NULL, $event_id) {
         $query = $this->db->select('setting.*, event.*, setting.id as setting_id')
-        	->from('setting')
+            ->from('setting')
             ->join('event', 'setting.event_id = event.id')
             ->where('setting.user_id', $user_id)
             ->where('setting.is_deleted', 0)
@@ -52,9 +52,11 @@ class Setting_model extends MY_Model {
     }
 
     public function fetch_all_request_pagination($limit = NULL, $start = NULL, $status, $keywords) {
-        $this->db->select('setting.*, event.name as eventName, temp_register.*, setting.id as settingId')
-            ->join('event', 'setting.event_id = event.id')
-            ->join('temp_register', 'temp_register.user_id = setting.user_id')
+        // $this->db->select('setting.*, event.name as eventName, setting.id as settingId')
+        $this->db->select('setting.*, event.name as eventName, temp_register.*, setting.id as settingId, users.email as userEmail')
+            ->join('event', 'setting.event_id = event.id', 'left')
+            ->join('temp_register', 'temp_register.user_id = setting.user_id', 'left')
+            ->join('users', 'users.id = setting.user_id', 'left')
             ->from('setting')
             ->where('setting.is_deleted', 0)
             ->where('setting.status', $status)
@@ -64,7 +66,6 @@ class Setting_model extends MY_Model {
         if($keywords != ''){
             $this->db->where('setting.code', $keywords);
         }
-
         return $this->db->get()->result_array();
     }
 
@@ -73,10 +74,10 @@ class Setting_model extends MY_Model {
 
     public function count_by_user_id_and_event_id($user_id, $event_id)
     {
-    	$this->db->from($this->table);
-    	$this->db->where('user_id', $user_id);
-    	$this->db->where('event_id', $event_id);
-    	return $this->db->get()->num_rows();
+        $this->db->from($this->table);
+        $this->db->where('user_id', $user_id);
+        $this->db->where('event_id', $event_id);
+        return $this->db->get()->num_rows();
     }
     public function count_by_user_id($user_id)
     {

@@ -144,8 +144,8 @@ class MY_Controller extends CI_Controller {
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
         $config['max_size'] = '1200';
         $config['encrypt_name'] = TRUE;
-       // $config['max_width']     = '1028';
-       // $config['max_height']    = '1028';
+        // $config['max_width']     = '1028';
+        // $config['max_height']    = '1028';
         return $config;
     }
 
@@ -210,7 +210,7 @@ class MY_Controller extends CI_Controller {
         $str = preg_replace('/([\s]+)/', '-', $str);
         return $str;
     }
-    
+
     function return_api($status, $message='', $data = null,$isExisted= true){
         return $this->output
             ->set_content_type('application/json')
@@ -375,6 +375,12 @@ class Member_Controller extends MY_Controller {
         $user = $this->ion_auth->user()->row();
         $this->data['user_email'] = $user->email;
         $this->data['current_user_temp_register'] = $this->temp_register_model->get_by_user_id($user->id);
+        $current_user_temp_register = $this->data['current_user_temp_register'];
+        if(!empty($current_user_temp_register) && $current_user_temp_register['is_saved'] == 1){
+            $this->data['is_temp_register'] = true;
+        }else{
+            $this->data['is_temp_register'] = false;
+        }
         $this->data['page_title'] = 'Trang dành cho doanh nghiệp';
 
         // Get current class
@@ -487,14 +493,14 @@ class Public_Controller extends MY_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('session');
-        
+
         if (empty($this->session->userdata('langAbbreviation'))) {
             $this->langAbbreviation = $this->uri->segment(1) ? $this->uri->segment(1) : 'vi';
         }
         if($this->langAbbreviation == ''){
             $this->session->set_userdata('langAbbreviation', $this->langAbbreviation);
         }
-        
+
         if($this->session->userdata('langAbbreviation') == 'en'){
             $langName = 'english';
             $this->config->set_item('language', $langName);
