@@ -104,7 +104,7 @@
             </td>
         </tr>
         <tr class="tr-body">
-            <td colspan="2">Click <a href="<?php echo base_url('member/user/activate/'. $id .'/'. $activation) ;?>">here</a> to active the account and fill in the profile.</td>
+            <td colspan="2">Click <a href="<?php echo base_url('member/user/activate/'. $id .'/'. $activation . '/' . 'en') ;?>">here</a> to active the account and fill in the profile.</td>
         </tr>
         <tr class="tr-body">
             <td colspan="2">

@@ -16,7 +16,7 @@ class User extends MY_Controller {
     }
 
 
-    public function login() {
+    public function login($lang = false) {
         // if ($this->ion_auth->logged_in()){
         //     redirect('member/dashboard', 'refresh');
         //     if($this->ion_auth->in_group('members')){
@@ -26,6 +26,19 @@ class User extends MY_Controller {
         //         redirect('member/user/login', 'refresh');
         //     }
         // }
+        if($lang == 'en'){
+            $langName = 'english';
+            $this->config->set_item('language', $langName);
+            $this->session->set_userdata("langAbbreviation",'en');
+            $this->lang->load('english_lang', 'english');
+        }
+
+        if($lang == 'vi'){
+            $langName = 'vietnamese';
+            $this->config->set_item('language', $langName);
+            $this->session->set_userdata("langAbbreviation",'vi');
+            $this->lang->load('vietnamese_lang', 'vietnamese');
+        }
         $this->data['page_title'] = 'Login';
         if ($this->input->post()) {
             $this->load->library('form_validation');
@@ -421,7 +434,7 @@ class User extends MY_Controller {
         return true;
     }
 
-    public function activate($id, $code = FALSE)
+    public function activate($id, $code = FALSE, $lang = 'vi')
     {
         if ($code !== FALSE)
         {
@@ -436,7 +449,7 @@ class User extends MY_Controller {
         {
             // redirect them to the auth page
             $this->session->set_flashdata('register_success', $this->ion_auth->messages());
-            redirect("member/user/login", 'refresh');
+            redirect("member/user/login/" . $lang, 'refresh');
         }
         else
         {

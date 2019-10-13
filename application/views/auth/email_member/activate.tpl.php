@@ -104,7 +104,7 @@
             </td>
         </tr>
         <tr class="tr-body">
-            <td colspan="2">Vui lòng bấm vào đường link <a href="<?php echo base_url('member/user/activate/'. $id .'/'. $activation) ;?>">đây</a> để kích hoạt tài khoản và khai hồ sơ.</td>
+            <td colspan="2">Vui lòng bấm vào đường link <a href="<?php echo base_url('member/user/activate/'. $id .'/'. $activation . '/' . 'vi') ;?>">đây</a> để kích hoạt tài khoản và khai hồ sơ.</td>
         </tr>
         <tr class="tr-body">
             <td colspan="2">
