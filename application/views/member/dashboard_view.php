@@ -21,7 +21,7 @@
 					            <div class="card-body">
 					                <div class="row no-gutters align-items-center">
 										<h6 class="text-primary" style="font-weight: bold;">
-											<a href="<?= base_url('member/matching/index?event_id=' . $value['id']) ?>"><?php echo $value['name'] ?></a>
+											<a href="<?php echo (in_array($value['id'],$events_active)) ? base_url('member/matching/index?event_id=' . $value['id']) : base_url('member/setting/event'); ?>"><?php echo $value['name'] ?></a>
 										</h6>
 					                </div>
 					                <hr>
@@ -30,10 +30,10 @@
 										<?php 
 											echo (in_array($value['id'],$events_active)) ? 
 												"<span>
-													<a style='color:#1cc88a;font-weight:bold;' href='".base_url('member/setting')."' >".$this->lang->line('Registered')."</a>
+													<a style='color:#1cc88a;font-weight:bold;' >".$this->lang->line('Registered')."</a>
 												</span>" : "
 												<span>
-													<a style='color:red;font-weight:bold;' href='".base_url('member/setting/event')."' >".$this->lang->line('Unregistered')."</a>
+													<a style='color:red;font-weight:bold;' >".$this->lang->line('Unregistered')."</a>
 												</span>"; ?>
 					                </div>
 					            </div>

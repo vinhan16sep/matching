@@ -130,8 +130,13 @@
             console.log(input_checked + '---' + $(this).parent('div').children('.btn-service-sub:checkbox:not(:checked)').length);
             if ($(this).parent('div').children('.btn-service-sub:checkbox:not(:checked)').length == input_checked) {
                 $('.sub-event-' + key).prop('checked',false);
-                key_parent_sub_event = $('.sub-event-' + key).parent('div').data('key');
-                $('.event-' + key_parent_sub_event).prop('checked',false);
+                input_checked_parent = $('.sub-event-' + key).parent('div').children('input').length;
+                console.log(input_checked_parent);
+                console.log($('.sub-event-' + key).parent('div').children('.btn-service:checkbox:not(:checked)').length);
+                if ($('.sub-event-' + key).parent('div').children('.btn-service:checkbox:not(:checked)').length == input_checked_parent) {
+                    key_parent_sub_event = $('.sub-event-' + key).parent('div').data('key');
+                    $('.event-' + key_parent_sub_event).prop('checked',false);
+                }
             }
         }
     });
