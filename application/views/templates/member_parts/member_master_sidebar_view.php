@@ -40,7 +40,7 @@
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('member/setting/event') ?>">
                 <i class="fas fa-cog"></i>
-                <span><?= $this->lang->line('Register more events'); ?></span>
+                <span><?= $this->lang->line('Unregistered Events'); ?></span>
             </a>
         </li>
         <li class="nav-item">

@@ -17,8 +17,11 @@ class Dashboard extends Member_Controller {
         $user = $this->ion_auth->user()->row();
         $this->data['total_registered']  = $this->setting_model->count_by_user_id($user->id);
 
-        $events = $this->event_model->fetch_all_by_active();
-        $this->data['total_unregistered'] = count($events) - $this->data['total_registered'];
+        // $events = $this->event_model->fetch_all_by_active();
+        $this->data['events'] = $this->event_model->fetch_all_pagination();
+        $events_active = $this->event_model->fetch_all_group_concat_by_active();
+        $this->data['events_active'] = !empty($events_active['ids']) ? explode(',', $events_active['ids']) : array();
+        $this->data['total_unregistered'] = count($this->data['events']) - $this->data['total_registered'];
         $this->render('member/dashboard_view');
     }
 
