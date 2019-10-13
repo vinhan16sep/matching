@@ -33,6 +33,7 @@ $lang['Operator'] = 'Chức năng';
 $lang['Company | Organization Information'] = 'Thông tin Doanh nghiệp / tổ chức';
 $lang['Event'] = 'Sự kiện';
 $lang['Unregistered'] = 'Sự kiện chưa đăng ký';
+$lang['Unregistered2'] = 'Chưa đăng ký';
 $lang['Registered'] = 'Đã đăng ký';
 $lang['System Support'] = 'Hướng dẫn hệ thống';
 

@@ -79,6 +79,16 @@ class Event_model extends CI_Model {
         return $result = $query->get()->result_array();
     }
 
+    public function fetch_all_group_concat_by_active() {
+        $query = $this->db->select('GROUP_CONCAT(id) as ids')
+            ->from('event')
+            ->where('is_deleted', 0)
+            ->where('is_active', 1)
+            ->order_by("id", "desc");
+
+        return $result = $query->get()->row_array();
+    }
+
     public function register($event, $user){
         $this->db->set(array(
             'user_id' => $user,

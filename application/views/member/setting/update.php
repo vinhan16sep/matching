@@ -122,12 +122,16 @@
         key = $(this).parent('div').data('key');
         if ($(this).prop("checked") == true) {
             $('.sub-event-' + key).prop('checked',true);
+            key_parent_sub_event = $('.sub-event-' + key).parent('div').data('key');
+            $('.event-' + key_parent_sub_event).prop('checked',true);
             
         }else{
             input_checked = $(this).parent('div').children('input').length;
             console.log(input_checked + '---' + $(this).parent('div').children('.btn-service-sub:checkbox:not(:checked)').length);
             if ($(this).parent('div').children('.btn-service-sub:checkbox:not(:checked)').length == input_checked) {
                 $('.sub-event-' + key).prop('checked',false);
+                key_parent_sub_event = $('.sub-event-' + key).parent('div').data('key');
+                $('.event-' + key_parent_sub_event).prop('checked',false);
             }
         }
     });
