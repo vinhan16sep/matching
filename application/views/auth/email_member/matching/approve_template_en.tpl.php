@@ -108,7 +108,7 @@
             <td colspan="2">
                 <p>Business Matching: <?= $message['target_name'] . ' - ' . $message['finder_name'] ?></p>
                 <p>Time:<?= $message['date'] ?>.</p>
-                <p>Venue: Business Matching Area, Melia Hanoi hotel, 44 Ly Thuong Kiet</p>
+                <p>Venue: <?php echo $message['data_event']['place_en'] ?></p>
             </td>
         </tr>
         <tr class="tr-body">

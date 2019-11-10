@@ -154,7 +154,7 @@
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user_email; ?></span>
                 <img style="height:4rem; width:4rem;" class="img-profile rounded-circle" src="<?php echo site_url('assets/img/logo.png') ?>">
             </a>
             <!-- Dropdown - User Information -->

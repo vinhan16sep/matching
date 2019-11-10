@@ -32,7 +32,13 @@ class Request extends Admin_Controller
             $keywords = trim($this->input->get('code'));
         }
         $this->data['keywords'] = $keywords;
-        $total_rows  = $this->setting_model->count_request(2, $keywords);
+
+        if($this->data['user_email'] == PIKOM){
+            $total_rows  = $this->setting_model->count_request(2, $keywords, 12);
+        }else{
+            $total_rows  = $this->setting_model->count_request(2, $keywords);
+        }
+
         $config = array();
         $base_url = base_url('admin/request/index');
         $per_page = 100;
@@ -45,7 +51,12 @@ class Request extends Admin_Controller
 
         $this->data['page_links'] = $this->pagination->create_links();
         $this->data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) - 1 : 0;
-        $this->data['result'] = $this->setting_model->fetch_all_request_pagination($per_page, $per_page * $this->data['page'], 2, $keywords);
+
+        if($this->data['user_email'] == PIKOM){
+            $this->data['result'] = $this->setting_model->fetch_all_request_pagination($per_page, $per_page * $this->data['page'], 2, $keywords, 12);
+        }else{
+            $this->data['result'] = $this->setting_model->fetch_all_request_pagination($per_page, $per_page * $this->data['page'], 2, $keywords);
+        }
 
         $this->render('admin/request/list_pending_request_view');
     }
@@ -62,7 +73,12 @@ class Request extends Admin_Controller
             $keywords = trim($this->input->get('code'));
         }
         $this->data['keywords'] = $keywords;
-        $total_rows  = $this->setting_model->count_request(1, $keywords);
+
+        if($this->data['user_email'] == PIKOM){
+            $total_rows  = $this->setting_model->count_request(1, $keywords, 12);
+        }else{
+            $total_rows  = $this->setting_model->count_request(1, $keywords);
+        }
 
         $config = array();
         $base_url = base_url('admin/request/approved');
@@ -76,7 +92,12 @@ class Request extends Admin_Controller
 
         $this->data['page_links'] = $this->pagination->create_links();
         $this->data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) - 1 : 0;
-        $this->data['result'] = $this->setting_model->fetch_all_request_pagination($per_page, $per_page * $this->data['page'], 1, $keywords);
+
+        if($this->data['user_email'] == PIKOM){
+            $this->data['result'] = $this->setting_model->fetch_all_request_pagination($per_page, $per_page * $this->data['page'], 1, $keywords, 12);
+        }else{
+            $this->data['result'] = $this->setting_model->fetch_all_request_pagination($per_page, $per_page * $this->data['page'], 1, $keywords);
+        }
 
         $this->render('admin/request/list_approved_request_view');
     }
@@ -87,12 +108,15 @@ class Request extends Admin_Controller
             redirect('admin/dashboard/index', 'refresh');
         }
         $email = $params['email'];
+        $time_event = $params['time_event'];
+        $place_event = $params['place_event'];
         $data = array(
             'status' => 1
         );
+       
         $result = $this->setting_model->update($params['setting_id'], $data);
         if($result){
-            $sent_email_member = send_mail($email, array('email' => $email), 'active');
+            $sent_email_member = send_mail($email, array('email' => $email, 'time_event' => $time_event, 'place_event' => $place_event), 'active');
             if (!$sent_email_member) {
                 return $this->output->set_status_header(200)
                 ->set_output(json_encode(array('message' => 'Có lỗi trong quá trình gửi E-Mail. Vui lòng thử lại!!!')));

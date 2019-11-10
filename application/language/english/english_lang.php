@@ -199,3 +199,16 @@ $lang['Information of company is required to show this function'] = 'Information
 $lang['All'] = 'All';
 
 $lang['Pages for businesses'] = 'Pages for businesses';
+
+$lang['Require selected'] = 'Require select';
+$lang['diadia'] = 'Place';
+$lang['Undefined1'] = 'Undefined';
+$lang['contact person'] = 'Contact person';
+
+$lang['Setting category guide text'] = 'Please kindly choose the Technology capacities you can offer/provide to customes';
+$lang['Matching category guide text'] = 'Please kindly choose criteria/requirements that you need to find the most appropriate supplier';
+
+
+
+
+

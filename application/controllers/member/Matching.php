@@ -213,18 +213,21 @@ class Matching extends Member_Controller {
                 'event_id' => $event,
                 'date' => strtotime($this->input->post('date')),
                 'note' => $this->input->post('note'),
+                'place' => $this->input->post('place'),
                 'status' => 0, // In create new case, this matching have status = 0
                 'created_at' => $this->author_info['created_at'],
             );
             $insert = $this->matching_model->insert($data);
             if($insert){
                 $user = $this->ion_auth->user()->row();
+                $event_data = $this->event_model->fetch_by_id($event);
                 $user_target = $this->temp_register_model->get_by_id($target);
                 $data_send_mail = array(
                     'finder_name' => $user->company,
                     'target_name' => $user_target['company'],
                     'date' => $this->input->post('date'),
                     'event_id' => $event,
+                    'data_event' => $event_data,
                 );
 
                 send_mail_matching(self::EMAIL_ADMIN, $data_send_mail, 'create', 'admin');
@@ -247,6 +250,13 @@ class Matching extends Member_Controller {
             $data['note'] = $reason;
         }
         $matching = $this->matching_model->get_by_id($this->input->get('id'));
+        if(!empty($matching['event_id'])){
+            $event_data = $this->event_model->fetch_by_id($matching['event_id']);
+        }else{
+            $event_data = array();
+        }
+        
+        
         $result = $this->matching_model->update($this->input->get('id'), $data);
         if($status == 1 && $result){
             $reject_rest_of_same_time = $this->matching_model->reject_same_time_matching($matching, self::REJECT_BY_ANOTHER_APPROVE);
@@ -263,6 +273,7 @@ class Matching extends Member_Controller {
                     'date' => date('H:i d/m/Y', $matching['date']),
                     'reason' => $reason,
                     'website' => $user_finder['website'],
+                    'data_event' => $event_data,
                 );
                 
                 if ($this->input->get('status') == 1) {
@@ -315,7 +326,7 @@ class Matching extends Member_Controller {
             $sent_email_admin = send_mail($email_admin, $data, 'admin');
 
             if ($temp_register['is_state'] == 0) {
-                $sent_email_member = send_mail($user->email, $data, 'user_temp_register');
+                $sent_email_member = send_mail($user->email, $data, 'user_temp_register',$this->lang->line('detector'));
                 if (!$sent_email_member) {
                     return $this->output->set_status_header(200)
                     ->set_output(json_encode(array(

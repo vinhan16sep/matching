@@ -24,7 +24,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-12 col-lg-12">
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4"  style="height: calc(100% + 300px);">
                 <div class="card-body">
                     <?php
                     echo form_open_multipart('', array('class' => 'form-horizontal'));
@@ -68,6 +68,27 @@
                                 echo form_label('Ngày sự kiện', 'date');
                                 echo form_error('date');
                                 echo form_input('date', set_value('date', date('d/m/Y', $detail['date'])), 'class="form-control datepicker" id="date" readonly');
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                echo form_label('Địa điểm diễn ra sự kiện', 'place');
+                                echo form_error('place');
+                                echo form_input('place', set_value('place', $detail['place']), 'class="form-control"');
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                echo form_label('Địa điểm diễn ra sự kiện Tiếng Anh', 'place_en');
+                                echo form_error('place_en');
+                                echo form_input('place_en', set_value('place_en', $detail['place_en']), 'class="form-control"');
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                echo form_label('Người phụ trách', 'person');
+                                echo form_error('person');
+                                echo form_input('person', set_value('person', $detail['person']), 'class="form-control"');
                                 ?>
                             </div>
                             <div class="form-group">

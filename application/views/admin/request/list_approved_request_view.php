@@ -70,7 +70,6 @@
                             <th style="text-align: center">Địa chỉ</th>
                             <th style="text-align: center">Số điện thoại</th>
                             <th style="text-align: center">Email</th>
-                            <th style="text-align: center">Thao tác</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -86,8 +85,6 @@
                                     <td><?php echo $item['address']; ?></td>
                                     <td><?php echo $item['phone']; ?></td>
                                     <td class="reg-client-email"><?php echo $item['email']; ?></td>
-                                    <td style="text-align: center">
-                                    </td>
                                 </tr>
                             <?php } ?>
                         <?php }else{ ?>

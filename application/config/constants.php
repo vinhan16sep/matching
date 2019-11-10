@@ -93,3 +93,7 @@ defined('MESSAGE_PHOTOS_ERROR') OR define('MESSAGE_PHOTOS_ERROR', 'File PDF v∆∞·
 defined('MESSAGE_CHANGE_LANGUAGE_SUCCESS') OR define('MESSAGE_CHANGE_LANGUAGE_SUCCESS', 'changed');
 defined('MESSAGE_CHANGE_LANGUAGE_FAIL') OR define('MESSAGE_CHANGE_LANGUAGE_FAIL', 'keep');
 defined('HTTP_SUCCESS') OR define('HTTP_SUCCESS', 200);
+
+
+// Special Email
+defined('PIKOM') OR define('PIKOM', 'justin1@pikom.org.my');

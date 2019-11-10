@@ -100,7 +100,7 @@
         <tr class="tr-body">
             <td colspan="2">
                 <h4>Kính gửi <?= $message['target_name'] ?>!</h4>
-                <p>Bạn nhận được 01 lời mời đặt lịch hẹn matching của <?= $message['finder_name'] ?> vào khung giờ <?= $message['date'] ?>.</p>
+                <p>Bạn nhận được 01 lời mời đặt lịch hẹn matching của <?= $message['finder_name'] ?> vào khung giờ <?= $message['date'] ?>, <?php echo $message['data_event']['place'] ?>.</p>
             </td>
         </tr>
         <tr class="tr-body">

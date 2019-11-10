@@ -1,4 +1,3 @@
-
 <div class="container-fluid" id="matching_create">
     <div class="row">
         <div class="left col-xl-6 col-lg-6">
@@ -52,6 +51,13 @@
                                 echo form_label($this->lang->line('Time'), 'date');
                                 echo form_error('date');
                                 echo form_input('date', set_value('date'), 'class="form-control datepicker" id="datetimepicker" readonly');
+                                ?>
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                <?php
+                                echo form_label($this->lang->line('diadia'), 'place');
+                                echo form_error('place');
+                                echo form_input('place', set_value('place'), 'class="form-control"');
                                 ?>
                             </div>
                             <div class="form-group">

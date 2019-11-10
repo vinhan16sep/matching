@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+	<title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
-    <style>
+	<style>
         .email-wrapper{
             max-width: 700px;
             overflow: auto;
@@ -96,23 +96,44 @@
 <body>
 <div class="email-wrapper">
     <table>
-        <tr class="tr-header"><td colspan="2">Matching Email</td></tr>
+        <tr class="tr-header"><td colspan="2">Email confirmation of successful registration</td></tr>
         <tr class="tr-body">
             <td colspan="2">
-                <h4>Dear <?= $message['target_name'] ?>!</h4>
-                <p>You are given 01 request for matching meeting of <?= $message['finder_name'] ?> at <?= $message['date'] ?>, <?php echo $message['data_event']['place_en'] ?>.</p>
+                <h4>Dear esteemed Company! </h4>
+                <p>Your email: <a href="mailto:<?php echo $message['email']; ?>"><?php echo $message['email']; ?></a> has been used for registration on VINASA's Business Matching Online system.</p>
+            </td>
+        </tr>
+        <tr class="tr-body">
+            <td>Code</td>
+            <td><?php echo $message['code']; ?></td>
+        </tr>
+        <tr class="tr-body">
+            <td colspan="2">
+                <p>After the admin approves the account to register the event, the system will activate for you a function to search partner for business matching and will have a notification via your email.</p>
+                <p>If any problem araises, please contact Ms. Hoàng Minh Thư, mobile: 0385 796 096, email: <a href="mailto:minhmc@vinasa.org.vn">minhmc@vinasa.org.vn</a> for further support.</p>
             </td>
         </tr>
         <tr class="tr-body">
             <td colspan="2">
-                <p>Please respond to the request <a href="<?= base_url('member/matching/index?event_id=' . $message['event_id']) ?>">here</a></p>
-                <p>For further support: Ms. Hoang Minh Thu   (HP: 0385 796 096)</p>
+                <h4>Bank account information:</h4>
             </td>
+        </tr>
+        <tr class="tr-body">
+            <td>Account name:</td>
+            <td>Vietnam Software and IT Services Association</td>
+        </tr>
+        <tr class="tr-body">
+            <td>Bank:</td>
+            <td>Joint Stock Commercial Bank for Foreign Trade of Vietnam</td>
+        </tr>
+        <tr class="tr-body">
+            <td>Account number:</td>
+            <td>049.100.004.8212<br>At Joint Stock Commercial Bank for Foreign Trade of Vietnam, Thang Long branch</td>
         </tr>
         <tr class="tr-footer">
             <td colspan="2">
-                <h6>Vietnam Association of Software and IT services (VINASA)</h6>
-                <p>Address: Flr 11, Cung tri thuc Bld, No 01 Ton That Thuyet Str, Hanoi, Vietnam</p>
+                <h6>Vietnam Software and IT Services Association(VINASA)</h6>
+                <p>Address: Tầng 11, tòa nhà Cung Trí thức, 01 Tôn Thất Thuyết, Cầu Giấy, Hà Nội</p>
                 <p>Phone: 024 35772336 - 024 35772338; Email: contact@vinasa.org.vn</p>
             </td>
         </tr>

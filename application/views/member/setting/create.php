@@ -20,6 +20,10 @@
                     <span style="font-weight: bold; font-size: 20px;">
                         <?php echo form_label($this->lang->line("Competencies of Company/ Organization"), 'category_id'); ?>
                     </span>
+                    <br>
+                    <span style="font-weight: bold; font-size: 15px; color:#3495c4;">
+                        <?php echo form_label($this->lang->line("Setting category guide text"), 'category_id'); ?>
+                    </span>
                     <?php echo form_error('category_id[]'); ?>
                     <br>
                     <?php if ($events): ?>

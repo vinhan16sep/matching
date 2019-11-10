@@ -11,7 +11,10 @@
                         <tr>
                             <th style="text-align: center">STT</th>
                             <th style="text-align: center">Tên event</th>
+                            <th style="text-align: center">Người phụ trách</th>
                             <th style="text-align: center">Ngày tổ chức</th>
+                            <th style="text-align: center">Địa điểm</th>
+                            <th style="text-align: center">Địa điểm Tiếng Anh</th>
                             <th style="text-align: center">Số bàn</th>
                             <th style="text-align: center">Trạng thái</th>
                             <th style="text-align: center">Thao tác</th>
@@ -23,7 +26,10 @@
                                 <tr>
                                     <td style="text-align: center"><?php echo $key + 1; ?></td>
                                     <td><?php echo $item['name']; ?></td>
+                                    <td><?php echo $item['person']; ?></td>
                                     <td style="text-align: center"><?php echo date('d/m/Y', $item['date']); ?></td>
+                                    <td style="text-align: center"><?php echo $item['place']; ?></td>
+                                    <td style="text-align: center"><?php echo $item['place_en']; ?></td>
                                     <td style="text-align: center"><?php echo $item['table']; ?></td>
                                     <!-- <td style="text-align: center">
                                         <?php

@@ -99,7 +99,7 @@
         <tr class="tr-header"><td colspan="2">Email xác nhận đăng ký thành công</td></tr>
         <tr class="tr-body">
             <td colspan="2">
-                <h4>Kính gửi Quý công ty!</h4>
+                <h4>Kính gửi Quý công ty! </h4>
                 <p>Quý công ty đã sử dụng mail: <a href="mailto:<?php echo $message['email']; ?>"><?php echo $message['email']; ?></a> để đăng ký tài khoản trên hệ thống Business Matching Online của VINASA.</p>
             </td>
         </tr>
@@ -109,9 +109,8 @@
         </tr>
         <tr class="tr-body">
             <td colspan="2">
-                <p>Xin vui lòng thanh toán phí tham gia matching là 1500USD với nội dung như sau: <b>Mã code + matching ictsummit</b></p>
-                <p>Sau khi nhận được phí chuyển khoản, hệ thống sẽ kích hoạt chức năng tìm kiếm đối tác.</p>
-                <p>Trường hợp không đăng ký được vui lòng liên hệ: Anh Mạc Công Minh, mobile: 0936 136 696, email: minhmc@vinasa.org.vn để được hỗ trợ.</p>
+                <p>Sau khi admin duyệt account đăng ký sự kiện, hệ thống sẽ kích hoạt chức năng tìm kiếm đối tác và sẽ có thông báo qua email đăng ký.</p>
+                <p>Trường hợp không đăng ký được vui lòng liên hệ: chị Hoàng Minh Thư, mobile: 0385 796 096, email: <a href="mailto:thuhm@vinasa.org.vn">thuhm@vinasa.org.vn</a> để được hỗ trợ.</p>
             </td>
         </tr>
         <tr class="tr-body">

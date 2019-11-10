@@ -100,7 +100,7 @@
         <tr class="tr-body">
             <td colspan="2">
                 <h4>Kính gửi Admin!</h4>
-                <p>Doanh nghiệp <?= $message['target_name'] ?> đồng ý cuộc hẹn vs doanh nghiệp <?= $message['finder_name'] ?> vào khung giờ <?= $message['date'] ?>.</p>
+                <p>Doanh nghiệp <?= $message['target_name'] ?> đồng ý cuộc hẹn vs doanh nghiệp <?= $message['finder_name'] ?> vào khung giờ <?= $message['date'] ?> tại <?= $message['data_event']['place']?>.</p>
             </td>
         </tr>
         <tr class="tr-footer">

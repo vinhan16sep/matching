@@ -139,7 +139,10 @@
                                         <th style="text-align: center">STT</th>
                                         <th style="text-align: center">Bên gửi</th>
                                         <th style="text-align: center">Bên nhận</th>
+                                        <th style="text-align: center">Người phụ trách</th>
                                         <th style="text-align: center">Thời gian</th>
+                                        <th style="text-align: center">Địa điểm</th>
+                                        <th style="text-align: center">Địa điểm Tiếng Anh</th>
                                         <th style="text-align: center">Trạng thái</th>
                                         <th style="text-align: center">Thao tác</th>
                                     </tr>
@@ -160,7 +163,10 @@
                                                 <td style="text-align: center"><?php echo $key + 1; ?></td>
                                                 <td style="text-align: center"><?php echo $value['company_finder'] ?></td>
                                                 <td style="text-align: center"><?php echo $value['company_target'] ?></td>
+                                                <td style="text-align: center"><?php echo $event_person ?></td>
                                                 <td style="text-align: center"><?php echo date('H:i', $value['date']) ?></td>
+                                                <td style="text-align: center"><?php echo $event_place ?></td>
+                                                <td style="text-align: center"><?php echo $event_place_en ?></td>
                                                 <td style="text-align: center"><?php echo $status; ?></td>
                                                 <td style="text-align: center" title="Thông tin cuộc hẹn">
                                                     <a href="#" class="call-popup" data-finder_id="<?php echo $value['finder_id'] ?>" data-target_id="<?php echo $value['target_id'] ?>"><i class="fas fa-info-circle"></i></a>

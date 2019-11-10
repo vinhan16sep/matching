@@ -248,6 +248,26 @@ class Admin_Controller extends MY_Controller {
         );
 
         $this->data['active_event'] = $this->event_model->fetch_all_by_active();
+
+        $class = $this->router->fetch_class();
+        $method = $this->router->fetch_method();
+
+        $allowed = false;
+        if($this->data['user_email'] == PIKOM){
+            if($class == 'event' && $method == 'detail'){
+                $allowed = true;
+            }else if($class == 'dashboard'){
+                $allowed = true;
+            }else if($class == 'request' && ($method == 'index' || $method == 'approved')){
+                $allowed = true;
+            }else{
+                redirect('admin/event/detail/12','refresh');
+            }
+        }
+
+//        if($allowed == false){
+//            redirect('admin/event/detail/12','refresh');
+//        }
     }
 
     protected function render($the_view = NULL, $template = 'admin_master') {

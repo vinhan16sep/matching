@@ -1066,7 +1066,7 @@ class Ion_auth_model extends CI_Model
 			$user = $query->row();
 
 			$password = $this->hash_password_db($user->id, $password);
-
+         
 			if ($password === TRUE)
 			{
 				if ($user->active == 0)

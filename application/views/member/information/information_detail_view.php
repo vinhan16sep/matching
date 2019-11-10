@@ -61,7 +61,7 @@
                         <?php echo form_checkbox('is_state', 1, (isset($temp) && !empty($temp['is_state']))? ($temp['is_state'] == 1) ? true : false : set_checkbox('is_state', 1), ''); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label($this->lang->line("Competencies of Company/ Organization").': ', 'address'); ?>
+                        <?php echo form_label($this->lang->line("Address (Vietnamese)").': ', 'address'); ?>
                         <?php echo form_error('address', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('address', (isset($temp) && !empty($temp['address']))? $temp['address'] : set_value('address'), 'class="form-control"'); ?>
                     </div>

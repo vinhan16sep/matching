@@ -44,9 +44,9 @@
                                     <th style="text-align: center"><?= $this->lang->line('No.') ?></th>
                                     <th style="text-align: center"><?= $this->lang->line('Time') ?></th>
                                     <th style="text-align: center"><?= $this->lang->line('Company') ?></th>
-                                    <th style="text-align: center"></th>
                                     <th style="text-align: center"><?= $this->lang->line('Status') ?></th>
                                     <th style="text-align: center"><?= $this->lang->line('Note') ?></th>
+                                    <th style="text-align: center"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -111,9 +111,9 @@
                                     <th style="text-align: center"><?= $this->lang->line('No.') ?></th>
                                     <th style="text-align: center"><?= $this->lang->line('Time') ?></th>
                                     <th style="text-align: center"><?= $this->lang->line('Company') ?></th>
-                                    <th style="text-align: center"></th>
                                     <th style="text-align: center"><?= $this->lang->line('Status') ?></th>
                                     <th style="text-align: center"><?= $this->lang->line('Note') ?></th>
+                                    <th style="text-align: center"></th>
                                 </tr>
                                 </thead>
                                 <tbody>

@@ -40,6 +40,9 @@ class Event extends Admin_Controller
     }
 
     public function detail($event_id){
+        if($this->data['user_email'] == PIKOM && $event_id != 12){
+            redirect('admin/event/detail/12','refresh');
+        }
         $this->load->helper('form');
         $event = $this->event_model->fetch_by_id($event_id);
         /**
@@ -97,6 +100,9 @@ class Event extends Admin_Controller
         $this->data['matching'] = $matching;
         $this->data['event_id'] = $event_id;
         $this->data['event_date'] = $event['date'];
+        $this->data['event_place'] = $event['place'];
+        $this->data['event_place_en'] = $event['place_en'];
+        $this->data['event_person'] = $event['person'];
 
         $this->render('admin/event/detail_event_view');
     }
@@ -117,6 +123,9 @@ class Event extends Admin_Controller
                 'date' => strtotime(str_replace('/', '-', $this->input->post('date'))),
 //                'table' => $this->input->post('table'),
                 'start' => $this->input->post('start'),
+                'place' => $this->input->post('place'),
+                'place_en' => $this->input->post('place_en'),
+                'person' => $this->input->post('person'),
                 'duration' => $this->input->post('duration'),
                 'step' => $this->input->post('step'),
             );
@@ -144,6 +153,9 @@ class Event extends Admin_Controller
                 'date' => strtotime(str_replace('/', '-', $this->input->post('date'))),
 //                'table' => $this->input->post('table'),
                 'start' => $this->input->post('start'),
+                'place' => $this->input->post('place'),
+                'place_en' => $this->input->post('place_en'),
+                'person' => $this->input->post('person'),
                 'duration' => $this->input->post('duration'),
                 'step' => $this->input->post('step'),
             );

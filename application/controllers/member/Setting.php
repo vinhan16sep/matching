@@ -216,9 +216,14 @@ class Setting extends Member_Controller {
 		$temp_register = $this->temp_register_model->get_by_email_and_event_id($user->email, $event_id);
 		$category_root = $this->category_model->fetch_all_root_by_event($event_id);
 		$events = array();
+		$check_require_update = 0;
 		if ($category_root) {
 			foreach ($category_root as $key => $value) {
 				$events[$value['id']]['name'] = $value['name'];
+				$events[$value['id']]['require'] = $value['require'];
+				if ($value['require'] == 1) {
+					$check_require_update++;
+				}
 				$category_sub = $this->category_model->fetch_all_sub_by_event_and_parent($event_id, $value['id']);
 				if ($category_sub) {
 					foreach ($category_sub as $k => $val) {
@@ -239,12 +244,16 @@ class Setting extends Member_Controller {
 		$this->data['events'] = $events;
 		$this->data['setting_id'] = $id;
 
-		$this->form_validation->set_rules('category_id[]',$this->lang->line("nangluc"),'trim|required');
+		if ($check_require_update > 0) {
+			$this->form_validation->set_rules('category_id[]',$this->lang->line("nangluc"),'trim|required');
+		}else{
+			$this->form_validation->set_rules('category_id[]',$this->lang->line("nangluc"),'trim');
+		}
 		if ($this->form_validation->run() == FALSE) {
 			$this->render('member/setting/update');
 		}else{
 			if ($this->input->post()) {
-                $category_id = ',' . implode(',', $this->input->post('category_id')) . ',';
+                $category_id = ',' . (!empty($this->input->post('category_id')) ? implode(',', $this->input->post('category_id')) : '') . ',';
 				$data = array(
 					'user_id' => $user->id,
 					'event_id' => $event_id,

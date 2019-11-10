@@ -3,7 +3,7 @@ include "class.phpmailer.php";
 include "class.smtp.php";
 
 
-function send_mail($email, $data, $layout = 'user') {
+function send_mail($email, $data, $layout = 'user',$lang = 'vi') {
     $CI =& get_instance();
     $mail = new PHPMailer();
     $mail->IsSMTP(); // set mailer to use SMTP
@@ -25,7 +25,12 @@ function send_mail($email, $data, $layout = 'user') {
     $mail->Subject = $CI->lang->line('Mail from Matching Platform');
     if ($layout == 'user_temp_register') {
         $data_send_mail['message'] = $data;
-        $mail->Body = $CI->load->view('auth/email_member/matching/email_template.tpl.php',$data_send_mail,true);
+        if ($lang == 'vi') {
+            $view = '';
+        }else{
+            $view = '_en';
+        }
+        $mail->Body = $CI->load->view('auth/email_member/matching/email_template' . $view . '.tpl.php',$data_send_mail,true);
     }
     if ($layout == 'admin') {
         $mail->Body = email_template_admin($data); //HTML Body
@@ -34,6 +39,7 @@ function send_mail($email, $data, $layout = 'user') {
         $mail->Body = email_template_look_account($data); //HTML Body
     }
     if ($layout == 'active') {
+        echo 1123;die;
         $mail->Body = email_template_active_account($data); //HTML Body
     }
     if ($layout == 'free') {

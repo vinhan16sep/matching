@@ -214,3 +214,12 @@ $lang['All'] = 'Tất cả';
 
 
 $lang['Pages for businesses'] = 'Trang dành cho doanh nghiệp';
+
+
+$lang['Require selected'] = 'Bắt buộc chọn';
+$lang['diadia'] = 'Địa điểm';
+$lang['Undefined1'] = 'Chưa xác định';
+$lang['contact person'] = 'Người phụ trách';
+
+$lang['Setting category guide text'] = 'Vui lòng tích chọn tiêu chí năng lực mà bạn có thể đáp ứng khách hàng';
+$lang['Matching category guide text'] = 'Vui lòng tích chọn các tiêu chí mà bạn mong muốn ở nhà cung cấp';

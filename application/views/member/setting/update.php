@@ -20,13 +20,25 @@
                     <span style="font-weight: bold; font-size: 20px;">
                         <?php echo form_label($this->lang->line("Competencies of Company/ Organization"), 'category_id'); ?>
                     </span>
+                    <br>
+                    <span style="font-weight: bold; font-size: 15px; color:#3495c4;">
+                        <?php echo form_label($this->lang->line("Setting category guide text"), 'category_id'); ?>
+                    </span>
                     <?php echo form_error('category_id[]'); ?>
                     <br>
                     <?php if ($events): ?>
                         <?php foreach ($events as $key => $value): ?>
                             <?php 
-                                echo form_checkbox('category_id[]', $key, in_array($key, $detail['category_id']), 'class="btn-event event-'. $key .'" data-key=' . $key);
-                                echo $value['name'] . '<br>';
+                                
+                                $require = '';
+                                $check_require = '';
+                                if ($value['require'] == 1) {
+                                    $require = '<span style="color:red;font-weight:bold;"> ('.$this->lang->line("Require selected").') </span>';
+                                    $check_require = 'require_capacity';
+                                }
+                                echo form_checkbox('category_id[]', $key, in_array($key, $detail['category_id']), ' title="' . $value['name'] . '" class="' . $check_require . ' btn-event event-'. $key .'" data-key=' . $key);
+                                echo '<span style="color: #3495c4;font-weight: 700;">'. $value['name'] . '</span>' . $require . '<br>';
+                                unset($value['require']);
                             ?>
                             <?php if ($value): ?>
                                 <div style="margin-left: 20px" class="slide-service-<?php echo $key ?>" data-key="<?php echo $key ?>">
@@ -138,6 +150,13 @@
                     $('.event-' + key_parent_sub_event).prop('checked',false);
                 }
             }
+        }
+    });
+    $('.form-horizontal [type="submit"]').click(function(){
+        var length_require_capacity = $('.require_capacity:checkbox:not(:checked)').length;
+        if (length_require_capacity > 0) {
+            alert('Vui lòng chọn những năng lực là bắt buộc');
+            return false;
         }
     });
 

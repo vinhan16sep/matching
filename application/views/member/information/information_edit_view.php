@@ -66,7 +66,7 @@
                         <?php echo form_input('address', (isset($temp) && !empty($temp['address']))? $temp['address'] : set_value('address'), 'class="form-control"'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_label($this->lang->line("Address (English)").'): ', 'address_en'); ?>
+                        <?php echo form_label($this->lang->line("Address (English)").': ', 'address_en'); ?>
                         <?php echo form_error('address_en', '<div class="error">', '</div>'); ?>
                         <?php echo form_input('address_en', (isset($temp) && !empty($temp['address_en']))? $temp['address_en'] : set_value('address_en'), 'class="form-control"'); ?>
                     </div>

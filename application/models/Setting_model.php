@@ -40,20 +40,23 @@ class Setting_model extends MY_Model {
      * @param string $keywords
      * @return mixed
      */
-    public function count_request($status, $keywords = '') {
+    public function count_request($status, $keywords = '', $event_id = null) {
         $this->db->select('*')
             ->from('setting')
             ->where('is_deleted', 0)
             ->where('status', $status);
+        if($event_id != null){
+            $this->db->where('event_id', $event_id);
+        }
         if($keywords != ''){
             $this->db->where('code', $keywords);
         }
         return $this->db->get()->num_rows();
     }
 
-    public function fetch_all_request_pagination($limit = NULL, $start = NULL, $status, $keywords) {
+    public function fetch_all_request_pagination($limit = NULL, $start = NULL, $status, $keywords, $event_id = null) {
         // $this->db->select('setting.*, event.name as eventName, setting.id as settingId')
-        $this->db->select('setting.*, event.name as eventName, temp_register.*, setting.id as settingId, users.email as userEmail')
+        $this->db->select('setting.*, event.name as eventName, event.date as eventDate, event.start as eventStart, event.place as eventPlace, temp_register.*, setting.id as settingId, users.email as userEmail')
             ->join('event', 'setting.event_id = event.id', 'left')
             ->join('temp_register', 'temp_register.user_id = setting.user_id', 'left')
             ->join('users', 'users.id = setting.user_id', 'left')
@@ -62,6 +65,10 @@ class Setting_model extends MY_Model {
             ->where('setting.status', $status)
             ->limit($limit, $start)
             ->order_by("setting.id", "desc");
+
+        if($event_id != null){
+            $this->db->where('event_id', $event_id);
+        }
 
         if($keywords != ''){
             $this->db->where('setting.code', $keywords);

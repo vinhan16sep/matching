@@ -1,5 +1,9 @@
 <style>
-    
+    .show-catalogues-1{
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+    }
 </style>
 <div class="container-fluid" id="category">
     <a href="<?php echo base_url('admin/event/index'); ?>" class="btn btn-outline-dark"><i class="fa fa-backward" aria-hidden="true"></i></a>
@@ -30,7 +34,7 @@
                                     <td><?php echo $item['name_en']; ?></td>
                                     <td style="text-align: center">
                                         <?php if($item['level'] == 0){ ?>
-                                            <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $item['id']; ?>" data-name="<?php echo $item['name']; ?>" data-name_en="<?php echo $item['name_en']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
+                                            <a title="Cập nhật" href="javascript:void(0);" class="sub-category" data-id="<?php echo $item['id']; ?>" data-name="<?php echo $item['name']; ?>" data-require="<?php echo $item['require']; ?>" data-name_en="<?php echo $item['name_en']; ?>" data-toggle="modal" data-target="#editCategory" style="color: white">
                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             </a>
                                             &nbsp;
@@ -101,6 +105,10 @@
                 <input type="hidden" name="event_id" id="rootEvent" value="<?php echo $event_id; ?>" />
                 Tên danh mục: <input type="text" name="name" id="rootName" class="form-control" />
                 Tên danh mục (tiếng Anh): <input type="text" name="name_en" id="rootNameEn" class="form-control" />
+                Bắt buộc chọn:  <select name="require" class="form-control" id="rootRequire">
+                                    <option value="0" selected>Không bắt buộc</option>
+                                    <option value="1">Bắt buộc</option>
+                                </select>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary create-root-category" data-dismiss="modal">OK</button>
@@ -149,6 +157,12 @@
                 <input type="hidden" name="idUpdate" id="idUpdate" value="0" />
                 Tên danh mục: <input type="text" name="nameUpdate" id="nameUpdate" class="form-control" />
                 Tên danh mục (tiếng Anh): <input type="text" name="nameUpdateEn" id="nameUpdateEn" class="form-control" />
+                <div class="show-catalogues-1">
+                    Bắt buộc chọn:  <select name="require" id="requireUpdate" class="form-control">
+                                        <option value="0" selected >Không bắt buộc</option>
+                                        <option value="1">Bắt buộc</option>
+                                    </select>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary update-category" data-dismiss="modal">OK</button>
@@ -165,6 +179,7 @@
         var name = $('#rootName').val();
         var name_en = $('#rootNameEn').val();
         var parent = $('#rootParent').val();
+        var requires = $('#rootRequire').val();
         var level = $('#rootLevel').val();
         var event = $('#rootEvent').val();
 
@@ -175,6 +190,7 @@
                 name: name,
                 name_en: name_en,
                 parent: parent,
+                require: requires,
                 level: level,
                 event: event,
             },
@@ -225,6 +241,7 @@
         var id = $('#idUpdate').val();
         var name = $('#nameUpdate').val();
         var name_en = $('#nameUpdateEn').val();
+        var requires = $('#requireUpdate').val();
 
         $.ajax({
             method: 'GET',
@@ -233,6 +250,7 @@
                 id: id,
                 name: name,
                 name_en: name_en,
+                require: requires,
             },
             success: function(res){
                 var result = JSON.parse(res);
@@ -256,9 +274,16 @@
         var id = $(event.relatedTarget).data('id');
         var name = $(event.relatedTarget).data('name');
         var name_en = $(event.relatedTarget).data('name_en');
+        var requires = $(event.relatedTarget).data('require');
         $(this).find('input[name="idUpdate"]').val(id);
         $(this).find('input[name="nameUpdate"]').val(name);
         $(this).find('input[name="nameUpdateEn"]').val(name_en);
+        $(this).find('[name="require"]').val(requires);
+        if ($('.sub-category[data-id="'+id+'"]').parents('tr').attr('class') == undefined) {
+            $('.show-catalogues-1').attr('style','opacity:1;height:auto;width:100%;')
+        }else{
+            $('.show-catalogues-1').attr('style','');
+        }
     });
 
     $('.btn-delete-category').click(function(){

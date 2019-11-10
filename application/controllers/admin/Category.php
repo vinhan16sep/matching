@@ -49,6 +49,7 @@ class Category extends Admin_Controller
             'name' => $params['name'],
             'name_en' => $params['name_en'],
             'parent_id' => $params['parent'],
+            'require' => isset($params['require']) ? $params['require'] : 0,
             'event_id' => $params['event'],
             'level' => $params['level'],
         );
@@ -69,6 +70,7 @@ class Category extends Admin_Controller
         $data = array(
             'name' => $params['name'],
             'name_en' => $params['name_en'],
+            'require' => $params['require'],
         );
 
         $result = $this->category_model->update($params['id'], $data);

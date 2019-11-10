@@ -32,7 +32,7 @@
 
                             <div class="form-group col-lg-12">
                                 <?php
-                                echo form_label($this->lang->line('Competencies'), 'category_id');
+                                echo form_label($this->lang->line('Matching category guide text'), 'category_id');
                                 echo form_error('category_id[]');
                                 ?>
                                 <br>
