@@ -110,7 +110,7 @@
         <tr class="tr-body">
             <td colspan="2">
                 <p>Sau khi admin duyệt account đăng ký sự kiện, hệ thống sẽ kích hoạt chức năng tìm kiếm đối tác và sẽ có thông báo qua email đăng ký.</p>
-                <p>Trường hợp không đăng ký được vui lòng liên hệ: chị Hoàng Minh Thư, mobile: 0385 796 096, email: <a href="mailto:thuhm@vinasa.org.vn">thuhm@vinasa.org.vn</a> để được hỗ trợ.</p>
+                <p>Trường hợp không đăng ký được vui lòng liên hệ: Mr. Nguyễn Thế Anh, mobile: (+84)913196699, email: <a href="mailto:anhnt@vinasa.org.vn">anhnt@vinasa.org.vn</a> để được hỗ trợ.</p>
             </td>
         </tr>
         <tr class="tr-body">

@@ -90,7 +90,7 @@
 
 </div>
 
-<div id="createRoot" class="modal fade" role="dialog">
+<div id="createRoot" class="modal fade in" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -119,7 +119,7 @@
     </div>
 </div>
 
-<div id="createSub" class="modal fade" role="dialog">
+<div id="createSub" class="modal fade in" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -144,7 +144,7 @@
     </div>
 </div>
 
-<div id="editCategory" class="modal fade" role="dialog">
+<div id="editCategory" class="modal fade in" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->

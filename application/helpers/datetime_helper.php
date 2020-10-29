@@ -3,7 +3,6 @@
 if (!function_exists('build_time_range')) {
     function build_time_range($start = '08:00', $duration = 8, $step = 30){
         $expression = (string) 'PT' . $step . 'M';
-
         if($duration <= 0){
             return false;
         }

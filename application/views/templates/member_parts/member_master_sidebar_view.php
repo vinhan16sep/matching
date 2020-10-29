@@ -38,12 +38,12 @@
 
         <?php if($is_temp_register){ ?>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('member/setting/event') ?>">
+            <a class="nav-link" href="<?php echo base_url('member/setting/all') ?>">
                 <i class="fas fa-cog"></i>
-                <span><?= $this->lang->line('Unregistered Events'); ?></span>
+                <span><?= $this->lang->line('Event list'); ?></span>
             </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
                 <span><?= $this->lang->line('Registered Events'); ?></span>
@@ -64,11 +64,11 @@
                     ?>
                 </div>
             </div>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Matching</span>
+                <span><?= $this->lang->line('Find partner'); ?></span>
             </a>
 
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">

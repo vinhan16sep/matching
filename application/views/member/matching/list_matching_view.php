@@ -24,7 +24,7 @@
 
         <!-- Area Chart -->
         <div class="col-xl-12 col-lg-12">
-            <a class="btn btn-primary" href="<?php echo base_url('member/matching/find?event_id=' . $event_id) ?>">
+            <a class="btn btn-danger" href="<?php echo base_url('member/matching/find?event_id=' . $event_id) ?>">
                 <?= $this->lang->line('Find partner') ?>
             </a>
             <br>

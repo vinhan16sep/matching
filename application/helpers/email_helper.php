@@ -11,9 +11,9 @@ function send_mail($email, $data, $layout = 'user',$lang = 'vi') {
     $mail->Port = 465; // set the port to use
     $mail->SMTPAuth = true; // turn on SMTP authentication
     $mail->SMTPSecure = 'ssl';
-    $mail->Username = "support@vinasa.org.vn"; // your SMTP username or your gmail username
-    $mail->Password = "kcirpkmdlgbcobcv"; // your SMTP password or your gmail password
-    $from = "support@vinasa.org.vn"; // Reply to this email
+    $mail->Username = "support_event@vinasa.org.vn"; // your SMTP username or your gmail username
+    $mail->Password = "whwkyyqhmmjujaqi"; // your SMTP password or your gmail password
+    $from = "support_event@vinasa.org.vn"; // Reply to this email
     $to = $email; // Recipients email ID
     $name = 'bmo.vinasa.org.vn'; // Recipient's name
     $mail->From = $from;
@@ -39,7 +39,6 @@ function send_mail($email, $data, $layout = 'user',$lang = 'vi') {
         $mail->Body = email_template_look_account($data); //HTML Body
     }
     if ($layout == 'active') {
-        echo 1123;die;
         $mail->Body = email_template_active_account($data); //HTML Body
     }
     if ($layout == 'free') {
@@ -92,9 +91,9 @@ function send_mail_matching($email, $data, $matching = 'create', $role = 'admin'
     $mail->Port = 465; // set the port to use
     $mail->SMTPAuth = true; // turn on SMTP authentication
     $mail->SMTPSecure = 'ssl';
-    $mail->Username = "support@vinasa.org.vn"; // your SMTP username or your gmail username
-    $mail->Password = "kcirpkmdlgbcobcv"; // your SMTP password or your gmail password
-    $from = "support@vinasa.org.vn"; // Reply to this email
+    $mail->Username = "support_event@vinasa.org.vn"; // your SMTP username or your gmail username
+    $mail->Password = "whwkyyqhmmjujaqi"; // your SMTP password or your gmail password
+    $from = "support_event@vinasa.org.vn"; // Reply to this email
     $to = $email; // Recipients email ID
     $name = 'bmo.vinasa.org.vn'; // Recipient's name
     $mail->From = $from;

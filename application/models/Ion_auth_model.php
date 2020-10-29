@@ -702,7 +702,7 @@ class Ion_auth_model extends CI_Model
 		$user = $query->row();
 
 		$old_password_matches = $this->hash_password_db($user->id, $old);
-
+        
 		if ($old_password_matches === TRUE)
 		{
 			// store the new password and reset the remember code so all remembered instances have to re-login
@@ -1066,7 +1066,7 @@ class Ion_auth_model extends CI_Model
 			$user = $query->row();
 
 			$password = $this->hash_password_db($user->id, $password);
-         
+        
 			if ($password === TRUE)
 			{
 				if ($user->active == 0)

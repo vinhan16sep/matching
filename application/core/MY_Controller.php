@@ -60,8 +60,8 @@ class MY_Controller extends CI_Controller {
         $config['per_page'] = $per_page;
         $config['uri_segment'] = $uri_segment;
 
-        $choice = $config['total_rows'] / $config['per_page'];
-        $config['num_links'] = floor($choice);
+//        $choice = $config['total_rows'] / $config['per_page'];
+//        $config['num_links'] = floor($choice);
 
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
@@ -81,6 +81,9 @@ class MY_Controller extends CI_Controller {
         $config['cur_tag_close'] = '</a></li>';
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
+
+        $config['reuse_query_string'] = true;
+        $config['use_page_numbers'] = TRUE;
 
         return $config;
     }
@@ -396,10 +399,10 @@ class Member_Controller extends MY_Controller {
         $this->data['user_email'] = $user->email;
         $this->data['current_user_temp_register'] = $this->temp_register_model->get_by_user_id($user->id);
         $current_user_temp_register = $this->data['current_user_temp_register'];
-        if(!empty($current_user_temp_register) && $current_user_temp_register['is_saved'] == 1){
-            $this->data['is_temp_register'] = true;
-        }else{
+        if(empty($current_user_temp_register) || $current_user_temp_register['is_saved'] != 1){
             $this->data['is_temp_register'] = false;
+        }else{
+            $this->data['is_temp_register'] = true;
         }
         $this->data['page_title'] = $this->lang->line('Pages for businesses');
 

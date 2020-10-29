@@ -143,9 +143,9 @@
                         <?php echo form_upload('file', '', 'class=""'); ?>
                     </div>
                     <div class="form-group">
-                        <?php echo form_submit('submit', $this->lang->line('luuthongtin'), 'class="btn btn-success" style="float: right"'); ?>
+                        <?php echo form_submit('submit', $this->lang->line('hoanthanh'), 'class="btn btn-success" style="float: right"'); ?>
                         <?php if ($this->uri->segment(3) != 'edit'): ?>
-                            <?php echo form_submit('submit', $this->lang->line('luutam'), 'class="btn btn-primary"'); ?>
+                            <?php echo form_submit('submit', $this->lang->line('luuthongtin'), 'class="btn btn-primary"'); ?>
                         <?php endif ?>
                         <!-- <a href="javascript:history.back()" name="back" class="btn btn-default btn-lg btn-block">Quay lại</a> -->
                     </div>

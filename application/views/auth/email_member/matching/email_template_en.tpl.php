@@ -110,7 +110,7 @@
         <tr class="tr-body">
             <td colspan="2">
                 <p>After the admin approves the account to register the event, the system will activate for you a function to search partner for business matching and will have a notification via your email.</p>
-                <p>If any problem araises, please contact Ms. Hoàng Minh Thư, mobile: 0385 796 096, email: <a href="mailto:minhmc@vinasa.org.vn">minhmc@vinasa.org.vn</a> for further support.</p>
+                <p>If any problem araises, please contact Mr. Nguyen The Anh, mobile: (+84)913196699, email: <a href="mailto:anhnt@vinasa.org.vn">anhnt@vinasa.org.vn</a> for further support.</p>
             </td>
         </tr>
         <tr class="tr-body">

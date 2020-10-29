@@ -31,6 +31,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?php echo site_url('assets/'); ?>vendor/jquery.datetimepicker.full.min.js"></script>
     <script src="<?php echo site_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <!-- Core plugin JavaScript-->
     <!--    <script src="--><?php //echo site_url('assets/'); ?><!--vendor/jquery-easing/jquery.easing.min.js"></script>-->
 

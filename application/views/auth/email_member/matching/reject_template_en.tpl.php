@@ -108,7 +108,7 @@
             <td colspan="2">
                 <p>Wish you good health and success!</p>
                 <p>Board of Organizers- Vietnam ICT Summit 2019</p>
-                <p>Contact person: Ms. Hoang Minh Thu   (HP: 0385 796 096)</p>
+                <p>Contact person: Mr. Nguyen The Anh   (HP: +84 913196699)</p>
             </td>
         </tr>
         <tr class="tr-footer">

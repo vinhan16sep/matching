@@ -100,7 +100,7 @@
         <tr class="tr-body">
             <td colspan="2">
                 <h4>Dear esteemed company!</h4>
-                <p>Thank you for registering Business Matching Online in the frame of Vietnam ICT Summit 2019. You have used email: <a href="mailto: <?= $identity ?>"><?= $identity ?></a> for the registration.</p>
+                <p>Thank you for registering Business Matching Online. You have used email: <a href="mailto: <?= $identity ?>"><?= $identity ?></a> for the registration.</p>
             </td>
         </tr>
         <tr class="tr-body">
@@ -108,11 +108,11 @@
         </tr>
         <tr class="tr-body">
             <td colspan="2">
-                <p>For further support, please contact: <b>Ms. Hoang Minh Thu</b></p>
+                <p>For further support, please contact: <b>Mr. Nguyen The Anh</b></p>
                 <p>Vietnam Association of Software and IT services</p>
                 <p>Flr 11, Cung tri thuc Bld, No 01 Ton That Thuyet Str, Hanoi, Vietnam</p>
-                <p>Email: <a href="mailto: thuhm@vinasa.org.vn">thuhm@vinasa.org.vn</a></p>
-                <p>Mobile: <b>0385 796 096 / 02435772336
+                <p>Email: <a href="mailto: anhnt@vinasa.org.vn">anhnt@vinasa.org.vn</a></p>
+                <p>Mobile: <b>+84 913196699
 </b></p>
             </td>
         </tr>
@@ -120,7 +120,7 @@
             <td colspan="2">
                 <h6>Vietnam Association of Software and IT services (VINASA)</h6>
                 <p>Address: Flr 11, Cung tri thuc Bld, No 01 Ton That Thuyet Str, Hanoi, Vietnam</p>
-                <p>Phone: 024 35772336 - 024 35772338; Email: contact@vinasa.org.vn</p>
+                <p>Phone: +8424 35772336 - +8424 35772338; Email: contact@vinasa.org.vn</p>
             </td>
         </tr>
     </table>

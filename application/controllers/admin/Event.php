@@ -118,10 +118,12 @@ class Event extends Admin_Controller
             $this->load->helper('form');
             $this->render('admin/event/create_event_view');
         } else {
+            $date = $this->input->post('date');
+            $date_arr = explode(' - ', $date);
             $data = array(
                 'name' => $this->input->post('name'),
-                'date' => strtotime(str_replace('/', '-', $this->input->post('date'))),
-//                'table' => $this->input->post('table'),
+                'date_from' => strtotime(str_replace('/', '-', $date_arr[0])),
+                'date_to' => strtotime(str_replace('/', '-', $date_arr[1])),
                 'start' => $this->input->post('start'),
                 'place' => $this->input->post('place'),
                 'place_en' => $this->input->post('place_en'),
@@ -140,7 +142,7 @@ class Event extends Admin_Controller
     public function edit($id = NULL){
         $id = $this->input->post('id') ? $this->input->post('id') : $id;
         $this->data['detail'] = $this->event_model->fetch_by_id($id);
-
+        
         $this->data['page_title'] = 'Cập nhật sự kiện';
         $this->load->library('form_validation');
         $this->form_validation->set_rules('name','Name','trim|required');

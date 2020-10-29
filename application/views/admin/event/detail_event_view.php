@@ -139,7 +139,7 @@
                                         <th style="text-align: center">STT</th>
                                         <th style="text-align: center">Bên gửi</th>
                                         <th style="text-align: center">Bên nhận</th>
-                                        <th style="text-align: center">Người phụ trách</th>
+                                        <th style="text-align: center">Website</th>
                                         <th style="text-align: center">Thời gian</th>
                                         <th style="text-align: center">Địa điểm</th>
                                         <th style="text-align: center">Địa điểm Tiếng Anh</th>
