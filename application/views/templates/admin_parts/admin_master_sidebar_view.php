@@ -19,6 +19,12 @@
                 <span>Thông tin chung</span>
             </a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="<?php echo base_url('admin/users/index_member/2') ?>" aria-expanded="true">
+                <i class="fas fa-fw fa-users" aria-hidden="true"></i>
+                <span>Tài khoản</span>
+            </a>
+        </li>
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">

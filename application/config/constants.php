@@ -96,4 +96,4 @@ defined('HTTP_SUCCESS') OR define('HTTP_SUCCESS', 200);
 
 
 // Special Email
-defined('PIKOM') OR define('PIKOM', 'justin1@pikom.org.my');
+defined('PIKOM') OR define('PIKOM', 'justin_admin@pikom.org.my');

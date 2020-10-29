@@ -54,11 +54,11 @@
         </div>
     </header>
 
-    <div class="cover-background" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1363&q=80')">
+    <div class="cover-background" style="background-image: url('assets/img/63a9d1ff855679082047.jpg')">
         <div class="wrapper">
             <div class="content">
-                <h6>Matching Platform</h6>
-                <h3>Be the Best for your business and client</h3>
+                <h6>VINASA Business Matching Online Platform</h6>
+                <h3>VIETNAM DX DAY 2020</h3>
                 <ul>
                     <li>
                         <a href="<?php echo base_url('member/user/login/') ?>" class="btn btn-default" role="button">

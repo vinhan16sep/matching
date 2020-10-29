@@ -49,15 +49,15 @@
         </nav>
     </header>
 
-    <div class="cover-background" style="background-image: url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80">
+    <div class="cover-background" style="background-image: url('<?php echo site_url('assets/img/63a9d1ff855679082047.jpg') ?>">
         <div class="gradient"></div>
 
         <div class="content">
             <div class="left">
-                <h6>Matching Platform</h6>
-                <h3>More million people using everyday</h3>
+                <h6><?= $this->lang->line('login descr') ?></h6>
+                <h3>VIETNAM DX DAY 2020</h3>
 
-                <p>Lots of benifits waiting for you when you become on of our partners.</p>
+                <p></p>
             </div>
 
             <div class="right">

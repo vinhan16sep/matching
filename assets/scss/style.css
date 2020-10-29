@@ -203,7 +203,7 @@ p {
 }
 .popup#companyInfo .popup-content .popup-header {
   width: 100%;
-  height: auto;
+  height: 50px;
   padding: 0 0 0 15px;
   border-bottom: 1px solid #E0E0E0;
   background-color: #3495c4;
@@ -211,8 +211,6 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: 50px;
-  padding: 5px 5px 5px 15px;
 }
 .popup#companyInfo .popup-content .popup-header h6 {
   color: #fff;
@@ -271,7 +269,7 @@ p {
   margin-right: 0;
 }
 .popup#companyInfo .popup-content .popup-body .tab-content .tab-pane#infoTab .row .left, .popup#companyInfo .popup-content .popup-body .tab-content .tab-pane#infoTab .row .right {
-  height: auto;
+  height: 100%;
   padding: 30px;
 }
 .popup#companyInfo .popup-content .popup-body .tab-content .tab-pane#infoTab .row .left .wrapper, .popup#companyInfo .popup-content .popup-body .tab-content .tab-pane#infoTab .row .right .wrapper {
@@ -951,16 +949,4 @@ a:hover {
 }
 .nav-item.dropdown.no-arrow.li-lang.active a{
   color:#3495c4!important;
-}
-#infoTab .wrapper{
-  border-bottom:1px dashed #eee;
-  padding-bottom:5px;
-}
-.popup-body.check-height{
-  overflow: auto;
-}
-@media (max-width: 892px){
-  .popup#companyInfo .popup-content .popup-body .tab-content .tab-pane#infoTab .row .left, .popup#companyInfo .popup-content .popup-body .tab-content .tab-pane#infoTab .row .right {
-    padding: 5px 20px;
-  }
 }

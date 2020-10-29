@@ -27,7 +27,7 @@
                                     <td style="text-align: center"><?php echo $key + 1; ?></td>
                                     <td><?php echo $item['name']; ?></td>
                                     <td><?php echo $item['person']; ?></td>
-                                    <td style="text-align: center"><?php echo date('d/m/Y', $item['date']); ?></td>
+                                    <td style="text-align: center"><?php echo (empty($item['date'])) ? date('d/m/Y', $item['date_from']) . '~' . date('d/m/Y', $item['date_to']) : date('d/m/Y', $item['date']); ?></td>
                                     <td style="text-align: center"><?php echo $item['place']; ?></td>
                                     <td style="text-align: center"><?php echo $item['place_en']; ?></td>
                                     <td style="text-align: center"><?php echo $item['table']; ?></td>

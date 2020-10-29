@@ -64,7 +64,7 @@
                                 <?php
                                 echo form_label($this->lang->line('Note'), 'note');
                                 echo form_error('note');
-                                echo form_textarea('note', set_value('name'), 'class="form-control" id="note"');
+                                echo form_textarea('note', set_value('note'), 'class="form-control" id="note"');
                                 ?>
                             </div>
                             <br>
@@ -90,9 +90,9 @@
 
 
 <?php
-    $event_date = date('Y/m/d', $event['date']);
-    $event_date_reformat = date('d-m-Y', $event['date']);
-    $date = json_encode($time_range);
+    $event_date_fr_reformat = date('d-m-Y', $event['date_from']);
+    $event_date_fr_reformat_range = date('Y-m-d', $event['date_from']);
+    $event_date_to_reformat_range = date('Y-m-d', $event['date_to']);
 ?>
 <script type="text/javascript">
     $('form').submit(function(){
@@ -100,23 +100,25 @@
     });
 
     $('#btnSend').click(function(){
-        if($('#datetimepicker').val() == '' || $('#note').val() == ''){
+        if($('#datetimepicker').val() == ''){
             return false;
         }
     });
 
 
-    var eventDate = '<?php echo $event_date; ?>';
-    var eventDateFormat = '<?php echo $event_date_reformat; ?>';
+    var eventDateFrFormat = '<?php echo $event_date_fr_reformat; ?>';
+    var event_date_fr_reformat_range = '<?php echo $event_date_fr_reformat_range; ?>';
+    var event_date_to_reformat_range = '<?php echo $event_date_to_reformat_range; ?>';
     var time = <?php echo json_encode($time_range); ?>;
 
     $(function () {
         $('#datetimepicker').datetimepicker({
             format: 'd-m-Y H:i',
-            allowDates : eventDate,
+            minDate: event_date_fr_reformat_range,
+            maxDate: event_date_to_reformat_range,
             allowTimes: time,
             validateOnBlur: true,
-            defaultDate: eventDateFormat
+            defaultDate: eventDateFrFormat
         });
     });
 

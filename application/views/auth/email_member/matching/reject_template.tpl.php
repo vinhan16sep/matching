@@ -108,7 +108,7 @@
             <td colspan="2">
                 <p>Kính chúc Quý khách sức khỏe và thành công!</p>
                 <p>Ban Tổ chức Diễn đàn Cấp cao CNTT-TT Việt Nam 2019</p>
-                <p>Đầu mối hỗ trợ: Ms. Hoàng Minh Thư   (HP: 0385 796 096)</p>
+                <p>Đầu mối hỗ trợ: Mr. Nguyễn Thế Anh   (HP: (+84)913196699)</p>
             </td>
         </tr>
         <tr class="tr-footer">

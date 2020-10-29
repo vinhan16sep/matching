@@ -78,7 +78,7 @@ $lang['Event name'] = 'Event name';
 $lang['Time'] = 'Time';
 $lang['Status'] = 'Status';
 $lang['Active the event'] = 'Active the event';
-$lang['You have not active the finding mode for this event. Please send a request to Vinasa to active'] = 'You have not active the finding mode for this event. Please send a request to Vinasa to active';
+$lang['You have not active the finding mode for this event. Please send a request to Vinasa to active'] = 'To search and schedule an appointment with partners, you must wait for the Admin to activate after completing the financial procedures. Details are shown in the email.';
 $lang['Competencies'] = 'Competencies';
 $lang['Competencies of Company/ Organization'] = 'Competencies of Company/ Organization';
 $lang['Address (Vietnamese)'] = 'Address (Vietnamese)';
@@ -90,6 +90,7 @@ $lang['doanhthunam'] = 'Income of Year';
 $lang['ghirodonvitiente'] = 'define currency unit';
 $lang['profiledn'] = 'Company Profile(PDF format)';
 $lang['luuthongtin'] = 'Save Information';
+$lang['hoanthanh'] = 'Complete';
 $lang['luuthongtinthanhcong'] = 'Save Information Successfully';
 $lang['luutam'] = 'Temporary Save';
 $lang['chinhsua'] = 'Update';
@@ -135,6 +136,12 @@ $lang['capnhatkhongthanhcong'] = 'Update failed or nothing to update';
 $lang['khongduoctrong'] = 'required';
 $lang['phailaso'] = 'number format only';
 $lang['quanlysukien'] = 'Event Management';
+
+$lang['dangkysukien'] = 'Register';
+$lang['dadangky'] = 'Registered';
+$lang['chuadangky'] = 'Unregistered';
+$lang['confirmdangkysukien'] = 'Do you want to register this event?';
+$lang['thietlap'] = 'Organization capacity';
 
 $lang['Matching Management'] = 'Matching Management';
 $lang['Find partner'] = 'Find partner';
@@ -208,6 +215,7 @@ $lang['contact person'] = 'Contact person';
 $lang['Setting category guide text'] = 'Please kindly choose the Technology capacities you can offer/provide to customes';
 $lang['Matching category guide text'] = 'Please kindly choose criteria/requirements that you need to find the most appropriate supplier';
 
+$lang['login descr'] = 'VINASA Business Matching Online Platform';
 
 
 

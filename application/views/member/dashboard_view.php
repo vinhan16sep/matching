@@ -42,8 +42,8 @@
     					                    $langcheck = ($this->session->userdata('langAbbreviation') == 'en') ? '_en' : '';
     					                ?>
     					                <p><b><?= $this->lang->line('Time') ?></b>: <?php echo $value['start'] ?> - <?php echo date('d/m/Y', $value['date']) ?></p><hr>
-    					                <p><b><?= $this->lang->line('contact person') ?></b>: <?php echo !empty($value['person']) ? $value['person'] : $this->lang->line('Undefined1'); ?></p><hr>
-    					                <p><b><?= $this->lang->line('diadia') ?></b>: <?php echo $value['place'.$langcheck] ?></p>
+    					                <p><b><?= $this->lang->line('diadia') ?></b>: <?php echo $value['place'.$langcheck] ?></p><hr>
+    					                <p><b>Website</b>: <?php echo !empty($value['person']) ? $value['person'] : $this->lang->line('Undefined1'); ?></p>
     					            </div>
     					        </div>
     					    </div>

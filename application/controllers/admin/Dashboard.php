@@ -16,7 +16,7 @@ class Dashboard extends Admin_Controller {
 
             $this->render('admin/dashboard_view');
         }else{
-            $this->render('admin/dashboard_special_view');
+            $this->render('admin/dashboard_special_view1');
         }
     }
 }

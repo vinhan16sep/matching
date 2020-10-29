@@ -100,7 +100,7 @@
         <tr class="tr-body">
             <td colspan="2">
                 <h4>Kính gửi Quý công ty!</h4>
-                <p>Cảm ơn Quý Công ty đã đăng ký tham gia Business Matching Online trong khuôn khổ Diễn đàn cấp cao CNTT-TT Việt Nam 2019 (Vietnam ICT Summit). Quý Công ty đã sử dụng email: <a href="mailto: <?= $identity ?>"><?= $identity ?></a> để đăng ký tài khoản tham gia chương trình.</p>
+                <p>Cảm ơn Quý Công ty đã đăng ký tham gia Business Matching Online. Quý Công ty đã sử dụng email: <a href="mailto: <?= $identity ?>"><?= $identity ?></a> để đăng ký tài khoản tham gia chương trình.</p>
             </td>
         </tr>
         <tr class="tr-body">
@@ -108,11 +108,11 @@
         </tr>
         <tr class="tr-body">
             <td colspan="2">
-                <p>Nếu cần hỗ trợ, vui lòng liên hệ: <b>Ms. Hoàng Minh Thư</b></p>
+                <p>Nếu cần hỗ trợ, vui lòng liên hệ: <b>Mr. Nguyễn Thế Anh</b></p>
                 <p>Hiệp hội Phần mềm và Dịch vụ CNTT Việt Nam</p>
                 <p>Tầng 11, tòa nhà Cung Trí thức thành phố, Số 1 Tôn Thất Thuyết, Cầu Giấy, Hà Nội</p>
-                <p>Email: <a href="mailto: thuhm@vinasa.org.vn">thuhm@vinasa.org.vn</a></p>
-                <p>Mobile: <b>0385 796 096 / 02435772336
+                <p>Email: <a href="mailto: anhnt@vinasa.org.vn">anhnt@vinasa.org.vn</a></p>
+                <p>Mobile: <b>+84 913196699
 </b></p>
             </td>
         </tr>
@@ -120,7 +120,7 @@
             <td colspan="2">
                 <h6>Hiệp hội Phần mềm và dịch vụ CNTT Việt Nam (VINASA)</h6>
                 <p>Địa chỉ: Tầng 11, tòa nhà Cung Trí thức, 01 Tôn Thất Thuyết, Cầu Giấy, Hà Nội</p>
-                <p>Điện thoại: 024 35772336 - 024 35772338; Email: contact@vinasa.org.vn</p>
+                <p>Điện thoại: +8424 35772336 - +8424 35772338; Email: contact@vinasa.org.vn</p>
             </td>
         </tr>
     </table>

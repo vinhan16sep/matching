@@ -13,6 +13,10 @@ class Setting extends Member_Controller {
 		$this->load->model('category_model');
 		$this->load->model('temp_register_model');
 		$this->load->helper('common_helper');
+		
+		if(empty($this->data['current_user_temp_register']) || $this->data['current_user_temp_register']['is_saved'] != 1){
+		    redirect('member/information', 'refresh');
+        }
 	}
 
 	// List all your items
@@ -48,6 +52,40 @@ class Setting extends Member_Controller {
 
 
 		$this->render('member/setting/index');
+	}
+	
+	public function all(){
+        $this->load->helper('form');
+		$this->load->library('form_validation');
+
+		$user = $this->ion_auth->user()->row();
+		$events = $this->event_model->fetch_all_by_active();
+		
+		$setting = $this->setting_model->get_by_user_id($user->id);
+		$event_ids = array_helper_get_column('event_id', $setting);
+		if ($events) {
+			foreach ($events as $key => $value) {
+				if (in_array($value['id'], $event_ids)) {
+					$events[$key]['reg_stt'] = 1;
+				} else {
+					$events[$key]['reg_stt'] = 0;
+				}
+
+				if (!empty($setting)) {
+					foreach ($setting as $sKey => $sVal) {
+						if ($sVal['event_id'] == $value['id']) {
+							$events[$key]['_setting_id'] = $sVal['id'];
+						} else {
+							$events[$key]['_setting_id'] = 0;
+						}
+					}
+				}
+			}
+		}
+		$this->data['events'] = $events;
+		$this->data['page_title'] = $this->lang->line("quanlysukien");
+
+		$this->render('member/setting/all');
 	}
 
 	public function event(){
@@ -262,7 +300,7 @@ class Setting extends Member_Controller {
 				$update = $this->setting_model->update($id, $data);
 				if ($update) {
 					$this->session->set_flashdata('success', $this->lang->line("capnhatthanhcong"));
-                    redirect('member/setting/index?event_id=' . $event_id, 'refresh');
+                    redirect('member/setting/all', 'refresh');
 				}else{
 					$this->session->set_flashdata('error', $this->lang->line("capnhatkhongthanhcong"));
                     redirect('member/setting/update/' . $id . '?event_id=' . $event_id, 'refresh');
@@ -276,6 +314,22 @@ class Setting extends Member_Controller {
 	public function delete( $id = NULL )
 	{
 
+	}
+	
+	public function register() {
+        $id = $this->input->get('id');
+		$name = $this->input->get('name');
+		$user = $this->ion_auth->user()->row();
+
+		$data['user_id'] = $user->id;
+		$data['event_id'] = $id;
+		$save = $this->setting_model->save($data);
+		if ($save) {
+			return $this->output->set_status_header(200)
+                ->set_output(json_encode(array('message' => 1)));
+		}
+		return $this->output->set_status_header(200)
+                ->set_output(json_encode(array('message' => 0)));
 	}
 }
 

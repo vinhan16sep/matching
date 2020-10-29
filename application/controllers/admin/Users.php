@@ -76,10 +76,10 @@ class Users extends Admin_Controller
         $total_rows  = $this->users_model->count_search($group_id, $keywords);
         $this->load->library('pagination', TRUE);
         $config = array();
-        $base_url = base_url('admin/users/index/' . $group_id);
+        $base_url = base_url('admin/users/index_member/' . $group_id);
         $per_page = 50;
         $uri_segment = 5;
-        foreach ($this->pagination_con($base_url, $total_rows, $per_page, $uri_segment) as $key => $value) {
+        foreach ($this->pagination_config($base_url, $total_rows, $per_page, $uri_segment) as $key => $value) {
             $config[$key] = $value;
         }
         $this->data['page'] = ($this->uri->segment(5)) ? $this->uri->segment(5) - 1 : 0;

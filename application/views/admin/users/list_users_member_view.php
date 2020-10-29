@@ -1,21 +1,21 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<div class="content-wrapper" style="min-height: 916px;">
+<div class="content-wrapper" style="min-height: 916px;padding-left:30px;padding-right:30px;">
     <section class="content row">
         
         <div class="row" style="padding: 10px;">
             <div class="col-md-6">
-                <a type="button" href="<?php echo site_url('admin/users/create/' . $group); ?>" class="btn btn-primary">THÊM MỚI</a>
-            </div>
-            <div class="col-md-6">
                 <form action="<?php echo base_url('admin/users/index/' . $group_id) ?>" method="get">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Tìm kiếm Mã số thuế, Tên doanh nghiệp, Email" name="search" value="<?= $keywords ?>">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm Mã số thuế, Tên doanh nghiệp, Email" style="width: 400px;" name="search" value="<?= $keywords ?>">
                         <span class="input-group-btn">
                             <input type="submit" class="btn btn-block btn-primary" value="Tìm kiếm">
                         </span>
                     </div>
                 </form>
+            </div>
+            <div class="col-md-6">
+
             </div>
         </div>
 
@@ -29,8 +29,9 @@
                         <table class="table table-striped table-bordered table-condensed admin">
                             <tr>
                                 <td style="width: 3%"><b><a href="#">STT</a></b></td>
-                                <td><b><a href="#">Username</a></b></td>
-                                <td><b><a href="#">Chức danh</a></b></td>
+                                <td><b><a href="#">Tên</a></b></td>
+                                <td><b><a href="#">Doanh nghiệp</a></b></td>
+                                <td><b><a href="#">SĐT</a></b></td>
                                 <td><b><a href="#">E-Mail</a></b></td>
                                 <td style="width: 20%;"><b><a href="#">Thời gian tạo</a></b></td>
                                 <td><b>Thao tác</b></td>
@@ -41,7 +42,8 @@
                                 <tr class="row_<?php echo $user['id']; ?>">
                                     <td><?php echo $number--; ?></td>
                                     <td><?php echo $user['username']; ?></td>
-                                    <td><?php echo strtoupper($user['member_role']); ?></td>
+                                    <td><?php echo $user['company']; ?></td>
+                                    <td><?php echo $user['phone']; ?></td>
                                     <td><?php echo $user['email']; ?></td>
                                     <td><?php echo date('d-m-Y H:i:s',$user['created_on']); ?></td>
 <!--                                    <td>-->
@@ -65,10 +67,9 @@
                                                 <span class="glyphicon glyphicon-pencil"></span>
                                             </a>
                                             &nbsp&nbsp
-                                            <a href="javascript:void(0);" onclick="deleteItem(<?php echo $user['user_id']; ?>, '<?php echo base_url('admin/users/delete'); ?>')" >
+                                            <!--                                             <a href="javascript:void(0);" onclick="deleteItem(<?php echo $user['user_id']; ?>, '<?php echo base_url('admin/users/delete'); ?>')" >
                                                 <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                            </a>
-                                            &nbsp&nbsp
+                                            </a>-->
                                         </form>
                                     </td>
                                 </tr>

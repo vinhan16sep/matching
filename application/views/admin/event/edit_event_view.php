@@ -32,30 +32,15 @@
 
                     <div class="row">
                         <div class="column" style="height:450px;">
-                            <div class="form-group">
+                            <div class="form-group" style="padding-left: 20px;">
                                 <?php
                                 echo form_label('Tên sự kiện', 'name');
                                 echo form_error('name');
                                 echo form_input('name', set_value('name', $detail['name']), 'class="form-control" id="name"');
                                 ?>
                             </div>
-<!--                            <div class="form-group">-->
-<!--                                --><?php
-//                                echo form_label('Số bàn', 'table');
-//                                echo form_error('table');
-//                                $data = array(
-//                                    'name' => 'table',
-//                                    'id'   => 'table',
-//                                    'class'=> 'form-control',
-//                                    'type' => 'number',
-//                                    'min' => 0,
-//                                    'value' => $detail['table']
-//                                );
-//                                echo form_input($data);
-//                                ?>
-<!--                            </div>-->
                             <br>
-                            <div class="form-group col-sm-12 text-left" style="padding-left: 0 !important;">
+                            <div class="form-group col-sm-12 text-left" style="padding-left: 20px !important;">
                                 <?php
                                 echo form_submit('submit', 'Hoàn thành', 'class="btn btn-primary"');
                                 ?>
@@ -63,35 +48,35 @@
                             </div>
                         </div>
                         <div class="column" style="height:450px;">
-                            <div class="form-group">
+                            <div class="form-group" style="padding-right: 20px;">
                                 <?php
                                 echo form_label('Ngày sự kiện', 'date');
                                 echo form_error('date');
                                 echo form_input('date', set_value('date', date('d/m/Y', $detail['date'])), 'class="form-control datepicker" id="date" readonly');
                                 ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="padding-right: 20px;">
                                 <?php
                                 echo form_label('Địa điểm diễn ra sự kiện', 'place');
                                 echo form_error('place');
                                 echo form_input('place', set_value('place', $detail['place']), 'class="form-control"');
                                 ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="padding-right: 20px;">
                                 <?php
                                 echo form_label('Địa điểm diễn ra sự kiện Tiếng Anh', 'place_en');
                                 echo form_error('place_en');
                                 echo form_input('place_en', set_value('place_en', $detail['place_en']), 'class="form-control"');
                                 ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="padding-right: 20px;">
                                 <?php
-                                echo form_label('Người phụ trách', 'person');
+                                echo form_label('Website', 'person');
                                 echo form_error('person');
                                 echo form_input('person', set_value('person', $detail['person']), 'class="form-control"');
                                 ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="padding-right: 20px;">
                                 <?php
                                 echo form_label('Thời gian bắt đầu', 'start');
                                 ?>
@@ -102,7 +87,7 @@
                                 echo form_input('start', set_value('start', $detail['start']), 'class="form-control" id="start"');
                                 ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="padding-right: 20px;">
                                 <?php
                                 echo form_label('Thời lượng sự kiện', 'duration');
                                 ?>
@@ -122,7 +107,7 @@
                                 echo form_input($duration);
                                 ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="padding-right: 20px;">
                                 <?php
                                 echo form_label('Thời lượng mỗi cuộc gặp', 'step');
                                 ?>
@@ -157,12 +142,17 @@
 </div>
 <!-- End of Content Wrapper -->
 <script>
-    $.fn.datepicker.defaults.language = 'vi';
-    $('.datepicker').datepicker({
-        format: 'dd/mm/yyyy',
+    var st_dt = '<?php echo date('d/m/Y', $detail['date_from']) ?>';
+    var ed_dt = '<?php echo date('d/m/Y', $detail['date_to']) ?>';
+    $('.datepicker').daterangepicker({
         todayHighlight: true,
         autoclose: true,
         disableTouchKeyboard: true,
-        enableOnReadonly: true
+        enableOnReadonly: true,
+        locale: {
+            format: 'DD/MM/YYYY'
+        }
     });
+    $('.datepicker').data('daterangepicker').setStartDate(st_dt);
+    $('.datepicker').data('daterangepicker').setEndDate(ed_dt);
 </script>
